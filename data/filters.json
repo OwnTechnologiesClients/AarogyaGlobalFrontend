@@ -1,0 +1,22 @@
+{
+  "toggles": [
+    { "label": "Doctors", "value": "doctors" },
+    { "label": "Hospitals", "value": "hospitals" }
+  ],
+  "filters": [
+    {
+      "label": "Location",
+      "placeholder": "Location",
+      "options": ["Delhi", "Mumbai", "Bangalore", "Chennai"]
+    },
+    {
+      "label": "Treatment",
+      "placeholder": "Treatment",
+      "options": ["Cardiology", "Orthopedics", "Neurology", "Oncology"]
+    }
+  ],
+  "actions": [
+    { "label": "Explore Partner", "variant": "secondary", "icon": "ArrowRightIcon", "href": "/partners" },
+    { "label": "Get Quote", "variant": "primary", "icon": "ArrowRightIcon", "href": "/quote" }
+  ]
+} 

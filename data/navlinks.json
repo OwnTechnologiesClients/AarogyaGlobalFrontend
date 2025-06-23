@@ -1,0 +1,33 @@
+[
+  { "label": "Home", "href": "/", "highlight": true },
+  { "label": "About", "href": "/about" },
+  {
+    "label": "Pages",
+    "dropdown": [
+      { "label": "Page 1", "href": "/pages/page1" },
+      { "label": "Page 2", "href": "/pages/page2" }
+    ]
+  },
+  {
+    "label": "Doctors",
+    "dropdown": [
+      { "label": "Doctor 1", "href": "/doctors/1" },
+      { "label": "Doctor 2", "href": "/doctors/2" }
+    ]
+  },
+  {
+    "label": "Hospitals",
+    "dropdown": [
+      { "label": "Hospital 1", "href": "/hospitals/1" },
+      { "label": "Hospital 2", "href": "/hospitals/2" }
+    ]
+  },
+  {
+    "label": "Blog",
+    "dropdown": [
+      { "label": "Latest Posts", "href": "/blog" },
+      { "label": "Categories", "href": "/blog/categories" }
+    ]
+  },
+  { "label": "Contact", "href": "/contact" }
+]

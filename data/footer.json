@@ -1,0 +1,33 @@
+{
+  "logo": "/footerlogo.png",
+  "description": "We strive to create a welcoming environment where patients feel valued, respected and well informed about their health",
+  "socials": [
+    { "icon": "facebook", "url": "#" },
+    { "icon": "x", "url": "#" },
+    { "icon": "instagram", "url": "#" },
+    { "icon": "linkedin", "url": "#" }
+  ],
+  "quickLinks": [
+    { "label": "Medical Directory", "url": "#" },
+    { "label": "Top Doctors", "url": "#" },
+    { "label": "Latest News", "url": "#" },
+    { "label": "Why Choose Us", "url": "#" },
+    { "label": "Contact", "url": "#" }
+  ],
+  "usefulLinks": [
+    { "label": "Featured Hospitals", "url": "#" },
+    { "label": "How It Works", "url": "#" },
+    { "label": "Find A Location", "url": "#" },
+    { "label": "Doctors Search", "url": "#" },
+    { "label": "Telemedicine Services", "url": "#" }
+  ],
+  "contact": {
+    "location": "Innov8 Orchid Center, Gurugram, India, 122001",
+    "email": "support@aaogya.com",
+    "phone": "+91-9922345678"
+  },
+  "bottomFooter": {
+    "privacyPolicy": "#",
+    "terms": "#"
+  }
+} 
