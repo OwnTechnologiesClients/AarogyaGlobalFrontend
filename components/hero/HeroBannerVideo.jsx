@@ -20,7 +20,7 @@ const HeroBannerVideo = () => {
             onContextMenu={(e) => e.preventDefault()}
             style={{ zIndex: 1 }}
           >
-            <source src="/video.mp4" type="video/mp4" />
+            <source src="/video.webm" type="video/webm" />
             {/* Fallback image if video doesn't load */}
             <Image
               src="/banner.jpg"

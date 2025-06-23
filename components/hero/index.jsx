@@ -13,6 +13,7 @@ import TopDoctors from "../home/TopDoctors";
 import Testimonials from "../home/Testimonials";
 import Articles from "../home/Articles";
 import AppointmentRequest from "../home/AppointmentRequest";
+import AboutSection from "../home/AboutSection";
 
 const HeroSection = () => {
   return (
@@ -21,6 +22,7 @@ const HeroSection = () => {
         <HeroBannerVideo />
         <FeatureCards />
         <TrustedBy />
+        <AboutSection/>
         <Stats />
         <StatsDirectory />
         <TopSpecialties />
