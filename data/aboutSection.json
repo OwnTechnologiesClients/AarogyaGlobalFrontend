@@ -1,0 +1,40 @@
+{
+  "sectionTitle": "A Comprehensive Directory For Your Health Care",
+  "sectionSubtitle": "With a focus on compassionate and personalized treatment we strive to create welcoming environment where patients feel valued respected and well informed about their health",
+  "aboutLabel": "ABOUT AAROGYA",
+  "doctors": [
+    {
+      "name": "Dr. Barbara",
+      "specialty": "Cardiologist",
+      "image": "/doctor.jpg"
+    },
+    {
+      "name": "Dr. Petersen",
+      "specialty": "Neurologist",
+      "image": "/doctor2.jpg"
+    }
+  ],
+  "groupImage": "/img1.jpg",
+  "mainDoctorImage": "/img2.png",
+  "features": [
+    {
+      "icon": "/medical-history.svg",
+      "title": "Patient Centered Care",
+      "description": "Our doctors are constantly improving their skills by participating medical conferences and quality improvement"
+    },
+    {
+      "icon": "/phone-big.svg",
+      "title": "Expertise And Experience",
+      "description": "Our doctors are constantly improving their skills by participating medical conferences and quality improvement"
+    }
+  ],
+  "cta": {
+    "text": "View More About Us",
+    "link": "/about"
+  },
+  "emergency": {
+    "icon": "/phone-big.svg",
+    "label": "Emergency Line",
+    "phone": "+91 9988765432"
+  }
+}

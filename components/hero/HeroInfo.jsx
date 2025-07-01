@@ -11,10 +11,14 @@ const HeroInfo = () => {
         </span>
         <span className="h-2 w-2 rounded-full bg-[#04CE78] inline-block" />
       </div>
-      <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
         {data.title}
+        <br />
+        <span className="block font-extrabold text-3xl md:text-5xl lg:text-6xl">
+          {data.titleAbroad}
+        </span>
       </h1>
-      <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+      <p className="text-lg md:text-xl font-semibold text-white/90 max-w-2xl mx-auto leading-relaxed">
         {data.subtitle}
       </p>
     </section>

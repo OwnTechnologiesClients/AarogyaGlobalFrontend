@@ -1,7 +1,6 @@
 import React from "react";
 import HeroBannerVideo from "./HeroBannerVideo";
 import FeatureCards from "../home/FeatureCards";
-import Wrapper from "@/components/Wrapper";
 import TrustedBy from "../home/TrustedBy";
 import Stats from "../home/Stats";
 import StatsDirectory from "../home/StatsDirectory";
@@ -17,15 +16,14 @@ import AboutSection from "../home/AboutSection";
 
 const HeroSection = () => {
   return (
-    <Wrapper padding="none">
       <div className="flex flex-col items-center w-full">
         <HeroBannerVideo />
         <FeatureCards />
         <TrustedBy />
         <AboutSection/>
         <Stats />
-        <StatsDirectory />
         <TopSpecialties />
+        <StatsDirectory />
         <MedicalNetwork />
         <FeaturedHospitals />
         <FAQSection />
@@ -34,7 +32,7 @@ const HeroSection = () => {
         <Articles />
         <AppointmentRequest />
       </div>
-    </Wrapper>
+  
   );
 };
 

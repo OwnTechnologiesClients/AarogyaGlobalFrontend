@@ -29,7 +29,7 @@ const FeatureCards = () => {
   const { cards } = featureCardsData;
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-4 mt-8">
+    <div className="w-full flex flex-col md:flex-row gap-4 mt-10">
       {cards.map((card) => (
         <Card
           key={card.id}

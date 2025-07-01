@@ -5,11 +5,11 @@ import React from 'react'
 
 const HeroBannerVideo = () => {
   return (
-    <div className="w-full -mt-12 md:-mt-8 relative z-0">
+    <div className="w-full h-[690px] -mt-10 md:-mt-32  relative z-0">
       <div className="w-full relative overflow-hidden rounded-b-2xl">
         <div className="relative w-full aspect-video">
           <video
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-[690px] object-cover rounded-b-2xl"
             autoPlay
             loop
             muted
