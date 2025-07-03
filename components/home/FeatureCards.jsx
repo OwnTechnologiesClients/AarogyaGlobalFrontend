@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+// Removed Shadcn Card and CardContent imports
 import featureCardsData from "@/data/featureCards.json";
 
 // Custom SVG Icon component to handle coloring
@@ -31,11 +31,11 @@ const FeatureCards = () => {
   return (
     <div className="w-full flex flex-col md:flex-row gap-4 mt-10">
       {cards.map((card) => (
-        <Card
+        <div
           key={card.id}
           className={`flex-1 border-0 shadow-none rounded-3xl ${card.backgroundColor}`}
         >
-          <CardContent className="p-6 flex flex-col items-start h-full">
+          <div className="p-6 flex flex-col items-start h-full">
             {/* Icon Container */}
             <div className="mb-4 p-3 bg-white rounded-2xl shadow-sm">
               <CustomIcon
@@ -62,8 +62,8 @@ const FeatureCards = () => {
               {card.cta.label}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       ))}
     </div>
   );

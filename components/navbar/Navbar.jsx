@@ -3,15 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
+// Removed Shadcn NavigationMenu and Button imports
 import {
   ArrowRightIcon,
   UserCircle,
@@ -34,47 +26,45 @@ const Navbar = () => {
   };
 
   // Helper for desktop nav links
+  // Desktop navigation links with Tailwind dropdown
   const DesktopNavLinks = () => (
-    <NavigationMenu viewport={false}>
-      <NavigationMenuList className="gap-2">
-        {navLinks.map((link) =>
-          link.dropdown ? (
-            <NavigationMenuItem key={link.label}>
-              <NavigationMenuTrigger className="font-poppins font-semibold text-[18px] leading-[20px] text-white bg-transparent hover:text-[#04CE78] focus:text-[#04CE78] data-[state=open]:text-[#04CE78] px-3 py-2 ">
-                {link.label}
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[200px] rounded-md shadow-lg border z-50">
-                <ul className="py-2">
-                  {link.dropdown.map((item) => (
-                    <li key={item.label}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={item.href}
-                          className="block px-4 py-3 text-[14px] font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          ) : (
-            <NavigationMenuItem key={link.label}>
-              <NavigationMenuLink asChild>
-                <Link
-                  href={link.href}
-                  className={`font-poppins font-semibold text-[18px] leading-[20px] text-white px-3 py-2  rounded transition-colors hover:text-[#04CE78] focus:text-[#04CE78] ${link.highlight ? "text-[#04CE78]" : ""}`}
-                >
-                  {link.label}
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          )
-        )}
-      </NavigationMenuList>
-    </NavigationMenu>
+    <ul className="flex gap-2 relative">
+      {navLinks.map((link) =>
+        link.dropdown ? (
+          <li key={link.label} className="relative group">
+            <button
+              className="font-poppins font-semibold text-[18px] leading-[20px] text-white bg-transparent hover:text-[#04CE78] focus:text-[#04CE78] px-3 py-2"
+              type="button"
+            >
+              {link.label}
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[200px] rounded-md shadow-lg border z-50 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-opacity">
+              <ul className="py-2">
+                {link.dropdown.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-3 text-[14px] font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ) : (
+          <li key={link.label}>
+            <Link
+              href={link.href}
+              className={`font-poppins font-semibold text-[18px] leading-[20px] text-white px-3 py-2 rounded transition-colors hover:text-[#04CE78] focus:text-[#04CE78] ${link.highlight ? "text-[#04CE78]" : ""}`}
+            >
+              {link.label}
+            </Link>
+          </li>
+        )
+      )}
+    </ul>
   );
 
   // Helper for mobile nav links
@@ -151,14 +141,12 @@ const Navbar = () => {
             <UserCircle className="w-6 h-6 " />
             Login/Register
           </Link>
-          <Button
-            asChild
-            className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[17px] font-extrabold px-[40px] py-8 rounded-lg whitespace-nowrap"
+          <Link
+            href="/appointment"
+            className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[17px] font-extrabold px-[40px] py-3 rounded-lg whitespace-nowrap flex items-center gap-2 transition-colors"
           >
-            <Link href="/appointment" className="flex items-center gap-2">
-              Make An Appointment <ArrowRightIcon style={{ width: 20, height: 20 }} />
-            </Link>
-          </Button>
+            Make An Appointment <ArrowRightIcon style={{ width: 20, height: 20 }} />
+          </Link>
         </div>
 
 
@@ -205,18 +193,13 @@ const Navbar = () => {
                   <UserCircle className="w-5 h-5" />
                   Login/Register
                 </Link>
-                <Button
-                  asChild
-                  className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[15px] font-semibold px-6 py-4 h-auto rounded-lg shadow-md w-full"
+                <Link
+                  href="/appointment"
+                  className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[15px] font-semibold px-6 py-4 h-auto rounded-lg shadow-md w-full flex items-center justify-center gap-2 transition-colors"
+                  onClick={closeMobileMenu}
                 >
-                  <Link
-                    href="/appointment"
-                    className="flex items-center justify-center gap-2"
-                    onClick={closeMobileMenu}
-                  >
-                    Make An Appointment <ArrowRightIcon className="w-4 h-4" />
-                  </Link>
-                </Button>
+                  Make An Appointment <ArrowRightIcon className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>

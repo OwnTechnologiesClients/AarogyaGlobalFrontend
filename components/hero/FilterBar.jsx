@@ -2,14 +2,7 @@
 
 import React, { useState } from "react";
 import filters from "@/data/filters.json";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@/components/ui/select";
+// Removed Shadcn Button and Select imports
 import { ArrowRightIcon } from "lucide-react";
 
 const FilterBar = () => {
@@ -47,49 +40,38 @@ const FilterBar = () => {
 
             {/* Filters Section */}
             <div className="flex flex-1 gap-3 flex-col md:flex-row w-full lg:w-auto">
-              {filters.filters.map((filter) => (
-                <Select
-                  key={filter.label}
+            {filters.filters.map((filter) => (
+              <div key={filter.label} className="w-full max-w-56">
+                <select
+                  className="w-full p-4 bg-gray-50 text-gray-700 rounded-lg border border-gray-200 shadow-sm hover:border-[#04CE78]/50 focus:ring-2 focus:ring-[#04CE78]/30 focus:border-[#04CE78] transition-all duration-200"
                   value={selected[filter.label] || ""}
-                  onValueChange={(val) => setSelected((prev) => ({ ...prev, [filter.label]: val }))}
+                  onChange={e => setSelected(prev => ({ ...prev, [filter.label]: e.target.value }))}
                 >
-                  <SelectTrigger className="w-full max-w-56 p-8 bg-gray-50 text-gray-700 rounded-lg border border-gray-200 shadow-sm hover:border-[#04CE78]/50 focus:ring-2 focus:ring-[#04CE78]/30 focus:border-[#04CE78] transition-all duration-200">
-                    <SelectValue placeholder={filter.placeholder} className="text-gray-500" />
-                  </SelectTrigger>
-                  <SelectContent className="rounded-lg border-gray-200 shadow-lg z-30">
-                    {filter.options.map((option) => (
-                      <SelectItem
-                        key={option}
-                        value={option}
-                        className="text-sm py-2.5 hover:bg-[#04CE78]/10 focus:bg-[#04CE78]/10"
-                      >
-                        {option}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              ))}
+                  <option value="" disabled>{filter.placeholder}</option>
+                  {filter.options.map(option => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+            ))}
             </div>
 
             {/* Action Buttons */}
             <div className="flex gap-3 w-full lg:w-auto flex-col md:flex-row">
-              {filters.actions.map((action) => (
-                <Button
-                  key={action.label}
-                  asChild
-                  variant={action.variant === "primary" ? "default" : "secondary"}
-                  className={`font-semibold p-8 rounded-lg shadow-md hover:shadow-lg flex items-center gap-2 text-sm w-full md:w-auto transition-all duration-200 ${
-                    action.variant === "primary"
-                      ? "bg-[#04CE78] hover:bg-[#03B96A] text-white border-0"
-                      : "bg-[#6C2BD7] hover:bg-[#5A23C8] text-white border-0"
-                  }`}
-                >
-                  <a href={action.href} className="flex items-center justify-center w-full gap-2">
-                    {action.label}
-                    <ArrowRightIcon className="w-4 h-4" />
-                  </a>
-                </Button>
-              ))}
+            {filters.actions.map((action) => (
+              <a
+                key={action.label}
+                href={action.href}
+                className={`font-semibold p-4 rounded-lg shadow-md hover:shadow-lg flex items-center gap-2 text-sm w-full md:w-auto transition-all duration-200 ${
+                  action.variant === "primary"
+                    ? "bg-[#04CE78] hover:bg-[#03B96A] text-white border-0"
+                    : "bg-[#6C2BD7] hover:bg-[#5A23C8] text-white border-0"
+                }`}
+              >
+                {action.label}
+                <ArrowRightIcon className="w-4 h-4" />
+              </a>
+            ))}
             </div>
           </div>
         </div>
