@@ -1,8 +1,8 @@
 import React from "react";
-import Wrapper from "@/components/Wrapper";
+
 
 const MedicalNetwork = () => (
-  <Wrapper padding="default" background="transparent">
+ 
     <section className="w-full flex flex-col items-center">
       <h3 className="text-xl font-bold mb-6">Professional Medical Network With Large Directory Listings</h3>
       <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl items-center">
@@ -21,7 +21,7 @@ const MedicalNetwork = () => (
       </div>
     </div>
   </section>
-  </Wrapper>
+
 );
 
 export default MedicalNetwork;

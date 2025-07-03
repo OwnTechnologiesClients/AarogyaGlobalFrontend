@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "@/components/Wrapper";
+
 
 const doctors = [
   { name: "Sanyam Sengar", specialty: "Cardiology", img: "/doctor1.png", rating: 4.9 },
@@ -9,7 +9,7 @@ const doctors = [
 ];
 
 const TopDoctors = () => (
-  <Wrapper padding="default" background="transparent" className="bg-[#F8F9FF]">
+
     <section className="w-full flex flex-col items-center">
       <h3 className="text-xl font-bold mb-6">Meet The Top Rated Doctors</h3>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl">
@@ -24,7 +24,7 @@ const TopDoctors = () => (
         ))}
     </div>
   </section>
-  </Wrapper>
+
 );
 
 export default TopDoctors;

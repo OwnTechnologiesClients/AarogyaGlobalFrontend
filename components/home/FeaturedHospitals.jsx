@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "@/components/Wrapper";
+
 
 const hospitals = [
   { name: "Trust Care Medical Group", location: "Delhi, India", img: "/hospital1.png", rating: 4.8 },
@@ -8,7 +8,7 @@ const hospitals = [
 ];
 
 const FeaturedHospitals = () => (
-  <Wrapper padding="default" background="transparent" className="bg-[#F8F9FF]">
+ 
     <section className="w-full flex flex-col items-center">
       <h3 className="text-xl font-bold mb-6">Aarogya Global Featured Hospitals</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
@@ -23,7 +23,7 @@ const FeaturedHospitals = () => (
       ))}
     </div>
   </section>
-  </Wrapper>
+
 );
 
 export default FeaturedHospitals;

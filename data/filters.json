@@ -16,7 +16,7 @@
     }
   ],
   "actions": [
-    { "label": "Explore Partner", "variant": "secondary", "icon": "ArrowRightIcon", "href": "/partners" },
-    { "label": "Get Quote", "variant": "primary", "icon": "ArrowRightIcon", "href": "/quote" }
+    { "label": "Explore Doctors", "variant": "secondary", "icon": "ArrowRightIcon", "href": "/partners" }
+   
   ]
 } 

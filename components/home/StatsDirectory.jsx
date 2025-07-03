@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "@/components/Wrapper";
+
 
 const doctors = [
   { name: "Dr. Barbara", specialty: "Cardiology", img: "/doctor1.png" },
@@ -8,7 +8,7 @@ const doctors = [
 ];
 
 const StatsDirectory = () => (
-  <Wrapper padding="default" background="transparent" className="bg-[#F8F9FF]">
+
     <section className="w-full flex flex-col items-center">
       <h3 className="text-xl font-bold mb-6">A Comprehensive Directory For Your Health Care</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
@@ -22,7 +22,7 @@ const StatsDirectory = () => (
         ))}
       </div>
     </section>
-  </Wrapper>
+
 );
 
 export default StatsDirectory;

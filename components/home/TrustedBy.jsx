@@ -2,7 +2,7 @@
 
 import React from "react";
 import CountUp from "react-countup";
-import Wrapper from "@/components/Wrapper";
+
 import Marquee from "react-fast-marquee";
 
 const logos = [
@@ -17,7 +17,7 @@ const logos = [
 ];
 
 const TrustedBy = () => (
-  <Wrapper padding="default" background="transparent">
+
     <section className="w-full flex flex-col items-center py-8 md:py-12">
       <h4 className="text-gray-600 font-bold mb-8 md:mb-12 text-center text-lg md:text-xl lg:text-2xl tracking-wider uppercase">
         TRUSTED BY MORE THAN{" "}
@@ -54,7 +54,7 @@ const TrustedBy = () => (
         </Marquee>
       </div>
     </section>
-  </Wrapper>
+
 );
 
 export default TrustedBy;

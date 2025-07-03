@@ -116,7 +116,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-gray-50 text-foreground;
+    @apply bg-white text-foreground;
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
   }

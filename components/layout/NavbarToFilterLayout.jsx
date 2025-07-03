@@ -7,7 +7,7 @@ const NavbarToFilterLayout = () => {
   return (
     <>
       <div
-        className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[500px] md:min-h-[600px] relative"
+        className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[500px] md:min-h-[690px] relative"
         style={{ backgroundImage: "url(/backgroundImg.png)" }}
       >
         {/* Content */}

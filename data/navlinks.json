@@ -1,18 +1,10 @@
 [
   { "label": "Home", "href": "/", "highlight": true },
-  { "label": "About", "href": "/about" },
   {
-    "label": "Pages",
+    "label": "Treatments",
     "dropdown": [
-      { "label": "Page 1", "href": "/pages/page1" },
-      { "label": "Page 2", "href": "/pages/page2" }
-    ]
-  },
-  {
-    "label": "Doctors",
-    "dropdown": [
-      { "label": "Doctor 1", "href": "/doctors/1" },
-      { "label": "Doctor 2", "href": "/doctors/2" }
+      { "label": "Treatment 1", "href": "/treatments/1" },
+      { "label": "Treatment 2", "href": "/treatments/2" }
     ]
   },
   {
@@ -23,11 +15,19 @@
     ]
   },
   {
-    "label": "Blog",
+    "label": "Doctors",
     "dropdown": [
-      { "label": "Latest Posts", "href": "/blog" },
-      { "label": "Categories", "href": "/blog/categories" }
+      { "label": "Doctor 1", "href": "/doctors/1" },
+      { "label": "Doctor 2", "href": "/doctors/2" }
     ]
   },
-  { "label": "Contact", "href": "/contact" }
+  { "label": "About", "href": "/about" },
+  { "label": "Contact", "href": "/contact" },
+  {
+    "label": "Partner With Us",
+    "dropdown": [
+      { "label": "Option 1", "href": "/partner/option1" },
+      { "label": "Option 2", "href": "/partner/option2" }
+    ]
+  }
 ]

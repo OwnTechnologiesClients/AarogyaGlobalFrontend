@@ -3,7 +3,7 @@ import "./globals.css";
 import TopBar from "@/components/navbar/TopBar";
 import BottomFooter from "@/components/footer/BottomFooter";
 import Footer from "@/components/footer/Footer";
-import Wrapper from "@/components/Wrapper";
+import Wrapper from "@/components/layout/Wrapper";
 import NavbarToFilterLayout from "@/components/layout/NavbarToFilterLayout";
 
 const poppins = Poppins({

@@ -1,5 +1,4 @@
 import React from "react";
-import Wrapper from "@/components/Wrapper";
 
 const articles = [
   { title: "Tips For Orthopedic Surgery Recovery", img: "/article1.png", author: "Dr. A. Kumar", date: "June 2025" },
@@ -8,7 +7,7 @@ const articles = [
 ];
 
 const Articles = () => (
-  <Wrapper padding="default" background="transparent" className="bg-[#F8F9FF]">
+
     <section className="w-full flex flex-col items-center">
       <h3 className="text-xl font-bold mb-6">Read Our Latest Insights & Articles</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
@@ -22,7 +21,7 @@ const Articles = () => (
         ))}
       </div>
     </section>
-  </Wrapper>
+
 );
 
 export default Articles;
