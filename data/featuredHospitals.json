@@ -1,0 +1,44 @@
+[
+  {
+    "image": "/hospitaldirectory/img1.png",
+    "type": "Hospital",
+    "typeColor": "#04CE78",
+    "rating": 5,
+    "ratingCount": "1k+",
+    "name": "Trust Care Medical Group",
+    "location": "Delhi, INDIA",
+    "doctorCount": 60,
+    "cta": {
+      "label": "Book Today",
+      "href": "/book-appointment"
+    }
+  },
+  {
+    "image": "/hospitaldirectory/img2.png",
+    "type": "Hospital",
+    "typeColor": "#04CE78",
+    "rating": 5,
+    "ratingCount": "2k+",
+    "name": "Premier Health Center",
+    "location": "Delhi, INDIA",
+    "doctorCount": 50,
+    "cta": {
+      "label": "Book Today",
+      "href": "/book-appointment"
+    }
+  },
+  {
+    "image": "/hospitaldirectory/img3.png",
+    "type": "Hospital",
+    "typeColor": "#04CE78",
+    "rating": 5,
+    "ratingCount": "3k+",
+    "name": "Percision Medical Center",
+    "location": "Delhi, INDIA",
+    "doctorCount": 40,
+    "cta": {
+      "label": "Book Today",
+      "href": "/book-appointment"
+    }
+  }
+] 

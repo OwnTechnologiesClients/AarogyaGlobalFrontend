@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/navbar/Navbar";
-import HeroInfo from "@/components/hero/HeroInfo";
-import FilterBar from "@/components/hero/FilterBar";
+import HeroInfo from "@/components/home/hero/HeroInfo";
+import FilterBar from "@/components/home/hero/FilterBar";
 
 const NavbarToFilterLayout = () => {
   return (

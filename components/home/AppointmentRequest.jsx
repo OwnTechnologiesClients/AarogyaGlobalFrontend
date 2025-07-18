@@ -1,25 +1,54 @@
+"use client";
+
+import { PlayIcon } from "lucide-react";
+import Image from "next/image";
 import React from "react";
+import WelcomeBanner from "../layout/WelcomeBanner";
+import CustomButton from "../layout/CustomButton";
 
 
-const AppointmentRequest = () => (
-
-    <section className="w-full flex flex-col items-center">
-      <h3 className="text-xl font-bold mb-6">Request Your Appointment</h3>
-      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl items-center">
-        <div className="flex-1">
-          <form className="flex flex-col gap-4">
-            <input type="text" placeholder="Full Name" className="border rounded-lg px-4 py-2" required />
-            <input type="email" placeholder="Email Address" className="border rounded-lg px-4 py-2" required />
-            <input type="tel" placeholder="Phone Number" className="border rounded-lg px-4 py-2" required />
-            <textarea placeholder="Your Message" className="border rounded-lg px-4 py-2" rows={3} />
-            <button type="submit" className="bg-[#04CE78] text-white px-6 py-2 rounded-lg font-semibold">Submit Appointment</button>
-          </form>
-        </div>
-        <div className="flex-1 flex justify-center">
-          <img src="/banner.jpg" alt="Request Appointment" className="rounded-xl w-full max-w-xs object-cover" />
+const AppointmentRequest = () => {
+  return (
+    <section className="w-full relative rounded-3xl overflow-hidden shadow-md min-h-[400px] lg:min-h-[600px] flex items-center md:mt-8 mt-4 mb-4 md:mb-8">
+      {/* Background Image */}
+      <Image
+        src="/bookappointment.jpg"
+        alt="Doctor with patient"
+        fill
+        className="object-cover z-0"
+        priority
+      />
+      {/* Content Above Background */}
+      <div className="relative z-20 w-full flex flex-col items-start justify-center px-6 md:px-20 py-12">
+        <div className="max-w-3xl w-full space-y-6 text-left">
+          <WelcomeBanner
+            text="BOOK APPOINTMENT"
+            textColor="#1F5FFF"
+            dotColor="#1F5FFF"
+            alignment="left"
+            className=" text-xl "
+          />
+          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-950">
+            Request Your Appointment
+          </h2>
+          <p className="text-blue-950 text-lg leading-relaxed">
+            Our medical center we are committed to delivering exceptional healthcare
+            services tailored to meet the needs of every patient and staffed by highly
+            skilled
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
+            <CustomButton text="  Make An Appointment" />
+            <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline">
+              <span className="w-12 h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
+                <PlayIcon className="fill-white"/>
+              </span>
+              How It Works
+            </button>
+          </div>
         </div>
       </div>
     </section>
-);
+  );
+};
 
 export default AppointmentRequest;

@@ -47,7 +47,7 @@ const TrustedBy = () => (
               <img
                 src={logo}
                 alt={`Trusted company logo ${(idx % logos.length) + 1}`}
-                className="h-10 md:h-14 lg:h-16 object-contain transition-transform duration-300 hover:scale-110"
+                className="h-10 md:h-14 lg:h-28 object-contain transition-transform duration-300 hover:scale-110"
               />
             </div>
           ))}

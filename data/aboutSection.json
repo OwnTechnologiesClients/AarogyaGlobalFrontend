@@ -1,7 +1,7 @@
 {
   "sectionTitle": "A Comprehensive Directory For Your Health Care",
-  "sectionSubtitle": "With a focus on compassionate and personalized treatment we strive to create welcoming environment where patients feel valued respected and well informed about their health",
-  "aboutLabel": "ABOUT AAROGYA",
+  "sectionSubtitle": "At Aarogya Global, we help patients from Africa and the Middle East access world-class medical treatment in India — quickly, affordably, and with complete peace of mind.",
+  "aboutLabel": "ABOUT AAROGYA GLOBAL",
   "doctors": [
     {
       "name": "Dr. Barbara",
@@ -19,14 +19,20 @@
   "features": [
     {
       "icon": "/medical-history.svg",
-      "title": "Patient Centered Care",
-      "description": "Our doctors are constantly improving their skills by participating medical conferences and quality improvement"
+      "title": "Truly Global, Deeply Personal: ",
+      "description": "Our culturally diverse team from India, Africa, and the Middle East understands your needs and speaks your language — literally and figuratively."
     },
     {
       "icon": "/phone-big.svg",
-      "title": "Expertise And Experience",
-      "description": "Our doctors are constantly improving their skills by participating medical conferences and quality improvement"
+      "title": " Decades of Healthcare Expertise",
+      "description": "Backed by 40+ years of team experience across leading hospitals, lifesciences companies, and healthcare systems worldwide."
+    },
+    {
+     "icon": "/phone-big.svg",
+      "title": "End-to-End Care",
+      "description": "Coordination: From selecting the right doctor and hospital to managing your visa, travel, and recovery — we take care of everything so you can focus on healing."
     }
+
   ],
   "cta": {
     "text": "View More About Us",

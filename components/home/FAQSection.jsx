@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, forwardRef } from "react";
-import faqData from "../../data/faq.json";
-// Removed Shadcn Accordion and Button imports
+import React, { useState } from "react";
+import faqData from "../../data/faq.json"
 import { MapPin, ArrowRight, Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import WelcomeBanner from "../layout/WelcomeBanner";
