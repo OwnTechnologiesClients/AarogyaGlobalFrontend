@@ -29,7 +29,7 @@ export default function FAQSection() {
 
   return (
     <section
-      className="relative w-full min-h-[80vh] flex flex-col justify-center items-center py-12 px-4 md:px-12 bg-white overflow-hidden"
+      className="relative w-full min-h-[80vh] md:mt-20 mt-8 flex flex-col justify-center items-center py-12 px-4 md:px-12 bg-white overflow-hidden"
       style={{
         background: `url('/faqbgImg.png') left bottom no-repeat`,
         backgroundSize: "auto 40%",

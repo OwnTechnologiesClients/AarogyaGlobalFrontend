@@ -6,14 +6,14 @@ import CountUp from "react-countup";
 import Marquee from "react-fast-marquee";
 
 const logos = [
-  "/img1.jpg",
-  "/img2.png",
-  "/img3.webp",
-  "/img4.webp",
-  "/img5.webp",
-  "/img6.webp",
-  "/img7.webp",
-  "/img8.jpg",
+  "/hospital_logos/img1.jpg",
+  "/hospital_logos/img2.png",
+  "/hospital_logos/img3.webp",
+  "/hospital_logos/img4.webp",
+  "/hospital_logos/img5.webp",
+  "/hospital_logos/img6.webp",
+  "/hospital_logos/img7.webp",
+  "/hospital_logos/img8.jpg",
 ];
 
 const TrustedBy = () => (

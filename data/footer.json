@@ -24,5 +24,9 @@
     "location": "Innov8 Orchid Center, Gurugram, India, 122001",
     "email": "support@aaogya.com",
     "phone": "+91-9922345678"
+  },
+  "bottomFooter": {
+    "privacyPolicy": "/privacy-policy",
+    "terms": "/terms-and-conditions"
   }
 } 

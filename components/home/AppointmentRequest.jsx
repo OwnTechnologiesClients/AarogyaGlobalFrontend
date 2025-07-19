@@ -9,7 +9,7 @@ import CustomButton from "../layout/CustomButton";
 
 const AppointmentRequest = () => {
   return (
-    <section className="w-full relative rounded-3xl overflow-hidden shadow-md min-h-[400px] lg:min-h-[600px] flex items-center md:mt-8 mt-4 mb-4 md:mb-8">
+    <section className="w-full relative rounded-3xl overflow-hidden shadow-md min-h-[400px] lg:min-h-[600px] flex items-center md:mt-20 mt-8 mb-4 md:mb-8">
       {/* Background Image */}
       <Image
         src="/bookappointment.jpg"
