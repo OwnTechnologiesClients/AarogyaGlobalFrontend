@@ -6,7 +6,6 @@ import Stats from "./Stats";
 import TopSpecialties from "./TopSpecialties";
 import FeaturedHospitals from "./FeaturedHospitals";
 import FAQSection from "./FAQSection";
-
 import Testimonials from "./Testimonials";
 import AppointmentRequest from "./AppointmentRequest";
 import AboutSection from "./AboutSection/AboutSection";

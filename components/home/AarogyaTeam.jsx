@@ -28,13 +28,13 @@ const AarogyaTeam = () => {
   };
 
   return (
-    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 md:pt-40 pt-10 md:pb-36 pb-10  w-screen bg-[#F5F7FA]">
+    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 mt-40  w-screen bg-[#F5F7FA]">
       <WelcomeBanner
         text="AAROGYA TEAM"
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold"
+        className="text-xl font-semibold mt-40 mb-5"
       />
       <div className="flex w-full justify-between items-center md:mb-28 mb-8">
         <h3 className="text-xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
@@ -60,7 +60,7 @@ const AarogyaTeam = () => {
         </div>
       </div>
 
-      <div className="w-full px-10 ">
+      <div className="w-full px-10 mb-20">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
@@ -71,9 +71,9 @@ const AarogyaTeam = () => {
         >
           {teamData.map((member, idx) => (
             <SwiperSlide key={idx}>
-              <div className="flex flex-col items-center  bg-white rounded-3xl p-4 h-auto md:h-[538px] mx-auto ">
+              <div className="flex flex-col items-center  bg-white rounded-3xl p-6 h-auto md:h-[538px] mx-auto ">
                 {/* Image Container */}
-                <div className="w-full h-[180px] md:h-[350px] rounded-2xl overflow-hidden mb-4 md:mb-6">
+                <div className="w-full h-[180px] md:h-[300px] rounded-2xl overflow-hidden mb-4 md:mb-6">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -85,10 +85,10 @@ const AarogyaTeam = () => {
 
                 {/* Text Content */}
                 <div className="flex flex-col items-start w-full mt-2 md:mt-6">
-                  <h3 className="text-base md:text-xl font-bold text-[#1A0142]">
+                  <h3 className="text-base md:text-3xl mb-6 font-bold text-[#1A0142]">
                     {member.name}
                   </h3>
-                  <p className="text-sm md:text-base text-gray-500">
+                  <p className="text-sm md:text-xl text-[#555555]">
                     {member.role}
                   </p>
                 </div>

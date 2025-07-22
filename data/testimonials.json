@@ -2,28 +2,28 @@
   {
     "name": "Steven Borders",
     "role": "CEO & Founder",
-    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=400",
+    "image": "/testimonial/testimonialImg1.png",
     "rating": 5,
     "testimonial": "Our administrative and clinical team is second pledge to help all and give hope to those who have in this endeavor while we have the best taking care of the patients."
   },
   {
     "name": "Jane Doe",
     "role": "Patient",
-    "image": "https://randomuser.me/api/portraits/women/44.jpg",
+    "image": "/testimonial/testimonialImg2.png",
     "rating": 5,
-    "testimonial": "The doctors and staff were extremely helpful and made my experience very comfortable. Highly recommended!"
+    "testimonial": "Our administrative and clinical team is second pledge to help all and give hope to those who have in this endeavor while we have the best taking care of the patients."
   },
   {
     "name": "Steven Borders",
     "role": "CEO & Founder",
-    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=400",
+    "image": "/testimonial/testimonialImg1.png",
     "rating": 5,
     "testimonial": "Our administrative and clinical team is second pledge to help all and give hope to those who have in this endeavor while we have the best taking care of the patients."
   },
   {
     "name": "Jane Doe",
     "role": "Patient",
-    "image": "https://randomuser.me/api/portraits/women/44.jpg",
+    "image": "/testimonial/testimonialImg2.png",
     "rating": 5,
     "testimonial": "The doctors and staff were extremely helpful and made my experience very comfortable. Highly recommended!"
   }

@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
         {/* Contact Info */}
         <div className="flex justify-end">
-          <div className="bg-[#E7C2D4] rounded-xl px-8 py-10 text-[#18004b] w-full max-w-xs shadow-lg">
+          <div className="bg-[#E7C2D4] rounded-xl px-8 py-16 text-[#18004b] w-full max-w-xs shadow-lg">
             {/* Heading */}
             <h3 className="text-[20px] font-bold mb-2">Get In Touch</h3>
 

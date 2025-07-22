@@ -5,8 +5,6 @@ import {
   Bone,
   HeartPulse,
   Stethoscope,
-  Syringe,
-  Microscope,
   Brain,
   Baby,
 } from "lucide-react";
