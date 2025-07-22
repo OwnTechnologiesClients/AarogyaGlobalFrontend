@@ -1,15 +1,15 @@
 "use client";
 
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 const HeroBannerVideo = () => {
   return (
-    <div className="w-full h-[690px] -mt-20 md:-mt-35  relative z-0">
-      <div className="w-full relative overflow-hidden rounded-b-2xl">
-        <div className="relative w-full aspect-video">
+    <div className="w-full h-[60vh] md:h-[690px] -mt-20 md:-mt-35 relative z-0 overflow-hidden">
+      <div className="w-full relative overflow-hidden rounded-b-2xl h-full">
+        <div className="relative w-full h-full">
           <video
-            className="absolute inset-0 w-full h-[690px] object-cover rounded-b-2xl"
+            className="absolute inset-0 w-full h-full object-cover rounded-b-2xl"
             autoPlay
             loop
             muted
@@ -21,7 +21,7 @@ const HeroBannerVideo = () => {
             style={{ zIndex: 1 }}
           >
             <source src="/video.webm" type="video/webm" />
-            {/* Fallback image if video doesn't load */}
+            {/* Fallback image */}
             <Image
               src="/banner.jpg"
               alt="Hero Banner Video"
@@ -34,7 +34,7 @@ const HeroBannerVideo = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroBannerVideo
+export default HeroBannerVideo;

@@ -9,33 +9,35 @@ const WorkingProcess = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="mb-5 text-lg"
+        className="text-xl font-semibold mt-20 mb-5"
       />
-      <h1 className="md:text-5xl text-2xl text-blue-950 font-semibold text-center mb-12">
+       <h3 className=" text-center text-3xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
         How it Works
-      </h1>
-      <div className="flex flex-col items-center text-center px-4 py-10">
+      </h3>
+      <div className="flex flex-col items-center text-center px-4 py-10 mt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16  w-full">
           {workprocess.map((step, index) => (
             <div
               key={step.id}
               className="flex flex-col items-center text-gray-800 relative group"
             >
-              <div className="relative w-55 h-55 rounded-full overflow-hidden border-2 border-[#1F5FFF] transition-transform duration-300 hover:scale-105">
+              <div className="relative w-56 h-56 rounded-full overflow-hidden border-2 border-[#1F5FFF] transition-transform duration-300 hover:scale-105">
                 <img
                   src={step.image}
                   alt={step.title}
                   className="object-cover w-full h-full"
                 />
-                <div className="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 bg-[#04CE78] text-white rounded-full w-14 h-14 flex items-center justify-center font-bold text-lg shadow-xl z-50">
+
+                {/* Step ID inside the image */}
+                <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-[#04CE78] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg z-10">
                   {step.id}
                 </div>
               </div>
 
-              <h3 className="text-2xl font-semibold text-blue-950 mt-8">
+              <h3 className="text-3xl font-semibold text-[#1A0142] mt-8">
                 {step.title}
               </h3>
-              <p className="text-lg text-gray-700 mt-4 px-8 leading-relaxed ">
+              <p className="text-xl  text-[#555555] mt-4 max-w-4xl leading-relaxed ">
                 {step.description}
               </p>
 

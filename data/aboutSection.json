@@ -2,44 +2,29 @@
   "sectionTitle": "A Comprehensive Directory For Your Health Care",
   "sectionSubtitle": "At Aarogya Global, we help patients from Africa and the Middle East access world-class medical treatment in India — quickly, affordably, and with complete peace of mind.",
   "aboutLabel": "ABOUT AAROGYA GLOBAL",
-  "doctors": [
-    {
-      "name": "Dr. Barbara",
-      "specialty": "Cardiologist",
-      "image": "/doctor.jpg"
-    },
-    {
-      "name": "Dr. Petersen",
-      "specialty": "Neurologist",
-      "image": "/doctor2.jpg"
-    }
-  ],
-  "groupImage": "/img1.jpg",
-  "mainDoctorImage": "/img2.png",
   "features": [
     {
-      "icon": "/medical-history.svg",
+      "icon": "featurecards/medical-history.svg",
       "title": "Truly Global, Deeply Personal: ",
       "description": "Our culturally diverse team from India, Africa, and the Middle East understands your needs and speaks your language — literally and figuratively."
     },
     {
-      "icon": "/phone-big.svg",
+      "icon": "featurecards/phone-big.svg",
       "title": " Decades of Healthcare Expertise",
       "description": "Backed by 40+ years of team experience across leading hospitals, lifesciences companies, and healthcare systems worldwide."
     },
     {
-     "icon": "/phone-big.svg",
+      "icon": "featurecards/phone-big.svg",
       "title": "End-to-End Care",
       "description": "Coordination: From selecting the right doctor and hospital to managing your visa, travel, and recovery — we take care of everything so you can focus on healing."
     }
-
   ],
   "cta": {
     "text": "View More About Us",
     "link": "/about"
   },
   "emergency": {
-    "icon": "/phone-big.svg",
+    "icon": "featurecards/phone-big.svg",
     "label": "Emergency Line",
     "phone": "+91 9988765432"
   }

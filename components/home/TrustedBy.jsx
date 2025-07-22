@@ -17,44 +17,36 @@ const logos = [
 ];
 
 const TrustedBy = () => (
+  <section className="w-full flex flex-col items-center py-8 md:py-12 mt-10">
+    <h4 className="text-[#000D44] font-bold mb-8 md:mb-12 text-center text-lg md:text-xl lg:text-2xl tracking-wider uppercase">
+      TRUSTED BY{" "}
+      <CountUp
+        end={50}
+        duration={2}
+        className="font-bold text-blue-600"
+        enableScrollSpy
+        scrollSpyOnce
+      />
+      + INTERNATIONAL RECOGNIZED HOSPITAL PARTNER
+    </h4>
 
-    <section className="w-full flex flex-col items-center py-8 md:py-12">
-      <h4 className="text-gray-600 font-bold mb-8 md:mb-12 text-center text-lg md:text-xl lg:text-2xl tracking-wider uppercase">
-        TRUSTED BY MORE THAN{" "}
-        <CountUp
-          end={100}
-          duration={2}
-          className="font-bold text-blue-600"
-          enableScrollSpy
-          scrollSpyOnce
-        />
-        + COMPANIES WORLDWIDE
-      </h4>
-
-      <div className="w-full overflow-hidden">
-        <Marquee
-          gradient={false}
-          speed={60}
-          pauseOnHover={true}
-          className="py-4"
-        >
-          {/* Duplicate logos for seamless continuous scrolling */}
-          {[...logos, ...logos].map((logo, idx) => (
-            <div
-              key={idx}
-              className="mx-3 md:mx-4 flex items-center justify-center"
-            >
-              <img
-                src={logo}
-                alt={`Trusted company logo ${(idx % logos.length) + 1}`}
-                className="h-10 md:h-14 lg:h-28 object-contain transition-transform duration-300 hover:scale-110"
-              />
-            </div>
-          ))}
-        </Marquee>
-      </div>
-    </section>
-
+    <div className="w-full overflow-hidden">
+      <Marquee gradient={false} speed={60} pauseOnHover={true} className="py-6">
+        {[...logos, ...logos].map((logo, idx) => (
+          <div
+            key={idx}
+            className="mx-8 flex items-center justify-center min-w-[180px]"
+          >
+            <img
+              src={logo}
+              alt={`Hospital logo ${idx + 1}`}
+              className="h-14 md:h-20 lg:h-24 object-contain transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        ))}
+      </Marquee>
+    </div>
+  </section>
 );
 
 export default TrustedBy;

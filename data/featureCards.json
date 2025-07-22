@@ -2,9 +2,9 @@
   "cards": [
     {
       "id": "find-doctor",
-      "icon": "/doctor.svg",
-      "title": "Find Doctor Near You",
-      "description": "With a focus on compassionate personalize environment where patient feel valued respected and well informed about their health",
+      "icon": "featurecards/doctor.svg",
+      "title": "Find Doctor",
+      "description": "Browse through 100+ recognized specialists in India. Schedule consultations from the comfort of your home.",
       "cta": {
         "label": "View All Doctors",
         "href": "/doctors"
@@ -14,8 +14,8 @@
     },
     {
       "id": "support",
-      "icon": "/phone-big.svg",
-      "title": "24/7 Hours Support",
+      "icon": "featurecards/phone-big.svg",
+      "title": "Book Appointment",
       "description": "With a focus on compassionate personalize environment where patient feel valued respected and well informed about their health",
       "cta": {
         "label": "Contact Us",
@@ -26,8 +26,8 @@
     },
     {
       "id": "appointment",
-      "icon": "/medical-history.svg",
-      "title": "Book An Appointments",
+      "icon": "featurecards/medical-history.svg",
+      "title": "Explore Treatment facilities",
       "description": "With a focus on compassionate personalize environment where patient feel valued respected and well informed about their health",
       "cta": {
         "label": "Request An Appointment",

@@ -18,26 +18,11 @@ import "swiper/css/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ICON_MAP = {
-  Orthopedics: Bone,
+  Orthopaedics: Bone,
   Cardiology: HeartPulse,
-  Oncology: Stethoscope,
-  "Blood Test": Syringe,
-  Laboratory: Microscope,
   Neurology: Brain,
-  Pulmonology: Stethoscope,
-  Ophthalmology: Stethoscope,
-  Dentistry: Stethoscope,
-  Pediatrics: Baby,
-  Emergency: Stethoscope,
-  Genetics: Stethoscope,
-  "General Medicine": Stethoscope,
-  Physiotherapy: Stethoscope,
-  "Infectious Disease": Stethoscope,
-  Vaccination: Syringe,
-  "Family Medicine": Stethoscope,
-  Pathology: Microscope,
-  Rheumatology: Bone,
-  Neonatology: Baby,
+  Oncology: Stethoscope,
+  Gynaecology: Baby
 };
 
 const TopSpecialties = () => {
@@ -56,13 +41,13 @@ const TopSpecialties = () => {
   };
 
   return (
-    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 py-8 w-screen bg-[#F5F7FA]">
+    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18  w-screen bg-[#F5F7FA]">
       <WelcomeBanner
         text="CATEGORIES"
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold"
+        className="text-xl font-semibold mt-40 mb-5"
       />
       <div className="flex w-full justify-between items-center mb-4">
         <h3 className="text-3xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
@@ -113,12 +98,20 @@ const TopSpecialties = () => {
                       height: 120,
                     }}
                   >
-                    <LucideIcon
-                      size={64}
-                      strokeWidth={2.8}
-                      color="#1A0142"
-                      className="w-[64px] h-[64px]"
-                    />
+                    {spec.icon.startsWith('/') ? (
+                      <img 
+                        src={spec.icon} 
+                        alt={spec.label}
+                        className="w-16 h-16 object-contain"
+                      />
+                    ) : (
+                      <LucideIcon
+                        size={64}
+                        strokeWidth={2.8}
+                        color="#1A0142"
+                        className="w-[64px] h-[64px]"
+                      />
+                    )}
                   </div>
                   <span className="font-extrabold text-xl md:text-2xl text-[#1A0142]">
                     {spec.label}

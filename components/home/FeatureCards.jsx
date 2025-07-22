@@ -26,21 +26,21 @@ const FeatureCards = () => {
           </div>
 
           {/* Text content */}
-          <div className="flex flex-col justify-between overflow-hidden">
+          <div className="flex flex-col gap-4 justify-between overflow-hidden">
             <div>
-              <h3 className="font-bold text-xl md:text-2xl text-[#0B0757] mb-2">
+              <h3 className="font-semibold text-xl md:text-3xl text-[#0B0757] mb-4">
                 {card.title}
               </h3>
-              <p className="text-base md:text-lg text-[#0B0757] mb-4 leading-relaxed">
+              <p className="text-base md:text-xl  text-[#000D44] mb-4 leading-relaxed">
                 {card.description}
               </p>
             </div>
             <Link
               href={card.cta.href}
-              className="font-bold text-[#0B0757] flex items-center gap-1.5 group transition-all duration-200"
+              className="font-bold text-lg text-[#0B0757] flex items-center gap-1.5 group transition-all duration-200"
             >
               {card.cta.label}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </div>
         </div>

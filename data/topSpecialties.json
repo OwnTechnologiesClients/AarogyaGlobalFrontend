@@ -1,122 +1,32 @@
 [
   {
-    "icon": "/doctor.svg",
-    "label": "Orthopedics",
+    "icon": "/specialties/orthopaedics.png",
+    "label": "Orthopaedics",
     "count": 24,
     "color": "#F6EB61"
   },
   {
-    "icon": "/heart.svg",
+    "icon": "lucide/HeartPulse",
     "label": "Cardiology",
-    "count": 10,
-    "color": "#A6E9D5"
+    "count": 22,
+    "color": "#A3DAC2"
   },
   {
-    "icon": "/oncology.svg",
-    "label": "Oncology",
-    "count": 35,
-    "color": "#F3C6DB"
-  },
-  {
-    "icon": "/blood-test.svg",
-    "label": "Blood Test",
-    "count": 62,
-    "color": "#FFC896"
-  },
-  {
-    "icon": "/laboratory.svg",
-    "label": "Laboratory",
-    "count": 76,
-    "color": "#A9C3F9"
-  },
-  {
-    "icon": "/brain.svg",
+    "icon": "/specialties/neurology.png",
     "label": "Neurology",
     "count": 18,
-    "color": "#FFD6E0"
+    "color": "#FEC091"
   },
   {
-    "icon": "/lungs.svg",
-    "label": "Pulmonology",
-    "count": 22,
-    "color": "#B2F0E6"
-  },
-  {
-    "icon": "/eye.svg",
-    "label": "Ophthalmology",
+    "icon": "/specialties/oncology.png",
+    "label": "Oncology",
     "count": 15,
-    "color": "#E0E7FF"
+    "color": "#E7C2D4"
   },
   {
-    "icon": "/tooth.svg",
-    "label": "Dentistry",
-    "count": 28,
-    "color": "#FFF3C6"
-  },
-  {
-    "icon": "/baby.svg",
-    "label": "Pediatrics",
-    "count": 31,
-    "color": "#D1F5FF"
-  },
-  {
-    "icon": "/ambulance.svg",
-    "label": "Emergency",
-    "count": 40,
-    "color": "#FFD6B3"
-  },
-  {
-    "icon": "/dna.svg",
-    "label": "Genetics",
-    "count": 12,
-    "color": "#E3D7FF"
-  },
-  {
-    "icon": "/user.svg",
-    "label": "General Medicine",
-    "count": 55,
-    "color": "#D1F5E0"
-  },
-  {
-    "icon": "/activity.svg",
-    "label": "Physiotherapy",
+    "icon": "/specialties/gynaecology.png",
+    "label": "Gynaecology",
     "count": 20,
-    "color": "#F9E2E7"
-  },
-  {
-    "icon": "/thermometer.svg",
-    "label": "Infectious Disease",
-    "count": 14,
-    "color": "#F6F6B3"
-  },
-  {
-    "icon": "/syringe.svg",
-    "label": "Vaccination",
-    "count": 50,
-    "color": "#B3F6E6"
-  },
-  {
-    "icon": "/stethoscope.svg",
-    "label": "Family Medicine",
-    "count": 38,
-    "color": "#E6E6FA"
-  },
-  {
-    "icon": "/microscope.svg",
-    "label": "Pathology",
-    "count": 17,
-    "color": "#F3E6FF"
-  },
-  {
-    "icon": "/bone.svg",
-    "label": "Rheumatology",
-    "count": 13,
-    "color": "#F6E1B3"
-  },
-  {
-    "icon": "/baby.svg",
-    "label": "Neonatology",
-    "count": 9,
-    "color": "#E0F7FA"
+    "color": "#92BDF6"
   }
 ] 
