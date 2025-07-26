@@ -20,11 +20,11 @@ const HeroSection = () => {
        <FeatureCards /> 
        <TrustedBy />
       <AboutSection />
-      {/* <Stats />
+      <Stats />
       <TopSpecialties />
       <BeyondBookingsPayments />
       <WorkingProcess />
-      <FeaturedHospitals />
+      {/* <FeaturedHospitals />
       <FAQSection />
       <AarogyaTeam />
       <Testimonials />  */}

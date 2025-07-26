@@ -39,13 +39,13 @@ const TopSpecialties = () => {
   };
 
   return (
-    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18  w-screen bg-[#F5F7FA]">
+    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18  w-screen py-32 bg-[#F5F7FA]">
       <WelcomeBanner
         text="CATEGORIES"
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold mt-40 mb-5"
+        className="text-xl font-semibold "
       />
       <div className="flex w-full justify-between items-center mb-4">
         <h3 className="text-3xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">

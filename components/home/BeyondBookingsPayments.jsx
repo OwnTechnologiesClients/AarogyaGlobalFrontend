@@ -19,7 +19,7 @@ const features = [
 const BeyondBookingsPayments = () => {
   return (
     <section className="w-screen bg-[#F5F7FA] overflow-hidden">
-      <div className="w-full flex flex-col lg:flex-row justify-between gap-0 px-2 md:px-12 lg:px-24 py-12 lg:py-24">
+      <div className="w-full flex flex-col lg:flex-row justify-between 2xl:gap-0 gap-2 px-6 xl:px-12 2xl:px-24 xl:py-12 2xl:py-24">
         {/* Left Side */}
         <div className="flex flex-col justify-start w-full lg:w-1/2 max-w-2xl mx-auto lg:mx-0 space-y-6">
           {/* Top Banner */}
@@ -96,7 +96,7 @@ const BeyondBookingsPayments = () => {
             className="object-cover object-center rounded-3xl"
           />
           {/* Overlay Image */}
-          <div className="absolute left-4 bottom-4 md:-left-[60px] md:bottom-24 bg-white rounded-2xl overflow-hidden shadow-lg border-4 border-white w-[220px] h-[140px] md:w-[300px] md:h-[200px]">
+          <div className="absolute left-4 hidden lg:block bottom-4 md:-left-[60px] md:bottom-24 bg-white rounded-2xl overflow-hidden shadow-lg border-4 border-white w-[220px] h-[140px] md:w-[300px] md:h-[200px]">
             <Image
               src="/beyondbooking/img2.png"
               alt="Nurse with Patient"
