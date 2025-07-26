@@ -22,12 +22,12 @@ const AboutSection = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-lg md:text-xl"
+        className="text-lg"
       />
-      <h2 className="text-2xl md:text-5xl max-w-3xl font-bold text-[#000D44] leading-tight">
+      <h2 className="text-2xl md:text-4xl max-w-3xl font-bold text-[#000D44] leading-tight">
         {aboutData.sectionTitle}
       </h2>
-      <p className="text-[#555555] text-base md:text-lg max-w-2xl">
+      <p className="text-[#555555] text-base md:text-sm max-w-2xl">
         {aboutData.sectionSubtitle}
       </p>
 
@@ -45,10 +45,10 @@ const AboutSection = () => {
               />
             </div>
             <div>
-              <div className="font-bold text-2xl text-[#000D44]">
+              <div className="font-bold text-xl text-[#000D44]">
                 {feature.title}
               </div>
-              <div className="text-[#555555] mt-2 text-lg max-w-2xl">
+              <div className="text-[#555555] mt-2 text-sm max-w-2xl">
                 {feature.description}
               </div>
             </div>
@@ -64,6 +64,7 @@ const AboutSection = () => {
             bgColor="bg-[#1F5FFF]"
             textColor="text-white"
             hoverBgColor="bg-green-600"
+            textSize="text-sm xl:text-base 2xl:text-lg"
           />
         </Link>
         <div className="flex items-center gap-2 bg-[#F5F7FA] p-5 rounded-full">
@@ -75,7 +76,7 @@ const AboutSection = () => {
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <div className="text-[#555555] text-lg">
+          <div className="text-[#555555] 2xl:text-lg  text-sm">
             {aboutData.emergency.label}
           </div>
           <div className="font-bold text-[#000D44] text-base">

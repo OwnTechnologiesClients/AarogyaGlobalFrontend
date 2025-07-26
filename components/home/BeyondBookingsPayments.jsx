@@ -30,7 +30,7 @@ const BeyondBookingsPayments = () => {
           />
 
           {/* Main Heading */}
-          <h3 className="text-3xl md:text-5xl font-extrabold  text-[#1A0142] leading-tight">
+          <h3 className="text-3xl md:text-4xl font-extrabold  text-[#1A0142] leading-tight">
             We go beyond bookings and 
             payments
           </h3>
