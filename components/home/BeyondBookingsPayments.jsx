@@ -19,26 +19,26 @@ const features = [
 const BeyondBookingsPayments = () => {
   return (
     <section className="w-screen bg-[#F5F7FA] overflow-hidden">
-      <div className="w-full flex flex-col lg:flex-row justify-between 2xl:gap-0 gap-2 px-6 xl:px-12 2xl:px-24 xl:py-12 2xl:py-24">
+      <div className="w-full flex flex-col lg:flex-row justify-between 2xl:gap-0 gap-14 px-6 xl:px-12 2xl:px-24 xl:py-12 2xl:py-24">
         {/* Left Side */}
         <div className="flex flex-col justify-start w-full lg:w-1/2 max-w-2xl mx-auto lg:mx-0 space-y-6">
           {/* Top Banner */}
           <WelcomeBanner
             text="WHY CHOOSE AAROGYA GLOBAL"
             alignment="left"
-            className="text-xl font-semibold mb-3"
+            className="text-lg mb-3"
           />
 
           {/* Main Heading */}
-          <h3 className="text-3xl md:text-4xl font-extrabold  text-[#1A0142] leading-tight">
-            We go beyond bookings and 
-            payments
+          <h3 className="text-2xl md:text-4xl font-extrabold  text-[#1A0142] leading-tight">
+            We go beyond bookings and payments
           </h3>
 
           {/* Subtext */}
-          <p className="text-[#555555] text-base md:text-xl max-w-2xl">
-            We are the only doctor led medical travel facilitator helping you
-            navigate complex healthcare decisions.
+          <p className="text-[#555555] text-base md:text-sm max-w-lg leading-6">
+            With a focus on compassionate and personalized treatment we strive
+            to create a welcoming environment where patients feel valued
+            respected and well informed about their health
           </p>
 
           {/* Feature Cards */}
@@ -51,7 +51,7 @@ const BeyondBookingsPayments = () => {
                 <span className="flex items-center justify-center w-10 h-10 rounded-full">
                   <BadgeCheck className="w-10 h-10 fill-[#1F5FFF] text-white" />
                 </span>
-                <span className="font-bold text-base md:text-2xl text-[#000D44]">
+                <span className="font-medium text-base md:text-lg text-[#000D44]">
                   {feature.title}
                 </span>
               </div>
@@ -62,22 +62,22 @@ const BeyondBookingsPayments = () => {
           <div className="flex flex-col sm:flex-row gap-8 pt-8">
             <CustomButton
               text="Read More"
-              textSize="text-sm md:text-base lg:text-lg"
-              iconSize={38}
-              padding="px-6 py-3 md:px-8 md:py-4"
+              textSize="text-sm md:text-base "
+              iconSize={20}
+              padding="px-6 py-3 "
               bgColor="bg-[#1F5FFF]"
             />
             <div className="flex items-center gap-4 sm:gap-6">
-              <span className="bg-white p-5 rounded-full">
-                <Mail className="w-6 h-6 md:w-8 md:h-8 text-[#1F5FFF]" />
+              <span className="bg-white p-4 rounded-full">
+                <Mail className="w-5 h-5 md:w-8 md:h-8 text-[#1F5FFF]" />
               </span>
               <div className="flex flex-col">
-                <span className="text-gray-700 text-sm md:text-lg font-medium leading-tight">
+                <span className="text-gray-700 text-sm  font-medium leading-tight">
                   Support Email
                 </span>
                 <a
                   href="mailto:aarogyaglobalforyou@gmail.com"
-                  className="text-blue-950 mt-1 font-semibold text-sm md:text-base hover:text-blue-800 transition"
+                  className="text-blue-950 mt-1 font-semibold text-base hover:text-blue-800 transition"
                 >
                   aarogyaglobalforyou@gmail.com
                 </a>
@@ -96,7 +96,7 @@ const BeyondBookingsPayments = () => {
             className="object-cover object-center rounded-3xl"
           />
           {/* Overlay Image */}
-          <div className="absolute left-4 hidden lg:block bottom-4 md:-left-[60px] md:bottom-24 bg-white rounded-2xl overflow-hidden shadow-lg border-4 border-white w-[220px] h-[140px] md:w-[300px] md:h-[200px]">
+          <div className="absolute  hidden lg:block bottom-4 left-[-30px] md:bottom-24 bg-white rounded-2xl overflow-hidden shadow-lg border-4 border-white w-[220px] h-[140px] md:w-[300px] md:h-[200px]">
             <Image
               src="/beyondbooking/img2.png"
               alt="Nurse with Patient"

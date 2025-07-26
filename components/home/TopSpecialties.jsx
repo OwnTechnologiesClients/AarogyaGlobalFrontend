@@ -45,10 +45,10 @@ const TopSpecialties = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold "
+        className="text-lg "
       />
       <div className="flex w-full justify-between items-center mb-4">
-        <h3 className="text-3xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
+        <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
           Top Searched Specialities
         </h3>
         <div className="flex gap-4">
@@ -111,10 +111,10 @@ const TopSpecialties = () => {
                       />
                     )}
                   </div>
-                  <span className="font-extrabold text-xl md:text-2xl text-[#1A0142]">
+                  <span className="font-extrabold text-xl text-[#1A0142]">
                     {spec.label}
                   </span>
-                  <span className="text-[#6B6B6B] text-base md:text-lg mt-2">
+                  <span className="text-[#6B6B6B] text-base mt-2">
                     {spec.count} Listing{spec.count > 1 ? "s" : ""}
                   </span>
                 </div>
