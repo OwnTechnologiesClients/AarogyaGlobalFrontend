@@ -8,7 +8,7 @@ import DoctorVideoSection from "./DoctorVideoSection";
 
 const AboutSection = () => {
   return (
-    <section className="w-screen py-10 flex flex-col md:flex-row items-center gap-8 bg-white">
+    <section className="w-screen py-10 flex flex-col md:flex-row items-center gap-8 bg-white ">
       <div className="w-full px-4 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-8">
         {/* Left: Doctor video*/}
         <div className="flex-1 flex flex-col gap-6 items-center md:items-start">

@@ -27,7 +27,8 @@ const Navbar = () => {
   };
 
   // Desktop navigation
-  const DesktopNavLinks = () => (
+const DesktopNavLinks = () => (
+  <div className="hidden md:block">
     <ul className="flex gap-2 relative">
       {navLinks.map((link) =>
         link.dropdown ? (
@@ -70,7 +71,9 @@ const Navbar = () => {
         )
       )}
     </ul>
-  );
+  </div>
+);
+
 
   // Mobile navigation
   const MobileNavLinks = () => (
@@ -135,13 +138,13 @@ const Navbar = () => {
             alt="Aarogya Global Logo"
             width={160}
             height={70}
-            className="h-[50px] w-auto"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain"
             priority
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-2 ml-6">
+        <nav className="hidden md:flex items-center gap-4 md:gap-6 lg:gap-8 ml-4 md:ml-6 lg:ml-8">
           <DesktopNavLinks />
         </nav>
 

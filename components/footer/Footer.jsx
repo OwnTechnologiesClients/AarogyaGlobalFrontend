@@ -16,7 +16,7 @@ const iconMap = {
 const Footer = () => {
   return (
     <footer className="w-full bg-[#000D44] rounded-3xl text-white px-16 py-10 md:py-40 md:mt-20 mt-8 relative">
-      <div className=" flex justify-between flex-col md:flex-row  gap-6">
+      <div className=" flex justify-between flex-col md:flex-row gap-6 flex-wrap ">
         {/* Logo & Description */}
         <div className="flex flex-col gap-6">
           <Image

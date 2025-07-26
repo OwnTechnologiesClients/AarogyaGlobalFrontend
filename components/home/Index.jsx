@@ -17,17 +17,17 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <HeroBannerVideo />
-      <FeatureCards />
-      <TrustedBy />
+       <FeatureCards /> 
+       <TrustedBy />
       <AboutSection />
-      <Stats />
+      {/* <Stats />
       <TopSpecialties />
       <BeyondBookingsPayments />
       <WorkingProcess />
       <FeaturedHospitals />
       <FAQSection />
       <AarogyaTeam />
-      <Testimonials />
+      <Testimonials />  */}
       <AppointmentRequest />
     </div>
   );

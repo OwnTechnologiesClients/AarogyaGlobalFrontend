@@ -22,13 +22,13 @@ const DoctorVideoSection = () => {
       {/* Thumbnail Block */}
       <div
         onClick={openModal}
-        className="relative md:w-[700px] md:h-[600px] h-[300px] w-[300px]  rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+        className="relative w-full max-w-[700px] aspect-[4/3] rounded-2xl overflow-hidden shadow-lg cursor-pointer"
       >
         <Image
           src="https://img.youtube.com/vi/prb1NXQhUMI/hqdefault.jpg"
           alt="YouTube Video Thumbnail"
           fill
-          className=" md:w-[700px] md:h-[600px] h-[300px] w-[300px] object-cover rounded-2xl"
+          className="object-cover rounded-2xl"
         />
 
         <div className="absolute bottom-0 left-0 bg-[#3274eb] px-4 py-2 rounded-tr-2xl">
@@ -49,31 +49,30 @@ const DoctorVideoSection = () => {
       </div>
 
       {/* Modal */}
-    <Modal
-  isOpen={isOpen}
-  onRequestClose={closeModal}
-  contentLabel="Doctor Video"
-  overlayClassName="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 flex items-center justify-center px-4"
-  className="relative w-full max-w-4xl aspect-video z-50"
->
-  <div className="relative w-full h-full">
-    <iframe
-      src={youtubeEmbed}
-      title="Doctor Video"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="w-full h-full rounded-xl shadow-2xl"
-    ></iframe>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal}
+        contentLabel="Doctor Video"
+        overlayClassName="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 flex items-center justify-center px-4"
+        className="relative w-full max-w-4xl aspect-video z-50"
+      >
+        <div className="relative w-full h-full">
+          <iframe
+            src={youtubeEmbed}
+            title="Doctor Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full rounded-xl shadow-2xl"
+          ></iframe>
 
-    <button
-      onClick={closeModal}
-      className="absolute -top-10 right-0 text-white text-3xl sm:text-4xl font-bold hover:text-red-400 transition"
-    >
-      &times;
-    </button>
-  </div>
-</Modal>
-
+          <button
+            onClick={closeModal}
+            className="absolute -top-10 right-0 text-white text-3xl sm:text-4xl font-bold hover:text-red-400 transition"
+          >
+            &times;
+          </button>
+        </div>
+      </Modal>
     </>
   );
 };

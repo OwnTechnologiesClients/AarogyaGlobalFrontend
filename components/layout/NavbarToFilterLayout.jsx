@@ -7,17 +7,19 @@ const NavbarToFilterLayout = () => {
   return (
     <>
       <div
-        className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[500px] md:min-h-[690px] relative"
+        className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[40vh] sm:min-h-[50vh] md:min-h-[65vh] lg:min-h-[80vh] xl:min-h-[90vh] 2xl:min-h-[100vh] relative transition-all duration-300 overflow-hidden"
         style={{ backgroundImage: "url(/backgroundImg.png)" }}
       >
         {/* Content */}
-        <div className="relative z-30">
+        <div className="relative z-30 py-2 md:py-4">
           <Navbar />
-          <HeroInfo />
+          <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+            <HeroInfo />
+          </div>
         </div>
       </div>
       {/* FilterBar positioned between sections */}
-      <div className="relative -mt-20 md:-mt-16 -mb-12 md:-mb-8 z-10">
+      <div className="relative -mt-12 sm:-mt-16 md:-mt-20 lg:-mt-24 xl:-mt-28 -mb-8 sm:-mb-10 md:-mb-12 lg:-mb-16 xl:-mb-20 z-10 transition-all duration-300 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
         <FilterBar />
       </div>
     </>
