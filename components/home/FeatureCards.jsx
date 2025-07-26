@@ -12,8 +12,7 @@ const FeatureCards = () => {
       {cards.map((card) => (
         <div
           key={card.id}
-          className={`flex flex-col xl:flex-row items-start rounded-2xl ${card.backgroundColor} flex-1  p-4 sm:p-5 md:p-6 lg:p-8 xl:p-12`}
-          style={{ minHeight: "200px" }}
+          className={`flex flex-col xl:flex-row items-start rounded-2xl ${card.backgroundColor} flex-1  p-4 sm:p-5 md:p-3 xl:p-4 2xl:p-12`}
         >
           {/* Icon */}
           <div className="flex-shrink-0 mr-4 sm:mr-5 md:mr-6 lg:mr-8">
@@ -26,7 +25,7 @@ const FeatureCards = () => {
                 alt={`${card.title} icon`}
                 width={64}
                 height={64}
-                className="object-contain w-5 h-5 sm:w-5 sm:h-5 md:w-7 md:h-7 lg:w-7 lg:h-7 xl:w-14 xl:h-14"
+                className="object-contain w-5 h-5 sm:w-5 sm:h-5 md:w-7 md:h-7 xl:w-10 xl:h-10 2xl:w-14 2xl:h-14"
               />
             </div>
           </div>
