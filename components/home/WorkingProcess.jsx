@@ -9,9 +9,9 @@ const WorkingProcess = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold mt-20 mb-5"
+        className="text-lg mt-20 mb-5"
       />
-       <h3 className=" text-center text-3xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
+       <h3 className=" text-center text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
         How it Works
       </h3>
       <div className="flex flex-col items-center text-center px-4 py-10 mt-8">
@@ -21,7 +21,7 @@ const WorkingProcess = () => {
               key={step.id}
               className="flex flex-col items-center text-gray-800 relative group"
             >
-              <div className="relative w-56 h-56 rounded-full overflow-hidden border-2 border-[#1F5FFF] transition-transform duration-300 hover:scale-105">
+              <div className="relative w-43 h-43 rounded-full overflow-hidden border-2 border-[#1F5FFF] transition-transform duration-300 hover:scale-105">
                 <img
                   src={step.image}
                   alt={step.title}
@@ -34,21 +34,21 @@ const WorkingProcess = () => {
                 </div>
               </div>
 
-              <h3 className="text-3xl font-semibold text-[#1A0142] mt-8">
+              <h3 className="text-xl font-semibold text-[#1A0142] mt-8">
                 {step.title}
               </h3>
-              <p className="text-xl  text-[#555555] mt-4 max-w-4xl leading-relaxed ">
+              <p className="text-base  text-[#555555] mt-4 max-w-4xl leading-relaxed ">
                 {step.description}
               </p>
 
               {index < workprocess.length - 1 && (
-                <div className="absolute right-[-60px] top-24 hidden xl:block">
+                <div className="absolute right-[-60px] top-15 hidden xl:block">
                   <img
                     src={`/workprocess/${
                       index % 2 === 0 ? "arrow2.png" : "arrow1.png"
                     }`}
                     alt="Arrow"
-                    className="w-24"
+                    className="w-23"
                   />
                 </div>
               )}

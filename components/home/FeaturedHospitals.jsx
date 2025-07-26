@@ -44,10 +44,10 @@ const FeaturedHospitals = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold mt-20 mb-5"
+        className="text-lg mt-20 mb-5"
       />
       <div className="flex w-full justify-between items-center md:mb-28 mb-8">
-        <h3 className="text-xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
+        <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
           Aarogya Global Featured Hospitals
         </h3>
 
@@ -82,7 +82,7 @@ const FeaturedHospitals = () => {
         >
           {hospitals.map((hospital, idx) => (
             <SwiperSlide key={idx}>
-              <div className="flex flex-col rounded-2xl border-2 border-[#000D4440] shadow-sm bg-white overflow-hidden h-full min-h-[584px]">
+              <div className="flex flex-col rounded-2xl border-2 border-[#000D4440] shadow-sm bg-white overflow-hidden h-full min-h-[580px]">
                 {/* Image Section with Padding */}
                 <div className="relative w-full px-5 pt-5 mb-6">
                   <div className="relative w-full h-[370px] rounded-2xl overflow-hidden">
@@ -102,25 +102,25 @@ const FeaturedHospitals = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col flex-1 px-8 pt-6 pb-10">
+                <div className="flex flex-col flex-1 px-5 pt-6 pb-10">
                   {/* Ratings */}
                   <div className="flex items-center gap-2 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        size={28}
+                        size={25}
                         fill="#FFC700"
                         color="#FFC700"
                         strokeWidth={0}
                       />
                     ))}
-                    <span className="ml-2 text-xl text-[#555555]">
+                    <span className="ml-2 text-lg text-[#555555]">
                       {hospital.ratingCount} Rating
                     </span>
                   </div>
 
                   {/* Hospital Name */}
-                  <h3 className="text-3xl font-extrabold text-[#1A0142] mb-6">
+                  <h3 className="text-xl font-bold text-[#1A0142] mb-6">
                     {hospital.name}
                   </h3>
 

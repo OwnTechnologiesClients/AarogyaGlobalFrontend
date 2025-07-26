@@ -26,9 +26,9 @@ const AppointmentRequest = () => {
             textColor="#1F5FFF"
             dotColor="#1F5FFF"
             alignment="left"
-            className=" text-xl "
+            className=" text-lg "
           />
-          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-950">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-blue-950">
             Request Your Appointment
           </h2>
           <p className="text-blue-950 text-lg leading-relaxed">
@@ -37,7 +37,7 @@ const AppointmentRequest = () => {
             skilled
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
-            <CustomButton text="  Make An Appointment" />
+            <CustomButton text="  Make An Appointment" className="cursor-pointer" />
             <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline">
               <span className="w-12 h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
                 <PlayIcon className="fill-white"/>

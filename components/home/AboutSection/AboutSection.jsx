@@ -11,7 +11,7 @@ const AboutSection = () => {
 <section className="w-screen py-10 flex flex-col items-center gap-8 bg-white">
   <div className="w-full px-4 md:px-12 lg:px-16 flex flex-col xl:flex-row items-center gap-8">
     {/* Left: Doctor video */}
-    <div className="flex-1 flex flex-col gap-6 items-center xl:items-start  xl:mb-44">
+    <div className="flex-1 flex flex-col gap-6 items-center xl:items-start ">
       <DoctorVideoSection />
     </div>
 

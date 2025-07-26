@@ -24,8 +24,8 @@ const HeroSection = () => {
       <TopSpecialties />
       <BeyondBookingsPayments />
       <WorkingProcess />
-      {/* <FeaturedHospitals />
-      <FAQSection />
+      <FeaturedHospitals />
+      {/* <FAQSection />
       <AarogyaTeam />
       <Testimonials />  */}
       <AppointmentRequest />
