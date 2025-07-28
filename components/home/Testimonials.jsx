@@ -30,10 +30,10 @@ const Testimonials = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold mt-40 mb-5"
+        className="text-lg mt-40 mb-5"
       />
       <div className="flex w-full justify-between items-center md:mb-28 mb-8">
-        <h3 className="text-xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
+        <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
           Our Patients Say About Us
         </h3>
         <div className="flex gap-4">
@@ -56,7 +56,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:px-10">
+      <div className="w-full ">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
@@ -65,22 +65,21 @@ const Testimonials = () => {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx} className="!flex !justify-center">
-              <div className="w-full max-w-[800px] min-h-[260px] md:min-h-[300px] border border-black rounded-3xl px-6 py-6 shadow-md flex flex-col md:flex-row gap-6 bg-white">
+              <div className="w-full  border border-black rounded-3xl px-6 py-6 shadow-md flex flex-col md:flex-row gap-6 bg-white">
 
-                <div className="relative w-full md:w-70 h-66">
+                <div className="relative w-full md:w-60 h-55">
                   <Image
                     src={t.image}
                     alt={t.name}
                     fill
                     className="rounded-xl object-cover"
-                    sizes="(max-width: 768px) 100vw, 240px"
                   />
                 </div>
                 <div className="flex flex-col justify-between flex-1 relative">
                   <div>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                       <div>
-                        <h3 className="text-2xl font-semibold text-[#000D44] mb-3">
+                        <h3 className="text-lg font-bold text-[#000D44] mb-3">
                           {t.name}
                         </h3>
                         <p className="text-[#555555] text-xl">{t.role}</p>
@@ -89,8 +88,8 @@ const Testimonials = () => {
                         {[...Array(t.rating)].map((_, i) => (
                           <svg
                             key={i}
-                            width="30"
-                            height="30"
+                            width="20"
+                            height="20"
                             viewBox="0 0 16 15"
                             fill="none"
                           >
@@ -102,7 +101,7 @@ const Testimonials = () => {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[#555555] text-lg leading-relaxed ">
+                    <p className="text-[#555555] text-sm font-normal leading-relaxed ">
                       {t.testimonial}
                     </p>
                   </div>

@@ -129,16 +129,16 @@ const DesktopNavLinks = () => (
   );
 
   return (
-    <header className="px-4 md:px-16 py-4 md:py-6 w-full  relative">
+    <header className="px-4 py-4 w-full relative">
       <div className="flex items-center mx-auto w-full">
         {/* Logo */}
-        <Link href="/" className="relative flex-shrink-0">
+        <Link href="/" className="relative flex-shrink-0 ">
           <Image
             src="/Logo.png"
             alt="Aarogya Global Logo"
             width={160}
             height={70}
-            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain"
+            className="h-12 w-auto object-contain md:mb-6"
             priority
           />
         </Link>

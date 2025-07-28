@@ -84,8 +84,8 @@ const FeaturedHospitals = () => {
             <SwiperSlide key={idx}>
               <div className="flex flex-col rounded-2xl border-2 border-[#000D4440] shadow-sm bg-white overflow-hidden h-full min-h-[580px]">
                 {/* Image Section with Padding */}
-                <div className="relative w-full px-5 pt-5 mb-6">
-                  <div className="relative w-full h-[370px] rounded-2xl overflow-hidden">
+                <div className="relative w-full px-5 pt-5 mb-3">
+                  <div className="relative w-full h-[290px] rounded-2xl overflow-hidden">
                     <Image
                       src={hospital.image}
                       alt={hospital.name}
@@ -93,7 +93,7 @@ const FeaturedHospitals = () => {
                       className="object-cover rounded-2xl"
                     />
                     <span
-                      className="absolute bottom-4 left-4 px-5 py-2 rounded-md text-white text-lg font-semibold"
+                      className="absolute bottom-4 left-4 px-5 py-2 rounded-md text-white text-sm font-semibold"
                       style={{ background: hospital.typeColor }}
                     >
                       {hospital.type}
@@ -104,7 +104,7 @@ const FeaturedHospitals = () => {
                 {/* Content */}
                 <div className="flex flex-col flex-1 px-5 pt-6 pb-10">
                   {/* Ratings */}
-                  <div className="flex items-center gap-2 mb-6">
+                  <div className="flex items-center gap-2 mb-3">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}

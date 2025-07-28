@@ -34,10 +34,10 @@ const AarogyaTeam = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-xl font-semibold mt-40 mb-5"
+        className="text-lg mt-40 mb-5"
       />
       <div className="flex w-full justify-between items-center md:mb-28 mb-8">
-        <h3 className="text-xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
+        <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
           Founding Team / Directors
         </h3>
         <div className="flex gap-4">
@@ -71,24 +71,24 @@ const AarogyaTeam = () => {
         >
           {teamData.map((member, idx) => (
             <SwiperSlide key={idx}>
-              <div className="flex flex-col items-center  bg-white rounded-3xl p-6 h-auto md:h-[538px] mx-auto ">
+              <div className="flex flex-col items-center  bg-white rounded-3xl p-4 h-auto md:h-[430px] mx-auto ">
                 {/* Image Container */}
-                <div className="w-full h-[180px] md:h-[300px] rounded-2xl overflow-hidden mb-4 md:mb-6">
+                <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={267}
-                    height={350}
+                    width={260}
+                    height={340}
                     className="object-cover w-full h-full"
                   />
                 </div>
 
                 {/* Text Content */}
                 <div className="flex flex-col items-start w-full mt-2 md:mt-6">
-                  <h3 className="text-base md:text-3xl mb-6 font-bold text-[#1A0142]">
+                  <h3 className="text-base md:text-2xl mb-4 font-bold text-[#1A0142]">
                     {member.name}
                   </h3>
-                  <p className="text-sm md:text-xl text-[#555555]">
+                  <p className="text-sm md:text-base text-[#555555]">
                     {member.role}
                   </p>
                 </div>

@@ -18,10 +18,12 @@ const FAQAccordionTrigger = ({ children, open, ...props }) => (
     type="button"
   >
     <span>{children}</span>
-    <span className={cn(
-      "ml-4 flex items-center justify-center w-6 h-6 rounded-full transition-transform duration-200",
-      open ? "rotate-180 text-[#04CE78]" : "text-[#04CE78]"
-    )}>
+    <span
+      className={cn(
+        "ml-4 flex items-center justify-center w-6 h-6 rounded-full transition-transform duration-200",
+        open ? "rotate-180 text-[#04CE78]" : "text-[#04CE78]"
+      )}
+    >
       {open ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
     </span>
   </button>
@@ -36,7 +38,7 @@ export default function FAQSection() {
       className="relative w-full md:mt-18 mt-8 flex flex-col justify-center items-center px-4 md:px-8 lg:px-10 overflow-hidden"
       style={{
         background: `url('/faqbgImg.png') center bottom no-repeat`,
-        backgroundSize: "auto 40%",
+        backgroundSize: "auto 25%",
       }}
     >
       <div className="w-full flex flex-col md:flex-row gap-12 z-10 items-start">
@@ -45,28 +47,31 @@ export default function FAQSection() {
           <WelcomeBanner
             text="FREQUENTLY ASKED QUESTIONS"
             alignment="left"
-            className="text-xl font-semibold mb-3"
+            className="text-lg mb-3"
           />
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1A0142] leading-tight">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
             Got questions? <br />
             We’ve got answers
           </h2>
-          <p className="text-[#555555] text-lg max-w-2xl">
-            Explore our FAQs to find clear, helpful information about
-            treatments, travel support, costs, visas, and more. We’re here to
-            make your medical journey smooth and stress-free.
+          <p className="text-[#555555] text-base md:text-sm max-w-lg font-light leading-6">
+            Our medical center is dedicated to providing comprehensive patient
+            centered healthcare with a commitment to excellence we offer a broad
+            range of medical services from strive to create a welcoming
+            environment where patients feel valued
           </p>
           <div className="flex items-center gap-6 mt-4">
             <CustomButton
               text="Contact Us Now"
-              padding="px-6 py-3 md:px-8 md:py-6"
+              padding="px-6 py-4 "
+              textSize = "text-sm md:text-base "
+
             />
             <span className="inline-flex items-center justify-center w-14 h-14 bg-[#F5F7FA] rounded-full">
               <MapPin className="w-5 h-5 text-[#1F5FFF]" />
             </span>
             <div className="flex flex-col gap-2">
-              <span className="text-[#555555] text-lg">Visit us on</span>
-              <span className="font-bold text-[#181059] text-base">
+              <span className="text-[#555555] text-base">Visit us on</span>
+              <span className="font-semibold text-[#181059] text-base">
                 Gurugram, India
               </span>
             </div>
@@ -84,16 +89,17 @@ export default function FAQSection() {
                 <FAQAccordionTrigger
                   open={isOpen}
                   onClick={() => setOpen(isOpen ? null : `faq-${idx}`)}
-             
                 >
-                  <span className="text-[#181059] font-bold text-lg md:text-xl">
+                  <span className="text-[#181059] font-semibold text-lg md:text-xl">
                     {`${idx + 1}.${faq.question}`}
                   </span>
                 </FAQAccordionTrigger>
                 <div
                   className={cn(
-                    "px-8 max-w-4xl text-[#555555] text-lg  bg-white transition-all duration-200 overflow-hidden",
-                    isOpen ? "max-h-[500px] py-4 opacity-100" : "max-h-0 py-0 opacity-0"
+                    "px-8 max-w-4xl text-[#555555] text-base bg-white transition-all duration-200 overflow-hidden",
+                    isOpen
+                      ? "max-h-[500px] py-1 opacity-100"
+                      : "max-h-0 py-0 opacity-0"
                   )}
                 >
                   {faq.answer}
