@@ -12,14 +12,10 @@ const HeroInfo = () => {
         alignment="center"
         className="mb-5 text-lg "
       />
-      <h1 className="text-3xl md:text-5xl lg:text-6xl  font-extrabold text-white mb-4 leading-tight">
+      <h1 className="text-xl md:text-3xl lg:text-6xl  font-extrabold text-white mb-4 leading-tight">
         {data.title}
-        <br />
-        <span className="block font-bold text-3xl md:text-5xl lg:text-6xl mt-5">
-          {data.titleAbroad}
-        </span>
       </h1>
-      <p className="text-lg md:text-xl font-normal text-white/90 max-w-6xl mx-auto leading-relaxed mt-4">
+      <p className="text-sm md:text-xl font-normal text-white/90 max-w-6xl mx-auto leading-relaxed mt-4">
         {data.subtitle}
       </p>
     </section>

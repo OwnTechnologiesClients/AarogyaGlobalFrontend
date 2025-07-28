@@ -24,7 +24,7 @@
   { "label": "About", "href": "/about" },
   { "label": "Contact", "href": "/contact" },
   {
-    "label": "Partner With Us",
+    "label": "Collaborate",
     "dropdown": [
       { "label": "Option 1", "href": "/partner/option1" },
       { "label": "Option 2", "href": "/partner/option2" }

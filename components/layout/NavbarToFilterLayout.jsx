@@ -19,7 +19,7 @@ const NavbarToFilterLayout = () => {
         </div>
       </div>
       {/* FilterBar positioned between sections */}
-      <div className="relative -mt-12 sm:-mt-16 md:-mt-20 lg:-mt-24 xl:-mt-28 -mb-8 sm:-mb-10 md:-mb-12 lg:-mb-16 xl:-mb-20 z-10 transition-all duration-300 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+      <div className="relative -mt-[130px]     -mb-[140px]      md:-mt-[70px] md:-mb-[120px] lg:-mt-32 lg:-mb-8 z-10 transition-all duration-300 px-16 ">
         <FilterBar />
       </div>
     </>

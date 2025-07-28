@@ -1,3 +1,4 @@
+
 "use client";
 import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
@@ -29,7 +30,7 @@ const DropdownSelect = ({ label, options, value, onChange, placeholder }) => {
     <div ref={dropdownRef} className="relative ">
       <button
         type="button"
-        className="bg-[#F5F7FA] rounded-lg w-full justify-between flex flex-row items-center md:pl-[56px] pl-[12px] md:pr-[24.5px] pr-[24px] md:py-[20px] py-[18px]  md:mr-[50px]   text-lg font-normal focus:outline-none"
+        className="bg-[#F5F7FA] rounded-lg w-full justify-between flex flex-row items-center md:pl-[46px] pl-[6px] md:pr-[20px] pr-[6px] md:py-[10px] py-[10px]  md:mr-[50px] text-sm lg:text-lg font-normal focus:outline-none"
         onClick={() => setOpen((prev) => !prev)}
       >
         <span className={value ? "" : "text-[#555555]"}>
