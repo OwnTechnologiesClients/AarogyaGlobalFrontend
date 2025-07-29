@@ -21,46 +21,63 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#000D44] rounded-3xl text-white px-6 sm:px-10 md:px-20 py-10 md:py-40 md:mt-20 mt-8 relative">
-      
       {!isHomePage && (
-        <div className=" ">
-          <div className="bg-[#E7C2D4] relative z-10 mb-32 rounded-2xl sm:px-6 px:-4 py-8  md:py-16 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-lg text-gray-800">
-            {/* Emergency Line */}
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-[#1F5FFF] p-3 md:p-4 rounded-full text-white">
-                <Phone className="w-5 h-5 md:w-6 md:h-6" />
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#E7C2D4] relative z-10 mb-32 rounded-2xl py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 shadow-lg text-gray-800">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+              {/* Emergency Line */}
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 bg-[#1F5FFF] w-12 h-12 rounded-full flex items-center justify-center text-white">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm md:text-base text-[#000D44]">
+                    Emergency Line
+                  </p>
+                  <p className="text-[#000D44] text-base md:text-lg font-semibold">
+                    +91 9876543212
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className=" text-base md:text-lg font-normal text-[#000D44]">Emergency Line</p>
-                <p className="text-[#000D44] text-sm md:text-xl font-semibold">
-                  +91 9876543212
-                </p>
-              </div>
-            </div>
 
-            {/* Support Email */}
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-[#1F5FFF] p-3 md:p-4 rounded-full text-white">
-                <Mail className="w-5 h-5 md:w-6 md:h-6" />
+              {/* Divider */}
+              <div className="hidden md:flex h-12 items-center px-6">
+                <div className="border-l border-[#000D44]/30 h-20 transform rotate-20" />
               </div>
-              <div>
-                <p className="text-base md:text-lg font-normal text-[#000D44]">Support Email</p>
-                <p className="text-[#000D44] text-sm md:text-xl font-semibold">
-                  support@aarogya.com
-                </p>
-              </div>
-            </div>
 
-            {/* Visit Us */}
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-[#1F5FFF] p-3 md:p-4 rounded-full text-white">
-                <MapPin className="w-5 h-5 md:w-6 md:h-6" />
+              {/* Support Email */}
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 bg-[#1F5FFF] w-12 h-12 rounded-full flex items-center justify-center text-white">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm md:text-base text-[#000D44]">
+                    Support Email
+                  </p>
+                  <p className="text-[#000D44] text-base md:text-lg font-semibold break-all">
+                    aarogyaglobalforyou@gmail.com
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-base md:text-lg font-normal text-[#000D44]">Visit Us On</p>
-                <p className="text-[#000D44] text-sm md:text-xl font-semibold">
-                  Innov8 Orchid Center India, 122001
-                </p>
+
+              {/* Divider */}
+              <div className="hidden md:flex h-12 items-center px-6">
+                <div className="border-l border-[#000D44]/30 h-20 transform rotate-20" />
+              </div>
+
+              {/* Visit Us */}
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 bg-[#1F5FFF] w-12 h-12 rounded-full flex items-center justify-center text-white">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm md:text-base text-[#000D44]">
+                    Visit Us On
+                  </p>
+                  <p className="text-[#000D44] text-base md:text-lg font-semibold">
+                    Innov8 Orchid Center India, 122001
+                  </p>
+                </div>
               </div>
             </div>
           </div>
