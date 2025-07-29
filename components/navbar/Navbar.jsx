@@ -8,13 +8,18 @@ import {
   UserCircle,
   Menu as MenuIcon,
   X as CloseIcon,
-  Plus,
-  Minus,
 } from "lucide-react";
-import navLinks from "@/data/navlinks.json";
-import CustomButton from "../layout/CustomButton";
 
-const Navbar = () => {
+import CustomButton from "../layout/CustomButton";
+import DesktopNavLinks from "../layout/DesktopNavLinks";
+import MobileNavLinks from "../layout/MobileNavLinks";
+
+const Navbar = ({
+  textColor = "text-white",
+  fontFamily = "font-poppins",
+  hideLogoOnDesktop = false,
+  logoSrc = "/Logo.png",
+}) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState({});
   const [isMobileView, setIsMobileView] = useState(false);
@@ -28,143 +33,37 @@ const Navbar = () => {
     handleResize();
 
     // Add event listener
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const toggleDropdown = (label) =>
-    setOpenDropdowns((prev) => ({ ...prev, [label]: !prev[label] }));
 
   const closeMobileMenu = () => {
     setMobileOpen(false);
     setOpenDropdowns({});
   };
 
-  // Desktop navigation
-  const DesktopNavLinks = () => (
-    <div style={{ display: isMobileView ? 'none' : 'block' }}>
-      <ul className="flex relative ml-4">
-        {navLinks.map((link) =>
-          link.dropdown ? (
-            <li key={link.label} className="relative group">
-              <button
-                type="button"
-                className="font-sm text-white hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center"
-              >
-                {link.label}
-                <span className="text-[#04CE78] text-[20px] leading-none">
-                  +
-                </span>
-              </button>
-
-              <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[200px] rounded-md shadow-lg border z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300">
-                <ul className="py-2">
-                  {link.dropdown.map((item) => (
-                    <li key={item.label}>
-                      <Link
-                        href={item.href}
-                        className="block px-4 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100 hover:text-[#04CE78] transition-colors"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ) : (
-            <li key={link.label}>
-              <Link
-                href={link.href}
-                className={`font-sm text-white hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center gap-1 ${
-                  link.highlight ? "text-[#04CE78]" : ""
-                }`}
-              >
-                {link.label}
-                <span className="text-[#04CE78] text-[20px] leading-none">
-                  +
-                </span>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
-    </div>
-  );
-
-  // Mobile navigation
-  const MobileNavLinks = () => (
-    <nav className="space-y-1">
-      {navLinks.map((link) =>
-        link.dropdown ? (
-          <div key={link.label} className="border-b border-gray-100">
-            <button
-              onClick={() => toggleDropdown(link.label)}
-              className="w-full flex items-center justify-between py-4 text-left font-poppins font-semibold text-[14px] leading-[20px] text-gray-900 hover:text-[#04CE78] transition-colors capitalize"
-            >
-              <span className={link.highlight ? "text-[#04CE78]" : ""}>
-                {link.label}
-              </span>
-              {openDropdowns[link.label] ? (
-                <Minus className="w-5 h-5 text-gray-400" />
-              ) : (
-                <Plus className="w-5 h-5 text-gray-400" />
-              )}
-            </button>
-            {openDropdowns[link.label] && (
-              <div className="pb-4 pl-4">
-                {link.dropdown.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="block py-2 font-poppins font-semibold text-[14px] leading-[20px] text-gray-600 hover:text-[#04CE78] transition-colors capitalize"
-                    onClick={closeMobileMenu}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        ) : (
-          <div key={link.label} className="border-b border-gray-100">
-            <Link
-              href={link.href}
-              className={`block py-4 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${
-                link.highlight
-                  ? "text-[#04CE78]"
-                  : "text-gray-900 hover:text-[#04CE78]"
-              }`}
-              onClick={closeMobileMenu}
-            >
-              {link.label}
-            </Link>
-          </div>
-        )
-      )}
-    </nav>
-  );
-
   return (
-    <header className="px-4 py-4 w-full relative">
+    <header className={`px-4 py-4 w-full relative ${fontFamily}`}>
       <div className="flex items-center mx-auto w-full">
-        {/* Logo */}
-        <Link href="/" className="relative flex-shrink-0">
-          <Image
-            src="/Logo.png"
-            alt="Aarogya Global Logo"
-            width={120}
-            height={70}
-            className="h-8 w-auto object-contain"
-            priority
-          />
-        </Link>
+        {/* Logo - Hide above 1168px if hideLogoOnDesktop is true */}
+        {(!hideLogoOnDesktop || isMobileView) && (
+          <Link href="/" className="relative flex-shrink-0">
+            <Image
+              src={logoSrc}
+              alt="Logo"
+              width={120}
+              height={70}
+              className="h-8 w-auto object-contain"
+              priority
+            />
+          </Link>
+        )}
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center">
-          <DesktopNavLinks />
+          <DesktopNavLinks textColor={textColor} />
         </nav>
 
         {/* Desktop Auth & CTA */}
@@ -172,7 +71,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-6 ml-auto">
             <Link
               href="/login"
-              className="flex items-center gap-2 text-white hover:text-[#04CE78] font-semibold transition-colors whitespace-nowrap"
+              className={`flex items-center gap-2 ${textColor} hover:text-[#04CE78] font-semibold transition-colors whitespace-nowrap`}
             >
               <UserCircle className="w-6 h-6" />
             </Link>
@@ -191,7 +90,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         {isMobileView && (
           <button
-            className="text-white ml-auto z-50 p-2"
+            className={`${textColor} ml-auto z-50 p-2`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -211,7 +110,6 @@ const Navbar = () => {
             className="fixed inset-0 bg-black/50 z-40"
             onClick={closeMobileMenu}
           />
-          
           <div className="fixed top-0 left-0 w-full h-screen bg-white z-50 overflow-y-auto">
             {/* Mobile header */}
             <div className="flex justify-between items-center p-6 border-b border-gray-200">

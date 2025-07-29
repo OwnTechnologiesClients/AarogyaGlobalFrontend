@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { FcGoogle } from 'react-icons/fc';
 
 const LoginForm = () => {
+  
   return (
     <div className="flex flex-col md:flex-row gap-8 justify-center items-center min-h-[80vh] w-full">
       {/* Login Form */}

@@ -21,18 +21,18 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#000D44] rounded-3xl text-white px-6 sm:px-10 md:px-20 py-10 md:py-40 md:mt-20 mt-8 relative">
-      {/* 🔥 Only show Top Contact Cards if NOT homepage */}
+      
       {!isHomePage && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-1 md:-mt-20">
-          <div className="bg-[#b7ab9b] rounded-2xl px-6 py-8 md:px-12 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-lg text-gray-800">
+        <div className=" ">
+          <div className="bg-[#E7C2D4] relative z-10 mb-32 rounded-2xl sm:px-6 px:-4 py-8  md:py-16 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-lg text-gray-800">
             {/* Emergency Line */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-indigo-600 p-2 md:p-3 rounded-full text-white">
+              <div className="flex-shrink-0 bg-[#1F5FFF] p-3 md:p-4 rounded-full text-white">
                 <Phone className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="font-bold text-base md:text-lg">Emergency Line</p>
-                <p className="text-gray-600 text-sm md:text-base">
+                <p className=" text-base md:text-lg font-normal text-[#000D44]">Emergency Line</p>
+                <p className="text-[#000D44] text-sm md:text-xl font-semibold">
                   +91 9876543212
                 </p>
               </div>
@@ -40,12 +40,12 @@ const Footer = () => {
 
             {/* Support Email */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-indigo-600 p-2 md:p-3 rounded-full text-white">
+              <div className="flex-shrink-0 bg-[#1F5FFF] p-3 md:p-4 rounded-full text-white">
                 <Mail className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="font-bold text-base md:text-lg">Support Email</p>
-                <p className="text-gray-600 text-sm md:text-base">
+                <p className="text-base md:text-lg font-normal text-[#000D44]">Support Email</p>
+                <p className="text-[#000D44] text-sm md:text-xl font-semibold">
                   support@aarogya.com
                 </p>
               </div>
@@ -53,12 +53,12 @@ const Footer = () => {
 
             {/* Visit Us */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-indigo-600 p-2 md:p-3 rounded-full text-white">
+              <div className="flex-shrink-0 bg-[#1F5FFF] p-3 md:p-4 rounded-full text-white">
                 <MapPin className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="font-bold text-base md:text-lg">Visit Us On</p>
-                <p className="text-gray-600 text-sm md:text-base">
+                <p className="text-base md:text-lg font-normal text-[#000D44]">Visit Us On</p>
+                <p className="text-[#000D44] text-sm md:text-xl font-semibold">
                   Innov8 Orchid Center India, 122001
                 </p>
               </div>
