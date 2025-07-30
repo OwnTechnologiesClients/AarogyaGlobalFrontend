@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Home",
+    "routes": [{ "label": "Home" }]
+  },
+  "hospitalSearch": {
+    "title": "Hospital Search",
+    "routes": [{ "label": "Home", "href": "/" }, { "label": "Hospital Search" }]
+  },
+  "orthopaedicsTreatment": {
+    "title": "Orthopaedics Treatment",
+    "routes": [{ "label": "Home", "href": "/" }, { "label": "Treatment Search" }]
+  },
+  "partnerWithUs": {
+    "title": "Partner With Us",
+    "routes": [{ "label": "Home", "href": "/" }, { "label": "Partner With Us" }]
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "routes": [{ "label": "Home", "href": "/" }, { "label": "contact" }]
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "routes": [{ "label": "Home", "href": "/" }, { "label": "About" }]
+  },
+  "doctorDetails": {
+    "title": "Doctor Details",
+    "routes": [
+      { "label": "Home", "href": "/" },
+      { "label": "Doctor", "href": "/doctor" },
+      { "label": "Doctor Details" }
+    ]
+  },
+  "notification": {
+    "title": "Notification",
+    "routes": [{ "label": "Home", "href": "/" }, { "label": "Notification" }]
+  }
+}
