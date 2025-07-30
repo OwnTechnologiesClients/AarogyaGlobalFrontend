@@ -28,7 +28,7 @@ const AarogyaTeam = () => {
   };
 
   return (
-    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 mt-40  w-screen bg-[#F5F7FA]">
+    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 mt-40  w-screen overflow-hidden bg-[#F5F7FA]">
       <WelcomeBanner
         text="AAROGYA TEAM"
         textColor="#04CE78"

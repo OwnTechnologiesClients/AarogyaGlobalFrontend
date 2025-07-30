@@ -9,6 +9,7 @@ const Contact = () => {
 
   return (
     <>
+    
       <PageHeader title={title} routes={routes} />
       <ContactCard />
       <GetInTouch />
