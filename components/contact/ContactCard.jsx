@@ -25,7 +25,7 @@ const ContactCard = () => {
               Call us Mon. – Fri., 8 am – 5 pm and our representatives will help
               you make an appointment that’s convenient for you.
             </div>
-            <button className="bg-[#1E40FF] text-white text-sm sm:text-base font-semibold font-poppins w-full py-3 rounded-md flex  items-center justify-center gap-2">
+            <button className="bg-[#1E40FF] cursor-pointer text-white text-sm sm:text-base font-semibold font-poppins w-full py-3 rounded-md flex  items-center justify-center gap-2">
               Call Support: +91 9876565678
               <Image
                 src="/contact/phone-large.svg"
@@ -56,7 +56,7 @@ const ContactCard = () => {
               leaving your home. It’s the easiest way
               to get the care you need to stay healthy.
             </div>
-            <button className="bg-[#0ACF83] text-white text-sm sm:text-base font-semibold font-poppins px-6 sm:px-8 py-3 rounded-md flex items-center justify-center gap-2">
+            <button className="bg-[#0ACF83] cursor-pointer text-white text-sm sm:text-base font-semibold font-poppins px-6 sm:px-8 py-3 rounded-md flex items-center justify-center gap-2">
               Read More Virtual Visits
               <ArrowRight size={18} className="text-white" />
             </button>
@@ -81,7 +81,7 @@ const ContactCard = () => {
               the nearest facility help to
              directly examine your health.
             </div>
-            <button className="bg-[#1E40FF] text-white text-sm sm:text-base font-semibold font-poppins w-full py-3 rounded-md flex items-center justify-center gap-2">
+            <button className="bg-[#1E40FF]  cursor-pointer text-white text-sm sm:text-base font-semibold font-poppins w-full py-3 rounded-md flex items-center justify-center gap-2">
               Book An Appointment
               <ArrowRight size={18} className="text-white" />
             </button>

@@ -33,160 +33,130 @@ const GetInTouch = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-lg "
+        className="text-lg mb-7 "
       />
-      <h3 className=" text-center text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
+      <h3 className=" text-center text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight mb-7">
         Don't Hesitate To Contact Us
       </h3>
-      
-      <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-8">
 
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-0 ml-10 sm:ml-11">
-            {/* Contact Form */}
-            <div className="w-full lg:w-3/5 px-2">
-              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-                {/* Name and Email Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <EditText
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                  />
-                  <EditText
-                    placeholder="Email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                  />
-                </div>
-
-                {/* Phone and Subject Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <EditText
-                    placeholder="Phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                  />
-                  <EditText
-                    placeholder="Subject"
-                    value={formData.subject}
-                    onChange={(e) =>
-                      handleInputChange("subject", e.target.value)
-                    }
-                  />
-                </div>
-
-                {/* Message */}
-                <TextArea
-                  placeholder="Write A Message"
-                  rows={8}
-                  value={formData.message}
-                  onChange={(e) => handleInputChange("message", e.target.value)}
+      <div className="w-full px-4 sm:px-6 lg:px-8 mt-6">
+        <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
+          {/* Contact Form (with shadow + white background) */}
+          <div className="w-full lg:w-1/2 bg-white rounded-xl border border-black-100 shadow-md p-6 sm:p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Name + Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <EditText
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                  className="bg-[#f6f9fc]"
                 />
+                <EditText
+                  placeholder="Email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
+                  className="bg-[#f6f9fc]"
+                />
+              </div>
 
-                {/* Agreement Checkbox */}
-                <div className="flex items-center gap-3.5">
-                  <div
-                    className={`w-5 h-5 border border-primary-1/20 rounded cursor-pointer ${
-                      agreed
-                        ? "bg-primary-accent border-primary-accent"
-                        : "bg-transparent"
-                    }`}
-                    onClick={() => setAgreed(!agreed)}
-                  ></div>
-                  <div className="text-primary-1 text-base font-inter">
-                    <span>I agree to the </span>
-                    <a href="#" className="text-primary-blue">
-                      Privacy Policy
-                    </a>
-                    <span> and </span>
-                    <a href="#" className="text-primary-blue">
-                      Terms & Conditions
-                    </a>
-                  </div>
-                </div>
+              {/* Phone + Subject */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <EditText
+                  placeholder="Phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  className="bg-[#f6f9fc]"
+                />
+                <EditText
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={(e) => handleInputChange("subject", e.target.value)}
+                  className="bg-[#f6f9fc]"
+                />
+              </div>
 
-                {/* Submit Button */}
+              {/* Message */}
+              <TextArea
+                placeholder="Write A Message"
+                rows={8}
+                value={formData.message}
+                onChange={(e) => handleInputChange("message", e.target.value)}
+                className="bg-[#f6f9fc]"
+              />
 
-                <button
-                  type="submit"
-                  className="flex items-center gap-2 bg-primary-accent text-white  bg-[#04CE78] text-sm font-semibold font-poppins px-4 py-2 rounded"
-                >
-                  Send Message
-                  <Send size={18} />
-                </button>
-              </form>
-            </div>
+              {/* Checkbox */}
+              <div className="flex items-start gap-3 text-sm text-gray-600">
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={() => setAgreed(!agreed)}
+                  className="w-4 h-4 mt-1 accent-green-500"
+                />
+                <span>
+                  I agree to the{" "}
+                  <a href="#" className="text-blue-600 underline">
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a href="#" className="text-blue-600 underline">
+                    Terms & Conditions
+                  </a>
+                </span>
+              </div>
 
-            {/* Map Section */}
-            <div className="w-full lg:w-2/5 lg:ml-2.5">
-              <div
-                className="relative bg-gray-1 rounded-2xl overflow-hidden"
-                style={{ height: "576px" }}
+              {/* Submit */}
+              <button
+                type="submit"
+                className="flex items-center gap-2 bg-[#04CE78] hover:bg-[#03b76b] text-white text-sm font-semibold px-6 py-3 rounded-md font-poppins transition"
               >
-                {/* Map iframe */}
-                <iframe
-                  title="Location Map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=77.0266%2C28.4089%2C77.0866%2C28.4689&layer=mapnik&marker=28.4389%2C77.0566"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                />
+                Send Message <Send size={18} />
+              </button>
+            </form>
+          </div>
 
-                {/* Map overlay info */}
-                <div className="absolute top-2.5 left-2.5 right-1">
-                  <div className="bg-secondary-1 rounded-sm p-2 shadow-lg max-w-xs">
-                    <div className="flex justify-between items-start mb-1">
-                      <span className="text-primary-1 text-sm font-medium font-roboto">
-                        Gurugram
-                      </span>
-                      <img
-                        src="/images/img_div_icon.png"
-                        alt="icon"
-                        className="w-5 h-5 mr-5"
-                      />
-                    </div>
-                    <div className="flex items-start gap-2 mb-3">
-                      <span className="text-primary-1 text-xs font-poppins">
-                        Innov8 Orchid Center India, 122001
-                      </span>
-                      <span className="text-blue-1 text-xs font-roboto mt-1">
-                        Directions
-                      </span>
-                    </div>
-                    <span className="text-blue-1 text-xs font-roboto">
-                      View larger map
+          {/* Map (only rounded, no shadow) */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative w-full h-[576px] rounded-[20px] overflow-hidden">
+              <iframe
+                title="Location Map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=77.0266%2C28.4089%2C77.0866%2C28.4689&layer=mapnik&marker=28.4389%2C77.0566"
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+              />
+
+              {/* Top Overlay Info */}
+              <div className="absolute top-3 left-3 right-3 z-10">
+                <div className="bg-white rounded-md shadow p-3 w-fit max-w-xs">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm font-medium text-gray-800">
+                      Gurugram
+                    </span>
+                    <img
+                      src="/images/img_div_icon.png"
+                      alt="icon"
+                      className="w-5 h-5"
+                    />
+                  </div>
+                  <div className="text-xs text-gray-600 leading-snug mb-2">
+                    Innov8 Orchid Center India, 122001
+                    <br />
+                    <span className="text-blue-500 underline cursor-pointer">
+                      Directions
                     </span>
                   </div>
-                </div>
-
-                {/* Bottom attribution */}
-                <div className="absolute bottom-0 left-2 right-0">
-                  <div className="flex items-center gap-2 mb-2.5">
-                    <div className="bg-secondary-1 border-2 border-white-1 rounded p-0.5 shadow-lg">
-                      <div className="relative w-9 h-9">
-                        <div className="bg-secondary-beige w-full h-full"></div>
-                        <img
-                          src="/images/img_image_256x256.png"
-                          alt="location"
-                          className="absolute -top-4 -left-4 w-64 h-64"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2.5 text-xs font-roboto text-primary-1">
-                      <span>Keyboard shortcuts</span>
-                      <span>Map data ©2025 Google</span>
-                      <span>Terms</span>
-                      <span>Report a map error</span>
-                    </div>
-                  </div>
+                  <span className="text-xs text-blue-500 underline cursor-pointer">
+                    View larger map
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+      </div>
     </section>
   );
 };
