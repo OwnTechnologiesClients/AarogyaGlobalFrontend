@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Plus, Minus } from "lucide-react";
-import navLinks from "@/data/navlinks.json";
+import navbarData from "@/data/navbarlink.json";
 
 const MobileNavLinks = () => {
   const [openDropdowns, setOpenDropdowns] = useState({});
@@ -14,7 +14,7 @@ const MobileNavLinks = () => {
   };
   return (
     <nav className="space-y-1">
-      {navLinks.map((link) =>
+      {navbarData.navigation.map((link) =>
         link.dropdown ? (
           <div key={link.label} className="border-b border-gray-100">
             <button
@@ -49,11 +49,10 @@ const MobileNavLinks = () => {
           <div key={link.label} className="border-b border-gray-100">
             <Link
               href={link.href}
-              className={`block py-4 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${
-                link.highlight
-                  ? "text-[#04CE78]"
-                  : "text-gray-900 hover:text-[#04CE78]"
-              }`}
+              className={`block py-4 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${link.highlight
+                ? "text-[#04CE78]"
+                : "text-gray-900 hover:text-[#04CE78]"
+                }`}
               onClick={closeMobileMenu}
             >
               {link.label}

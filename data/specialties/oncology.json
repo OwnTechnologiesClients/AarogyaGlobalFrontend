@@ -1,0 +1,119 @@
+{
+  "specialty": {
+    "name": "Oncology",
+    "slug": "oncology",
+    "description": "Comprehensive cancer care and treatment",
+    "icon": "/specialties/oncology.png",
+    "color": "#E7C2D4"
+  },
+  "filters": {
+    "categories": ["All", "Doctors", "Hospitals", "Treatments"],
+    "treatments": [
+      "Chemotherapy",
+      "Radiation Therapy",
+      "Immunotherapy",
+      "Surgical Oncology",
+      "Bone Marrow Transplant",
+      "Targeted Therapy"
+    ],
+    "facilities": [
+      "Chemotherapy Unit",
+      "Radiation Therapy",
+      "Oncology ICU",
+      "Blood Bank",
+      "Pathology Lab",
+      "Palliative Care"
+    ]
+  },
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. Kavita Sharma",
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+      "specialty": "Medical Oncologist",
+      "experience": "16 years",
+      "rating": "4.8",
+      "location": "Mumbai, India",
+      "hospital": "Tata Memorial Hospital",
+      "consultationFee": "₹2000",
+      "treatments": ["Chemotherapy", "Immunotherapy", "Targeted Therapy"],
+      "qualifications": ["MBBS", "MD Medicine", "DM Medical Oncology"]
+    },
+    {
+      "id": 2,
+      "name": "Dr. Ashok Vaid",
+      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400",
+      "specialty": "Surgical Oncologist",
+      "experience": "20 years",
+      "rating": "4.9",
+      "location": "Delhi, India",
+      "hospital": "AIIMS Delhi",
+      "consultationFee": "₹2500",
+      "treatments": ["Surgical Oncology", "Tumor Removal", "Cancer Surgery"],
+      "qualifications": ["MBBS", "MS General Surgery", "MCh Surgical Oncology"]
+    },
+    {
+      "id": 3,
+      "name": "Dr. Priya Nair",
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+      "specialty": "Radiation Oncologist",
+      "experience": "14 years",
+      "rating": "4.7",
+      "location": "Chennai, India",
+      "hospital": "Apollo Cancer Centre",
+      "consultationFee": "₹1800",
+      "treatments": ["Radiation Therapy", "Stereotactic Radiosurgery"],
+      "qualifications": ["MBBS", "MD Radiotherapy", "Fellowship Radiation Oncology"]
+    }
+  ],
+  "hospitals": [
+    {
+      "id": 1,
+      "name": "Tata Memorial Hospital",
+      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+      "rating": "4.9",
+      "location": "Mumbai, India",
+      "doctorsCount": 65,
+      "specialties": ["Medical Oncology", "Surgical Oncology", "Radiation Oncology"],
+      "facilities": ["Chemotherapy Unit", "Radiation Therapy", "Oncology ICU"],
+      "treatments": ["Chemotherapy", "Radiation Therapy", "Surgical Oncology"]
+    },
+    {
+      "id": 2,
+      "name": "Apollo Cancer Centre",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+      "rating": "4.8",
+      "location": "Chennai, India",
+      "doctorsCount": 48,
+      "specialties": ["Oncology", "Hematology", "Bone Marrow Transplant"],
+      "facilities": ["Blood Bank", "Pathology Lab", "Palliative Care"],
+      "treatments": ["Immunotherapy", "Bone Marrow Transplant", "Targeted Therapy"]
+    }
+  ],
+  "treatments": [
+    {
+      "id": 1,
+      "name": "Chemotherapy",
+      "description": "Drug treatment to destroy cancer cells throughout the body",
+      "duration": "3-6 months",
+      "recovery": "Varies by patient",
+      "cost": "₹2,00,000 - ₹8,00,000"
+    },
+    {
+      "id": 2,
+      "name": "Radiation Therapy",
+      "description": "High-energy radiation to destroy cancer cells in specific areas",
+      "duration": "5-7 weeks",
+      "recovery": "2-6 weeks",
+      "cost": "₹1,50,000 - ₹4,00,000"
+    },
+    {
+      "id": 3,
+      "name": "Immunotherapy",
+      "description": "Treatment that uses the body's immune system to fight cancer",
+      "duration": "6-12 months",
+      "recovery": "Ongoing monitoring",
+      "cost": "₹5,00,000 - ₹15,00,000"
+    }
+  ]
+}

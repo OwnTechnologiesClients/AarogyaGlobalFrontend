@@ -11,7 +11,7 @@ const WorkingProcess = () => {
         alignment="center"
         className="text-lg mt-20 mb-5"
       />
-       <h3 className=" text-center text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
+      <h3 className=" text-center text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
         How it Works
       </h3>
       <div className="flex flex-col items-center text-center px-4 py-10 mt-8">
@@ -44,9 +44,8 @@ const WorkingProcess = () => {
               {index < workprocess.length - 1 && (
                 <div className="absolute right-[-60px] top-15 hidden xl:block">
                   <img
-                    src={`/workprocess/${
-                      index % 2 === 0 ? "arrow2.png" : "arrow1.png"
-                    }`}
+                    src={`/workprocess/${index % 2 === 0 ? "arrow2.png" : "arrow1.png"
+                      }`}
                     alt="Arrow"
                     className="w-23"
                   />

@@ -3,30 +3,40 @@
     "icon": "/specialties/orthopaedics.png",
     "label": "Orthopaedics",
     "count": 24,
-    "color": "#F6EB61"
+    "color": "#F6EB61",
+    "slug": "orthopaedics",
+    "description": "Specialized care for bones, joints, muscles, and skeletal system"
   },
   {
     "icon": "lucide/HeartPulse",
     "label": "Cardiology",
     "count": 22,
-    "color": "#A3DAC2"
+    "color": "#A3DAC2",
+    "slug": "cardiology",
+    "description": "Expert heart and cardiovascular care services"
   },
   {
     "icon": "/specialties/neurology.png",
     "label": "Neurology",
     "count": 18,
-    "color": "#FEC091"
+    "color": "#FEC091",
+    "slug": "neurology",
+    "description": "Advanced brain and nervous system treatments"
   },
   {
     "icon": "/specialties/oncology.png",
     "label": "Oncology",
     "count": 15,
-    "color": "#E7C2D4"
+    "color": "#E7C2D4",
+    "slug": "oncology",
+    "description": "Comprehensive cancer care and treatment"
   },
   {
     "icon": "/specialties/gynaecology.png",
     "label": "Gynaecology",
     "count": 20,
-    "color": "#92BDF6"
+    "color": "#92BDF6",
+    "slug": "gynaecology",
+    "description": "Women's health and reproductive care"
   }
-] 
+]

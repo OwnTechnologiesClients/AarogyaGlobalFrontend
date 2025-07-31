@@ -1,0 +1,315 @@
+{
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/",
+      "highlight": true,
+      "pageHeader": {
+        "title": "Home",
+        "routes": [
+          {
+            "label": "Home"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Treatments",
+      "dropdown": [
+        {
+          "label": "Orthopaedics",
+          "href": "/specialties/orthopaedics",
+          "pageHeader": {
+            "title": "Orthopaedics",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Specialties",
+                "href": "/specialties"
+              },
+              {
+                "label": "Orthopaedics"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Cardiology",
+          "href": "/specialties/cardiology",
+          "pageHeader": {
+            "title": "Cardiology",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Specialties",
+                "href": "/specialties"
+              },
+              {
+                "label": "Cardiology"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Neurology",
+          "href": "/specialties/neurology",
+          "pageHeader": {
+            "title": "Neurology",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Specialties",
+                "href": "/specialties"
+              },
+              {
+                "label": "Neurology"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Oncology",
+          "href": "/specialties/oncology",
+          "pageHeader": {
+            "title": "Oncology",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Specialties",
+                "href": "/specialties"
+              },
+              {
+                "label": "Oncology"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Gynaecology",
+          "href": "/specialties/gynaecology",
+          "pageHeader": {
+            "title": "Gynaecology",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Specialties",
+                "href": "/specialties"
+              },
+              {
+                "label": "Gynaecology"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Hospitals",
+      "dropdown": [
+        {
+          "label": "Hospital Search",
+          "href": "/hospitalSearch",
+          "pageHeader": {
+            "title": "Hospital Search",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Hospital Search"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Hospital Details",
+          "href": "/hospitalDetails",
+          "pageHeader": {
+            "title": "Hospital Details",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Hospital Search",
+                "href": "/hospitalSearch"
+              },
+              {
+                "label": "Hospital Details"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Doctors",
+      "dropdown": [
+        {
+          "label": "Doctor Search",
+          "href": "/doctors",
+          "pageHeader": {
+            "title": "Doctor Search",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Doctor Search"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Doctor Details",
+          "href": "/doctorDetails",
+          "pageHeader": {
+            "title": "Doctor Details",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Doctor",
+                "href": "/doctor"
+              },
+              {
+                "label": "Doctor Details"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "About",
+      "href": "/about",
+      "pageHeader": {
+        "title": "About Us",
+        "routes": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "About"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Contact",
+      "href": "/contact",
+      "pageHeader": {
+        "title": "Contact Us",
+        "routes": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "contact"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Collaborate",
+      "dropdown": [
+        {
+          "label": "Partner With Us",
+          "href": "/partner/partnerWithUs",
+          "pageHeader": {
+            "title": "Partner With Us",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Partner With Us"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Option 2",
+          "href": "/partner/option2",
+          "pageHeader": {
+            "title": "Option 2",
+            "routes": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Collaborate",
+                "href": "/partner"
+              },
+              {
+                "label": "Option 2"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "additionalPages": {
+    "notification": {
+      "title": "Notification",
+      "routes": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Notification"
+        }
+      ]
+    },
+    "appointment": {
+      "title": "Make An Appointment",
+      "routes": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Make An Appointment"
+        }
+      ]
+    },
+    "login": {
+      "title": "Login",
+      "routes": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Login"
+        }
+      ]
+    }
+  }
+}

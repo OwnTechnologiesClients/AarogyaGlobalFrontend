@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import specialties from "@/data/topSpecialties.json";
 import {
   Bone,
@@ -85,39 +86,44 @@ const TopSpecialties = () => {
             const LucideIcon = ICON_MAP[spec.label] || Bone;
             return (
               <SwiperSlide key={idx}>
-                <div
-                  className=" flex flex-col items-center text-center bg-white rounded-3xl p-6 "
-                >
+                <Link href={`/specialties/${spec.slug}`}>
                   <div
-                    className="flex items-center justify-center rounded-full mb-6"
-                    style={{
-                      backgroundColor: spec.color,
-                      width: 120,
-                      height: 120,
-                    }}
+                    className=" flex flex-col items-center text-center bg-white rounded-3xl p-6 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
                   >
-                    {spec.icon.startsWith('/') ? (
-                      <img 
-                        src={spec.icon} 
-                        alt={spec.label}
-                        className="w-16 h-16 object-contain"
-                      />
-                    ) : (
-                      <LucideIcon
-                        size={64}
-                        strokeWidth={2.8}
-                        color="#1A0142"
-                        className="w-[64px] h-[64px]"
-                      />
-                    )}
+                    <div
+                      className="flex items-center justify-center rounded-full mb-6"
+                      style={{
+                        backgroundColor: spec.color,
+                        width: 120,
+                        height: 120,
+                      }}
+                    >
+                      {spec.icon.startsWith('/') ? (
+                        <img
+                          src={spec.icon}
+                          alt={spec.label}
+                          className="w-16 h-16 object-contain"
+                        />
+                      ) : (
+                        <LucideIcon
+                          size={64}
+                          strokeWidth={2.8}
+                          color="#1A0142"
+                          className="w-[64px] h-[64px]"
+                        />
+                      )}
+                    </div>
+                    <span className="font-extrabold text-xl text-[#1A0142]">
+                      {spec.label}
+                    </span>
+                    <span className="text-[#6B6B6B] text-base mt-2">
+                      {spec.count} Listing{spec.count > 1 ? "s" : ""}
+                    </span>
+                    <span className="text-[#04CE78] text-sm mt-2 font-medium">
+                      {spec.description}
+                    </span>
                   </div>
-                  <span className="font-extrabold text-xl text-[#1A0142]">
-                    {spec.label}
-                  </span>
-                  <span className="text-[#6B6B6B] text-base mt-2">
-                    {spec.count} Listing{spec.count > 1 ? "s" : ""}
-                  </span>
-                </div>
+                </Link>
               </SwiperSlide>
             );
           })}

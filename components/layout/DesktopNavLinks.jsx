@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import navLinks from "@/data/navlinks.json";
+import navbarData from "@/data/navbarlink.json";
 
 // Accept textColor as a prop
 const DesktopNavLinks = ({ textColor = "text-white" }) => {
@@ -16,9 +16,9 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
   }, []);
 
   return (
-  <div style={{ display: isMobileView ? "none" : "block" }}>
+    <div style={{ display: isMobileView ? "none" : "block" }}>
       <ul className="flex relative ml-4">
-        {navLinks.map((link) =>
+        {navbarData.navigation.map((link) =>
           link.dropdown ? (
             <li key={link.label} className="relative group">
               <button
@@ -50,9 +50,8 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center gap-1 ${
-                  link.highlight ? "text-[#04CE78]" : ""
-                }`}
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center gap-1 ${link.highlight ? "text-[#04CE78]" : ""
+                  }`}
               >
                 {link.label}
                 <span className="text-[#04CE78] text-[20px] leading-none ml-1">

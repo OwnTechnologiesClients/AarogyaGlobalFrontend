@@ -1,6 +1,6 @@
 import React from "react";
 import PageHeader from "@/components/layout/PageHeader";
-import PageHeadrsData from "@/data/pageHeadersData.json";
+import { getPageHeaderData } from "@/utils/navigationUtils";
 import FeatureCards from "@/components/home/FeatureCards";
 import AboutSection from "@/components/home/AboutSection/AboutSection";
 import OnlineConsultationBanner from "@/components/layout/OnlineConsultationBanner";
@@ -12,7 +12,7 @@ import AarogyaTeam from "@/components/home/AarogyaTeam";
 import BeyondBookingsPayments from "@/components/home/BeyondBookingsPayments";
 import VideoModal from "@/components/home/AboutSection/DoctorVideoSection";
 const About = () => {
-  const { title, routes } = PageHeadrsData.aboutUs;
+  const { title, routes } = getPageHeaderData('/about');
 
   return (
     <>

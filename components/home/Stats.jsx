@@ -44,9 +44,8 @@ const Stats = () => {
 
   return (
     <section
-      className={`w-full flex justify-center ${
-        isHomePage ? "bg-white" : "bg-[#000D44] rounded-2xl shadow-lg"
-      } py-20`}
+      className={`w-full flex justify-center ${isHomePage ? "bg-white" : "bg-[#000D44] rounded-2xl shadow-lg"
+        } py-20`}
     >
       <div className="w-full max-w-[2200px] px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-y-12">
         {statsData.map((stat, index) => (
@@ -70,9 +69,8 @@ const Stats = () => {
 
             {/* Count */}
             <span
-              className={`text-6xl font-extrabold ${
-                isHomePage ? "text-[#000D44]" : "text-white"
-              }`}
+              className={`text-6xl font-extrabold ${isHomePage ? "text-[#000D44]" : "text-white"
+                }`}
             >
               <CountUp
                 end={stat.value}
@@ -84,9 +82,8 @@ const Stats = () => {
 
             {/* Label */}
             <span
-              className={`mt-2 text-xl font-semibold ${
-                isHomePage ? "text-[#555555]" : "text-white"
-              }`}
+              className={`mt-2 text-xl font-semibold ${isHomePage ? "text-[#555555]" : "text-white"
+                }`}
             >
               {stat.label}
             </span>

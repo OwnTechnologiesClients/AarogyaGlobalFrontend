@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import PageHeader from "@/components/layout/PageHeader";
-import PageHeadrsData from "@/data/pageHeadersData.json";
+import { getPageHeaderData } from "@/utils/navigationUtils";
 import HospitalImageGallery from "@/components/HospitalDetails/HospitalImageGallery";
 import HospitalNavigation from "@/components/HospitalDetails/HospitalNavigation";
 import HospitalOverview from "@/components/HospitalDetails/HospitalOverview";
@@ -14,14 +14,7 @@ import HospitalReviews from "@/components/HospitalDetails/HospitalReviews";
 import HospitalLocation from "@/components/HospitalDetails/HospitalLocation";
 
 const HospitalDetails = () => {
-  const { title, routes } = PageHeadrsData.hospitalDetails || {
-    title: "Hospital Details",
-    routes: [
-      { label: "Home", href: "/" },
-      { label: "Hospital Search", href: "/hospitalSearch" },
-      { label: "Hospital Details" }
-    ]
-  };
+  const { title, routes } = getPageHeaderData('/hospitalDetails');
 
   const [activeTab, setActiveTab] = useState("Overview");
 

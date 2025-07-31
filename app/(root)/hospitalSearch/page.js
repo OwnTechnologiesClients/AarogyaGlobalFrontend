@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import PageHeadrsData from "@/data/pageHeadersData.json";
+import { getPageHeaderData } from "@/utils/navigationUtils";
 import PageHeader from "@/components/layout/PageHeader";
 import SearchForm from "@/components/HospitalSearch/SearchForm";
 import hospitalJson from "@/data/HospitalData.json";
 import TrustedBy from "@/components/home/TrustedBy";
 import HospitalMain from "@/components/HospitalSearch/HospitalCard";
 const HospitalSearch = () => {
-    
-  const { title, routes } = PageHeadrsData.hospitalSearch;
+
+  const { title, routes } = getPageHeaderData('/hospitalSearch');
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",
@@ -88,8 +88,8 @@ const HospitalSearch = () => {
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
       />
-       <HospitalMain hospitals={filterHosData} isFilter={isFilter} />
-       <TrustedBy />
+      <HospitalMain hospitals={filterHosData} isFilter={isFilter} />
+      <TrustedBy />
     </div>
   );
 };
