@@ -13,7 +13,7 @@ import WorkingProcess from "./WorkingProcess";
 import BeyondBookingsPayments from "./BeyondBookingsPayments";
 import AarogyaTeam from "./AarogyaTeam";
 
-const HeroSection = () => {
+const HomeSection = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <HeroBannerVideo />
@@ -36,4 +36,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HomeSection;
