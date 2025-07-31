@@ -21,7 +21,9 @@ const About = () => {
         <FeatureCards />
         <AboutSection />
         <Stats />
-        <AarogyaTeam />
+        <div className="pt-10">
+          <AarogyaTeam />
+        </div>
         <OnlineConsultationBanner />
         <BeyondBookingsPayments />
         <Testimonials />

@@ -8,7 +8,7 @@ import DoctorVideoSection from "./DoctorVideoSection";
 
 const AboutSection = () => {
   return (
-<section className="w-screen py-10 flex flex-col items-center gap-8 bg-white">
+<section className="w-screen py-10 flex flex-col items-center gap-8">
   <div className="w-full px-4 md:px-12 lg:px-16 flex flex-col xl:flex-row items-center gap-8">
     {/* Left: Doctor video */}
     <div className="flex-1 flex flex-col gap-6 items-center xl:items-start ">
@@ -21,7 +21,7 @@ const AboutSection = () => {
         text={aboutData.aboutLabel}
         textColor="#04CE78"
         dotColor="#04CE78"
-        alignment="center"
+        alignment="right"
         className="text-lg"
       />
       <h2 className="text-2xl md:text-4xl max-w-3xl font-bold text-[#000D44] leading-tight">

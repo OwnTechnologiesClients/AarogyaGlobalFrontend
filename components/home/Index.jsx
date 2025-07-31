@@ -17,8 +17,8 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <HeroBannerVideo />
-       <FeatureCards /> 
-       <TrustedBy />
+      <FeatureCards />
+      <TrustedBy />
       <AboutSection />
       <Stats />
       <TopSpecialties />
@@ -26,8 +26,11 @@ const HeroSection = () => {
       <WorkingProcess />
       <FeaturedHospitals />
       <FAQSection />
-      <AarogyaTeam />
-      <Testimonials /> 
+      <div className="pt-10">
+        <AarogyaTeam />
+      </div>
+
+      <Testimonials />
       <AppointmentRequest />
     </div>
   );
