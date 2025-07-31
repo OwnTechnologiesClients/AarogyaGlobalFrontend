@@ -113,7 +113,7 @@ const HospitalOverview = () => {
           {/* Hospital Statistics */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {hospitalStats.map((stat, index) => (
-              <div key={index} className="flex items-center gap-3">
+              <div key={index} className="flex items-center gap-3 border border-gray-200 rounded-lg p-4">
                 {stat.icon}
                 <div>
                   <div className="font-bold text-gray-800">{stat.label}</div>
