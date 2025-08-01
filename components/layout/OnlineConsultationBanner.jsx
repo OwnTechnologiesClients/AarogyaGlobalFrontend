@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const OnlineConsultationBanner = () => {
   return (
-    <div className="w-full py-12 bg-white mt-26  overflow-hidden">
+    <div className="w-full py-20 bg-white  overflow-hidden">
       <Marquee
         speed={60}
         gradient={false}

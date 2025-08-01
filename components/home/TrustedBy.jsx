@@ -30,7 +30,7 @@ const TrustedBy = () => (
       + INTERNATIONAL RECOGNIZED HOSPITAL PARTNER
     </h4>
 
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden ">
       <Marquee gradient={false} speed={60} pauseOnHover={true} className="py-6">
         {[...logos, ...logos].map((logo, idx) => (
           <div

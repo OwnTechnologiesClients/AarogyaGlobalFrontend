@@ -44,7 +44,7 @@ const FeaturedHospitals = () => {
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-lg mt-20 mb-5"
+        className="text-lg mt-10 mb-5"
       />
       <div className="flex w-full justify-between items-center md:mb-28 mb-8">
         <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
