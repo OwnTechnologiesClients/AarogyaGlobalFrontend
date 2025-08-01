@@ -7,7 +7,12 @@
     "color": "#F6EB61"
   },
   "filters": {
-    "categories": ["All", "Doctors", "Hospitals", "Treatments"],
+    "categories": [
+      "All",
+      "Doctors",
+      "Hospitals",
+      "Treatments"
+    ],
     "treatments": [
       "Joint Replacement",
       "Arthroscopy",
@@ -36,8 +41,16 @@
       "location": "Delhi, India",
       "hospital": "AIIMS Delhi",
       "consultationFee": "₹1500",
-      "treatments": ["Joint Replacement", "Arthroscopy", "Spine Surgery"],
-      "qualifications": ["MBBS", "MS Orthopedics", "Fellowship in Joint Replacement"]
+      "treatments": [
+        "Joint Replacement",
+        "Arthroscopy",
+        "Spine Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS Orthopedics",
+        "Fellowship in Joint Replacement"
+      ]
     },
     {
       "id": 2,
@@ -49,8 +62,16 @@
       "location": "Mumbai, India",
       "hospital": "Kokilaben Hospital",
       "consultationFee": "₹1200",
-      "treatments": ["Sports Medicine", "Arthroscopy", "Fracture Treatment"],
-      "qualifications": ["MBBS", "MS Orthopedics", "Fellowship in Sports Medicine"]
+      "treatments": [
+        "Sports Medicine",
+        "Arthroscopy",
+        "Fracture Treatment"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS Orthopedics",
+        "Fellowship in Sports Medicine"
+      ]
     },
     {
       "id": 3,
@@ -62,8 +83,15 @@
       "location": "Bangalore, India",
       "hospital": "Manipal Hospital",
       "consultationFee": "₹2000",
-      "treatments": ["Spine Surgery", "Minimally Invasive Surgery"],
-      "qualifications": ["MBBS", "MS Orthopedics", "MCh Spine Surgery"]
+      "treatments": [
+        "Spine Surgery",
+        "Minimally Invasive Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS Orthopedics",
+        "MCh Spine Surgery"
+      ]
     }
   ],
   "hospitals": [
@@ -74,9 +102,23 @@
       "rating": "4.8",
       "location": "New Delhi, India",
       "doctorsCount": 45,
-      "specialties": ["Orthopaedics", "Joint Replacement", "Spine Surgery"],
-      "facilities": ["Operation Theater", "MRI", "CT Scan", "Physiotherapy"],
-      "treatments": ["Joint Replacement", "Arthroscopy", "Spine Surgery", "Fracture Treatment"]
+      "specialties": [
+        "Orthopaedics",
+        "Joint Replacement",
+        "Spine Surgery"
+      ],
+      "facilities": [
+        "Operation Theater",
+        "MRI",
+        "CT Scan",
+        "Physiotherapy"
+      ],
+      "treatments": [
+        "Joint Replacement",
+        "Arthroscopy",
+        "Spine Surgery",
+        "Fracture Treatment"
+      ]
     },
     {
       "id": 2,
@@ -85,9 +127,22 @@
       "rating": "4.7",
       "location": "Mumbai, India",
       "doctorsCount": 32,
-      "specialties": ["Orthopaedics", "Sports Medicine", "Arthroscopy"],
-      "facilities": ["Operation Theater", "X-Ray", "MRI", "Rehabilitation Center"],
-      "treatments": ["Sports Medicine", "Arthroscopy", "Joint Replacement"]
+      "specialties": [
+        "Orthopaedics",
+        "Sports Medicine",
+        "Arthroscopy"
+      ],
+      "facilities": [
+        "Operation Theater",
+        "X-Ray",
+        "MRI",
+        "Rehabilitation Center"
+      ],
+      "treatments": [
+        "Sports Medicine",
+        "Arthroscopy",
+        "Joint Replacement"
+      ]
     }
   ],
   "treatments": [
@@ -97,7 +152,8 @@
       "description": "Complete replacement of damaged joints with artificial implants",
       "duration": "2-4 hours",
       "recovery": "6-12 weeks",
-      "cost": "₹2,50,000 - ₹5,00,000"
+      "cost": "₹2,50,000 - ₹5,00,000",
+      "slug": "orthopaedics"
     },
     {
       "id": 2,
@@ -105,7 +161,8 @@
       "description": "Minimally invasive surgery using small incisions and camera",
       "duration": "1-2 hours",
       "recovery": "2-6 weeks",
-      "cost": "₹80,000 - ₹1,50,000"
+      "cost": "₹80,000 - ₹1,50,000",
+      "slug": "orthopaedics"
     },
     {
       "id": 3,
@@ -113,7 +170,8 @@
       "description": "Surgical treatment for spinal disorders and injuries",
       "duration": "3-6 hours",
       "recovery": "8-16 weeks",
-      "cost": "₹3,00,000 - ₹8,00,000"
+      "cost": "₹3,00,000 - ₹8,00,000",
+      "slug": "orthopaedics"
     }
   ]
 }

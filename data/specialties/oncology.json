@@ -7,7 +7,12 @@
     "color": "#E7C2D4"
   },
   "filters": {
-    "categories": ["All", "Doctors", "Hospitals", "Treatments"],
+    "categories": [
+      "All",
+      "Doctors",
+      "Hospitals",
+      "Treatments"
+    ],
     "treatments": [
       "Chemotherapy",
       "Radiation Therapy",
@@ -36,8 +41,16 @@
       "location": "Mumbai, India",
       "hospital": "Tata Memorial Hospital",
       "consultationFee": "₹2000",
-      "treatments": ["Chemotherapy", "Immunotherapy", "Targeted Therapy"],
-      "qualifications": ["MBBS", "MD Medicine", "DM Medical Oncology"]
+      "treatments": [
+        "Chemotherapy",
+        "Immunotherapy",
+        "Targeted Therapy"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Medicine",
+        "DM Medical Oncology"
+      ]
     },
     {
       "id": 2,
@@ -49,8 +62,16 @@
       "location": "Delhi, India",
       "hospital": "AIIMS Delhi",
       "consultationFee": "₹2500",
-      "treatments": ["Surgical Oncology", "Tumor Removal", "Cancer Surgery"],
-      "qualifications": ["MBBS", "MS General Surgery", "MCh Surgical Oncology"]
+      "treatments": [
+        "Surgical Oncology",
+        "Tumor Removal",
+        "Cancer Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS General Surgery",
+        "MCh Surgical Oncology"
+      ]
     },
     {
       "id": 3,
@@ -62,8 +83,15 @@
       "location": "Chennai, India",
       "hospital": "Apollo Cancer Centre",
       "consultationFee": "₹1800",
-      "treatments": ["Radiation Therapy", "Stereotactic Radiosurgery"],
-      "qualifications": ["MBBS", "MD Radiotherapy", "Fellowship Radiation Oncology"]
+      "treatments": [
+        "Radiation Therapy",
+        "Stereotactic Radiosurgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Radiotherapy",
+        "Fellowship Radiation Oncology"
+      ]
     }
   ],
   "hospitals": [
@@ -74,9 +102,21 @@
       "rating": "4.9",
       "location": "Mumbai, India",
       "doctorsCount": 65,
-      "specialties": ["Medical Oncology", "Surgical Oncology", "Radiation Oncology"],
-      "facilities": ["Chemotherapy Unit", "Radiation Therapy", "Oncology ICU"],
-      "treatments": ["Chemotherapy", "Radiation Therapy", "Surgical Oncology"]
+      "specialties": [
+        "Medical Oncology",
+        "Surgical Oncology",
+        "Radiation Oncology"
+      ],
+      "facilities": [
+        "Chemotherapy Unit",
+        "Radiation Therapy",
+        "Oncology ICU"
+      ],
+      "treatments": [
+        "Chemotherapy",
+        "Radiation Therapy",
+        "Surgical Oncology"
+      ]
     },
     {
       "id": 2,
@@ -85,9 +125,21 @@
       "rating": "4.8",
       "location": "Chennai, India",
       "doctorsCount": 48,
-      "specialties": ["Oncology", "Hematology", "Bone Marrow Transplant"],
-      "facilities": ["Blood Bank", "Pathology Lab", "Palliative Care"],
-      "treatments": ["Immunotherapy", "Bone Marrow Transplant", "Targeted Therapy"]
+      "specialties": [
+        "Oncology",
+        "Hematology",
+        "Bone Marrow Transplant"
+      ],
+      "facilities": [
+        "Blood Bank",
+        "Pathology Lab",
+        "Palliative Care"
+      ],
+      "treatments": [
+        "Immunotherapy",
+        "Bone Marrow Transplant",
+        "Targeted Therapy"
+      ]
     }
   ],
   "treatments": [
@@ -97,7 +149,8 @@
       "description": "Drug treatment to destroy cancer cells throughout the body",
       "duration": "3-6 months",
       "recovery": "Varies by patient",
-      "cost": "₹2,00,000 - ₹8,00,000"
+      "cost": "₹2,00,000 - ₹8,00,000",
+      "slug": "oncology"
     },
     {
       "id": 2,
@@ -105,7 +158,8 @@
       "description": "High-energy radiation to destroy cancer cells in specific areas",
       "duration": "5-7 weeks",
       "recovery": "2-6 weeks",
-      "cost": "₹1,50,000 - ₹4,00,000"
+      "cost": "₹1,50,000 - ₹4,00,000",
+      "slug": "oncology"
     },
     {
       "id": 3,
@@ -113,7 +167,8 @@
       "description": "Treatment that uses the body's immune system to fight cancer",
       "duration": "6-12 months",
       "recovery": "Ongoing monitoring",
-      "cost": "₹5,00,000 - ₹15,00,000"
+      "cost": "₹5,00,000 - ₹15,00,000",
+      "slug": "oncology"
     }
   ]
 }

@@ -7,7 +7,12 @@
     "color": "#FEC091"
   },
   "filters": {
-    "categories": ["All", "Doctors", "Hospitals", "Treatments"],
+    "categories": [
+      "All",
+      "Doctors",
+      "Hospitals",
+      "Treatments"
+    ],
     "treatments": [
       "Brain Surgery",
       "Stroke Treatment",
@@ -36,8 +41,16 @@
       "location": "Mumbai, India",
       "hospital": "Jaslok Hospital",
       "consultationFee": "₹1800",
-      "treatments": ["Stroke Treatment", "Epilepsy Management", "Migraine Treatment"],
-      "qualifications": ["MBBS", "MD Medicine", "DM Neurology"]
+      "treatments": [
+        "Stroke Treatment",
+        "Epilepsy Management",
+        "Migraine Treatment"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Medicine",
+        "DM Neurology"
+      ]
     },
     {
       "id": 2,
@@ -49,8 +62,16 @@
       "location": "Bangalore, India",
       "hospital": "NIMHANS",
       "consultationFee": "₹2500",
-      "treatments": ["Brain Surgery", "Spine Surgery", "Tumor Removal"],
-      "qualifications": ["MBBS", "MS General Surgery", "MCh Neurosurgery"]
+      "treatments": [
+        "Brain Surgery",
+        "Spine Surgery",
+        "Tumor Removal"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS General Surgery",
+        "MCh Neurosurgery"
+      ]
     },
     {
       "id": 3,
@@ -62,8 +83,16 @@
       "location": "Delhi, India",
       "hospital": "Max Hospital",
       "consultationFee": "₹2000",
-      "treatments": ["Parkinson's Treatment", "Multiple Sclerosis Care"],
-      "qualifications": ["MBBS", "MD Medicine", "DM Neurology", "Fellowship Movement Disorders"]
+      "treatments": [
+        "Parkinson's Treatment",
+        "Multiple Sclerosis Care"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Medicine",
+        "DM Neurology",
+        "Fellowship Movement Disorders"
+      ]
     }
   ],
   "hospitals": [
@@ -74,9 +103,22 @@
       "rating": "4.9",
       "location": "Bangalore, India",
       "doctorsCount": 55,
-      "specialties": ["Neurology", "Neurosurgery", "Psychiatry"],
-      "facilities": ["Neurology ICU", "MRI", "CT Scan", "EEG Lab"],
-      "treatments": ["Brain Surgery", "Stroke Treatment", "Epilepsy Management"]
+      "specialties": [
+        "Neurology",
+        "Neurosurgery",
+        "Psychiatry"
+      ],
+      "facilities": [
+        "Neurology ICU",
+        "MRI",
+        "CT Scan",
+        "EEG Lab"
+      ],
+      "treatments": [
+        "Brain Surgery",
+        "Stroke Treatment",
+        "Epilepsy Management"
+      ]
     },
     {
       "id": 2,
@@ -85,9 +127,21 @@
       "rating": "4.8",
       "location": "Delhi, India",
       "doctorsCount": 35,
-      "specialties": ["Neurology", "Movement Disorders", "Stroke Care"],
-      "facilities": ["Stroke Unit", "Rehabilitation Center", "MRI"],
-      "treatments": ["Parkinson's Treatment", "Stroke Treatment", "Migraine Treatment"]
+      "specialties": [
+        "Neurology",
+        "Movement Disorders",
+        "Stroke Care"
+      ],
+      "facilities": [
+        "Stroke Unit",
+        "Rehabilitation Center",
+        "MRI"
+      ],
+      "treatments": [
+        "Parkinson's Treatment",
+        "Stroke Treatment",
+        "Migraine Treatment"
+      ]
     }
   ],
   "treatments": [
@@ -97,7 +151,8 @@
       "description": "Surgical procedures for brain tumors, aneurysms, and other conditions",
       "duration": "4-8 hours",
       "recovery": "2-6 weeks",
-      "cost": "₹5,00,000 - ₹12,00,000"
+      "cost": "₹5,00,000 - ₹12,00,000",
+      "slug": "neurology"
     },
     {
       "id": 2,
@@ -105,7 +160,8 @@
       "description": "Emergency and rehabilitation care for stroke patients",
       "duration": "Varies",
       "recovery": "3-12 months",
-      "cost": "₹1,00,000 - ₹5,00,000"
+      "cost": "₹1,00,000 - ₹5,00,000",
+      "slug": "neurology"
     },
     {
       "id": 3,
@@ -113,7 +169,8 @@
       "description": "Comprehensive care and medication management for epilepsy",
       "duration": "Ongoing",
       "recovery": "Ongoing management",
-      "cost": "₹20,000 - ₹50,000 per year"
+      "cost": "₹20,000 - ₹50,000 per year",
+      "slug": "neurology"
     }
   ]
 }

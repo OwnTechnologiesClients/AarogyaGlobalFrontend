@@ -7,7 +7,12 @@
     "color": "#A3DAC2"
   },
   "filters": {
-    "categories": ["All", "Doctors", "Hospitals", "Treatments"],
+    "categories": [
+      "All",
+      "Doctors",
+      "Hospitals",
+      "Treatments"
+    ],
     "treatments": [
       "Angioplasty",
       "Bypass Surgery",
@@ -36,8 +41,16 @@
       "location": "Chennai, India",
       "hospital": "Apollo Hospital",
       "consultationFee": "₹2000",
-      "treatments": ["Angioplasty", "Cardiac Catheterization", "Stent Placement"],
-      "qualifications": ["MBBS", "MD Cardiology", "DM Interventional Cardiology"]
+      "treatments": [
+        "Angioplasty",
+        "Cardiac Catheterization",
+        "Stent Placement"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Cardiology",
+        "DM Interventional Cardiology"
+      ]
     },
     {
       "id": 2,
@@ -49,8 +62,16 @@
       "location": "Pune, India",
       "hospital": "Ruby Hall Clinic",
       "consultationFee": "₹1800",
-      "treatments": ["Bypass Surgery", "Heart Valve Repair", "Pacemaker Implantation"],
-      "qualifications": ["MBBS", "MS General Surgery", "MCh Cardiothoracic Surgery"]
+      "treatments": [
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Pacemaker Implantation"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS General Surgery",
+        "MCh Cardiothoracic Surgery"
+      ]
     },
     {
       "id": 3,
@@ -62,8 +83,15 @@
       "location": "Delhi, India",
       "hospital": "Fortis Hospital",
       "consultationFee": "₹1600",
-      "treatments": ["Congenital Heart Disease", "Pediatric Interventions"],
-      "qualifications": ["MBBS", "MD Pediatrics", "DM Pediatric Cardiology"]
+      "treatments": [
+        "Congenital Heart Disease",
+        "Pediatric Interventions"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Pediatrics",
+        "DM Pediatric Cardiology"
+      ]
     }
   ],
   "hospitals": [
@@ -74,9 +102,22 @@
       "rating": "4.9",
       "location": "Chennai, India",
       "doctorsCount": 38,
-      "specialties": ["Cardiology", "Interventional Cardiology", "Cardiac Surgery"],
-      "facilities": ["Cardiac Cath Lab", "ICU", "ECG", "Echocardiography"],
-      "treatments": ["Angioplasty", "Bypass Surgery", "Heart Valve Repair"]
+      "specialties": [
+        "Cardiology",
+        "Interventional Cardiology",
+        "Cardiac Surgery"
+      ],
+      "facilities": [
+        "Cardiac Cath Lab",
+        "ICU",
+        "ECG",
+        "Echocardiography"
+      ],
+      "treatments": [
+        "Angioplasty",
+        "Bypass Surgery",
+        "Heart Valve Repair"
+      ]
     },
     {
       "id": 2,
@@ -85,9 +126,21 @@
       "rating": "4.8",
       "location": "Delhi, India",
       "doctorsCount": 42,
-      "specialties": ["Cardiology", "Pediatric Cardiology", "Electrophysiology"],
-      "facilities": ["Cardiac Cath Lab", "Stress Test Lab", "Cardiac Rehabilitation"],
-      "treatments": ["Pacemaker Implantation", "Cardiac Catheterization", "Angioplasty"]
+      "specialties": [
+        "Cardiology",
+        "Pediatric Cardiology",
+        "Electrophysiology"
+      ],
+      "facilities": [
+        "Cardiac Cath Lab",
+        "Stress Test Lab",
+        "Cardiac Rehabilitation"
+      ],
+      "treatments": [
+        "Pacemaker Implantation",
+        "Cardiac Catheterization",
+        "Angioplasty"
+      ]
     }
   ],
   "treatments": [
@@ -97,7 +150,8 @@
       "description": "Minimally invasive procedure to open blocked coronary arteries",
       "duration": "1-2 hours",
       "recovery": "1-3 days",
-      "cost": "₹1,50,000 - ₹3,00,000"
+      "cost": "₹1,50,000 - ₹3,00,000",
+      "slug": "cardiology"
     },
     {
       "id": 2,
@@ -105,7 +159,8 @@
       "description": "Surgical procedure to create new routes around blocked arteries",
       "duration": "4-6 hours",
       "recovery": "6-8 weeks",
-      "cost": "₹4,00,000 - ₹8,00,000"
+      "cost": "₹4,00,000 - ₹8,00,000",
+      "slug": "cardiology"
     },
     {
       "id": 3,
@@ -113,7 +168,8 @@
       "description": "Device implantation to regulate heart rhythm",
       "duration": "1-2 hours",
       "recovery": "1-2 weeks",
-      "cost": "₹2,00,000 - ₹4,00,000"
+      "cost": "₹2,00,000 - ₹4,00,000",
+      "slug": "cardiology"
     }
   ]
 }

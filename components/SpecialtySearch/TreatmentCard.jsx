@@ -18,7 +18,7 @@ const TreatmentCard = ({ treatment }) => {
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{treatment.name}</h3>
-                
+
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                     {treatment.description}
                 </p>
@@ -30,13 +30,13 @@ const TreatmentCard = ({ treatment }) => {
                         <span className="font-medium mr-2">Duration:</span>
                         <span>{treatment.duration}</span>
                     </div>
-                    
+
                     <div className="flex items-center text-gray-600 text-sm">
                         <Calendar className="w-4 h-4 mr-2 text-green-500" />
                         <span className="font-medium mr-2">Recovery:</span>
                         <span>{treatment.recovery}</span>
                     </div>
-                    
+
                     <div className="flex items-center text-gray-600 text-sm">
                         <DollarSign className="w-4 h-4 mr-2 text-orange-500" />
                         <span className="font-medium mr-2">Cost Range:</span>
@@ -46,7 +46,7 @@ const TreatmentCard = ({ treatment }) => {
 
                 <div className="flex justify-center">
                     <a
-                        href="#"
+                        href={`/treatmentDetails/${treatment.slug || 'urology'}`}
                         className="w-full text-center text-indigo-600 flex items-center justify-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-3 transition-colors duration-200"
                     >
                         <span className="font-semibold">Learn More</span>

@@ -1,0 +1,380 @@
+{
+    "treatment": {
+        "name": "Orthopaedics Worldwide",
+        "title": "Orthopaedics Worldwide: Best Hospitals, Doctors, Options & Cost",
+        "slug": "orthopaedics",
+        "description": "Comprehensive orthopedic care with access to world-class hospitals, top-rated orthopedic surgeons, and advanced treatment options worldwide.",
+        "overview": {
+            "description": "Orthopaedics is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the musculoskeletal system including bones, joints, muscles, ligaments, and tendons. Our medical tourism platform connects patients with the best orthopedic hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+            "highlights": [
+                "Access to world-class orthopedic hospitals",
+                "Top-rated orthopedic surgeons with international experience",
+                "Advanced diagnostic and treatment technologies",
+                "Cost-effective medical tourism solutions",
+                "Comprehensive care coordination"
+            ],
+            "cta": {
+                "bookConsultation": "Book a free consultation",
+                "secondOpinion": "Get a second opinion",
+                "callBack": "Request a call back"
+            }
+        },
+        "bestHospitals": {
+            "title": "Best orthopedic hospitals worldwide",
+            "description": "What helps to find the best orthopedic hospital?",
+            "hospitals": [
+                {
+                    "id": 1,
+                    "name": "Hospital for Special Surgery",
+                    "location": "New York, USA",
+                    "image": "/hospital_logos/img1.jpg",
+                    "rating": "9.9",
+                    "specialties": [
+                        "Joint Replacement",
+                        "Sports Medicine",
+                        "Spine Surgery"
+                    ],
+                    "facilities": [
+                        "Robotic Surgery",
+                        "Advanced Imaging",
+                        "Rehabilitation Center"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Mayo Clinic",
+                    "location": "Rochester, Minnesota, USA",
+                    "image": "/hospital_logos/img2.png",
+                    "rating": "9.8",
+                    "specialties": [
+                        "Trauma Surgery",
+                        "Pediatric Orthopedics",
+                        "Hand Surgery"
+                    ],
+                    "facilities": [
+                        "3D Printing",
+                        "Advanced Diagnostics",
+                        "Research Facilities"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Cleveland Clinic",
+                    "location": "Cleveland, Ohio, USA",
+                    "image": "/hospital_logos/img3.webp",
+                    "rating": "9.7",
+                    "specialties": [
+                        "Shoulder Surgery",
+                        "Knee Surgery",
+                        "Foot and Ankle"
+                    ],
+                    "facilities": [
+                        "Minimally Invasive Surgery",
+                        "Advanced Monitoring",
+                        "Specialized ICUs"
+                    ]
+                }
+            ],
+            "selectionCriteria": [
+                "International accreditations and certifications",
+                "Experience with international patients",
+                "Advanced technology and equipment",
+                "Multilingual medical staff",
+                "Comprehensive patient support services"
+            ]
+        },
+        "topDoctors": {
+            "title": "Top-rated orthopedic surgeons worldwide",
+            "description": "How to select the best orthopedic surgeon?",
+            "doctors": [
+                {
+                    "id": 1,
+                    "name": "Dr. James Andrews",
+                    "specialty": "Orthopedic Surgeon",
+                    "location": "Birmingham, Alabama, USA",
+                    "image": "/RelatedSpecialists/img1.png",
+                    "experience": "40+ years",
+                    "expertise": [
+                        "Sports Medicine",
+                        "Knee Surgery",
+                        "Shoulder Surgery"
+                    ],
+                    "hospital": "Andrews Sports Medicine"
+                },
+                {
+                    "id": 2,
+                    "name": "Dr. Thomas Satterthwaite",
+                    "specialty": "Orthopedic Surgeon",
+                    "location": "New York, USA",
+                    "image": "/RelatedSpecialists/img2.png",
+                    "experience": "25+ years",
+                    "expertise": [
+                        "Joint Replacement",
+                        "Hip Surgery",
+                        "Knee Surgery"
+                    ],
+                    "hospital": "Hospital for Special Surgery"
+                },
+                {
+                    "id": 3,
+                    "name": "Dr. Scott Rodeo",
+                    "specialty": "Orthopedic Surgeon",
+                    "location": "New York, USA",
+                    "image": "/RelatedSpecialists/img3.png",
+                    "experience": "30+ years",
+                    "expertise": [
+                        "Sports Medicine",
+                        "Shoulder Surgery",
+                        "Clinical Research"
+                    ],
+                    "hospital": "Hospital for Special Surgery"
+                }
+            ],
+            "selectionCriteria": [
+                "Board certifications and international qualifications",
+                "Experience with your specific condition",
+                "Success rates and patient outcomes",
+                "Communication skills and language proficiency",
+                "Availability for international patients"
+            ]
+        },
+        "diagnosticTools": {
+            "title": "Latest orthopedic diagnostic tools",
+            "conventionalMethods": {
+                "title": "Conventional methods",
+                "primary": {
+                    "name": "Physical examination",
+                    "description": "Comprehensive musculoskeletal examination including range of motion and strength testing"
+                },
+                "secondary": [
+                    "X-rays",
+                    "Blood tests",
+                    "Joint aspiration",
+                    "Physical therapy evaluation",
+                    "Gait analysis",
+                    "Manual testing"
+                ]
+            },
+            "advancedOptions": {
+                "title": "Advanced options",
+                "primary": {
+                    "name": "MRI scan",
+                    "description": "Advanced imaging technique providing detailed soft tissue and bone structure information"
+                },
+                "secondary": [
+                    "CT scan",
+                    "3D imaging",
+                    "Ultrasound",
+                    "Bone density scan",
+                    "Arthroscopy",
+                    "Electromyography"
+                ]
+            }
+        },
+        "treatmentPackages": {
+            "title": "Treatment Package",
+            "packages": [
+                {
+                    "id": 1,
+                    "name": "Knee Replacement",
+                    "image": "/hospitaldirectory/img1.png",
+                    "price": "€18,000",
+                    "description": "Surgical replacement of damaged knee joint with artificial implant",
+                    "duration": "2-3 hours",
+                    "recovery": "6-12 weeks",
+                    "includes": [
+                        "Pre-operative evaluation",
+                        "Surgery",
+                        "Rehabilitation",
+                        "Follow-up care"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Hip Replacement",
+                    "image": "/hospitaldirectory/img2.png",
+                    "price": "€20,000",
+                    "description": "Surgical replacement of damaged hip joint with artificial implant",
+                    "duration": "2-3 hours",
+                    "recovery": "6-12 weeks",
+                    "includes": [
+                        "Pre-operative evaluation",
+                        "Surgery",
+                        "Rehabilitation",
+                        "Follow-up care"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "ACL Reconstruction",
+                    "image": "/hospitaldirectory/img3.png",
+                    "price": "€12,000",
+                    "description": "Surgical reconstruction of torn anterior cruciate ligament",
+                    "duration": "1-2 hours",
+                    "recovery": "6-9 months",
+                    "includes": [
+                        "Pre-operative evaluation",
+                        "Surgery",
+                        "Physical therapy",
+                        "Follow-up care"
+                    ]
+                }
+            ]
+        },
+        "advancedTreatments": {
+            "title": "Advanced treatment solutions in Orthopaedics",
+            "latestOptions": {
+                "title": "Latest treatment options",
+                "primary": {
+                    "name": "Minimally invasive surgery",
+                    "description": "Advanced surgical techniques with smaller incisions and faster recovery"
+                },
+                "secondary": [
+                    "Robotic-assisted surgery",
+                    "Arthroscopic procedures",
+                    "3D printing for implants",
+                    "Stem cell therapy",
+                    "Platelet-rich plasma",
+                    "Regenerative medicine"
+                ]
+            },
+            "advancements": {
+                "title": "More advancements in orthopedic care",
+                "primary": {
+                    "name": "Computer-assisted surgery",
+                    "description": "Precision surgery using advanced computer navigation systems"
+                },
+                "secondary": [
+                    "AI in orthopedics",
+                    "Telemedicine",
+                    "3D printing for surgical planning",
+                    "Nanotechnology",
+                    "Biologics",
+                    "Advanced monitoring"
+                ]
+            }
+        },
+        "costs": {
+            "title": "Orthopaedics treatment cost worldwide",
+            "treatments": [
+                {
+                    "name": "Orthopedic consultation",
+                    "cost": "€200 - €500"
+                },
+                {
+                    "name": "Knee replacement",
+                    "cost": "€15,000 - €25,000"
+                },
+                {
+                    "name": "Hip replacement",
+                    "cost": "€18,000 - €30,000"
+                },
+                {
+                    "name": "ACL reconstruction",
+                    "cost": "€10,000 - €15,000"
+                },
+                {
+                    "name": "Shoulder surgery",
+                    "cost": "€8,000 - €20,000"
+                },
+                {
+                    "name": "Spine surgery",
+                    "cost": "€25,000 - €50,000"
+                },
+                {
+                    "name": "Arthroscopic surgery",
+                    "cost": "€5,000 - €12,000"
+                },
+                {
+                    "name": "Physical therapy",
+                    "cost": "€2,000 - €5,000"
+                }
+            ]
+        },
+        "advantages": {
+            "title": "Advantages of medical tourism",
+            "benefits": {
+                "title": "Benefits of exploring medical travel for orthopedic care",
+                "primary": {
+                    "name": "Cost savings",
+                    "description": "Significant cost reduction compared to domestic treatment options"
+                },
+                "secondary": [
+                    "Access to specialized care",
+                    "Reduced waiting times",
+                    "Advanced technology",
+                    "Experienced surgeons",
+                    "Comprehensive care packages"
+                ]
+            },
+            "reasons": {
+                "title": "Some of the reasons to make a request",
+                "primary": {
+                    "name": "Why choose us?",
+                    "description": "Aarogya Global provides comprehensive support for your medical journey"
+                },
+                "secondary": [
+                    "Expert guidance",
+                    "Affordable options",
+                    "Quality assurance",
+                    "Travel coordination",
+                    "24/7 support"
+                ]
+            }
+        },
+        "howWeHelp": {
+            "title": "How Aarogya Global can help you",
+            "services": [
+                {
+                    "icon": "phone",
+                    "title": "24/7 support",
+                    "description": "Round-the-clock assistance throughout your medical journey"
+                },
+                {
+                    "icon": "user-check",
+                    "title": "Personalized treatment plans",
+                    "description": "Customized care plans tailored to your specific needs"
+                },
+                {
+                    "icon": "stethoscope",
+                    "title": "Access to top doctors",
+                    "description": "Direct access to internationally renowned orthopedic surgeons"
+                },
+                {
+                    "icon": "plane",
+                    "title": "Seamless travel arrangements",
+                    "description": "Complete travel and accommodation coordination"
+                }
+            ]
+        },
+        "faq": {
+            "title": "FAQ",
+            "questions": [
+                {
+                    "question": "What are the common orthopedic conditions?",
+                    "answer": "Common orthopedic conditions include joint pain, arthritis, sports injuries, fractures, back pain, and various musculoskeletal disorders. These conditions can affect people of all ages and require specialized medical attention."
+                },
+                {
+                    "question": "What is the average cost of orthopedic treatment?",
+                    "answer": "The cost of orthopedic treatment varies significantly depending on the procedure, location, and hospital. On average, treatments range from €200 for consultations to €50,000 for complex spine surgeries."
+                },
+                {
+                    "question": "How do I choose the right orthopedic surgeon?",
+                    "answer": "When choosing an orthopedic surgeon, consider their experience with your specific condition, board certifications, success rates, communication skills, and availability for international patients. We help you connect with the best specialists worldwide."
+                },
+                {
+                    "question": "What diagnostic tests are commonly used in orthopedics?",
+                    "answer": "Common orthopedic diagnostic tests include X-rays, MRI scans, CT scans, ultrasound, bone density tests, and various physical examinations and functional tests."
+                },
+                {
+                    "question": "How long is the recovery time for orthopedic procedures?",
+                    "answer": "Recovery times vary by procedure: minimally invasive procedures may require 2-4 weeks, while major joint replacements can take 6-12 weeks or more for full recovery."
+                },
+                {
+                    "question": "What are the latest advances in orthopedic treatment?",
+                    "answer": "Latest advances include robotic-assisted surgery, minimally invasive techniques, 3D printing for implants, stem cell therapy, and regenerative medicine approaches. These technologies offer better outcomes and faster recovery times."
+                }
+            ]
+        }
+    }
+}
