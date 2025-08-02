@@ -1,6 +1,6 @@
 {
   "toggles": [
-    { "label": "Doctors", "value": "doctors" },
+    { "label": "Treatment", "value": "doctors" },
     { "label": "Hospitals", "value": "hospitals" }
   ],
   "filters": [

@@ -29,7 +29,6 @@ const HomeSection = () => {
       <div className="pt-10">
         <AarogyaTeam />
       </div>
-
       <Testimonials />
       <AppointmentRequest />
     </div>

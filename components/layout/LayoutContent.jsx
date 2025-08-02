@@ -15,7 +15,7 @@ export default function LayoutContent({ children }) {
   return (
     <>
       <TopBar />
-      <div className="w-full px-4 md:px-6 lg:px-8">
+      <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
         <Wrapper padding="none">
           {/* Only show this on homepage */}
           {isHomePage ? <NavbarToFilterLayout /> : <Header />}
