@@ -2,14 +2,79 @@
 
 import React, { useState } from "react";
 import filters from "@/data/filters.json";
+import hospitalJson from "@/data/HospitalData.json";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import CustomButton from "../../layout/CustomButton";
 import DropdownSelect from "@/components/layout/Dropdown";
 
 const FilterBar = () => {
   const [activeToggle, setActiveToggle] = useState(filters.toggles[0].value);
   const [selected, setSelected] = useState({});
+  const [validationError, setValidationError] = useState("");
+  const router = useRouter();
+
+  // Get filters based on active toggle
+  const getActiveFilters = () => {
+    if (activeToggle === "doctors") {
+      return filters.filters.filter(filter => filter.label !== "Hospital");
+    } else if (activeToggle === "hospitals") {
+      return filters.filters.filter(filter => filter.label !== "Treatment");
+    }
+    return filters.filters;
+  };
+
+  // Handle explore button click
+  const handleExploreClick = () => {
+    if (activeToggle === "doctors") {
+      const location = selected["Location"];
+      const treatment = selected["Treatment"];
+      
+      if (!location || !treatment) {
+        setValidationError("Please select both Location and Treatment");
+        return;
+      }
+      
+      setValidationError("");
+
+      // Map treatment names to URL-friendly names
+      const treatmentMap = {
+        "Cardiology": "cardiology",
+        "Orthopedics": "orthopaedics", 
+        "Neurology": "neurology",
+        "Oncology": "oncology",
+        "Urology": "urology",
+        "Gynaecology": "gynaecology"
+      };
+
+      const treatmentSlug = treatmentMap[treatment];
+      
+      // Navigate to specialty page
+      router.push(`/specialties/${treatmentSlug}?location=${encodeURIComponent(location)}`);
+      
+    } else if (activeToggle === "hospitals") {
+      const location = selected["Location"];
+      const hospital = selected["Hospital"];
+      
+      if (!location || !hospital) {
+        setValidationError("Please select both Location and Hospital");
+        return;
+      }
+      
+      setValidationError("");
+
+      // Find hospital ID by name
+      const hospitalData = hospitalJson.hospitals.find(h => h.name === hospital);
+      
+      if (hospitalData) {
+        // Navigate to hospital details page
+        router.push(`/hospitalDetails/${hospitalData.id}?location=${encodeURIComponent(location)}`);
+      } else {
+        setValidationError("Selected hospital not found");
+      }
+    }
+  };
 
   return (
     <div className="w-full flex justify-center relative z-10 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 mb-[50px] sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
@@ -27,7 +92,11 @@ const FilterBar = () => {
                   ? "bg-[#04CE78] text-white shadow-md border border-transparent"
                   : "bg-white text-[#000D44] hover:bg-gray-50 border-2 border-[#000D44]"
               }`}
-                onClick={() => setActiveToggle(toggle.value)}
+                onClick={() => {
+                  setActiveToggle(toggle.value);
+                  setValidationError(""); // Clear error when toggle changes
+                  setSelected({}); // Clear selections when toggle changes
+                }}
                 type="button"
               >
                 {toggle.label}
@@ -42,7 +111,7 @@ const FilterBar = () => {
             <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
               {/* Filters Section */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 w-full lg:w-auto lg:flex-1">
-                {filters.filters.map((filter) => (
+                {getActiveFilters().map((filter) => (
                   <div
                     key={filter.label}
                     className="w-full sm:w-auto lg:flex-1 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none"
@@ -51,47 +120,40 @@ const FilterBar = () => {
                       label={filter.label}
                       options={filter.options}
                       value={selected[filter.label] || ""}
-                      onChange={(e) =>
+                      onChange={(e) => {
                         setSelected((prev) => ({
                           ...prev,
                           [filter.label]: e.target.value,
-                        }))
-                      }
+                        }));
+                        setValidationError(""); // Clear error when user makes a selection
+                      }}
                       placeholder={filter.placeholder}
                     />
                   </div>
                 ))}
               </div>
+              
+              {/* Validation Error */}
+              {validationError && (
+                <div className="w-full text-center">
+                  <p className="text-red-500 text-sm font-medium">{validationError}</p>
+                </div>
+              )}
 
               {/* Action Buttons */}
               <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
-                {filters.actions.map((action) => (
-                  <Link
-                    key={action.label}
-                    href={action.href}
-                    className="w-full sm:w-auto"
-                  >
-                    <CustomButton
-                      text={action.label}
-                      bgColor={
-                        action.variant === "primary"
-                          ? "bg-[#04CE78]"
-                          : "bg-[#1F5FFF]"
-                      }
-                      textColor="text-white"
-                      hoverBgColor={
-                        action.variant === "primary"
-                          ? "bg-[#03B96A]"
-                          : "bg-[#03B96A]"
-                      }
-                      rounded="rounded-lg"
-                      padding="px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 w-full sm:w-auto"
-                      textSize="text-sm sm:text-base lg:text-lg"
-                      iconSize={18}
-                      className="group hover:translate-x-1 transition-transform duration-300"
-                    />
-                  </Link>
-                ))}
+                <CustomButton
+                  text={activeToggle === "doctors" ? "Explore Doctors" : "Explore Hospitals"}
+                  bgColor="bg-[#1F5FFF]"
+                  textColor="text-white"
+                  hoverBgColor="bg-[#03B96A]"
+                  rounded="rounded-lg"
+                  padding="px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 w-full sm:w-auto"
+                  textSize="text-sm sm:text-base lg:text-lg"
+                  iconSize={18}
+                  className="group hover:translate-x-1 transition-transform duration-300"
+                  onClick={handleExploreClick}
+                />
               </div>
               
             </div>

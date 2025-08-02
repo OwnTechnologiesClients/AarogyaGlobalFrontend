@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
 
-const HospitalOverview = () => {
+const HospitalOverview = ({ hospital, location }) => {
   const [expandedFeature, setExpandedFeature] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -23,23 +23,23 @@ const HospitalOverview = () => {
   const hospitalStats = [
     {
       icon: <Star className="w-6 h-6 text-[#04CE78]" />,
-      label: "89%",
+      label: hospital?.rating || "4.5k+ Rating",
       sublabel: "UserScore"
     },
     {
       icon: <Calendar className="w-6 h-6 text-[#04CE78]" />,
       label: "Founded",
-      sublabel: "in 1710"
+      sublabel: "in 2010"
     },
     {
       icon: <Heart className="w-6 h-6 text-[#04CE78]" />,
-      label: "807,000",
+      label: "50,000+",
       sublabel: "patients"
     },
     {
       icon: <Users className="w-6 h-6 text-[#04CE78]" />,
-      label: "45",
-      sublabel: "units"
+      label: hospital?.doctorsCount || "45",
+      sublabel: "doctors"
     }
   ];
 
@@ -47,12 +47,12 @@ const HospitalOverview = () => {
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Size & Capacity",
-      value: "OT: 3000, ICU:30, Patient Bed: 600+"
+      value: "OT: 10, ICU: 5, Patient Bed: 100+"
     },
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Clinic type",
-      value: "General"
+      value: "Multi-Specialty"
     },
     {
       icon: <Heart className="w-5 h-5 text-gray-500" />,
@@ -66,22 +66,25 @@ const HospitalOverview = () => {
     },
     {
       icon: <Star className="w-5 h-5 text-gray-500" />,
-      label: "3.3 on Google",
-      value: "The data collected based on 858 patient reviews on Google"
+      label: "4.5 on Google",
+      value: "The data collected based on patient reviews on Google"
     }
   ];
 
-
-
   const features = [
     {
-      title: "Proton beams for eye cancer",
-      content: "The clinic achieved a milestone by curing its 3,000th eye cancer patient using proton therapy. This treatment involves using protons to target the tumor while minimizing damage to healthy surrounding tissue.",
+      title: "Advanced Medical Technology",
+      content: `${hospital?.name || "Our hospital"} is equipped with state-of-the-art medical technology and facilities to provide the best possible care to our patients.`,
       isExpanded: false
     },
     {
-      title: "The heart of scientific research",
-      content: "Our hospital is at the forefront of medical research, conducting groundbreaking studies in cardiology, oncology, and neuroscience to advance patient care.",
+      title: "Expert Medical Team",
+      content: `Our team of ${hospital?.doctorsCount || "45"} experienced doctors and medical professionals are dedicated to providing exceptional healthcare services.`,
+      isExpanded: false
+    },
+    {
+      title: "Comprehensive Care",
+      content: `We offer a wide range of treatments including ${hospital?.treatments?.join(", ") || "General Medicine, Cardiology, Orthopedics"} to meet all your healthcare needs.`,
       isExpanded: false
     }
   ];
@@ -136,6 +139,14 @@ const HospitalOverview = () => {
             ))}
           </div>
 
+          {/* Location Information */}
+          {location && (
+            <div className="mb-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+              <h4 className="font-bold text-blue-800 mb-2">Selected Location</h4>
+              <p className="text-blue-700">{location}</p>
+            </div>
+          )}
+
           {/* Certificates Section */}
           <CertificateSwiper
             variant="minimal"
@@ -180,15 +191,15 @@ const HospitalOverview = () => {
           {/* Team Image with Contact CTA */}
           <div className="relative rounded-2xl overflow-hidden mb-6">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"
-              alt="Medical Team"
+              src={hospital?.image || "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"}
+              alt={`${hospital?.name || "Medical"} Team`}
               className="w-full h-[300px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
               <div className="text-center mb-4">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-blue-900 font-bold text-xl">G</span>
+                  <span className="text-blue-900 font-bold text-xl">{hospital?.name?.charAt(0) || "H"}</span>
                 </div>
                 <h4 className="font-bold text-lg mb-2">For Any Service to Contact us</h4>
                 <p className="text-sm opacity-90 mb-4">If you need any help please feel free to contact us</p>

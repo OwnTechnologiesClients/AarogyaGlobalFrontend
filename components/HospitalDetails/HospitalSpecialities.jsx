@@ -12,115 +12,113 @@ import {
   Star
 } from 'lucide-react';
 
-const HospitalSpecialities = () => {
-  const specialities = [
-    {
-      icon: <Heart className="w-8 h-8 text-red-500" />,
-      name: "Cardiology",
-      description: "Comprehensive heart care including cardiac surgery, angioplasty, and preventive cardiology",
-      doctors: 12,
-      rating: 4.8,
-      services: ["Cardiac Surgery", "Angioplasty", "ECG", "Echocardiography"]
-    },
-    {
-      icon: <Brain className="w-8 h-8 text-purple-500" />,
-      name: "Neurology",
-      description: "Advanced neurological care for brain, spine, and nervous system disorders",
-      doctors: 8,
-      rating: 4.9,
-      services: ["Brain Surgery", "Spine Surgery", "Stroke Care", "Epilepsy Treatment"]
-    },
-    {
-      icon: <Bone className="w-8 h-8 text-blue-500" />,
-      name: "Orthopedics",
-      description: "Complete bone and joint care including joint replacement and sports medicine",
-      doctors: 15,
-      rating: 4.7,
-      services: ["Joint Replacement", "Sports Medicine", "Fracture Care", "Arthroscopy"]
-    },
-    {
-      icon: <Eye className="w-8 h-8 text-green-500" />,
-      name: "Ophthalmology",
-      description: "Comprehensive eye care including cataract surgery and retinal treatments",
-      doctors: 6,
-      rating: 4.8,
-      services: ["Cataract Surgery", "Retinal Care", "LASIK", "Glaucoma Treatment"]
-    },
-    {
-      icon: <Baby className="w-8 h-8 text-pink-500" />,
-      name: "Pediatrics",
-      description: "Specialized healthcare for infants, children, and adolescents",
-      doctors: 10,
-      rating: 4.9,
-      services: ["Neonatal Care", "Pediatric Surgery", "Vaccination", "Child Development"]
-    },
-    {
-      icon: <Stethoscope className="w-8 h-8 text-teal-500" />,
-      name: "General Medicine",
-      description: "Primary healthcare and treatment for common medical conditions",
-      doctors: 20,
-      rating: 4.6,
-      services: ["Health Checkups", "Chronic Disease Management", "Preventive Care", "Emergency Medicine"]
-    }
-  ];
+const HospitalSpecialities = ({ hospital }) => {
+  // Map treatments to specialties with icons
+  const getSpecialtyIcon = (treatment) => {
+    const iconMap = {
+      "Cardiology": <Heart className="w-8 h-8 text-red-500" />,
+      "Neurology": <Brain className="w-8 h-8 text-purple-500" />,
+      "Orthopedics": <Bone className="w-8 h-8 text-blue-500" />,
+      "Ophthalmology": <Eye className="w-8 h-8 text-green-500" />,
+      "Pediatrics": <Baby className="w-8 h-8 text-pink-500" />,
+      "General Medicine": <Stethoscope className="w-8 h-8 text-teal-500" />,
+      "Dermatology": <Stethoscope className="w-8 h-8 text-orange-500" />,
+      "Dental Care": <Stethoscope className="w-8 h-8 text-cyan-500" />,
+      "Neurosurgery": <Brain className="w-8 h-8 text-indigo-500" />,
+      "Physical Therapy": <Bone className="w-8 h-8 text-emerald-500" />
+    };
+    return iconMap[treatment] || <Stethoscope className="w-8 h-8 text-gray-500" />;
+  };
+
+  const getSpecialtyDescription = (treatment) => {
+    const descriptionMap = {
+      "Cardiology": "Comprehensive heart care including cardiac surgery, angioplasty, and preventive cardiology",
+      "Neurology": "Advanced neurological care for brain, spine, and nervous system disorders",
+      "Orthopedics": "Complete bone and joint care including joint replacement and sports medicine",
+      "Ophthalmology": "Comprehensive eye care including cataract surgery and retinal treatments",
+      "Pediatrics": "Specialized healthcare for infants, children, and adolescents",
+      "General Medicine": "Primary healthcare and treatment for common medical conditions",
+      "Dermatology": "Comprehensive skin care and treatment for various dermatological conditions",
+      "Dental Care": "Complete dental care including preventive, restorative, and cosmetic dentistry",
+      "Neurosurgery": "Advanced surgical treatment for brain and nervous system disorders",
+      "Physical Therapy": "Rehabilitation and physical therapy services for injury recovery"
+    };
+    return descriptionMap[treatment] || "Specialized medical care and treatment services";
+  };
+
+  // Create specialties from hospital treatments
+  const specialities = hospital?.treatments?.map(treatment => ({
+    icon: getSpecialtyIcon(treatment),
+    name: treatment,
+    description: getSpecialtyDescription(treatment),
+    doctors: Math.floor(Math.random() * 15) + 5, // Random number for demo
+    rating: (4.5 + Math.random() * 0.5).toFixed(1), // Random rating between 4.5-5.0
+    services: [treatment, "Consultation", "Treatment", "Follow-up"]
+  })) || [];
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Medical Specialities</h2>
         <p className="text-gray-600 text-lg">
-          Our hospital offers comprehensive medical care across multiple specialties with experienced doctors and state-of-the-art facilities.
+          {hospital?.name || "Our hospital"} offers comprehensive medical care across multiple specialties with experienced doctors and state-of-the-art facilities.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {specialities.map((specialty, index) => (
-          <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-300">
-            {/* Header */}
-            <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-gray-50 rounded-xl">
-                {specialty.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-800">{specialty.name}</h3>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                  <span>{specialty.rating}</span>
-                  <span>•</span>
-                  <Users className="w-4 h-4" />
-                  <span>{specialty.doctors} Doctors</span>
+      {specialities.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {specialities.map((specialty, index) => (
+            <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-300">
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-gray-50 rounded-xl">
+                  {specialty.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">{specialty.name}</h3>
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                    <span>{specialty.rating}</span>
+                    <span>•</span>
+                    <Users className="w-4 h-4" />
+                    <span>{specialty.doctors} Doctors</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Description */}
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              {specialty.description}
-            </p>
+              {/* Description */}
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                {specialty.description}
+              </p>
 
-            {/* Services */}
-            <div className="mb-6">
-              <h4 className="font-semibold text-gray-800 mb-2">Key Services:</h4>
-              <div className="flex flex-wrap gap-2">
-                {specialty.services.map((service, serviceIndex) => (
-                  <span 
-                    key={serviceIndex}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                  >
-                    {service}
-                  </span>
-                ))}
+              {/* Services */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-800 mb-2">Key Services:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {specialty.services.map((service, serviceIndex) => (
+                    <span 
+                      key={serviceIndex}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                    >
+                      {service}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* CTA Button */}
-            <button className="w-full bg-[#04CE78] hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-              View Doctors
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        ))}
-      </div>
+              {/* CTA Button */}
+              <button className="w-full bg-[#04CE78] hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                View Doctors
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12">
+          <p className="text-gray-600 text-lg">No specialties information available for this hospital.</p>
+        </div>
+      )}
 
       {/* Statistics Section */}
       <div className="mt-12 bg-gradient-to-r from-[#04CE78] to-green-600 rounded-2xl p-8 text-white">
@@ -131,11 +129,11 @@ const HospitalSpecialities = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-3xl font-bold mb-1">71</div>
+            <div className="text-3xl font-bold mb-1">{hospital?.doctorsCount || "45"}</div>
             <div className="text-green-100 text-sm">Specialist Doctors</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold mb-1">15+</div>
+            <div className="text-3xl font-bold mb-1">{specialities.length || "5"}+</div>
             <div className="text-green-100 text-sm">Medical Specialties</div>
           </div>
           <div className="text-center">

@@ -6,13 +6,27 @@
   "filters": [
     {
       "label": "Location",
-      "placeholder": "Location",
-      "options": ["Delhi", "Mumbai", "Bangalore", "Chennai"]
+      "placeholder": "Select Location",
+      "options": ["Delhi", "Mumbai", "Bangalore", "Chennai", "Hyderabad", "Kolkata", "Pune", "Ahmedabad", "Noida", "Gurugram"]
     },
     {
       "label": "Treatment",
-      "placeholder": "Treatment",
-      "options": ["Cardiology", "Orthopedics", "Neurology", "Oncology"]
+      "placeholder": "Select Treatment",
+      "options": ["Cardiology", "Orthopedics", "Neurology", "Oncology", "Urology", "Gynaecology"]
+    },
+    {
+      "label": "Hospital",
+      "placeholder": "Select Hospital",
+      "options": [
+        "Future Care Medical Center",
+        "Quantam Care Hospital", 
+        "City General Hospital",
+        "Health Plus Clinic",
+        "Aarogya Care Center",
+        "Hope Medical Institute",
+        "Wellness Hospital Group",
+        "Grand Medical Center"
+      ]
     }
   ],
   "actions": [

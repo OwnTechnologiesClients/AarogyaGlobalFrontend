@@ -2,15 +2,15 @@
 import React, { useState } from 'react';
 import { Star, MapPin } from 'lucide-react';
 
-const HospitalImageGallery = () => {
+const HospitalImageGallery = ({ hospital }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Hospital images data
+  // Hospital images data - using hospital image as main and adding some additional images
   const hospitalImages = [
     {
       id: 1,
-      url: "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
-      alt: "Hospital Main Building"
+      url: hospital?.image || "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
+      alt: `${hospital?.name || "Hospital"} Main Building`
     },
     {
       id: 2,
@@ -54,13 +54,13 @@ const HospitalImageGallery = () => {
             {/* Rating Badge */}
             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">
               <Star className="w-5 h-5 text-yellow-500 fill-current" />
-              <span className="font-bold text-gray-800">10.00</span>
+              <span className="font-bold text-gray-800">{hospital?.rating || "4.5k+ Rating"}</span>
             </div>
 
             {/* Location Badge */}
             <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-gray-600" />
-              <span className="text-sm font-medium text-gray-800">Delhi, INDIA</span>
+              <span className="text-sm font-medium text-gray-800">{hospital?.location || "Delhi, INDIA"}</span>
             </div>
           </div>
         </div>

@@ -13,12 +13,78 @@ import {
   Heart,
   Stethoscope,
   Activity,
-  CheckCircle
+  CheckCircle,
+  Brain
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
 
-const HospitalFeatures = () => {
-  const facilities = [
+const HospitalFeatures = ({ hospital }) => {
+  // Map facilities to icons
+  const getFacilityIcon = (facility) => {
+    const iconMap = {
+      "Pharmacy": <Stethoscope className="w-6 h-6 text-blue-500" />,
+      "ICU": <Heart className="w-6 h-6 text-red-500" />,
+      "Operation Theater": <Activity className="w-6 h-6 text-green-500" />,
+      "Cafeteria": <Coffee className="w-6 h-6 text-brown-500" />,
+      "MRI": <Zap className="w-6 h-6 text-purple-500" />,
+      "CT Scan": <Activity className="w-6 h-6 text-indigo-500" />,
+      "Emergency Ward": <Phone className="w-6 h-6 text-red-500" />,
+      "Dental Clinic": <Stethoscope className="w-6 h-6 text-cyan-500" />,
+      "Skin Care Center": <Shield className="w-6 h-6 text-pink-500" />,
+      "Waiting Lounge": <Bed className="w-6 h-6 text-orange-500" />,
+      "Lab": <Activity className="w-6 h-6 text-blue-500" />,
+      "Cardiac ICU": <Heart className="w-6 h-6 text-red-500" />,
+      "Cath Lab": <Heart className="w-6 h-6 text-red-500" />,
+      "Rehabilitation": <Stethoscope className="w-6 h-6 text-green-500" />,
+      "Neurology Ward": <Brain className="w-6 h-6 text-purple-500" />,
+      "Physiotherapy": <Stethoscope className="w-6 h-6 text-blue-500" />,
+      "Dental Chair": <Stethoscope className="w-6 h-6 text-cyan-500" />,
+      "X-Ray": <Activity className="w-6 h-6 text-gray-500" />,
+      "Sterilization": <Shield className="w-6 h-6 text-green-500" />,
+      "Dermatology Clinic": <Shield className="w-6 h-6 text-pink-500" />,
+      "Laser Center": <Zap className="w-6 h-6 text-yellow-500" />,
+      "Cosmetic Surgery": <Stethoscope className="w-6 h-6 text-purple-500" />
+    };
+    return iconMap[facility] || <Stethoscope className="w-6 h-6 text-gray-500" />;
+  };
+
+  const getFacilityDescription = (facility) => {
+    const descriptionMap = {
+      "Pharmacy": "24/7 pharmacy with prescription and over-the-counter medications",
+      "ICU": "Intensive Care Unit with advanced life support systems",
+      "Operation Theater": "State-of-the-art operating rooms with modern surgical equipment",
+      "Cafeteria": "24/7 cafeteria with healthy meal options for patients and visitors",
+      "MRI": "Advanced MRI scanning facility for detailed medical imaging",
+      "CT Scan": "High-resolution CT scanning for accurate diagnosis",
+      "Emergency Ward": "24/7 emergency services with trained medical staff",
+      "Dental Clinic": "Comprehensive dental care with modern dental equipment",
+      "Skin Care Center": "Specialized dermatological treatments and skin care",
+      "Waiting Lounge": "Comfortable waiting areas for patients and families",
+      "Lab": "Modern laboratory for accurate diagnostic testing",
+      "Cardiac ICU": "Specialized intensive care for cardiac patients",
+      "Cath Lab": "Cardiac catheterization laboratory for heart procedures",
+      "Rehabilitation": "Physical therapy and rehabilitation services",
+      "Neurology Ward": "Specialized care for neurological conditions",
+      "Physiotherapy": "Physical therapy and rehabilitation treatments",
+      "Dental Chair": "Modern dental equipment for comprehensive oral care",
+      "X-Ray": "Digital X-ray imaging for diagnostic purposes",
+      "Sterilization": "Advanced sterilization equipment for medical instruments",
+      "Dermatology Clinic": "Specialized skin care and dermatological treatments",
+      "Laser Center": "Advanced laser treatments for various medical conditions",
+      "Cosmetic Surgery": "Cosmetic and reconstructive surgical procedures"
+    };
+    return descriptionMap[facility] || "Modern medical facility for patient care";
+  };
+
+  // Create facilities from hospital data
+  const facilities = hospital?.facilities?.map(facility => ({
+    icon: getFacilityIcon(facility),
+    title: facility,
+    description: getFacilityDescription(facility)
+  })) || [];
+
+  // Default facilities if none available
+  const defaultFacilities = [
     {
       icon: <Wifi className="w-6 h-6 text-blue-500" />,
       title: "Free WiFi",
@@ -38,28 +104,10 @@ const HospitalFeatures = () => {
       icon: <Shield className="w-6 h-6 text-purple-500" />,
       title: "Security",
       description: "Round-the-clock security for patient safety"
-    },
-    {
-      icon: <Clock className="w-6 h-6 text-orange-500" />,
-      title: "24/7 Emergency",
-      description: "Emergency services available round the clock"
-    },
-    {
-      icon: <Phone className="w-6 h-6 text-red-500" />,
-      title: "Ambulance Service",
-      description: "Emergency ambulance service with trained paramedics"
-    },
-    {
-      icon: <Utensils className="w-6 h-6 text-yellow-500" />,
-      title: "Patient Meals",
-      description: "Nutritious meals prepared by certified dietitians"
-    },
-    {
-      icon: <Bed className="w-6 h-6 text-indigo-500" />,
-      title: "Private Rooms",
-      description: "Comfortable private rooms with modern amenities"
     }
   ];
+
+  const displayFacilities = facilities.length > 0 ? facilities : defaultFacilities;
 
   const medicalEquipment = [
     {
@@ -88,23 +136,21 @@ const HospitalFeatures = () => {
     }
   ];
 
-
-
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Hospital Features & Facilities</h2>
         <p className="text-gray-600 text-lg">
-          Experience world-class healthcare with our modern facilities and advanced medical equipment.
+          {hospital?.name || "Our hospital"} offers world-class healthcare with modern facilities and advanced medical equipment.
         </p>
       </div>
 
       {/* General Facilities */}
       <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">General Facilities</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-6">Available Facilities</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {facilities.map((facility, index) => (
+          {displayFacilities.map((facility, index) => (
             <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center gap-3 mb-3">
                 {facility.icon}
@@ -151,7 +197,7 @@ const HospitalFeatures = () => {
       {/* Special Features */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold mb-2">What Makes Us Special</h3>
+          <h3 className="text-2xl font-bold mb-2">What Makes {hospital?.name || "Us"} Special</h3>
           <p className="text-blue-100">Advanced healthcare features for better patient experience</p>
         </div>
 
