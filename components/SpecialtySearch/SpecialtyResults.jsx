@@ -52,13 +52,13 @@ const SpecialtyResults = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const renderCard = (item) => {
+  const renderCard = (item, index) => {
     if (activeCategory === 'Doctors' || item.type === 'doctor') {
-      return <DoctorCard key={`doctor-${item.id}`} doctor={item} />;
+      return <DoctorCard key={`doctor-${item.id}-${index}`} doctor={item} />;
     } else if (activeCategory === 'Hospitals' || item.type === 'hospital') {
-      return <SpecialtyHospitalCard key={`hospital-${item.id}`} hospital={item} />;
+      return <SpecialtyHospitalCard key={`hospital-${item.id}-${index}`} hospital={item} />;
     } else if (activeCategory === 'Treatments' || item.type === 'treatment') {
-      return <TreatmentCard key={`treatment-${item.id}`} treatment={item} />;
+      return <TreatmentCard key={`treatment-${item.id}-${index}`} treatment={item} />;
     }
   };
 
@@ -93,7 +93,7 @@ const SpecialtyResults = ({
             <>
               {/* Results Grid */}
               <div className={getGridClass()}>
-                {currentCards.map((item) => renderCard(item))}
+                {currentCards.map((item, index) => renderCard(item, index))}
               </div>
 
               {/* Pagination */}

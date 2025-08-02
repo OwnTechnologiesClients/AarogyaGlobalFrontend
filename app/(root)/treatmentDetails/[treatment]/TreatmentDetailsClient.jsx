@@ -1,10 +1,12 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
+import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
 
 const TreatmentDetailsClient = ({ treatmentData }) => {
     const [expandedSections, setExpandedSections] = useState({});
     const [expandedFAQ, setExpandedFAQ] = useState({});
+    const [activeTab, setActiveTab] = useState('Overview');
 
     const { treatment } = treatmentData;
 
@@ -22,6 +24,58 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
         }));
     };
 
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const handleTabClick = (tab) => {
+        setActiveTab(tab);
+        const sectionMap = {
+            'Overview': 'overview',
+            'Hospitals': 'hospitals',
+            'Doctors': 'doctors',
+            'Diagnostic': 'diagnostic',
+            'Treatments': 'treatments',
+            'Cost': 'cost',
+            'FAQ': 'faq'
+        };
+        const sectionId = sectionMap[tab];
+        if (sectionId) {
+            scrollToSection(sectionId);
+        }
+    };
+
+    // Scroll spy functionality
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['overview', 'hospitals', 'doctors', 'diagnostic', 'treatments', 'cost', 'faq'];
+            const scrollPosition = window.scrollY + 200; // Offset for better detection
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section && section.offsetTop <= scrollPosition) {
+                    const tabMap = {
+                        'overview': 'Overview',
+                        'hospitals': 'Hospitals',
+                        'doctors': 'Doctors',
+                        'diagnostic': 'Diagnostic',
+                        'treatments': 'Treatments',
+                        'cost': 'Cost',
+                        'faq': 'FAQ'
+                    };
+                    setActiveTab(tabMap[sections[i]]);
+                    break;
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <div className="min-h-screen bg-white">
             <div className="container mx-auto px-4 py-8">
@@ -33,16 +87,8 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                             {treatment.title}
                         </h1>
 
-                        {/* Navigation Links */}
-                        <div className="flex flex-wrap gap-4 mb-8 pb-4 border-b">
-                            <a href="#overview" className="text-blue-600 hover:text-blue-800 font-medium">Overview</a>
-                            <a href="#hospitals" className="text-blue-600 hover:text-blue-800 font-medium">Best Hospitals</a>
-                            <a href="#doctors" className="text-blue-600 hover:text-blue-800 font-medium">Best Doctors</a>
-                            <a href="#diagnostic" className="text-blue-600 hover:text-blue-800 font-medium">Diagnostic Tools</a>
-                            <a href="#treatments" className="text-blue-600 hover:text-blue-800 font-medium">Treatment Options</a>
-                            <a href="#cost" className="text-blue-600 hover:text-blue-800 font-medium">Cost</a>
-                            <a href="#faq" className="text-blue-600 hover:text-blue-800 font-medium">FAQ</a>
-                        </div>
+                        {/* Treatment Navigation */}
+                        <TreatmentNavigation activeTab={activeTab} setActiveTab={handleTabClick} />
 
                         {/* Overview Section */}
                         <section id="overview" className="mb-12">

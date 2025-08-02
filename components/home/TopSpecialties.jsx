@@ -34,6 +34,10 @@ const TopSpecialties = () => {
 
   // Responsive breakpoints for Swiper
   const breakpoints = {
+    320: {
+      slidesPerView: 1.1,
+      spaceBetween: 12,
+    },
     640: {
       slidesPerView: 2.2,
       spaceBetween: 16,
@@ -51,9 +55,9 @@ const TopSpecialties = () => {
     return (
       <CardWrapper key={idx}>
         <Link href={`/specialties/${spec.slug}`}>
-          <div className="flex flex-col items-center text-center bg-white rounded-3xl p-6 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+          <div className="flex flex-col items-center text-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer w-full max-w-xs mx-auto mb-8">
             <div
-              className="flex items-center justify-center rounded-full mb-6"
+              className="flex items-center justify-center rounded-full mb-4 md:mb-6"
               style={{
                 backgroundColor: spec.color,
                 width: 120,
@@ -75,15 +79,17 @@ const TopSpecialties = () => {
                 />
               )}
             </div>
-            <span className="font-extrabold text-xl text-[#1A0142]">
-              {spec.label}
-            </span>
-            <span className="text-[#6B6B6B] text-base mt-2">
-              {spec.count} Listing{spec.count > 1 ? "s" : ""}
-            </span>
-            <span className="text-[#04CE78] text-sm mt-2 font-medium">
-              {spec.description}
-            </span>
+            <div className="flex flex-col items-start w-full mt-2 md:mt-4">
+              <h4 className="text-lg md:text-xl font-extrabold text-[#1A0142] w-full text-center">
+                {spec.label}
+              </h4>
+              <p className="text-sm md:text-base text-[#6B6B6B] mt-2 w-full text-center">
+                {spec.count} Listing{spec.count > 1 ? "s" : ""}
+              </p>
+              <p className="text-sm md:text-base text-[#04CE78] mt-2 font-medium w-full text-center">
+                {spec.description}
+              </p>
+            </div>
           </div>
         </Link>
       </CardWrapper>
@@ -130,8 +136,8 @@ const TopSpecialties = () => {
           <Swiper
             ref={swiperRef}
             modules={[Navigation]}
-            slidesPerView={1.2}
-            spaceBetween={16}
+            slidesPerView={1.1}
+            spaceBetween={12}
             loop={true}
             breakpoints={breakpoints}
             className=""

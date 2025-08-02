@@ -72,7 +72,7 @@ const AarogyaTeam = () => {
           >
             {teamData.map((member, idx) => (
               <SwiperSlide key={idx}>
-                <div className="flex flex-col items-center  bg-white rounded-3xl p-4 h-auto md:h-[430px] mx-auto ">
+                <div className="flex flex-col items-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-xs mx-auto mb-8">
                   {/* Image Container */}
                   <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
                     <Image
@@ -85,10 +85,10 @@ const AarogyaTeam = () => {
                   </div>
 
                   {/* Text Content */}
-                  <div className="flex flex-col items-start w-full mt-2 md:mt-6">
-                    <h3 className="text-base md:text-2xl mb-4 font-bold text-[#1A0142]">
+                  <div className="flex flex-col items-start w-full mt-2 md:mt-4">
+                    <h4 className="text-lg md:text-xl font-extrabold text-[#1A0142]">
                       {member.name}
-                    </h3>
+                    </h4>
                     <p className="text-sm md:text-base text-[#555555]">
                       {member.role}
                     </p>

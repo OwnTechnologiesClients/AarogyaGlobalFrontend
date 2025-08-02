@@ -27,10 +27,6 @@
                 "href": "/"
               },
               {
-                "label": "Specialties",
-                "href": "/specialties"
-              },
-              {
                 "label": "Orthopaedics"
               }
             ]
@@ -45,10 +41,6 @@
               {
                 "label": "Home",
                 "href": "/"
-              },
-              {
-                "label": "Specialties",
-                "href": "/specialties"
               },
               {
                 "label": "Cardiology"
@@ -67,10 +59,6 @@
                 "href": "/"
               },
               {
-                "label": "Specialties",
-                "href": "/specialties"
-              },
-              {
                 "label": "Neurology"
               }
             ]
@@ -85,10 +73,6 @@
               {
                 "label": "Home",
                 "href": "/"
-              },
-              {
-                "label": "Specialties",
-                "href": "/specialties"
               },
               {
                 "label": "Oncology"
@@ -107,10 +91,6 @@
                 "href": "/"
               },
               {
-                "label": "Specialties",
-                "href": "/specialties"
-              },
-              {
                 "label": "Gynaecology"
               }
             ]
@@ -125,10 +105,6 @@
               {
                 "label": "Home",
                 "href": "/"
-              },
-              {
-                "label": "Specialties",
-                "href": "/specialties"
               },
               {
                 "label": "Urology"
@@ -183,22 +159,6 @@
       "label": "Doctors",
       "dropdown": [
         {
-          "label": "Doctor Search",
-          "href": "/doctors",
-          "pageHeader": {
-            "title": "Doctor Search",
-            "routes": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "Doctor Search"
-              }
-            ]
-          }
-        },
-        {
           "label": "Doctor Details",
           "href": "/doctorDetails",
           "pageHeader": {
@@ -207,10 +167,6 @@
               {
                 "label": "Home",
                 "href": "/"
-              },
-              {
-                "label": "Doctor",
-                "href": "/doctor"
               },
               {
                 "label": "Doctor Details"
@@ -267,26 +223,6 @@
               },
               {
                 "label": "Partner With Us"
-              }
-            ]
-          }
-        },
-        {
-          "label": "Option 2",
-          "href": "/partner/option2",
-          "pageHeader": {
-            "title": "Option 2",
-            "routes": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "Collaborate",
-                "href": "/partner"
-              },
-              {
-                "label": "Option 2"
               }
             ]
           }
