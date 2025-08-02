@@ -62,7 +62,7 @@ const ContactCard = () => {
             </button>
           </div>
 
-          {/* Book Appointment */}
+          {/* View Details */}
           <div className="bg-[#FEC091] rounded-2xl px-6 py-10 sm:px-10 sm:py-14 text-center flex flex-col items-center shadow-md">
             <div className="bg-white rounded-full p-6 sm:p-8 inline-flex mb-6">
               <Image
@@ -74,7 +74,7 @@ const ContactCard = () => {
               />
             </div>
             <h3 className="text-[#001033] text-lg sm:text-xl font-semibold font-poppins mb-4">
-              Book An Appointment
+              View Details
             </h3>
             <div className="text-[#001033] text-sm sm:text-base mb-6 leading-relaxed space-y-0.5">
               Make an appointment with us at
@@ -82,7 +82,7 @@ const ContactCard = () => {
              directly examine your health.
             </div>
             <button className="bg-[#1E40FF]  cursor-pointer text-white text-sm sm:text-base font-semibold font-poppins w-full py-3 rounded-md flex items-center justify-center gap-2">
-              Book An Appointment
+              View Details
               <ArrowRight size={18} className="text-white" />
             </button>
           </div>

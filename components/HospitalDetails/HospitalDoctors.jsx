@@ -232,9 +232,9 @@ const HospitalDoctors = () => {
                 </div>
               </div>
 
-              {/* Book Appointment Button */}
+              {/* View Details Button */}
               <button className="w-full bg-[#04CE78] hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                Book Appointment
+                View Details
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

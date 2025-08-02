@@ -1,0 +1,393 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. Suresh Reddy",
+      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400",
+      "specialty": "Interventional Cardiologist",
+      "experience": "20 years",
+      "rating": "4.9",
+      "location": "Chennai, India",
+      "hospital": "Apollo Hospital",
+      "consultationFee": "₹2000",
+      "treatments": [
+        "Angioplasty",
+        "Cardiac Catheterization",
+        "Stent Placement",
+        "Heart Valve Repair",
+        "Pacemaker Implantation"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Cardiology",
+        "DM Interventional Cardiology"
+      ],
+      "about": "Dr. Suresh Reddy is a highly experienced interventional cardiologist with over 20 years of expertise in treating complex cardiac conditions. He has performed more than 5000 successful angioplasty procedures and is known for his precision and patient care.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Madras Medical College",
+          "year": "2000"
+        },
+        {
+          "degree": "MD Cardiology",
+          "institution": "AIIMS Delhi",
+          "year": "2005"
+        },
+        {
+          "degree": "DM Interventional Cardiology",
+          "institution": "Cleveland Clinic, USA",
+          "year": "2008"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Cardiologist",
+          "hospital": "Apollo Hospital Chennai",
+          "duration": "2010 - Present"
+        },
+        {
+          "position": "Interventional Cardiologist",
+          "hospital": "Fortis Hospital Mumbai",
+          "duration": "2008 - 2010"
+        }
+      ],
+      "specializations": [
+        "Interventional Cardiology",
+        "Coronary Angioplasty",
+        "Structural Heart Disease",
+        "Peripheral Vascular Disease"
+      ],
+      "awards": [
+        "Best Cardiologist Award 2022",
+        "Excellence in Interventional Cardiology 2020",
+        "Patient Choice Award 2019"
+      ],
+      "languages": ["English", "Hindi", "Tamil", "Telugu"],
+      "availability": {
+        "monday": "9:00 AM - 5:00 PM",
+        "tuesday": "9:00 AM - 5:00 PM",
+        "wednesday": "9:00 AM - 5:00 PM",
+        "thursday": "9:00 AM - 5:00 PM",
+        "friday": "9:00 AM - 5:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Closed"
+      },
+      "contact": {
+        "phone": "+91-98765-43210",
+        "email": "dr.suresh.reddy@apollo.com"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Dr. Meera Joshi",
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+      "specialty": "Cardiac Surgeon",
+      "experience": "16 years",
+      "rating": "4.8",
+      "location": "Pune, India",
+      "hospital": "Ruby Hall Clinic",
+      "consultationFee": "₹1800",
+      "treatments": [
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Pacemaker Implantation",
+        "Aortic Aneurysm Repair",
+        "Heart Transplant"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS General Surgery",
+        "MCh Cardiothoracic Surgery"
+      ],
+      "about": "Dr. Meera Joshi is a renowned cardiac surgeon specializing in complex heart surgeries. With over 16 years of experience, she has successfully performed more than 2000 cardiac surgeries and is known for her innovative surgical techniques.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "B.J. Medical College, Pune",
+          "year": "2005"
+        },
+        {
+          "degree": "MS General Surgery",
+          "institution": "Sassoon Hospital, Pune",
+          "year": "2010"
+        },
+        {
+          "degree": "MCh Cardiothoracic Surgery",
+          "institution": "AIIMS Delhi",
+          "year": "2013"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Cardiac Surgeon",
+          "hospital": "Ruby Hall Clinic, Pune",
+          "duration": "2015 - Present"
+        },
+        {
+          "position": "Cardiac Surgeon",
+          "hospital": "KEM Hospital, Mumbai",
+          "duration": "2013 - 2015"
+        }
+      ],
+      "specializations": [
+        "Coronary Artery Bypass Surgery",
+        "Valve Replacement Surgery",
+        "Minimally Invasive Cardiac Surgery",
+        "Heart Failure Surgery"
+      ],
+      "awards": [
+        "Outstanding Cardiac Surgeon 2021",
+        "Innovation in Cardiac Surgery 2019",
+        "Women in Medicine Award 2018"
+      ],
+      "languages": ["English", "Hindi", "Marathi"],
+      "availability": {
+        "monday": "8:00 AM - 6:00 PM",
+        "tuesday": "8:00 AM - 6:00 PM",
+        "wednesday": "8:00 AM - 6:00 PM",
+        "thursday": "8:00 AM - 6:00 PM",
+        "friday": "8:00 AM - 6:00 PM",
+        "saturday": "8:00 AM - 1:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43211",
+        "email": "dr.meera.joshi@rubyhall.com"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dr. Vikram Singh",
+      "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400",
+      "specialty": "Pediatric Cardiologist",
+      "experience": "14 years",
+      "rating": "4.7",
+      "location": "Delhi, India",
+      "hospital": "Fortis Hospital",
+      "consultationFee": "₹1600",
+      "treatments": [
+        "Congenital Heart Disease",
+        "Pediatric Interventions",
+        "Fetal Cardiology",
+        "Pediatric Cardiac Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Pediatrics",
+        "DM Pediatric Cardiology"
+      ],
+      "about": "Dr. Vikram Singh is a dedicated pediatric cardiologist with expertise in treating congenital heart diseases in children. He has helped thousands of children with heart conditions and is known for his gentle approach with young patients.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Maulana Azad Medical College",
+          "year": "2007"
+        },
+        {
+          "degree": "MD Pediatrics",
+          "institution": "AIIMS Delhi",
+          "year": "2012"
+        },
+        {
+          "degree": "DM Pediatric Cardiology",
+          "institution": "AIIMS Delhi",
+          "year": "2015"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Pediatric Cardiologist",
+          "hospital": "Fortis Hospital, Delhi",
+          "duration": "2017 - Present"
+        },
+        {
+          "position": "Pediatric Cardiologist",
+          "hospital": "Safdarjung Hospital",
+          "duration": "2015 - 2017"
+        }
+      ],
+      "specializations": [
+        "Congenital Heart Disease",
+        "Fetal Cardiology",
+        "Pediatric Interventional Cardiology",
+        "Pediatric Cardiac Imaging"
+      ],
+      "awards": [
+        "Best Pediatric Cardiologist 2023",
+        "Excellence in Child Care 2021",
+        "Young Achiever Award 2019"
+      ],
+      "languages": ["English", "Hindi", "Punjabi"],
+      "availability": {
+        "monday": "10:00 AM - 6:00 PM",
+        "tuesday": "10:00 AM - 6:00 PM",
+        "wednesday": "10:00 AM - 6:00 PM",
+        "thursday": "10:00 AM - 6:00 PM",
+        "friday": "10:00 AM - 6:00 PM",
+        "saturday": "10:00 AM - 3:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43212",
+        "email": "dr.vikram.singh@fortis.com"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Dr. Priya Sharma",
+      "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400",
+      "specialty": "Neurologist",
+      "experience": "18 years",
+      "rating": "4.9",
+      "location": "Mumbai, India",
+      "hospital": "Kokilaben Hospital",
+      "consultationFee": "₹2200",
+      "treatments": [
+        "Stroke Treatment",
+        "Epilepsy Management",
+        "Multiple Sclerosis",
+        "Parkinson's Disease",
+        "Brain Tumor Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Neurology",
+        "DM Neurology"
+      ],
+      "about": "Dr. Priya Sharma is a leading neurologist with extensive experience in treating complex neurological disorders. She specializes in stroke treatment and has been instrumental in establishing stroke units across multiple hospitals.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Grant Medical College, Mumbai",
+          "year": "2003"
+        },
+        {
+          "degree": "MD Neurology",
+          "institution": "KEM Hospital, Mumbai",
+          "year": "2008"
+        },
+        {
+          "degree": "DM Neurology",
+          "institution": "NIMHANS, Bangalore",
+          "year": "2011"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Neurologist",
+          "hospital": "Kokilaben Hospital, Mumbai",
+          "duration": "2015 - Present"
+        },
+        {
+          "position": "Neurologist",
+          "hospital": "Jaslok Hospital, Mumbai",
+          "duration": "2011 - 2015"
+        }
+      ],
+      "specializations": [
+        "Stroke Medicine",
+        "Epilepsy",
+        "Movement Disorders",
+        "Neurocritical Care"
+      ],
+      "awards": [
+        "Best Neurologist Award 2023",
+        "Stroke Care Excellence 2022",
+        "Women in Neurology Award 2020"
+      ],
+      "languages": ["English", "Hindi", "Marathi", "Gujarati"],
+      "availability": {
+        "monday": "9:00 AM - 5:00 PM",
+        "tuesday": "9:00 AM - 5:00 PM",
+        "wednesday": "9:00 AM - 5:00 PM",
+        "thursday": "9:00 AM - 5:00 PM",
+        "friday": "9:00 AM - 5:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43213",
+        "email": "dr.priya.sharma@kokilaben.com"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Dr. Rajesh Kumar",
+      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400",
+      "specialty": "Orthopedic Surgeon",
+      "experience": "22 years",
+      "rating": "4.8",
+      "location": "Bangalore, India",
+      "hospital": "Manipal Hospital",
+      "consultationFee": "₹1900",
+      "treatments": [
+        "Joint Replacement",
+        "Arthroscopic Surgery",
+        "Spine Surgery",
+        "Sports Injury",
+        "Fracture Treatment"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS Orthopedics",
+        "Fellowship in Joint Replacement"
+      ],
+      "about": "Dr. Rajesh Kumar is a highly skilled orthopedic surgeon with expertise in joint replacement and arthroscopic surgeries. He has performed over 3000 successful joint replacement surgeries and is known for his precision and patient outcomes.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Bangalore Medical College",
+          "year": "2001"
+        },
+        {
+          "degree": "MS Orthopedics",
+          "institution": "KMC Manipal",
+          "year": "2006"
+        },
+        {
+          "degree": "Fellowship in Joint Replacement",
+          "institution": "Hospital for Special Surgery, New York",
+          "year": "2009"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Orthopedic Surgeon",
+          "hospital": "Manipal Hospital, Bangalore",
+          "duration": "2012 - Present"
+        },
+        {
+          "position": "Orthopedic Surgeon",
+          "hospital": "Apollo Hospital, Bangalore",
+          "duration": "2009 - 2012"
+        }
+      ],
+      "specializations": [
+        "Joint Replacement Surgery",
+        "Arthroscopic Surgery",
+        "Sports Medicine",
+        "Spine Surgery"
+      ],
+      "awards": [
+        "Excellence in Orthopedics 2023",
+        "Best Joint Replacement Surgeon 2021",
+        "Innovation in Surgery Award 2019"
+      ],
+      "languages": ["English", "Hindi", "Kannada", "Tamil"],
+      "availability": {
+        "monday": "8:00 AM - 6:00 PM",
+        "tuesday": "8:00 AM - 6:00 PM",
+        "wednesday": "8:00 AM - 6:00 PM",
+        "thursday": "8:00 AM - 6:00 PM",
+        "friday": "8:00 AM - 6:00 PM",
+        "saturday": "8:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43214",
+        "email": "dr.rajesh.kumar@manipal.com"
+      }
+    }
+  ]
+} 

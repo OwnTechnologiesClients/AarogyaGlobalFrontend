@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import {
     Star,
     ArrowRight,
@@ -10,8 +11,14 @@ import {
 } from 'lucide-react';
 
 const DoctorCard = ({ doctor }) => {
+    const router = useRouter();
+
+    const handleViewDetails = () => {
+        router.push(`/doctorDetails/${doctor.id}`);
+    };
+
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onClick={handleViewDetails}>
             <div className="md:w-1/3 relative">
                 <div className='h-full p-2 rounded-lg'>
                     <img
@@ -74,13 +81,16 @@ const DoctorCard = ({ doctor }) => {
                         </span>
                         <span className="text-xs text-gray-500">Consultation Fee</span>
                     </div>
-                    <a
-                        href="#"
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleViewDetails();
+                        }}
                         className="text-indigo-600 flex items-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-2"
                     >
-                        <span className="font-semibold text-sm md:text-md">Book Appointment</span>
+                        <span className="font-semibold text-sm md:text-md">View Details</span>
                         <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

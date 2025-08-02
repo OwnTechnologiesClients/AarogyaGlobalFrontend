@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -19,6 +20,11 @@ import Link from "next/link";
 
 const FeaturedHospitals = () => {
   const swiperRef = React.useRef(null);
+  const router = useRouter();
+
+  const handleHospitalClick = (hospitalId) => {
+    router.push(`/hospitalDetails/${hospitalId}`);
+  };
 
   // Responsive breakpoints for Swiper
 
@@ -81,8 +87,11 @@ const FeaturedHospitals = () => {
           breakpoints={breakpoints}
         >
           {hospitals.map((hospital, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="flex flex-col rounded-2xl border-2 border-[#000D4440] shadow-sm bg-white overflow-hidden h-full min-h-[580px]">
+            <SwiperSlide key={hospital.id}>
+              <div 
+                className="flex flex-col rounded-2xl border-2 border-[#000D4440] shadow-sm bg-white overflow-hidden h-full min-h-[580px] cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                onClick={() => handleHospitalClick(hospital.id)}
+              >
                 {/* Image Section with Padding */}
                 <div className="relative w-full px-5 pt-5 mb-3">
                   <div className="relative w-full h-[290px] rounded-2xl overflow-hidden">
@@ -109,13 +118,13 @@ const FeaturedHospitals = () => {
                       <Star
                         key={i}
                         size={25}
-                        fill="#FFC700"
-                        color="#FFC700"
+                        fill={i < Math.floor(hospital.rating) ? "#FFC700" : "#E5E7EB"}
+                        color={i < Math.floor(hospital.rating) ? "#FFC700" : "#E5E7EB"}
                         strokeWidth={0}
                       />
                     ))}
                     <span className="ml-2 text-lg text-[#555555]">
-                      {hospital.ratingCount} Rating
+                      {hospital.rating} ({hospital.ratingCount} reviews)
                     </span>
                   </div>
 
@@ -138,17 +147,20 @@ const FeaturedHospitals = () => {
 
                   {/* CTA Button */}
                   <div className="mt-auto pt-4">
-                    <Link
-                      href={hospital.cta.href}
-                      className="inline-flex items-center gap-2 p-5 rounded-xl bg-[#F5F7FA] text-[#1F5FFF] font-semibold text-lg transition-all group"
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleHospitalClick(hospital.id);
+                      }}
+                      className="inline-flex items-center gap-2 p-5 rounded-xl bg-[#F5F7FA] text-[#1F5FFF] font-semibold text-lg transition-all group hover:bg-[#E8F0FE]"
                     >
-                      {hospital.cta.label || "Book Today"}
+                      {hospital.cta.label || "View Details"}
                       <ArrowRight
                         size={20}
                         strokeWidth={2.2}
                         className="transition-transform duration-200  group-hover:translate-x-1"
                       />
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -6,42 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+import doctorsData from '@/data/doctors.json';
 
-// Dummy doctor data (from public/RelatedSpecialists/)
-const doctors = [
-  {
-    name: "Dr. Robert Schrock",
-    role: "Cardiologist",
-    image: "/RelatedSpecialists/img1.png",
-  },
-  {
-    name: "Dr. Patrick Smith",
-    role: "Neurosurgery",
-    image: "/RelatedSpecialists/img2.png",
-  },
-  {
-    name: "Dr. Patrick Smith",
-    role: "Neurology",
-    image: "/RelatedSpecialists/img3.png",
-  },
-  {
-    name: "Dr. Brenton Ottinger",
-    role: "Dentistry",
-    image: "/RelatedSpecialists/img4.png",
-  },
-  {
-    name: "Dr. Patrick Smith",
-    role: "Neurology",
-    image: "/RelatedSpecialists/img3.png",
-  },
-  {
-    name: "Dr. Brenton Ottinger",
-    role: "Dentistry",
-    image: "/RelatedSpecialists/img4.png",
-  },
-];
+const RelatedSpecialists = ({ currentDoctorId }) => {
+  // Filter out the current doctor and get related doctors from the same specialty
+  const currentDoctor = doctorsData.doctors.find(d => d.id === currentDoctorId);
+  const relatedDoctors = doctorsData.doctors
+    .filter(d => d.id !== currentDoctorId && d.specialty === currentDoctor?.specialty)
+    .slice(0, 6);
 
-const RelatedSpecialists = () => {
+  // If no related doctors found, show all other doctors
+  const doctors = relatedDoctors.length > 0 ? relatedDoctors : doctorsData.doctors.filter(d => d.id !== currentDoctorId).slice(0, 6);
   const swiperRef = useRef(null);
 
   const breakpoints = {
@@ -100,7 +75,7 @@ const RelatedSpecialists = () => {
             breakpoints={breakpoints}
           >
             {doctors.map((doctor, idx) => (
-              <SwiperSlide key={idx}>
+              <SwiperSlide key={doctor.id}>
                 <div className="flex flex-col items-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-xs mx-auto mb-8">
                   {/* Image */}
                   <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
@@ -119,7 +94,7 @@ const RelatedSpecialists = () => {
                       {doctor.name}
                     </h4>
                     <p className="text-sm md:text-base text-[#555555]">
-                      {doctor.role}
+                      {doctor.specialty}
                     </p>
                   </div>
                 </div>

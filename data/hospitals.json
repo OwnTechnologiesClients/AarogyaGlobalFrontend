@@ -1,0 +1,409 @@
+{
+  "hospitals": [
+    {
+      "id": 1,
+      "name": "Apollo Hospital Chennai",
+      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+      "rating": "4.9",
+      "location": "Chennai, India",
+      "address": "154/11, Bannerghatta Road, Bangalore - 560076",
+      "doctorsCount": 38,
+      "specialties": [
+        "Cardiology",
+        "Interventional Cardiology",
+        "Cardiac Surgery",
+        "Neurology",
+        "Orthopedics",
+        "Oncology"
+      ],
+      "facilities": [
+        "Cardiac Cath Lab",
+        "ICU",
+        "ECG",
+        "Echocardiography",
+        "MRI",
+        "CT Scan",
+        "Emergency Services",
+        "24/7 Pharmacy"
+      ],
+      "treatments": [
+        "Angioplasty",
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Brain Surgery",
+        "Joint Replacement"
+      ],
+      "about": "Apollo Hospital Chennai is a premier healthcare institution known for its excellence in cardiac care and comprehensive medical services. With state-of-the-art facilities and a team of experienced specialists, we provide world-class healthcare to our patients.",
+      "established": "1983",
+      "accreditation": ["NABH", "JCI", "ISO 9001:2015"],
+      "contact": {
+        "phone": "+91-44-2829-0200",
+        "email": "info@apollochennai.com",
+        "website": "www.apollochennai.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Rahul Sharma",
+          "rating": 5,
+          "comment": "Excellent cardiac care. The doctors are very professional and caring.",
+          "date": "2024-01-15"
+        },
+        {
+          "id": 2,
+          "patientName": "Priya Patel",
+          "rating": 5,
+          "comment": "World-class facilities and amazing staff. Highly recommended.",
+          "date": "2024-01-10"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Suresh Reddy",
+          "specialty": "Interventional Cardiologist",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
+        },
+        {
+          "id": 2,
+          "name": "Dr. Anjali Desai",
+          "specialty": "Neurologist",
+          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      }
+    },
+    {
+      "id": 2,
+      "name": "Fortis Hospital Delhi",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+      "rating": "4.8",
+      "location": "Delhi, India",
+      "address": "B-22, Sector 62, Noida, Uttar Pradesh - 201301",
+      "doctorsCount": 42,
+      "specialties": [
+        "Cardiology",
+        "Pediatric Cardiology",
+        "Electrophysiology",
+        "Neurology",
+        "Orthopedics",
+        "Urology"
+      ],
+      "facilities": [
+        "Cardiac Cath Lab",
+        "Stress Test Lab",
+        "Cardiac Rehabilitation",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Pharmacy"
+      ],
+      "treatments": [
+        "Pacemaker Implantation",
+        "Cardiac Catheterization",
+        "Angioplasty",
+        "Pediatric Cardiac Surgery",
+        "Neurological Procedures"
+      ],
+      "about": "Fortis Hospital Delhi is a leading healthcare facility specializing in cardiac care and pediatric cardiology. Our commitment to excellence and patient-centric approach makes us a trusted name in healthcare.",
+      "established": "1996",
+      "accreditation": ["NABH", "ISO 9001:2015"],
+      "contact": {
+        "phone": "+91-11-4277-6222",
+        "email": "info@fortisdelhi.com",
+        "website": "www.fortisdelhi.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Amit Kumar",
+          "rating": 5,
+          "comment": "Best hospital for cardiac care. Doctors are very experienced.",
+          "date": "2024-01-20"
+        },
+        {
+          "id": 2,
+          "patientName": "Sneha Gupta",
+          "rating": 4,
+          "comment": "Good facilities and caring staff. Would recommend.",
+          "date": "2024-01-18"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 3,
+          "name": "Dr. Vikram Singh",
+          "specialty": "Pediatric Cardiologist",
+          "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400"
+        },
+        {
+          "id": 4,
+          "name": "Dr. Rajesh Malhotra",
+          "specialty": "Cardiac Surgeon",
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 28.6139,
+        "longitude": 77.2090
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ruby Hall Clinic",
+      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+      "rating": "4.7",
+      "location": "Pune, India",
+      "address": "40, Sassoon Road, Pune, Maharashtra - 411001",
+      "doctorsCount": 35,
+      "specialties": [
+        "Cardiac Surgery",
+        "Cardiology",
+        "Neurology",
+        "Orthopedics",
+        "Oncology",
+        "Gynaecology"
+      ],
+      "facilities": [
+        "Cardiac Surgery Unit",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Pharmacy",
+        "Rehabilitation Center"
+      ],
+      "treatments": [
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Pacemaker Implantation",
+        "Aortic Aneurysm Repair",
+        "Heart Transplant"
+      ],
+      "about": "Ruby Hall Clinic is a renowned healthcare institution with a rich legacy of providing quality healthcare services. Our cardiac surgery unit is one of the best in the region.",
+      "established": "1959",
+      "accreditation": ["NABH", "ISO 9001:2015"],
+      "contact": {
+        "phone": "+91-20-6645-5555",
+        "email": "info@rubyhall.com",
+        "website": "www.rubyhall.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Meera Joshi",
+          "rating": 5,
+          "comment": "Excellent cardiac surgery team. Very professional and caring.",
+          "date": "2024-01-25"
+        },
+        {
+          "id": 2,
+          "patientName": "Ramesh Patel",
+          "rating": 4,
+          "comment": "Good hospital with experienced doctors. Satisfied with treatment.",
+          "date": "2024-01-22"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 2,
+          "name": "Dr. Meera Joshi",
+          "specialty": "Cardiac Surgeon",
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
+        },
+        {
+          "id": 5,
+          "name": "Dr. Sanjay Deshmukh",
+          "specialty": "Neurologist",
+          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 18.5204,
+        "longitude": 73.8567
+      }
+    },
+    {
+      "id": 4,
+      "name": "Kokilaben Hospital",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
+      "rating": "4.8",
+      "location": "Mumbai, India",
+      "address": "Rao Saheb Achutrao Patwardhan Marg, Four Bungalows, Andheri (W), Mumbai - 400058",
+      "doctorsCount": 45,
+      "specialties": [
+        "Neurology",
+        "Cardiology",
+        "Orthopedics",
+        "Oncology",
+        "Gynaecology",
+        "Urology"
+      ],
+      "facilities": [
+        "Neurology Department",
+        "Stroke Unit",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Rehabilitation Center",
+        "Pharmacy"
+      ],
+      "treatments": [
+        "Stroke Treatment",
+        "Epilepsy Management",
+        "Multiple Sclerosis",
+        "Parkinson's Disease",
+        "Brain Tumor Surgery"
+      ],
+      "about": "Kokilaben Hospital is a state-of-the-art healthcare facility known for its excellence in neurology and comprehensive medical care. Our stroke unit is one of the most advanced in the country.",
+      "established": "2009",
+      "accreditation": ["NABH", "JCI", "ISO 9001:2015"],
+      "contact": {
+        "phone": "+91-22-3099-9999",
+        "email": "info@kokilaben.com",
+        "website": "www.kokilaben.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Priya Sharma",
+          "rating": 5,
+          "comment": "Best neurology department. Doctors are very knowledgeable.",
+          "date": "2024-01-30"
+        },
+        {
+          "id": 2,
+          "patientName": "Arun Kumar",
+          "rating": 5,
+          "comment": "Excellent stroke care. Very satisfied with the treatment.",
+          "date": "2024-01-28"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 4,
+          "name": "Dr. Priya Sharma",
+          "specialty": "Neurologist",
+          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
+        },
+        {
+          "id": 6,
+          "name": "Dr. Amit Shah",
+          "specialty": "Cardiologist",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      }
+    },
+    {
+      "id": 5,
+      "name": "Manipal Hospital",
+      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+      "rating": "4.9",
+      "location": "Bangalore, India",
+      "address": "98, HAL Airport Road, Bangalore - 560017",
+      "doctorsCount": 50,
+      "specialties": [
+        "Orthopedics",
+        "Cardiology",
+        "Neurology",
+        "Oncology",
+        "Gynaecology",
+        "Urology"
+      ],
+      "facilities": [
+        "Orthopedic Department",
+        "Joint Replacement Center",
+        "Sports Medicine",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Rehabilitation Center"
+      ],
+      "treatments": [
+        "Joint Replacement",
+        "Arthroscopic Surgery",
+        "Spine Surgery",
+        "Sports Injury",
+        "Fracture Treatment"
+      ],
+      "about": "Manipal Hospital Bangalore is a premier healthcare institution known for its excellence in orthopedic care and joint replacement surgeries. Our state-of-the-art facilities ensure the best patient outcomes.",
+      "established": "1991",
+      "accreditation": ["NABH", "JCI", "ISO 9001:2015"],
+      "contact": {
+        "phone": "+91-80-2502-4444",
+        "email": "info@manipalbangalore.com",
+        "website": "www.manipalbangalore.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Rajesh Kumar",
+          "rating": 5,
+          "comment": "Best orthopedic care. Joint replacement surgery was successful.",
+          "date": "2024-02-01"
+        },
+        {
+          "id": 2,
+          "patientName": "Lakshmi Devi",
+          "rating": 5,
+          "comment": "Excellent facilities and caring staff. Highly recommended.",
+          "date": "2024-01-29"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 5,
+          "name": "Dr. Rajesh Kumar",
+          "specialty": "Orthopedic Surgeon",
+          "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400"
+        },
+        {
+          "id": 7,
+          "name": "Dr. Sunita Rao",
+          "specialty": "Cardiologist",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      }
+    }
+  ]
+} 
