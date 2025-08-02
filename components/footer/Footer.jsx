@@ -207,16 +207,26 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       {/* WhatsApp Floating Button */}
       <Link
         href="https://wa.me/919922345678"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed z-50 bottom-8 right-8 bg-[#2ecc71] rounded-full p-3 shadow-lg hover:scale-105 transition"
-        style={{ boxShadow: "0 4px 24px rgba(46,204,113,0.3)" }}
+        className="fixed z-50 bottom-8 right-6 group bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1"
+        style={{
+          boxShadow: "0 8px 32px rgba(37,211,102,0.3)",
+          backdropFilter: "blur(10px)",
+        }}
       >
-        <FaWhatsapp size={40} color="#fff" />
+        <div className="relative">
+          <FaWhatsapp
+            size={32}
+            color="#fff"
+            className="transition-transform duration-300 group-hover:scale-110"
+          />
+          {/* Pulse Animation Ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
+        </div>
       </Link>
     </footer>
   );

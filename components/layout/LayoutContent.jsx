@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import Wrapper from "@/components/layout/Wrapper";
 import NavbarToFilterLayout from "@/components/layout/NavbarToFilterLayout";
 import Header from "@/components/navbar/Header";
+import ScrollToTop from "../common/ScrollToTop";
 
 export default function LayoutContent({ children }) {
   const pathname = usePathname();
@@ -25,6 +26,7 @@ export default function LayoutContent({ children }) {
         </Wrapper>
       </div>
       <BottomFooter />
+      <ScrollToTop />
     </>
   );
 }

@@ -1,0 +1,141 @@
+{
+  "hospitals": [
+    {
+      "id": 1,
+      "name": "Sample Hospital Name",
+      "image": "https://example.com/hospital-image.jpg",
+      "rating": "4.8",
+      "location": "City, Country",
+      "address": "Complete hospital address with postal code",
+      "doctorsCount": 50,
+      "specialties": [
+        "Cardiology",
+        "Neurology",
+        "Orthopedics",
+        "Oncology",
+        "Gynaecology",
+        "Urology",
+        "Pediatrics",
+        "Dermatology"
+      ],
+      "facilities": [
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Pharmacy",
+        "Rehabilitation Center",
+        "Laboratory",
+        "Radiology Department",
+        "Operating Theaters"
+      ],
+      "treatments": [
+        "Heart Surgery",
+        "Brain Surgery",
+        "Joint Replacement",
+        "Cancer Treatment",
+        "Childbirth Services",
+        "Kidney Treatment"
+      ],
+      "about": "Detailed description of the hospital including its history, mission, vision, and what makes it unique. Include information about the hospital's achievements, awards, and commitment to patient care.",
+      "established": "1990",
+      "accreditation": [
+        "NABH",
+        "JCI",
+        "ISO 9001:2015",
+        "NABL"
+      ],
+      "contact": {
+        "phone": "+91-XX-XXXX-XXXX",
+        "email": "info@hospitalname.com",
+        "website": "www.hospitalname.com",
+        "emergency": "+91-XX-XXXX-XXXX"
+      },
+      "gallery": [
+        "https://example.com/hospital-image1.jpg",
+        "https://example.com/hospital-image2.jpg",
+        "https://example.com/hospital-image3.jpg",
+        "https://example.com/hospital-image4.jpg"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Patient Name",
+          "rating": 5,
+          "comment": "Detailed patient review about their experience at the hospital",
+          "date": "2024-01-15",
+          "treatment": "Treatment received",
+          "doctor": "Doctor name"
+        },
+        {
+          "id": 2,
+          "patientName": "Another Patient",
+          "rating": 4,
+          "comment": "Another detailed patient review",
+          "date": "2024-01-10",
+          "treatment": "Treatment received",
+          "doctor": "Doctor name"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Doctor Name",
+          "specialty": "Cardiologist",
+          "image": "https://example.com/doctor-image.jpg",
+          "experience": "15+ years",
+          "qualifications": "MBBS, MD, DM",
+          "expertise": [
+            "Interventional Cardiology",
+            "Heart Failure",
+            "Preventive Cardiology"
+          ],
+          "languages": ["English", "Hindi", "Local Language"],
+          "consultationFee": "₹2000"
+        },
+        {
+          "id": 2,
+          "name": "Dr. Another Doctor",
+          "specialty": "Neurologist",
+          "image": "https://example.com/doctor-image2.jpg",
+          "experience": "12+ years",
+          "qualifications": "MBBS, MD, DM",
+          "expertise": [
+            "Stroke Treatment",
+            "Epilepsy",
+            "Movement Disorders"
+          ],
+          "languages": ["English", "Hindi"],
+          "consultationFee": "₹1800"
+        }
+      ],
+      "coordinates": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "operatingHours": {
+        "opd": "8:00 AM - 8:00 PM",
+        "emergency": "24/7",
+        "pharmacy": "8:00 AM - 10:00 PM"
+      },
+      "insurance": [
+        "Insurance Company 1",
+        "Insurance Company 2",
+        "Insurance Company 3"
+      ],
+      "amenities": [
+        "WiFi",
+        "Cafeteria",
+        "Parking",
+        "Wheelchair Access",
+        "ATM",
+        "Gift Shop"
+      ],
+      "statistics": {
+        "beds": 500,
+        "annualPatients": 50000,
+        "successRate": "95%",
+        "yearsOfService": 30
+      }
+    }
+  ]
+} 
