@@ -2,13 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import specialties from "@/data/topSpecialties.json";
-import {
-  Bone,
-  HeartPulse,
-  Stethoscope,
-  Brain,
-  Baby,
-} from "lucide-react";
+import { Bone, HeartPulse, Stethoscope, Brain, Baby } from "lucide-react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -21,7 +15,7 @@ const ICON_MAP = {
   Cardiology: HeartPulse,
   Neurology: Brain,
   Oncology: Stethoscope,
-  Gynaecology: Baby
+  Gynaecology: Baby,
 };
 
 const TopSpecialties = () => {
@@ -50,21 +44,21 @@ const TopSpecialties = () => {
 
   const renderSpecialtyCard = (spec, idx, isSwiper = true) => {
     const LucideIcon = ICON_MAP[spec.label] || Bone;
-    const CardWrapper = isSwiper ? SwiperSlide : 'div';
+    const CardWrapper = isSwiper ? SwiperSlide : "div";
 
     return (
       <CardWrapper key={idx}>
         <Link href={`/specialties/${spec.slug}`}>
-          <div className="flex flex-col items-center text-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer w-full max-w-xs mx-auto mb-8">
+          <div className="flex flex-col items-center text-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer w-full max-w-xs mx-auto mb-8 h-[320px]">
             <div
-              className="flex items-center justify-center rounded-full mb-4 md:mb-6"
+              className="flex items-center justify-center rounded-full mb-4 md:mb-6 flex-shrink-0"
               style={{
                 backgroundColor: spec.color,
                 width: 120,
                 height: 120,
               }}
             >
-              {spec.icon.startsWith('/') ? (
+              {spec.icon.startsWith("/") ? (
                 <img
                   src={spec.icon}
                   alt={spec.label}
@@ -79,16 +73,18 @@ const TopSpecialties = () => {
                 />
               )}
             </div>
-            <div className="flex flex-col items-start w-full mt-2 md:mt-4">
-              <h4 className="text-lg md:text-xl font-extrabold text-[#1A0142] w-full text-center">
-                {spec.label}
-              </h4>
-              <p className="text-sm md:text-base text-[#6B6B6B] mt-2 w-full text-center">
-                {spec.count} Listing{spec.count > 1 ? "s" : ""}
-              </p>
-              <p className="text-sm md:text-base text-[#04CE78] mt-2 font-medium w-full text-center">
-                {spec.description}
-              </p>
+            <div className="flex flex-col items-center w-full flex-1 justify-between min-h-0">
+              <div className="w-full">
+                <h4 className="text-lg md:text-xl font-extrabold text-[#1A0142] w-full text-center mb-2">
+                  {spec.label}
+                </h4>
+                <p className="text-sm md:text-base text-[#6B6B6B] mb-2 w-full text-center">
+                  {spec.count} Listing{spec.count > 1 ? "s" : ""}
+                </p>
+                <p className="text-sm md:text-base text-[#04CE78] font-medium w-full text-center line-clamp-3 leading-relaxed">
+                  {spec.description}
+                </p>
+              </div>
             </div>
           </div>
         </Link>
@@ -142,11 +138,15 @@ const TopSpecialties = () => {
             breakpoints={breakpoints}
             className=""
           >
-            {specialties.map((spec, idx) => renderSpecialtyCard(spec, idx, true))}
+            {specialties.map((spec, idx) =>
+              renderSpecialtyCard(spec, idx, true)
+            )}
           </Swiper>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {specialties.map((spec, idx) => renderSpecialtyCard(spec, idx, false))}
+            {specialties.map((spec, idx) =>
+              renderSpecialtyCard(spec, idx, false)
+            )}
           </div>
         )}
       </div>

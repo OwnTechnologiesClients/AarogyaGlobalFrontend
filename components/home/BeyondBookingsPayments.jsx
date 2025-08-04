@@ -3,6 +3,7 @@ import { BadgeCheck, Mail } from "lucide-react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import CustomButton from "../layout/CustomButton";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
@@ -19,14 +20,14 @@ const features = [
 const BeyondBookingsPayments = () => {
   return (
     <section className="w-screen bg-[#F5F7FA] overflow-hidden">
-      <div className="w-full flex flex-col lg:flex-row justify-between 2xl:gap-0 gap-14 px-6 xl:px-12 2xl:px-24 xl:py-12 2xl:py-24">
+      <div className="w-full flex flex-col lg:flex-row justify-between 2xl:gap-0 gap-14 px-6 xl:px-12 2xl:px-24 xl:py-12 2xl:py-16">
         {/* Left Side */}
         <div className="flex flex-col justify-start w-full lg:w-1/2 max-w-2xl mx-auto lg:mx-0 space-y-6">
           {/* Top Banner */}
           <WelcomeBanner
             text="WHY CHOOSE AAROGYA GLOBAL"
             alignment="left"
-            className="text-lg mb-3"
+            className="text-lg "
           />
 
           {/* Main Heading */}
@@ -60,13 +61,17 @@ const BeyondBookingsPayments = () => {
 
           {/* CTA + Support Email */}
           <div className="flex flex-col sm:flex-row gap-8 pt-8">
+            <Link href="/about">
             <CustomButton
               text="Read More"
               textSize="text-sm md:text-base "
               iconSize={20}
               padding="px-6 py-3 "
               bgColor="bg-[#1F5FFF]"
+              className="cursor-pointer"
             />
+            </Link>
+        
             <div className="flex items-center gap-4 sm:gap-6">
               <span className="bg-white p-4 rounded-full">
                 <Mail className="w-5 h-5 md:w-8 md:h-8 text-[#1F5FFF]" />

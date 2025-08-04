@@ -98,9 +98,6 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
                 }`}
               >
                 {link.label}
-                <span className="text-[#04CE78] text-[20px] leading-none ml-1">
-                  +
-                </span>
               </Link>
             </li>
           )

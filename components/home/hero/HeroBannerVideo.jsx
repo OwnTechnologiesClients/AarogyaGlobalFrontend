@@ -33,7 +33,7 @@ const HeroBannerVideo = () => {
           </video>
           
           {/* Green diagonal strip with marquee text */}
-          <div className="absolute bottom-3 left-0 w-full h-15 bg-green-500 transform -skew-y-6 origin-bottom-left z-10">
+          <div className="absolute bottom-3 left-0 w-full h-15 bg-[#04CE78] transform -skew-y-6 origin-bottom-left z-10">
             <div className="flex items-center h-full overflow-hidden">
               <div className="flex animate-marquee whitespace-nowrap text-white font-bold text-lg md:text-xl lg:text-2xl">
                 <span>_Pre-Op Specialist</span>

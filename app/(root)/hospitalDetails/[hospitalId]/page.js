@@ -13,7 +13,7 @@ import HospitalDoctors from "@/components/HospitalDetails/HospitalDoctors";
 import HospitalGallery from "@/components/HospitalDetails/HospitalGallery";
 import HospitalReviews from "@/components/HospitalDetails/HospitalReviews";
 import HospitalLocation from "@/components/HospitalDetails/HospitalLocation";
-import hospitalsData from '@/data/hospitals.json';
+import hospitalsData from '@/data/HospitalData.json';
 
 const HospitalDetails = () => {
   const params = useParams();
@@ -29,7 +29,20 @@ const HospitalDetails = () => {
     setLoading(false);
   }, [hospitalId]);
 
-  const { title, routes } = getPageHeaderData('/hospitalDetails');
+  // Create custom routes for this specific hospital
+  const routes = [
+    {
+      label: "Home",
+      href: "/"
+    },
+    {
+      label: "Hospitals",
+      href: "/hospitalSearch"
+    },
+    {
+      label: hospital?.name || "Hospital Details"
+    }
+  ];
 
   if (loading) {
     return (

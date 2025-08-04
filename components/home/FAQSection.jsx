@@ -5,6 +5,7 @@ import { MapPin, ArrowRight, Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import CustomButton from "../layout/CustomButton";
+import Link from "next/link";
 
 // Custom FAQ accordion trigger using Tailwind
 const FAQAccordionTrigger = ({ children, open, ...props }) => (
@@ -60,12 +61,16 @@ export default function FAQSection() {
             environment where patients feel valued
           </p>
           <div className="flex items-center gap-6 mt-4">
+            <Link href="/contact">
             <CustomButton
-              text="Contact Us Now"
-              padding="px-6 py-4 "
-              textSize = "text-sm md:text-base "
+                text="Contact Us Now"
+                padding="px-6 py-4 "
+                textSize = "text-sm md:text-base "
+                className="cursor-pointer"
 
-            />
+              />
+            </Link>
+              
             <span className="inline-flex items-center justify-center w-14 h-14 bg-[#F5F7FA] rounded-full">
               <MapPin className="w-5 h-5 text-[#1F5FFF]" />
             </span>

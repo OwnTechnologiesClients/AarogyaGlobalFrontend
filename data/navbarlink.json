@@ -116,44 +116,19 @@
     },
     {
       "label": "Hospitals",
-      "dropdown": [
-        {
-          "label": "Hospital Search",
-          "href": "/hospitalSearch",
-          "pageHeader": {
-            "title": "Hospital Search",
-            "routes": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "Hospital Search"
-              }
-            ]
+      "href": "/hospitalSearch",
+      "pageHeader": {
+        "title": "Hospital Search",
+        "routes": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Hospitals"
           }
-        },
-        {
-          "label": "Hospital Details",
-          "href": "/hospitalDetails",
-          "pageHeader": {
-            "title": "Hospital Details",
-            "routes": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "Hospital Search",
-                "href": "/hospitalSearch"
-              },
-              {
-                "label": "Hospital Details"
-              }
-            ]
-          }
-        }
-      ]
+        ]
+      }
     },
 
     {

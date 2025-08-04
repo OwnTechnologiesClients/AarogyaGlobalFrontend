@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import {
     Heart,
@@ -11,8 +12,17 @@ import {
 } from 'lucide-react';
 
 const HospitalCard = ({ hospital, onLike, onShare }) => {
+    const router = useRouter();
+
+    const handleCardClick = () => {
+        router.push(`/hospitalDetails/${hospital.id}`);
+    };
+
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div 
+            className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            onClick={handleCardClick}
+        >
             <div className="md:w-1/2 relative">
                 <div className='h-full p-2 rounded-lg'>
 
@@ -59,6 +69,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                     <a
                         href="#"
                         className="text-indigo-600 flex items-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-2"
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <span className="font-semibold text-sm md:text-md">Book Today</span>
                         <ArrowRight className="w-4 h-4" />
