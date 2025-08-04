@@ -45,7 +45,7 @@ const Navbar = ({
   };
 
   return (
-    <header className={`px-4 py-4 w-full relative ${fontFamily}`}>
+    <header className={`px-8 py-4 w-full relative ${fontFamily}`}>
       <div className="flex items-center mx-auto w-full">
         {/* Logo - Hide above 1168px if hideLogoOnDesktop is true */}
         {(!hideLogoOnDesktop || isMobileView) && (
@@ -55,7 +55,7 @@ const Navbar = ({
               alt="Logo"
               width={120}
               height={70}
-              className="h-8 w-auto object-contain"
+              className="h-11 w-auto object-contain"
               priority
             />
           </Link>
