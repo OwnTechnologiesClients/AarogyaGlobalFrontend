@@ -27,10 +27,10 @@ const DropdownSelect = ({ label, options, value, onChange, placeholder }) => {
   };
 
   return (
-    <div ref={dropdownRef} className="relative w-full">
+    <div ref={dropdownRef} className="relative ">
       <button
         type="button"
-        className="bg-[#F5F7FA] rounded-lg w-full justify-between flex flex-row items-center px-3 sm:px-4 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-4 lg:py-4 text-sm sm:text-base lg:text-lg font-medium focus:outline-none border border-gray-200 hover:border-gray-300 transition-all duration-200 min-h-[44px] sm:min-h-[48px] md:min-h-[52px] lg:min-h-[56px] touch-manipulation"
+        className="bg-[#F5F7FA] rounded-lg flex flex-row items-center px-3 sm:px-4 md:px-6 lg:px-10 py-2.5 sm:py-3 md:py-4 lg:py-4 text-sm sm:text-base lg:text-lg font-medium focus:outline-none border border-gray-200 hover:border-gray-300 transition-all duration-200 min-h-[44px] sm:min-h-[48px] md:min-h-[52px] lg:min-h-[56px] touch-manipulation"
         onClick={() => setOpen((prev) => !prev)}
       >
         <span className={`truncate flex-1 text-left ${value ? "text-gray-900" : "text-gray-500"}`}>

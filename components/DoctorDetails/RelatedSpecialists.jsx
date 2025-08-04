@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -9,6 +10,8 @@ import "swiper/css";
 import doctorsData from '@/data/doctors.json';
 
 const RelatedSpecialists = ({ currentDoctorId }) => {
+  const router = useRouter();
+  
   // Filter out the current doctor and get related doctors from the same specialty
   const currentDoctor = doctorsData.doctors.find(d => d.id === currentDoctorId);
   const relatedDoctors = doctorsData.doctors
@@ -18,6 +21,10 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
   // If no related doctors found, show all other doctors
   const doctors = relatedDoctors.length > 0 ? relatedDoctors : doctorsData.doctors.filter(d => d.id !== currentDoctorId).slice(0, 6);
   const swiperRef = useRef(null);
+
+  const handleDoctorClick = (doctorId) => {
+    router.push(`/doctorDetails/${doctorId}`);
+  };
 
   const breakpoints = {
     320: {
@@ -76,7 +83,10 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
           >
             {doctors.map((doctor, idx) => (
               <SwiperSlide key={doctor.id}>
-                <div className="flex flex-col items-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-xs mx-auto mb-8">
+                <div 
+                  className="flex flex-col items-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-xs mx-auto mb-8 cursor-pointer"
+                  onClick={() => handleDoctorClick(doctor.id)}
+                >
                   {/* Image */}
                   <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
                     <Image

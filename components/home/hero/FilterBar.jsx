@@ -107,14 +107,14 @@ const FilterBar = () => {
 
         {/* Main Content Area */}
         <div className="overflow-visible">
-          <div className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16">
-            <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-              {/* Filters Section */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 w-full lg:w-auto lg:flex-1">
+          <div className="p-4 sm:p-6 md:p-8 lg:p-10  pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
+              {/* Filters Section - Centered */}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center">
                 {getActiveFilters().map((filter) => (
                   <div
                     key={filter.label}
-                    className="w-full sm:w-auto lg:flex-1 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none"
+                   
                   >
                     <DropdownSelect
                       label={filter.label}
@@ -140,18 +140,18 @@ const FilterBar = () => {
                 </div>
               )}
 
-              {/* Action Buttons */}
-              <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
+              {/* Action Button - Centered */}
+              <div className="flex justify-center">
                 <CustomButton
-                  text={activeToggle === "doctors" ? "Explore Doctors" : "Explore Hospitals"}
+                  text={activeToggle === "doctors" ? "Explore Treatment" : "Explore Hospitals"}
                   bgColor="bg-[#1F5FFF]"
                   textColor="text-white"
                   hoverBgColor="bg-[#03B96A]"
                   rounded="rounded-lg"
-                  padding="px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 w-full sm:w-auto"
+                  padding="px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 w-[212px]"
                   textSize="text-sm sm:text-base lg:text-lg"
                   iconSize={18}
-                  className="group hover:translate-x-1 transition-transform duration-300"
+                  className="group hover:translate-x-1 transition-transform duration-300 "
                   onClick={handleExploreClick}
                 />
               </div>

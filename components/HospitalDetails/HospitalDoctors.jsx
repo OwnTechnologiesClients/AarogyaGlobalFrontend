@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
   Star, 
   Calendar, 
@@ -14,8 +15,13 @@ import {
 } from 'lucide-react';
 
 const HospitalDoctors = () => {
+  const router = useRouter();
   const [selectedSpecialty, setSelectedSpecialty] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+
+  const handleDoctorClick = (doctorId) => {
+    router.push(`/doctorDetails/${doctorId}`);
+  };
 
   const specialties = ["All", "Cardiology", "Neurology", "Orthopedics", "Pediatrics", "General Medicine", "Ophthalmology"];
 
@@ -157,7 +163,11 @@ const HospitalDoctors = () => {
       {/* Doctors Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {filteredDoctors.map((doctor) => (
-          <div key={doctor.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div 
+            key={doctor.id} 
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+            onClick={() => handleDoctorClick(doctor.id)}
+          >
             {/* Doctor Image */}
             <div className="relative h-48 bg-gray-100">
               <img
@@ -233,7 +243,13 @@ const HospitalDoctors = () => {
               </div>
 
               {/* View Details Button */}
-              <button className="w-full bg-[#04CE78] hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+              <button 
+                className="w-full bg-[#04CE78] hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDoctorClick(doctor.id);
+                }}
+              >
                 View Details
                 <ArrowRight className="w-4 h-4" />
               </button>
