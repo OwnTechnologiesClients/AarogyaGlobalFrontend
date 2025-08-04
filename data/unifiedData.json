@@ -1,0 +1,3780 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-08-04T10:28:34.240Z",
+    "description": "Unified data structure for Aarogya Global medical tourism platform"
+  },
+  "specialties": {
+    "cardiology": {
+      "id": "cardiology",
+      "name": "Cardiology",
+      "slug": "cardiology",
+      "description": "Expert heart and cardiovascular care services",
+      "icon": "lucide/HeartPulse",
+      "color": "#A3DAC2",
+      "count": 0,
+      "overview": {
+        "description": "Cardiology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the heart and cardiovascular system. Our medical tourism platform connects patients with the best cardiology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+        "highlights": [
+          "Access to world-class cardiology hospitals",
+          "Top-rated cardiologists with international experience",
+          "Advanced diagnostic and treatment technologies",
+          "Cost-effective medical tourism solutions",
+          "Comprehensive care coordination"
+        ],
+        "cta": {
+          "bookConsultation": "Book a free consultation",
+          "secondOpinion": "Get a second opinion",
+          "callBack": "Request a call back"
+        }
+      },
+      "filters": {
+        "categories": [
+          "All",
+          "Doctors",
+          "Hospitals",
+          "Treatments"
+        ],
+        "treatments": [
+          "Angioplasty",
+          "Bypass Surgery",
+          "Heart Valve Repair",
+          "Pacemaker Implantation",
+          "Cardiac Catheterization",
+          "Echocardiography"
+        ],
+        "facilities": [
+          "Cardiac Cath Lab",
+          "ICU",
+          "ECG",
+          "Echocardiography",
+          "Stress Test Lab",
+          "Cardiac Rehabilitation"
+        ]
+      },
+      "hospitals": [
+        {
+          "id": 1,
+          "name": "Cleveland Clinic",
+          "location": "Cleveland, Ohio, USA",
+          "image": "/hospital_logos/img1.jpg",
+          "rating": "9.9",
+          "patientsPerYear": "2.8M+",
+          "successRate": "98.5%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO"
+          ],
+          "specialties": [
+            "Interventional Cardiology",
+            "Heart Transplant",
+            "Cardiac Surgery",
+            "Electrophysiology",
+            "Heart Failure"
+          ],
+          "facilities": [
+            "Advanced Cardiac Imaging",
+            "Robotic Surgery",
+            "Minimally Invasive Procedures",
+            "Hybrid ORs",
+            "3D Printing Lab"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Arabic",
+            "Hindi"
+          ],
+          "internationalPatients": "15,000+ annually"
+        },
+        {
+          "id": 2,
+          "name": "Mayo Clinic",
+          "location": "Rochester, Minnesota, USA",
+          "image": "/hospital_logos/img2.png",
+          "rating": "9.8",
+          "patientsPerYear": "1.3M+",
+          "successRate": "97.8%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Preventive Cardiology",
+            "Heart Failure",
+            "Electrophysiology",
+            "Structural Heart Disease",
+            "Cardiac Imaging"
+          ],
+          "facilities": [
+            "3D Cardiac Imaging",
+            "Advanced Monitoring",
+            "Specialized ICUs",
+            "Research Labs",
+            "Telemedicine Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "German",
+            "Chinese"
+          ],
+          "internationalPatients": "12,000+ annually"
+        },
+        {
+          "id": 3,
+          "name": "Johns Hopkins Hospital",
+          "location": "Baltimore, Maryland, USA",
+          "image": "/hospital_logos/img3.webp",
+          "rating": "9.7",
+          "patientsPerYear": "1.1M+",
+          "successRate": "97.2%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Pediatric Cardiology",
+            "Adult Congenital Heart Disease",
+            "Cardiac Rehabilitation",
+            "Preventive Cardiology",
+            "Interventional Cardiology"
+          ],
+          "facilities": [
+            "Hybrid Operating Rooms",
+            "Advanced Imaging",
+            "Research Facilities",
+            "Clinical Trials Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "Arabic",
+            "Korean"
+          ],
+          "internationalPatients": "10,000+ annually"
+        },
+        {
+          "id": 4,
+          "name": "Massachusetts General Hospital",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/hospital_logos/img4.webp",
+          "rating": "9.6",
+          "patientsPerYear": "1.5M+",
+          "successRate": "96.9%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Interventional Cardiology",
+            "Heart Failure",
+            "Cardiac Surgery",
+            "Preventive Cardiology",
+            "Cardiac Imaging"
+          ],
+          "facilities": [
+            "Advanced Cardiac Catheterization",
+            "Robotic Surgery Center",
+            "Cardiac ICU",
+            "Research Institute",
+            "Telecardiology"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Portuguese",
+            "Italian",
+            "Hindi"
+          ],
+          "internationalPatients": "8,500+ annually"
+        },
+        {
+          "id": 5,
+          "name": "Stanford Health Care",
+          "location": "Stanford, California, USA",
+          "image": "/hospital_logos/img5.webp",
+          "rating": "9.5",
+          "patientsPerYear": "1.2M+",
+          "successRate": "96.7%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Structural Heart Disease",
+            "Electrophysiology",
+            "Heart Transplant",
+            "Preventive Cardiology",
+            "Cardiac Surgery"
+          ],
+          "facilities": [
+            "Innovation Center",
+            "AI-Powered Diagnostics",
+            "Minimally Invasive ORs",
+            "Clinical Research",
+            "Digital Health Platform"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Japanese",
+            "Korean"
+          ],
+          "internationalPatients": "7,200+ annually"
+        },
+        {
+          "id": 6,
+          "name": "Cedars-Sinai Medical Center",
+          "location": "Los Angeles, California, USA",
+          "image": "/hospital_logos/img6.webp",
+          "rating": "9.4",
+          "patientsPerYear": "1.0M+",
+          "successRate": "96.3%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO"
+          ],
+          "specialties": [
+            "Interventional Cardiology",
+            "Heart Failure",
+            "Cardiac Imaging",
+            "Preventive Cardiology",
+            "Cardiac Rehabilitation"
+          ],
+          "facilities": [
+            "Advanced Imaging Center",
+            "Cardiac Catheterization Lab",
+            "Specialized ICUs",
+            "Research Center",
+            "Patient Education Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Korean",
+            "Armenian",
+            "Persian"
+          ],
+          "internationalPatients": "6,800+ annually"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Steven Nissen",
+          "specialty": "Interventional Cardiologist",
+          "location": "Cleveland, Ohio, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "30+ years",
+          "rating": "9.9",
+          "patientsTreated": "50,000+",
+          "successRate": "98.2%",
+          "expertise": [
+            "Interventional Cardiology",
+            "Clinical Trials",
+            "Preventive Cardiology",
+            "Coronary Artery Disease",
+            "Structural Heart Disease"
+          ],
+          "hospital": "Cleveland Clinic",
+          "education": "Harvard Medical School",
+          "certifications": [
+            "FACC",
+            "FSCAI",
+            "FESC"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ],
+          "researchPapers": "500+ publications",
+          "awards": [
+            "Distinguished Scientist Award",
+            "Top Cardiologist 2023"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Dr. Valentin Fuster",
+          "specialty": "Preventive Cardiologist",
+          "location": "New York, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "35+ years",
+          "rating": "9.8",
+          "patientsTreated": "45,000+",
+          "successRate": "97.8%",
+          "expertise": [
+            "Preventive Cardiology",
+            "Atherosclerosis",
+            "Global Health",
+            "Cardiovascular Imaging",
+            "Clinical Research"
+          ],
+          "hospital": "Mount Sinai Medical Center",
+          "education": "University of Barcelona",
+          "certifications": [
+            "FACC",
+            "FESC",
+            "FAHA"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Catalan"
+          ],
+          "researchPapers": "1,000+ publications",
+          "awards": [
+            "Prince of Asturias Award",
+            "National Medal of Science"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Dr. Eugene Braunwald",
+          "specialty": "Cardiologist",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/RelatedSpecialists/img3.png",
+          "experience": "40+ years",
+          "rating": "9.7",
+          "patientsTreated": "60,000+",
+          "successRate": "97.5%",
+          "expertise": [
+            "Heart Failure",
+            "Clinical Research",
+            "Medical Education",
+            "Cardiovascular Medicine",
+            "Clinical Trials"
+          ],
+          "hospital": "Brigham and Women's Hospital",
+          "education": "New York University",
+          "certifications": [
+            "FACC",
+            "FAHA",
+            "FRCP"
+          ],
+          "languages": [
+            "English",
+            "German"
+          ],
+          "researchPapers": "1,200+ publications",
+          "awards": [
+            "Lasker Award",
+            "National Medal of Science"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Dr. Deepak L. Bhatt",
+          "specialty": "Interventional Cardiologist",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/RelatedSpecialists/img4.png",
+          "experience": "25+ years",
+          "rating": "9.6",
+          "patientsTreated": "35,000+",
+          "successRate": "97.1%",
+          "expertise": [
+            "Interventional Cardiology",
+            "Clinical Trials",
+            "Cardiovascular Outcomes",
+            "Preventive Cardiology",
+            "Antithrombotic Therapy"
+          ],
+          "hospital": "Brigham and Women's Hospital",
+          "education": "Cornell University",
+          "certifications": [
+            "FACC",
+            "FSCAI",
+            "FAHA"
+          ],
+          "languages": [
+            "English",
+            "Hindi"
+          ],
+          "researchPapers": "800+ publications",
+          "awards": [
+            "Distinguished Scientist Award",
+            "Top Cardiologist 2022"
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Dr. Robert O. Bonow",
+          "specialty": "Cardiologist",
+          "location": "Chicago, Illinois, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "35+ years",
+          "rating": "9.5",
+          "patientsTreated": "40,000+",
+          "successRate": "96.8%",
+          "expertise": [
+            "Valvular Heart Disease",
+            "Cardiovascular Imaging",
+            "Heart Failure",
+            "Clinical Cardiology",
+            "Echocardiography"
+          ],
+          "hospital": "Northwestern Memorial Hospital",
+          "education": "Stanford University",
+          "certifications": [
+            "FACC",
+            "FAHA",
+            "FASE"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ],
+          "researchPapers": "600+ publications",
+          "awards": [
+            "Distinguished Service Award",
+            "Lifetime Achievement Award"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Dr. Christine E. Seidman",
+          "specialty": "Cardiologist",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "30+ years",
+          "rating": "9.4",
+          "patientsTreated": "25,000+",
+          "successRate": "96.5%",
+          "expertise": [
+            "Genetic Cardiology",
+            "Cardiomyopathy",
+            "Molecular Cardiology",
+            "Clinical Genetics",
+            "Research"
+          ],
+          "hospital": "Brigham and Women's Hospital",
+          "education": "Harvard Medical School",
+          "certifications": [
+            "FACC",
+            "FAHA",
+            "FACP"
+          ],
+          "languages": [
+            "English",
+            "French"
+          ],
+          "researchPapers": "400+ publications",
+          "awards": [
+            "Breakthrough Prize",
+            "National Academy of Sciences"
+          ]
+        }
+      ],
+      "treatments": [
+        {
+          "id": 1,
+          "name": "Coronary Angioplasty",
+          "image": "/hospitaldirectory/img1.png",
+          "price": "€8,500",
+          "description": "Minimally invasive procedure to open blocked coronary arteries",
+          "duration": "1-2 hours",
+          "recovery": "1-3 days",
+          "includes": [
+            "Pre-operative consultation",
+            "Procedure",
+            "Post-operative care",
+            "Follow-up visits"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Heart Bypass Surgery",
+          "image": "/hospitaldirectory/img2.png",
+          "price": "€25,000",
+          "description": "Surgical procedure to create new routes around blocked arteries",
+          "duration": "4-6 hours",
+          "recovery": "6-8 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "ICU care",
+            "Rehabilitation"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Pacemaker Implantation",
+          "image": "/hospitaldirectory/img3.png",
+          "price": "€12,000",
+          "description": "Device implantation to regulate heart rhythm",
+          "duration": "1-2 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Device selection",
+            "Implantation",
+            "Programming",
+            "Follow-up care"
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "Cardiology consultation",
+          "cost": "€200 - €500"
+        },
+        {
+          "name": "Coronary angioplasty",
+          "cost": "€8,000 - €15,000"
+        },
+        {
+          "name": "Heart bypass surgery",
+          "cost": "€20,000 - €35,000"
+        },
+        {
+          "name": "Pacemaker implantation",
+          "cost": "€10,000 - €18,000"
+        },
+        {
+          "name": "Heart transplant",
+          "cost": "€80,000 - €150,000"
+        },
+        {
+          "name": "TAVR procedure",
+          "cost": "€25,000 - €45,000"
+        },
+        {
+          "name": "Cardiac ablation",
+          "cost": "€15,000 - €25,000"
+        },
+        {
+          "name": "Cardiac rehabilitation",
+          "cost": "€2,000 - €5,000"
+        }
+      ]
+    },
+    "gynaecology": {
+      "id": "gynaecology",
+      "name": "Gynaecology",
+      "slug": "gynaecology",
+      "description": "Women's health and reproductive care",
+      "icon": "/specialties/gynaecology.png",
+      "color": "#92BDF6",
+      "count": 0,
+      "overview": {
+        "description": "Gynaecology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the female reproductive system. Our medical tourism platform connects patients with the best gynecology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+        "highlights": [
+          "Access to world-class gynecology hospitals",
+          "Top-rated gynecologists with international experience",
+          "Advanced diagnostic and treatment technologies",
+          "Cost-effective medical tourism solutions",
+          "Comprehensive care coordination"
+        ],
+        "cta": {
+          "bookConsultation": "Book a free consultation",
+          "secondOpinion": "Get a second opinion",
+          "callBack": "Request a call back"
+        }
+      },
+      "filters": {
+        "categories": [
+          "All",
+          "Doctors",
+          "Hospitals",
+          "Treatments"
+        ],
+        "treatments": [
+          "Pregnancy Care",
+          "Cesarean Section",
+          "Hysterectomy",
+          "Laparoscopy",
+          "IVF Treatment",
+          "Menopause Management"
+        ],
+        "facilities": [
+          "Labor Room",
+          "NICU",
+          "Ultrasound",
+          "IVF Lab",
+          "Operation Theater",
+          "Maternity Ward"
+        ]
+      },
+      "hospitals": [
+        {
+          "id": 1,
+          "name": "Cleveland Clinic",
+          "location": "Cleveland, Ohio, USA",
+          "image": "/hospital_logos/img1.jpg",
+          "rating": "9.9",
+          "patientsPerYear": "2.8M+",
+          "successRate": "98.1%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Fertility Treatment",
+            "Gynecological Surgery",
+            "Women's Health",
+            "Gynecological Oncology",
+            "Urogynecology"
+          ],
+          "facilities": [
+            "Advanced Imaging",
+            "Robotic Surgery",
+            "Fertility Center",
+            "IVF Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Arabic",
+            "Hindi"
+          ],
+          "internationalPatients": "12,500+ annually"
+        },
+        {
+          "id": 2,
+          "name": "Mayo Clinic",
+          "location": "Rochester, Minnesota, USA",
+          "image": "/hospital_logos/img2.png",
+          "rating": "9.8",
+          "patientsPerYear": "1.3M+",
+          "successRate": "97.8%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Reproductive Medicine",
+            "Gynecological Oncology",
+            "Urogynecology",
+            "Fertility Treatment",
+            "High-Risk Pregnancy"
+          ],
+          "facilities": [
+            "IVF Center",
+            "Advanced Diagnostics",
+            "Research Facilities",
+            "Robotic Surgery Center",
+            "Telemedicine Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "German",
+            "Chinese"
+          ],
+          "internationalPatients": "9,800+ annually"
+        },
+        {
+          "id": 3,
+          "name": "Johns Hopkins Hospital",
+          "location": "Baltimore, Maryland, USA",
+          "image": "/hospital_logos/img3.webp",
+          "rating": "9.7",
+          "patientsPerYear": "1.1M+",
+          "successRate": "97.5%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Pediatric Gynecology",
+            "High-Risk Pregnancy",
+            "Gynecological Surgery",
+            "Gynecological Oncology",
+            "Reproductive Medicine"
+          ],
+          "facilities": [
+            "Minimally Invasive Surgery",
+            "Advanced Monitoring",
+            "Specialized Care",
+            "Clinical Trials Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "Arabic",
+            "Korean"
+          ],
+          "internationalPatients": "8,500+ annually"
+        },
+        {
+          "id": 4,
+          "name": "Massachusetts General Hospital",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/hospital_logos/img4.webp",
+          "rating": "9.6",
+          "patientsPerYear": "1.5M+",
+          "successRate": "97.2%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Fertility Treatment",
+            "Gynecological Surgery",
+            "Women's Health",
+            "High-Risk Pregnancy",
+            "Gynecological Oncology"
+          ],
+          "facilities": [
+            "Advanced Imaging",
+            "Robotic Surgery",
+            "Fertility Center",
+            "Research Institute",
+            "Clinical Trials Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Portuguese",
+            "Italian",
+            "Hindi"
+          ],
+          "internationalPatients": "9,200+ annually"
+        },
+        {
+          "id": 5,
+          "name": "Stanford Health Care",
+          "location": "Stanford, California, USA",
+          "image": "/hospital_logos/img5.webp",
+          "rating": "9.5",
+          "patientsPerYear": "1.2M+",
+          "successRate": "96.9%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Reproductive Medicine",
+            "Gynecological Surgery",
+            "Fertility Treatment",
+            "Gynecological Oncology",
+            "Urogynecology"
+          ],
+          "facilities": [
+            "Innovation Center",
+            "AI-Powered Diagnostics",
+            "Robotic Surgery",
+            "Clinical Research",
+            "Digital Health Platform"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Japanese",
+            "Korean"
+          ],
+          "internationalPatients": "7,800+ annually"
+        },
+        {
+          "id": 6,
+          "name": "UCSF Medical Center",
+          "location": "San Francisco, California, USA",
+          "image": "/hospital_logos/img6.webp",
+          "rating": "9.4",
+          "patientsPerYear": "1.0M+",
+          "successRate": "96.6%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Fertility Treatment",
+            "Gynecological Surgery",
+            "Women's Health",
+            "High-Risk Pregnancy",
+            "Reproductive Medicine"
+          ],
+          "facilities": [
+            "Advanced Imaging",
+            "Robotic Surgery",
+            "Fertility Center",
+            "Clinical Trials Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Vietnamese",
+            "Tagalog"
+          ],
+          "internationalPatients": "6,500+ annually"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Togas Tulandi",
+          "specialty": "Gynecologist",
+          "location": "Montreal, Canada",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "30+ years",
+          "expertise": [
+            "Fertility Treatment",
+            "Reproductive Surgery",
+            "IVF"
+          ],
+          "hospital": "McGill University Health Centre"
+        },
+        {
+          "id": 2,
+          "name": "Dr. Camran Nezhat",
+          "specialty": "Gynecologist",
+          "location": "Stanford, California, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "35+ years",
+          "expertise": [
+            "Minimally Invasive Surgery",
+            "Endometriosis",
+            "Robotic Surgery"
+          ],
+          "hospital": "Stanford University Medical Center"
+        },
+        {
+          "id": 3,
+          "name": "Dr. Alan DeCherney",
+          "specialty": "Gynecologist",
+          "location": "Los Angeles, California, USA",
+          "image": "/RelatedSpecialists/img3.png",
+          "experience": "40+ years",
+          "expertise": [
+            "Reproductive Medicine",
+            "IVF",
+            "Clinical Research"
+          ],
+          "hospital": "UCLA Medical Center"
+        }
+      ],
+      "treatments": [
+        {
+          "id": 1,
+          "name": "IVF Treatment",
+          "image": "/hospitaldirectory/img1.png",
+          "price": "€8,000",
+          "description": "In vitro fertilization for couples facing fertility challenges",
+          "duration": "2-6 weeks per cycle",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Consultation",
+            "Hormone therapy",
+            "Egg retrieval",
+            "Embryo transfer"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Laparoscopy",
+          "image": "/hospitaldirectory/img2.png",
+          "price": "€5,000",
+          "description": "Minimally invasive surgery for gynecological conditions",
+          "duration": "1-3 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Post-operative care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Hysterectomy",
+          "image": "/hospitaldirectory/img3.png",
+          "price": "€12,000",
+          "description": "Surgical removal of uterus for various medical conditions",
+          "duration": "2-4 hours",
+          "recovery": "4-6 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Post-operative care",
+            "Rehabilitation"
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "Gynecology consultation",
+          "cost": "€150 - €400"
+        },
+        {
+          "name": "IVF treatment",
+          "cost": "€6,000 - €12,000"
+        },
+        {
+          "name": "Laparoscopy",
+          "cost": "€4,000 - €8,000"
+        },
+        {
+          "name": "Hysterectomy",
+          "cost": "€8,000 - €15,000"
+        },
+        {
+          "name": "Fertility treatment",
+          "cost": "€3,000 - €10,000"
+        },
+        {
+          "name": "Gynecological surgery",
+          "cost": "€5,000 - €20,000"
+        },
+        {
+          "name": "Egg freezing",
+          "cost": "€3,000 - €8,000"
+        },
+        {
+          "name": "Prenatal care",
+          "cost": "€2,000 - €5,000"
+        }
+      ]
+    },
+    "neurology": {
+      "id": "neurology",
+      "name": "Neurology",
+      "slug": "neurology",
+      "description": "Advanced brain and nervous system treatments",
+      "icon": "/specialties/neurology.png",
+      "color": "#FEC091",
+      "count": 0,
+      "overview": {
+        "description": "Neurology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the brain, spinal cord, and nervous system. Our medical tourism platform connects patients with the best neurology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+        "highlights": [
+          "Access to world-class neurology hospitals",
+          "Top-rated neurologists with international experience",
+          "Advanced diagnostic and treatment technologies",
+          "Cost-effective medical tourism solutions",
+          "Comprehensive care coordination"
+        ],
+        "cta": {
+          "bookConsultation": "Book a free consultation",
+          "secondOpinion": "Get a second opinion",
+          "callBack": "Request a call back"
+        }
+      },
+      "filters": {
+        "categories": [
+          "All",
+          "Doctors",
+          "Hospitals",
+          "Treatments"
+        ],
+        "treatments": [
+          "Brain Surgery",
+          "Stroke Treatment",
+          "Epilepsy Management",
+          "Parkinson's Treatment",
+          "Multiple Sclerosis Care",
+          "Migraine Treatment"
+        ],
+        "facilities": [
+          "Neurology ICU",
+          "MRI",
+          "CT Scan",
+          "EEG Lab",
+          "Stroke Unit",
+          "Rehabilitation Center"
+        ]
+      },
+      "hospitals": [
+        {
+          "id": 1,
+          "name": "Massachusetts General Hospital",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/hospital_logos/img1.jpg",
+          "rating": "9.9",
+          "patientsPerYear": "1.5M+",
+          "successRate": "98.2%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Stroke Treatment",
+            "Epilepsy",
+            "Movement Disorders",
+            "Neuro-oncology",
+            "Neuromuscular Disorders"
+          ],
+          "facilities": [
+            "Advanced Neuroimaging",
+            "Robotic Surgery",
+            "Neurocritical Care",
+            "Gamma Knife",
+            "3D Brain Mapping"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Portuguese",
+            "Italian",
+            "Hindi"
+          ],
+          "internationalPatients": "9,800+ annually"
+        },
+        {
+          "id": 2,
+          "name": "Johns Hopkins Hospital",
+          "location": "Baltimore, Maryland, USA",
+          "image": "/hospital_logos/img2.png",
+          "rating": "9.8",
+          "patientsPerYear": "1.1M+",
+          "successRate": "97.9%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Brain Tumors",
+            "Multiple Sclerosis",
+            "Neuromuscular Disorders",
+            "Epilepsy",
+            "Stroke Treatment"
+          ],
+          "facilities": [
+            "Gamma Knife",
+            "Advanced Monitoring",
+            "Research Facilities",
+            "Clinical Trials Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "Arabic",
+            "Korean"
+          ],
+          "internationalPatients": "8,500+ annually"
+        },
+        {
+          "id": 3,
+          "name": "Cleveland Clinic",
+          "location": "Cleveland, Ohio, USA",
+          "image": "/hospital_logos/img3.webp",
+          "rating": "9.7",
+          "patientsPerYear": "2.8M+",
+          "successRate": "97.6%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Headache Medicine",
+            "Sleep Disorders",
+            "Neuro-oncology",
+            "Movement Disorders",
+            "Epilepsy"
+          ],
+          "facilities": [
+            "3D Brain Mapping",
+            "Advanced Diagnostics",
+            "Specialized ICUs",
+            "Robotic Surgery Center",
+            "Research Institute"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Arabic",
+            "Hindi"
+          ],
+          "internationalPatients": "12,000+ annually"
+        },
+        {
+          "id": 4,
+          "name": "Mayo Clinic",
+          "location": "Rochester, Minnesota, USA",
+          "image": "/hospital_logos/img4.webp",
+          "rating": "9.6",
+          "patientsPerYear": "1.3M+",
+          "successRate": "97.4%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Multiple Sclerosis",
+            "Movement Disorders",
+            "Epilepsy",
+            "Neuro-oncology",
+            "Neuromuscular Disorders"
+          ],
+          "facilities": [
+            "Advanced Neuroimaging",
+            "3D Brain Mapping",
+            "Specialized ICUs",
+            "Research Labs",
+            "Telemedicine Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "German",
+            "Chinese"
+          ],
+          "internationalPatients": "9,200+ annually"
+        },
+        {
+          "id": 5,
+          "name": "Stanford Health Care",
+          "location": "Stanford, California, USA",
+          "image": "/hospital_logos/img5.webp",
+          "rating": "9.5",
+          "patientsPerYear": "1.2M+",
+          "successRate": "97.1%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Brain Tumors",
+            "Epilepsy",
+            "Movement Disorders",
+            "Stroke Treatment",
+            "Neuro-oncology"
+          ],
+          "facilities": [
+            "Innovation Center",
+            "AI-Powered Diagnostics",
+            "Advanced Imaging",
+            "Clinical Research",
+            "Digital Health Platform"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Japanese",
+            "Korean"
+          ],
+          "internationalPatients": "7,800+ annually"
+        },
+        {
+          "id": 6,
+          "name": "UCSF Medical Center",
+          "location": "San Francisco, California, USA",
+          "image": "/hospital_logos/img6.webp",
+          "rating": "9.4",
+          "patientsPerYear": "1.0M+",
+          "successRate": "96.8%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Multiple Sclerosis",
+            "Epilepsy",
+            "Movement Disorders",
+            "Neuro-oncology",
+            "Neuromuscular Disorders"
+          ],
+          "facilities": [
+            "Advanced Neuroimaging",
+            "Research Facilities",
+            "Clinical Trials Center",
+            "Innovation Hub",
+            "Specialized ICUs"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Vietnamese",
+            "Tagalog"
+          ],
+          "internationalPatients": "6,500+ annually"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Joseph Jankovic",
+          "specialty": "Movement Disorder Neurologist",
+          "location": "Houston, Texas, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "35+ years",
+          "rating": "9.9",
+          "patientsTreated": "55,000+",
+          "successRate": "98.1%",
+          "expertise": [
+            "Movement Disorders",
+            "Parkinson's Disease",
+            "Dystonia",
+            "Tremor Disorders",
+            "Deep Brain Stimulation"
+          ],
+          "hospital": "Baylor College of Medicine",
+          "education": "University of Belgrade",
+          "certifications": [
+            "FACP",
+            "FANA",
+            "Movement Disorders"
+          ],
+          "languages": [
+            "English",
+            "Serbian",
+            "Spanish"
+          ],
+          "researchPapers": "800+ publications",
+          "awards": [
+            "Distinguished Scientist Award",
+            "Movement Disorders Pioneer"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Dr. Stephen Hauser",
+          "specialty": "Multiple Sclerosis Specialist",
+          "location": "San Francisco, California, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "30+ years",
+          "rating": "9.8",
+          "patientsTreated": "45,000+",
+          "successRate": "97.8%",
+          "expertise": [
+            "Multiple Sclerosis",
+            "Autoimmune Neurology",
+            "Clinical Trials",
+            "Neuroimmunology",
+            "Precision Medicine"
+          ],
+          "hospital": "UCSF Medical Center",
+          "education": "Harvard Medical School",
+          "certifications": [
+            "FACP",
+            "FANA",
+            "Autoimmune Neurology"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French"
+          ],
+          "researchPapers": "600+ publications",
+          "awards": [
+            "Multiple Sclerosis Research Award",
+            "Clinical Excellence"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Dr. Jeffrey Saver",
+          "specialty": "Stroke Neurologist",
+          "location": "Los Angeles, California, USA",
+          "image": "/RelatedSpecialists/img3.png",
+          "experience": "25+ years",
+          "rating": "9.7",
+          "patientsTreated": "40,000+",
+          "successRate": "97.5%",
+          "expertise": [
+            "Stroke Treatment",
+            "Interventional Neurology",
+            "Clinical Research",
+            "Thrombolysis",
+            "Endovascular Therapy"
+          ],
+          "hospital": "UCLA Medical Center",
+          "education": "Stanford University",
+          "certifications": [
+            "FACP",
+            "FANA",
+            "Interventional Neurology"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Mandarin"
+          ],
+          "researchPapers": "500+ publications",
+          "awards": [
+            "Stroke Research Excellence",
+            "Clinical Innovation Award"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Dr. Anthony Lang",
+          "specialty": "Movement Disorder Neurologist",
+          "location": "Toronto, Canada",
+          "image": "/RelatedSpecialists/img4.png",
+          "experience": "30+ years",
+          "rating": "9.6",
+          "patientsTreated": "42,000+",
+          "successRate": "97.2%",
+          "expertise": [
+            "Parkinson's Disease",
+            "Movement Disorders",
+            "Deep Brain Stimulation",
+            "Clinical Trials",
+            "Neurodegenerative Diseases"
+          ],
+          "hospital": "Toronto Western Hospital",
+          "education": "University of Toronto",
+          "certifications": [
+            "FRCPC",
+            "FANA",
+            "Movement Disorders"
+          ],
+          "languages": [
+            "English",
+            "French",
+            "Italian"
+          ],
+          "researchPapers": "550+ publications",
+          "awards": [
+            "Canadian Medical Association Award",
+            "Research Excellence"
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Dr. Howard Weiner",
+          "specialty": "Multiple Sclerosis Specialist",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "35+ years",
+          "rating": "9.5",
+          "patientsTreated": "48,000+",
+          "successRate": "97.0%",
+          "expertise": [
+            "Multiple Sclerosis",
+            "Neuroimmunology",
+            "Clinical Trials",
+            "Autoimmune Neurology",
+            "Precision Medicine"
+          ],
+          "hospital": "Brigham and Women's Hospital",
+          "education": "Harvard Medical School",
+          "certifications": [
+            "FACP",
+            "FANA",
+            "Neuroimmunology"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Hebrew"
+          ],
+          "researchPapers": "700+ publications",
+          "awards": [
+            "Multiple Sclerosis Research Award",
+            "Lifetime Achievement"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Dr. David Holtzman",
+          "specialty": "Alzheimer's Specialist",
+          "location": "St. Louis, Missouri, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "25+ years",
+          "rating": "9.4",
+          "patientsTreated": "35,000+",
+          "successRate": "96.8%",
+          "expertise": [
+            "Alzheimer's Disease",
+            "Dementia",
+            "Neurodegenerative Diseases",
+            "Clinical Research",
+            "Biomarker Development"
+          ],
+          "hospital": "Washington University School of Medicine",
+          "education": "Johns Hopkins University",
+          "certifications": [
+            "FACP",
+            "FANA",
+            "Dementia"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "German"
+          ],
+          "researchPapers": "450+ publications",
+          "awards": [
+            "Alzheimer's Research Award",
+            "Scientific Excellence"
+          ]
+        }
+      ],
+      "treatments": [
+        {
+          "id": 1,
+          "name": "Deep Brain Stimulation",
+          "image": "/hospitaldirectory/img1.png",
+          "price": "€35,000",
+          "description": "Surgical procedure to implant electrodes in the brain for movement disorders",
+          "duration": "4-6 hours",
+          "recovery": "4-6 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Programming",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Brain Tumor Surgery",
+          "image": "/hospitaldirectory/img2.png",
+          "price": "€45,000",
+          "description": "Surgical removal of brain tumors using advanced techniques",
+          "duration": "6-8 hours",
+          "recovery": "6-8 weeks",
+          "includes": [
+            "Pre-operative planning",
+            "Surgery",
+            "ICU care",
+            "Rehabilitation"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Epilepsy Surgery",
+          "image": "/hospitaldirectory/img3.png",
+          "price": "€30,000",
+          "description": "Surgical treatment for drug-resistant epilepsy",
+          "duration": "3-5 hours",
+          "recovery": "4-6 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Monitoring",
+            "Follow-up"
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "Neurology consultation",
+          "cost": "€300 - €600"
+        },
+        {
+          "name": "Brain surgery",
+          "cost": "€25,000 - €50,000"
+        },
+        {
+          "name": "Deep brain stimulation",
+          "cost": "€30,000 - €40,000"
+        },
+        {
+          "name": "Epilepsy surgery",
+          "cost": "€25,000 - €35,000"
+        },
+        {
+          "name": "Stroke treatment",
+          "cost": "€15,000 - €30,000"
+        },
+        {
+          "name": "Multiple sclerosis treatment",
+          "cost": "€20,000 - €40,000"
+        },
+        {
+          "name": "Parkinson's treatment",
+          "cost": "€15,000 - €25,000"
+        },
+        {
+          "name": "Neurological rehabilitation",
+          "cost": "€5,000 - €15,000"
+        }
+      ]
+    },
+    "oncology": {
+      "id": "oncology",
+      "name": "Oncology",
+      "slug": "oncology",
+      "description": "Comprehensive cancer care and treatment",
+      "icon": "/specialties/oncology.png",
+      "color": "#E7C2D4",
+      "count": 0,
+      "overview": {
+        "description": "Oncology is a medical specialty that focuses on the diagnosis and treatment of cancer. Our medical tourism platform connects patients with the best oncology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+        "highlights": [
+          "Access to world-class oncology hospitals",
+          "Top-rated oncologists with international experience",
+          "Advanced diagnostic and treatment technologies",
+          "Cost-effective medical tourism solutions",
+          "Comprehensive care coordination"
+        ],
+        "cta": {
+          "bookConsultation": "Book a free consultation",
+          "secondOpinion": "Get a second opinion",
+          "callBack": "Request a call back"
+        }
+      },
+      "filters": {
+        "categories": [
+          "All",
+          "Doctors",
+          "Hospitals",
+          "Treatments"
+        ],
+        "treatments": [
+          "Chemotherapy",
+          "Radiation Therapy",
+          "Immunotherapy",
+          "Surgical Oncology",
+          "Bone Marrow Transplant",
+          "Targeted Therapy"
+        ],
+        "facilities": [
+          "Chemotherapy Unit",
+          "Radiation Therapy",
+          "Oncology ICU",
+          "Blood Bank",
+          "Pathology Lab",
+          "Palliative Care"
+        ]
+      },
+      "hospitals": [
+        {
+          "id": 1,
+          "name": "MD Anderson Cancer Center",
+          "location": "Houston, Texas, USA",
+          "image": "/hospital_logos/img1.jpg",
+          "rating": "9.9",
+          "patientsPerYear": "1.8M+",
+          "successRate": "98.5%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "NCI"
+          ],
+          "specialties": [
+            "Breast Cancer",
+            "Lung Cancer",
+            "Leukemia",
+            "Prostate Cancer",
+            "Brain Tumors"
+          ],
+          "facilities": [
+            "Proton Therapy",
+            "Robotic Surgery",
+            "Clinical Trials",
+            "Immunotherapy Center",
+            "Precision Medicine Lab"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Arabic",
+            "Hindi",
+            "Chinese"
+          ],
+          "internationalPatients": "15,000+ annually"
+        },
+        {
+          "id": 2,
+          "name": "Memorial Sloan Kettering",
+          "location": "New York, USA",
+          "image": "/hospital_logos/img2.png",
+          "rating": "9.8",
+          "patientsPerYear": "1.5M+",
+          "successRate": "98.2%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "NCI"
+          ],
+          "specialties": [
+            "Prostate Cancer",
+            "Colorectal Cancer",
+            "Lymphoma",
+            "Breast Cancer",
+            "Melanoma"
+          ],
+          "facilities": [
+            "Advanced Imaging",
+            "Immunotherapy",
+            "Research Facilities",
+            "CAR-T Cell Therapy",
+            "Clinical Trials Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "Italian",
+            "Russian"
+          ],
+          "internationalPatients": "12,500+ annually"
+        },
+        {
+          "id": 3,
+          "name": "Dana-Farber Cancer Institute",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/hospital_logos/img3.webp",
+          "rating": "9.7",
+          "patientsPerYear": "1.2M+",
+          "successRate": "97.8%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "NCI"
+          ],
+          "specialties": [
+            "Pediatric Oncology",
+            "Brain Tumors",
+            "Sarcoma",
+            "Leukemia",
+            "Lymphoma"
+          ],
+          "facilities": [
+            "Precision Medicine",
+            "Advanced Diagnostics",
+            "Specialized Care",
+            "Stem Cell Transplant",
+            "Immunotherapy Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Portuguese",
+            "Italian",
+            "Hindi"
+          ],
+          "internationalPatients": "10,800+ annually"
+        },
+        {
+          "id": 4,
+          "name": "Mayo Clinic Cancer Center",
+          "location": "Rochester, Minnesota, USA",
+          "image": "/hospital_logos/img4.webp",
+          "rating": "9.6",
+          "patientsPerYear": "1.3M+",
+          "successRate": "97.5%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "NCI"
+          ],
+          "specialties": [
+            "Breast Cancer",
+            "Lung Cancer",
+            "Colorectal Cancer",
+            "Prostate Cancer",
+            "Leukemia"
+          ],
+          "facilities": [
+            "Proton Therapy",
+            "Robotic Surgery",
+            "Clinical Trials",
+            "Precision Medicine",
+            "Research Institute"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "German",
+            "Chinese"
+          ],
+          "internationalPatients": "9,500+ annually"
+        },
+        {
+          "id": 5,
+          "name": "UCSF Medical Center",
+          "location": "San Francisco, California, USA",
+          "image": "/hospital_logos/img5.webp",
+          "rating": "9.5",
+          "patientsPerYear": "1.0M+",
+          "successRate": "97.2%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Breast Cancer",
+            "Brain Tumors",
+            "Lung Cancer",
+            "Prostate Cancer",
+            "Melanoma"
+          ],
+          "facilities": [
+            "Advanced Imaging",
+            "Immunotherapy",
+            "Clinical Trials",
+            "Precision Medicine",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Vietnamese",
+            "Tagalog"
+          ],
+          "internationalPatients": "8,200+ annually"
+        },
+        {
+          "id": 6,
+          "name": "Stanford Health Care",
+          "location": "Stanford, California, USA",
+          "image": "/hospital_logos/img6.webp",
+          "rating": "9.4",
+          "patientsPerYear": "1.2M+",
+          "successRate": "96.9%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Breast Cancer",
+            "Lung Cancer",
+            "Prostate Cancer",
+            "Brain Tumors",
+            "Leukemia"
+          ],
+          "facilities": [
+            "Proton Therapy",
+            "Robotic Surgery",
+            "Clinical Trials",
+            "Immunotherapy",
+            "Digital Health Platform"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Japanese",
+            "Korean"
+          ],
+          "internationalPatients": "7,800+ annually"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Patrick Soon-Shiong",
+          "specialty": "Oncologist",
+          "location": "Los Angeles, California, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "30+ years",
+          "expertise": [
+            "Immunotherapy",
+            "Precision Medicine",
+            "Clinical Trials"
+          ],
+          "hospital": "UCLA Medical Center"
+        },
+        {
+          "id": 2,
+          "name": "Dr. Siddhartha Mukherjee",
+          "specialty": "Oncologist",
+          "location": "New York, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "25+ years",
+          "expertise": [
+            "Hematological Oncology",
+            "Stem Cell Transplantation",
+            "Research"
+          ],
+          "hospital": "Columbia University Medical Center"
+        },
+        {
+          "id": 3,
+          "name": "Dr. Susan Love",
+          "specialty": "Oncologist",
+          "location": "Los Angeles, California, USA",
+          "image": "/RelatedSpecialists/img3.png",
+          "experience": "35+ years",
+          "expertise": [
+            "Breast Cancer",
+            "Women's Health",
+            "Prevention"
+          ],
+          "hospital": "UCLA Medical Center"
+        }
+      ],
+      "treatments": [
+        {
+          "id": 1,
+          "name": "Chemotherapy",
+          "image": "/hospitaldirectory/img1.png",
+          "price": "€15,000",
+          "description": "Drug treatment to destroy cancer cells throughout the body",
+          "duration": "3-6 months",
+          "recovery": "Varies by patient",
+          "includes": [
+            "Treatment planning",
+            "Chemotherapy sessions",
+            "Monitoring",
+            "Supportive care"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Radiation Therapy",
+          "image": "/hospitaldirectory/img2.png",
+          "price": "€20,000",
+          "description": "High-energy radiation to destroy cancer cells in specific areas",
+          "duration": "5-7 weeks",
+          "recovery": "2-6 weeks",
+          "includes": [
+            "Treatment planning",
+            "Radiation sessions",
+            "Monitoring",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Immunotherapy",
+          "image": "/hospitaldirectory/img3.png",
+          "price": "€35,000",
+          "description": "Treatment that uses the body's immune system to fight cancer",
+          "duration": "6-12 months",
+          "recovery": "Ongoing monitoring",
+          "includes": [
+            "Treatment planning",
+            "Immunotherapy sessions",
+            "Monitoring",
+            "Long-term care"
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "Oncology consultation",
+          "cost": "€500 - €1,000"
+        },
+        {
+          "name": "Chemotherapy",
+          "cost": "€10,000 - €25,000"
+        },
+        {
+          "name": "Radiation therapy",
+          "cost": "€15,000 - €30,000"
+        },
+        {
+          "name": "Immunotherapy",
+          "cost": "€25,000 - €50,000"
+        },
+        {
+          "name": "Surgery",
+          "cost": "€20,000 - €60,000"
+        },
+        {
+          "name": "Stem cell transplant",
+          "cost": "€50,000 - €100,000"
+        },
+        {
+          "name": "Proton therapy",
+          "cost": "€30,000 - €80,000"
+        },
+        {
+          "name": "Clinical trials",
+          "cost": "€0 - €25,000"
+        }
+      ]
+    },
+    "orthopaedics": {
+      "id": "orthopaedics",
+      "name": "Orthopaedics",
+      "slug": "orthopaedics",
+      "description": "Specialized care for bones, joints, muscles, and skeletal system",
+      "icon": "/specialties/orthopaedics.png",
+      "color": "#F6EB61",
+      "count": 0,
+      "overview": {
+        "description": "Orthopaedics is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the musculoskeletal system including bones, joints, muscles, ligaments, and tendons. Our medical tourism platform connects patients with the best orthopedic hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+        "highlights": [
+          "Access to world-class orthopedic hospitals",
+          "Top-rated orthopedic surgeons with international experience",
+          "Advanced diagnostic and treatment technologies",
+          "Cost-effective medical tourism solutions",
+          "Comprehensive care coordination"
+        ],
+        "cta": {
+          "bookConsultation": "Book a free consultation",
+          "secondOpinion": "Get a second opinion",
+          "callBack": "Request a call back"
+        }
+      },
+      "filters": {
+        "categories": [
+          "All",
+          "Doctors",
+          "Hospitals",
+          "Treatments"
+        ],
+        "treatments": [
+          "Joint Replacement",
+          "Arthroscopy",
+          "Fracture Treatment",
+          "Spine Surgery",
+          "Sports Medicine",
+          "Pediatric Orthopedics"
+        ],
+        "facilities": [
+          "Operation Theater",
+          "X-Ray",
+          "MRI",
+          "CT Scan",
+          "Physiotherapy",
+          "Rehabilitation Center"
+        ]
+      },
+      "hospitals": [
+        {
+          "id": 1,
+          "name": "Hospital for Special Surgery",
+          "location": "New York, USA",
+          "image": "/hospital_logos/img1.jpg",
+          "rating": "9.9",
+          "patientsPerYear": "1.2M+",
+          "successRate": "98.3%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Joint Replacement",
+            "Sports Medicine",
+            "Spine Surgery",
+            "Hand Surgery",
+            "Foot and Ankle"
+          ],
+          "facilities": [
+            "Robotic Surgery",
+            "Advanced Imaging",
+            "Rehabilitation Center",
+            "3D Printing Lab",
+            "Sports Performance Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "Italian",
+            "Russian"
+          ],
+          "internationalPatients": "11,000+ annually"
+        },
+        {
+          "id": 2,
+          "name": "Mayo Clinic",
+          "location": "Rochester, Minnesota, USA",
+          "image": "/hospital_logos/img2.png",
+          "rating": "9.8",
+          "patientsPerYear": "1.3M+",
+          "successRate": "97.9%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Trauma Surgery",
+            "Pediatric Orthopedics",
+            "Hand Surgery",
+            "Joint Replacement",
+            "Spine Surgery"
+          ],
+          "facilities": [
+            "3D Printing",
+            "Advanced Diagnostics",
+            "Research Facilities",
+            "Robotic Surgery Center",
+            "Telemedicine Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "German",
+            "Chinese"
+          ],
+          "internationalPatients": "10,500+ annually"
+        },
+        {
+          "id": 3,
+          "name": "Cleveland Clinic",
+          "location": "Cleveland, Ohio, USA",
+          "image": "/hospital_logos/img3.webp",
+          "rating": "9.7",
+          "patientsPerYear": "2.8M+",
+          "successRate": "97.6%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Shoulder Surgery",
+            "Knee Surgery",
+            "Foot and Ankle",
+            "Joint Replacement",
+            "Sports Medicine"
+          ],
+          "facilities": [
+            "Minimally Invasive Surgery",
+            "Advanced Monitoring",
+            "Specialized ICUs",
+            "Innovation Hub",
+            "Research Institute"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Arabic",
+            "Hindi"
+          ],
+          "internationalPatients": "13,000+ annually"
+        },
+        {
+          "id": 4,
+          "name": "Massachusetts General Hospital",
+          "location": "Boston, Massachusetts, USA",
+          "image": "/hospital_logos/img4.webp",
+          "rating": "9.6",
+          "patientsPerYear": "1.5M+",
+          "successRate": "97.3%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Joint Replacement",
+            "Spine Surgery",
+            "Sports Medicine",
+            "Trauma Surgery",
+            "Pediatric Orthopedics"
+          ],
+          "facilities": [
+            "Robotic Surgery",
+            "Advanced Imaging",
+            "Research Institute",
+            "Telecardiology",
+            "Clinical Trials Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Portuguese",
+            "Italian",
+            "Hindi"
+          ],
+          "internationalPatients": "9,800+ annually"
+        },
+        {
+          "id": 5,
+          "name": "Stanford Health Care",
+          "location": "Stanford, California, USA",
+          "image": "/hospital_logos/img5.webp",
+          "rating": "9.5",
+          "patientsPerYear": "1.2M+",
+          "successRate": "97.0%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Sports Medicine",
+            "Joint Replacement",
+            "Spine Surgery",
+            "Hand Surgery",
+            "Foot and Ankle"
+          ],
+          "facilities": [
+            "Innovation Center",
+            "AI-Powered Diagnostics",
+            "Robotic Surgery",
+            "Clinical Research",
+            "Digital Health Platform"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Japanese",
+            "Korean"
+          ],
+          "internationalPatients": "8,200+ annually"
+        },
+        {
+          "id": 6,
+          "name": "UCSF Medical Center",
+          "location": "San Francisco, California, USA",
+          "image": "/hospital_logos/img6.webp",
+          "rating": "9.4",
+          "patientsPerYear": "1.0M+",
+          "successRate": "96.7%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Joint Replacement",
+            "Spine Surgery",
+            "Sports Medicine",
+            "Trauma Surgery",
+            "Pediatric Orthopedics"
+          ],
+          "facilities": [
+            "Advanced Imaging",
+            "Robotic Surgery",
+            "Clinical Trials Center",
+            "Innovation Hub",
+            "Specialized ICUs"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Chinese",
+            "Vietnamese",
+            "Tagalog"
+          ],
+          "internationalPatients": "7,500+ annually"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. James Andrews",
+          "specialty": "Orthopedic Surgeon",
+          "location": "Birmingham, Alabama, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "40+ years",
+          "expertise": [
+            "Sports Medicine",
+            "Knee Surgery",
+            "Shoulder Surgery"
+          ],
+          "hospital": "Andrews Sports Medicine"
+        },
+        {
+          "id": 2,
+          "name": "Dr. Thomas Satterthwaite",
+          "specialty": "Orthopedic Surgeon",
+          "location": "New York, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "25+ years",
+          "expertise": [
+            "Joint Replacement",
+            "Hip Surgery",
+            "Knee Surgery"
+          ],
+          "hospital": "Hospital for Special Surgery"
+        },
+        {
+          "id": 3,
+          "name": "Dr. Scott Rodeo",
+          "specialty": "Orthopedic Surgeon",
+          "location": "New York, USA",
+          "image": "/RelatedSpecialists/img3.png",
+          "experience": "30+ years",
+          "expertise": [
+            "Sports Medicine",
+            "Shoulder Surgery",
+            "Clinical Research"
+          ],
+          "hospital": "Hospital for Special Surgery"
+        }
+      ],
+      "treatments": [
+        {
+          "id": 1,
+          "name": "Knee Replacement",
+          "image": "/hospitaldirectory/img1.png",
+          "price": "€18,000",
+          "description": "Surgical replacement of damaged knee joint with artificial implant",
+          "duration": "2-3 hours",
+          "recovery": "6-12 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Rehabilitation",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Hip Replacement",
+          "image": "/hospitaldirectory/img2.png",
+          "price": "€20,000",
+          "description": "Surgical replacement of damaged hip joint with artificial implant",
+          "duration": "2-3 hours",
+          "recovery": "6-12 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Rehabilitation",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "ACL Reconstruction",
+          "image": "/hospitaldirectory/img3.png",
+          "price": "€12,000",
+          "description": "Surgical reconstruction of torn anterior cruciate ligament",
+          "duration": "1-2 hours",
+          "recovery": "6-9 months",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Physical therapy",
+            "Follow-up care"
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "Orthopedic consultation",
+          "cost": "€200 - €500"
+        },
+        {
+          "name": "Knee replacement",
+          "cost": "€15,000 - €25,000"
+        },
+        {
+          "name": "Hip replacement",
+          "cost": "€18,000 - €30,000"
+        },
+        {
+          "name": "ACL reconstruction",
+          "cost": "€10,000 - €15,000"
+        },
+        {
+          "name": "Shoulder surgery",
+          "cost": "€8,000 - €20,000"
+        },
+        {
+          "name": "Spine surgery",
+          "cost": "€25,000 - €50,000"
+        },
+        {
+          "name": "Arthroscopic surgery",
+          "cost": "€5,000 - €12,000"
+        },
+        {
+          "name": "Physical therapy",
+          "cost": "€2,000 - €5,000"
+        }
+      ]
+    },
+    "urology": {
+      "id": "urology",
+      "name": "Urology",
+      "slug": "urology",
+      "description": "Expert urological care for kidney, bladder, and reproductive system conditions",
+      "icon": "lucide/Kidney",
+      "color": "#4F46E5",
+      "count": 0,
+      "overview": {
+        "description": "Urology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the urinary tract and male reproductive system. Our medical tourism platform connects patients with the best urology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
+        "highlights": [
+          "Access to world-class urology hospitals",
+          "Top-rated urologists with international experience",
+          "Advanced diagnostic and treatment technologies",
+          "Cost-effective medical tourism solutions",
+          "Comprehensive care coordination"
+        ],
+        "cta": {
+          "bookConsultation": "Book a free consultation",
+          "secondOpinion": "Get a second opinion",
+          "callBack": "Request a call back"
+        }
+      },
+      "filters": {
+        "categories": [
+          "All",
+          "Doctors",
+          "Hospitals",
+          "Treatments"
+        ],
+        "treatments": [
+          "Kidney Stone Treatment",
+          "Prostate Surgery",
+          "Bladder Surgery",
+          "Kidney Transplant",
+          "Ureteral Stricture Treatment",
+          "Hydronephrosis Treatment",
+          "Male Infertility Treatment",
+          "Kidney Cancer Treatment"
+        ],
+        "facilities": [
+          "Urology Operating Room",
+          "Cystoscopy Suite",
+          "Lithotripsy Unit",
+          "Urodynamics Lab",
+          "Kidney Transplant Unit",
+          "Robotic Surgery Suite"
+        ]
+      },
+      "hospitals": [
+        {
+          "id": 1,
+          "name": "University Hospital Zurich",
+          "location": "Zurich, Switzerland",
+          "image": "/hospital_logos/img1.jpg",
+          "rating": "9.8",
+          "patientsPerYear": "1.2M+",
+          "successRate": "97.5%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "Swiss Medical Board"
+          ],
+          "specialties": [
+            "Robotic Urology",
+            "Kidney Transplant",
+            "Prostate Surgery",
+            "Urological Oncology",
+            "Reconstructive Urology"
+          ],
+          "facilities": [
+            "Advanced Robotic Surgery",
+            "3D Imaging",
+            "Minimally Invasive Procedures",
+            "Da Vinci Xi System",
+            "Urodynamics Lab"
+          ],
+          "languages": [
+            "German",
+            "English",
+            "French",
+            "Italian"
+          ],
+          "internationalPatients": "8,500+ annually"
+        },
+        {
+          "id": 2,
+          "name": "University Medical Center Hamburg-Eppendorf",
+          "location": "Hamburg, Germany",
+          "image": "/hospital_logos/img2.png",
+          "rating": "9.7",
+          "patientsPerYear": "1.0M+",
+          "successRate": "97.2%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "German Medical Association"
+          ],
+          "specialties": [
+            "Urological Oncology",
+            "Reconstructive Urology",
+            "Pediatric Urology",
+            "Kidney Stone Treatment",
+            "Male Infertility"
+          ],
+          "facilities": [
+            "Da Vinci Robotic System",
+            "Advanced Imaging",
+            "Specialized ICUs",
+            "Lithotripsy Unit",
+            "Cystoscopy Suite"
+          ],
+          "languages": [
+            "German",
+            "English",
+            "Turkish",
+            "Russian"
+          ],
+          "internationalPatients": "7,200+ annually"
+        },
+        {
+          "id": 3,
+          "name": "University Hospital Heidelberg",
+          "location": "Heidelberg, Germany",
+          "image": "/hospital_logos/img3.webp",
+          "rating": "9.6",
+          "patientsPerYear": "950K+",
+          "successRate": "96.8%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "German Medical Association"
+          ],
+          "specialties": [
+            "Kidney Stone Treatment",
+            "Bladder Surgery",
+            "Male Infertility",
+            "Prostate Cancer",
+            "Urological Trauma"
+          ],
+          "facilities": [
+            "Lithotripsy Unit",
+            "Cystoscopy Suite",
+            "Urodynamics Lab",
+            "Robotic Surgery Center",
+            "Research Institute"
+          ],
+          "languages": [
+            "German",
+            "English",
+            "French",
+            "Spanish"
+          ],
+          "internationalPatients": "6,800+ annually"
+        },
+        {
+          "id": 4,
+          "name": "Cleveland Clinic",
+          "location": "Cleveland, Ohio, USA",
+          "image": "/hospital_logos/img4.webp",
+          "rating": "9.5",
+          "patientsPerYear": "2.8M+",
+          "successRate": "98.1%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Robotic Urology",
+            "Kidney Transplant",
+            "Prostate Surgery",
+            "Urological Oncology",
+            "Female Urology"
+          ],
+          "facilities": [
+            "Advanced Robotic Surgery",
+            "3D Imaging",
+            "Minimally Invasive Procedures",
+            "Transplant Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "Arabic",
+            "Hindi"
+          ],
+          "internationalPatients": "12,000+ annually"
+        },
+        {
+          "id": 5,
+          "name": "Mayo Clinic",
+          "location": "Rochester, Minnesota, USA",
+          "image": "/hospital_logos/img5.webp",
+          "rating": "9.4",
+          "patientsPerYear": "1.3M+",
+          "successRate": "97.9%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AACN"
+          ],
+          "specialties": [
+            "Urological Oncology",
+            "Reconstructive Urology",
+            "Kidney Stone Treatment",
+            "Male Infertility",
+            "Pediatric Urology"
+          ],
+          "facilities": [
+            "Da Vinci Robotic System",
+            "Advanced Imaging",
+            "Specialized ICUs",
+            "Research Labs",
+            "Telemedicine Center"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "German",
+            "Chinese"
+          ],
+          "internationalPatients": "9,500+ annually"
+        },
+        {
+          "id": 6,
+          "name": "Johns Hopkins Hospital",
+          "location": "Baltimore, Maryland, USA",
+          "image": "/hospital_logos/img6.webp",
+          "rating": "9.3",
+          "patientsPerYear": "1.1M+",
+          "successRate": "97.6%",
+          "accreditations": [
+            "JCI",
+            "NABH",
+            "ISO",
+            "AAMC"
+          ],
+          "specialties": [
+            "Prostate Cancer",
+            "Bladder Surgery",
+            "Kidney Transplant",
+            "Urological Research",
+            "Clinical Trials"
+          ],
+          "facilities": [
+            "Hybrid Operating Rooms",
+            "Advanced Imaging",
+            "Research Facilities",
+            "Clinical Trials Center",
+            "Innovation Hub"
+          ],
+          "languages": [
+            "English",
+            "Spanish",
+            "French",
+            "Arabic",
+            "Korean"
+          ],
+          "internationalPatients": "8,200+ annually"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Prof. Dr. med. J. U. Stolzenburg",
+          "specialty": "Robotic Urologist",
+          "location": "Leipzig, Germany",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "25+ years",
+          "rating": "9.8",
+          "patientsTreated": "35,000+",
+          "successRate": "97.8%",
+          "expertise": [
+            "Robotic Prostate Surgery",
+            "Kidney Cancer",
+            "Bladder Surgery",
+            "Minimally Invasive Urology",
+            "Laparoscopic Surgery"
+          ],
+          "hospital": "University Hospital Leipzig",
+          "education": "University of Leipzig",
+          "certifications": [
+            "FEBU",
+            "German Board",
+            "Robotic Surgery"
+          ],
+          "languages": [
+            "German",
+            "English"
+          ],
+          "researchPapers": "300+ publications",
+          "awards": [
+            "German Urology Award",
+            "Robotic Surgery Excellence"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Prof. Dr. med. M. Fisch",
+          "specialty": "Urological Oncologist",
+          "location": "Hamburg, Germany",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "30+ years",
+          "rating": "9.7",
+          "patientsTreated": "42,000+",
+          "successRate": "97.5%",
+          "expertise": [
+            "Urological Oncology",
+            "Reconstructive Urology",
+            "Kidney Transplant",
+            "Bladder Cancer",
+            "Prostate Cancer"
+          ],
+          "hospital": "University Medical Center Hamburg-Eppendorf",
+          "education": "University of Hamburg",
+          "certifications": [
+            "FEBU",
+            "German Board",
+            "Oncology"
+          ],
+          "languages": [
+            "German",
+            "English",
+            "Turkish"
+          ],
+          "researchPapers": "450+ publications",
+          "awards": [
+            "European Urology Award",
+            "Oncology Excellence"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Prof. Dr. med. M. Hohenfellner",
+          "specialty": "Urologist",
+          "location": "Heidelberg, Germany",
+          "image": "/RelatedSpecialists/img3.png",
+          "experience": "28+ years",
+          "rating": "9.6",
+          "patientsTreated": "38,000+",
+          "successRate": "97.2%",
+          "expertise": [
+            "Kidney Stone Treatment",
+            "Prostate Surgery",
+            "Male Infertility",
+            "Endourology",
+            "Urological Trauma"
+          ],
+          "hospital": "University Hospital Heidelberg",
+          "education": "University of Heidelberg",
+          "certifications": [
+            "FEBU",
+            "German Board",
+            "Endourology"
+          ],
+          "languages": [
+            "German",
+            "English",
+            "French"
+          ],
+          "researchPapers": "380+ publications",
+          "awards": [
+            "Heidelberg Medical Award",
+            "Stone Treatment Excellence"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Dr. Inderbir S. Gill",
+          "specialty": "Robotic Urologist",
+          "location": "Los Angeles, California, USA",
+          "image": "/RelatedSpecialists/img4.png",
+          "experience": "25+ years",
+          "rating": "9.5",
+          "patientsTreated": "45,000+",
+          "successRate": "98.1%",
+          "expertise": [
+            "Robotic Urology",
+            "Kidney Cancer",
+            "Prostate Surgery",
+            "Minimally Invasive Surgery",
+            "Clinical Research"
+          ],
+          "hospital": "Keck Medicine of USC",
+          "education": "All India Institute of Medical Sciences",
+          "certifications": [
+            "FACS",
+            "FACS",
+            "Robotic Surgery"
+          ],
+          "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+          ],
+          "researchPapers": "500+ publications",
+          "awards": [
+            "Distinguished Scientist Award",
+            "Robotic Surgery Pioneer"
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Dr. Peter T. Scardino",
+          "specialty": "Urological Oncologist",
+          "location": "New York, USA",
+          "image": "/RelatedSpecialists/img1.png",
+          "experience": "35+ years",
+          "rating": "9.4",
+          "patientsTreated": "50,000+",
+          "successRate": "97.9%",
+          "expertise": [
+            "Prostate Cancer",
+            "Urological Oncology",
+            "Clinical Trials",
+            "Preventive Urology",
+            "Medical Education"
+          ],
+          "hospital": "Memorial Sloan Kettering Cancer Center",
+          "education": "Harvard Medical School",
+          "certifications": [
+            "FACS",
+            "FACS",
+            "Oncology"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ],
+          "researchPapers": "600+ publications",
+          "awards": [
+            "Lasker Award",
+            "Prostate Cancer Research Excellence"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Dr. Christopher P. Evans",
+          "specialty": "Urologist",
+          "location": "Sacramento, California, USA",
+          "image": "/RelatedSpecialists/img2.png",
+          "experience": "30+ years",
+          "rating": "9.3",
+          "patientsTreated": "40,000+",
+          "successRate": "97.6%",
+          "expertise": [
+            "Prostate Cancer",
+            "Bladder Cancer",
+            "Kidney Cancer",
+            "Clinical Research",
+            "Immunotherapy"
+          ],
+          "hospital": "UC Davis Medical Center",
+          "education": "University of California, Davis",
+          "certifications": [
+            "FACS",
+            "FACS",
+            "Oncology"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ],
+          "researchPapers": "400+ publications",
+          "awards": [
+            "UC Davis Excellence Award",
+            "Cancer Research Pioneer"
+          ]
+        }
+      ],
+      "treatments": [
+        {
+          "id": 1,
+          "name": "Robotic RP for Prostate Cancer",
+          "image": "/hospitaldirectory/img1.png",
+          "price": "€5,775",
+          "description": "Robotic-assisted radical prostatectomy using advanced Da Vinci system",
+          "duration": "3-4 hours",
+          "recovery": "4-6 weeks",
+          "includes": [
+            "Pre-operative consultation",
+            "Surgery",
+            "Post-operative care",
+            "Follow-up visits"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Liver transplant for treatment of cancer",
+          "image": "/hospitaldirectory/img2.png",
+          "price": "€14,854",
+          "description": "Complete liver transplant procedure for cancer treatment",
+          "duration": "6-8 hours",
+          "recovery": "8-12 weeks",
+          "includes": [
+            "Donor evaluation",
+            "Surgery",
+            "ICU care",
+            "Immunosuppression therapy"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Kidney transplant",
+          "image": "/hospitaldirectory/img3.png",
+          "price": "€19,193",
+          "description": "Kidney transplant with living or deceased donor",
+          "duration": "3-4 hours",
+          "recovery": "6-8 weeks",
+          "includes": [
+            "Donor matching",
+            "Surgery",
+            "Post-transplant care",
+            "Medication management"
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "Urology consultation",
+          "cost": "€1,000 - €2,500"
+        },
+        {
+          "name": "Kidney stone treatment",
+          "cost": "€5,000 - €12,000"
+        },
+        {
+          "name": "Prostate surgery",
+          "cost": "€15,000 - €25,000"
+        },
+        {
+          "name": "Bladder surgery",
+          "cost": "€12,000 - €30,000"
+        },
+        {
+          "name": "Kidney transplant",
+          "cost": "€15,000 - €30,000"
+        },
+        {
+          "name": "Robotic prostatectomy",
+          "cost": "€20,000 - €35,000"
+        },
+        {
+          "name": "Ureteral stricture treatment",
+          "cost": "€8,000 - €15,000"
+        },
+        {
+          "name": "Male infertility treatment",
+          "cost": "€3,000 - €8,000"
+        }
+      ]
+    }
+  },
+  "globalHospitals": [
+    {
+      "id": 1,
+      "name": "Apollo Hospital Chennai",
+      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+      "rating": "4.9",
+      "location": "Chennai, India",
+      "address": "154/11, Bannerghatta Road, Bangalore - 560076",
+      "doctorsCount": 38,
+      "specialties": [
+        "Cardiology",
+        "Interventional Cardiology",
+        "Cardiac Surgery",
+        "Neurology",
+        "Orthopedics",
+        "Oncology"
+      ],
+      "facilities": [
+        "Cardiac Cath Lab",
+        "ICU",
+        "ECG",
+        "Echocardiography",
+        "MRI",
+        "CT Scan",
+        "Emergency Services",
+        "24/7 Pharmacy"
+      ],
+      "treatments": [
+        "Angioplasty",
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Brain Surgery",
+        "Joint Replacement"
+      ],
+      "about": "Apollo Hospital Chennai is a premier healthcare institution known for its excellence in cardiac care and comprehensive medical services. With state-of-the-art facilities and a team of experienced specialists, we provide world-class healthcare to our patients.",
+      "established": "1983",
+      "accreditation": [
+        "NABH",
+        "JCI",
+        "ISO 9001:2015"
+      ],
+      "contact": {
+        "phone": "+91-44-2829-0200",
+        "email": "info@apollochennai.com",
+        "website": "www.apollochennai.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Rahul Sharma",
+          "rating": 5,
+          "comment": "Excellent cardiac care. The doctors are very professional and caring.",
+          "date": "2024-01-15"
+        },
+        {
+          "id": 2,
+          "patientName": "Priya Patel",
+          "rating": 5,
+          "comment": "World-class facilities and amazing staff. Highly recommended.",
+          "date": "2024-01-10"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr. Suresh Reddy",
+          "specialty": "Interventional Cardiologist",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
+        },
+        {
+          "id": 2,
+          "name": "Dr. Anjali Desai",
+          "specialty": "Neurologist",
+          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      }
+    },
+    {
+      "id": 2,
+      "name": "Fortis Hospital Delhi",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+      "rating": "4.8",
+      "location": "Delhi, India",
+      "address": "B-22, Sector 62, Noida, Uttar Pradesh - 201301",
+      "doctorsCount": 42,
+      "specialties": [
+        "Cardiology",
+        "Pediatric Cardiology",
+        "Electrophysiology",
+        "Neurology",
+        "Orthopedics",
+        "Urology"
+      ],
+      "facilities": [
+        "Cardiac Cath Lab",
+        "Stress Test Lab",
+        "Cardiac Rehabilitation",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Pharmacy"
+      ],
+      "treatments": [
+        "Pacemaker Implantation",
+        "Cardiac Catheterization",
+        "Angioplasty",
+        "Pediatric Cardiac Surgery",
+        "Neurological Procedures"
+      ],
+      "about": "Fortis Hospital Delhi is a leading healthcare facility specializing in cardiac care and pediatric cardiology. Our commitment to excellence and patient-centric approach makes us a trusted name in healthcare.",
+      "established": "1996",
+      "accreditation": [
+        "NABH",
+        "ISO 9001:2015"
+      ],
+      "contact": {
+        "phone": "+91-11-4277-6222",
+        "email": "info@fortisdelhi.com",
+        "website": "www.fortisdelhi.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Amit Kumar",
+          "rating": 5,
+          "comment": "Best hospital for cardiac care. Doctors are very experienced.",
+          "date": "2024-01-20"
+        },
+        {
+          "id": 2,
+          "patientName": "Sneha Gupta",
+          "rating": 4,
+          "comment": "Good facilities and caring staff. Would recommend.",
+          "date": "2024-01-18"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 3,
+          "name": "Dr. Vikram Singh",
+          "specialty": "Pediatric Cardiologist",
+          "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400"
+        },
+        {
+          "id": 4,
+          "name": "Dr. Rajesh Malhotra",
+          "specialty": "Cardiac Surgeon",
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 28.6139,
+        "longitude": 77.209
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ruby Hall Clinic",
+      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+      "rating": "4.7",
+      "location": "Pune, India",
+      "address": "40, Sassoon Road, Pune, Maharashtra - 411001",
+      "doctorsCount": 35,
+      "specialties": [
+        "Cardiac Surgery",
+        "Cardiology",
+        "Neurology",
+        "Orthopedics",
+        "Oncology",
+        "Gynaecology"
+      ],
+      "facilities": [
+        "Cardiac Surgery Unit",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Pharmacy",
+        "Rehabilitation Center"
+      ],
+      "treatments": [
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Pacemaker Implantation",
+        "Aortic Aneurysm Repair",
+        "Heart Transplant"
+      ],
+      "about": "Ruby Hall Clinic is a renowned healthcare institution with a rich legacy of providing quality healthcare services. Our cardiac surgery unit is one of the best in the region.",
+      "established": "1959",
+      "accreditation": [
+        "NABH",
+        "ISO 9001:2015"
+      ],
+      "contact": {
+        "phone": "+91-20-6645-5555",
+        "email": "info@rubyhall.com",
+        "website": "www.rubyhall.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Meera Joshi",
+          "rating": 5,
+          "comment": "Excellent cardiac surgery team. Very professional and caring.",
+          "date": "2024-01-25"
+        },
+        {
+          "id": 2,
+          "patientName": "Ramesh Patel",
+          "rating": 4,
+          "comment": "Good hospital with experienced doctors. Satisfied with treatment.",
+          "date": "2024-01-22"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 2,
+          "name": "Dr. Meera Joshi",
+          "specialty": "Cardiac Surgeon",
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
+        },
+        {
+          "id": 5,
+          "name": "Dr. Sanjay Deshmukh",
+          "specialty": "Neurologist",
+          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 18.5204,
+        "longitude": 73.8567
+      }
+    },
+    {
+      "id": 4,
+      "name": "Kokilaben Hospital",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
+      "rating": "4.8",
+      "location": "Mumbai, India",
+      "address": "Rao Saheb Achutrao Patwardhan Marg, Four Bungalows, Andheri (W), Mumbai - 400058",
+      "doctorsCount": 45,
+      "specialties": [
+        "Neurology",
+        "Cardiology",
+        "Orthopedics",
+        "Oncology",
+        "Gynaecology",
+        "Urology"
+      ],
+      "facilities": [
+        "Neurology Department",
+        "Stroke Unit",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Rehabilitation Center",
+        "Pharmacy"
+      ],
+      "treatments": [
+        "Stroke Treatment",
+        "Epilepsy Management",
+        "Multiple Sclerosis",
+        "Parkinson's Disease",
+        "Brain Tumor Surgery"
+      ],
+      "about": "Kokilaben Hospital is a state-of-the-art healthcare facility known for its excellence in neurology and comprehensive medical care. Our stroke unit is one of the most advanced in the country.",
+      "established": "2009",
+      "accreditation": [
+        "NABH",
+        "JCI",
+        "ISO 9001:2015"
+      ],
+      "contact": {
+        "phone": "+91-22-3099-9999",
+        "email": "info@kokilaben.com",
+        "website": "www.kokilaben.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Priya Sharma",
+          "rating": 5,
+          "comment": "Best neurology department. Doctors are very knowledgeable.",
+          "date": "2024-01-30"
+        },
+        {
+          "id": 2,
+          "patientName": "Arun Kumar",
+          "rating": 5,
+          "comment": "Excellent stroke care. Very satisfied with the treatment.",
+          "date": "2024-01-28"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 4,
+          "name": "Dr. Priya Sharma",
+          "specialty": "Neurologist",
+          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
+        },
+        {
+          "id": 6,
+          "name": "Dr. Amit Shah",
+          "specialty": "Cardiologist",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 19.076,
+        "longitude": 72.8777
+      }
+    },
+    {
+      "id": 5,
+      "name": "Manipal Hospital",
+      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+      "rating": "4.9",
+      "location": "Bangalore, India",
+      "address": "98, HAL Airport Road, Bangalore - 560017",
+      "doctorsCount": 50,
+      "specialties": [
+        "Orthopedics",
+        "Cardiology",
+        "Neurology",
+        "Oncology",
+        "Gynaecology",
+        "Urology"
+      ],
+      "facilities": [
+        "Orthopedic Department",
+        "Joint Replacement Center",
+        "Sports Medicine",
+        "ICU",
+        "Emergency Services",
+        "Diagnostic Center",
+        "Rehabilitation Center"
+      ],
+      "treatments": [
+        "Joint Replacement",
+        "Arthroscopic Surgery",
+        "Spine Surgery",
+        "Sports Injury",
+        "Fracture Treatment"
+      ],
+      "about": "Manipal Hospital Bangalore is a premier healthcare institution known for its excellence in orthopedic care and joint replacement surgeries. Our state-of-the-art facilities ensure the best patient outcomes.",
+      "established": "1991",
+      "accreditation": [
+        "NABH",
+        "JCI",
+        "ISO 9001:2015"
+      ],
+      "contact": {
+        "phone": "+91-80-2502-4444",
+        "email": "info@manipalbangalore.com",
+        "website": "www.manipalbangalore.com"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Rajesh Kumar",
+          "rating": 5,
+          "comment": "Best orthopedic care. Joint replacement surgery was successful.",
+          "date": "2024-02-01"
+        },
+        {
+          "id": 2,
+          "patientName": "Lakshmi Devi",
+          "rating": 5,
+          "comment": "Excellent facilities and caring staff. Highly recommended.",
+          "date": "2024-01-29"
+        }
+      ],
+      "doctors": [
+        {
+          "id": 5,
+          "name": "Dr. Rajesh Kumar",
+          "specialty": "Orthopedic Surgeon",
+          "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400"
+        },
+        {
+          "id": 7,
+          "name": "Dr. Sunita Rao",
+          "specialty": "Cardiologist",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
+        }
+      ],
+      "coordinates": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      }
+    }
+  ],
+  "globalDoctors": [
+    {
+      "id": 1,
+      "name": "Dr. Suresh Reddy",
+      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400",
+      "specialty": "Interventional Cardiologist",
+      "experience": "20 years",
+      "rating": "4.9",
+      "location": "Chennai, India",
+      "hospital": "Apollo Hospital",
+      "consultationFee": "₹2000",
+      "treatments": [
+        "Angioplasty",
+        "Cardiac Catheterization",
+        "Stent Placement",
+        "Heart Valve Repair",
+        "Pacemaker Implantation"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Cardiology",
+        "DM Interventional Cardiology"
+      ],
+      "about": "Dr. Suresh Reddy is a highly experienced interventional cardiologist with over 20 years of expertise in treating complex cardiac conditions. He has performed more than 5000 successful angioplasty procedures and is known for his precision and patient care.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Madras Medical College",
+          "year": "2000"
+        },
+        {
+          "degree": "MD Cardiology",
+          "institution": "AIIMS Delhi",
+          "year": "2005"
+        },
+        {
+          "degree": "DM Interventional Cardiology",
+          "institution": "Cleveland Clinic, USA",
+          "year": "2008"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Cardiologist",
+          "hospital": "Apollo Hospital Chennai",
+          "duration": "2010 - Present"
+        },
+        {
+          "position": "Interventional Cardiologist",
+          "hospital": "Fortis Hospital Mumbai",
+          "duration": "2008 - 2010"
+        }
+      ],
+      "specializations": [
+        "Interventional Cardiology",
+        "Coronary Angioplasty",
+        "Structural Heart Disease",
+        "Peripheral Vascular Disease"
+      ],
+      "awards": [
+        "Best Cardiologist Award 2022",
+        "Excellence in Interventional Cardiology 2020",
+        "Patient Choice Award 2019"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Tamil",
+        "Telugu"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 5:00 PM",
+        "tuesday": "9:00 AM - 5:00 PM",
+        "wednesday": "9:00 AM - 5:00 PM",
+        "thursday": "9:00 AM - 5:00 PM",
+        "friday": "9:00 AM - 5:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Closed"
+      },
+      "contact": {
+        "phone": "+91-98765-43210",
+        "email": "dr.suresh.reddy@apollo.com"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Dr. Meera Joshi",
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+      "specialty": "Cardiac Surgeon",
+      "experience": "16 years",
+      "rating": "4.8",
+      "location": "Pune, India",
+      "hospital": "Ruby Hall Clinic",
+      "consultationFee": "₹1800",
+      "treatments": [
+        "Bypass Surgery",
+        "Heart Valve Repair",
+        "Pacemaker Implantation",
+        "Aortic Aneurysm Repair",
+        "Heart Transplant"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS General Surgery",
+        "MCh Cardiothoracic Surgery"
+      ],
+      "about": "Dr. Meera Joshi is a renowned cardiac surgeon specializing in complex heart surgeries. With over 16 years of experience, she has successfully performed more than 2000 cardiac surgeries and is known for her innovative surgical techniques.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "B.J. Medical College, Pune",
+          "year": "2005"
+        },
+        {
+          "degree": "MS General Surgery",
+          "institution": "Sassoon Hospital, Pune",
+          "year": "2010"
+        },
+        {
+          "degree": "MCh Cardiothoracic Surgery",
+          "institution": "AIIMS Delhi",
+          "year": "2013"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Cardiac Surgeon",
+          "hospital": "Ruby Hall Clinic, Pune",
+          "duration": "2015 - Present"
+        },
+        {
+          "position": "Cardiac Surgeon",
+          "hospital": "KEM Hospital, Mumbai",
+          "duration": "2013 - 2015"
+        }
+      ],
+      "specializations": [
+        "Coronary Artery Bypass Surgery",
+        "Valve Replacement Surgery",
+        "Minimally Invasive Cardiac Surgery",
+        "Heart Failure Surgery"
+      ],
+      "awards": [
+        "Outstanding Cardiac Surgeon 2021",
+        "Innovation in Cardiac Surgery 2019",
+        "Women in Medicine Award 2018"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ],
+      "availability": {
+        "monday": "8:00 AM - 6:00 PM",
+        "tuesday": "8:00 AM - 6:00 PM",
+        "wednesday": "8:00 AM - 6:00 PM",
+        "thursday": "8:00 AM - 6:00 PM",
+        "friday": "8:00 AM - 6:00 PM",
+        "saturday": "8:00 AM - 1:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43211",
+        "email": "dr.meera.joshi@rubyhall.com"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dr. Vikram Singh",
+      "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400",
+      "specialty": "Pediatric Cardiologist",
+      "experience": "14 years",
+      "rating": "4.7",
+      "location": "Delhi, India",
+      "hospital": "Fortis Hospital",
+      "consultationFee": "₹1600",
+      "treatments": [
+        "Congenital Heart Disease",
+        "Pediatric Interventions",
+        "Fetal Cardiology",
+        "Pediatric Cardiac Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Pediatrics",
+        "DM Pediatric Cardiology"
+      ],
+      "about": "Dr. Vikram Singh is a dedicated pediatric cardiologist with expertise in treating congenital heart diseases in children. He has helped thousands of children with heart conditions and is known for his gentle approach with young patients.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Maulana Azad Medical College",
+          "year": "2007"
+        },
+        {
+          "degree": "MD Pediatrics",
+          "institution": "AIIMS Delhi",
+          "year": "2012"
+        },
+        {
+          "degree": "DM Pediatric Cardiology",
+          "institution": "AIIMS Delhi",
+          "year": "2015"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Pediatric Cardiologist",
+          "hospital": "Fortis Hospital, Delhi",
+          "duration": "2017 - Present"
+        },
+        {
+          "position": "Pediatric Cardiologist",
+          "hospital": "Safdarjung Hospital",
+          "duration": "2015 - 2017"
+        }
+      ],
+      "specializations": [
+        "Congenital Heart Disease",
+        "Fetal Cardiology",
+        "Pediatric Interventional Cardiology",
+        "Pediatric Cardiac Imaging"
+      ],
+      "awards": [
+        "Best Pediatric Cardiologist 2023",
+        "Excellence in Child Care 2021",
+        "Young Achiever Award 2019"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ],
+      "availability": {
+        "monday": "10:00 AM - 6:00 PM",
+        "tuesday": "10:00 AM - 6:00 PM",
+        "wednesday": "10:00 AM - 6:00 PM",
+        "thursday": "10:00 AM - 6:00 PM",
+        "friday": "10:00 AM - 6:00 PM",
+        "saturday": "10:00 AM - 3:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43212",
+        "email": "dr.vikram.singh@fortis.com"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Dr. Priya Sharma",
+      "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400",
+      "specialty": "Neurologist",
+      "experience": "18 years",
+      "rating": "4.9",
+      "location": "Mumbai, India",
+      "hospital": "Kokilaben Hospital",
+      "consultationFee": "₹2200",
+      "treatments": [
+        "Stroke Treatment",
+        "Epilepsy Management",
+        "Multiple Sclerosis",
+        "Parkinson's Disease",
+        "Brain Tumor Surgery"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MD Neurology",
+        "DM Neurology"
+      ],
+      "about": "Dr. Priya Sharma is a leading neurologist with extensive experience in treating complex neurological disorders. She specializes in stroke treatment and has been instrumental in establishing stroke units across multiple hospitals.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Grant Medical College, Mumbai",
+          "year": "2003"
+        },
+        {
+          "degree": "MD Neurology",
+          "institution": "KEM Hospital, Mumbai",
+          "year": "2008"
+        },
+        {
+          "degree": "DM Neurology",
+          "institution": "NIMHANS, Bangalore",
+          "year": "2011"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Neurologist",
+          "hospital": "Kokilaben Hospital, Mumbai",
+          "duration": "2015 - Present"
+        },
+        {
+          "position": "Neurologist",
+          "hospital": "Jaslok Hospital, Mumbai",
+          "duration": "2011 - 2015"
+        }
+      ],
+      "specializations": [
+        "Stroke Medicine",
+        "Epilepsy",
+        "Movement Disorders",
+        "Neurocritical Care"
+      ],
+      "awards": [
+        "Best Neurologist Award 2023",
+        "Stroke Care Excellence 2022",
+        "Women in Neurology Award 2020"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Gujarati"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 5:00 PM",
+        "tuesday": "9:00 AM - 5:00 PM",
+        "wednesday": "9:00 AM - 5:00 PM",
+        "thursday": "9:00 AM - 5:00 PM",
+        "friday": "9:00 AM - 5:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43213",
+        "email": "dr.priya.sharma@kokilaben.com"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Dr. Rajesh Kumar",
+      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400",
+      "specialty": "Orthopedic Surgeon",
+      "experience": "22 years",
+      "rating": "4.8",
+      "location": "Bangalore, India",
+      "hospital": "Manipal Hospital",
+      "consultationFee": "₹1900",
+      "treatments": [
+        "Joint Replacement",
+        "Arthroscopic Surgery",
+        "Spine Surgery",
+        "Sports Injury",
+        "Fracture Treatment"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS Orthopedics",
+        "Fellowship in Joint Replacement"
+      ],
+      "about": "Dr. Rajesh Kumar is a highly skilled orthopedic surgeon with expertise in joint replacement and arthroscopic surgeries. He has performed over 3000 successful joint replacement surgeries and is known for his precision and patient outcomes.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Bangalore Medical College",
+          "year": "2001"
+        },
+        {
+          "degree": "MS Orthopedics",
+          "institution": "KMC Manipal",
+          "year": "2006"
+        },
+        {
+          "degree": "Fellowship in Joint Replacement",
+          "institution": "Hospital for Special Surgery, New York",
+          "year": "2009"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Orthopedic Surgeon",
+          "hospital": "Manipal Hospital, Bangalore",
+          "duration": "2012 - Present"
+        },
+        {
+          "position": "Orthopedic Surgeon",
+          "hospital": "Apollo Hospital, Bangalore",
+          "duration": "2009 - 2012"
+        }
+      ],
+      "specializations": [
+        "Joint Replacement Surgery",
+        "Arthroscopic Surgery",
+        "Sports Medicine",
+        "Spine Surgery"
+      ],
+      "awards": [
+        "Excellence in Orthopedics 2023",
+        "Best Joint Replacement Surgeon 2021",
+        "Innovation in Surgery Award 2019"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Tamil"
+      ],
+      "availability": {
+        "monday": "8:00 AM - 6:00 PM",
+        "tuesday": "8:00 AM - 6:00 PM",
+        "wednesday": "8:00 AM - 6:00 PM",
+        "thursday": "8:00 AM - 6:00 PM",
+        "friday": "8:00 AM - 6:00 PM",
+        "saturday": "8:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43214",
+        "email": "dr.rajesh.kumar@manipal.com"
+      }
+    }
+  ],
+  "specialtyList": [
+    {
+      "id": "cardiology",
+      "name": "Cardiology",
+      "slug": "cardiology",
+      "icon": "lucide/HeartPulse",
+      "label": "Cardiology",
+      "count": 0,
+      "color": "#A3DAC2",
+      "description": "Expert heart and cardiovascular care services"
+    },
+    {
+      "id": "gynaecology",
+      "name": "Gynaecology",
+      "slug": "gynaecology",
+      "icon": "/specialties/gynaecology.png",
+      "label": "Gynaecology",
+      "count": 0,
+      "color": "#92BDF6",
+      "description": "Women's health and reproductive care"
+    },
+    {
+      "id": "neurology",
+      "name": "Neurology",
+      "slug": "neurology",
+      "icon": "/specialties/neurology.png",
+      "label": "Neurology",
+      "count": 0,
+      "color": "#FEC091",
+      "description": "Advanced brain and nervous system treatments"
+    },
+    {
+      "id": "oncology",
+      "name": "Oncology",
+      "slug": "oncology",
+      "icon": "/specialties/oncology.png",
+      "label": "Oncology",
+      "count": 0,
+      "color": "#E7C2D4",
+      "description": "Comprehensive cancer care and treatment"
+    },
+    {
+      "id": "orthopaedics",
+      "name": "Orthopaedics",
+      "slug": "orthopaedics",
+      "icon": "/specialties/orthopaedics.png",
+      "label": "Orthopaedics",
+      "count": 0,
+      "color": "#F6EB61",
+      "description": "Specialized care for bones, joints, muscles, and skeletal system"
+    },
+    {
+      "id": "urology",
+      "name": "Urology",
+      "slug": "urology",
+      "icon": "lucide/Kidney",
+      "label": "Urology",
+      "count": 0,
+      "color": "#4F46E5",
+      "description": "Expert urological care for kidney, bladder, and reproductive system conditions"
+    }
+  ]
+}

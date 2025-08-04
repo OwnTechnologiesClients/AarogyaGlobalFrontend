@@ -5,13 +5,14 @@ import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
-import urologyData from "@/data/specialties/urology.json";
+import dataService from "@/lib/dataService";
 import { Info, CheckCircle, Clock, FileText, ChevronRight, MapPin, Star } from "lucide-react";
 import HospitalCarousel from "@/components/SpecialtySearch/HospitalCarousel";
 import ContactForm from "@/components/contact/ContactForm";
 
 const UrologyPage = () => {
-    const { title, routes } = getPageHeaderData('/specialties/urology');
+  const { title, routes } = getPageHeaderData('/specialties/urology');
+  const data = dataService.getSpecialtyData('urology');
 
     const [searchFilters, setSearchFilters] = useState({
         name: "",

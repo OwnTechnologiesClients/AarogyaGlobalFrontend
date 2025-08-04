@@ -5,10 +5,11 @@ import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
-import oncologyData from "@/data/specialties/oncology.json";
+import dataService from "@/lib/dataService";
 
 const OncologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/oncology');
+  const data = dataService.getSpecialtyData('oncology');
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",

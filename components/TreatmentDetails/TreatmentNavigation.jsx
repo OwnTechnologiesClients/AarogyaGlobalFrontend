@@ -13,7 +13,7 @@ const TreatmentNavigation = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="w-full bg-gray-50 py-6">
+    <div className="w-full bg-gray-50 py-6 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="bg-gray-100 rounded-full p-2 inline-flex gap-2 overflow-x-auto">
           {navigationTabs.map((tab) => (

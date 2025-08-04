@@ -203,7 +203,7 @@ const HospitalFeatures = ({ hospital }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
               <Heart className="w-8 h-8" />
             </div>
             <h4 className="font-bold mb-2">Patient-Centered Care</h4>
@@ -211,7 +211,7 @@ const HospitalFeatures = ({ hospital }) => {
           </div>
 
           <div className="text-center">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
               <Zap className="w-8 h-8" />
             </div>
             <h4 className="font-bold mb-2">Latest Technology</h4>
@@ -219,7 +219,7 @@ const HospitalFeatures = ({ hospital }) => {
           </div>
 
           <div className="text-center">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
               <Shield className="w-8 h-8" />
             </div>
             <h4 className="font-bold mb-2">Safety First</h4>

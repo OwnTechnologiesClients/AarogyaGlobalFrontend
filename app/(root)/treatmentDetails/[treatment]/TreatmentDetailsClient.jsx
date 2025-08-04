@@ -2,11 +2,24 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
+import DoctorsSwiper from '../../../../components/TreatmentDetails/DoctorsSwiper';
+import HospitalsSwiper from '../../../../components/TreatmentDetails/HospitalsSwiper';
 
 const TreatmentDetailsClient = ({ treatmentData }) => {
     const [expandedSections, setExpandedSections] = useState({});
     const [expandedFAQ, setExpandedFAQ] = useState({});
     const [activeTab, setActiveTab] = useState('Overview');
+
+    // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
+    const convertToRupees = (euroString) => {
+        const euroMatch = euroString.match(/€([\d,]+)/);
+        if (euroMatch) {
+            const euroAmount = parseFloat(euroMatch[1].replace(/,/g, ''));
+            const rupeesAmount = euroAmount * 90; // Approximate conversion rate
+            return `₹${rupeesAmount.toLocaleString('en-IN')}`;
+        }
+        return euroString; // Return original if no euro symbol found
+    };
 
     const { treatment } = treatmentData;
 
@@ -110,30 +123,11 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                         {/* Best Hospitals Section */}
                         <section id="hospitals" className="mb-12">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.bestHospitals.title}
-                            </h2>
-
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                                {treatment.bestHospitals.hospitals.map((hospital, index) => (
-                                    <div key={hospital.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                                        <img
-                                            src={hospital.image}
-                                            alt={hospital.name}
-                                            className="w-full h-48 object-cover"
-                                        />
-                                        <div className="p-4">
-                                            <h3 className="font-bold text-lg mb-2">{hospital.name}</h3>
-                                            <p className="text-gray-600 text-sm">{hospital.location}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="flex justify-center mb-4">
-                                <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                            </div>
-
+                            <HospitalsSwiper 
+                                hospitals={treatment.bestHospitals.hospitals}
+                                title={treatment.bestHospitals.title}
+                            />
+                            
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
                                     {treatment.bestHospitals.description}
@@ -148,29 +142,11 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                         {/* Top Doctors Section */}
                         <section id="doctors" className="mb-12">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.topDoctors.title}
-                            </h2>
-
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                                {treatment.topDoctors.doctors.map((doctor, index) => (
-                                    <div key={doctor.id} className="text-center">
-                                        <img
-                                            src={doctor.image}
-                                            alt={doctor.name}
-                                            className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                                        />
-                                        <h3 className="font-bold text-lg mb-1">{doctor.name}</h3>
-                                        <p className="text-gray-600 text-sm mb-1">{doctor.specialty}</p>
-                                        <p className="text-gray-500 text-xs">{doctor.location}</p>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="flex justify-center mb-4">
-                                <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                            </div>
-
+                            <DoctorsSwiper 
+                                doctors={treatment.topDoctors.doctors}
+                                title={treatment.topDoctors.title}
+                            />
+                            
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
                                     {treatment.topDoctors.description}
@@ -290,7 +266,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                         />
                                         <div className="p-4">
                                             <h3 className="font-bold text-lg mb-2">{pkg.name}</h3>
-                                            <p className="text-2xl font-bold text-green-600 mb-2">{pkg.price}</p>
+                                            <p className="text-2xl font-bold text-green-600 mb-2">{convertToRupees(pkg.price)}</p>
                                             <p className="text-gray-600 text-sm mb-3">{pkg.description}</p>
                                             <div className="text-xs text-gray-500">
                                                 <p>Duration: {pkg.duration}</p>
@@ -408,7 +384,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                     {treatment.costs.treatments.map((item, index) => (
                                         <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
                                             <span className="font-medium text-gray-800">{item.name}</span>
-                                            <span className="font-bold text-green-600">{item.cost}</span>
+                                            <span className="font-bold text-green-600">{convertToRupees(item.cost)}</span>
                                         </div>
                                     ))}
                                 </div>

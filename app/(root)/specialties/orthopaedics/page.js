@@ -5,10 +5,11 @@ import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
-import orthopaedicsData from "@/data/specialties/orthopaedics.json";
+import dataService from "@/lib/dataService";
 
 const OrthopaedicsPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/orthopaedics');
+  const data = dataService.getSpecialtyData('orthopaedics');
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",

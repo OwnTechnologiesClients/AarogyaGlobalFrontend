@@ -5,10 +5,11 @@ import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
-import gynaecologyData from "@/data/specialties/gynaecology.json";
+import dataService from "@/lib/dataService";
 
 const GynaecologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/gynaecology');
+  const data = dataService.getSpecialtyData('gynaecology');
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",

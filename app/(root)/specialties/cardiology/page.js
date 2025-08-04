@@ -5,10 +5,11 @@ import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
-import cardiologyData from "@/data/specialties/cardiology.json";
+import dataService from "@/lib/dataService";
 
 const CardiologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/cardiology');
+  const data = dataService.getSpecialtyData('cardiology');
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",
@@ -20,14 +21,14 @@ const CardiologyPage = () => {
   const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filteredDoctors, setFilteredDoctors] = useState(cardiologyData.doctors);
-  const [filteredHospitals, setFilteredHospitals] = useState(cardiologyData.hospitals);
-  const [filteredTreatments, setFilteredTreatments] = useState(cardiologyData.treatments);
+  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors);
+  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals);
+  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments);
 
   const applyFilters = () => {
-    let doctors = [...cardiologyData.doctors];
-    let hospitals = [...cardiologyData.hospitals];
-    let treatments = [...cardiologyData.treatments];
+    let doctors = [...data.doctors];
+    let hospitals = [...data.hospitals];
+    let treatments = [...data.treatments];
 
     // Apply name filter
     if (searchFilters.name) {
@@ -86,9 +87,9 @@ const CardiologyPage = () => {
       location: "",
     });
     setActiveCategory("All");
-    setFilteredDoctors(cardiologyData.doctors);
-    setFilteredHospitals(cardiologyData.hospitals);
-    setFilteredTreatments(cardiologyData.treatments);
+    setFilteredDoctors(data.doctors);
+    setFilteredHospitals(data.hospitals);
+    setFilteredTreatments(data.treatments);
     setIsFilter(!isFilter);
   };
 
@@ -97,16 +98,16 @@ const CardiologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={cardiologyData.filters.categories}
-        facilities={cardiologyData.filters.facilities}
-        treatments={cardiologyData.filters.treatments}
+        categories={data.filters.categories}
+        facilities={data.filters.facilities}
+        treatments={data.filters.treatments}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}
         applyFilters={applyFilters}
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
-        specialtyName={cardiologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <SpecialtyResults
@@ -115,7 +116,7 @@ const CardiologyPage = () => {
         treatments={filteredTreatments}
         activeCategory={activeCategory}
         isFilter={isFilter}
-        specialtyName={cardiologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <TrustedBy />

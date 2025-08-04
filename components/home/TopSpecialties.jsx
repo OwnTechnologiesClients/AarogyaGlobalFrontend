@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import specialties from "@/data/topSpecialties.json";
+import dataService from "@/lib/dataService";
 import { Bone, HeartPulse, Stethoscope, Brain, Baby } from "lucide-react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,6 +21,7 @@ const ICON_MAP = {
 const TopSpecialties = () => {
   const swiperRef = React.useRef(null);
   const [isClient, setIsClient] = useState(false);
+  const specialties = dataService.getAllSpecialties();
 
   useEffect(() => {
     setIsClient(true);

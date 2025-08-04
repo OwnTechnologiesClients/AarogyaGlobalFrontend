@@ -5,10 +5,11 @@ import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
-import neurologyData from "@/data/specialties/neurology.json";
+import dataService from "@/lib/dataService";
 
 const NeurologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/neurology');
+  const data = dataService.getSpecialtyData('neurology');
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",
