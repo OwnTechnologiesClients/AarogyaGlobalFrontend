@@ -11,6 +11,15 @@ const OncologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/oncology');
   const data = dataService.getSpecialtyData('oncology');
 
+  // Handle case when data is not available
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Data not available</div>
+      </div>
+    );
+  }
+
   const [searchFilters, setSearchFilters] = useState({
     name: "",
     treatment: "",
@@ -18,17 +27,16 @@ const OncologyPage = () => {
     location: "",
   });
 
-  const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filteredDoctors, setFilteredDoctors] = useState(oncologyData.doctors);
-  const [filteredHospitals, setFilteredHospitals] = useState(oncologyData.hospitals);
-  const [filteredTreatments, setFilteredTreatments] = useState(oncologyData.treatments);
+  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors || []);
+  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals || []);
+  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments || []);
 
   const applyFilters = () => {
-    let doctors = [...oncologyData.doctors];
-    let hospitals = [...oncologyData.hospitals];
-    let treatments = [...oncologyData.treatments];
+    let doctors = [...(data.doctors || [])];
+    let hospitals = [...(data.hospitals || [])];
+    let treatments = [...(data.treatments || [])];
 
     // Apply name filter
     if (searchFilters.name) {
@@ -76,7 +84,6 @@ const OncologyPage = () => {
     setFilteredDoctors(doctors);
     setFilteredHospitals(hospitals);
     setFilteredTreatments(treatments);
-    setIsFilter(!isFilter);
   };
 
   const resetFilters = () => {
@@ -87,10 +94,9 @@ const OncologyPage = () => {
       location: "",
     });
     setActiveCategory("All");
-    setFilteredDoctors(oncologyData.doctors);
-    setFilteredHospitals(oncologyData.hospitals);
-    setFilteredTreatments(oncologyData.treatments);
-    setIsFilter(!isFilter);
+    setFilteredDoctors(data.doctors || []);
+    setFilteredHospitals(data.hospitals || []);
+    setFilteredTreatments(data.treatments || []);
   };
 
   return (
@@ -98,16 +104,16 @@ const OncologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={oncologyData.filters.categories}
-        facilities={oncologyData.filters.facilities}
-        treatments={oncologyData.filters.treatments}
+        categories={data.filters.categories}
+        facilities={data.filters.facilities}
+        treatments={data.filters.treatments}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}
         applyFilters={applyFilters}
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
-        specialtyName={oncologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <SpecialtyResults
@@ -115,8 +121,7 @@ const OncologyPage = () => {
         hospitals={filteredHospitals}
         treatments={filteredTreatments}
         activeCategory={activeCategory}
-        isFilter={isFilter}
-        specialtyName={oncologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <TrustedBy />

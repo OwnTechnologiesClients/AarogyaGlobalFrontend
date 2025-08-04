@@ -11,6 +11,15 @@ const GynaecologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/gynaecology');
   const data = dataService.getSpecialtyData('gynaecology');
 
+  // Handle case when data is not available
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Data not available</div>
+      </div>
+    );
+  }
+
   const [searchFilters, setSearchFilters] = useState({
     name: "",
     treatment: "",
@@ -18,17 +27,16 @@ const GynaecologyPage = () => {
     location: "",
   });
 
-  const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filteredDoctors, setFilteredDoctors] = useState(gynaecologyData.doctors);
-  const [filteredHospitals, setFilteredHospitals] = useState(gynaecologyData.hospitals);
-  const [filteredTreatments, setFilteredTreatments] = useState(gynaecologyData.treatments);
+  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors || []);
+  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals || []);
+  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments || []);
 
   const applyFilters = () => {
-    let doctors = [...gynaecologyData.doctors];
-    let hospitals = [...gynaecologyData.hospitals];
-    let treatments = [...gynaecologyData.treatments];
+    let doctors = [...(data.doctors || [])];
+    let hospitals = [...(data.hospitals || [])];
+    let treatments = [...(data.treatments || [])];
 
     // Apply name filter
     if (searchFilters.name) {
@@ -76,7 +84,6 @@ const GynaecologyPage = () => {
     setFilteredDoctors(doctors);
     setFilteredHospitals(hospitals);
     setFilteredTreatments(treatments);
-    setIsFilter(!isFilter);
   };
 
   const resetFilters = () => {
@@ -87,10 +94,9 @@ const GynaecologyPage = () => {
       location: "",
     });
     setActiveCategory("All");
-    setFilteredDoctors(gynaecologyData.doctors);
-    setFilteredHospitals(gynaecologyData.hospitals);
-    setFilteredTreatments(gynaecologyData.treatments);
-    setIsFilter(!isFilter);
+    setFilteredDoctors(data.doctors || []);
+    setFilteredHospitals(data.hospitals || []);
+    setFilteredTreatments(data.treatments || []);
   };
 
   return (
@@ -98,16 +104,16 @@ const GynaecologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={gynaecologyData.filters.categories}
-        facilities={gynaecologyData.filters.facilities}
-        treatments={gynaecologyData.filters.treatments}
+        categories={data.filters.categories}
+        facilities={data.filters.facilities}
+        treatments={data.filters.treatments}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}
         applyFilters={applyFilters}
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
-        specialtyName={gynaecologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <SpecialtyResults
@@ -115,8 +121,7 @@ const GynaecologyPage = () => {
         hospitals={filteredHospitals}
         treatments={filteredTreatments}
         activeCategory={activeCategory}
-        isFilter={isFilter}
-        specialtyName={gynaecologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <TrustedBy />

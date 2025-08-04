@@ -13,7 +13,7 @@ import HospitalDoctors from "@/components/HospitalDetails/HospitalDoctors";
 import HospitalGallery from "@/components/HospitalDetails/HospitalGallery";
 import HospitalReviews from "@/components/HospitalDetails/HospitalReviews";
 import HospitalLocation from "@/components/HospitalDetails/HospitalLocation";
-import hospitalsData from '@/data/HospitalData.json';
+import dataService from '@/lib/dataService';
 
 const HospitalDetails = () => {
   const params = useParams();
@@ -23,8 +23,8 @@ const HospitalDetails = () => {
   const [activeTab, setActiveTab] = useState("Overview");
 
   useEffect(() => {
-    // Find the hospital by ID
-    const foundHospital = hospitalsData.hospitals.find(h => h.id === parseInt(hospitalId));
+    // Find the hospital by ID using dataService
+    const foundHospital = dataService.getHospitalById(parseInt(hospitalId));
     setHospital(foundHospital);
     setLoading(false);
   }, [hospitalId]);

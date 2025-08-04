@@ -71,7 +71,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                         className="text-indigo-600 flex items-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-2"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <span className="font-semibold text-sm md:text-md">Book Today</span>
+                        <span className="font-semibold text-sm md:text-md">View Details</span>
                         <ArrowRight className="w-4 h-4" />
                     </a>
                     <p className="text-gray-600 text-xs md:text-sm flex items-center gap-2">
@@ -86,7 +86,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
 
 
 
-const HospitalMain = ({ hospitals, isFilter }) => {
+const HospitalMain = ({ hospitals }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [hospitalData, setHospitalData] = useState(hospitals); // State to manage liked status
     const cardsPerPage = 2; // As per the image, two cards per row/page
@@ -99,7 +99,7 @@ const HospitalMain = ({ hospitals, isFilter }) => {
 
     useEffect(() => {
         setHospitalData(hospitals)
-    }, [isFilter])
+    }, [hospitals])
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -115,6 +115,11 @@ const HospitalMain = ({ hospitals, isFilter }) => {
         alert(`Sharing ${hospitalName}!`);
     };
 
+    // Helper function to create unique keys
+    const createUniqueKey = (hospital, index) => {
+        return `${hospital.id}-${hospital.name?.replace(/\s+/g, '-')}-${index}`;
+    };
+
     return (
           <div className="mt-20">
      <section className="gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 bg-white rounded-lg border border-black-100 shadow-md mx-2 sm:mx-4 md:mx-8 lg:mx-10 my-3 sm:my-4 md:my-5">
@@ -123,9 +128,9 @@ const HospitalMain = ({ hospitals, isFilter }) => {
                     <p className="text-center text-gray-500">No hospitals found.</p>
                 ) : (
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {hospitalData.map((hospital) => (
+                        {hospitalData.map((hospital, index) => (
                             <HospitalCard
-                                key={hospital.id}
+                                key={createUniqueKey(hospital, index)}
                                 hospital={hospital}
                                 onLike={handleLikeToggle}
                                 onShare={handleShare}
@@ -178,9 +183,9 @@ const HospitalMain = ({ hospitals, isFilter }) => {
 
                 {/* Hospital Cards Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {currentCards.map((hospital) => (
+                    {currentCards.map((hospital, index) => (
                         <HospitalCard
-                            key={hospital.id}
+                            key={createUniqueKey(hospital, indexOfFirstCard + index)}
                             hospital={hospital}
                             onLike={handleLikeToggle}
                             onShare={handleShare}

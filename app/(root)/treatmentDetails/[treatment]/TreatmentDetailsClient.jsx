@@ -21,7 +21,58 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
         return euroString; // Return original if no euro symbol found
     };
 
+    // Handle case when treatmentData is not available
+    if (!treatmentData) {
+        console.error('TreatmentDetailsClient: treatmentData is null or undefined');
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-xl">Treatment data not available</div>
+            </div>
+        );
+    }
+
+    if (!treatmentData.treatment) {
+        console.error('TreatmentDetailsClient: treatmentData.treatment is null or undefined');
+        console.log('TreatmentDetailsClient: treatmentData structure:', JSON.stringify(treatmentData, null, 2));
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-xl">Treatment object not available</div>
+            </div>
+        );
+    }
+
     const { treatment } = treatmentData;
+    console.log('TreatmentDetailsClient: treatment object:', JSON.stringify(treatment, null, 2));
+
+    // Handle case when treatment object is missing required properties
+    if (!treatment) {
+        console.error('TreatmentDetailsClient: treatment is null or undefined after destructuring');
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-xl">Treatment information is missing</div>
+            </div>
+        );
+    }
+
+    if (!treatment.title) {
+        console.error('TreatmentDetailsClient: treatment.title is missing');
+        console.log('TreatmentDetailsClient: treatment properties:', Object.keys(treatment));
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-xl">Treatment title is missing</div>
+            </div>
+        );
+    }
+
+    if (!treatment.overview) {
+        console.error('TreatmentDetailsClient: treatment.overview is missing');
+        console.log('TreatmentDetailsClient: treatment properties:', Object.keys(treatment));
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-xl">Treatment overview is missing</div>
+            </div>
+        );
+    }
 
     const toggleSection = (sectionId) => {
         setExpandedSections(prev => ({

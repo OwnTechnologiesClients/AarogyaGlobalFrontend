@@ -1,29 +1,51 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
-import doctorsData from '@/data/doctors.json';
+import dataService from '@/lib/dataService';
 
 const RelatedSpecialists = ({ currentDoctorId }) => {
   const router = useRouter();
+  const [relatedDoctors, setRelatedDoctors] = useState([]);
+  const [loading, setLoading] = useState(true);
   
-  // Filter out the current doctor and get related doctors from the same specialty
-  const currentDoctor = doctorsData.doctors.find(d => d.id === currentDoctorId);
-  const relatedDoctors = doctorsData.doctors
-    .filter(d => d.id !== currentDoctorId && d.specialty === currentDoctor?.specialty)
-    .slice(0, 6);
+  useEffect(() => {
+    // Get current doctor and related doctors using dataService
+    const currentDoctor = dataService.getDoctorById(currentDoctorId);
+    if (currentDoctor) {
+      // Get all doctors from all specialties
+      const allDoctors = [];
+      for (const specialty of Object.values(dataService.data.specialties)) {
+        allDoctors.push(...(specialty.doctors || []));
+      }
+      allDoctors.push(...(dataService.data.globalDoctors || []));
+      
+      // Filter related doctors from the same specialty
+      const related = allDoctors
+        .filter(d => d.id !== currentDoctorId && d.specialty === currentDoctor.specialty)
+        .slice(0, 6);
 
-  // If no related doctors found, show all other doctors
-  const doctors = relatedDoctors.length > 0 ? relatedDoctors : doctorsData.doctors.filter(d => d.id !== currentDoctorId).slice(0, 6);
+      // If no related doctors found, show all other doctors
+      const doctors = related.length > 0 ? related : allDoctors.filter(d => d.id !== currentDoctorId).slice(0, 6);
+      setRelatedDoctors(doctors);
+    }
+    setLoading(false);
+  }, [currentDoctorId]);
+
   const swiperRef = useRef(null);
 
   const handleDoctorClick = (doctorId) => {
     router.push(`/doctorDetails/${doctorId}`);
+  };
+
+  // Helper function to create unique keys
+  const createUniqueKey = (doctor, index) => {
+    return `${doctor.id}-${doctor.name?.replace(/\s+/g, '-')}-${doctor.specialty?.replace(/\s+/g, '-')}-${index}`;
   };
 
   const breakpoints = {
@@ -40,6 +62,12 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
       spaceBetween: 16,
     },
   };
+
+  if (loading) {
+    return (
+      <div className="w-full h-[1px] bg-gray-400/40 rounded-full my-6" />
+    );
+  }
 
   return (
     <>
@@ -81,8 +109,8 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
             loop={true}
             breakpoints={breakpoints}
           >
-            {doctors.map((doctor, idx) => (
-              <SwiperSlide key={doctor.id}>
+            {relatedDoctors.map((doctor, idx) => (
+              <SwiperSlide key={createUniqueKey(doctor, idx)}>
                 <div 
                   className="flex flex-col items-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-xs mx-auto mb-8 cursor-pointer"
                   onClick={() => handleDoctorClick(doctor.id)}

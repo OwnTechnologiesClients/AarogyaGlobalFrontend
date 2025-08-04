@@ -12,6 +12,7 @@ const CustomButton = ({
   iconSize = 18,
   className = "",
   onClick,
+  children,
 }) => {
   return (
     <button
@@ -26,11 +27,15 @@ const CustomButton = ({
         w-full sm:w-auto
       `}
     >
-      <span className="truncate">{text}</span>
-      <ArrowRight
-        size={iconSize}
-        className="transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
-      />
+      {children || (
+        <>
+          <span className="truncate">{text}</span>
+          <ArrowRight
+            size={iconSize}
+            className="transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
+          />
+        </>
+      )}
     </button>
   );
 };

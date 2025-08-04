@@ -5,7 +5,7 @@ import PageHeader from "@/components/layout/PageHeader";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import DoctorProfile from "@/components/DoctorDetails/DoctorProfile";
 import RelatedSpecialists from "@/components/DoctorDetails/RelatedSpecialists";
-import doctorsData from '@/data/doctors.json';
+import dataService from '@/lib/dataService';
 
 const DoctorDetails = () => {
   const params = useParams();
@@ -14,8 +14,8 @@ const DoctorDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Find the doctor by ID
-    const foundDoctor = doctorsData.doctors.find(d => d.id === parseInt(doctorId));
+    // Find the doctor by ID using dataService
+    const foundDoctor = dataService.getDoctorById(parseInt(doctorId));
     setDoctor(foundDoctor);
     setLoading(false);
   }, [doctorId]);

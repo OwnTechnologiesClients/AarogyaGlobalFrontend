@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import filters from "@/data/filters.json";
-import hospitalJson from "@/data/HospitalData.json";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import CustomButton from "../../layout/CustomButton";
 import DropdownSelect from "@/components/layout/Dropdown";
+import dataService from '@/lib/dataService';
 
 const FilterBar = () => {
   const [activeToggle, setActiveToggle] = useState(filters.toggles[0].value);
@@ -64,8 +64,14 @@ const FilterBar = () => {
       
       setValidationError("");
 
-      // Find hospital ID by name
-      const hospitalData = hospitalJson.hospitals.find(h => h.name === hospital);
+      // Find hospital ID by name using dataService
+      const allHospitals = [];
+      for (const specialty of Object.values(dataService.data.specialties)) {
+        allHospitals.push(...(specialty.hospitals || []));
+      }
+      allHospitals.push(...(dataService.data.globalHospitals || []));
+      
+      const hospitalData = allHospitals.find(h => h.name === hospital);
       
       if (hospitalData) {
         // Navigate to hospital details page
@@ -105,58 +111,40 @@ const FilterBar = () => {
           </div>
         </div>
 
-        {/* Main Content Area */}
-        <div className="overflow-visible">
-          <div className="p-4 sm:p-6 md:p-8 lg:p-10  pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
-              {/* Filters Section - Centered */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center">
-                {getActiveFilters().map((filter) => (
-                  <div
-                    key={filter.label}
-                   
-                  >
-                    <DropdownSelect
-                      label={filter.label}
-                      options={filter.options}
-                      value={selected[filter.label] || ""}
-                      onChange={(e) => {
-                        setSelected((prev) => ({
-                          ...prev,
-                          [filter.label]: e.target.value,
-                        }));
-                        setValidationError(""); // Clear error when user makes a selection
-                      }}
-                      placeholder={filter.placeholder}
-                    />
-                  </div>
-                ))}
-              </div>
-              
-              {/* Validation Error */}
-              {validationError && (
-                <div className="w-full text-center">
-                  <p className="text-red-500 text-sm font-medium">{validationError}</p>
-                </div>
-              )}
+        {/* Filter Content */}
+        <div className="pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-14 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          {/* Filter Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            {getActiveFilters().map((filter) => (
+              <DropdownSelect
+                key={filter.label}
+                label={filter.label}
+                options={filter.options}
+                value={selected[filter.label] || ""}
+                onChange={(value) => {
+                  setSelected(prev => ({ ...prev, [filter.label]: value }));
+                  setValidationError(""); // Clear error when selection changes
+                }}
+              />
+            ))}
+          </div>
 
-              {/* Action Button - Centered */}
-              <div className="flex justify-center">
-                <CustomButton
-                  text={activeToggle === "doctors" ? "Explore Treatment" : "Explore Hospitals"}
-                  bgColor="bg-[#1F5FFF]"
-                  textColor="text-white"
-                  hoverBgColor="bg-[#03B96A]"
-                  rounded="rounded-lg"
-                  padding="px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 w-[212px]"
-                  textSize="text-sm sm:text-base lg:text-lg"
-                  iconSize={18}
-                  className="group hover:translate-x-1 transition-transform duration-300 "
-                  onClick={handleExploreClick}
-                />
-              </div>
-              
+          {/* Validation Error */}
+          {validationError && (
+            <div className="text-red-500 text-sm text-center mb-4">
+              {validationError}
             </div>
+          )}
+
+          {/* Explore Button */}
+          <div className="flex justify-center">
+            <CustomButton
+              onClick={handleExploreClick}
+              className="bg-[#04CE78] hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center gap-2"
+            >
+              Explore
+              <ArrowRightIcon className="w-5 h-5" />
+            </CustomButton>
           </div>
         </div>
       </div>

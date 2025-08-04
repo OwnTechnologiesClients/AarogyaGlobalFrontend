@@ -1,14 +1,27 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import PageHeader from "@/components/layout/PageHeader";
 import SearchForm from "@/components/HospitalSearch/SearchForm";
-import hospitalJson from "@/data/HospitalData.json";
 import TrustedBy from "@/components/home/TrustedBy";
 import HospitalMain from "@/components/HospitalSearch/HospitalCard";
-const HospitalSearch = () => {
+import dataService from '@/lib/dataService';
 
+const HospitalSearch = () => {
   const { title, routes } = getPageHeaderData('/hospitalSearch');
+  const [hospitals, setHospitals] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Get all hospitals from all specialties and global hospitals
+    const allHospitals = [];
+    for (const specialty of Object.values(dataService.data.specialties)) {
+      allHospitals.push(...(specialty.hospitals || []));
+    }
+    allHospitals.push(...(dataService.data.globalHospitals || []));
+    setHospitals(allHospitals);
+    setLoading(false);
+  }, []);
 
   const [searchFilters, setSearchFilters] = useState({
     name: "",
@@ -17,17 +30,23 @@ const HospitalSearch = () => {
     location: "",
   });
 
-  const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filterHosData, setFilteredData] = useState(hospitalJson.hospitals);
+  const [filterHosData, setFilteredData] = useState(hospitals);
+
+  useEffect(() => {
+    setFilteredData(hospitals);
+  }, [hospitals]);
+
   const applyFilters = () => {
-    let result = [...hospitalJson.hospitals];
+    let result = [...hospitals];
 
     // Apply category filter
     if (activeCategory !== "All") {
       result = result.filter((hospital) =>
-        hospital.specialties?.includes(activeCategory)
+        hospital.specialties?.some(specialty => 
+          specialty.toLowerCase().includes(activeCategory.toLowerCase())
+        )
       );
     }
 
@@ -40,13 +59,17 @@ const HospitalSearch = () => {
 
     if (searchFilters.treatment) {
       result = result.filter((hospital) =>
-        hospital.treatments?.includes(searchFilters.treatment)
+        hospital.treatments?.some(treatment => 
+          treatment.toLowerCase().includes(searchFilters.treatment.toLowerCase())
+        )
       );
     }
 
     if (searchFilters.facility) {
       result = result.filter((hospital) =>
-        hospital.facilities?.includes(searchFilters.facility)
+        hospital.facilities?.some(facility => 
+          facility.toLowerCase().includes(searchFilters.facility.toLowerCase())
+        )
       );
     }
 
@@ -57,7 +80,6 @@ const HospitalSearch = () => {
           .includes(searchFilters.location.toLowerCase())
       );
     }
-    setIsFilter(!isFilter);
     setFilteredData(result);
   };
 
@@ -68,19 +90,38 @@ const HospitalSearch = () => {
       facility: "",
       location: "",
     });
-    setIsFilter(!isFilter);
     setActiveCategory("All");
-    setFilteredData(hospitalJson.hospitals);
+    setFilteredData(hospitals);
   };
+
+  // Get filters from the first specialty (assuming they're similar across specialties)
+  const getFilters = () => {
+    const firstSpecialty = Object.values(dataService.data.specialties)[0];
+    return firstSpecialty?.filters || {
+      categories: ["All", "Cardiology", "Neurology", "Orthopedics", "Pediatrics"],
+      facilities: ["ICU", "Emergency", "Pharmacy", "Laboratory"],
+      treatments: ["General Medicine", "Surgery", "Cardiology", "Neurology"]
+    };
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Loading hospitals...</div>
+      </div>
+    );
+  }
+
+  const filters = getFilters();
 
   return (
     <div>
       <PageHeader title={title} routes={routes} />
 
       <SearchForm
-        categories={hospitalJson.filters.categories}
-        facilities={hospitalJson.filters.facilities}
-        treatments={hospitalJson.filters.treatments}
+        categories={filters.categories}
+        facilities={filters.facilities}
+        treatments={filters.treatments}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}
@@ -88,7 +129,7 @@ const HospitalSearch = () => {
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
       />
-      <HospitalMain hospitals={filterHosData} isFilter={isFilter} />
+      <HospitalMain hospitals={filterHosData} />
       <TrustedBy />
     </div>
   );

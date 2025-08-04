@@ -22,7 +22,16 @@ const DropdownSelect = ({ label, options, value, onChange, placeholder }) => {
   }, []);
 
   const handleSelect = (option) => {
-    onChange({ target: { value: option } });
+    // Handle both old pattern (event.target.value) and new pattern (direct value)
+    if (typeof onChange === 'function') {
+      if (onChange.length === 1) {
+        // New pattern: onChange(value)
+        onChange(option);
+      } else {
+        // Old pattern: onChange({ target: { value } })
+        onChange({ target: { value: option } });
+      }
+    }
     setOpen(false);
   };
 

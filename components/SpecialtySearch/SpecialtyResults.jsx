@@ -10,7 +10,6 @@ const SpecialtyResults = ({
   hospitals = [], 
   treatments = [], 
   activeCategory, 
-  isFilter,
   specialtyName 
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,7 +39,7 @@ const SpecialtyResults = ({
     }
     setDisplayData(data);
     setCurrentPage(1); // Reset to first page when category changes
-  }, [doctors, hospitals, treatments, activeCategory, isFilter]);
+  }, [doctors, hospitals, treatments, activeCategory]);
 
   const totalPages = Math.ceil(displayData.length / cardsPerPage);
   const indexOfLastCard = currentPage * cardsPerPage;

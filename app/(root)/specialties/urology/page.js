@@ -21,17 +21,16 @@ const UrologyPage = () => {
         location: "",
     });
 
-    const [isFilter, setIsFilter] = useState(false);
     const [activeCategory, setActiveCategory] = useState("All");
 
-    const [filteredDoctors, setFilteredDoctors] = useState(urologyData.doctors);
-    const [filteredHospitals, setFilteredHospitals] = useState(urologyData.hospitals);
-    const [filteredTreatments, setFilteredTreatments] = useState(urologyData.treatments);
+    const [filteredDoctors, setFilteredDoctors] = useState(data.doctors || []);
+    const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals || []);
+    const [filteredTreatments, setFilteredTreatments] = useState(data.treatments || []);
 
     const applyFilters = () => {
-        let doctors = [...urologyData.doctors];
-        let hospitals = [...urologyData.hospitals];
-        let treatments = [...urologyData.treatments];
+        let doctors = [...(data.doctors || [])];
+        let hospitals = [...(data.hospitals || [])];
+        let treatments = [...(data.treatments || [])];
 
         // Apply name filter
         if (searchFilters.name) {
@@ -79,7 +78,6 @@ const UrologyPage = () => {
         setFilteredDoctors(doctors);
         setFilteredHospitals(hospitals);
         setFilteredTreatments(treatments);
-        setIsFilter(!isFilter);
     };
 
     const resetFilters = () => {
@@ -90,10 +88,9 @@ const UrologyPage = () => {
             location: "",
         });
         setActiveCategory("All");
-        setFilteredDoctors(urologyData.doctors);
-        setFilteredHospitals(urologyData.hospitals);
-        setFilteredTreatments(urologyData.treatments);
-        setIsFilter(!isFilter);
+        setFilteredDoctors(data.doctors || []);
+        setFilteredHospitals(data.hospitals || []);
+        setFilteredTreatments(data.treatments || []);
     };
 
     return (
@@ -116,7 +113,7 @@ const UrologyPage = () => {
 
                             {/* Keywords/Tags */}
                             <div className="flex gap-2 overflow-x-auto pb-2">
-                                {urologyData.filters.treatments.slice(0, 6).map((treatment, index) => (
+                                {data.filters.treatments.slice(0, 6).map((treatment, index) => (
                                     <button
                                         key={index}
                                         className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap hover:bg-gray-200 transition-colors"
@@ -133,18 +130,18 @@ const UrologyPage = () => {
                         {/* Overview Description */}
                         <div className="mb-8">
                             <p className="text-gray-700 leading-relaxed mb-6">
-                                {urologyData.overview.description}
+                                {data.overview.description}
                             </p>
 
                             {/* Status Indicators */}
                             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                                 <div className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-green-500" />
-                                    <span>Approved by {urologyData.overview.approvedBy}</span>
+                                    <span>Approved by {data.overview.approvedBy}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-gray-500" />
-                                    <span>Update: {urologyData.overview.lastUpdated}</span>
+                                    <span>Update: {data.overview.lastUpdated}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <FileText className="w-4 h-4 text-gray-500" />
@@ -163,7 +160,7 @@ const UrologyPage = () => {
                             </div>
 
                             {/* Hospital Carousel */}
-                            <HospitalCarousel hospitals={urologyData.hospitals} />
+                            <HospitalCarousel hospitals={data.hospitals} />
                         </div>
 
                         {/* What Helps Section */}
@@ -216,16 +213,16 @@ const UrologyPage = () => {
             </div>
 
             <SpecialtySearchForm
-                categories={urologyData.filters.categories}
-                facilities={urologyData.filters.facilities}
-                treatments={urologyData.filters.treatments}
+                categories={data.filters.categories}
+                facilities={data.filters.facilities}
+                treatments={data.filters.treatments}
                 searchFilters={searchFilters}
                 setSearchFilters={setSearchFilters}
                 activeCategory={activeCategory}
                 applyFilters={applyFilters}
                 setActiveCategory={setActiveCategory}
                 resetFilters={resetFilters}
-                specialtyName={urologyData.specialty.name}
+                specialtyName={data.specialty.name}
             />
 
             <SpecialtyResults
@@ -233,8 +230,7 @@ const UrologyPage = () => {
                 hospitals={filteredHospitals}
                 treatments={filteredTreatments}
                 activeCategory={activeCategory}
-                isFilter={isFilter}
-                specialtyName={urologyData.specialty.name}
+                specialtyName={data.specialty.name}
             />
 
             <TrustedBy />

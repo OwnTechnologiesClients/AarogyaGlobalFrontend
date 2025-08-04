@@ -11,6 +11,15 @@ const NeurologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/neurology');
   const data = dataService.getSpecialtyData('neurology');
 
+  // Handle case when data is not available
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Data not available</div>
+      </div>
+    );
+  }
+
   const [searchFilters, setSearchFilters] = useState({
     name: "",
     treatment: "",
@@ -18,17 +27,16 @@ const NeurologyPage = () => {
     location: "",
   });
 
-  const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filteredDoctors, setFilteredDoctors] = useState(neurologyData.doctors);
-  const [filteredHospitals, setFilteredHospitals] = useState(neurologyData.hospitals);
-  const [filteredTreatments, setFilteredTreatments] = useState(neurologyData.treatments);
+  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors || []);
+  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals || []);
+  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments || []);
 
   const applyFilters = () => {
-    let doctors = [...neurologyData.doctors];
-    let hospitals = [...neurologyData.hospitals];
-    let treatments = [...neurologyData.treatments];
+    let doctors = [...(data.doctors || [])];
+    let hospitals = [...(data.hospitals || [])];
+    let treatments = [...(data.treatments || [])];
 
     // Apply name filter
     if (searchFilters.name) {
@@ -76,7 +84,6 @@ const NeurologyPage = () => {
     setFilteredDoctors(doctors);
     setFilteredHospitals(hospitals);
     setFilteredTreatments(treatments);
-    setIsFilter(!isFilter);
   };
 
   const resetFilters = () => {
@@ -87,10 +94,9 @@ const NeurologyPage = () => {
       location: "",
     });
     setActiveCategory("All");
-    setFilteredDoctors(neurologyData.doctors);
-    setFilteredHospitals(neurologyData.hospitals);
-    setFilteredTreatments(neurologyData.treatments);
-    setIsFilter(!isFilter);
+    setFilteredDoctors(data.doctors || []);
+    setFilteredHospitals(data.hospitals || []);
+    setFilteredTreatments(data.treatments || []);
   };
 
   return (
@@ -98,16 +104,16 @@ const NeurologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={neurologyData.filters.categories}
-        facilities={neurologyData.filters.facilities}
-        treatments={neurologyData.filters.treatments}
+        categories={data.filters.categories}
+        facilities={data.filters.facilities}
+        treatments={data.filters.treatments}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}
         applyFilters={applyFilters}
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
-        specialtyName={neurologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <SpecialtyResults
@@ -115,8 +121,7 @@ const NeurologyPage = () => {
         hospitals={filteredHospitals}
         treatments={filteredTreatments}
         activeCategory={activeCategory}
-        isFilter={isFilter}
-        specialtyName={neurologyData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <TrustedBy />

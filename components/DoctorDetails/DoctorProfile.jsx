@@ -14,6 +14,21 @@ const DoctorProfile = ({ doctor }) => {
     );
   }
 
+  // Helper function to handle education data (can be string or array)
+  const getEducationData = (education) => {
+    if (!education) return [];
+    if (Array.isArray(education)) return education;
+    // If it's a string, convert to array format
+    return [{ degree: "Medical Degree", institution: education, year: "N/A" }];
+  };
+
+  // Helper function to handle work experience data (can be array or undefined)
+  const getWorkExperienceData = (workExperience) => {
+    if (!workExperience) return [];
+    if (Array.isArray(workExperience)) return workExperience;
+    return [];
+  };
+
   return (
     <div className="flex flex-col lg:flex-row gap-8 w-full px-4 lg:px-20 py-12 font-poppins">
       {/* Left Section */}
@@ -108,7 +123,7 @@ const DoctorProfile = ({ doctor }) => {
             Dr. {doctor.name.split(' ').pop()} has received comprehensive medical education and training:
           </p>
           <div className="flex flex-col gap-3 text-[#000D44]">
-            {doctor.education?.map((edu, index) => (
+            {getEducationData(doctor.education).map((edu, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
                 <p>
@@ -129,7 +144,7 @@ const DoctorProfile = ({ doctor }) => {
             Dr. {doctor.name.split(' ').pop()} has extensive experience in various healthcare institutions:
           </p>
           <div className="flex flex-col gap-3 text-[#000D44]">
-            {doctor.workExperience?.map((exp, index) => (
+            {getWorkExperienceData(doctor.workExperience).map((exp, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
                 <p>

@@ -11,6 +11,15 @@ const CardiologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/cardiology');
   const data = dataService.getSpecialtyData('cardiology');
 
+  // Handle case when data is not available
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Data not available</div>
+      </div>
+    );
+  }
+
   const [searchFilters, setSearchFilters] = useState({
     name: "",
     treatment: "",
@@ -18,17 +27,16 @@ const CardiologyPage = () => {
     location: "",
   });
 
-  const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors);
-  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals);
-  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments);
+  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors || []);
+  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals || []);
+  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments || []);
 
   const applyFilters = () => {
-    let doctors = [...data.doctors];
-    let hospitals = [...data.hospitals];
-    let treatments = [...data.treatments];
+    let doctors = [...(data.doctors || [])];
+    let hospitals = [...(data.hospitals || [])];
+    let treatments = [...(data.treatments || [])];
 
     // Apply name filter
     if (searchFilters.name) {
@@ -76,7 +84,6 @@ const CardiologyPage = () => {
     setFilteredDoctors(doctors);
     setFilteredHospitals(hospitals);
     setFilteredTreatments(treatments);
-    setIsFilter(!isFilter);
   };
 
   const resetFilters = () => {
@@ -87,10 +94,9 @@ const CardiologyPage = () => {
       location: "",
     });
     setActiveCategory("All");
-    setFilteredDoctors(data.doctors);
-    setFilteredHospitals(data.hospitals);
-    setFilteredTreatments(data.treatments);
-    setIsFilter(!isFilter);
+    setFilteredDoctors(data.doctors || []);
+    setFilteredHospitals(data.hospitals || []);
+    setFilteredTreatments(data.treatments || []);
   };
 
   return (
@@ -115,7 +121,6 @@ const CardiologyPage = () => {
         hospitals={filteredHospitals}
         treatments={filteredTreatments}
         activeCategory={activeCategory}
-        isFilter={isFilter}
         specialtyName={data.specialty.name}
       />
 

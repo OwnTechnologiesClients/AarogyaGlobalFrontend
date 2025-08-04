@@ -11,6 +11,15 @@ const OrthopaedicsPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/orthopaedics');
   const data = dataService.getSpecialtyData('orthopaedics');
 
+  // Handle case when data is not available
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Data not available</div>
+      </div>
+    );
+  }
+
   const [searchFilters, setSearchFilters] = useState({
     name: "",
     treatment: "",
@@ -18,17 +27,16 @@ const OrthopaedicsPage = () => {
     location: "",
   });
 
-  const [isFilter, setIsFilter] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [filteredDoctors, setFilteredDoctors] = useState(orthopaedicsData.doctors);
-  const [filteredHospitals, setFilteredHospitals] = useState(orthopaedicsData.hospitals);
-  const [filteredTreatments, setFilteredTreatments] = useState(orthopaedicsData.treatments);
+  const [filteredDoctors, setFilteredDoctors] = useState(data.doctors || []);
+  const [filteredHospitals, setFilteredHospitals] = useState(data.hospitals || []);
+  const [filteredTreatments, setFilteredTreatments] = useState(data.treatments || []);
 
   const applyFilters = () => {
-    let doctors = [...orthopaedicsData.doctors];
-    let hospitals = [...orthopaedicsData.hospitals];
-    let treatments = [...orthopaedicsData.treatments];
+    let doctors = [...(data.doctors || [])];
+    let hospitals = [...(data.hospitals || [])];
+    let treatments = [...(data.treatments || [])];
 
     // Apply name filter
     if (searchFilters.name) {
@@ -76,7 +84,6 @@ const OrthopaedicsPage = () => {
     setFilteredDoctors(doctors);
     setFilteredHospitals(hospitals);
     setFilteredTreatments(treatments);
-    setIsFilter(!isFilter);
   };
 
   const resetFilters = () => {
@@ -87,10 +94,9 @@ const OrthopaedicsPage = () => {
       location: "",
     });
     setActiveCategory("All");
-    setFilteredDoctors(orthopaedicsData.doctors);
-    setFilteredHospitals(orthopaedicsData.hospitals);
-    setFilteredTreatments(orthopaedicsData.treatments);
-    setIsFilter(!isFilter);
+    setFilteredDoctors(data.doctors || []);
+    setFilteredHospitals(data.hospitals || []);
+    setFilteredTreatments(data.treatments || []);
   };
 
   return (
@@ -98,16 +104,16 @@ const OrthopaedicsPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={orthopaedicsData.filters.categories}
-        facilities={orthopaedicsData.filters.facilities}
-        treatments={orthopaedicsData.filters.treatments}
+        categories={data.filters.categories}
+        facilities={data.filters.facilities}
+        treatments={data.filters.treatments}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}
         applyFilters={applyFilters}
         setActiveCategory={setActiveCategory}
         resetFilters={resetFilters}
-        specialtyName={orthopaedicsData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <SpecialtyResults
@@ -115,8 +121,7 @@ const OrthopaedicsPage = () => {
         hospitals={filteredHospitals}
         treatments={filteredTreatments}
         activeCategory={activeCategory}
-        isFilter={isFilter}
-        specialtyName={orthopaedicsData.specialty.name}
+        specialtyName={data.specialty.name}
       />
 
       <TrustedBy />

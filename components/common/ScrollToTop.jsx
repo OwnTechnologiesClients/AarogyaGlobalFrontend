@@ -7,17 +7,16 @@ const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Show button when page is scrolled up to given distance
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 400) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
   // Set the scroll event listener
   useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 400) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
     window.addEventListener("scroll", toggleVisibility);
     return () => {
       window.removeEventListener("scroll", toggleVisibility);
