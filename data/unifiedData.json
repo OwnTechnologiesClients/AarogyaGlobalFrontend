@@ -3715,6 +3715,83 @@
       }
     }
   ],
+  "featuredHospitals": [
+    {
+      "id": 1,
+      "name": "Cleveland Clinic",
+      "location": "Cleveland, Ohio, USA",
+      "image": "/hospital_logos/img1.jpg",
+      "type": "Hospital",
+      "typeColor": "#04CE78",
+      "rating": 9.9,
+      "ratingCount": "15k+",
+      "doctorCount": 150,
+      "cta": {
+        "label": "View Details",
+        "href": "/hospitalDetails/1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Mayo Clinic",
+      "location": "Rochester, Minnesota, USA",
+      "image": "/hospital_logos/img2.png",
+      "type": "Hospital",
+      "typeColor": "#04CE78",
+      "rating": 9.8,
+      "ratingCount": "12k+",
+      "doctorCount": 120,
+      "cta": {
+        "label": "View Details",
+        "href": "/hospitalDetails/2"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Johns Hopkins Hospital",
+      "location": "Baltimore, Maryland, USA",
+      "image": "/hospital_logos/img3.webp",
+      "type": "Hospital",
+      "typeColor": "#04CE78",
+      "rating": 9.7,
+      "ratingCount": "10k+",
+      "doctorCount": 95,
+      "cta": {
+        "label": "View Details",
+        "href": "/hospitalDetails/3"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Massachusetts General Hospital",
+      "location": "Boston, Massachusetts, USA",
+      "image": "/hospital_logos/img4.webp",
+      "type": "Hospital",
+      "typeColor": "#04CE78",
+      "rating": 9.6,
+      "ratingCount": "8.5k+",
+      "doctorCount": 110,
+      "cta": {
+        "label": "View Details",
+        "href": "/hospitalDetails/4"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Stanford Health Care",
+      "location": "Stanford, California, USA",
+      "image": "/hospital_logos/img5.webp",
+      "type": "Hospital",
+      "typeColor": "#04CE78",
+      "rating": 9.5,
+      "ratingCount": "7.2k+",
+      "doctorCount": 85,
+      "cta": {
+        "label": "View Details",
+        "href": "/hospitalDetails/5"
+      }
+    }
+  ],
   "specialtyList": [
     {
       "id": "cardiology",

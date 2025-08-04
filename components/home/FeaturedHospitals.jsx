@@ -14,13 +14,16 @@ import {
   User,
   ArrowRight,
 } from "lucide-react";
-import hospitals from "@/data/featuredHospitals.json";
+import unifiedData from "@/data/unifiedData.json";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import Link from "next/link";
 
 const FeaturedHospitals = () => {
   const swiperRef = React.useRef(null);
   const router = useRouter();
+  
+  // Get featured hospitals from unified data
+  const hospitals = unifiedData.featuredHospitals;
 
   const handleHospitalClick = (hospitalId) => {
     router.push(`/hospitalDetails/${hospitalId}`);
