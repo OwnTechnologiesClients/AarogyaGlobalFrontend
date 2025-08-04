@@ -82,7 +82,7 @@ const HospitalAbout = () => {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 bg-[#04CE78] bg-opacity-10 rounded-xl">
-              <Heart className="w-8 h-8 text-[#04CE78]" />
+              <Heart className="w-8 h-8  text-white" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
           </div>
@@ -96,7 +96,7 @@ const HospitalAbout = () => {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 bg-blue-500 bg-opacity-10 rounded-xl">
-              <Eye className="w-8 h-8 text-blue-500" />
+              <Eye className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800">Our Vision</h3>
           </div>
@@ -110,7 +110,7 @@ const HospitalAbout = () => {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 bg-purple-500 bg-opacity-10 rounded-xl">
-              <Target className="w-8 h-8 text-purple-500" />
+              <Target className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800">Our Values</h3>
           </div>

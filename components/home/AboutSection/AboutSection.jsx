@@ -65,6 +65,7 @@ const AboutSection = () => {
                 textColor="text-white"
                 hoverBgColor="bg-green-600"
                 textSize="text-sm xl:text-base 2xl:text-lg"
+                className="cursor-pointer"
               />
             </Link>
             <div className="flex items-center gap-2 bg-[#F5F7FA] p-5 rounded-full">

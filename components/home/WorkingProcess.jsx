@@ -47,7 +47,7 @@ const WorkingProcess = () => {
                     src={`/workprocess/${index % 2 === 0 ? "arrow2.png" : "arrow1.png"
                       }`}
                     alt="Arrow"
-                    className="w-23"
+                    className="w-16"
                   />
                 </div>
               )}
