@@ -37,7 +37,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="w-full bg-[#000D44] rounded-3xl text-white px-6 sm:px-10 md:px-20 py-10 md:py-40 md:mt-20 mt-8 relative">
+    <footer className="w-full bg-[#000D44] rounded-3xl text-white px-6 sm:px-10 md:px-20 py-8 md:py-16 md:mt-20 mt-8 relative">
       {!isHomePage && (
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="bg-[#E7C2D4] relative z-10 mb-32 rounded-2xl py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 shadow-lg text-gray-800">
@@ -101,7 +101,7 @@ const Footer = () => {
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
         {/* Logo & Description */}
         <div className="flex flex-col gap-4">
           <Image
@@ -115,7 +115,7 @@ const Footer = () => {
             {footerData.description}
           </p>
           <div className="flex gap-2 items-center">
-            <span className="text-lg">Follow Us:</span>
+            <span className="text-sm">Follow Us:</span>
             <div className="flex gap-3">
               {footerData.socials.map((social, idx) => {
                 const Icon = iconMap[social.icon] || null;
@@ -137,16 +137,16 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-white font-semibold text-xl mb-4">Quick Links</h3>
-          <div className="w-24 h-[2px] bg-[#7D7D92] rounded overflow-hidden mb-6">
+          <h3 className="text-white font-semibold text-lg mb-3">Quick Links</h3>
+          <div className="w-20 h-[2px] bg-[#7D7D92] rounded overflow-hidden mb-4">
             <div className="w-1/4 h-full bg-[#04CE78]" />
           </div>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {footerData.quickLinks.map((link, idx) => (
               <li key={idx}>
                 <Link
                   href={link.url}
-                  className="hover:underline text-[#E6E6F0] text-lg leading-[1.6] cursor-pointer"
+                  className="hover:underline text-[#E6E6F0] text-sm leading-[1.5] cursor-pointer"
                 >
                   {link.label}
                 </Link>
@@ -157,18 +157,18 @@ const Footer = () => {
 
         {/* Useful Links */}
         <div>
-          <h3 className="text-white font-semibold text-xl mb-4">
+          <h3 className="text-white font-semibold text-lg mb-3">
             Useful Links
           </h3>
-          <div className="w-24 h-[2px] bg-[#7D7D92] rounded overflow-hidden mb-6">
+          <div className="w-20 h-[2px] bg-[#7D7D92] rounded overflow-hidden mb-4">
             <div className="w-1/4 h-full bg-[#04CE78]" />
           </div>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {footerData.usefulLinks.map((link, idx) => (
               <li key={idx}>
                 <Link
                   href={link.url}
-                  className="hover:underline text-[#E6E6F0] text-lg leading-[1.6]"
+                  className="hover:underline text-[#E6E6F0] text-sm leading-[1.5]"
                 >
                   {link.label}
                 </Link>
@@ -178,32 +178,32 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="bg-[#E7C2D4] rounded-xl p-6 text-[#18004b] shadow-lg mx-auto w-[286px] xl:mx-0">
-          <h3 className="text-xl font-bold mb-2">Get In Touch</h3>
-          <div className="w-24 h-[2px] bg-[#7D7D92] rounded overflow-hidden mb-6">
+        <div className="bg-[#E7C2D4] rounded-xl p-5 text-[#18004b] shadow-lg mx-auto w-[286px] xl:mx-0">
+          <h3 className="text-lg font-bold mb-2">Get In Touch</h3>
+          <div className="w-20 h-[2px] bg-[#7D7D92] rounded overflow-hidden mb-4">
             <div className="w-[55%] h-full bg-[#04CE78]" />
           </div>
 
           {/* Location */}
-          <div className="mb-6">
+          <div className="mb-4">
             <div className="flex items-start gap-2 mb-1">
-              <MapPin className="text-[#1F5FFF] w-5 h-5 mt-0.5" />
-              <span className="font-semibold text-sm">Location:</span>
+              <MapPin className="text-[#1F5FFF] w-4 h-4 mt-0.5" />
+              <span className="font-semibold text-xs">Location:</span>
             </div>
-            <p className="text-lg font-normal ml-7 leading-relaxed">
+            <p className="text-sm font-normal ml-6 leading-relaxed">
               {footerData.contact.location}
             </p>
           </div>
 
           {/* Email */}
-          <div className="mb-6">
+          <div className="mb-4">
             <div className="flex items-start gap-2 mb-1">
-              <Mail className="text-[#1F5FFF] w-5 h-5 mt-0.5" />
-              <span className="font-semibold text-sm">Email:</span>
+              <Mail className="text-[#1F5FFF] w-4 h-4 mt-0.5" />
+              <span className="font-semibold text-xs">Email:</span>
             </div>
             <a
               href={`mailto:${footerData.contact.email}`}
-              className="text-lg font-normal ml-7 text-[#18004b]"
+              className="text-sm font-normal ml-6 text-[#18004b]"
             >
               {footerData.contact.email}
             </a>
@@ -212,12 +212,12 @@ const Footer = () => {
           {/* Phone */}
           <div>
             <div className="flex items-start gap-2 mb-1">
-              <Phone className="text-[#1F5FFF] w-5 h-5 mt-0.5" />
-              <span className="font-semibold text-sm">Phone:</span>
+              <Phone className="text-[#1F5FFF] w-4 h-4 mt-0.5" />
+              <span className="font-semibold text-xs">Phone:</span>
             </div>
             <a
               href={`tel:${footerData.contact.phone}`}
-              className="text-lg font-normal ml-7 text-[#18004b] cursor-pointer"
+              className="text-sm font-normal ml-6 text-[#18004b] cursor-pointer"
             >
               {footerData.contact.phone}
             </a>

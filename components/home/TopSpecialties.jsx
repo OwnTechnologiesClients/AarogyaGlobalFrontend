@@ -94,7 +94,7 @@ const TopSpecialties = () => {
   };
 
   return (
-    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 w-screen py-32 bg-[#F5F7FA]">
+    <section className="flex flex-col items-start px-4 md:px-8 lg:px-18 w-screen pt-32 pb-16 bg-[#F5F7FA]">
       <WelcomeBanner
         text="CATEGORIES"
         textColor="#04CE78"
@@ -103,7 +103,7 @@ const TopSpecialties = () => {
         className="text-lg"
       />
       <div className="flex w-full justify-between items-center mb-4">
-        <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
+        <h3 className="text-xl md:text-3xl font-extrabold text-[#1A0142] leading-tight">
           Top Searched Specialities
         </h3>
         {isClient && (

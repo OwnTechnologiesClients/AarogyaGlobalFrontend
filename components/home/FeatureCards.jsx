@@ -12,7 +12,7 @@ const FeatureCards = () => {
       {cards.map((card) => (
         <div
           key={card.id}
-          className={`flex flex-row items-start rounded-2xl ${card.backgroundColor} flex-1  p-4 2xl:p-12`}
+          className={`flex flex-row items-start rounded-2xl ${card.backgroundColor} flex-1 min-h-[180px] md:min-h-[200px] p-6 md:p-8 2xl:p-12`}
         >
           {/* Icon */}
           <div className=" mr-4 sm:mr-5 md:mr-6 lg:mr-8">
@@ -31,21 +31,21 @@ const FeatureCards = () => {
           </div>
 
           {/* Text content */}
-          <div className="flex flex-col justify-between gap-2 overflow-hidden">
+          <div className="flex flex-col justify-between gap-3 overflow-hidden h-full">
             <div>
-              <h3 className="text-base sm:text-sm lg:text-lg xl:text-xl font-bold text-[#0B0757] mb-2">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-[#0B0757] mb-3">
                 {card.title}
               </h3>
-              <p className="2xl:text-base text-sm text-[#000D44]  mb-3">
+              <p className="text-sm md:text-base text-[#000D44] mb-4 leading-relaxed">
                 {card.description}
               </p>
             </div>
             <Link
               href={card.cta.href}
-              className="font-semibold text-sm 2xl:text-sm text-[#0B0757] flex items-center gap-1 group"
+              className="font-semibold text-sm md:text-base text-[#0B0757] flex items-center gap-2 group mt-auto"
             >
               {card.cta.label}
-              <ArrowRight className="w-auto h-3 2xl:h-5 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </div>
         </div>

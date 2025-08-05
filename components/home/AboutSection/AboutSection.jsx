@@ -24,15 +24,15 @@ const AboutSection = () => {
             alignment="right"
             className="text-lg"
           />
-          <h2 className="text-2xl md:text-4xl max-w-3xl font-bold text-[#000D44] leading-tight">
+          <h2 className="text-xl md:text-3xl max-w-3xl font-extrabold text-[#1A0142] leading-tight">
             {aboutData.sectionTitle}
           </h2>
-          <p className="text-[#555555] text-base md:text-sm max-w-2xl">
+          <p className="text-[#555555] text-sm md:text-base max-w-2xl">
             {aboutData.sectionSubtitle}
           </p>
 
           {/* Features */}
-          <div className="flex flex-col gap-10 w-full">
+          <div className="flex flex-col gap-6 w-full">
             {aboutData.features.map((feature, idx) => (
               <div key={idx} className="flex items-start gap-4">
                 <div className="bg-[#F5F7FA] p-7 rounded-full flex items-center justify-center">
@@ -45,10 +45,10 @@ const AboutSection = () => {
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-xl text-[#000D44]">
+                  <div className="font-bold text-base md:text-lg text-[#000D44]">
                     {feature.title}
                   </div>
-                  <div className="text-[#555555] mt-2 text-sm max-w-2xl">
+                  <div className="text-[#555555] mt-2 text-sm md:text-base max-w-2xl">
                     {feature.description}
                   </div>
                 </div>

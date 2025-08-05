@@ -28,7 +28,7 @@ const AppointmentRequest = () => {
             alignment="left"
             className=" text-lg "
           />
-          <h2 className="text-2xl md:text-4xl font-extrabold text-blue-950">
+          <h2 className="text-xl md:text-3xl font-extrabold text-[#1A0142]">
             Request Your Appointment
           </h2>
           <p className="text-blue-950 text-lg leading-relaxed">
@@ -40,7 +40,7 @@ const AppointmentRequest = () => {
             <CustomButton text="  Make An Appointment" className="cursor-pointer" />
             <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline">
               <span className="w-12 h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
-                <PlayIcon className="fill-white"/>
+                <PlayIcon className="fill-white" />
               </span>
               How It Works
             </button>

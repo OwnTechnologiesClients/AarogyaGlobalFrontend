@@ -12,7 +12,7 @@ const FAQAccordionTrigger = ({ children, open, ...props }) => (
   <button
     {...props}
     className={cn(
-      "flex justify-between items-center w-full px-6 py-5 text-left text-base md:text-lg font-semibold text-navy-900 bg-white transition-all duration-200 focus:outline-none border-b",
+      "flex justify-between items-center w-full px-5 py-4 text-left text-sm md:text-base font-semibold text-navy-900 bg-white transition-all duration-200 focus:outline-none border-b",
       open ? "border-b-0" : "border-gray-200"
     )}
     aria-expanded={open}
@@ -48,13 +48,13 @@ export default function FAQSection() {
           <WelcomeBanner
             text="FREQUENTLY ASKED QUESTIONS"
             alignment="left"
-            className="text-lg mb-3"
+            className="text-base mb-3"
           />
-          <h2 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
+          <h2 className="text-xl md:text-3xl font-extrabold text-[#1A0142] leading-tight">
             Got questions? <br />
-            We’ve got answers
+            We've got answers
           </h2>
-          <p className="text-[#555555] text-base md:text-sm max-w-lg font-light leading-6">
+          <p className="text-[#555555] text-sm md:text-base max-w-lg font-light leading-6">
             Our medical center is dedicated to providing comprehensive patient
             centered healthcare with a commitment to excellence we offer a broad
             range of medical services from strive to create a welcoming
@@ -62,28 +62,28 @@ export default function FAQSection() {
           </p>
           <div className="flex items-center gap-6 mt-4">
             <Link href="/contact">
-            <CustomButton
+              <CustomButton
                 text="Contact Us Now"
                 padding="px-6 py-4 "
-                textSize = "text-sm md:text-base "
+                textSize="text-sm md:text-base "
                 className="cursor-pointer"
 
               />
             </Link>
-              
+
             <span className="inline-flex items-center justify-center w-14 h-14 bg-[#F5F7FA] rounded-full">
               <MapPin className="w-5 h-5 text-[#1F5FFF]" />
             </span>
             <div className="flex flex-col gap-2">
-              <span className="text-[#555555] text-base">Visit us on</span>
-              <span className="font-semibold text-[#181059] text-base">
+              <span className="text-[#555555] text-sm">Visit us on</span>
+              <span className="font-semibold text-[#181059] text-sm">
                 Gurugram, India
               </span>
             </div>
           </div>
         </div>
         {/* Right: FAQ Accordion */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 flex flex-col gap-4">
           {faqData.map((faq, idx) => {
             const isOpen = open === `faq-${idx}`;
             return (
@@ -95,15 +95,15 @@ export default function FAQSection() {
                   open={isOpen}
                   onClick={() => setOpen(isOpen ? null : `faq-${idx}`)}
                 >
-                  <span className="text-[#181059] font-semibold text-lg md:text-xl">
-                    {`${idx + 1}.${faq.question}`}
+                  <span className="text-[#181059] font-semibold text-sm md:text-base">
+                    {`${idx + 1}. ${faq.question}`}
                   </span>
                 </FAQAccordionTrigger>
                 <div
                   className={cn(
-                    "px-8 max-w-4xl text-[#555555] text-base bg-white transition-all duration-200 overflow-hidden",
+                    "px-6 max-w-4xl text-[#555555] text-sm bg-white transition-all duration-200 overflow-hidden",
                     isOpen
-                      ? "max-h-[500px] py-1 opacity-100"
+                      ? "max-h-[500px] py-3 opacity-100"
                       : "max-h-0 py-0 opacity-0"
                   )}
                 >

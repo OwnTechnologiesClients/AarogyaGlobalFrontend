@@ -3,19 +3,19 @@ import WelcomeBanner from "../layout/WelcomeBanner";
 import workprocess from "../../data/workprocess.json";
 const WorkingProcess = () => {
   return (
-    <section className="flex flex-col items-center md:mb-16 md:mt-16 mb-8 mt-8">
+    <section className="flex flex-col items-center px-4 md:px-8 lg:px-18 py-12 md:py-20">
       <WelcomeBanner
         text="WORKING PROCESS"
         textColor="#04CE78"
         dotColor="#04CE78"
         alignment="center"
-        className="text-lg mt-20 mb-5"
+        className="text-lg mb-6"
       />
-      <h3 className=" text-center text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
+      <h3 className="text-center text-xl md:text-3xl font-extrabold text-[#1A0142] leading-tight mb-12">
         How it Works
       </h3>
-      <div className="flex flex-col items-center text-center px-4 py-10 mt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16  w-full">
+      <div className="flex flex-col items-center text-center px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 w-full">
           {workprocess.map((step, index) => (
             <div
               key={step.id}
@@ -37,7 +37,7 @@ const WorkingProcess = () => {
               <h3 className="text-xl font-semibold text-[#1A0142] mt-8">
                 {step.title}
               </h3>
-              <p className="text-base  text-[#555555] mt-4 max-w-4xl leading-relaxed ">
+              <p className="text-base text-[#555555] mt-4 max-w-4xl leading-relaxed">
                 {step.description}
               </p>
 

@@ -1,31 +1,10 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import WelcomeBanner from "../layout/WelcomeBanner";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import teamData from "../../data/aarogyateam.json";
 
 const AarogyaTeam = () => {
-  const swiperRef = useRef(null);
-
-  const breakpoints = {
-    320: {
-      slidesPerView: 1.1,
-      spaceBetween: 12,
-    },
-    640: {
-      slidesPerView: 2.2,
-      spaceBetween: 16,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 16,
-    },
-  };
 
   return (
     <section className="overflow-hidden bg-[#F5F7FA]">
@@ -37,66 +16,43 @@ const AarogyaTeam = () => {
           alignment="left"
           className="text-lg mt-30 mb-5"
         />
-        <div className="flex w-full justify-between items-center md:mb-18 mb-8">
-          <h3 className="text-2xl md:text-4xl font-extrabold text-[#1A0142] leading-tight">
+        <div className="flex w-full justify-start items-center md:mb-18 mb-8">
+          <h3 className="text-xl md:text-3xl font-extrabold text-[#1A0142] leading-tight">
             Founding Team / Directors
           </h3>
-          <div className="flex gap-4">
-            <button
-              aria-label="Previous"
-              className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#1F5FFF] flex items-center justify-center text-white text-xl md:text-2xl shadow-lg hover:bg-[#4B00B4] transition-colors"
-              onClick={() => swiperRef.current?.swiper.slidePrev()}
-              type="button"
-            >
-              <ChevronLeft size={28} />
-            </button>
-            <button
-              aria-label="Next"
-              className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#1F5FFF] flex items-center justify-center text-white text-xl md:text-2xl shadow-lg hover:bg-[#4B00B4] transition-colors"
-              onClick={() => swiperRef.current?.swiper.slideNext()}
-              type="button"
-            >
-              <ChevronRight size={28} />
-            </button>
-          </div>
         </div>
 
-        <div className="w-full px-10 mb-30">
-          <Swiper
-            ref={swiperRef}
-            modules={[Navigation]}
-            slidesPerView={1.1}
-            spaceBetween={12}
-            loop={true}
-            breakpoints={breakpoints}
-          >
-            {teamData.map((member, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="flex flex-col items-center bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-xs mx-auto mb-8">
-                  {/* Image Container */}
-                  <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={260}
-                      height={340}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-
-                  {/* Text Content */}
-                  <div className="flex flex-col items-start w-full mt-2 md:mt-4">
-                    <h4 className="text-lg md:text-xl font-extrabold text-[#1A0142]">
-                      {member.name}
-                    </h4>
-                    <p className="text-sm md:text-base text-[#555555]">
-                      {member.role}
-                    </p>
-                  </div>
+        <div className="w-full px-4 mb-30">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {teamData.slice(0, 4).map((member, idx) => (
+              <div key={idx} className="flex flex-col bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 w-full max-w-xs mx-auto mb-8 h-[380px] md:h-[420px]">
+                {/* Image Container - No padding for full-width image */}
+                <div className="relative w-full h-[220px] md:h-[260px] overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={260}
+                    height={340}
+                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Gradient overlay for better text readability if needed */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-              </SwiperSlide>
+
+                {/* Text Content - Proper padding only for text area */}
+                <div className="flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-white to-gray-50 flex-1">
+                  <h4 className="text-lg md:text-xl font-bold text-[#1A0142] mb-2 line-clamp-2">
+                    {member.name}
+                  </h4>
+                  <p className="text-sm md:text-base text-[#555555] font-medium line-clamp-2">
+                    {member.role}
+                  </p>
+                  {/* Professional accent line */}
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#1F5FFF] to-[#04CE78] rounded-full mt-3"></div>
+                </div>
+              </div>
             ))}
-          </Swiper>
+          </div>
         </div>
       </div>
     </section>
