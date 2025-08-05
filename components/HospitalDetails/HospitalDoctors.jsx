@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { 
-  Star, 
-  Calendar, 
-  Clock, 
-  MapPin, 
+import {
+  Star,
+  Calendar,
+  Clock,
+  MapPin,
   Award,
   GraduationCap,
   Stethoscope,
@@ -24,23 +24,50 @@ const HospitalDoctors = ({ hospital }) => {
 
   useEffect(() => {
     if (hospital) {
-      // Get all doctors from all specialties
-      const allDoctors = [];
-      for (const specialty of Object.values(dataService.data.specialties)) {
-        allDoctors.push(...(specialty.doctors || []));
-      }
-      allDoctors.push(...(dataService.data.globalDoctors || []));
-      
+      // Get all unique doctors to avoid duplicates
+      const allDoctors = dataService.getAllUniqueDoctors();
+
       // Filter doctors by hospital if hospital has specialties
       let filteredDoctors = allDoctors;
       if (hospital.specialties && hospital.specialties.length > 0) {
-        filteredDoctors = allDoctors.filter(doctor => 
-          hospital.specialties.some(specialty => 
-            doctor.specialty.toLowerCase().includes(specialty.toLowerCase())
-          )
-        );
+        filteredDoctors = allDoctors.filter(doctor => {
+          const match = hospital.specialties.some(hospitalSpecialty => {
+            const hospitalSpec = hospitalSpecialty.toLowerCase();
+            const doctorSpec = doctor.specialty?.toLowerCase() || '';
+
+            // More flexible matching logic
+            const isMatch = (
+              // Direct match
+              doctorSpec.includes(hospitalSpec) ||
+              hospitalSpec.includes(doctorSpec) ||
+              // Specialty name variations
+              (hospitalSpec.includes('cardiology') && doctorSpec.includes('cardiologist')) ||
+              (hospitalSpec.includes('cardiac surgery') && doctorSpec.includes('cardiac surgeon')) ||
+              (hospitalSpec.includes('neurology') && doctorSpec.includes('neurologist')) ||
+              (hospitalSpec.includes('orthopedics') && doctorSpec.includes('orthopedic')) ||
+              (hospitalSpec.includes('oncology') && doctorSpec.includes('oncologist')) ||
+              (hospitalSpec.includes('urology') && doctorSpec.includes('urologist')) ||
+              (hospitalSpec.includes('gynaecology') && doctorSpec.includes('gynecologist')) ||
+              // Subspecialty matching
+              (hospitalSpec.includes('interventional') && doctorSpec.includes('interventional')) ||
+              (hospitalSpec.includes('pediatric') && doctorSpec.includes('pediatric')) ||
+              (hospitalSpec.includes('robotic') && doctorSpec.includes('robotic')) ||
+              // General matching for common terms
+              (hospitalSpec.includes('surgery') && doctorSpec.includes('surgeon')) ||
+              (hospitalSpec.includes('medicine') && doctorSpec.includes('physician'))
+            );
+
+            return isMatch;
+          });
+          return match;
+        });
       }
-      
+
+      // If no doctors match the specialties, show some general doctors
+      if (filteredDoctors.length === 0) {
+        filteredDoctors = allDoctors.slice(0, 6);
+      }
+
       setDoctors(filteredDoctors.slice(0, 6)); // Limit to 6 doctors
     }
     setLoading(false);
@@ -54,7 +81,7 @@ const HospitalDoctors = ({ hospital }) => {
 
   const filteredDoctors = doctors.filter(doctor => {
     const matchesSpecialty = selectedSpecialty === "All" || doctor.specialty === selectedSpecialty;
-    const matchesSearch = searchTerm === "" || 
+    const matchesSearch = searchTerm === "" ||
       doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesSpecialty && matchesSearch;
@@ -117,15 +144,23 @@ const HospitalDoctors = ({ hospital }) => {
         {/* Doctors Grid */}
         {filteredDoctors.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No doctors found matching your criteria.</p>
+            <div className="bg-gray-50 rounded-lg p-8">
+              <Stethoscope className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">No Doctors Available</h3>
+              <p className="text-gray-500 text-lg mb-4">
+                We're currently updating our doctor profiles for {hospital?.name || 'this hospital'}.
+              </p>
+              <p className="text-gray-400 text-sm">
+                Please check back soon or contact us for more information about available specialists.
+              </p>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredDoctors.map((doctor, index) => (
               <div
                 key={createUniqueKey(doctor, index)}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                onClick={() => handleDoctorClick(doctor.id)}
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Doctor Image */}
                 <div className="relative h-64 rounded-t-xl overflow-hidden">
@@ -187,7 +222,10 @@ const HospitalDoctors = ({ hospital }) => {
                     <div className="text-green-600 font-bold">
                       {doctor.consultationFee}
                     </div>
-                    <button className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
+                    <button
+                      onClick={() => handleDoctorClick(doctor.id)}
+                      className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold cursor-pointer"
+                    >
                       <span>View Profile</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>

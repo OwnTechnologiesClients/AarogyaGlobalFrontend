@@ -5,7 +5,7 @@ import React from 'react';
 
 const HeroBannerVideo = () => {
   return (
-    <div className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh]  relative z-0 overflow-hidden lg:-mt-[197px] -mt-[240px] ">
+    <div className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh] relative z-0 overflow-hidden lg:-mt-[180px] -mt-[200px]">
       <div className="w-full relative overflow-hidden rounded-b-2xl h-full">
         <div className="relative w-full h-full">
           <video
@@ -31,7 +31,7 @@ const HeroBannerVideo = () => {
               sizes="100vw"
             />
           </video>
-          
+
           {/* Green diagonal strip with marquee text */}
           <div className="absolute bottom-3 left-0 w-full h-15 bg-[#04CE78] transform -skew-y-6 origin-bottom-left z-10">
             <div className="flex items-center h-full overflow-hidden">

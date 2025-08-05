@@ -1,25 +1,49 @@
 {
   "toggles": [
-    { "label": "Treatment", "value": "doctors" },
-    { "label": "Hospitals", "value": "hospitals" }
+    {
+      "label": "Treatment",
+      "value": "treatment"
+    },
+    {
+      "label": "Hospitals",
+      "value": "hospitals"
+    }
   ],
   "filters": [
     {
       "label": "Location",
       "placeholder": "Select Location",
-      "options": ["Delhi", "Mumbai", "Bangalore", "Chennai", "Hyderabad", "Kolkata", "Pune", "Ahmedabad", "Noida", "Gurugram"]
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "Bangalore",
+        "Chennai",
+        "Hyderabad",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Noida",
+        "Gurugram"
+      ]
     },
     {
       "label": "Treatment",
       "placeholder": "Select Treatment",
-      "options": ["Cardiology", "Orthopedics", "Neurology", "Oncology", "Urology", "Gynaecology"]
+      "options": [
+        "Cardiology",
+        "Orthopedics",
+        "Neurology",
+        "Oncology",
+        "Urology",
+        "Gynaecology"
+      ]
     },
     {
       "label": "Hospital",
       "placeholder": "Select Hospital",
       "options": [
         "Future Care Medical Center",
-        "Quantam Care Hospital", 
+        "Quantam Care Hospital",
         "City General Hospital",
         "Health Plus Clinic",
         "Aarogya Care Center",
@@ -30,7 +54,11 @@
     }
   ],
   "actions": [
-    { "label": "Explore Doctors", "variant": "secondary", "icon": "ArrowRightIcon", "href": "/partners" }
-   
+    {
+      "label": "Explore Doctors",
+      "variant": "secondary",
+      "icon": "ArrowRightIcon",
+      "href": "/partners"
+    }
   ]
-} 
+}

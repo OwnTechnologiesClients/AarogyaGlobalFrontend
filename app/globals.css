@@ -121,6 +121,26 @@
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
   }
+
+  /* Ensure only specific interactive elements have cursor pointer */
+  button,
+  a[href],
+  [role="button"],
+  [onclick],
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* Remove cursor pointer from cards and hover-only elements */
+  .hover-only {
+    cursor: default;
+  }
+
+  /* Specific cursor styles for disabled states */
+  button:disabled,
+  a[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
 }
 
 .outline-text {
@@ -210,6 +230,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }

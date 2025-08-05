@@ -79,9 +79,9 @@ const TopSpecialties = () => {
                 <h4 className="text-lg md:text-xl font-extrabold text-[#1A0142] w-full text-center mb-2">
                   {spec.label}
                 </h4>
-                <p className="text-sm md:text-base text-[#6B6B6B] mb-2 w-full text-center">
+                {/* <p className="text-sm md:text-base text-[#6B6B6B] mb-2 w-full text-center">
                   {spec.count} Listing{spec.count > 1 ? "s" : ""}
-                </p>
+                </p> */}
                 <p className="text-sm md:text-base text-[#04CE78] font-medium w-full text-center line-clamp-3 leading-relaxed">
                   {spec.description}
                 </p>

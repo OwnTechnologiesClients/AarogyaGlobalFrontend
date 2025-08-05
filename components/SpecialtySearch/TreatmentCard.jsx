@@ -47,7 +47,7 @@ const TreatmentCard = ({ treatment }) => {
                 <div className="flex justify-center">
                     <a
                         href={`/treatmentDetails/${treatment.id}`}
-                        className="w-full text-center text-indigo-600 flex items-center justify-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-3 transition-colors duration-200"
+                        className="w-full text-center text-indigo-600 flex items-center justify-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-3 transition-colors duration-200 cursor-pointer"
                     >
                         <span className="font-semibold">Learn More</span>
                         <ArrowRight className="w-4 h-4" />

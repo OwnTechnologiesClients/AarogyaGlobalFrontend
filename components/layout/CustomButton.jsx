@@ -18,8 +18,8 @@ const CustomButton = ({
     <button
       onClick={onClick}
       className={`
-        flex items-center justify-center gap-2 
-        font-medium transition-all duration-300
+        flex items-center justify-center gap-2
+        font-medium transition-all duration-300 cursor-pointer
         ${bgColor} ${textColor} ${rounded} ${padding} ${textSize} ${className}
         hover:${hoverBgColor} min-h-[44px] sm:min-h-[48px] md:min-h-[52px] lg:min-h-[56px]
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500

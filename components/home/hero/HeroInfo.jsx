@@ -15,7 +15,7 @@ const HeroInfo = () => {
       <h1 className="text-xl md:text-3xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 md:mb-6 leading-tight">
         {data.title}
       </h1>
-      <p className="text-sm md:text-lg lg:text-xl font-normal text-white/90 max-w-6xl mx-auto leading-relaxed mt-4 md:mt-6">
+      <p className="text-xs md:text-sm lg:text-base font-normal text-white/90 max-w-4xl mx-auto leading-relaxed mt-1 md:mt-1 select-none">
         {data.subtitle}
       </p>
     </section>

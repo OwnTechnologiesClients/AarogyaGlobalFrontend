@@ -19,7 +19,7 @@ const NavbarToFilterLayout = () => {
         </div>
       </div>
       {/* FilterBar positioned between sections with improved spacing */}
-      <div className="relative -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 xl:-mt-24 z-10 transition-all duration-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16 xl:-mt-20 z-40 transition-all duration-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <FilterBar />
       </div>
     </>

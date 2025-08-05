@@ -13,13 +13,9 @@ const HospitalSearch = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get all hospitals from all specialties and global hospitals
-    const allHospitals = [];
-    for (const specialty of Object.values(dataService.data.specialties)) {
-      allHospitals.push(...(specialty.hospitals || []));
-    }
-    allHospitals.push(...(dataService.data.globalHospitals || []));
-    setHospitals(allHospitals);
+    // Get all unique hospitals using the dataService method
+    const uniqueHospitals = dataService.getAllUniqueHospitals();
+    setHospitals(uniqueHospitals);
     setLoading(false);
   }, []);
 
@@ -44,7 +40,7 @@ const HospitalSearch = () => {
     // Apply category filter
     if (activeCategory !== "All") {
       result = result.filter((hospital) =>
-        hospital.specialties?.some(specialty => 
+        hospital.specialties?.some(specialty =>
           specialty.toLowerCase().includes(activeCategory.toLowerCase())
         )
       );
@@ -59,7 +55,7 @@ const HospitalSearch = () => {
 
     if (searchFilters.treatment) {
       result = result.filter((hospital) =>
-        hospital.treatments?.some(treatment => 
+        hospital.treatments?.some(treatment =>
           treatment.toLowerCase().includes(searchFilters.treatment.toLowerCase())
         )
       );
@@ -67,7 +63,7 @@ const HospitalSearch = () => {
 
     if (searchFilters.facility) {
       result = result.filter((hospital) =>
-        hospital.facilities?.some(facility => 
+        hospital.facilities?.some(facility =>
           facility.toLowerCase().includes(searchFilters.facility.toLowerCase())
         )
       );

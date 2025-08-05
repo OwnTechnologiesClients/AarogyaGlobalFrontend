@@ -17,7 +17,7 @@ const TopBar = () => {
         </span>
         <Link
           href="#"
-          className={`font-semibold hover:underline flex items-center gap-2 text-[14px] sm:text-[18px] ${isHomePage ? "text-[#0D6EFD]" : "text-white"}`}
+          className={`font-semibold hover:underline flex items-center gap-2 text-[14px] sm:text-[18px] cursor-pointer ${isHomePage ? "text-[#0D6EFD]" : "text-white"}`}
         >
           Doctor Led
           <ArrowRight className="w-5 h-5 font-bold" />

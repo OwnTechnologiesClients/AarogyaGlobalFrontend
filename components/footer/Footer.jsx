@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
@@ -18,6 +18,23 @@ const iconMap = {
 const Footer = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const [isScrollToTopVisible, setIsScrollToTopVisible] = useState(false);
+
+  // Set the scroll event listener to track scroll to top visibility
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 400) {
+        setIsScrollToTopVisible(true);
+      } else {
+        setIsScrollToTopVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
 
   return (
     <footer className="w-full bg-[#000D44] rounded-3xl text-white px-6 sm:px-10 md:px-20 py-10 md:py-40 md:mt-20 mt-8 relative">
@@ -129,7 +146,7 @@ const Footer = () => {
               <li key={idx}>
                 <Link
                   href={link.url}
-                  className="hover:underline text-[#E6E6F0] text-lg leading-[1.6]"
+                  className="hover:underline text-[#E6E6F0] text-lg leading-[1.6] cursor-pointer"
                 >
                   {link.label}
                 </Link>
@@ -200,7 +217,7 @@ const Footer = () => {
             </div>
             <a
               href={`tel:${footerData.contact.phone}`}
-              className="text-lg font-normal ml-7 text-[#18004b]"
+              className="text-lg font-normal ml-7 text-[#18004b] cursor-pointer"
             >
               {footerData.contact.phone}
             </a>
@@ -212,7 +229,8 @@ const Footer = () => {
         href="https://wa.me/919922345678"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed z-50 bottom-8 right-6 group bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1"
+        className={`fixed z-50 right-6 group bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] rounded-full p-3 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1 ${isScrollToTopVisible ? 'bottom-32' : 'bottom-6'
+          }`}
         style={{
           boxShadow: "0 8px 32px rgba(37,211,102,0.3)",
           backdropFilter: "blur(10px)",
@@ -220,7 +238,7 @@ const Footer = () => {
       >
         <div className="relative">
           <FaWhatsapp
-            size={32}
+            size={28}
             color="#fff"
             className="transition-transform duration-300 group-hover:scale-110"
           />

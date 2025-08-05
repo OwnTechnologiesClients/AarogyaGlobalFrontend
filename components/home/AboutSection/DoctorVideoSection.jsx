@@ -79,7 +79,7 @@ const VideoModal = ({
             className={iframeClass}
           ></iframe>
 
-          <button onClick={closeModal} className={closeButtonClass}>
+          <button onClick={closeModal} className={`${closeButtonClass} cursor-pointer`}>
             &times;
           </button>
         </div>

@@ -71,7 +71,7 @@ const Navbar = ({
           <div className="hidden lg:flex items-center gap-6 ml-auto">
             <Link
               href="/login"
-              className={`flex items-center gap-2 ${textColor} hover:text-[#04CE78] font-semibold transition-colors whitespace-nowrap`}
+              className={`flex items-center gap-2 ${textColor} hover:text-[#04CE78] font-semibold transition-colors whitespace-nowrap cursor-pointer`}
             >
               <UserCircle className="w-6 h-6" />
             </Link>
@@ -90,7 +90,7 @@ const Navbar = ({
         {/* Mobile Menu Button */}
         {isMobileView && (
           <button
-            className={`${textColor} ml-auto z-50 p-2`}
+            className={`${textColor} ml-auto z-50 p-2 cursor-pointer`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -133,7 +133,7 @@ const Navbar = ({
               <div className="space-y-4">
                 <Link
                   href="/login"
-                  className="flex items-center gap-3 py-3 text-[16px] font-medium text-gray-900 hover:text-[#04CE78] transition-colors"
+                  className="flex items-center gap-3 py-3 text-[16px] font-medium text-gray-900 hover:text-[#04CE78] transition-colors cursor-pointer"
                   onClick={closeMobileMenu}
                 >
                   <UserCircle className="w-5 h-5" />
@@ -141,7 +141,7 @@ const Navbar = ({
                 </Link>
                 <Link
                   href="/appointment"
-                  className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[15px] font-semibold px-6 py-4 rounded-lg shadow-md w-full flex items-center justify-center gap-2 transition-all"
+                  className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[15px] font-semibold px-6 py-4 rounded-lg shadow-md w-full flex items-center justify-center gap-2 transition-all cursor-pointer"
                   onClick={closeMobileMenu}
                 >
                   Make An Appointment <ArrowRightIcon className="w-4 h-4" />

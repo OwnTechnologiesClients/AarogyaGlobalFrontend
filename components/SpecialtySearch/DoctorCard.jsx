@@ -18,7 +18,7 @@ const DoctorCard = ({ doctor }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onClick={handleViewDetails}>
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
             <div className="md:w-1/3 relative">
                 <div className='h-full p-2 rounded-lg'>
                     <img
@@ -40,7 +40,7 @@ const DoctorCard = ({ doctor }) => {
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{doctor.name}</h3>
-                
+
                 <p className="text-blue-600 font-semibold text-md mb-2">
                     {doctor.specialty}
                 </p>
@@ -64,7 +64,7 @@ const DoctorCard = ({ doctor }) => {
                 <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                         {doctor.treatments?.slice(0, 3).map((treatment, index) => (
-                            <span 
+                            <span
                                 key={index}
                                 className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
                             >
@@ -82,11 +82,8 @@ const DoctorCard = ({ doctor }) => {
                         <span className="text-xs text-gray-500">Consultation Fee</span>
                     </div>
                     <button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            handleViewDetails();
-                        }}
-                        className="text-indigo-600 flex items-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-2"
+                        onClick={handleViewDetails}
+                        className="text-indigo-600 flex items-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-2 cursor-pointer"
                     >
                         <span className="font-semibold text-sm md:text-md">View Details</span>
                         <ArrowRight className="w-4 h-4" />
