@@ -13,141 +13,79 @@ const HospitalGallery = ({ hospital }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageErrors, setImageErrors] = useState({});
+  const [imageLoading, setImageLoading] = useState({});
 
   const categories = ["All", "Exterior", "Patient Rooms", "Operating Rooms", "Equipment", "Facilities", "Staff"];
 
+  // Create placeholder images with beautiful gradients and icons
+  const createPlaceholderImage = (id, title, category, description, colors) => ({
+    id,
+    url: null, // Will trigger placeholder
+    thumbnail: null, // Will trigger placeholder
+    title,
+    category,
+    description,
+    colors // For gradient backgrounds
+  });
+
   const galleryImages = [
     // Operating Rooms
-    {
-      id: 1,
-      url: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=300&h=200&fit=crop&q=80",
-      title: "Modern Operating Room",
-      category: "Operating Rooms",
-      description: "State-of-the-art surgical suite with advanced equipment and sterile environment"
-    },
-    {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=200&fit=crop&q=80",
-      title: "Surgical Suite",
-      category: "Operating Rooms",
-      description: "Advanced surgical theater with robotic assistance capabilities"
-    },
+    createPlaceholderImage(1, "Modern Operating Room", "Operating Rooms",
+      "State-of-the-art surgical suite with advanced equipment and sterile environment",
+      ["from-blue-400", "to-blue-600"]),
+    createPlaceholderImage(2, "Surgical Suite", "Operating Rooms",
+      "Advanced surgical theater with robotic assistance capabilities",
+      ["from-green-400", "to-green-600"]),
 
     // Patient Rooms
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop&q=80",
-      title: "Private Patient Room",
-      category: "Patient Rooms",
-      description: "Comfortable private patient room with modern amenities and family seating"
-    },
-    {
-      id: 4,
-      url: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=300&h=200&fit=crop&q=80",
-      title: "ICU Unit",
-      category: "Patient Rooms",
-      description: "Intensive Care Unit with advanced monitoring and life support equipment"
-    },
+    createPlaceholderImage(3, "Private Patient Room", "Patient Rooms",
+      "Comfortable private patient room with modern amenities and family seating",
+      ["from-purple-400", "to-purple-600"]),
+    createPlaceholderImage(4, "ICU Unit", "Patient Rooms",
+      "Intensive Care Unit with advanced monitoring and life support equipment",
+      ["from-red-400", "to-red-600"]),
 
     // Equipment
-    {
-      id: 5,
-      url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop&q=80",
-      title: "MRI Scanner",
-      category: "Equipment",
-      description: "Advanced 3 Tesla MRI machine for detailed diagnostic imaging"
-    },
-    {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300&h=200&fit=crop&q=80",
-      title: "CT Scanner",
-      category: "Equipment",
-      description: "128-slice CT scanner for rapid and accurate diagnosis"
-    },
-    {
-      id: 7,
-      url: "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=300&h=200&fit=crop&q=80",
-      title: "X-Ray Equipment",
-      category: "Equipment",
-      description: "Digital X-ray system with immediate image processing"
-    },
+    createPlaceholderImage(5, "MRI Scanner", "Equipment",
+      "Advanced 3 Tesla MRI machine for detailed diagnostic imaging",
+      ["from-indigo-400", "to-indigo-600"]),
+    createPlaceholderImage(6, "CT Scanner", "Equipment",
+      "128-slice CT scanner for rapid and accurate diagnosis",
+      ["from-cyan-400", "to-cyan-600"]),
+    createPlaceholderImage(7, "X-Ray Equipment", "Equipment",
+      "Digital X-ray system with immediate image processing",
+      ["from-teal-400", "to-teal-600"]),
 
     // Hospital Exterior
-    {
-      id: 8,
-      url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300&h=200&fit=crop&q=80",
-      title: "Hospital Exterior",
-      category: "Exterior",
-      description: "Modern hospital building with contemporary architecture and landscaping"
-    },
-    {
-      id: 9,
-      url: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=300&h=200&fit=crop&q=80",
-      title: "Hospital Campus",
-      category: "Exterior",
-      description: "Expansive medical campus with multiple specialized buildings"
-    },
+    createPlaceholderImage(8, "Hospital Exterior", "Exterior",
+      "Modern hospital building with contemporary architecture and landscaping",
+      ["from-orange-400", "to-orange-600"]),
+    createPlaceholderImage(9, "Hospital Campus", "Exterior",
+      "Expansive medical campus with multiple specialized buildings",
+      ["from-yellow-400", "to-yellow-600"]),
 
     // Facilities
-    {
-      id: 10,
-      url: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=300&h=200&fit=crop&q=80",
-      title: "Hospital Lobby",
-      category: "Facilities",
-      description: "Welcoming reception area with modern design and comfortable seating"
-    },
-    {
-      id: 11,
-      url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop&q=80",
-      title: "Hospital Corridor",
-      category: "Facilities",
-      description: "Clean, well-lit corridors with easy navigation and accessibility"
-    },
-    {
-      id: 12,
-      url: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=300&h=200&fit=crop&q=80",
-      title: "Cafeteria",
-      category: "Facilities",
-      description: "Modern cafeteria serving healthy meals for patients and visitors"
-    },
+    createPlaceholderImage(10, "Hospital Lobby", "Facilities",
+      "Welcoming reception area with modern design and comfortable seating",
+      ["from-pink-400", "to-pink-600"]),
+    createPlaceholderImage(11, "Hospital Corridor", "Facilities",
+      "Clean, well-lit corridors with easy navigation and accessibility",
+      ["from-rose-400", "to-rose-600"]),
+    createPlaceholderImage(12, "Cafeteria", "Facilities",
+      "Modern cafeteria serving healthy meals for patients and visitors",
+      ["from-emerald-400", "to-emerald-600"]),
 
     // Medical Staff
-    {
-      id: 13,
-      url: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=200&fit=crop&q=80",
-      title: "Medical Team",
-      category: "Staff",
-      description: "Our dedicated team of medical professionals and specialists"
-    },
-    {
-      id: 14,
-      url: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=200&fit=crop&q=80",
-      title: "Surgeon Team",
-      category: "Staff",
-      description: "Experienced surgical team preparing for complex procedures"
-    },
-    {
-      id: 15,
-      url: "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=800&h=600&fit=crop&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=300&h=200&fit=crop&q=80",
-      title: "Nursing Staff",
-      category: "Staff",
-      description: "Compassionate nursing staff providing excellent patient care"
-    }
+    createPlaceholderImage(13, "Medical Team", "Staff",
+      "Our dedicated team of medical professionals and specialists",
+      ["from-violet-400", "to-violet-600"]),
+    createPlaceholderImage(14, "Surgeon Team", "Staff",
+      "Experienced surgical team preparing for complex procedures",
+      ["from-sky-400", "to-sky-600"]),
+    createPlaceholderImage(15, "Nursing Staff", "Staff",
+      "Compassionate nursing staff providing excellent patient care",
+      ["from-lime-400", "to-lime-600"])
   ];
 
   const filteredImages = selectedCategory === "All"
@@ -173,6 +111,18 @@ const HospitalGallery = ({ hospital }) => {
     const prevIndex = currentImageIndex === 0 ? filteredImages.length - 1 : currentImageIndex - 1;
     setCurrentImageIndex(prevIndex);
     setSelectedImage(filteredImages[prevIndex]);
+  };
+
+  const handleImageError = (imageId) => {
+    setImageErrors(prev => ({ ...prev, [imageId]: true }));
+  };
+
+  const handleImageLoad = (imageId) => {
+    setImageLoading(prev => ({ ...prev, [imageId]: false }));
+  };
+
+  const handleImageLoadStart = (imageId) => {
+    setImageLoading(prev => ({ ...prev, [imageId]: true }));
   };
 
   return (
@@ -214,11 +164,15 @@ const HospitalGallery = ({ hospital }) => {
             onClick={() => openLightbox(image, index)}
           >
             <div className="relative h-64 overflow-hidden">
-              <img
-                src={image.thumbnail}
-                alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              />
+              <div className={`w-full h-full flex items-center justify-center bg-gradient-to-br ${image.colors[0]} ${image.colors[1]} group-hover:scale-110 transition-transform duration-300`}>
+                <div className="text-center text-white">
+                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <ZoomIn className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="font-bold text-sm mb-1">{image.title}</p>
+                  <p className="text-xs opacity-90">Medical Facility</p>
+                </div>
+              </div>
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
@@ -267,11 +221,15 @@ const HospitalGallery = ({ hospital }) => {
             </button>
 
             {/* Image */}
-            <img
-              src={selectedImage.url}
-              alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain rounded-lg"
-            />
+            <div className={`w-full max-w-4xl h-96 flex items-center justify-center bg-gradient-to-br ${selectedImage.colors[0]} ${selectedImage.colors[1]} rounded-lg`}>
+              <div className="text-center text-white">
+                <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ZoomIn className="w-16 h-16 text-white" />
+                </div>
+                <p className="font-bold text-3xl mb-2">{selectedImage.title}</p>
+                <p className="text-xl opacity-90">Medical Facility</p>
+              </div>
+            </div>
 
             {/* Image Info */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 text-white">
