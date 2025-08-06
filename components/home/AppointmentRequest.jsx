@@ -26,21 +26,21 @@ const AppointmentRequest = () => {
             textColor="#1F5FFF"
             dotColor="#1F5FFF"
             alignment="left"
-            className=" text-lg "
+            className="text-base"
           />
-          <h2 className="text-xl md:text-3xl font-extrabold text-[#1A0142]">
+          <h2 className="text-xl md:text-3xl font-extrabold text-[#1A0142] leading-tight">
             Request Your Appointment
           </h2>
-          <p className="text-blue-950 text-lg leading-relaxed">
+          <p className="text-blue-950 text-sm md:text-base leading-relaxed">
             Our medical center we are committed to delivering exceptional healthcare
             services tailored to meet the needs of every patient and staffed by highly
             skilled
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
-            <CustomButton text="  Make An Appointment" className="cursor-pointer" />
-            <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline">
-              <span className="w-12 h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
-                <PlayIcon className="fill-white" />
+            <CustomButton text="Make An Appointment" className="cursor-pointer text-sm md:text-base" />
+            <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline text-sm md:text-base">
+              <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
+                <PlayIcon className="fill-white w-4 h-4 md:w-5 md:h-5" />
               </span>
               How It Works
             </button>
