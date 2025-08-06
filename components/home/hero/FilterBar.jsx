@@ -66,21 +66,12 @@ const FilterBar = () => {
 
       setValidationError("");
 
-      // Find hospital ID by name using dataService
-      const allHospitals = [];
-      for (const specialty of Object.values(dataService.data.specialties)) {
-        allHospitals.push(...(specialty.hospitals || []));
-      }
-      allHospitals.push(...(dataService.data.globalHospitals || []));
+      // Navigate to hospital search page with filters
+      const searchParams = new URLSearchParams();
+      searchParams.append('location', location);
+      searchParams.append('hospital', hospital);
 
-      const hospitalData = allHospitals.find(h => h.name === hospital);
-
-      if (hospitalData) {
-        // Navigate to hospital details page
-        router.push(`/hospitalDetails/${hospitalData.id}?location=${encodeURIComponent(location)}`);
-      } else {
-        setValidationError("Selected hospital not found");
-      }
+      router.push(`/hospitalSearch?${searchParams.toString()}`);
     }
   };
 

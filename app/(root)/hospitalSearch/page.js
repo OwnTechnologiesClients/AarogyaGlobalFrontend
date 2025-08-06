@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import PageHeader from "@/components/layout/PageHeader";
 import SearchForm from "@/components/HospitalSearch/SearchForm";
@@ -9,6 +10,7 @@ import dataService from '@/lib/dataService';
 
 const HospitalSearch = () => {
   const { title, routes } = getPageHeaderData('/hospitalSearch');
+  const searchParams = useSearchParams();
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,10 +22,10 @@ const HospitalSearch = () => {
   }, []);
 
   const [searchFilters, setSearchFilters] = useState({
-    name: "",
+    name: searchParams.get('hospital') || "",
     treatment: "",
     facility: "",
-    location: "",
+    location: searchParams.get('location') || "",
   });
 
   const [activeCategory, setActiveCategory] = useState("");
@@ -33,6 +35,13 @@ const HospitalSearch = () => {
   useEffect(() => {
     setFilteredData(hospitals);
   }, [hospitals]);
+
+  // Auto-apply filters when URL parameters exist and hospitals are loaded
+  useEffect(() => {
+    if (hospitals.length > 0 && (searchParams.get('hospital') || searchParams.get('location'))) {
+      applyFilters();
+    }
+  }, [hospitals, searchParams]);
 
   const applyFilters = () => {
     let result = [...hospitals];

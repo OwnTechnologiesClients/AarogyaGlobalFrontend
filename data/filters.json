@@ -14,16 +14,16 @@
       "label": "Location",
       "placeholder": "Select Location",
       "options": [
-        "Delhi",
-        "Mumbai",
-        "Bangalore",
-        "Chennai",
-        "Hyderabad",
-        "Kolkata",
-        "Pune",
-        "Ahmedabad",
-        "Noida",
-        "Gurugram"
+        "Boston, Massachusetts, USA",
+        "Cleveland, Ohio, USA",
+        "Rochester, Minnesota, USA",
+        "Baltimore, Maryland, USA",
+        "Stanford, California, USA",
+        "Los Angeles, California, USA",
+        "San Francisco, California, USA",
+        "New York, USA",
+        "Houston, Texas, USA",
+        "Chicago, Illinois, USA"
       ]
     },
     {
@@ -42,14 +42,14 @@
       "label": "Hospital",
       "placeholder": "Select Hospital",
       "options": [
-        "Future Care Medical Center",
-        "Quantam Care Hospital",
-        "City General Hospital",
-        "Health Plus Clinic",
-        "Aarogya Care Center",
-        "Hope Medical Institute",
-        "Wellness Hospital Group",
-        "Grand Medical Center"
+        "Cleveland Clinic",
+        "Mayo Clinic",
+        "Johns Hopkins Hospital",
+        "Massachusetts General Hospital",
+        "Stanford Health Care",
+        "UCSF Medical Center",
+        "Cedars-Sinai Medical Center",
+        "MD Anderson Cancer Center"
       ]
     }
   ],
