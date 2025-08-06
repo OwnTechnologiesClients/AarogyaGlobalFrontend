@@ -77,9 +77,9 @@ const DoctorCard = ({ doctor }) => {
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col">
                         <span className="text-lg font-bold text-green-600">
-                            {doctor.consultationFee}
+                            {doctor.surgeries || doctor.surgeriesCount || '500+'}
                         </span>
-                        <span className="text-xs text-gray-500">Consultation Fee</span>
+                        <span className="text-xs text-gray-500">Surgeries</span>
                     </div>
                     <button
                         onClick={handleViewDetails}

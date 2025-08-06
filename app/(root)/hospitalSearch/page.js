@@ -26,7 +26,7 @@ const HospitalSearch = () => {
     location: "",
   });
 
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("");
 
   const [filterHosData, setFilteredData] = useState(hospitals);
 
@@ -38,7 +38,7 @@ const HospitalSearch = () => {
     let result = [...hospitals];
 
     // Apply category filter
-    if (activeCategory !== "All") {
+    if (activeCategory && activeCategory !== "") {
       result = result.filter((hospital) =>
         hospital.specialties?.some(specialty =>
           specialty.toLowerCase().includes(activeCategory.toLowerCase())
@@ -86,17 +86,27 @@ const HospitalSearch = () => {
       facility: "",
       location: "",
     });
-    setActiveCategory("All");
+    setActiveCategory("");
     setFilteredData(hospitals);
   };
 
   // Get filters from the first specialty (assuming they're similar across specialties)
   const getFilters = () => {
     const firstSpecialty = Object.values(dataService.data.specialties)[0];
-    return firstSpecialty?.filters || {
+    const defaultFilters = firstSpecialty?.filters || {
       categories: ["All", "Cardiology", "Neurology", "Orthopedics", "Pediatrics"],
       facilities: ["ICU", "Emergency", "Pharmacy", "Laboratory"],
       treatments: ["General Medicine", "Surgery", "Cardiology", "Neurology"]
+    };
+
+    // Filter out unwanted categories
+    const filteredCategories = defaultFilters.categories.filter(cat =>
+      !["All", "Doctors", "Hospitals", "Treatments"].includes(cat)
+    );
+
+    return {
+      ...defaultFilters,
+      categories: filteredCategories
     };
   };
 

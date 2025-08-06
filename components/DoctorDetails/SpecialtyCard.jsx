@@ -5,7 +5,7 @@ const SpecialtyCard = ({ doctor }) => {
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6 w-full flex flex-col gap-6">
-        <h2 className=" text-[#000D44] text-xl font-bold">Specialty</h2>
+      <h2 className=" text-[#000D44] text-xl font-bold">Specialty</h2>
       {/* Role + Hospital */}
       <div className="text-center">
         <p className="text-sm text-gray-700">
@@ -24,13 +24,13 @@ const SpecialtyCard = ({ doctor }) => {
         <span className="text-gray-600 text-sm font-medium ml-1">{doctor.rating}</span>
       </div>
 
-      {/* Consultation Fee */}
+
       <div className="bg-gray-50 rounded-md px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Syringe className="w-5 h-5 text-teal-600" />
-          <span className="text-sm text-gray-700 font-medium">Consultation Fee</span>
+          <span className="text-sm text-gray-700 font-medium">Surgeries</span>
         </div>
-        <span className="text-lg font-semibold text-gray-900">{doctor.consultationFee}</span>
+        <span className="text-lg font-semibold text-gray-900">{doctor.surgeries || doctor.surgeriesCount || '500+'}</span>
       </div>
 
       {/* Experience */}
