@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const OnlineConsultationBanner = () => {
   return (
-    <div className="w-full py-20 bg-white  overflow-hidden">
+    <div className="w-full py-10 bg-white overflow-hidden">
       <Marquee
         speed={60}
         gradient={false}
@@ -13,13 +13,13 @@ const OnlineConsultationBanner = () => {
         direction="left"
         className="overflow-hidden"
       >
-        <div className="flex items-center gap-6 sm:gap-12 px-4">
+        <div className="flex items-center gap-4 sm:gap-6 px-4">
           {/* Repeat pattern for smooth scroll */}
           {Array(6)
             .fill(null)
             .map((_, index) => (
               <React.Fragment key={index}>
-                <div className="relative w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20">
+                <div className="relative w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12">
                   <Image
                     src="/contact/heart-shape.svg"
                     alt="heart"
@@ -27,12 +27,10 @@ const OnlineConsultationBanner = () => {
                     className="object-contain"
                   />
                 </div>
-
-                <span className="text-4xl sm:text-[80px] lg:text-[110px] font-poppins outline-text whitespace-nowrap">
+                <span className="text-2xl sm:text-4xl lg:text-5xl font-poppins outline-text whitespace-nowrap">
                   Online Consultation
                 </span>
-
-                <div className="relative w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20">
+                <div className="relative w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 mx-6">
                   <Image
                     src="/contact/heart-shape.svg"
                     alt="heart"
@@ -40,9 +38,30 @@ const OnlineConsultationBanner = () => {
                     className="object-contain"
                   />
                 </div>
-
-                <span className="text-4xl sm:text-[80px] lg:text-[110px] font-poppins outline-text whitespace-nowrap">
-                  Visits
+                <span className="text-2xl sm:text-4xl lg:text-5xl font-poppins outline-text whitespace-nowrap">
+                  Teleconsultations
+                </span>
+                <div className="relative w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 mx-6">
+                  <Image
+                    src="/contact/heart-shape.svg"
+                    alt="heart"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-2xl sm:text-4xl lg:text-5xl font-poppins outline-text whitespace-nowrap">
+                  Virtual Medical Visits
+                </span>
+                <div className="relative w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 mx-6">
+                  <Image
+                    src="/contact/heart-shape.svg"
+                    alt="heart"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-2xl sm:text-4xl lg:text-5xl font-poppins outline-text whitespace-nowrap">
+                  Remote Healthcare
                 </span>
               </React.Fragment>
             ))}

@@ -48,10 +48,10 @@ const Footer = () => {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm md:text-base text-[#000D44]">
+                  <p className="text-xs md:text-sm text-[#000D44]">
                     Emergency Line
                   </p>
-                  <p className="text-[#000D44] text-base md:text-lg font-semibold">
+                  <p className="text-[#000D44] text-sm md:text-base font-semibold">
                     +91 9876543212
                   </p>
                 </div>
@@ -68,10 +68,10 @@ const Footer = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm md:text-base text-[#000D44]">
+                  <p className="text-xs md:text-sm text-[#000D44]">
                     Support Email
                   </p>
-                  <p className="text-[#000D44] text-base md:text-lg font-semibold break-all">
+                  <p className="text-[#000D44] text-sm md:text-base font-semibold break-all">
                     aarogyaglobalforyou@gmail.com
                   </p>
                 </div>
@@ -88,10 +88,10 @@ const Footer = () => {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm md:text-base text-[#000D44]">
+                  <p className="text-xs md:text-sm text-[#000D44]">
                     Visit Us On
                   </p>
-                  <p className="text-[#000D44] text-base md:text-lg font-semibold">
+                  <p className="text-[#000D44] text-sm md:text-base font-semibold">
                     Innov8 Orchid Center India, 122001
                   </p>
                 </div>

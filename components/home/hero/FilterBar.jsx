@@ -87,10 +87,10 @@ const FilterBar = () => {
   return (
     <div className="w-full flex justify-center relative z-50 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 mb-2 sm:mb-3 md:mb-4 lg:mb-5">
       {/* Main Filter Container */}
-      <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-100 w-full max-w-[1400px] relative z-50 shadow-lg">
+      <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 w-full max-w-[1400px] relative z-50 shadow-2xl backdrop-blur-sm">
         {/* Toggle Buttons - Enhanced responsive positioning */}
         <div className="absolute -top-6 sm:-top-8 md:-top-10 lg:-top-12 xl:-top-14 left-1/2 transform -translate-x-1/2 z-[60] w-full max-w-fit px-2 sm:px-3 md:px-4">
-          <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 bg-white rounded-lg md:rounded-xl p-1.5 sm:p-2 md:p-3 lg:p-4 xl:p-5 justify-center border border-gray-100 shadow-md">
+          <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 bg-white rounded-lg md:rounded-xl p-1.5 sm:p-2 md:p-3 lg:p-4 xl:p-5 justify-center border border-gray-200 shadow-lg backdrop-blur-sm">
             {filters.toggles.map((toggle) => (
               <button
                 key={toggle.value}
@@ -116,11 +116,11 @@ const FilterBar = () => {
         </div>
 
         {/* Filter Content */}
-        <div className="pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-14 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        <div className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-14 pb-4 sm:pb-6 md:pb-8 lg:pb-10 xl:pb-12 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10">
           {/* Filter Row - Location, Treatment, and Explore Button */}
-          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-4">
             {/* Location and Treatment Dropdowns */}
-            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 w-full lg:flex-1">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full lg:flex-1">
               {getActiveFilters().map((filter) => (
                 <div key={filter.label} className="flex-1 min-w-0">
                   <DropdownSelect
@@ -141,7 +141,7 @@ const FilterBar = () => {
             <div className="flex-shrink-0">
               <CustomButton
                 onClick={handleExploreClick}
-                className="bg-[#04CE78] hover:bg-green-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg font-semibold text-base lg:text-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
+                className="bg-[#04CE78] hover:bg-green-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg font-semibold text-sm lg:text-base transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
               >
                 {activeToggle === "treatment" ? "Explore Treatment" : "Explore Hospital"}
                 <ArrowRightIcon className="w-4 h-4 lg:w-5 lg:h-5" />

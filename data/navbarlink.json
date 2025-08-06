@@ -130,7 +130,6 @@
         ]
       }
     },
-
     {
       "label": "About",
       "href": "/about",
@@ -164,7 +163,7 @@
       }
     },
     {
-      "label": "Collaborate",
+      "label": "Partner With Us",
       "href": "/partner/partnerWithUs",
       "pageHeader": {
         "title": "Partner With Us",

@@ -265,10 +265,10 @@ const FeaturedHospitals = () => {
       <div className="w-full flex justify-center items-center mt-8">
         <button
           onClick={() => router.push('/hospitalSearch')}
-          className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-xl rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
         >
           View All Hospitals
-          <ArrowRight size={24} strokeWidth={2.5} />
+          <ArrowRight size={18} strokeWidth={2} />
         </button>
       </div>
     </section>

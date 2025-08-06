@@ -101,13 +101,13 @@ const PartnerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
@@ -139,10 +139,10 @@ const PartnerForm = () => {
               Application Submitted Successfully!
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Thank you for your interest in partnering with Aarogya Global. Our team will review 
+              Thank you for your interest in partnering with Aarogya Global. Our team will review
               your application and contact you within 2-3 business days.
             </p>
-            <button 
+            <button
               onClick={() => setIsSubmitted(false)}
               className="bg-[#04CE78] hover:bg-[#03B868] text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
             >
@@ -162,7 +162,7 @@ const PartnerForm = () => {
             Apply for Partnership
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Fill out the form below to start your partnership journey with Aarogya Global. 
+            Fill out the form below to start your partnership journey with Aarogya Global.
             Our team will review your application and get back to you within 2-3 business days.
           </p>
         </div>
@@ -170,7 +170,7 @@ const PartnerForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl p-8 shadow-lg h-fit">
+            <div className="bg-white rounded-2xl p-10 shadow-lg h-fit">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Get in Touch
               </h3>
@@ -179,9 +179,9 @@ const PartnerForm = () => {
                   <div className="bg-[#04CE78] rounded-full p-3">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">partnership@aarogyaglobal.com</p>
+                    <p className="text-gray-600 break-all text-sm leading-relaxed">partnership@aarogyaglobal.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -223,9 +223,8 @@ const PartnerForm = () => {
                       name="organizationName"
                       value={formData.organizationName}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
-                        errors.organizationName ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${errors.organizationName ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter organization name"
                     />
                     {errors.organizationName && (
@@ -242,9 +241,8 @@ const PartnerForm = () => {
                       name="contactPerson"
                       value={formData.contactPerson}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
-                        errors.contactPerson ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${errors.contactPerson ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter contact person name"
                     />
                     {errors.contactPerson && (
@@ -261,9 +259,8 @@ const PartnerForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter email address"
                     />
                     {errors.email && (
@@ -280,9 +277,8 @@ const PartnerForm = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
-                        errors.phone ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter phone number"
                     />
                     {errors.phone && (
@@ -299,11 +295,10 @@ const PartnerForm = () => {
                     {organizationTypes.map((type) => (
                       <label
                         key={type.value}
-                        className={`flex items-center space-x-3 p-4 border rounded-lg cursor-pointer transition-colors ${
-                          formData.organizationType === type.value
-                            ? 'border-[#04CE78] bg-[#04CE78]/10'
-                            : 'border-gray-300 hover:border-[#04CE78]'
-                        }`}
+                        className={`flex items-center space-x-3 p-4 border rounded-lg cursor-pointer transition-colors ${formData.organizationType === type.value
+                          ? 'border-[#04CE78] bg-[#04CE78]/10'
+                          : 'border-gray-300 hover:border-[#04CE78]'
+                          }`}
                       >
                         <input
                           type="radio"
@@ -354,9 +349,8 @@ const PartnerForm = () => {
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
-                      errors.location ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${errors.location ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="Enter city and state"
                   />
                   {errors.location && (
