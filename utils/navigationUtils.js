@@ -8,14 +8,14 @@ import navbarData from "@/data/navbarlink.json";
 export const getPageHeaderData = (path) => {
   // Remove leading slash and convert to lowercase for comparison
   const cleanPath = path.replace(/^\//, '').toLowerCase();
-  
+
   // First, check navigation items
   for (const navItem of navbarData.navigation) {
     // Check main navigation item
     if (navItem.href && navItem.href.replace(/^\//, '').toLowerCase() === cleanPath) {
       return navItem.pageHeader;
     }
-    
+
     // Check dropdown items
     if (navItem.dropdown) {
       for (const dropdownItem of navItem.dropdown) {
@@ -25,14 +25,14 @@ export const getPageHeaderData = (path) => {
       }
     }
   }
-  
+
   // Check additional pages
   for (const [key, pageData] of Object.entries(navbarData.additionalPages)) {
     if (key.toLowerCase() === cleanPath) {
       return pageData;
     }
   }
-  
+
   // Return default if not found
   return {
     title: "Page Not Found",
@@ -63,17 +63,17 @@ export const getPageHeaderDataByKey = (key) => {
     'appointment': 'appointment',
     'login': 'login'
   };
-  
+
   const mappedPath = keyMapping[key];
   if (!mappedPath) {
     return getPageHeaderData('');
   }
-  
+
   // If it's an additional page (no leading slash), get from additionalPages
   if (!mappedPath.startsWith('/')) {
     return navbarData.additionalPages[mappedPath] || getPageHeaderData('');
   }
-  
+
   return getPageHeaderData(mappedPath);
 };
 

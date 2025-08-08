@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  Home, 
-  ArrowLeft, 
-  Phone, 
-  Mail, 
+import {
+  Home,
+  ArrowLeft,
+  Phone,
+  Mail,
   MapPin,
   Heart,
   Activity,
@@ -48,7 +48,7 @@ const NotFound = () => {
 
         {/* Main Content */}
         <div className={`relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          
+
           {/* 404 Number with Medical Cross */}
           <div className="relative mb-8">
             <div className="text-8xl md:text-9xl font-bold text-[#000D44] opacity-20 select-none">
@@ -80,22 +80,22 @@ const NotFound = () => {
           <p className="text-lg md:text-xl text-gray-600 mb-2 animate-fade-in-up animation-delay-200">
             Oops! The page you're looking for seems to have taken a sick day.
           </p>
-          
+
           <p className="text-base md:text-lg text-gray-500 mb-8 animate-fade-in-up animation-delay-400">
             Don't worry, our medical team is here to help you find what you need.
           </p>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animation-delay-600">
-            <Link 
+            <Link
               href="/"
               className="group bg-[#04CE78] hover:bg-[#03b86a] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Home className="w-5 h-5 group-hover:scale-110 transition-transform" />
               Back to Home
             </Link>
-            
-            <Link 
+
+            <Link
               href="/hospitalSearch"
               className="group bg-white hover:bg-gray-50 text-[#000D44] border-2 border-[#000D44] px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
@@ -109,9 +109,9 @@ const NotFound = () => {
             <h3 className="text-xl font-semibold text-[#000D44] mb-6">
               Quick Links to Help You
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link 
+              <Link
                 href="/about"
                 className="group p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1"
               >
@@ -122,8 +122,8 @@ const NotFound = () => {
                   Learn about our mission
                 </div>
               </Link>
-              
-              <Link 
+
+              <Link
                 href="/contact"
                 className="group p-4 rounded-xl bg-green-50 hover:bg-green-100 transition-all duration-300 transform hover:-translate-y-1"
               >
@@ -134,8 +134,8 @@ const NotFound = () => {
                   Get in touch with us
                 </div>
               </Link>
-              
-              <Link 
+
+              <Link
                 href="/doctorDetails"
                 className="group p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-all duration-300 transform hover:-translate-y-1"
               >

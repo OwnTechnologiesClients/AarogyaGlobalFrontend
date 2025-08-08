@@ -50,7 +50,7 @@ const HospitalImageGallery = ({ hospital }) => {
               alt={hospitalImages[selectedImage].alt}
               className="w-full h-[400px] lg:h-[500px] object-cover"
             />
-            
+
             {/* Rating Badge */}
             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">
               <Star className="w-5 h-5 text-yellow-500 fill-current" />
@@ -71,11 +71,10 @@ const HospitalImageGallery = ({ hospital }) => {
             {hospitalImages.slice(1, 7).map((image, index) => (
               <div
                 key={image.id}
-                className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ${
-                  selectedImage === index + 1 
-                    ? 'ring-4 ring-[#04CE78] shadow-lg' 
+                className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ${selectedImage === index + 1
+                    ? 'ring-4 ring-[#04CE78] shadow-lg'
                     : 'hover:shadow-md hover:scale-105'
-                }`}
+                  }`}
                 onClick={() => setSelectedImage(index + 1)}
               >
                 <img
@@ -83,7 +82,7 @@ const HospitalImageGallery = ({ hospital }) => {
                   alt={image.alt}
                   className="w-full h-[120px] lg:h-[160px] object-cover"
                 />
-                
+
                 {/* Show number badge on last image if there are more */}
                 {index === 5 && hospitalImages.length > 6 && (
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

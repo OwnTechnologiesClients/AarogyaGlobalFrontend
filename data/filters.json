@@ -14,16 +14,16 @@
       "label": "Location",
       "placeholder": "Select Location",
       "options": [
-        "Boston, Massachusetts, USA",
-        "Cleveland, Ohio, USA",
-        "Rochester, Minnesota, USA",
-        "Baltimore, Maryland, USA",
-        "Stanford, California, USA",
-        "Los Angeles, California, USA",
-        "San Francisco, California, USA",
-        "New York, USA",
-        "Houston, Texas, USA",
-        "Chicago, Illinois, USA"
+        "Delhi, India",
+        "Mumbai, India",
+        "Bangalore, India",
+        "Chennai, India",
+        "Hyderabad, India",
+        "Pune, India",
+        "Kolkata, India",
+        "Ahmedabad, India",
+        "Noida, India",
+        "Gurugram, India"
       ]
     },
     {
@@ -42,14 +42,14 @@
       "label": "Hospital",
       "placeholder": "Select Hospital",
       "options": [
-        "Cleveland Clinic",
-        "Mayo Clinic",
-        "Johns Hopkins Hospital",
-        "Massachusetts General Hospital",
-        "Stanford Health Care",
-        "UCSF Medical Center",
-        "Cedars-Sinai Medical Center",
-        "MD Anderson Cancer Center"
+        "Apollo Hospital Chennai",
+        "Fortis Hospital Delhi",
+        "Kokilaben Hospital",
+        "Manipal Hospital",
+        "AIIMS Delhi",
+        "Max Super Speciality Hospital",
+        "Medanta - The Medicity",
+        "Fortis Hospital Mumbai"
       ]
     }
   ],
