@@ -40,13 +40,13 @@ const TreatmentCard = ({ treatment }) => {
                     <div className="flex items-center text-gray-600 text-sm">
                         <DollarSign className="w-4 h-4 mr-2 text-orange-500" />
                         <span className="font-medium mr-2">Cost Range:</span>
-                        <span className="text-green-600 font-semibold">{treatment.cost}</span>
+                        <span className="text-green-600 font-semibold">{treatment.price}</span>
                     </div>
                 </div>
 
                 <div className="flex justify-center">
                     <a
-                        href={`/treatmentDetails/${treatment.id}`}
+                        href={`/treatmentDetails/${encodeURIComponent(treatment.id)}`}
                         className="w-full text-center text-indigo-600 flex items-center justify-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-3 transition-colors duration-200 cursor-pointer"
                     >
                         <span className="font-semibold">Learn More</span>

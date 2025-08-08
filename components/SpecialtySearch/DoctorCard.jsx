@@ -61,25 +61,29 @@ const DoctorCard = ({ doctor }) => {
                 </p>
 
                 {/* Treatments */}
-                <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                        {doctor.treatments?.slice(0, 3).map((treatment, index) => (
-                            <span
-                                key={index}
-                                className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
-                            >
-                                {treatment}
-                            </span>
-                        ))}
+                {doctor.treatments && doctor.treatments.length > 0 && (
+                    <div className="mb-4">
+                        <div className="flex flex-wrap gap-2">
+                            {doctor.treatments.slice(0, 3).map((treatment, index) => (
+                                <span
+                                    key={index}
+                                    className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+                                >
+                                    {treatment}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
 
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col">
                         <span className="text-lg font-bold text-green-600">
-                            {doctor.surgeries || doctor.surgeriesCount || '500+'}
+                            {doctor.patientsTreated || doctor.surgeries || doctor.surgeriesCount || '500+'}
                         </span>
-                        <span className="text-xs text-gray-500">Surgeries</span>
+                        <span className="text-xs text-gray-500">
+                            {doctor.patientsTreated ? 'Patients Treated' : 'Surgeries'}
+                        </span>
                     </div>
                     <button
                         onClick={handleViewDetails}

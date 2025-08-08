@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import unifiedData from "@/data/unifiedData.json";
 import WelcomeBanner from "../layout/WelcomeBanner";
-import Link from "next/link";
 
 const FeaturedHospitals = () => {
   const swiperRef = React.useRef(null);
@@ -168,9 +167,9 @@ const FeaturedHospitals = () => {
                         <span className="font-medium mr-2">Patients:</span>
                         <span>{hospital.patientsPerYear || 'N/A'}</span>
                       </div>
-                      <div className="text-green-600 font-semibold">
+                      {/* <div className="text-green-600 font-semibold">
                         {hospital.successRate || 'N/A'} Success Rate
-                      </div>
+                      </div> */}
                     </div>
 
                     {hospital.specialties && hospital.specialties.length > 0 && (

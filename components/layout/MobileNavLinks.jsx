@@ -9,7 +9,6 @@ const MobileNavLinks = () => {
     setOpenDropdowns((prev) => ({ ...prev, [label]: !prev[label] }));
 
   const closeMobileMenu = () => {
-    setMobileOpen(false);
     setOpenDropdowns({});
   };
   return (

@@ -67,13 +67,20 @@ const Testimonials = () => {
             <SwiperSlide key={idx} className="!flex !justify-center">
               <div className="w-full  border border-black rounded-3xl px-6 py-6 shadow-md flex flex-col md:flex-row gap-6 bg-white">
 
-                <div className="relative w-full md:w-60 h-55">
-                  <Image
-                    src={t.image}
-                    alt={t.name}
-                    fill
-                    className="rounded-xl object-cover"
-                  />
+                <div className="relative w-full md:w-60 h-55 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl flex items-center justify-center border border-blue-200">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
+                      <span className="text-2xl font-bold text-white">
+                        {t.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div className="text-sm text-gray-700 font-semibold">
+                      {t.name}
+                    </div>
+                    <div className="text-xs text-gray-500 mt-1">
+                      {t.role}
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-col justify-between flex-1">
                   <div>

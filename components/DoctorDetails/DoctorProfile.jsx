@@ -239,7 +239,7 @@ const DoctorProfile = ({ doctor }) => {
             </div>
 
             {/* Contact Info */}
-            <div className="mt-4 space-y-2">
+            {/* <div className="mt-4 space-y-2">
               <div className="flex items-center justify-center gap-2 text-sm">
                 <Phone className="w-4 h-4 text-gray-500" />
                 <span>{doctor.contact?.phone}</span>
@@ -248,7 +248,7 @@ const DoctorProfile = ({ doctor }) => {
                 <Mail className="w-4 h-4 text-gray-500" />
                 <span>{doctor.contact?.email}</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

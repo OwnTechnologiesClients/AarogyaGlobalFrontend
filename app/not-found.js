@@ -78,11 +78,11 @@ const NotFound = () => {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-gray-600 mb-2 animate-fade-in-up animation-delay-200">
-            Oops! The page you're looking for seems to have taken a sick day.
+            Oops! The page you&apos;re looking for seems to have taken a sick day.
           </p>
 
           <p className="text-base md:text-lg text-gray-500 mb-8 animate-fade-in-up animation-delay-400">
-            Don't worry, our medical team is here to help you find what you need.
+            Don&apos;t worry, our medical team is here to help you find what you need.
           </p>
 
           {/* Action Buttons */}

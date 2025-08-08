@@ -482,7 +482,7 @@
       ],
       "treatments": [
         {
-          "id": 1,
+          "id": "cardiology_1",
           "name": "Coronary Angioplasty",
           "image": "/hospitaldirectory/img1.png",
           "price": "€8,500",
@@ -497,7 +497,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "cardiology_2",
           "name": "Heart Bypass Surgery",
           "image": "/hospitaldirectory/img2.png",
           "price": "€25,000",
@@ -512,7 +512,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": "cardiology_3",
           "name": "Pacemaker Implantation",
           "image": "/hospitaldirectory/img3.png",
           "price": "€12,000",
@@ -524,6 +524,141 @@
             "Implantation",
             "Programming",
             "Follow-up care"
+          ]
+        },
+        {
+          "id": "cardiology_4",
+          "name": "Heart Valve Replacement",
+          "image": "/hospitaldirectory/img4.png",
+          "price": "€35,000",
+          "description": "Surgical replacement of damaged heart valves",
+          "duration": "3-5 hours",
+          "recovery": "8-12 weeks",
+          "includes": [
+            "Pre-operative assessment",
+            "Valve replacement surgery",
+            "Post-operative care",
+            "Cardiac rehabilitation"
+          ]
+        },
+        {
+          "id": "cardiology_5",
+          "name": "Cardiac Ablation",
+          "image": "/hospitaldirectory/img5.png",
+          "price": "€18,000",
+          "description": "Procedure to treat heart rhythm disorders",
+          "duration": "2-4 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Electrophysiology study",
+            "Ablation procedure",
+            "Post-procedure monitoring",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "cardiology_6",
+          "name": "TAVR Procedure",
+          "image": "/hospitaldirectory/img6.png",
+          "price": "€45,000",
+          "description": "Transcatheter aortic valve replacement",
+          "duration": "1-3 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Pre-procedure evaluation",
+            "TAVR procedure",
+            "Post-procedure care",
+            "Follow-up monitoring"
+          ]
+        },
+        {
+          "id": "cardiology_7",
+          "name": "Cardiac Catheterization",
+          "image": "/hospitaldirectory/img7.png",
+          "price": "€6,500",
+          "description": "Diagnostic procedure to examine heart function",
+          "duration": "30-60 minutes",
+          "recovery": "1 day",
+          "includes": [
+            "Pre-procedure consultation",
+            "Catheterization procedure",
+            "Post-procedure monitoring",
+            "Results discussion"
+          ]
+        },
+        {
+          "id": "cardiology_8",
+          "name": "Echocardiography",
+          "image": "/hospitaldirectory/img8.png",
+          "price": "€800",
+          "description": "Ultrasound imaging of the heart",
+          "duration": "15-30 minutes",
+          "recovery": "No recovery time",
+          "includes": [
+            "Cardiac ultrasound",
+            "Image analysis",
+            "Report generation",
+            "Consultation"
+          ]
+        },
+        {
+          "id": "cardiology_9",
+          "name": "Cardiac Rehabilitation",
+          "image": "/hospitaldirectory/img9.png",
+          "price": "€3,500",
+          "description": "Comprehensive cardiac recovery program",
+          "duration": "12 weeks",
+          "recovery": "Ongoing",
+          "includes": [
+            "Exercise training",
+            "Education sessions",
+            "Lifestyle counseling",
+            "Progress monitoring"
+          ]
+        },
+        {
+          "id": "cardiology_10",
+          "name": "Heart Transplant",
+          "image": "/hospitaldirectory/img10.png",
+          "price": "€120,000",
+          "description": "Complete heart transplant surgery",
+          "duration": "6-8 hours",
+          "recovery": "3-6 months",
+          "includes": [
+            "Donor matching",
+            "Transplant surgery",
+            "ICU care",
+            "Long-term monitoring"
+          ]
+        },
+        {
+          "id": "cardiology_11",
+          "name": "Cardiac Resynchronization",
+          "image": "/hospitaldirectory/img11.png",
+          "price": "€22,000",
+          "description": "Device therapy for heart failure",
+          "duration": "2-3 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Device selection",
+            "Implantation",
+            "Programming",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "cardiology_12",
+          "name": "Coronary Artery Bypass",
+          "image": "/hospitaldirectory/img12.png",
+          "price": "€28,000",
+          "description": "Surgical bypass of blocked coronary arteries",
+          "duration": "4-6 hours",
+          "recovery": "6-8 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Bypass surgery",
+            "Post-operative care",
+            "Rehabilitation"
           ]
         }
       ],
@@ -878,7 +1013,7 @@
       ],
       "treatments": [
         {
-          "id": 1,
+          "id": "gynaecology_1",
           "name": "IVF Treatment",
           "image": "/hospitaldirectory/img1.png",
           "price": "€8,000",
@@ -893,7 +1028,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "gynaecology_2",
           "name": "Laparoscopy",
           "image": "/hospitaldirectory/img2.png",
           "price": "€5,000",
@@ -908,7 +1043,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": "gynaecology_3",
           "name": "Hysterectomy",
           "image": "/hospitaldirectory/img3.png",
           "price": "€12,000",
@@ -920,6 +1055,141 @@
             "Surgery",
             "Post-operative care",
             "Rehabilitation"
+          ]
+        },
+        {
+          "id": "gynaecology_4",
+          "name": "IVF Treatment",
+          "image": "/hospitaldirectory/img4.png",
+          "price": "€8,000",
+          "description": "In vitro fertilization for fertility treatment",
+          "duration": "2-3 weeks",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Fertility evaluation",
+            "IVF procedure",
+            "Monitoring",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "gynaecology_5",
+          "name": "Cesarean Section",
+          "image": "/hospitaldirectory/img5.png",
+          "price": "€6,000",
+          "description": "Surgical delivery of baby through abdominal incision",
+          "duration": "1-2 hours",
+          "recovery": "4-6 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Post-operative care",
+            "Follow-up visits"
+          ]
+        },
+        {
+          "id": "gynaecology_6",
+          "name": "Pregnancy Care",
+          "image": "/hospitaldirectory/img6.png",
+          "price": "€3,000",
+          "description": "Comprehensive prenatal and postnatal care",
+          "duration": "9 months",
+          "recovery": "6-8 weeks",
+          "includes": [
+            "Regular check-ups",
+            "Ultrasound scans",
+            "Delivery care",
+            "Postnatal support"
+          ]
+        },
+        {
+          "id": "gynaecology_7",
+          "name": "Fertility Treatment",
+          "image": "/hospitaldirectory/img7.png",
+          "price": "€5,000",
+          "description": "Comprehensive fertility assessment and treatment",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Fertility evaluation",
+            "Treatment planning",
+            "Procedures",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "gynaecology_8",
+          "name": "Egg Freezing",
+          "image": "/hospitaldirectory/img8.png",
+          "price": "€4,000",
+          "description": "Preservation of eggs for future fertility",
+          "duration": "2-3 weeks",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Ovarian stimulation",
+            "Egg retrieval",
+            "Freezing process",
+            "Storage"
+          ]
+        },
+        {
+          "id": "gynaecology_9",
+          "name": "Gynecological Cancer Treatment",
+          "image": "/hospitaldirectory/img9.png",
+          "price": "€25,000",
+          "description": "Comprehensive treatment for gynecological cancers",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Cancer diagnosis",
+            "Treatment planning",
+            "Surgery/chemotherapy",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "gynaecology_10",
+          "name": "Endometriosis Treatment",
+          "image": "/hospitaldirectory/img10.png",
+          "price": "€8,000",
+          "description": "Surgical treatment for endometriosis",
+          "duration": "1-3 hours",
+          "recovery": "2-4 weeks",
+          "includes": [
+            "Diagnostic laparoscopy",
+            "Endometriosis surgery",
+            "Post-operative care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "gynaecology_11",
+          "name": "Polycystic Ovary Syndrome",
+          "image": "/hospitaldirectory/img11.png",
+          "price": "€4,000",
+          "description": "Comprehensive treatment for PCOS",
+          "duration": "Lifetime management",
+          "recovery": "Ongoing",
+          "includes": [
+            "Hormonal evaluation",
+            "Treatment planning",
+            "Lifestyle counseling",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "gynaecology_12",
+          "name": "Menopause Management",
+          "image": "/hospitaldirectory/img12.png",
+          "price": "€3,500",
+          "description": "Comprehensive care for menopausal symptoms",
+          "duration": "Lifetime management",
+          "recovery": "Ongoing",
+          "includes": [
+            "Hormone therapy",
+            "Symptom management",
+            "Lifestyle counseling",
+            "Regular monitoring"
           ]
         }
       ],
@@ -1442,7 +1712,7 @@
       ],
       "treatments": [
         {
-          "id": 1,
+          "id": "neurology_1",
           "name": "Deep Brain Stimulation",
           "image": "/hospitaldirectory/img1.png",
           "price": "€35,000",
@@ -1457,7 +1727,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "neurology_2",
           "name": "Brain Tumor Surgery",
           "image": "/hospitaldirectory/img2.png",
           "price": "€45,000",
@@ -1472,7 +1742,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": "neurology_3",
           "name": "Epilepsy Surgery",
           "image": "/hospitaldirectory/img3.png",
           "price": "€30,000",
@@ -1484,6 +1754,141 @@
             "Surgery",
             "Monitoring",
             "Follow-up"
+          ]
+        },
+        {
+          "id": "neurology_4",
+          "name": "Stroke Treatment",
+          "image": "/hospitaldirectory/img4.png",
+          "price": "€25,000",
+          "description": "Emergency treatment for acute stroke and rehabilitation",
+          "duration": "Varies",
+          "recovery": "3-12 months",
+          "includes": [
+            "Emergency evaluation",
+            "Treatment",
+            "Rehabilitation",
+            "Long-term care"
+          ]
+        },
+        {
+          "id": "neurology_5",
+          "name": "Multiple Sclerosis Treatment",
+          "image": "/hospitaldirectory/img5.png",
+          "price": "€40,000",
+          "description": "Comprehensive treatment for multiple sclerosis",
+          "duration": "Lifetime management",
+          "recovery": "Ongoing",
+          "includes": [
+            "Disease-modifying therapy",
+            "Symptom management",
+            "Rehabilitation",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "neurology_6",
+          "name": "Parkinson's Treatment",
+          "image": "/hospitaldirectory/img6.png",
+          "price": "€20,000",
+          "description": "Treatment for Parkinson's disease symptoms",
+          "duration": "Lifetime management",
+          "recovery": "Ongoing",
+          "includes": [
+            "Medication management",
+            "Deep brain stimulation",
+            "Physical therapy",
+            "Supportive care"
+          ]
+        },
+        {
+          "id": "neurology_7",
+          "name": "Alzheimer's Treatment",
+          "image": "/hospitaldirectory/img7.png",
+          "price": "€15,000",
+          "description": "Comprehensive care for Alzheimer's disease",
+          "duration": "Lifetime management",
+          "recovery": "Ongoing",
+          "includes": [
+            "Medication therapy",
+            "Cognitive training",
+            "Support services",
+            "Family counseling"
+          ]
+        },
+        {
+          "id": "neurology_8",
+          "name": "Neurological Rehabilitation",
+          "image": "/hospitaldirectory/img8.png",
+          "price": "€8,000",
+          "description": "Rehabilitation for neurological conditions",
+          "duration": "6-12 weeks",
+          "recovery": "Ongoing",
+          "includes": [
+            "Physical therapy",
+            "Occupational therapy",
+            "Speech therapy",
+            "Progress monitoring"
+          ]
+        },
+        {
+          "id": "neurology_9",
+          "name": "Neurostimulation",
+          "image": "/hospitaldirectory/img9.png",
+          "price": "€18,000",
+          "description": "Electrical stimulation for neurological disorders",
+          "duration": "1-2 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Evaluation",
+            "Stimulation procedure",
+            "Programming",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "neurology_10",
+          "name": "Brain Mapping",
+          "image": "/hospitaldirectory/img10.png",
+          "price": "€12,000",
+          "description": "Advanced brain imaging and mapping techniques",
+          "duration": "2-4 hours",
+          "recovery": "1 day",
+          "includes": [
+            "Brain imaging",
+            "Mapping procedure",
+            "Analysis",
+            "Report generation"
+          ]
+        },
+        {
+          "id": "neurology_11",
+          "name": "Neuroendoscopy",
+          "image": "/hospitaldirectory/img11.png",
+          "price": "€25,000",
+          "description": "Minimally invasive brain surgery using endoscope",
+          "duration": "2-4 hours",
+          "recovery": "2-4 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Endoscopic surgery",
+            "Post-operative care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "neurology_12",
+          "name": "Neurogenetics",
+          "image": "/hospitaldirectory/img12.png",
+          "price": "€8,000",
+          "description": "Genetic testing and counseling for neurological conditions",
+          "duration": "2-4 weeks",
+          "recovery": "No recovery time",
+          "includes": [
+            "Genetic testing",
+            "Counseling",
+            "Risk assessment",
+            "Family planning"
           ]
         }
       ],
@@ -1839,7 +2244,7 @@
       ],
       "treatments": [
         {
-          "id": 1,
+          "id": "oncology_1",
           "name": "Chemotherapy",
           "image": "/hospitaldirectory/img1.png",
           "price": "€15,000",
@@ -1854,7 +2259,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "oncology_2",
           "name": "Radiation Therapy",
           "image": "/hospitaldirectory/img2.png",
           "price": "€20,000",
@@ -1869,7 +2274,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": "oncology_3",
           "name": "Immunotherapy",
           "image": "/hospitaldirectory/img3.png",
           "price": "€35,000",
@@ -1881,6 +2286,141 @@
             "Immunotherapy sessions",
             "Monitoring",
             "Long-term care"
+          ]
+        },
+        {
+          "id": "oncology_4",
+          "name": "Surgery",
+          "image": "/hospitaldirectory/img4.png",
+          "price": "€40,000",
+          "description": "Surgical removal of cancerous tumors and surrounding tissue",
+          "duration": "2-6 hours",
+          "recovery": "4-8 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgical procedure",
+            "Post-operative care",
+            "Rehabilitation"
+          ]
+        },
+        {
+          "id": "oncology_5",
+          "name": "Targeted Therapy",
+          "image": "/hospitaldirectory/img5.png",
+          "price": "€25,000",
+          "description": "Drugs that target specific cancer cell molecules",
+          "duration": "3-12 months",
+          "recovery": "Ongoing monitoring",
+          "includes": [
+            "Genetic testing",
+            "Treatment planning",
+            "Targeted therapy sessions",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "oncology_6",
+          "name": "Stem Cell Transplant",
+          "image": "/hospitaldirectory/img6.png",
+          "price": "€80,000",
+          "description": "Transplantation of healthy stem cells to replace damaged ones",
+          "duration": "2-4 weeks",
+          "recovery": "3-6 months",
+          "includes": [
+            "Stem cell collection",
+            "Transplantation procedure",
+            "Post-transplant care",
+            "Long-term monitoring"
+          ]
+        },
+        {
+          "id": "oncology_7",
+          "name": "Proton Therapy",
+          "image": "/hospitaldirectory/img7.png",
+          "price": "€60,000",
+          "description": "Advanced radiation therapy using proton beams",
+          "duration": "6-8 weeks",
+          "recovery": "2-4 weeks",
+          "includes": [
+            "Treatment planning",
+            "Proton therapy sessions",
+            "Monitoring",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "oncology_8",
+          "name": "Hormone Therapy",
+          "image": "/hospitaldirectory/img8.png",
+          "price": "€12,000",
+          "description": "Treatment to block or remove hormones that fuel cancer",
+          "duration": "6-12 months",
+          "recovery": "Ongoing treatment",
+          "includes": [
+            "Hormone testing",
+            "Treatment planning",
+            "Hormone therapy",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "oncology_9",
+          "name": "Clinical Trials",
+          "image": "/hospitaldirectory/img9.png",
+          "price": "€0 - €25,000",
+          "description": "Experimental treatments in clinical research studies",
+          "duration": "Varies by trial",
+          "recovery": "Varies by trial",
+          "includes": [
+            "Trial screening",
+            "Experimental treatment",
+            "Monitoring",
+            "Data collection"
+          ]
+        },
+        {
+          "id": "oncology_10",
+          "name": "Bone Marrow Transplant",
+          "image": "/hospitaldirectory/img10.png",
+          "price": "€90,000",
+          "description": "Transplantation of healthy bone marrow cells",
+          "duration": "2-4 weeks",
+          "recovery": "3-6 months",
+          "includes": [
+            "Donor matching",
+            "Transplantation",
+            "Post-transplant care",
+            "Long-term monitoring"
+          ]
+        },
+        {
+          "id": "oncology_11",
+          "name": "Precision Medicine",
+          "image": "/hospitaldirectory/img11.png",
+          "price": "€15,000",
+          "description": "Personalized treatment based on genetic profile",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Genetic testing",
+            "Treatment planning",
+            "Personalized therapy",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "oncology_12",
+          "name": "Palliative Care",
+          "image": "/hospitaldirectory/img12.png",
+          "price": "€5,000",
+          "description": "Comprehensive supportive care for cancer patients",
+          "duration": "Ongoing",
+          "recovery": "Ongoing",
+          "includes": [
+            "Pain management",
+            "Symptom control",
+            "Emotional support",
+            "Family counseling"
           ]
         }
       ],
@@ -2235,7 +2775,7 @@
       ],
       "treatments": [
         {
-          "id": 1,
+          "id": "orthopaedics_1",
           "name": "Knee Replacement",
           "image": "/hospitaldirectory/img1.png",
           "price": "€18,000",
@@ -2250,7 +2790,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "orthopaedics_2",
           "name": "Hip Replacement",
           "image": "/hospitaldirectory/img2.png",
           "price": "€20,000",
@@ -2265,7 +2805,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": "orthopaedics_3",
           "name": "ACL Reconstruction",
           "image": "/hospitaldirectory/img3.png",
           "price": "€12,000",
@@ -2277,6 +2817,141 @@
             "Surgery",
             "Physical therapy",
             "Follow-up care"
+          ]
+        },
+        {
+          "id": "orthopaedics_4",
+          "name": "Shoulder Surgery",
+          "image": "/hospitaldirectory/img4.png",
+          "price": "€15,000",
+          "description": "Surgical treatment for shoulder injuries and conditions",
+          "duration": "1-3 hours",
+          "recovery": "4-8 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Rehabilitation",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "orthopaedics_5",
+          "name": "Spine Surgery",
+          "image": "/hospitaldirectory/img5.png",
+          "price": "€35,000",
+          "description": "Surgical treatment for spine conditions and injuries",
+          "duration": "3-6 hours",
+          "recovery": "8-12 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Rehabilitation",
+            "Long-term care"
+          ]
+        },
+        {
+          "id": "orthopaedics_6",
+          "name": "Arthroscopic Surgery",
+          "image": "/hospitaldirectory/img6.png",
+          "price": "€8,000",
+          "description": "Minimally invasive joint surgery using small incisions",
+          "duration": "30-90 minutes",
+          "recovery": "2-6 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Arthroscopic procedure",
+            "Post-operative care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "orthopaedics_7",
+          "name": "Fracture Treatment",
+          "image": "/hospitaldirectory/img7.png",
+          "price": "€10,000",
+          "description": "Surgical treatment for bone fractures and injuries",
+          "duration": "1-4 hours",
+          "recovery": "6-12 weeks",
+          "includes": [
+            "Emergency evaluation",
+            "Surgery",
+            "Casting/splinting",
+            "Rehabilitation"
+          ]
+        },
+        {
+          "id": "orthopaedics_8",
+          "name": "Sports Medicine",
+          "image": "/hospitaldirectory/img8.png",
+          "price": "€6,000",
+          "description": "Comprehensive treatment for sports-related injuries",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Injury evaluation",
+            "Treatment planning",
+            "Rehabilitation",
+            "Return to sport"
+          ]
+        },
+        {
+          "id": "orthopaedics_9",
+          "name": "Physical Therapy",
+          "image": "/hospitaldirectory/img9.png",
+          "price": "€3,000",
+          "description": "Rehabilitation and physical therapy programs",
+          "duration": "6-12 weeks",
+          "recovery": "Ongoing",
+          "includes": [
+            "Assessment",
+            "Therapy sessions",
+            "Exercise programs",
+            "Progress monitoring"
+          ]
+        },
+        {
+          "id": "orthopaedics_10",
+          "name": "Joint Arthroscopy",
+          "image": "/hospitaldirectory/img10.png",
+          "price": "€7,000",
+          "description": "Minimally invasive joint examination and treatment",
+          "duration": "30-60 minutes",
+          "recovery": "2-4 weeks",
+          "includes": [
+            "Joint examination",
+            "Arthroscopic procedure",
+            "Post-procedure care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "orthopaedics_11",
+          "name": "Bone Grafting",
+          "image": "/hospitaldirectory/img11.png",
+          "price": "€12,000",
+          "description": "Surgical procedure to repair bone defects",
+          "duration": "2-4 hours",
+          "recovery": "6-12 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Bone grafting surgery",
+            "Post-operative care",
+            "Healing monitoring"
+          ]
+        },
+        {
+          "id": "orthopaedics_12",
+          "name": "Orthopedic Trauma",
+          "image": "/hospitaldirectory/img12.png",
+          "price": "€15,000",
+          "description": "Emergency treatment for orthopedic injuries",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Emergency evaluation",
+            "Trauma surgery",
+            "Post-operative care",
+            "Rehabilitation"
           ]
         }
       ],
@@ -2795,7 +3470,7 @@
       ],
       "treatments": [
         {
-          "id": 1,
+          "id": "urology_1",
           "name": "Robotic RP for Prostate Cancer",
           "image": "/hospitaldirectory/img1.png",
           "price": "€5,775",
@@ -2810,7 +3485,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "urology_2",
           "name": "Liver transplant for treatment of cancer",
           "image": "/hospitaldirectory/img2.png",
           "price": "€14,854",
@@ -2825,7 +3500,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": "urology_3",
           "name": "Kidney transplant",
           "image": "/hospitaldirectory/img3.png",
           "price": "€19,193",
@@ -2837,6 +3512,141 @@
             "Surgery",
             "Post-transplant care",
             "Medication management"
+          ]
+        },
+        {
+          "id": "urology_4",
+          "name": "Kidney Stone Treatment",
+          "image": "/hospitaldirectory/img4.png",
+          "price": "€8,000",
+          "description": "Minimally invasive treatment for kidney stones",
+          "duration": "1-2 hours",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Diagnostic imaging",
+            "Stone removal procedure",
+            "Post-procedure care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "urology_5",
+          "name": "Bladder Surgery",
+          "image": "/hospitaldirectory/img5.png",
+          "price": "€25,000",
+          "description": "Surgical treatment for bladder conditions and cancer",
+          "duration": "2-4 hours",
+          "recovery": "4-6 weeks",
+          "includes": [
+            "Pre-operative evaluation",
+            "Surgery",
+            "Post-operative care",
+            "Follow-up visits"
+          ]
+        },
+        {
+          "id": "urology_6",
+          "name": "Male Infertility Treatment",
+          "image": "/hospitaldirectory/img6.png",
+          "price": "€5,000",
+          "description": "Comprehensive treatment for male infertility issues",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Fertility evaluation",
+            "Treatment planning",
+            "Procedures",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "urology_7",
+          "name": "Ureteral Stricture Treatment",
+          "image": "/hospitaldirectory/img7.png",
+          "price": "€12,000",
+          "description": "Treatment for narrowing of the ureter",
+          "duration": "1-3 hours",
+          "recovery": "2-4 weeks",
+          "includes": [
+            "Diagnostic evaluation",
+            "Surgical procedure",
+            "Post-operative care",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "urology_8",
+          "name": "Hydronephrosis Treatment",
+          "image": "/hospitaldirectory/img8.png",
+          "price": "€10,000",
+          "description": "Treatment for kidney swelling due to blocked urine flow",
+          "duration": "1-2 hours",
+          "recovery": "1-3 weeks",
+          "includes": [
+            "Diagnostic imaging",
+            "Treatment procedure",
+            "Post-procedure care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "urology_9",
+          "name": "Urological Cancer Treatment",
+          "image": "/hospitaldirectory/img9.png",
+          "price": "€30,000",
+          "description": "Comprehensive treatment for urological cancers",
+          "duration": "Varies",
+          "recovery": "Varies",
+          "includes": [
+            "Cancer diagnosis",
+            "Treatment planning",
+            "Surgery/chemotherapy",
+            "Follow-up care"
+          ]
+        },
+        {
+          "id": "urology_10",
+          "name": "Urethral Stricture Treatment",
+          "image": "/hospitaldirectory/img10.png",
+          "price": "€9,000",
+          "description": "Treatment for narrowing of the urethra",
+          "duration": "1-2 hours",
+          "recovery": "2-4 weeks",
+          "includes": [
+            "Diagnostic evaluation",
+            "Surgical procedure",
+            "Post-operative care",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "urology_11",
+          "name": "Vasectomy",
+          "image": "/hospitaldirectory/img11.png",
+          "price": "€3,500",
+          "description": "Permanent male sterilization procedure",
+          "duration": "30-60 minutes",
+          "recovery": "1-2 weeks",
+          "includes": [
+            "Pre-procedure consultation",
+            "Vasectomy procedure",
+            "Post-procedure care",
+            "Follow-up testing"
+          ]
+        },
+        {
+          "id": "urology_12",
+          "name": "Urodynamic Testing",
+          "image": "/hospitaldirectory/img12.png",
+          "price": "€2,500",
+          "description": "Diagnostic testing for bladder and urinary function",
+          "duration": "30-60 minutes",
+          "recovery": "No recovery time",
+          "includes": [
+            "Bladder function testing",
+            "Urethral pressure testing",
+            "Flow rate measurement",
+            "Results analysis"
           ]
         }
       ],

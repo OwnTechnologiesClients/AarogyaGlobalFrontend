@@ -32,7 +32,7 @@ export default function SpecialtySearchForm({
             {specialtyName} Search
           </h2>
           <p className="text-gray-600">
-            Find the best {specialtyName.toLowerCase()} doctors, hospitals, and treatments
+            Find the best {specialtyName.toLowerCase()} treatments
           </p>
         </div>
 
@@ -118,27 +118,6 @@ export default function SpecialtySearchForm({
               onChange={handleOnChange}
               className="w-full p-2 sm:p-2.5 md:p-3 bg-gray-50 border border-gray-200 rounded-md text-gray-600 placeholder-gray-400 text-xs xs:text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-          </div>
-        </div>
-
-        {/* Category Buttons - scrollable on small screens */}
-        <div className="mb-3 sm:mb-4 md:mb-6">
-          <div className="relative">
-            <div className="flex overflow-x-auto scrollbar-hide pb-2 -mx-2 px-2 sm:mx-0 sm:px-0 sm:flex-wrap sm:gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`flex-shrink-0 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full border text-xs xs:text-sm sm:text-base mx-1 sm:mx-0 transition-colors ${
-                    activeCategory === cat
-                      ? "bg-blue-600 text-white border-blue-600 shadow-sm"
-                      : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
 

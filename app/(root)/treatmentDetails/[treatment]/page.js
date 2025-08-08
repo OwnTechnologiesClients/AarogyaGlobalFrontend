@@ -18,19 +18,19 @@ export async function generateStaticParams() {
       }
     });
     
-    // Add individual treatment IDs
-    specialties.forEach(specialty => {
-      if (specialty && specialty.slug) {
-        const specialtyData = dataService.getSpecialtyBySlug(specialty.slug);
-        if (specialtyData && specialtyData.treatments && Array.isArray(specialtyData.treatments)) {
-          specialtyData.treatments.forEach(treatment => {
-            if (treatment && treatment.id) {
-              params.push({ treatment: treatment.id.toString() });
+            // Add individual treatment IDs
+        specialties.forEach(specialty => {
+          if (specialty && specialty.slug) {
+            const specialtyData = dataService.getSpecialtyBySlug(specialty.slug);
+            if (specialtyData && specialtyData.treatments && Array.isArray(specialtyData.treatments)) {
+              specialtyData.treatments.forEach(treatment => {
+                if (treatment && treatment.id) {
+                  params.push({ treatment: treatment.id });
+                }
+              });
             }
-          });
-        }
-      }
-    });
+          }
+        });
     
     console.log('generateStaticParams: Generated params:', params);
     return params;
@@ -45,27 +45,30 @@ const TreatmentDetailsPage = async ({ params }) => {
         const resolvedParams = await params;
         const { treatment: treatmentParam } = resolvedParams;
         
+        // Decode the treatment parameter
+        const decodedTreatmentParam = decodeURIComponent(treatmentParam);
+        
         // Add validation for treatmentParam
-        if (!treatmentParam) {
+        if (!decodedTreatmentParam) {
             console.warn('TreatmentDetailsPage: No treatment parameter provided');
             notFound();
         }
         
         let treatmentData = null;
         
-        // Check if it's a treatment ID (numeric) or specialty slug (string)
-        if (!isNaN(treatmentParam)) {
+        // Check if it's a treatment ID (contains underscore) or specialty slug (string)
+        if (decodedTreatmentParam.includes('_')) {
             // It's a treatment ID - get individual treatment data
-            console.log(`TreatmentDetailsPage: Getting individual treatment data for ID: ${treatmentParam}`);
-            treatmentData = dataService.getIndividualTreatmentData(treatmentParam);
+            console.log(`TreatmentDetailsPage: Getting individual treatment data for ID: ${decodedTreatmentParam}`);
+            treatmentData = dataService.getIndividualTreatmentData(decodedTreatmentParam);
         } else {
             // It's a specialty slug - get specialty treatment data
-            console.log(`TreatmentDetailsPage: Getting specialty treatment data for slug: ${treatmentParam}`);
-            treatmentData = dataService.getTreatmentData(treatmentParam);
+            console.log(`TreatmentDetailsPage: Getting specialty treatment data for slug: ${decodedTreatmentParam}`);
+            treatmentData = dataService.getTreatmentData(decodedTreatmentParam);
         }
 
         if (!treatmentData) {
-            console.warn(`TreatmentDetailsPage: No treatment data found for parameter: ${treatmentParam}`);
+            console.warn(`TreatmentDetailsPage: No treatment data found for parameter: ${decodedTreatmentParam}`);
             notFound();
         }
 

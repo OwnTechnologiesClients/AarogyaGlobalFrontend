@@ -14,7 +14,7 @@ const SpecialtyResults = ({
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [displayData, setDisplayData] = useState([]);
-  const cardsPerPage = 6;
+  const cardsPerPage = 12; // Show all treatments on one page to ensure proper CTA placement
 
   // Determine what data to show based on active category
   useEffect(() => {
@@ -61,6 +61,84 @@ const SpecialtyResults = ({
     }
   };
 
+  const renderCTASection = (index) => {
+    return (
+      <div key={`cta-${index}`} className="col-span-full bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 my-4">
+        <h3 className="text-xl font-bold text-gray-800 mb-4">
+          Need Help Finding the Right {specialtyName} Treatment?
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor={`phone-${index}`} className="block text-gray-700 text-lg font-medium mb-2">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id={`phone-${index}`}
+              placeholder="Type Phone Number"
+              className="w-full px-4 py-4 border border-gray-300 rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <div>
+            <label htmlFor={`email-${index}`} className="block text-gray-700 text-lg font-medium mb-2">
+              Email (Optional)
+            </label>
+            <input
+              type="email"
+              id={`email-${index}`}
+              placeholder="Type Email"
+              className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+        </div>
+        <a
+          href="tel:+919876543210"
+          className="mt-4 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+        >
+          <span>Request Callback</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
+      </div>
+    );
+  };
+
+  const renderTreatmentGrid = () => {
+    if (activeCategory === 'Treatments') {
+      const items = [];
+      currentCards.forEach((item, index) => {
+        // Add treatment card
+        items.push(
+          <div key={`treatment-${item.id}-${index}`} className="col-span-1">
+            {renderCard(item, index)}
+          </div>
+        );
+        
+        // Add CTA after every 6 treatments (after every 2 complete columns of 3 cards)
+        // This ensures: 3 cards in first column, 3 cards in second column, then CTA
+        if ((index + 1) % 6 === 0 && index < currentCards.length - 1) {
+          items.push(
+            <div key={`cta-${index}`} className="col-span-1 md:col-span-2 lg:col-span-3">
+              {renderCTASection(index)}
+            </div>
+          );
+        }
+      });
+      
+      return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items}
+        </div>
+      );
+    }
+    
+    // For other categories, render normally
+    return (
+      <div className={getGridClass()}>
+        {currentCards.map((item, index) => renderCard(item, index))}
+      </div>
+    );
+  };
+
   const getGridClass = () => {
     if (activeCategory === 'Treatments') {
       return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
@@ -91,9 +169,7 @@ const SpecialtyResults = ({
           ) : (
             <>
               {/* Results Grid */}
-              <div className={getGridClass()}>
-                {currentCards.map((item, index) => renderCard(item, index))}
-              </div>
+              {renderTreatmentGrid()}
 
               {/* Pagination */}
               {totalPages > 1 && (
@@ -132,7 +208,7 @@ const SpecialtyResults = ({
             </>
           )}
 
-          {/* Contact Section */}
+          {/* Final Contact Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6">
             <h3 className="text-xl font-bold text-gray-800 mb-4">
               Need Help Finding the Right {specialtyName} Care?

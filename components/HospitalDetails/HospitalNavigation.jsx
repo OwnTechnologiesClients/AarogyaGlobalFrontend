@@ -9,7 +9,7 @@ const HospitalNavigation = ({ activeTab, setActiveTab }) => {
     "About",
     "Doctors",
     "Gallery",
-    "Reviews",
+    // "Reviews",
     "Location"
   ];
 

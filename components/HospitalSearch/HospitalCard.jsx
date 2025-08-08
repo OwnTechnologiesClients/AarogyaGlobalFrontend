@@ -151,60 +151,71 @@ const HospitalMain = ({ hospitals }) => {
                         <p className="text-center text-gray-500">No hospitals found.</p>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {hospitalData.map((hospital, index) => (
-                                <HospitalCard
-                                    key={createUniqueKey(hospital, index)}
-                                    hospital={hospital}
-                                    onLike={handleLikeToggle}
-                                    onShare={handleShare}
-                                />
-                            ))}
+                            {hospitalData.map((hospital, index) => {
+                                const items = [];
+                                
+                                // Add hospital card
+                                items.push(
+                                    <HospitalCard
+                                        key={createUniqueKey(hospital, index)}
+                                        hospital={hospital}
+                                        onLike={handleLikeToggle}
+                                        onShare={handleShare}
+                                    />
+                                );
+                                
+                                // Add CTA after every 6 hospitals (after every 2 complete columns of 3 cards)
+                                // This ensures: 3 cards in first column, 3 cards in second column, then CTA
+                                if ((index + 1) % 6 === 0 && index < hospitalData.length - 1) {
+                                    items.push(
+                                        <div key={`cta-${index}`} className="col-span-1 md:col-span-2 lg:col-span-3">
+                                            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200 shadow-lg">
+                                                <h3 className="text-xl font-bold text-gray-800 mb-4">Can't find what you are looking for?</h3>
+                                                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                                                    <div>
+                                                        <label htmlFor={`name-${index}`} className="block text-gray-800 text-sm font-medium mb-2">Name</label>
+                                                        <input
+                                                            type="text"
+                                                            id={`name-${index}`}
+                                                            placeholder="Type A Name"
+                                                            className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label htmlFor={`phone-${index}`} className="block text-gray-800 text-sm font-medium mb-2">Phone Number</label>
+                                                        <input
+                                                            type="text"
+                                                            id={`phone-${index}`}
+                                                            placeholder="Type A Phone Number"
+                                                            className="w-full px-3 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label htmlFor={`email-${index}`} className="block text-gray-700 text-sm font-medium mb-2">Email (Optional)</label>
+                                                        <input
+                                                            type="email"
+                                                            id={`email-${index}`}
+                                                            placeholder="Type Email"
+                                                            className="w-full px-3 py-3 border border-gray-300 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                        />
+                                                    </div>
+                                                    <a
+                                                        href="tel:+919876543210"
+                                                        className="bg-indigo-950 text-white py-3 px-4 font-bold text-sm rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+                                                    >
+                                                        <span>Request Callback</span>
+                                                        <ArrowRight className="w-4 h-4" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                return items;
+                            }).flat()}
                         </div>
                     )}
-                </div>
-                <div className="max-w-7xl mx-auto mt-12">
-                    {/* "Can't find what you are looking for?" section */}
-                    <div className="mb-16">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-8">Can't find what you are looking for?</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-                            <div>
-                                <label htmlFor="name" className="block text-gray-800 text-lg font-medium mb-2">Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    placeholder="Type A Name"
-                                    className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none bg-blue-50 focus:ring-2 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="phone" className="block text-gray-800 text-lg font-medium mb-2">Phone Number</label>
-                                <input
-                                    type="text"
-                                    id="phone"
-                                    placeholder="Type A Phone Number"
-                                    className="w-full px-4 py-4 border border-gray-300 rounded-lg  bg-blue-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block text-gray-700 text-lg font-medium mb-2">Email (Optional)</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    placeholder="Type Email"
-                                    className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <a
-                                href="tel:+919876543210" // Replace with the actual phone number you want to call
-                                className="bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
-                            >
-                                <span>Request Callback</span>
-                                <ArrowRight className="w-5 h-5" />
-                            </a>
-                        </div>
-                    </div>
-
-
                 </div>
             </section>
         </div>

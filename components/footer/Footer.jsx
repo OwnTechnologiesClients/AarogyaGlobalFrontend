@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaTelegram, FaViber } from "react-icons/fa";
 import Link from "next/link";
 import footerData from "../../data/footer.json";
 import Image from "next/image";
@@ -224,6 +224,52 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {/* Telegram Floating Button */}
+      <Link
+        href="https://t.me/aarogyaglobal"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed z-50 right-6 group bg-gradient-to-br from-[#0088cc] to-[#0077b3] hover:from-[#0077b3] hover:to-[#0088cc] rounded-full p-3 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1 ${isScrollToTopVisible ? 'bottom-56' : 'bottom-30'
+          }`}
+        style={{
+          boxShadow: "0 8px 32px rgba(0,136,204,0.3)",
+          backdropFilter: "blur(10px)",
+        }}
+      >
+        <div className="relative">
+          <FaTelegram
+            size={28}
+            color="#fff"
+            className="transition-transform duration-300 group-hover:scale-110"
+          />
+          {/* Pulse Animation Ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
+        </div>
+      </Link>
+
+      {/* Viber Floating Button */}
+      <Link
+        href="viber://chat?number=919922345678"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed z-50 right-6 group bg-gradient-to-br from-[#7360f2] to-[#5a4fd8] hover:from-[#5a4fd8] hover:to-[#7360f2] rounded-full p-3 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1 ${isScrollToTopVisible ? 'bottom-44' : 'bottom-18'
+          }`}
+        style={{
+          boxShadow: "0 8px 32px rgba(115,96,242,0.3)",
+          backdropFilter: "blur(10px)",
+        }}
+      >
+        <div className="relative">
+          <FaViber
+            size={28}
+            color="#fff"
+            className="transition-transform duration-300 group-hover:scale-110"
+          />
+          {/* Pulse Animation Ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
+        </div>
+      </Link>
+
       {/* WhatsApp Floating Button */}
       <Link
         href="https://wa.me/919922345678"

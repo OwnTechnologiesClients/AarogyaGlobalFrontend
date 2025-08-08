@@ -77,7 +77,7 @@ const HospitalDetails = () => {
       {activeTab === "About" && <HospitalAbout hospital={hospital} />}
       {activeTab === "Doctors" && <HospitalDoctors hospital={hospital} />}
       {activeTab === "Gallery" && <HospitalGallery hospital={hospital} />}
-      {activeTab === "Reviews" && <HospitalReviews hospital={hospital} />}
+      {/* {activeTab === "Reviews" && <HospitalReviews hospital={hospital} />} */}
       {activeTab === "Location" && <HospitalLocation hospital={hospital} />}
     </div>
   );

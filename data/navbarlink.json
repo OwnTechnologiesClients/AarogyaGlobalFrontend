@@ -115,6 +115,22 @@
       ]
     },
     {
+      "label": "Doctors",
+      "href": "/doctors",
+      "pageHeader": {
+        "title": "All Doctors",
+        "routes": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Doctors"
+          }
+        ]
+      }
+    },
+    {
       "label": "Hospitals",
       "href": "/hospitalSearch",
       "pageHeader": {
