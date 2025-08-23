@@ -1886,8 +1886,18 @@
             "MRI in selected cases",
             "Routine labs & medical clearance"
           ],
-          "advancedTreatmentOptions": "Robotic‑assisted TKR; patient‑specific instrumentation; cementless implants; unicompartmental (partial) knee; minimally invasive approaches.",
-          "advantages": "Marked pain relief and mobility; long implant life—~82% of TKRs last ≥25 years; high satisfaction when done at high‑volume centers.",
+          "advancedTreatmentOptions": [
+            "Robotic‑assisted TKR",
+            "patient‑specific instrumentation",
+            "cementless implants",
+            "unicompartmental (partial) knee",
+            "minimally invasive approaches"
+          ],
+          "advantages": [
+            "Marked pain relief and mobility",
+            "long implant life—~82% of TKRs last ≥25 years",
+            "high satisfaction when done at high‑volume centers"
+          ],
           "costConsiderations": "India private hospitals: ~₹2.0–3.5 lakh per knee; bilateral ₹4–7 lakh (excl. travel). Costs vary by city, implant, room, and comorbidities.",
           "faq": [
             {
@@ -1962,6 +1972,114 @@
             {
               "question": "How long do implants last?",
               "answer": "Good implants last for 15–25+ yrs."
+            }
+          ]
+        },
+        {
+          "id": "ORT0003",
+          "category": "Orthopaedics",
+          "name": "ACL/MCL Ligament Reconstruction",
+          "description": "Reconstruct torn knee ligaments (commonly ACL) using tendon grafts to restore stability.",
+          "duration": "Surgery ~1–2 hours; often day‑care.",
+          "recovery": "Crutches 1–2 weeks; jogging ~3 months; return to pivoting sports ~6–9+ months with rehab.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Arthroscopy expertise",
+            "graft options",
+            "modern rehab",
+            "return‑to‑sport testing",
+            "accredited facility",
+            "low infection rates"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Choose surgeons doing >50 ligament reconstructions/year",
+            "sports fellowship",
+            "uses objective RTS criteria",
+            "check NMC/state register"
+          ],
+          "diagnosticTools": [
+            "Clinical tests (Lachman, pivot‑shift)",
+            "MRI knee",
+            "X‑rays to rule out fractures/malalignment"
+          ],
+          "advancedTreatmentOptions": [
+            "Anatomic single‑bundle/DB",
+            "quadriceps grafts",
+            "internal brace/ALL augmentation",
+            "all‑inside techniques",
+            "biologic adjuncts in select cases"
+          ],
+          "advantages": [
+            "Restores stability",
+            "lowers giving‑way episodes",
+            "enables safe RTS when combined with structured rehab and strength benchmarks"
+          ],
+          "costConsiderations": "India private hospitals: ~₹1.1–2.5 lakh depending on graft/implants and city.",
+          "faq": [
+            {
+              "question": "Is bracing required?",
+              "answer": "Usually early only."
+            },
+            {
+              "question": "Why wait 6–9 months to sport?",
+              "answer": "To allow graft maturation and neuromuscular recovery."
+            }
+          ]
+        },
+        {
+          "id": "ORT0004",
+          "category": "Orthopaedics",
+          "name": "Shoulder Replacement (Anatomic/Reverse)",
+          "description": "Replace arthritic or cuff‑deficient shoulder joint with artificial components to reduce pain and improve motion.",
+          "duration": "Surgery ~1–2 hours.",
+          "recovery": "Sling 2–6 weeks; daily activities 6–12 weeks; functional recovery ~3–6 months; full recovery up to 12 months.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "High arthroplasty volume",
+            "reverse/anatomic expertise",
+            "navigation/3D planning",
+            "structured rehab and outcomes tracking"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Surgeons with fellowship in shoulder/elbow",
+            "high case volume",
+            "reverse arthroplasty experience",
+            "verify registration"
+          ],
+          "diagnosticTools": [
+            "Shoulder X‑rays (AP/axillary/scapular‑Y)",
+            "CT for glenoid planning",
+            "MRI if rotator‑cuff assessment needed"
+          ],
+          "advancedTreatmentOptions": [
+            "Reverse shoulder arthroplasty",
+            "stemless implants",
+            "augmented glenoids",
+            "computer‑assisted planning/navigation"
+          ],
+          "advantages": [
+            "Strong pain relief and function gains for arthritis and cuff‑tear arthropathy",
+            "durable implants with good mid‑ to long‑term outcomes"
+          ],
+          "costConsiderations": "India private hospitals: ~₹2.5–4.5 lakh depending on implant and city.",
+          "faq": [
+            {
+              "question": "When can I lift weights?",
+              "answer": "Progressive strengthening after 8–12 weeks; heavy lifting only after surgeon clearance."
             }
           ]
         }
