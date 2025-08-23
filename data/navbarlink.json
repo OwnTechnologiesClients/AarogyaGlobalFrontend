@@ -132,7 +132,7 @@
     },
     {
       "label": "Hospitals",
-      "href": "/hospitalSearch",
+      "href": "/hospitalSearch/",
       "pageHeader": {
         "title": "Hospital Search",
         "routes": [

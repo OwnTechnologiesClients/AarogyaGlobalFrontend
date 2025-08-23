@@ -9,7 +9,7 @@ import HospitalMain from "@/components/HospitalSearch/HospitalCard";
 import dataService from '@/lib/dataService';
 
 const HospitalSearch = () => {
-  const { title, routes } = getPageHeaderData('/hospitalSearch');
+  const { title, routes } = getPageHeaderData('/hospitalSearch/');
   const searchParams = useSearchParams();
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -54,7 +54,7 @@ export const getPageHeaderDataByKey = (key) => {
     'home': '/',
     'aboutUs': '/about',
     'contactUs': '/contact',
-    'hospitalSearch': '/hospitalSearch',
+    'hospitalSearch': '/hospitalSearch/',
     'hospitalDetails': '/hospitalDetails',
     'doctorDetails': '/doctorDetails',
     'orthopaedicsTreatment': '/orthopaedicsTreatment',

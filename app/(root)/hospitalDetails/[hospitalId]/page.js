@@ -1,86 +1,35 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
-import PageHeader from "@/components/layout/PageHeader";
-import { getPageHeaderData } from "@/utils/navigationUtils";
-import HospitalImageGallery from "@/components/HospitalDetails/HospitalImageGallery";
-import HospitalNavigation from "@/components/HospitalDetails/HospitalNavigation";
-import HospitalOverview from "@/components/HospitalDetails/HospitalOverview";
-import HospitalSpecialities from "@/components/HospitalDetails/HospitalSpecialities";
-import HospitalFeatures from "@/components/HospitalDetails/HospitalFeatures";
-import HospitalAbout from "@/components/HospitalDetails/HospitalAbout";
-import HospitalDoctors from "@/components/HospitalDetails/HospitalDoctors";
-import HospitalGallery from "@/components/HospitalDetails/HospitalGallery";
-import HospitalReviews from "@/components/HospitalDetails/HospitalReviews";
-import HospitalLocation from "@/components/HospitalDetails/HospitalLocation";
+import React from 'react';
 import dataService from '@/lib/dataService';
+import HospitalDetailsClient from './HospitalDetailsClient';
 
-const HospitalDetails = () => {
-  const params = useParams();
-  const { hospitalId } = params;
-  const [hospital, setHospital] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("Overview");
+export async function generateStaticParams() {
+  const allHospitals = [];
 
-  useEffect(() => {
-    // Find the hospital by ID using dataService
-    const foundHospital = dataService.getHospitalById(parseInt(hospitalId));
-    setHospital(foundHospital);
-    setLoading(false);
-  }, [hospitalId]);
+  // Get hospitals from all specialties
+  for (const specialty of Object.values(dataService.data.specialties)) {
+    allHospitals.push(...(specialty.hospitals || []));
+  }
 
-  // Create custom routes for this specific hospital
-  const routes = [
-    {
-      label: "Home",
-      href: "/"
-    },
-    {
-      label: "Hospitals",
-      href: "/hospitalSearch"
-    },
-    {
-      label: hospital?.name || "Hospital Details"
+  // Add global hospitals
+  allHospitals.push(...(dataService.data.globalHospitals || []));
+
+  // Deduplicate by ID (keep the first occurrence)
+  const uniqueHospitals = [];
+  const seenIds = new Set();
+
+  for (const hospital of allHospitals) {
+    if (!seenIds.has(hospital.id)) {
+      seenIds.add(hospital.id);
+      uniqueHospitals.push(hospital);
     }
-  ];
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
-      </div>
-    );
   }
 
-  if (!hospital) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Hospital not found</div>
-      </div>
-    );
-  }
+  return uniqueHospitals.slice(0, 15).map((hospital) => ({
+    hospitalId: hospital.id.toString(),
+  }));
+}
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <PageHeader title={hospital.name} routes={routes} />
-
-      {/* Hospital Image Gallery */}
-      <HospitalImageGallery hospital={hospital} />
-
-      {/* Navigation Tabs */}
-      <HospitalNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-
-      {/* Content based on active tab */}
-      {activeTab === "Overview" && <HospitalOverview hospital={hospital} />}
-      {activeTab === "Specialities" && <HospitalSpecialities hospital={hospital} />}
-      {activeTab === "Features" && <HospitalFeatures hospital={hospital} />}
-      {activeTab === "About" && <HospitalAbout hospital={hospital} />}
-      {activeTab === "Doctors" && <HospitalDoctors hospital={hospital} />}
-      {activeTab === "Gallery" && <HospitalGallery hospital={hospital} />}
-      {/* {activeTab === "Reviews" && <HospitalReviews hospital={hospital} />} */}
-      {activeTab === "Location" && <HospitalLocation hospital={hospital} />}
-    </div>
-  );
-};
-
-export default HospitalDetails; 
+export default function HospitalDetailsPage({ params }) {
+  const hospital = dataService.getHospitalById(parseInt(params.hospitalId));
+  return <HospitalDetailsClient params={params} hospital={hospital} />;
+} 

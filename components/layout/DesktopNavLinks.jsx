@@ -21,22 +21,22 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
   // Track current route and set active link
   useEffect(() => {
     const currentPath = pathname;
-    
+
     // Check for exact matches first
-    const exactMatch = navbarData.navigation.find(link => 
-      link.href === currentPath
+    const exactMatch = navbarData.navigation.find(link =>
+      link.href === currentPath || link.href === currentPath.replace(/\/$/, '') || link.href === currentPath + '/'
     );
-    
+
     if (exactMatch) {
       setActiveLink(exactMatch.label);
       return;
     }
-    
+
     // Check dropdown items
     for (const link of navbarData.navigation) {
       if (link.dropdown) {
-        const dropdownMatch = link.dropdown.find(item => 
-          item.href === currentPath
+        const dropdownMatch = link.dropdown.find(item =>
+          item.href === currentPath || item.href === currentPath.replace(/\/$/, '') || item.href === currentPath + '/'
         );
         if (dropdownMatch) {
           setActiveLink(link.label);
@@ -44,7 +44,7 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
         }
       }
     }
-    
+
     // If no match found, clear active link
     setActiveLink("");
   }, [pathname]);
@@ -62,9 +62,8 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label} className="relative group">
               <button
                 type="button"
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center ${
-                  isLinkActive(link.label) ? "text-[#04CE78]" : ""
-                }`}
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                  }`}
               >
                 {link.label}
                 <span className="text-[#04CE78] text-[20px] leading-none ml-1">
@@ -78,9 +77,8 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className={`block px-4 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100 hover:text-[#04CE78] transition-colors ${
-                          pathname === item.href ? "bg-gray-100 text-[#04CE78]" : ""
-                        }`}
+                        className={`block px-4 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100 hover:text-[#04CE78] transition-colors ${pathname === item.href || pathname === item.href.replace(/\/$/, '') || pathname === item.href + '/' ? "bg-gray-100 text-[#04CE78]" : ""
+                          }`}
                       >
                         {item.label}
                       </Link>
@@ -93,9 +91,8 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center gap-1 ${
-                  isLinkActive(link.label) ? "text-[#04CE78]" : ""
-                }`}
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                  }`}
               >
                 {link.label}
               </Link>
