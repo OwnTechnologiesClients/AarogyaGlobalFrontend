@@ -1890,9 +1890,79 @@
           "advantages": "Marked pain relief and mobility; long implant life—~82% of TKRs last ≥25 years; high satisfaction when done at high‑volume centers.",
           "costConsiderations": "India private hospitals: ~₹2.0–3.5 lakh per knee; bilateral ₹4–7 lakh (excl. travel). Costs vary by city, implant, room, and comorbidities.",
           "faq": [
-            "How long do implants last? Often >20–25 yrs.",
-            "When can I drive? Typically 4–6 weeks if safe.",
-            "Are both knees done together? Sometimes; depends on risk profile."
+            {
+              "question": "How long do implants last?",
+              "answer": "Often >20–25 yrs."
+            },
+            {
+              "question": "When can I drive?",
+              "answer": "Typically 4–6 weeks if safe."
+            },
+            {
+              "question": "Are both knees done together?",
+              "answer": "Sometimes; depends on risk profile."
+            }
+          ]
+        },
+        {
+          "id": "ORT0002",
+          "category": "Orthopaedics",
+          "name": "Total Hip Replacement (THR)",
+          "description": "Replace diseased hip joint surfaces with artificial components to relieve pain and improve function.",
+          "duration": "Surgery ~1–2 hours.",
+          "recovery": "Hospital 2–4 days; most daily activities in 3–6 weeks; full recovery usually 6–12 months.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Accreditation",
+            "annual THR volume",
+            "infection‑control metrics",
+            "enhanced recovery pathway",
+            "availability of ceramic/dual‑mobility implants",
+            "revision capability"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Look for arthroplasty fellowship",
+            ">50–100 THRs/year",
+            "registry participation",
+            "transparent outcomes",
+            "verify on NMC/state register"
+          ],
+          "diagnosticTools": [
+            "Pelvis/hip X‑rays",
+            "CT or MRI if deformity",
+            "pre‑op templating",
+            "routine labs/medical optimization"
+          ],
+          "advancedTreatmentOptions": [
+            "Anterior approach",
+            "dual‑mobility cups",
+            "ceramic bearings",
+            "robotic/navigation",
+            "cementless fixation",
+            "same‑day/ERAS protocols"
+          ],
+          "advantages": [
+            "Substantial pain relief and mobility",
+            "long implant life—~58% last ≥25 yrs in registry data",
+            "high function scores post‑op"
+          ],
+          "costConsiderations": "India private hospitals: ~₹1.5–4.0 lakh per hip (varies by implant, room, city). Robotic/minimally‑invasive may cost more.",
+          "faq": [
+            {
+              "question": "When can I bend/sit cross‑legged?",
+              "answer": "Depends on approach; follow precautions 6–12 weeks."
+            },
+            {
+              "question": "How long do implants last?",
+              "answer": "Good implants last for 15–25+ yrs."
+            }
           ]
         }
       ],

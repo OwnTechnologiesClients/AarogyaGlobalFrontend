@@ -366,16 +366,28 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* FAQ Section */}
                         <section id="faq" className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                Frequently Asked Questions about Total Knee Replacement (TKR)
+                                Frequently Asked Questions about {treatment.name}
                             </h2>
 
-                            <div className="space-y-3">
+                            <div className="space-y-4">
                                 {Array.isArray(treatment.faq) && treatment.faq.map((faq, index) => (
-                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                                        <div className="flex items-start space-x-3">
-                                            <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                                            <span className="text-gray-800 font-medium">{faq}</span>
-                                        </div>
+                                    <div key={index} className="border border-gray-200 rounded-lg">
+                                        <button
+                                            onClick={() => toggleFAQ(index)}
+                                            className="w-full p-4 text-left flex justify-between items-center hover:bg-gray-50"
+                                        >
+                                            <span className="font-medium text-gray-800">{faq.question}</span>
+                                            {expandedFAQ[index] ? (
+                                                <ChevronUp className="w-5 h-5 text-gray-500" />
+                                            ) : (
+                                                <ChevronDown className="w-5 h-5 text-gray-500" />
+                                            )}
+                                        </button>
+                                        {expandedFAQ[index] && (
+                                            <div className="p-4 bg-gray-50 text-gray-700 border-t border-gray-200">
+                                                {faq.answer}
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
