@@ -9,7 +9,6 @@ import HospitalSpecialities from "@/components/HospitalDetails/HospitalSpecialit
 import HospitalFeatures from "@/components/HospitalDetails/HospitalFeatures";
 import HospitalAbout from "@/components/HospitalDetails/HospitalAbout";
 import HospitalDoctors from "@/components/HospitalDetails/HospitalDoctors";
-import HospitalGallery from "@/components/HospitalDetails/HospitalGallery";
 import HospitalReviews from "@/components/HospitalDetails/HospitalReviews";
 import HospitalLocation from "@/components/HospitalDetails/HospitalLocation";
 import dataService from '@/lib/dataService';
@@ -21,7 +20,7 @@ export default function HospitalDetailsClient({ params, hospital: initialHospita
 
     useEffect(() => {
         if (!initialHospital) {
-            const foundHospital = dataService.getHospitalById(parseInt(hospitalId));
+            const foundHospital = dataService.getHospitalById(hospitalId);
             setHospital(foundHospital);
         }
     }, [hospitalId, initialHospital]);
@@ -65,7 +64,6 @@ export default function HospitalDetailsClient({ params, hospital: initialHospita
             {activeTab === "Features" && <HospitalFeatures hospital={hospital} />}
             {activeTab === "About" && <HospitalAbout hospital={hospital} />}
             {activeTab === "Doctors" && <HospitalDoctors hospital={hospital} />}
-            {activeTab === "Gallery" && <HospitalGallery hospital={hospital} />}
             {activeTab === "Location" && <HospitalLocation hospital={hospital} />}
         </div>
     );

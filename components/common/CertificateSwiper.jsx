@@ -6,9 +6,9 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const CertificateSwiper = ({ 
-  certificates = [], 
-  showNavigation = true, 
+const CertificateSwiper = ({
+  certificates = [],
+  showNavigation = true,
   showTitle = true,
   title = "Certificates & Accreditations",
   variant = "default", // "default", "compact", "minimal"
@@ -17,14 +17,9 @@ const CertificateSwiper = ({
   const swiperRef = useRef(null);
 
   const defaultCertificates = [
-    { name: "ISO Certification", logo: "/CertificatesImg/img1.png", description: "International Organization for Standardization" },
-    { name: "NABH Accreditation", logo: "/CertificatesImg/img2.png", description: "National Accreditation Board for Hospitals" },
     { name: "JCI Accreditation", logo: "/CertificatesImg/img3.png", description: "Joint Commission International" },
-    { name: "NABL Certification", logo: "/CertificatesImg/img4.png", description: "National Accreditation Board for Testing" },
-    { name: "Quality Award", logo: "/CertificatesImg/img5.png", description: "Excellence in Healthcare Quality" },
-    { name: "Safety Certification", logo: "/CertificatesImg/img6.png", description: "Patient Safety Excellence" },
-    { name: "Green Building", logo: "/CertificatesImg/img7.jpg", description: "Environmental Sustainability" },
-    { name: "Medical Excellence", logo: "/CertificatesImg/img8.jpg", description: "Outstanding Medical Services" }
+    { name: "NABH Accreditation", logo: "/CertificatesImg/img2.png", description: "National Accreditation Board for Hospitals" },
+    { name: "NABL Certification", logo: "/CertificatesImg/img4.png", description: "National Accreditation Board for Testing" }
   ];
 
   const certificateData = certificates.length > 0 ? certificates : defaultCertificates;
@@ -85,7 +80,7 @@ const CertificateSwiper = ({
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-xl font-bold text-gray-800">{title}</h3>
           {showNavigation && (
-            <div className="flex gap-2">
+            <div className="flex gap-2 md:hidden">
               <button
                 onClick={() => swiperRef.current?.swiper.slidePrev()}
                 className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
@@ -104,7 +99,7 @@ const CertificateSwiper = ({
           )}
         </div>
       )}
-      
+
       <div className={styles.container}>
         <Swiper
           ref={swiperRef}

@@ -5,39 +5,20 @@ import { Star, MapPin } from 'lucide-react';
 const HospitalImageGallery = ({ hospital }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Hospital images data - using hospital image as main and adding some additional images
-  const hospitalImages = [
-    {
-      id: 1,
-      url: hospital?.image || "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
-      alt: `${hospital?.name || "Hospital"} Main Building`
-    },
-    {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=500&h=300&fit=crop",
-      alt: "Operating Room"
-    },
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop",
-      alt: "Hospital Room"
-    },
-    {
-      id: 4,
-      url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
-      alt: "Medical Equipment"
-    },
-    {
-      id: 5,
-      url: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=500&h=300&fit=crop",
-      alt: "Surgery Room"
-    },
-    {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop",
-      alt: "Patient Care"
-    }
-  ];
+  // Hospital images data - using hospital gallery images or fallback to placeholder
+  const hospitalImages = hospital?.gallery && hospital.gallery.length > 0
+    ? hospital.gallery.map((url, index) => ({
+      id: index + 1,
+      url: url,
+      alt: `${hospital?.name || "Hospital"} Image ${index + 1}`
+    }))
+    : [
+      {
+        id: 1,
+        url: hospital?.image || "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
+        alt: `${hospital?.name || "Hospital"} Main Building`
+      }
+    ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -46,8 +27,8 @@ const HospitalImageGallery = ({ hospital }) => {
         <div className="lg:w-2/3 relative">
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <img
-              src={hospitalImages[selectedImage].url}
-              alt={hospitalImages[selectedImage].alt}
+              src={hospitalImages[selectedImage]?.url || hospitalImages[0]?.url}
+              alt={hospitalImages[selectedImage]?.alt || hospitalImages[0]?.alt}
               className="w-full h-[400px] lg:h-[500px] object-cover"
             />
 
@@ -67,28 +48,34 @@ const HospitalImageGallery = ({ hospital }) => {
 
         {/* Thumbnail Gallery */}
         <div className="lg:w-1/3">
-          <div className="grid grid-cols-2 gap-3 h-full">
-            {hospitalImages.slice(1, 7).map((image, index) => (
+          <div className="mb-3">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Gallery ({hospitalImages.length} images)</h3>
+          </div>
+          <div className="grid grid-cols-2 gap-3 h-full content-start">
+            {hospitalImages.map((image, index) => (
               <div
                 key={image.id}
-                className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ${selectedImage === index + 1
-                    ? 'ring-4 ring-[#04CE78] shadow-lg'
-                    : 'hover:shadow-md hover:scale-105'
+                className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ${selectedImage === index
+                  ? 'ring-4 ring-[#04CE78] shadow-lg'
+                  : 'hover:shadow-md hover:scale-105'
                   }`}
-                onClick={() => setSelectedImage(index + 1)}
+                onClick={() => setSelectedImage(index)}
               >
                 <img
                   src={image.url}
                   alt={image.alt}
                   className="w-full h-[120px] lg:h-[160px] object-cover"
                 />
-
-                {/* Show number badge on last image if there are more */}
-                {index === 5 && hospitalImages.length > 6 && (
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">+{hospitalImages.length - 6}</span>
+                {/* Show selection indicator */}
+                {selectedImage === index && (
+                  <div className="absolute top-2 right-2 w-6 h-6 bg-[#04CE78] rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                 )}
+                {/* Show image number */}
+                <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                  {index + 1}
+                </div>
               </div>
             ))}
           </div>

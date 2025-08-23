@@ -5,10 +5,6 @@ import {
   Phone,
   Mail,
   Clock,
-  Car,
-  Bus,
-  Train,
-  Plane,
   Navigation,
   Copy,
   ExternalLink,
@@ -16,60 +12,18 @@ import {
 
 const HospitalLocation = () => {
   const hospitalInfo = {
-    name: "Granite Medical Center",
-    address: "123 Medical Center Drive, Delhi, India 110001",
-    phone: "+91 11 2345 6789",
-    email: "info@granitemedical.com",
-    emergency: "+91 11 2345 6790",
+    name: "Fortis Memorial Research Institute",
+    address: "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
+    phone: "+91-124-496-7000",
+    email: "info@fortishealthcare.com",
+    emergency: "+91-124-496-7000",
     coordinates: {
-      lat: 28.6139,
-      lng: 77.209,
+      lat: 28.4595,
+      lng: 77.0266,
     },
   };
 
-  const operatingHours = [
-    {
-      day: "Monday - Friday",
-      hours: "24/7 Emergency, 8:00 AM - 8:00 PM General",
-    },
-    { day: "Saturday", hours: "24/7 Emergency, 9:00 AM - 6:00 PM General" },
-    { day: "Sunday", hours: "24/7 Emergency, 10:00 AM - 4:00 PM General" },
-  ];
 
-  const transportOptions = [
-    {
-      icon: <Car className="w-6 h-6 text-blue-500" />,
-      title: "By Car",
-      description: "Free parking available with 500+ spaces",
-      details: "Main entrance parking, Valet service available",
-    },
-    {
-      icon: <Bus className="w-6 h-6 text-green-500" />,
-      title: "By Bus",
-      description: "Multiple bus routes stop nearby",
-      details: "Bus stops: Medical Center (50m), Central Station (200m)",
-    },
-    {
-      icon: <Train className="w-6 h-6 text-purple-500" />,
-      title: "By Metro",
-      description: "Central Metro Station - 5 minutes walk",
-      details: "Blue Line, Red Line connections available",
-    },
-    {
-      icon: <Plane className="w-6 h-6 text-orange-500" />,
-      title: "By Air",
-      description: "Delhi Airport - 45 minutes drive",
-      details: "Airport shuttle service available on request",
-    },
-  ];
-
-  const nearbyLandmarks = [
-    { name: "Central Park", distance: "0.5 km", type: "Park" },
-    { name: "City Mall", distance: "1.2 km", type: "Shopping" },
-    { name: "Delhi University", distance: "2.1 km", type: "Education" },
-    { name: "Government Hospital", distance: "3.0 km", type: "Medical" },
-    { name: "International Airport", distance: "25 km", type: "Transport" },
-  ];
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
@@ -77,14 +31,12 @@ const HospitalLocation = () => {
   };
 
   const openGoogleMaps = () => {
-    const { lat, lng } = hospitalInfo.coordinates;
-    const url = `https://www.google.com/maps?q=${lat},${lng}`;
+    const url = "https://www.google.com/maps?s=web&rlz=1C1GCEU_enIN1026IN1026&lqi=CiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRlSIHwzs7lgICACFouEAAQARACEAMYACIiZm9ydGlzIG1lbW9yaWFsIHJlc2VhcmNoIGluc3RpdHV0ZZIBCGhvc3BpdGFsqgFXCgsvZy8xdGR5N2cwMRABMh4QASIat7euftc7b_z04jW9TWqLLpLLNfa2eKpefLIyJhACIiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRl&vet=12ahUKEwiMyvb4lJmPAxWUyTgGHYeCAGAQ1YkKegQIHxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KbNXz-HuGA05MdSZE99ypm8Z&daddr=Sector+-+44,+Opposite+HUDA+City+Centre,+Gurugram,+Haryana+122003";
     window.open(url, "_blank");
   };
 
   const openDirections = () => {
-    const { lat, lng } = hospitalInfo.coordinates;
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    const url = "https://www.google.com/maps?s=web&rlz=1C1GCEU_enIN1026IN1026&lqi=CiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRlSIHwzs7lgICACFouEAAQARACEAMYACIiZm9ydGlzIG1lbW9yaWFsIHJlc2VhcmNoIGluc3RpdHV0ZZIBCGhvc3BpdGFsqgFXCgsvZy8xdGR5N2cwMRABMh4QASIat7euftc7b_z04jW9TWqLLpLLNfa2eKpefLIyJhACIiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRl&vet=12ahUKEwiMyvb4lJmPAxWUyTgGHYeCAGAQ1YkKegQIHxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KbNXz-HuGA05MdSZE99ypm8Z&daddr=Sector+-+44,+Opposite+HUDA+City+Centre,+Gurugram,+Haryana+122003";
     window.open(url, "_blank");
   };
 
@@ -108,13 +60,7 @@ const HospitalLocation = () => {
             {/* Interactive Map */}
             <iframe
               title="Hospital Location Map"
-              src={`https://www.openstreetmap.org/export/embed.html?bbox=${
-                hospitalInfo.coordinates.lng - 0.01
-              }%2C${hospitalInfo.coordinates.lat - 0.01}%2C${
-                hospitalInfo.coordinates.lng + 0.01
-              }%2C${hospitalInfo.coordinates.lat + 0.01}&layer=mapnik&marker=${
-                hospitalInfo.coordinates.lat
-              }%2C${hospitalInfo.coordinates.lng}`}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2233913121413!2d77.0266!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19f5828c3b8f%3A0x1b9a6b9b9b9b9b9b!2sFortis%20Memorial%20Research%20Institute!5e0!3m2!1sen!2sin!4v1234567890"
               className="w-full h-full border-0"
               allowFullScreen
               loading="lazy"
@@ -228,41 +174,26 @@ const HospitalLocation = () => {
               Operating Hours
             </h3>
             <div className="space-y-3">
-              {operatingHours.map((schedule, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-[#04CE78] mt-0.5" />
-                  <div>
-                    <p className="font-medium text-gray-800">{schedule.day}</p>
-                    <p className="text-gray-600 text-sm">{schedule.hours}</p>
-                  </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-[#04CE78] mt-0.5" />
+                <div>
+                  <p className="font-medium text-gray-800">Emergency Support</p>
+                  <p className="text-gray-600 text-sm">24/7 365 days Emergency Support</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-[#04CE78] mt-0.5" />
+                <div>
+                  <p className="font-medium text-gray-800">OPD Hours</p>
+                  <p className="text-gray-600 text-sm">9 am to 8 pm (Monday - Saturday)</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Transportation Options */}
-      <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">
-          How to Reach Us
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {transportOptions.map((option, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-sm border border-gray-100 p-6"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                {option.icon}
-                <h4 className="font-bold text-gray-800">{option.title}</h4>
-              </div>
-              <p className="text-gray-600 text-sm mb-2">{option.description}</p>
-              <p className="text-gray-500 text-xs">{option.details}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+
 
       {/* Nearby Landmarks */}
       <div className="mt-12">
@@ -270,21 +201,21 @@ const HospitalLocation = () => {
           Nearby Landmarks
         </h3>
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {nearbyLandmarks.map((landmark, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
-              >
-                <div>
-                  <p className="font-medium text-gray-800">{landmark.name}</p>
-                  <p className="text-gray-500 text-sm">{landmark.type}</p>
-                </div>
-                <span className="text-[#04CE78] font-medium text-sm">
-                  {landmark.distance}
-                </span>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-800">IG International Airport</p>
+                <p className="text-gray-600 text-sm">25 mins from IG International Airport</p>
               </div>
-            ))}
+            </div>
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-800">HUDA City Center Metro Station</p>
+                <p className="text-gray-600 text-sm">Opposite HUDA City Center Metro Station (Walking Distance)</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

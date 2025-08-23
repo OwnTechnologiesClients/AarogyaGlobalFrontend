@@ -6,14 +6,11 @@ import {
   Building2,
   Heart,
   Users,
-  ChevronDown,
-  ChevronUp,
   ArrowRight
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
 
 const HospitalOverview = ({ hospital, location }) => {
-  const [expandedFeature, setExpandedFeature] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,23 +20,23 @@ const HospitalOverview = ({ hospital, location }) => {
   const hospitalStats = [
     {
       icon: <Star className="w-6 h-6 text-[#04CE78]" />,
-      label: hospital?.rating || "4.5k+ Rating",
+      label: "9.5",
       sublabel: "UserScore"
     },
     {
       icon: <Calendar className="w-6 h-6 text-[#04CE78]" />,
-      label: "Founded",
-      sublabel: "in 2010"
+      label: "2013",
+      sublabel: "Founded"
     },
     {
       icon: <Heart className="w-6 h-6 text-[#04CE78]" />,
-      label: "50,000+",
-      sublabel: "patients"
+      label: "2 Mn +",
+      sublabel: "Patients"
     },
     {
       icon: <Users className="w-6 h-6 text-[#04CE78]" />,
-      label: hospital?.doctorsCount || "45",
-      sublabel: "doctors"
+      label: "200+",
+      sublabel: "Doctors"
     }
   ];
 
@@ -47,47 +44,31 @@ const HospitalOverview = ({ hospital, location }) => {
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Size & Capacity",
-      value: "OT: 10, ICU: 5, Patient Bed: 100+"
+      value: "OT: 15, ICU: 105, Patient Bed: 330+"
     },
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
-      label: "Clinic type",
-      value: "Multi-Specialty"
+      label: "Clinic Type",
+      value: "Quaternary Care Multi-Specialty"
     },
     {
       icon: <Heart className="w-5 h-5 text-gray-500" />,
-      label: "Type of care",
-      value: "Inpatient, Outpatient"
+      label: "Type of Care",
+      value: "Inpatient, Outpatient, Emergency, Daycare"
     },
     {
       icon: <Users className="w-5 h-5 text-gray-500" />,
-      label: "Age group",
-      value: "Kids, Adults"
+      label: "Age Group",
+      value: "Kids, Adults, Geriatric"
     },
     {
       icon: <Star className="w-5 h-5 text-gray-500" />,
-      label: "4.5 on Google",
-      value: "The data collected based on patient reviews on Google"
+      label: "Google Rating",
+      value: "4.5 (based on patient reviews)"
     }
   ];
 
-  const features = [
-    {
-      title: "Advanced Medical Technology",
-      content: `${hospital?.name || "Our hospital"} is equipped with state-of-the-art medical technology and facilities to provide the best possible care to our patients.`,
-      isExpanded: false
-    },
-    {
-      title: "Expert Medical Team",
-      content: `Our team of ${hospital?.doctorsCount || "45"} experienced doctors and medical professionals are dedicated to providing exceptional healthcare services.`,
-      isExpanded: false
-    },
-    {
-      title: "Comprehensive Care",
-      content: `We offer a wide range of treatments including ${hospital?.treatments?.join(", ") || "General Medicine, Cardiology, Orthopedics"} to meet all your healthcare needs.`,
-      isExpanded: false
-    }
-  ];
+
 
   const handleInputChange = (e) => {
     setFormData({
@@ -101,9 +82,7 @@ const HospitalOverview = ({ hospital, location }) => {
     console.log('Form submitted:', formData);
   };
 
-  const toggleFeature = (index) => {
-    setExpandedFeature(expandedFeature === index ? null : index);
-  };
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -155,35 +134,7 @@ const HospitalOverview = ({ hospital, location }) => {
             className="mb-8"
           />
 
-          {/* Features & Facts */}
-          <div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Features & Facts</h3>
-            <div className="space-y-4">
-              {features.map((feature, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg">
-                  <button
-                    onClick={() => toggleFeature(index)}
-                    className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-[#04CE78] rounded-full"></div>
-                      <span className="font-medium text-gray-800">{feature.title}</span>
-                    </div>
-                    {expandedFeature === index ? (
-                      <ChevronUp className="w-5 h-5 text-gray-400" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-400" />
-                    )}
-                  </button>
-                  {expandedFeature === index && (
-                    <div className="px-4 pb-4">
-                      <p className="text-gray-600 text-sm leading-relaxed">{feature.content}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+
         </div>
 
         {/* Right Column - Contact Form and Team Image */}

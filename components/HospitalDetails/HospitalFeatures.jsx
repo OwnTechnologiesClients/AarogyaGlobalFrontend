@@ -121,19 +121,8 @@ const HospitalFeatures = ({ hospital }) => {
       name: "Cardiac Cath Lab",
       description: "State-of-the-art cardiac catheterization laboratory",
       availability: "Emergency & Scheduled"
-    },
-    {
-      icon: <Stethoscope className="w-8 h-8 text-green-600" />,
-      name: "ICU Ventilators",
-      description: "Advanced life support systems",
-      availability: "30 Units Available"
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-yellow-600" />,
-      name: "CT Scanner",
-      description: "128-slice CT scanner for rapid diagnosis",
-      availability: "Available 24/7"
     }
+   
   ];
 
   return (

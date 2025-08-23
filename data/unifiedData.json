@@ -3688,90 +3688,97 @@
   },
   "globalHospitals": [
     {
-      "id": 1,
-      "name": "Apollo Hospital Chennai",
-      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-      "rating": "4.9",
-      "location": "Chennai, India",
-      "address": "154/11, Bannerghatta Road, Bangalore - 560076",
-      "doctorsCount": 38,
+      "id": "HDEL0001",
+      "name": "Fortis Memorial Research Institute",
+      "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
+      "rating": "4.5",
+      "location": "Gurugram, Delhi NCR, Haryana",
+      "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
+      "doctorsCount": 200,
       "specialties": [
-        "Cardiology",
+        "Cardiology & Cardiac Surgery",
+        "Oncology (Surgical, Medical & Radiotherapy)",
+        "Gastroenterology",
+        "Neurology & Neuro Surgery",
+        "Orthopaedics",
+        "Liver Transplant",
+        "Kidney Transplant",
+        "Bone Marrow Transplant",
         "Interventional Cardiology",
-        "Cardiac Surgery",
-        "Neurology",
-        "Orthopedics",
-        "Oncology"
+        "Heart Transplant",
+        "Cardiac Surgery (incl Electrophysiology)"
       ],
       "facilities": [
-        "Cardiac Cath Lab",
-        "ICU",
-        "ECG",
-        "Echocardiography",
-        "MRI",
-        "CT Scan",
-        "Emergency Services",
-        "24/7 Pharmacy"
+        "Gamma Knife – Gold Standard for Brain Tumour Surgery",
+        "Robotic Surgery – Da Vinci Xi",
+        "MR LINAC for Effective Cancer Treatment",
+        "CAR T-Cell Therapy",
+        "Minimally Invasive Procedures",
+        "Hybrid ORs"
       ],
       "treatments": [
-        "Angioplasty",
-        "Bypass Surgery",
-        "Heart Valve Repair",
-        "Brain Surgery",
-        "Joint Replacement"
+        "Cardiac Surgery",
+        "Brain Tumour Surgery",
+        "Cancer Treatment",
+        "Organ Transplantation",
+        "Robotic Surgery",
+        "Minimally Invasive Procedures"
       ],
-      "about": "Apollo Hospital Chennai is a premier healthcare institution known for its excellence in cardiac care and comprehensive medical services. With state-of-the-art facilities and a team of experienced specialists, we provide world-class healthcare to our patients.",
-      "established": "1983",
+      "about": "Fortis Memorial Research Institute (FMRI) is a premier quaternary care hospital located in Gurugram, Delhi NCR. Established in 2013, FMRI is part of the Fortis Healthcare network and is recognized as one of India's most advanced healthcare facilities.\n\nAs a quaternary care hospital, FMRI specializes in complex medical procedures and treatments that are not available at most other hospitals. The institute is equipped with cutting-edge medical technology including Gamma Knife for brain tumor surgery, Da Vinci Xi robotic surgery system, and MR LINAC for advanced cancer treatment.\n\nFMRI operates with 330+ patient beds, 15 operating theaters, and 105 ICU beds, making it one of the largest healthcare facilities in the region. The hospital serves over 2 million patients annually and has a team of 200+ specialist doctors.\n\nKey Highlights:\n• First hospital in India to offer CAR T-Cell Therapy\n• Advanced robotic surgery capabilities\n• State-of-the-art cardiac care and transplant programs\n• Comprehensive cancer treatment center\n• 24/7 emergency services with specialized trauma care\n\nFMRI is accredited by JCI, NABH, and NABL, ensuring the highest standards of patient care and safety. The hospital is strategically located 25 minutes from Indira Gandhi International Airport and is easily accessible via the HUDA City Center Metro Station.",
+      "established": "2013",
       "accreditation": [
-        "NABH",
         "JCI",
-        "ISO 9001:2015"
+        "NABH",
+        "NABL"
       ],
       "contact": {
-        "phone": "+91-44-2829-0200",
-        "email": "info@apollochennai.com",
-        "website": "www.apollochennai.com"
+        "phone": "+91-124-496-7000",
+        "email": "info@fortishealthcare.com",
+        "website": "www.fortishealthcare.com"
       },
       "gallery": [
-        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+        "/fortis-memorial/Fortis-Memorial-1.jpg",
+        "/fortis-memorial/Fortis-Memorial-2.jpg",
+        "/fortis-memorial/Fortis-Memorial-3.jpg",
+        "/fortis-memorial/Fortis-Memorial-4.jpg",
+        "/fortis-memorial/Fortis-Memorial-5.jpg"
       ],
       "reviews": [
         {
           "id": 1,
-          "patientName": "Rahul Sharma",
-          "rating": 5,
-          "comment": "Excellent cardiac care. The doctors are very professional and caring.",
+          "patientName": "Patient Review",
+          "rating": 4.5,
+          "comment": "Based on 10,436 patient reviews on Google",
           "date": "2024-01-15"
-        },
-        {
-          "id": 2,
-          "patientName": "Priya Patel",
-          "rating": 5,
-          "comment": "World-class facilities and amazing staff. Highly recommended.",
-          "date": "2024-01-10"
         }
       ],
       "doctors": [
         {
           "id": 1,
-          "name": "Dr. Suresh Reddy",
-          "specialty": "Interventional Cardiologist",
+          "name": "Specialist Doctors",
+          "specialty": "Multi-Specialty Team",
           "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
-        },
-        {
-          "id": 2,
-          "name": "Dr. Anjali Desai",
-          "specialty": "Neurologist",
-          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
         }
       ],
       "coordinates": {
-        "latitude": 13.0827,
-        "longitude": 80.2707
-      }
+        "latitude": 28.4595,
+        "longitude": 77.0266
+      },
+      "hospitalStats": {
+        "userScore": "9.5",
+        "founded": "2013",
+        "patients": "2 Mn +",
+        "doctors": "200+",
+        "sizeCapacity": "OT: 15, ICU: 105, Patient Bed: 330+",
+        "clinicType": "Quaternary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Kids, Adults, Geriatric",
+        "googleRating": "4.5 (based on patient reviews)"
+      },
+      "emergencySupport": "24/7 365 days Emergency Support",
+      "opdHours": "OPD Hours 9 am to 8 pm (Monday - Saturday)",
+      "accessibility": "25 mins from IG International Airport, Opposite HUDA City Center Metro Station (Walking Distance)",
+      "mapLink": "https://www.google.com/maps?s=web&rlz=1C1GCEU_enIN1026IN1026&lqi=CiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRlSIHwzs7lgICACFouEAAQARACEAMYACIiZm9ydGlzIG1lbW9yaWFsIHJlc2VhcmNoIGluc3RpdHV0ZZIBCGhvc3BpdGFsqgFXCgsvZy8xdGR5N2cwMRABMh4QASIat7euftc7b_z04jW9TWqLLpLLNfa2eKpefLIyJhACIiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRl&vet=12ahUKEwiMyvb4lJmPAxWUyTgGHYeCAGAQ1YkKegQIHxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KbNXz-HuGA05MdSZE99ypm8Z&daddr=Sector+-+44,+Opposite+HUDA+City+Centre,+Gurugram,+Haryana+122003"
     },
     {
       "id": 2,
@@ -4120,7 +4127,7 @@
       "experience": "20 years",
       "rating": "4.9",
       "location": "Chennai, India",
-      "hospital": "Apollo Hospital",
+      "hospital": "Fortis Memorial Research Institute",
       "consultationFee": "₹2000",
       "treatments": [
         "Angioplasty",
@@ -4155,7 +4162,7 @@
       "workExperience": [
         {
           "position": "Senior Cardiologist",
-          "hospital": "Apollo Hospital Chennai",
+          "hospital": "Fortis Memorial Research Institute",
           "duration": "2010 - Present"
         },
         {
@@ -4527,18 +4534,18 @@
   ],
   "featuredHospitals": [
     {
-      "id": 1,
-      "name": "Cleveland Clinic",
-      "location": "Mumbai, India",
-      "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80",
+      "id": "HDEL0001",
+      "name": "Fortis Memorial Research Institute",
+      "location": "Gurugram, Delhi NCR, Haryana",
+      "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
       "type": "Hospital",
       "typeColor": "#04CE78",
-      "rating": 9.9,
-      "ratingCount": "15k+",
-      "doctorCount": 150,
+      "rating": 4.5,
+      "ratingCount": "10,436 reviews",
+      "doctorCount": 200,
       "cta": {
         "label": "View Details",
-        "href": "/hospitalDetails/1"
+        "href": "/hospitalDetails/HDEL0001"
       }
     },
     {
