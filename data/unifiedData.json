@@ -12,7 +12,7 @@
       "description": "Expert heart and cardiovascular care services",
       "icon": "lucide/HeartPulse",
       "color": "#A3DAC2",
-      "count": 0,
+      "count": 3,
       "overview": {
         "description": "Cardiology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the heart and cardiovascular system. Our medical tourism platform connects patients with the best cardiology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -36,12 +36,7 @@
           "Treatments"
         ],
         "treatments": [
-          "Angioplasty",
-          "Bypass Surgery",
-          "Heart Valve Repair",
-          "Pacemaker Implantation",
-          "Cardiac Catheterization",
-          "Echocardiography"
+          "Angioplasty"
         ],
         "facilities": [
           "Cardiac Cath Lab",
@@ -52,7 +47,59 @@
           "Cardiac Rehabilitation"
         ]
       },
-      "hospitals": [],
+      "hospitals": [
+        {
+          "id": "HDEL0001",
+          "name": "Fortis Memorial Research Institute",
+          "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
+          "rating": "4.5",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Cardiology & Cardiac Surgery"
+          ],
+          "doctorsCount": 200,
+          "established": "2013",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0002",
+          "name": "Medanta The Medicity",
+          "image": "/medanta/Medanta-1.jpg",
+          "rating": "4.0",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Cardiology & Cardiac Surgery"
+          ],
+          "doctorsCount": 900,
+          "established": "2009",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0003",
+          "name": "Max Super Speciality Hospital, Saket",
+          "image": "/max/Max-1.jpg",
+          "rating": "4.2",
+          "location": "New Delhi, Delhi",
+          "specialties": [
+            "Cardiology & Cardiac Surgery"
+          ],
+          "doctorsCount": 530,
+          "established": "2004",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        }
+      ],
       "doctors": [
         {
           "id": 1,
@@ -793,7 +840,7 @@
       "description": "Advanced brain and nervous system treatments",
       "icon": "/specialties/neurology.png",
       "color": "#FEC091",
-      "count": 0,
+      "count": 3,
       "overview": {
         "description": "Neurology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the brain, spinal cord, and nervous system. Our medical tourism platform connects patients with the best neurology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -817,12 +864,7 @@
           "Treatments"
         ],
         "treatments": [
-          "Brain Surgery",
-          "Stroke Treatment",
-          "Epilepsy Management",
-          "Parkinson's Treatment",
-          "Multiple Sclerosis Care",
-          "Migraine Treatment"
+          "Brain Surgery"
         ],
         "facilities": [
           "Neurology ICU",
@@ -833,7 +875,59 @@
           "Rehabilitation Center"
         ]
       },
-      "hospitals": [],
+      "hospitals": [
+        {
+          "id": "HDEL0001",
+          "name": "Fortis Memorial Research Institute",
+          "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
+          "rating": "4.5",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Neurology & Neuro Surgery"
+          ],
+          "doctorsCount": 200,
+          "established": "2013",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0002",
+          "name": "Medanta The Medicity",
+          "image": "/medanta/Medanta-1.jpg",
+          "rating": "4.0",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Neurology & Neuro Surgery"
+          ],
+          "doctorsCount": 900,
+          "established": "2009",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0003",
+          "name": "Max Super Speciality Hospital, Saket",
+          "image": "/max/Max-1.jpg",
+          "rating": "4.2",
+          "location": "New Delhi, Delhi",
+          "specialties": [
+            "Neurology & Neuro Surgery"
+          ],
+          "doctorsCount": 530,
+          "established": "2004",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        }
+      ],
       "doctors": [
         {
           "id": 1,
@@ -1270,7 +1364,7 @@
       "description": "Comprehensive cancer care and treatment",
       "icon": "/specialties/oncology.png",
       "color": "#E7C2D4",
-      "count": 0,
+      "count": 3,
       "overview": {
         "description": "Oncology is a medical specialty that focuses on the diagnosis and treatment of cancer. Our medical tourism platform connects patients with the best oncology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -1294,12 +1388,7 @@
           "Treatments"
         ],
         "treatments": [
-          "Chemotherapy",
-          "Radiation Therapy",
-          "Immunotherapy",
-          "Surgical Oncology",
-          "Bone Marrow Transplant",
-          "Targeted Therapy"
+          "Chemotherapy"
         ],
         "facilities": [
           "Chemotherapy Unit",
@@ -1310,7 +1399,59 @@
           "Palliative Care"
         ]
       },
-      "hospitals": [],
+      "hospitals": [
+        {
+          "id": "HDEL0001",
+          "name": "Fortis Memorial Research Institute",
+          "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
+          "rating": "4.5",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Oncology (Surgical, Medical & Radiotherapy)"
+          ],
+          "doctorsCount": 200,
+          "established": "2013",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0002",
+          "name": "Medanta The Medicity",
+          "image": "/medanta/Medanta-1.jpg",
+          "rating": "4.0",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Oncology (Surgical, Medical & Radiotherapy)"
+          ],
+          "doctorsCount": 900,
+          "established": "2009",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0003",
+          "name": "Max Super Speciality Hospital, Saket",
+          "image": "/max/Max-1.jpg",
+          "rating": "4.2",
+          "location": "New Delhi, Delhi",
+          "specialties": [
+            "Oncology (Surgical, Medical & Radiotherapy)"
+          ],
+          "doctorsCount": 530,
+          "established": "2004",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        }
+      ],
       "doctors": [
         {
           "id": 1,
@@ -1579,7 +1720,7 @@
       "description": "Specialized care for bones, joints, muscles, and skeletal system",
       "icon": "/specialties/orthopaedics.png",
       "color": "#F6EB61",
-      "count": 0,
+      "count": 3,
       "overview": {
         "description": "Orthopaedics is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the musculoskeletal system including bones, joints, muscles, ligaments, and tendons. Our medical tourism platform connects patients with the best orthopedic hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -1602,14 +1743,7 @@
           "Hospitals",
           "Treatments"
         ],
-        "treatments": [
-          "Joint Replacement",
-          "Arthroscopy",
-          "Fracture Treatment",
-          "Spine Surgery",
-          "Sports Medicine",
-          "Pediatric Orthopedics"
-        ],
+        "treatments": [],
         "facilities": [
           "Operation Theater",
           "X-Ray",
@@ -1619,7 +1753,59 @@
           "Rehabilitation Center"
         ]
       },
-      "hospitals": [],
+      "hospitals": [
+        {
+          "id": "HDEL0001",
+          "name": "Fortis Memorial Research Institute",
+          "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
+          "rating": "4.5",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Orthopaedics"
+          ],
+          "doctorsCount": 200,
+          "established": "2013",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0002",
+          "name": "Medanta The Medicity",
+          "image": "/medanta/Medanta-1.jpg",
+          "rating": "4.0",
+          "location": "Gurugram, Delhi NCR, Haryana",
+          "specialties": [
+            "Orthopaedics"
+          ],
+          "doctorsCount": 900,
+          "established": "2009",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        },
+        {
+          "id": "HDEL0003",
+          "name": "Max Super Speciality Hospital, Saket",
+          "image": "/max/Max-1.jpg",
+          "rating": "4.2",
+          "location": "New Delhi, Delhi",
+          "specialties": [
+            "Orthopaedics"
+          ],
+          "doctorsCount": 530,
+          "established": "2004",
+          "accreditation": [
+            "JCI",
+            "NABH",
+            "NABL"
+          ]
+        }
+      ],
       "doctors": [
         {
           "id": 1,
@@ -1666,220 +1852,51 @@
       ],
       "treatments": [
         {
-          "id": "orthopaedics_1",
-          "name": "Knee Replacement",
-          "image": "/hospitaldirectory/img1.png",
-          "price": "€18,000",
-          "description": "Surgical replacement of damaged knee joint with artificial implant",
-          "duration": "2-3 hours",
-          "recovery": "6-12 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Rehabilitation",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "orthopaedics_2",
-          "name": "Hip Replacement",
-          "image": "/hospitaldirectory/img2.png",
-          "price": "€20,000",
-          "description": "Surgical replacement of damaged hip joint with artificial implant",
-          "duration": "2-3 hours",
-          "recovery": "6-12 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Rehabilitation",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "orthopaedics_3",
-          "name": "ACL Reconstruction",
-          "image": "/hospitaldirectory/img3.png",
-          "price": "€12,000",
-          "description": "Surgical reconstruction of torn anterior cruciate ligament",
-          "duration": "1-2 hours",
-          "recovery": "6-9 months",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Physical therapy",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "orthopaedics_4",
-          "name": "Shoulder Surgery",
-          "image": "/hospitaldirectory/img4.png",
-          "price": "€15,000",
-          "description": "Surgical treatment for shoulder injuries and conditions",
-          "duration": "1-3 hours",
-          "recovery": "4-8 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Rehabilitation",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "orthopaedics_5",
-          "name": "Spine Surgery",
-          "image": "/hospitaldirectory/img5.png",
-          "price": "€35,000",
-          "description": "Surgical treatment for spine conditions and injuries",
-          "duration": "3-6 hours",
-          "recovery": "8-12 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Rehabilitation",
-            "Long-term care"
-          ]
-        },
-        {
-          "id": "orthopaedics_6",
-          "name": "Arthroscopic Surgery",
-          "image": "/hospitaldirectory/img6.png",
-          "price": "€8,000",
-          "description": "Minimally invasive joint surgery using small incisions",
-          "duration": "30-90 minutes",
-          "recovery": "2-6 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Arthroscopic procedure",
-            "Post-operative care",
-            "Follow-up"
-          ]
-        },
-        {
-          "id": "orthopaedics_7",
-          "name": "Fracture Treatment",
-          "image": "/hospitaldirectory/img7.png",
-          "price": "€10,000",
-          "description": "Surgical treatment for bone fractures and injuries",
-          "duration": "1-4 hours",
-          "recovery": "6-12 weeks",
-          "includes": [
-            "Emergency evaluation",
-            "Surgery",
-            "Casting/splinting",
-            "Rehabilitation"
-          ]
-        },
-        {
-          "id": "orthopaedics_8",
-          "name": "Sports Medicine",
-          "image": "/hospitaldirectory/img8.png",
-          "price": "€6,000",
-          "description": "Comprehensive treatment for sports-related injuries",
-          "duration": "Varies",
-          "recovery": "Varies",
-          "includes": [
-            "Injury evaluation",
-            "Treatment planning",
-            "Rehabilitation",
-            "Return to sport"
-          ]
-        },
-        {
-          "id": "orthopaedics_9",
-          "name": "Physical Therapy",
-          "image": "/hospitaldirectory/img9.png",
-          "price": "€3,000",
-          "description": "Rehabilitation and physical therapy programs",
-          "duration": "6-12 weeks",
-          "recovery": "Ongoing",
-          "includes": [
-            "Assessment",
-            "Therapy sessions",
-            "Exercise programs",
-            "Progress monitoring"
-          ]
-        },
-        {
-          "id": "orthopaedics_10",
-          "name": "Joint Arthroscopy",
-          "image": "/hospitaldirectory/img10.png",
-          "price": "€7,000",
-          "description": "Minimally invasive joint examination and treatment",
-          "duration": "30-60 minutes",
-          "recovery": "2-4 weeks",
-          "includes": [
-            "Joint examination",
-            "Arthroscopic procedure",
-            "Post-procedure care",
-            "Follow-up"
-          ]
-        },
-        {
-          "id": "orthopaedics_11",
-          "name": "Bone Grafting",
-          "image": "/hospitaldirectory/img11.png",
-          "price": "€12,000",
-          "description": "Surgical procedure to repair bone defects",
-          "duration": "2-4 hours",
-          "recovery": "6-12 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Bone grafting surgery",
-            "Post-operative care",
-            "Healing monitoring"
-          ]
-        },
-        {
-          "id": "orthopaedics_12",
-          "name": "Orthopedic Trauma",
-          "image": "/hospitaldirectory/img12.png",
-          "price": "€15,000",
-          "description": "Emergency treatment for orthopedic injuries",
-          "duration": "Varies",
-          "recovery": "Varies",
-          "includes": [
-            "Emergency evaluation",
-            "Trauma surgery",
-            "Post-operative care",
-            "Rehabilitation"
+          "id": "ORT0001",
+          "category": "Orthopaedics",
+          "name": "Total Knee Replacement (TKR)",
+          "description": "Replace damaged knee joint surfaces with prosthetic components to relieve pain and restore function.",
+          "duration": "Surgery ~1–2 hours.",
+          "recovery": "Walk day 0–1; hospital stay 1–3 days; return to daily activities ~6 weeks; full recovery up to 12 months.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Accreditation (JCI/NABH)",
+            "High annual TKR volume",
+            "Published infection & revision rates",
+            "ERAS/rehab program availability",
+            "Robotic/navigation capability",
+            "ICU backup"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Shortlist surgeons with >50 TKRs/year",
+            "Fellowship training in arthroplasty",
+            "Transparent outcomes",
+            "Strong patient‑reported outcomes",
+            "Verify registration on NMC/state council"
+          ],
+          "diagnosticTools": [
+            "Standing knee X‑rays (AP/lateral), long‑leg alignment views",
+            "MRI in selected cases",
+            "Routine labs & medical clearance"
+          ],
+          "advancedTreatmentOptions": "Robotic‑assisted TKR; patient‑specific instrumentation; cementless implants; unicompartmental (partial) knee; minimally invasive approaches.",
+          "advantages": "Marked pain relief and mobility; long implant life—~82% of TKRs last ≥25 years; high satisfaction when done at high‑volume centers.",
+          "costConsiderations": "India private hospitals: ~₹2.0–3.5 lakh per knee; bilateral ₹4–7 lakh (excl. travel). Costs vary by city, implant, room, and comorbidities.",
+          "faq": [
+            "How long do implants last? Often >20–25 yrs.",
+            "When can I drive? Typically 4–6 weeks if safe.",
+            "Are both knees done together? Sometimes; depends on risk profile."
           ]
         }
       ],
-      "costs": [
-        {
-          "name": "Orthopedic consultation",
-          "cost": "€200 - €500"
-        },
-        {
-          "name": "Knee replacement",
-          "cost": "€15,000 - €25,000"
-        },
-        {
-          "name": "Hip replacement",
-          "cost": "€18,000 - €30,000"
-        },
-        {
-          "name": "ACL reconstruction",
-          "cost": "€10,000 - €15,000"
-        },
-        {
-          "name": "Shoulder surgery",
-          "cost": "€8,000 - €20,000"
-        },
-        {
-          "name": "Spine surgery",
-          "cost": "€25,000 - €50,000"
-        },
-        {
-          "name": "Arthroscopic surgery",
-          "cost": "€5,000 - €12,000"
-        },
-        {
-          "name": "Physical therapy",
-          "cost": "€2,000 - €5,000"
-        }
-      ]
+      "costs": []
     },
     "urology": {
       "id": "urology",

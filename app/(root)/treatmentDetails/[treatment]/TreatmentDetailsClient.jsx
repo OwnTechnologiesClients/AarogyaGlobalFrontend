@@ -21,6 +21,39 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
         return euroString; // Return original if no euro symbol found
     };
 
+    // Helper function to convert rupees to dollars (approximate rate: 1 INR = 0.012 USD)
+    const convertToDollars = (rupeeString) => {
+        // Convert "lakh" to actual numbers (1 lakh = 100,000)
+        let convertedString = rupeeString;
+
+        // Convert ₹2.0–3.5 lakh to $2,400–4,200
+        convertedString = convertedString.replace(/₹(\d+\.?\d*)\s*–\s*(\d+\.?\d*)\s*lakh/g, (match, min, max) => {
+            const minRupees = parseFloat(min) * 100000;
+            const maxRupees = parseFloat(max) * 100000;
+            const minDollars = Math.round(minRupees * 0.012);
+            const maxDollars = Math.round(maxRupees * 0.012);
+            return `$${minDollars.toLocaleString('en-US')}–$${maxDollars.toLocaleString('en-US')}`;
+        });
+
+        // Convert ₹4–7 lakh to $4,800–8,400
+        convertedString = convertedString.replace(/₹(\d+)\s*–\s*(\d+)\s*lakh/g, (match, min, max) => {
+            const minRupees = parseFloat(min) * 100000;
+            const maxRupees = parseFloat(max) * 100000;
+            const minDollars = Math.round(minRupees * 0.012);
+            const maxDollars = Math.round(maxRupees * 0.012);
+            return `$${minDollars.toLocaleString('en-US')}–$${maxDollars.toLocaleString('en-US')}`;
+        });
+
+        // Convert remaining ₹ amounts
+        convertedString = convertedString.replace(/₹(\d+\.?\d*)/g, (match, amount) => {
+            const rupeeAmount = parseFloat(amount);
+            const dollarAmount = Math.round(rupeeAmount * 0.012);
+            return `$${dollarAmount.toLocaleString('en-US')}`;
+        });
+
+        return convertedString;
+    };
+
     // Handle case when treatmentData is not available
     if (!treatmentData) {
         console.error('TreatmentDetailsClient: treatmentData is null or undefined');
@@ -102,7 +135,6 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
             'Hospitals': 'hospitals',
             'Doctors': 'doctors',
             'Diagnostic': 'diagnostic',
-            'Treatments': 'treatments',
             'Cost': 'cost',
             'FAQ': 'faq'
         };
@@ -115,7 +147,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     // Scroll spy functionality
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['overview', 'hospitals', 'doctors', 'diagnostic', 'treatments', 'cost', 'faq'];
+            const sections = ['overview', 'hospitals', 'doctors', 'diagnostic', 'cost', 'faq'];
             const scrollPosition = window.scrollY + 200; // Offset for better detection
 
             for (let i = sections.length - 1; i >= 0; i--) {
@@ -126,7 +158,6 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         'hospitals': 'Hospitals',
                         'doctors': 'Doctors',
                         'diagnostic': 'Diagnostic',
-                        'treatments': 'Treatments',
                         'cost': 'Cost',
                         'faq': 'FAQ'
                     };
@@ -174,11 +205,11 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                         {/* Best Hospitals Section */}
                         <section id="hospitals" className="mb-12">
-                            <HospitalsSwiper 
+                            <HospitalsSwiper
                                 hospitals={treatment.bestHospitals.hospitals}
                                 title={treatment.bestHospitals.title}
                             />
-                            
+
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
                                     {treatment.bestHospitals.description}
@@ -193,11 +224,11 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                         {/* Top Doctors Section */}
                         <section id="doctors" className="mb-12">
-                            <DoctorsSwiper 
+                            <DoctorsSwiper
                                 doctors={treatment.topDoctors.doctors}
                                 title={treatment.topDoctors.title}
                             />
-                            
+
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
                                     {treatment.topDoctors.description}
@@ -213,115 +244,54 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* Diagnostic Tools Section */}
                         <section id="diagnostic" className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.diagnosticTools.title}
+                                Diagnostic Tools for Total Knee Replacement (TKR)
                             </h2>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {/* Conventional Methods */}
-                                <div>
-                                    <h3 className="font-semibold text-gray-800 mb-4">
-                                        {treatment.diagnosticTools.conventionalMethods.title}
-                                    </h3>
-
-                                    <div className="mb-4">
-                                        <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                            <h4 className="font-semibold text-green-800 mb-2">
-                                                {treatment.diagnosticTools.conventionalMethods.primary.name}
-                                            </h4>
-                                            <p className="text-green-700 text-sm">
-                                                {treatment.diagnosticTools.conventionalMethods.primary.description}
-                                            </p>
+                            <div className="space-y-3">
+                                {Array.isArray(treatment.diagnosticTools) && treatment.diagnosticTools.map((tool, index) => (
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div className="flex items-start space-x-3">
+                                            <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                            <span className="text-gray-800 font-medium">{tool}</span>
                                         </div>
                                     </div>
-
-                                    <div className="space-y-2">
-                                        {treatment.diagnosticTools.conventionalMethods.secondary.map((method, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-lg">
-                                                <button
-                                                    onClick={() => toggleSection(`conventional-${index}`)}
-                                                    className="w-full p-3 text-left flex justify-between items-center hover:bg-gray-50"
-                                                >
-                                                    <span className="font-medium">{method}</span>
-                                                    {expandedSections[`conventional-${index}`] ? (
-                                                        <ChevronUp className="w-4 h-4" />
-                                                    ) : (
-                                                        <ChevronDown className="w-4 h-4" />
-                                                    )}
-                                                </button>
-                                                {expandedSections[`conventional-${index}`] && (
-                                                    <div className="p-3 bg-gray-50 text-sm text-gray-600">
-                                                        Detailed information about {method.toLowerCase()}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Advanced Options */}
-                                <div>
-                                    <h3 className="font-semibold text-gray-800 mb-4">
-                                        {treatment.diagnosticTools.advancedOptions.title}
-                                    </h3>
-
-                                    <div className="mb-4">
-                                        <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                            <h4 className="font-semibold text-green-800 mb-2">
-                                                {treatment.diagnosticTools.advancedOptions.primary.name}
-                                            </h4>
-                                            <p className="text-green-700 text-sm">
-                                                {treatment.diagnosticTools.advancedOptions.primary.description}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        {treatment.diagnosticTools.advancedOptions.secondary.map((method, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-lg">
-                                                <button
-                                                    onClick={() => toggleSection(`advanced-${index}`)}
-                                                    className="w-full p-3 text-left flex justify-between items-center hover:bg-gray-50"
-                                                >
-                                                    <span className="font-medium">{method}</span>
-                                                    {expandedSections[`advanced-${index}`] ? (
-                                                        <ChevronUp className="w-4 h-4" />
-                                                    ) : (
-                                                        <ChevronDown className="w-4 h-4" />
-                                                    )}
-                                                </button>
-                                                {expandedSections[`advanced-${index}`] && (
-                                                    <div className="p-3 bg-gray-50 text-sm text-gray-600">
-                                                        Detailed information about {method.toLowerCase()}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </section>
 
-                        {/* Treatment Packages Section */}
-                        <section id="treatments" className="mb-12">
+                        {/* Cost Section */}
+                        <section id="cost" className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.treatmentPackages.title}
+                                Treatment Cost & Packages
                             </h2>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div className="grid grid-cols-1 gap-6 mb-6">
                                 {treatment.treatmentPackages.packages.map((pkg, index) => (
-                                    <div key={pkg.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                                        <img
-                                            src={pkg.image}
-                                            alt={pkg.name}
-                                            className="w-full h-48 object-cover"
-                                        />
-                                        <div className="p-4">
-                                            <h3 className="font-bold text-lg mb-2">{pkg.name}</h3>
-                                            <p className="text-2xl font-bold text-green-600 mb-2">{convertToRupees(pkg.price)}</p>
-                                            <p className="text-gray-600 text-sm mb-3">{pkg.description}</p>
-                                            <div className="text-xs text-gray-500">
-                                                <p>Duration: {pkg.duration}</p>
-                                                <p>Recovery: {pkg.recovery}</p>
+                                    <div key={pkg.id} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
+                                        <div className="flex flex-col md:flex-row">
+                                            <div className="md:w-2/5">
+                                                <img
+                                                    src={pkg.image}
+                                                    alt={pkg.name}
+                                                    className="w-full h-64 object-cover"
+                                                />
+                                            </div>
+                                            <div className="md:w-3/5 p-6">
+                                                <h3 className="font-bold text-2xl mb-4 text-gray-800">{pkg.name}</h3>
+                                                <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-4 rounded-r-lg">
+                                                    <p className="text-2xl font-bold text-green-600">{convertToDollars(pkg.price)}</p>
+                                                </div>
+                                                <p className="text-gray-700 text-base mb-4 leading-relaxed">{pkg.description}</p>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                                    <div className="bg-gray-50 p-3 rounded-lg">
+                                                        <p className="font-semibold text-gray-800 mb-1">Duration</p>
+                                                        <p className="text-gray-600">{pkg.duration}</p>
+                                                    </div>
+                                                    <div className="bg-gray-50 p-3 rounded-lg">
+                                                        <p className="font-semibold text-gray-800 mb-1">Recovery</p>
+                                                        <p className="text-gray-600">{pkg.recovery}</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -336,200 +306,38 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* Advanced Treatments Section */}
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.advancedTreatments.title}
+                                Advanced Treatment Options for Total Knee Replacement (TKR)
                             </h2>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {/* Latest Options */}
-                                <div>
-                                    <h3 className="font-semibold text-gray-800 mb-4">
-                                        {treatment.advancedTreatments.latestOptions.title}
-                                    </h3>
-
-                                    <div className="mb-4">
-                                        <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                            <h4 className="font-semibold text-green-800 mb-2">
-                                                {treatment.advancedTreatments.latestOptions.primary.name}
-                                            </h4>
-                                            <p className="text-green-700 text-sm">
-                                                {treatment.advancedTreatments.latestOptions.primary.description}
-                                            </p>
+                            <div className="space-y-3">
+                                {Array.isArray(treatment.advancedTreatments) && treatment.advancedTreatments.map((treatment, index) => (
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div className="flex items-start space-x-3">
+                                            <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                            <span className="text-gray-800 font-medium">{treatment}</span>
                                         </div>
                                     </div>
-
-                                    <div className="space-y-2">
-                                        {treatment.advancedTreatments.latestOptions.secondary.map((option, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-lg">
-                                                <button
-                                                    onClick={() => toggleSection(`latest-${index}`)}
-                                                    className="w-full p-3 text-left flex justify-between items-center hover:bg-gray-50"
-                                                >
-                                                    <span className="font-medium">{option}</span>
-                                                    {expandedSections[`latest-${index}`] ? (
-                                                        <ChevronUp className="w-4 h-4" />
-                                                    ) : (
-                                                        <ChevronDown className="w-4 h-4" />
-                                                    )}
-                                                </button>
-                                                {expandedSections[`latest-${index}`] && (
-                                                    <div className="p-3 bg-gray-50 text-sm text-gray-600">
-                                                        Detailed information about {option.toLowerCase()}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Advancements */}
-                                <div>
-                                    <h3 className="font-semibold text-gray-800 mb-4">
-                                        {treatment.advancedTreatments.advancements.title}
-                                    </h3>
-
-                                    <div className="mb-4">
-                                        <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                            <h4 className="font-semibold text-green-800 mb-2">
-                                                {treatment.advancedTreatments.advancements.primary.name}
-                                            </h4>
-                                            <p className="text-green-700 text-sm">
-                                                {treatment.advancedTreatments.advancements.primary.description}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        {treatment.advancedTreatments.advancements.secondary.map((advancement, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-lg">
-                                                <button
-                                                    onClick={() => toggleSection(`advancement-${index}`)}
-                                                    className="w-full p-3 text-left flex justify-between items-center hover:bg-gray-50"
-                                                >
-                                                    <span className="font-medium">{advancement}</span>
-                                                    {expandedSections[`advancement-${index}`] ? (
-                                                        <ChevronUp className="w-4 h-4" />
-                                                    ) : (
-                                                        <ChevronDown className="w-4 h-4" />
-                                                    )}
-                                                </button>
-                                                {expandedSections[`advancement-${index}`] && (
-                                                    <div className="p-3 bg-gray-50 text-sm text-gray-600">
-                                                        Detailed information about {advancement.toLowerCase()}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </section>
 
-                        {/* Costs Section */}
-                        <section id="cost" className="mb-12">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.costs.title}
-                            </h2>
 
-                            <div className="bg-gray-50 rounded-lg p-6">
-                                <div className="space-y-3">
-                                    {treatment.costs.treatments.map((item, index) => (
-                                        <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                                            <span className="font-medium text-gray-800">{item.name}</span>
-                                            <span className="font-bold text-green-600">{convertToRupees(item.cost)}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </section>
 
                         {/* Advantages Section */}
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.advantages.title}
+                                Advantages of Total Knee Replacement (TKR)
                             </h2>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {/* Benefits */}
-                                <div>
-                                    <h3 className="font-semibold text-gray-800 mb-4">
-                                        {treatment.advantages.benefits.title}
-                                    </h3>
-
-                                    <div className="mb-4">
-                                        <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                            <h4 className="font-semibold text-green-800 mb-2">
-                                                {treatment.advantages.benefits.primary.name}
-                                            </h4>
-                                            <p className="text-green-700 text-sm">
-                                                {treatment.advantages.benefits.primary.description}
-                                            </p>
+                            <div className="space-y-3">
+                                {Array.isArray(treatment.advantages) && treatment.advantages.map((advantage, index) => (
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div className="flex items-start space-x-3">
+                                            <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                            <span className="text-gray-800 font-medium">{advantage}</span>
                                         </div>
                                     </div>
-
-                                    <div className="space-y-2">
-                                        {treatment.advantages.benefits.secondary.map((benefit, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-lg">
-                                                <button
-                                                    onClick={() => toggleSection(`benefit-${index}`)}
-                                                    className="w-full p-3 text-left flex justify-between items-center hover:bg-gray-50"
-                                                >
-                                                    <span className="font-medium">{benefit}</span>
-                                                    {expandedSections[`benefit-${index}`] ? (
-                                                        <ChevronUp className="w-4 h-4" />
-                                                    ) : (
-                                                        <ChevronDown className="w-4 h-4" />
-                                                    )}
-                                                </button>
-                                                {expandedSections[`benefit-${index}`] && (
-                                                    <div className="p-3 bg-gray-50 text-sm text-gray-600">
-                                                        Detailed information about {benefit.toLowerCase()}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Reasons */}
-                                <div>
-                                    <h3 className="font-semibold text-gray-800 mb-4">
-                                        {treatment.advantages.reasons.title}
-                                    </h3>
-
-                                    <div className="mb-4">
-                                        <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                            <h4 className="font-semibold text-green-800 mb-2">
-                                                {treatment.advantages.reasons.primary.name}
-                                            </h4>
-                                            <p className="text-green-700 text-sm">
-                                                {treatment.advantages.reasons.primary.description}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        {treatment.advantages.reasons.secondary.map((reason, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-lg">
-                                                <button
-                                                    onClick={() => toggleSection(`reason-${index}`)}
-                                                    className="w-full p-3 text-left flex justify-between items-center hover:bg-gray-50"
-                                                >
-                                                    <span className="font-medium">{reason}</span>
-                                                    {expandedSections[`reason-${index}`] ? (
-                                                        <ChevronUp className="w-4 h-4" />
-                                                    ) : (
-                                                        <ChevronDown className="w-4 h-4" />
-                                                    )}
-                                                </button>
-                                                {expandedSections[`reason-${index}`] && (
-                                                    <div className="p-3 bg-gray-50 text-sm text-gray-600">
-                                                        Detailed information about {reason.toLowerCase()}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </section>
 
@@ -558,28 +366,16 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* FAQ Section */}
                         <section id="faq" className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                {treatment.faq.title}
+                                Frequently Asked Questions about Total Knee Replacement (TKR)
                             </h2>
 
-                            <div className="space-y-4">
-                                {treatment.faq.questions.map((faq, index) => (
-                                    <div key={index} className="border border-gray-200 rounded-lg">
-                                        <button
-                                            onClick={() => toggleFAQ(index)}
-                                            className="w-full p-4 text-left flex justify-between items-center hover:bg-gray-50"
-                                        >
-                                            <span className="font-medium text-gray-800">{faq.question}</span>
-                                            {expandedFAQ[index] ? (
-                                                <ChevronUp className="w-5 h-5 text-gray-500" />
-                                            ) : (
-                                                <ChevronDown className="w-5 h-5 text-gray-500" />
-                                            )}
-                                        </button>
-                                        {expandedFAQ[index] && (
-                                            <div className="p-4 bg-gray-50 text-gray-700">
-                                                {faq.answer}
-                                            </div>
-                                        )}
+                            <div className="space-y-3">
+                                {Array.isArray(treatment.faq) && treatment.faq.map((faq, index) => (
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div className="flex items-start space-x-3">
+                                            <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                            <span className="text-gray-800 font-medium">{faq}</span>
+                                        </div>
                                     </div>
                                 ))}
                             </div>

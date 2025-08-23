@@ -7,7 +7,6 @@ const TreatmentNavigation = ({ activeTab, setActiveTab }) => {
     "Hospitals",
     "Doctors",
     "Diagnostic",
-    "Treatments",
     "Cost",
     "FAQ"
   ];
@@ -21,8 +20,8 @@ const TreatmentNavigation = ({ activeTab, setActiveTab }) => {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 whitespace-nowrap flex-shrink-0 ${activeTab === tab
-                  ? 'bg-[#00D084] text-white shadow-sm'
-                  : 'text-gray-600 hover:text-white hover:bg-[#00D084]/80 hover:shadow-md'
+                ? 'bg-[#00D084] text-white shadow-sm'
+                : 'text-gray-600 hover:text-white hover:bg-[#00D084]/80 hover:shadow-md'
                 }`}
             >
               {tab}
