@@ -1,16 +1,10 @@
 "use client";
 import React from 'react';
 import {
-  Calendar,
-  Award,
-  Users,
   Heart,
-  Target,
   Eye,
-  Building2,
-  Stethoscope,
-  Globe,
-  TrendingUp
+  Phone,
+  Clock
 } from 'lucide-react';
 
 const HospitalAbout = ({ hospital }) => {
@@ -22,9 +16,19 @@ const HospitalAbout = ({ hospital }) => {
       {/* Header */}
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">About {hospital?.name || 'Our Hospital'}</h2>
-        <p className="text-gray-600 text-lg leading-relaxed">
-          Fortis Healthcare Limited is a leading integrated healthcare delivery service provider in India. The healthcare verticals of the company primarily comprise hospitals, diagnostics, and day care specialty facilities. Currently, the company operates 33 healthcare facilities (including JVs and O&M facilities) across 11 states. The Company's network comprises over 5,700 operational beds (including O&M beds) and 400 diagnostics labs.
-        </p>
+        <div className="text-gray-600 text-lg leading-relaxed space-y-6">
+          {hospital?.about ? (
+            hospital.about.split('\n\n\n').map((paragraph, index) => (
+              <p key={index} className="text-gray-600 text-lg leading-relaxed">
+                {paragraph.trim()}
+              </p>
+            ))
+          ) : (
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Our hospital is committed to providing world-class healthcare services with advanced medical technology and compassionate care.
+            </p>
+          )}
+        </div>
       </div>
 
       {/* Mission, Vision */}
@@ -58,11 +62,27 @@ const HospitalAbout = ({ hospital }) => {
 
 
 
-
-
-
-
-
+      {/* Emergency Support & OPD Hours */}
+      <div className="bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-white mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Emergency Support</h3>
+            <p className="text-red-100 mb-4">{hospital?.emergencySupport || "24/7 Emergency Support Available"}</p>
+            <div className="flex items-center gap-2">
+              <Phone className="w-5 h-5" />
+              <span>{hospital?.contact?.phone || "Emergency Contact"}</span>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-4">OPD Hours</h3>
+            <p className="text-red-100 mb-4">{hospital?.opdHours || "OPD Hours: 9 AM - 8 PM"}</p>
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5" />
+              <span>Monday - Saturday</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     </div>

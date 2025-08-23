@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-import { 
-  Star, 
-  ThumbsUp, 
-  MessageCircle, 
+import {
+  Star,
+  ThumbsUp,
+  MessageCircle,
   Filter,
   Calendar,
   User,
@@ -11,7 +11,7 @@ import {
   TrendingUp
 } from 'lucide-react';
 
-const HospitalReviews = () => {
+const HospitalReviews = ({ hospital }) => {
   const [selectedRating, setSelectedRating] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
 
@@ -23,15 +23,19 @@ const HospitalReviews = () => {
     { value: "lowest", label: "Lowest Rating" }
   ];
 
+  // Get rating from hospital data
+  const hospitalRating = parseFloat(hospital?.rating || "4.5");
+  const totalReviews = hospital?.reviews?.[0]?.comment?.match(/\d+/)?.[0] || "1000";
+
   const overallRating = {
-    average: 4.6,
-    totalReviews: 1247,
+    average: hospitalRating,
+    totalReviews: parseInt(totalReviews),
     distribution: {
-      5: 65,
-      4: 20,
-      3: 10,
-      2: 3,
-      1: 2
+      5: Math.floor(parseInt(totalReviews) * 0.6),
+      4: Math.floor(parseInt(totalReviews) * 0.25),
+      3: Math.floor(parseInt(totalReviews) * 0.1),
+      2: Math.floor(parseInt(totalReviews) * 0.03),
+      1: Math.floor(parseInt(totalReviews) * 0.02)
     }
   };
 
@@ -112,19 +116,18 @@ const HospitalReviews = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-4 h-4 ${
-          index < rating ? 'text-yellow-500 fill-current' : 'text-gray-300'
-        }`}
+        className={`w-4 h-4 ${index < rating ? 'text-yellow-500 fill-current' : 'text-gray-300'
+          }`}
       />
     ));
   };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
   };
 
@@ -152,7 +155,7 @@ const HospitalReviews = () => {
                 <div className="text-gray-600">Based on {overallRating.totalReviews.toLocaleString()} reviews</div>
               </div>
             </div>
-            
+
             <div className="flex items-center justify-center lg:justify-start gap-2 text-[#04CE78]">
               <TrendingUp className="w-5 h-5" />
               <span className="font-medium">Excellent rating</span>

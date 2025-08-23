@@ -43,13 +43,8 @@
       "placeholder": "Select Hospital",
       "options": [
         "Fortis Memorial Research Institute",
-        "Fortis Hospital Delhi",
-        "Kokilaben Hospital",
-        "Manipal Hospital",
-        "AIIMS Delhi",
-        "Max Super Speciality Hospital",
-        "Medanta - The Medicity",
-        "Fortis Hospital Mumbai"
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital, Saket"
       ]
     }
   ],

@@ -10,14 +10,14 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-const HospitalLocation = () => {
+const HospitalLocation = ({ hospital }) => {
   const hospitalInfo = {
-    name: "Fortis Memorial Research Institute",
-    address: "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
-    phone: "+91-124-496-7000",
-    email: "info@fortishealthcare.com",
-    emergency: "+91-124-496-7000",
-    coordinates: {
+    name: hospital?.name || "Hospital",
+    address: hospital?.address || "Address not available",
+    phone: hospital?.contact?.phone || "Phone not available",
+    email: hospital?.contact?.email || "Email not available",
+    emergency: hospital?.contact?.phone || "Emergency contact not available",
+    coordinates: hospital?.coordinates || {
       lat: 28.4595,
       lng: 77.0266,
     },
@@ -31,12 +31,12 @@ const HospitalLocation = () => {
   };
 
   const openGoogleMaps = () => {
-    const url = "https://www.google.com/maps?s=web&rlz=1C1GCEU_enIN1026IN1026&lqi=CiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRlSIHwzs7lgICACFouEAAQARACEAMYACIiZm9ydGlzIG1lbW9yaWFsIHJlc2VhcmNoIGluc3RpdHV0ZZIBCGhvc3BpdGFsqgFXCgsvZy8xdGR5N2cwMRABMh4QASIat7euftc7b_z04jW9TWqLLpLLNfa2eKpefLIyJhACIiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRl&vet=12ahUKEwiMyvb4lJmPAxWUyTgGHYeCAGAQ1YkKegQIHxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KbNXz-HuGA05MdSZE99ypm8Z&daddr=Sector+-+44,+Opposite+HUDA+City+Centre,+Gurugram,+Haryana+122003";
+    const url = hospital?.mapLink || `https://www.google.com/maps?q=${hospitalInfo.coordinates.lat},${hospitalInfo.coordinates.lng}`;
     window.open(url, "_blank");
   };
 
   const openDirections = () => {
-    const url = "https://www.google.com/maps?s=web&rlz=1C1GCEU_enIN1026IN1026&lqi=CiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRlSIHwzs7lgICACFouEAAQARACEAMYACIiZm9ydGlzIG1lbW9yaWFsIHJlc2VhcmNoIGluc3RpdHV0ZZIBCGhvc3BpdGFsqgFXCgsvZy8xdGR5N2cwMRABMh4QASIat7euftc7b_z04jW9TWqLLpLLNfa2eKpefLIyJhACIiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRl&vet=12ahUKEwiMyvb4lJmPAxWUyTgGHYeCAGAQ1YkKegQIHxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KbNXz-HuGA05MdSZE99ypm8Z&daddr=Sector+-+44,+Opposite+HUDA+City+Centre,+Gurugram,+Haryana+122003";
+    const url = hospital?.mapLink || `https://www.google.com/maps/dir//${hospitalInfo.coordinates.lat},${hospitalInfo.coordinates.lng}`;
     window.open(url, "_blank");
   };
 
@@ -60,7 +60,7 @@ const HospitalLocation = () => {
             {/* Interactive Map */}
             <iframe
               title="Hospital Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2233913121413!2d77.0266!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19f5828c3b8f%3A0x1b9a6b9b9b9b9b9b!2sFortis%20Memorial%20Research%20Institute!5e0!3m2!1sen!2sin!4v1234567890"
+              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2233913121413!2d${hospitalInfo.coordinates.lng}!3d${hospitalInfo.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19f5828c3b8f%3A0x1b9a6b9b9b9b9b9b!2s${encodeURIComponent(hospitalInfo.name)}!5e0!3m2!1sen!2sin!4v1234567890`}
               className="w-full h-full border-0"
               allowFullScreen
               loading="lazy"
@@ -178,14 +178,14 @@ const HospitalLocation = () => {
                 <Clock className="w-5 h-5 text-[#04CE78] mt-0.5" />
                 <div>
                   <p className="font-medium text-gray-800">Emergency Support</p>
-                  <p className="text-gray-600 text-sm">24/7 365 days Emergency Support</p>
+                  <p className="text-gray-600 text-sm">{hospital?.emergencySupport || "24/7 365 days Emergency Support"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-[#04CE78] mt-0.5" />
                 <div>
                   <p className="font-medium text-gray-800">OPD Hours</p>
-                  <p className="text-gray-600 text-sm">9 am to 8 pm (Monday - Saturday)</p>
+                  <p className="text-gray-600 text-sm">{hospital?.opdHours || "9 am to 8 pm (Monday - Saturday)"}</p>
                 </div>
               </div>
             </div>
@@ -198,24 +198,32 @@ const HospitalLocation = () => {
       {/* Nearby Landmarks */}
       <div className="mt-12">
         <h3 className="text-2xl font-bold text-gray-800 mb-6">
-          Nearby Landmarks
+          Location & Accessibility
         </h3>
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
               <div>
-                <p className="font-medium text-gray-800">IG International Airport</p>
-                <p className="text-gray-600 text-sm">25 mins from IG International Airport</p>
+                <p className="font-medium text-gray-800">Accessibility</p>
+                <p className="text-gray-600 text-sm">{hospital?.accessibility || "Accessibility information not available"}</p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
-              <div>
-                <p className="font-medium text-gray-800">HUDA City Center Metro Station</p>
-                <p className="text-gray-600 text-sm">Opposite HUDA City Center Metro Station (Walking Distance)</p>
+            {hospital?.mapLink && (
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
+                <div>
+                  <p className="font-medium text-gray-800">View on Map</p>
+                  <button
+                    onClick={openGoogleMaps}
+                    className="text-[#04CE78] text-sm hover:underline flex items-center gap-1 mt-1"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    Open in Google Maps
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

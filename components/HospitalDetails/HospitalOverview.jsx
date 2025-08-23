@@ -20,22 +20,22 @@ const HospitalOverview = ({ hospital, location }) => {
   const hospitalStats = [
     {
       icon: <Star className="w-6 h-6 text-[#04CE78]" />,
-      label: "9.5",
+      label: hospital?.hospitalStats?.userScore || "9.5",
       sublabel: "UserScore"
     },
     {
       icon: <Calendar className="w-6 h-6 text-[#04CE78]" />,
-      label: "2013",
+      label: hospital?.hospitalStats?.founded || "2013",
       sublabel: "Founded"
     },
     {
       icon: <Heart className="w-6 h-6 text-[#04CE78]" />,
-      label: "2 Mn +",
+      label: hospital?.hospitalStats?.patients || "2 Mn +",
       sublabel: "Patients"
     },
     {
       icon: <Users className="w-6 h-6 text-[#04CE78]" />,
-      label: "200+",
+      label: hospital?.hospitalStats?.doctors || "200+",
       sublabel: "Doctors"
     }
   ];
@@ -44,27 +44,27 @@ const HospitalOverview = ({ hospital, location }) => {
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Size & Capacity",
-      value: "OT: 15, ICU: 105, Patient Bed: 330+"
+      value: hospital?.hospitalStats?.sizeCapacity || "OT: 15, ICU: 105, Patient Bed: 330+"
     },
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Clinic Type",
-      value: "Quaternary Care Multi-Specialty"
+      value: hospital?.hospitalStats?.clinicType || "Quaternary Care Multi-Specialty"
     },
     {
       icon: <Heart className="w-5 h-5 text-gray-500" />,
       label: "Type of Care",
-      value: "Inpatient, Outpatient, Emergency, Daycare"
+      value: hospital?.hospitalStats?.typeOfCare || "Inpatient, Outpatient, Emergency, Daycare"
     },
     {
       icon: <Users className="w-5 h-5 text-gray-500" />,
       label: "Age Group",
-      value: "Kids, Adults, Geriatric"
+      value: hospital?.hospitalStats?.ageGroup || "Kids, Adults, Geriatric"
     },
     {
       icon: <Star className="w-5 h-5 text-gray-500" />,
       label: "Google Rating",
-      value: "4.5 (based on patient reviews)"
+      value: hospital?.hospitalStats?.googleRating || "4.5 (based on patient reviews)"
     }
   ];
 

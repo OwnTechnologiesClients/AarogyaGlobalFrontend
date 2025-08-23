@@ -52,227 +52,7 @@
           "Cardiac Rehabilitation"
         ]
       },
-      "hospitals": [
-        {
-          "id": 1,
-          "name": "Cleveland Clinic",
-          "location": "Mumbai, India",
-          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80",
-          "rating": "9.9",
-          "patientsPerYear": "2.8M+",
-          "successRate": "98.5%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO"
-          ],
-          "specialties": [
-            "Interventional Cardiology",
-            "Heart Transplant",
-            "Cardiac Surgery",
-            "Electrophysiology",
-            "Heart Failure"
-          ],
-          "facilities": [
-            "Advanced Cardiac Imaging",
-            "Robotic Surgery",
-            "Minimally Invasive Procedures",
-            "Hybrid ORs",
-            "3D Printing Lab"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Arabic",
-            "Hindi"
-          ],
-          "internationalPatients": "15,000+ annually"
-        },
-        {
-          "id": 2,
-          "name": "Mayo Clinic",
-          "location": "Delhi, India",
-          "image": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600",
-          "rating": "9.8",
-          "patientsPerYear": "1.3M+",
-          "successRate": "97.8%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Preventive Cardiology",
-            "Heart Failure",
-            "Electrophysiology",
-            "Structural Heart Disease",
-            "Cardiac Imaging"
-          ],
-          "facilities": [
-            "3D Cardiac Imaging",
-            "Advanced Monitoring",
-            "Specialized ICUs",
-            "Research Labs",
-            "Telemedicine Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "German",
-            "Chinese"
-          ],
-          "internationalPatients": "12,000+ annually"
-        },
-        {
-          "id": 3,
-          "name": "Johns Hopkins Hospital",
-          "location": "Bangalore, India",
-          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-          "rating": "9.7",
-          "patientsPerYear": "1.1M+",
-          "successRate": "97.2%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Pediatric Cardiology",
-            "Adult Congenital Heart Disease",
-            "Cardiac Rehabilitation",
-            "Preventive Cardiology",
-            "Interventional Cardiology"
-          ],
-          "facilities": [
-            "Hybrid Operating Rooms",
-            "Advanced Imaging",
-            "Research Facilities",
-            "Clinical Trials Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "Arabic",
-            "Korean"
-          ],
-          "internationalPatients": "10,000+ annually"
-        },
-        {
-          "id": 4,
-          "name": "Massachusetts General Hospital",
-          "location": "Chennai, India",
-          "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600",
-          "rating": "9.6",
-          "patientsPerYear": "1.5M+",
-          "successRate": "96.9%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Interventional Cardiology",
-            "Heart Failure",
-            "Cardiac Surgery",
-            "Preventive Cardiology",
-            "Cardiac Imaging"
-          ],
-          "facilities": [
-            "Advanced Cardiac Catheterization",
-            "Robotic Surgery Center",
-            "Cardiac ICU",
-            "Research Institute",
-            "Telecardiology"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Portuguese",
-            "Italian",
-            "Hindi"
-          ],
-          "internationalPatients": "8,500+ annually"
-        },
-        {
-          "id": 5,
-          "name": "Stanford Health Care",
-          "location": "Hyderabad, India",
-          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
-          "rating": "9.5",
-          "patientsPerYear": "1.2M+",
-          "successRate": "96.7%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Structural Heart Disease",
-            "Electrophysiology",
-            "Heart Transplant",
-            "Preventive Cardiology",
-            "Cardiac Surgery"
-          ],
-          "facilities": [
-            "Innovation Center",
-            "AI-Powered Diagnostics",
-            "Minimally Invasive ORs",
-            "Clinical Research",
-            "Digital Health Platform"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Japanese",
-            "Korean"
-          ],
-          "internationalPatients": "7,200+ annually"
-        },
-        {
-          "id": 6,
-          "name": "Cedars-Sinai Medical Center",
-          "location": "Kolkata, India",
-          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-          "rating": "9.4",
-          "patientsPerYear": "1.0M+",
-          "successRate": "96.3%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO"
-          ],
-          "specialties": [
-            "Interventional Cardiology",
-            "Heart Failure",
-            "Cardiac Imaging",
-            "Preventive Cardiology",
-            "Cardiac Rehabilitation"
-          ],
-          "facilities": [
-            "Advanced Imaging Center",
-            "Cardiac Catheterization Lab",
-            "Specialized ICUs",
-            "Research Center",
-            "Patient Education Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Korean",
-            "Armenian",
-            "Persian"
-          ],
-          "internationalPatients": "6,800+ annually"
-        }
-      ],
+      "hospitals": [],
       "doctors": [
         {
           "id": 1,
@@ -744,229 +524,7 @@
           "Maternity Ward"
         ]
       },
-      "hospitals": [
-        {
-          "id": 101,
-          "name": "Cleveland Clinic",
-          "location": "Mumbai, India",
-          "image": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80",
-          "rating": "9.9",
-          "patientsPerYear": "2.8M+",
-          "successRate": "98.1%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Fertility Treatment",
-            "Gynecological Surgery",
-            "Women's Health",
-            "Gynecological Oncology",
-            "Urogynecology"
-          ],
-          "facilities": [
-            "Advanced Imaging",
-            "Robotic Surgery",
-            "Fertility Center",
-            "IVF Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Arabic",
-            "Hindi"
-          ],
-          "internationalPatients": "12,500+ annually"
-        },
-        {
-          "id": 102,
-          "name": "Mayo Clinic",
-          "location": "Delhi, India",
-          "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600",
-          "rating": "9.8",
-          "patientsPerYear": "1.3M+",
-          "successRate": "97.8%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Reproductive Medicine",
-            "Gynecological Oncology",
-            "Urogynecology",
-            "Fertility Treatment",
-            "High-Risk Pregnancy"
-          ],
-          "facilities": [
-            "IVF Center",
-            "Advanced Diagnostics",
-            "Research Facilities",
-            "Robotic Surgery Center",
-            "Telemedicine Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "German",
-            "Chinese"
-          ],
-          "internationalPatients": "9,800+ annually"
-        },
-        {
-          "id": 103,
-          "name": "Johns Hopkins Hospital",
-          "location": "Bangalore, India",
-          "image": "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600",
-          "rating": "9.7",
-          "patientsPerYear": "1.1M+",
-          "successRate": "97.5%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Pediatric Gynecology",
-            "High-Risk Pregnancy",
-            "Gynecological Surgery",
-            "Gynecological Oncology",
-            "Reproductive Medicine"
-          ],
-          "facilities": [
-            "Minimally Invasive Surgery",
-            "Advanced Monitoring",
-            "Specialized Care",
-            "Clinical Trials Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "Arabic",
-            "Korean"
-          ],
-          "internationalPatients": "8,500+ annually"
-        },
-        {
-          "id": 104,
-          "name": "Massachusetts General Hospital",
-          "location": "Chennai, India",
-          "image": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600",
-          "rating": "9.6",
-          "patientsPerYear": "1.5M+",
-          "successRate": "97.2%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Fertility Treatment",
-            "Gynecological Surgery",
-            "Women's Health",
-            "High-Risk Pregnancy",
-            "Gynecological Oncology"
-          ],
-          "facilities": [
-            "Advanced Imaging",
-            "Robotic Surgery",
-            "Fertility Center",
-            "Research Institute",
-            "Clinical Trials Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Portuguese",
-            "Italian",
-            "Hindi"
-          ],
-          "internationalPatients": "9,200+ annually"
-        },
-        {
-          "id": 105,
-          "name": "Stanford Health Care",
-          "location": "Hyderabad, India",
-          "image": "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600",
-          "rating": "9.5",
-          "patientsPerYear": "1.2M+",
-          "successRate": "96.9%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Reproductive Medicine",
-            "Gynecological Surgery",
-            "Fertility Treatment",
-            "Gynecological Oncology",
-            "Urogynecology"
-          ],
-          "facilities": [
-            "Innovation Center",
-            "AI-Powered Diagnostics",
-            "Robotic Surgery",
-            "Clinical Research",
-            "Digital Health Platform"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Japanese",
-            "Korean"
-          ],
-          "internationalPatients": "7,800+ annually"
-        },
-        {
-          "id": 106,
-          "name": "UCSF Medical Center",
-          "location": "Ahmedabad, India",
-          "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600",
-          "rating": "9.4",
-          "patientsPerYear": "1.0M+",
-          "successRate": "96.6%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Fertility Treatment",
-            "Gynecological Surgery",
-            "Women's Health",
-            "High-Risk Pregnancy",
-            "Reproductive Medicine"
-          ],
-          "facilities": [
-            "Advanced Imaging",
-            "Robotic Surgery",
-            "Fertility Center",
-            "Clinical Trials Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Vietnamese",
-            "Tagalog"
-          ],
-          "internationalPatients": "6,500+ annually"
-        }
-      ],
+      "hospitals": [],
       "doctors": [
         {
           "id": 1,
@@ -1275,229 +833,7 @@
           "Rehabilitation Center"
         ]
       },
-      "hospitals": [
-        {
-          "id": 201,
-          "name": "Massachusetts General Hospital",
-          "location": "Chennai, India",
-          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-          "rating": "9.9",
-          "patientsPerYear": "1.5M+",
-          "successRate": "98.2%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Stroke Treatment",
-            "Epilepsy",
-            "Movement Disorders",
-            "Neuro-oncology",
-            "Neuromuscular Disorders"
-          ],
-          "facilities": [
-            "Advanced Neuroimaging",
-            "Robotic Surgery",
-            "Neurocritical Care",
-            "Gamma Knife",
-            "3D Brain Mapping"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Portuguese",
-            "Italian",
-            "Hindi"
-          ],
-          "internationalPatients": "9,800+ annually"
-        },
-        {
-          "id": 202,
-          "name": "Johns Hopkins Hospital",
-          "location": "Bangalore, India",
-          "image": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600",
-          "rating": "9.8",
-          "patientsPerYear": "1.1M+",
-          "successRate": "97.9%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Brain Tumors",
-            "Multiple Sclerosis",
-            "Neuromuscular Disorders",
-            "Epilepsy",
-            "Stroke Treatment"
-          ],
-          "facilities": [
-            "Gamma Knife",
-            "Advanced Monitoring",
-            "Research Facilities",
-            "Clinical Trials Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "Arabic",
-            "Korean"
-          ],
-          "internationalPatients": "8,500+ annually"
-        },
-        {
-          "id": 203,
-          "name": "Cleveland Clinic",
-          "location": "Mumbai, India",
-          "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&q=80",
-          "rating": "9.7",
-          "patientsPerYear": "2.8M+",
-          "successRate": "97.6%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Headache Medicine",
-            "Sleep Disorders",
-            "Neuro-oncology",
-            "Movement Disorders",
-            "Epilepsy"
-          ],
-          "facilities": [
-            "3D Brain Mapping",
-            "Advanced Diagnostics",
-            "Specialized ICUs",
-            "Robotic Surgery Center",
-            "Research Institute"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Arabic",
-            "Hindi"
-          ],
-          "internationalPatients": "12,000+ annually"
-        },
-        {
-          "id": 4,
-          "name": "Mayo Clinic",
-          "location": "Delhi, India",
-          "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600",
-          "rating": "9.6",
-          "patientsPerYear": "1.3M+",
-          "successRate": "97.4%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Multiple Sclerosis",
-            "Movement Disorders",
-            "Epilepsy",
-            "Neuro-oncology",
-            "Neuromuscular Disorders"
-          ],
-          "facilities": [
-            "Advanced Neuroimaging",
-            "3D Brain Mapping",
-            "Specialized ICUs",
-            "Research Labs",
-            "Telemedicine Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "German",
-            "Chinese"
-          ],
-          "internationalPatients": "9,200+ annually"
-        },
-        {
-          "id": 5,
-          "name": "Stanford Health Care",
-          "location": "Hyderabad, India",
-          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
-          "rating": "9.5",
-          "patientsPerYear": "1.2M+",
-          "successRate": "97.1%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Brain Tumors",
-            "Epilepsy",
-            "Movement Disorders",
-            "Stroke Treatment",
-            "Neuro-oncology"
-          ],
-          "facilities": [
-            "Innovation Center",
-            "AI-Powered Diagnostics",
-            "Advanced Imaging",
-            "Clinical Research",
-            "Digital Health Platform"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Japanese",
-            "Korean"
-          ],
-          "internationalPatients": "7,800+ annually"
-        },
-        {
-          "id": 6,
-          "name": "UCSF Medical Center",
-          "location": "Ahmedabad, India",
-          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-          "rating": "9.4",
-          "patientsPerYear": "1.0M+",
-          "successRate": "96.8%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Multiple Sclerosis",
-            "Epilepsy",
-            "Movement Disorders",
-            "Neuro-oncology",
-            "Neuromuscular Disorders"
-          ],
-          "facilities": [
-            "Advanced Neuroimaging",
-            "Research Facilities",
-            "Clinical Trials Center",
-            "Innovation Hub",
-            "Specialized ICUs"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Vietnamese",
-            "Tagalog"
-          ],
-          "internationalPatients": "6,500+ annually"
-        }
-      ],
+      "hospitals": [],
       "doctors": [
         {
           "id": 1,
@@ -1974,230 +1310,7 @@
           "Palliative Care"
         ]
       },
-      "hospitals": [
-        {
-          "id": 1,
-          "name": "MD Anderson Cancer Center",
-          "location": "Gurugram, India",
-          "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600",
-          "rating": "9.9",
-          "patientsPerYear": "1.8M+",
-          "successRate": "98.5%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "NCI"
-          ],
-          "specialties": [
-            "Breast Cancer",
-            "Lung Cancer",
-            "Leukemia",
-            "Prostate Cancer",
-            "Brain Tumors"
-          ],
-          "facilities": [
-            "Proton Therapy",
-            "Robotic Surgery",
-            "Clinical Trials",
-            "Immunotherapy Center",
-            "Precision Medicine Lab"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Arabic",
-            "Hindi",
-            "Chinese"
-          ],
-          "internationalPatients": "15,000+ annually"
-        },
-        {
-          "id": 2,
-          "name": "Memorial Sloan Kettering",
-          "location": "Noida, India",
-          "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600",
-          "rating": "9.8",
-          "patientsPerYear": "1.5M+",
-          "successRate": "98.2%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "NCI"
-          ],
-          "specialties": [
-            "Prostate Cancer",
-            "Colorectal Cancer",
-            "Lymphoma",
-            "Breast Cancer",
-            "Melanoma"
-          ],
-          "facilities": [
-            "Advanced Imaging",
-            "Immunotherapy",
-            "Research Facilities",
-            "CAR-T Cell Therapy",
-            "Clinical Trials Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "Italian",
-            "Russian"
-          ],
-          "internationalPatients": "12,500+ annually"
-        },
-        {
-          "id": 3,
-          "name": "Dana-Farber Cancer Institute",
-          "location": "Chennai, India",
-          "image": "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600",
-          "rating": "9.7",
-          "patientsPerYear": "1.2M+",
-          "successRate": "97.8%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "NCI"
-          ],
-          "specialties": [
-            "Pediatric Oncology",
-            "Brain Tumors",
-            "Sarcoma",
-            "Leukemia",
-            "Lymphoma"
-          ],
-          "facilities": [
-            "Precision Medicine",
-            "Advanced Diagnostics",
-            "Specialized Care",
-            "Stem Cell Transplant",
-            "Immunotherapy Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Portuguese",
-            "Italian",
-            "Hindi"
-          ],
-          "internationalPatients": "10,800+ annually"
-        },
-        {
-          "id": 4,
-          "name": "Mayo Clinic Cancer Center",
-          "location": "Delhi, India",
-          "image": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600",
-          "rating": "9.6",
-          "patientsPerYear": "1.3M+",
-          "successRate": "97.5%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "NCI"
-          ],
-          "specialties": [
-            "Breast Cancer",
-            "Lung Cancer",
-            "Colorectal Cancer",
-            "Prostate Cancer",
-            "Leukemia"
-          ],
-          "facilities": [
-            "Proton Therapy",
-            "Robotic Surgery",
-            "Clinical Trials",
-            "Precision Medicine",
-            "Research Institute"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "German",
-            "Chinese"
-          ],
-          "internationalPatients": "9,500+ annually"
-        },
-        {
-          "id": 5,
-          "name": "UCSF Medical Center",
-          "location": "Ahmedabad, India",
-          "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=600",
-          "rating": "9.5",
-          "patientsPerYear": "1.0M+",
-          "successRate": "97.2%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Breast Cancer",
-            "Brain Tumors",
-            "Lung Cancer",
-            "Prostate Cancer",
-            "Melanoma"
-          ],
-          "facilities": [
-            "Advanced Imaging",
-            "Immunotherapy",
-            "Clinical Trials",
-            "Precision Medicine",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Vietnamese",
-            "Tagalog"
-          ],
-          "internationalPatients": "8,200+ annually"
-        },
-        {
-          "id": 6,
-          "name": "Stanford Health Care",
-          "location": "Hyderabad, India",
-          "image": "https://images.unsplash.com/photo-1596541223130-5d31a73fb6c6?w=600",
-          "rating": "9.4",
-          "patientsPerYear": "1.2M+",
-          "successRate": "96.9%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Breast Cancer",
-            "Lung Cancer",
-            "Prostate Cancer",
-            "Brain Tumors",
-            "Leukemia"
-          ],
-          "facilities": [
-            "Proton Therapy",
-            "Robotic Surgery",
-            "Clinical Trials",
-            "Immunotherapy",
-            "Digital Health Platform"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Japanese",
-            "Korean"
-          ],
-          "internationalPatients": "7,800+ annually"
-        }
-      ],
+      "hospitals": [],
       "doctors": [
         {
           "id": 1,
@@ -2506,229 +1619,7 @@
           "Rehabilitation Center"
         ]
       },
-      "hospitals": [
-        {
-          "id": 1,
-          "name": "Hospital for Special Surgery",
-          "location": "Noida, India",
-          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-          "rating": "9.9",
-          "patientsPerYear": "1.2M+",
-          "successRate": "98.3%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Joint Replacement",
-            "Sports Medicine",
-            "Spine Surgery",
-            "Hand Surgery",
-            "Foot and Ankle"
-          ],
-          "facilities": [
-            "Robotic Surgery",
-            "Advanced Imaging",
-            "Rehabilitation Center",
-            "3D Printing Lab",
-            "Sports Performance Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "Italian",
-            "Russian"
-          ],
-          "internationalPatients": "11,000+ annually"
-        },
-        {
-          "id": 2,
-          "name": "Mayo Clinic",
-          "location": "Delhi, India",
-          "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600",
-          "rating": "9.8",
-          "patientsPerYear": "1.3M+",
-          "successRate": "97.9%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Trauma Surgery",
-            "Pediatric Orthopedics",
-            "Hand Surgery",
-            "Joint Replacement",
-            "Spine Surgery"
-          ],
-          "facilities": [
-            "3D Printing",
-            "Advanced Diagnostics",
-            "Research Facilities",
-            "Robotic Surgery Center",
-            "Telemedicine Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "German",
-            "Chinese"
-          ],
-          "internationalPatients": "10,500+ annually"
-        },
-        {
-          "id": 3,
-          "name": "Cleveland Clinic",
-          "location": "Mumbai, India",
-          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&q=80",
-          "rating": "9.7",
-          "patientsPerYear": "2.8M+",
-          "successRate": "97.6%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Shoulder Surgery",
-            "Knee Surgery",
-            "Foot and Ankle",
-            "Joint Replacement",
-            "Sports Medicine"
-          ],
-          "facilities": [
-            "Minimally Invasive Surgery",
-            "Advanced Monitoring",
-            "Specialized ICUs",
-            "Innovation Hub",
-            "Research Institute"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Arabic",
-            "Hindi"
-          ],
-          "internationalPatients": "13,000+ annually"
-        },
-        {
-          "id": 4,
-          "name": "Massachusetts General Hospital",
-          "location": "Chennai, India",
-          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-          "rating": "9.6",
-          "patientsPerYear": "1.5M+",
-          "successRate": "97.3%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Joint Replacement",
-            "Spine Surgery",
-            "Sports Medicine",
-            "Trauma Surgery",
-            "Pediatric Orthopedics"
-          ],
-          "facilities": [
-            "Robotic Surgery",
-            "Advanced Imaging",
-            "Research Institute",
-            "Telecardiology",
-            "Clinical Trials Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Portuguese",
-            "Italian",
-            "Hindi"
-          ],
-          "internationalPatients": "9,800+ annually"
-        },
-        {
-          "id": 5,
-          "name": "Stanford Health Care",
-          "location": "Hyderabad, India",
-          "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600",
-          "rating": "9.5",
-          "patientsPerYear": "1.2M+",
-          "successRate": "97.0%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Sports Medicine",
-            "Joint Replacement",
-            "Spine Surgery",
-            "Hand Surgery",
-            "Foot and Ankle"
-          ],
-          "facilities": [
-            "Innovation Center",
-            "AI-Powered Diagnostics",
-            "Robotic Surgery",
-            "Clinical Research",
-            "Digital Health Platform"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Japanese",
-            "Korean"
-          ],
-          "internationalPatients": "8,200+ annually"
-        },
-        {
-          "id": 6,
-          "name": "UCSF Medical Center",
-          "location": "Ahmedabad, India",
-          "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600",
-          "rating": "9.4",
-          "patientsPerYear": "1.0M+",
-          "successRate": "96.7%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Joint Replacement",
-            "Spine Surgery",
-            "Sports Medicine",
-            "Trauma Surgery",
-            "Pediatric Orthopedics"
-          ],
-          "facilities": [
-            "Advanced Imaging",
-            "Robotic Surgery",
-            "Clinical Trials Center",
-            "Innovation Hub",
-            "Specialized ICUs"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Chinese",
-            "Vietnamese",
-            "Tagalog"
-          ],
-          "internationalPatients": "7,500+ annually"
-        }
-      ],
+      "hospitals": [],
       "doctors": [
         {
           "id": 1,
@@ -3039,226 +1930,7 @@
           "Robotic Surgery Suite"
         ]
       },
-      "hospitals": [
-        {
-          "id": 1,
-          "name": "University Hospital Zurich",
-          "location": "Indore, India",
-          "image": "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600",
-          "rating": "9.8",
-          "patientsPerYear": "1.2M+",
-          "successRate": "97.5%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "Swiss Medical Board"
-          ],
-          "specialties": [
-            "Robotic Urology",
-            "Kidney Transplant",
-            "Prostate Surgery",
-            "Urological Oncology",
-            "Reconstructive Urology"
-          ],
-          "facilities": [
-            "Advanced Robotic Surgery",
-            "3D Imaging",
-            "Minimally Invasive Procedures",
-            "Da Vinci Xi System",
-            "Urodynamics Lab"
-          ],
-          "languages": [
-            "German",
-            "English",
-            "French",
-            "Italian"
-          ],
-          "internationalPatients": "8,500+ annually"
-        },
-        {
-          "id": 2,
-          "name": "University Medical Center Hamburg-Eppendorf",
-          "location": "Thane, India",
-          "image": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600",
-          "rating": "9.7",
-          "patientsPerYear": "1.0M+",
-          "successRate": "97.2%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "German Medical Association"
-          ],
-          "specialties": [
-            "Urological Oncology",
-            "Reconstructive Urology",
-            "Pediatric Urology",
-            "Kidney Stone Treatment",
-            "Male Infertility"
-          ],
-          "facilities": [
-            "Da Vinci Robotic System",
-            "Advanced Imaging",
-            "Specialized ICUs",
-            "Lithotripsy Unit",
-            "Cystoscopy Suite"
-          ],
-          "languages": [
-            "German",
-            "English",
-            "Turkish",
-            "Russian"
-          ],
-          "internationalPatients": "7,200+ annually"
-        },
-        {
-          "id": 3,
-          "name": "University Hospital Heidelberg",
-          "location": "Bhopal, India",
-          "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=600",
-          "rating": "9.6",
-          "patientsPerYear": "950K+",
-          "successRate": "96.8%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "German Medical Association"
-          ],
-          "specialties": [
-            "Kidney Stone Treatment",
-            "Bladder Surgery",
-            "Male Infertility",
-            "Prostate Cancer",
-            "Urological Trauma"
-          ],
-          "facilities": [
-            "Lithotripsy Unit",
-            "Cystoscopy Suite",
-            "Urodynamics Lab",
-            "Robotic Surgery Center",
-            "Research Institute"
-          ],
-          "languages": [
-            "German",
-            "English",
-            "French",
-            "Spanish"
-          ],
-          "internationalPatients": "6,800+ annually"
-        },
-        {
-          "id": 4,
-          "name": "Cleveland Clinic",
-          "location": "Mumbai, India",
-          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80",
-          "rating": "9.5",
-          "patientsPerYear": "2.8M+",
-          "successRate": "98.1%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Robotic Urology",
-            "Kidney Transplant",
-            "Prostate Surgery",
-            "Urological Oncology",
-            "Female Urology"
-          ],
-          "facilities": [
-            "Advanced Robotic Surgery",
-            "3D Imaging",
-            "Minimally Invasive Procedures",
-            "Transplant Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Arabic",
-            "Hindi"
-          ],
-          "internationalPatients": "12,000+ annually"
-        },
-        {
-          "id": 5,
-          "name": "Mayo Clinic",
-          "location": "Delhi, India",
-          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-          "rating": "9.4",
-          "patientsPerYear": "1.3M+",
-          "successRate": "97.9%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AACN"
-          ],
-          "specialties": [
-            "Urological Oncology",
-            "Reconstructive Urology",
-            "Kidney Stone Treatment",
-            "Male Infertility",
-            "Pediatric Urology"
-          ],
-          "facilities": [
-            "Da Vinci Robotic System",
-            "Advanced Imaging",
-            "Specialized ICUs",
-            "Research Labs",
-            "Telemedicine Center"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "German",
-            "Chinese"
-          ],
-          "internationalPatients": "9,500+ annually"
-        },
-        {
-          "id": 6,
-          "name": "Johns Hopkins Hospital",
-          "location": "Bangalore, India",
-          "image": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600",
-          "rating": "9.3",
-          "patientsPerYear": "1.1M+",
-          "successRate": "97.6%",
-          "accreditations": [
-            "JCI",
-            "NABH",
-            "ISO",
-            "AAMC"
-          ],
-          "specialties": [
-            "Prostate Cancer",
-            "Bladder Surgery",
-            "Kidney Transplant",
-            "Urological Research",
-            "Clinical Trials"
-          ],
-          "facilities": [
-            "Hybrid Operating Rooms",
-            "Advanced Imaging",
-            "Research Facilities",
-            "Clinical Trials Center",
-            "Innovation Hub"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French",
-            "Arabic",
-            "Korean"
-          ],
-          "internationalPatients": "8,200+ annually"
-        }
-      ],
+      "hospitals": [],
       "doctors": [
         {
           "id": 1,
@@ -3781,341 +2453,214 @@
       "mapLink": "https://www.google.com/maps?s=web&rlz=1C1GCEU_enIN1026IN1026&lqi=CiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRlSIHwzs7lgICACFouEAAQARACEAMYACIiZm9ydGlzIG1lbW9yaWFsIHJlc2VhcmNoIGluc3RpdHV0ZZIBCGhvc3BpdGFsqgFXCgsvZy8xdGR5N2cwMRABMh4QASIat7euftc7b_z04jW9TWqLLpLLNfa2eKpefLIyJhACIiJmb3J0aXMgbWVtb3JpYWwgcmVzZWFyY2ggaW5zdGl0dXRl&vet=12ahUKEwiMyvb4lJmPAxWUyTgGHYeCAGAQ1YkKegQIHxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KbNXz-HuGA05MdSZE99ypm8Z&daddr=Sector+-+44,+Opposite+HUDA+City+Centre,+Gurugram,+Haryana+122003"
     },
     {
-      "id": 2,
-      "name": "Fortis Hospital Delhi",
-      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-      "rating": "4.8",
-      "location": "Delhi, India",
-      "address": "B-22, Sector 62, Noida, Uttar Pradesh - 201301",
-      "doctorsCount": 42,
+      "id": "HDEL0002",
+      "name": "Medanta The Medicity",
+      "image": "/medanta/Medanta-1.jpg",
+      "rating": "4.0",
+      "location": "Gurugram, Delhi NCR, Haryana",
+      "address": "Medanta - The Medicity, Gurgaon 122001, India",
+      "doctorsCount": 900,
       "specialties": [
-        "Cardiology",
-        "Pediatric Cardiology",
-        "Electrophysiology",
-        "Neurology",
-        "Orthopedics",
-        "Urology"
+        "Cardiology & Cardiac Surgery",
+        "Oncology (Surgical, Medical & Radiotherapy)",
+        "Gastroenterology",
+        "Neurology & Neuro Surgery",
+        "Orthopaedics",
+        "Liver transplant",
+        "Kidney Transplant",
+        "Bone Marrow transplant",
+        "Interventional Cardiology",
+        "Heart Transplant",
+        "Cardiac Surgery (incl Electrophysiology)"
       ],
       "facilities": [
-        "Cardiac Cath Lab",
-        "Stress Test Lab",
-        "Cardiac Rehabilitation",
-        "ICU",
-        "Emergency Services",
-        "Diagnostic Center",
-        "Pharmacy"
+        "CD45RA Depletion",
+        "Blood & Bone Marrow Stem cell Collection",
+        "TCR Alpha Beta Depletion",
+        "CAR T-Cell Therapy",
+        "Minimally Invasive Procedures",
+        "Hybrid ORs",
+        "e ICU",
+        "Triple Swap Liver transplnt"
       ],
       "treatments": [
-        "Pacemaker Implantation",
-        "Cardiac Catheterization",
-        "Angioplasty",
-        "Pediatric Cardiac Surgery",
+        "Cardiac Surgery",
+        "Organ Transplantation",
+        "CAR T-Cell Therapy",
+        "Minimally Invasive Procedures",
+        "Advanced Cancer Treatment",
         "Neurological Procedures"
       ],
-      "about": "Fortis Hospital Delhi is a leading healthcare facility specializing in cardiac care and pediatric cardiology. Our commitment to excellence and patient-centric approach makes us a trusted name in healthcare.",
-      "established": "1996",
-      "accreditation": [
-        "NABH",
-        "ISO 9001:2015"
-      ],
-      "contact": {
-        "phone": "+91-11-4277-6222",
-        "email": "info@fortisdelhi.com",
-        "website": "www.fortisdelhi.com"
-      },
-      "gallery": [
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
-      ],
-      "reviews": [
-        {
-          "id": 1,
-          "patientName": "Amit Kumar",
-          "rating": 5,
-          "comment": "Best hospital for cardiac care. Doctors are very experienced.",
-          "date": "2024-01-20"
-        },
-        {
-          "id": 2,
-          "patientName": "Sneha Gupta",
-          "rating": 4,
-          "comment": "Good facilities and caring staff. Would recommend.",
-          "date": "2024-01-18"
-        }
-      ],
-      "doctors": [
-        {
-          "id": 3,
-          "name": "Dr. Vikram Singh",
-          "specialty": "Pediatric Cardiologist",
-          "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400"
-        },
-        {
-          "id": 4,
-          "name": "Dr. Rajesh Malhotra",
-          "specialty": "Cardiac Surgeon",
-          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
-        }
-      ],
-      "coordinates": {
-        "latitude": 28.6139,
-        "longitude": 77.209
-      }
-    },
-    {
-      "id": 3,
-      "name": "Ruby Hall Clinic",
-      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-      "rating": "4.7",
-      "location": "Pune, India",
-      "address": "40, Sassoon Road, Pune, Maharashtra - 411001",
-      "doctorsCount": 35,
-      "specialties": [
-        "Cardiac Surgery",
-        "Cardiology",
-        "Neurology",
-        "Orthopedics",
-        "Oncology",
-        "Gynaecology"
-      ],
-      "facilities": [
-        "Cardiac Surgery Unit",
-        "ICU",
-        "Emergency Services",
-        "Diagnostic Center",
-        "Pharmacy",
-        "Rehabilitation Center"
-      ],
-      "treatments": [
-        "Bypass Surgery",
-        "Heart Valve Repair",
-        "Pacemaker Implantation",
-        "Aortic Aneurysm Repair",
-        "Heart Transplant"
-      ],
-      "about": "Ruby Hall Clinic is a renowned healthcare institution with a rich legacy of providing quality healthcare services. Our cardiac surgery unit is one of the best in the region.",
-      "established": "1959",
-      "accreditation": [
-        "NABH",
-        "ISO 9001:2015"
-      ],
-      "contact": {
-        "phone": "+91-20-6645-5555",
-        "email": "info@rubyhall.com",
-        "website": "www.rubyhall.com"
-      },
-      "gallery": [
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
-      ],
-      "reviews": [
-        {
-          "id": 1,
-          "patientName": "Meera Joshi",
-          "rating": 5,
-          "comment": "Excellent cardiac surgery team. Very professional and caring.",
-          "date": "2024-01-25"
-        },
-        {
-          "id": 2,
-          "patientName": "Ramesh Patel",
-          "rating": 4,
-          "comment": "Good hospital with experienced doctors. Satisfied with treatment.",
-          "date": "2024-01-22"
-        }
-      ],
-      "doctors": [
-        {
-          "id": 2,
-          "name": "Dr. Meera Joshi",
-          "specialty": "Cardiac Surgeon",
-          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
-        },
-        {
-          "id": 5,
-          "name": "Dr. Sanjay Deshmukh",
-          "specialty": "Neurologist",
-          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
-        }
-      ],
-      "coordinates": {
-        "latitude": 18.5204,
-        "longitude": 73.8567
-      }
-    },
-    {
-      "id": 4,
-      "name": "Kokilaben Hospital",
-      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
-      "rating": "4.8",
-      "location": "Mumbai, India",
-      "address": "Rao Saheb Achutrao Patwardhan Marg, Four Bungalows, Andheri (W), Mumbai - 400058",
-      "doctorsCount": 45,
-      "specialties": [
-        "Neurology",
-        "Cardiology",
-        "Orthopedics",
-        "Oncology",
-        "Gynaecology",
-        "Urology"
-      ],
-      "facilities": [
-        "Neurology Department",
-        "Stroke Unit",
-        "ICU",
-        "Emergency Services",
-        "Diagnostic Center",
-        "Rehabilitation Center",
-        "Pharmacy"
-      ],
-      "treatments": [
-        "Stroke Treatment",
-        "Epilepsy Management",
-        "Multiple Sclerosis",
-        "Parkinson's Disease",
-        "Brain Tumor Surgery"
-      ],
-      "about": "Kokilaben Hospital is a state-of-the-art healthcare facility known for its excellence in neurology and comprehensive medical care. Our stroke unit is one of the most advanced in the country.",
+      "about": "Medanta Gurugram is founded by Dr. Naresh Trehan, a world-renowned cardiovascular and cardiothoracic surgeon. It was conceived with the mission to deliver advanced yet affordable medical services.\n\nFor Six years in a row, Medanta Gurugram has ranked as the Best Private Hospital in India (2020, 2021, 2022, 2023, 2024 and 2025). It also featured in the list of top 250 World's Best Hospitals Survey 2024 by Newsweek.\n\nThe hospital is equipped to make quality healthcare a reality for countless patients with an infrastructure built according to the guidelines for healthcare facilities by the American Institute of Architects.",
       "established": "2009",
       "accreditation": [
-        "NABH",
         "JCI",
-        "ISO 9001:2015"
+        "NABH",
+        "NABL"
       ],
       "contact": {
-        "phone": "+91-22-3099-9999",
-        "email": "info@kokilaben.com",
-        "website": "www.kokilaben.com"
+        "phone": "+91-124-414-1414",
+        "email": "info@medanta.org",
+        "website": "www.medanta.org"
       },
       "gallery": [
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
-        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600"
+        "/medanta/Medanta-1.jpg",
+        "/medanta/Medanta-2.jpg",
+        "/medanta/Medanta-3.jpg",
+        "/medanta/Medanta-4.jpg",
+        "/medanta/Medanta-5.png",
+        "/medanta/Medanta-6.jpg",
+        "/medanta/Medanta-7.jpg",
+        "/medanta/Medanta-8.jpg"
       ],
       "reviews": [
         {
           "id": 1,
-          "patientName": "Priya Sharma",
-          "rating": 5,
-          "comment": "Best neurology department. Doctors are very knowledgeable.",
-          "date": "2024-01-30"
-        },
-        {
-          "id": 2,
-          "patientName": "Arun Kumar",
-          "rating": 5,
-          "comment": "Excellent stroke care. Very satisfied with the treatment.",
-          "date": "2024-01-28"
+          "patientName": "Patient Review",
+          "rating": 4.0,
+          "comment": "Based on 7,879 patient reviews on Google",
+          "date": "2024-01-15"
         }
       ],
       "doctors": [
         {
-          "id": 4,
-          "name": "Dr. Priya Sharma",
-          "specialty": "Neurologist",
-          "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400"
-        },
-        {
-          "id": 6,
-          "name": "Dr. Amit Shah",
-          "specialty": "Cardiologist",
+          "id": 1,
+          "name": "Specialist Doctors",
+          "specialty": "Multi-Specialty Team",
           "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
         }
       ],
       "coordinates": {
-        "latitude": 19.076,
-        "longitude": 72.8777
-      }
+        "latitude": 28.4595,
+        "longitude": 77.0266
+      },
+      "hospitalStats": {
+        "userScore": "9.5",
+        "founded": "2009",
+        "patients": "2.5 Mn+",
+        "doctors": "900+",
+        "sizeCapacity": "OT: 45, ICU: 270-350, Patient Bed: 1300+",
+        "clinicType": "Quaternary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Kids, Adults, Geriatric",
+        "googleRating": "4.0 (based on patient reviews)"
+      },
+      "emergencySupport": "24/7 365 days Emergency Support",
+      "opdHours": "OPD Hours 9 am to 8 pm (Monday - Saturday)",
+      "accessibility": "20 mins from IG International Airport (17 km), Near National Highway 48",
+      "mapLink": "https://www.google.com/maps/place/Medanta+-+The+Medicity/@28.4595,77.0266,17z/data=!3m1!4b1!4m6!3m5!1s0x390d19d582e38859:0x2cf5b8cb0cb6b658!2sMedanta+-+The+Medicity!8m2!3d28.4595!4d77.0266"
     },
     {
-      "id": 5,
-      "name": "Manipal Hospital",
-      "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-      "rating": "4.9",
-      "location": "Bangalore, India",
-      "address": "98, HAL Airport Road, Bangalore - 560017",
-      "doctorsCount": 50,
+      "id": "HDEL0003",
+      "name": "Max Super Speciality Hospital, Saket",
+      "image": "/max/Max-1.jpg",
+      "rating": "4.2",
+      "location": "New Delhi, Delhi",
+      "address": "1-2, Press Enclave Road, Saket, New Delhi",
+      "doctorsCount": 530,
       "specialties": [
-        "Orthopedics",
-        "Cardiology",
-        "Neurology",
-        "Oncology",
-        "Gynaecology",
-        "Urology"
+        "Cardiology & Cardiac Surgery",
+        "Oncology (Surgical, Medical & Radiotherapy)",
+        "Gastroenterology",
+        "Neurology & Neuro Surgery",
+        "Orthopaedics",
+        "Liver transplant",
+        "Kidney Transplant",
+        "Bone Marrow transplant",
+        "Interventional Cardiology",
+        "Heart Transplant",
+        "Cardiac Surgery (incl Electrophysiology)"
       ],
       "facilities": [
-        "Orthopedic Department",
-        "Joint Replacement Center",
-        "Sports Medicine",
-        "ICU",
-        "Emergency Services",
-        "Diagnostic Center",
-        "Rehabilitation Center"
+        "Edge technology with HyperArc",
+        "Bone Age estimation with Bone Xpert Software",
+        "Versius Next Generation Robotic Surgery",
+        "RadiXact X9 Tomotherapy",
+        "Shock Wave Therapy for Erectile Dysfunction",
+        "Truebeam LINAC with Exctrac",
+        "Remote Monitoring System",
+        "HIPEC",
+        "SBRT",
+        "CAR T Cell Therapy",
+        "Da vinci Surgical Robot"
       ],
       "treatments": [
-        "Joint Replacement",
-        "Arthroscopic Surgery",
-        "Spine Surgery",
-        "Sports Injury",
-        "Fracture Treatment"
+        "Cardiac Surgery",
+        "Organ Transplantation",
+        "CAR T-Cell Therapy",
+        "Minimally Invasive Procedures",
+        "Advanced Cancer Treatment",
+        "Neurological Procedures",
+        "Robotic Surgery with Versius & Da Vinci",
+        "Radiation Therapy with Truebeam LINAC",
+        "Tomotherapy with RadiXact X9",
+        "HyperArc Edge Technology",
+        "HIPEC Treatment",
+        "SBRT (Stereotactic Body Radiation Therapy)",
+        "ECMO Support",
+        "Shock Wave Therapy",
+        "Bone Age Estimation",
+        "Advanced Medical Equipment:",
+        "ECMO",
+        "MRI Scanner – 3 Tesla MRI for detailed imaging",
+        "Cardiac Cath Lab – State-of-the-art cardiac catheterization laboratory"
       ],
-      "about": "Manipal Hospital Bangalore is a premier healthcare institution known for its excellence in orthopedic care and joint replacement surgeries. Our state-of-the-art facilities ensure the best patient outcomes.",
-      "established": "1991",
+      "about": "Located in the heart of south Delhi, the 539+ bed Max Super Speciality Hospital, Saket, is widely considered as one of the best hospitals in the country. Split into two blocks - East Block (a unit of Devki Devi Foundation) and West Block ( a unit of MHIL - Max Healthcare Institute Limited), it has a complete spectrum of diagnostic and therapeutic technologies, including several which are a First in India and Asia.\n\n\nExperts at Max Super Speciality Hospital, Saket, have treated more than 34 lakh patients across 32 specialities combined in the East and West wings. The East wing specializes in treating patients for Cardiac, Oncology (Medical, Surgical, and Radiotherapy), Transplant services (Heart, Lung, Bone Marrow), and General Surgery including Minimal Access and Bariatric Surgery, while the West wing focuses on Nephrology, Neurology, Neurosurgery, Rheumatology, Urology, Transplant Services (Liver & Renal), Plastic and Reconstructive Surgery, and other ancillary services. Max Super Speciality Hospital, Saket, offers a complete spectrum of diagnostic and therapeutic technologies, including several state-of-the-art technologies that are the first in Asia and India. The hospital has received NABH and JCI accreditation for providing the highest quality of patient safety and care.\n\n\nMax Super Speciality Hospital, Saket, offers the advantage of integrated medical care in a multidisciplinary setting provided by a faculty of highly qualified doctors, nurses, & healthcare professionals. Max Super Speciality Hospital, Saket, is a regional hub for complex procedures such as neurovascular intervention, targeted cancer treatments, heart surgeries, orthopaedic surgeries, liver & kidney transplant, and fertility treatments.",
+      "established": "2004",
       "accreditation": [
-        "NABH",
         "JCI",
-        "ISO 9001:2015"
+        "NABH",
+        "NABL"
       ],
       "contact": {
-        "phone": "+91-80-2502-4444",
-        "email": "info@manipalbangalore.com",
-        "website": "www.manipalbangalore.com"
+        "phone": "+91-11-7179-1090",
+        "email": "info@maxhealthcare.com",
+        "website": "www.maxhealthcare.com"
       },
       "gallery": [
-        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600",
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600"
+        "/max/Max-1.jpg",
+        "/max/Max-2.jpg",
+        "/max/Max-3.jpg",
+        "/max/Max-4.jpg",
+        "/max/Max-5.jpg",
+        "/max/Max-6.jpg"
       ],
       "reviews": [
         {
           "id": 1,
-          "patientName": "Rajesh Kumar",
-          "rating": 5,
-          "comment": "Best orthopedic care. Joint replacement surgery was successful.",
-          "date": "2024-02-01"
-        },
-        {
-          "id": 2,
-          "patientName": "Lakshmi Devi",
-          "rating": 5,
-          "comment": "Excellent facilities and caring staff. Highly recommended.",
-          "date": "2024-01-29"
+          "patientName": "Patient Review",
+          "rating": 4.2,
+          "comment": "Based on 8,618 patient reviews on Google",
+          "date": "2024-01-15"
         }
       ],
       "doctors": [
         {
-          "id": 5,
-          "name": "Dr. Rajesh Kumar",
-          "specialty": "Orthopedic Surgeon",
-          "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400"
-        },
-        {
-          "id": 7,
-          "name": "Dr. Sunita Rao",
-          "specialty": "Cardiologist",
+          "id": 1,
+          "name": "Specialist Doctors",
+          "specialty": "Multi-Specialty Team",
           "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
         }
       ],
       "coordinates": {
-        "latitude": 12.9716,
-        "longitude": 77.5946
-      }
+        "latitude": 28.5276,
+        "longitude": 77.2026
+      },
+      "hospitalStats": {
+        "userScore": "9.5",
+        "founded": "2004",
+        "patients": "3.4 Mn+",
+        "doctors": "530+",
+        "sizeCapacity": "OT: 20+, ICU: 100+, Patient Bed: 530+",
+        "clinicType": "Quaternary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Kids, Adults, Geriatric",
+        "googleRating": "4.2 (based on patient reviews)"
+      },
+      "emergencySupport": "24/7 365 days Emergency Support",
+      "opdHours": "OPD Hours 9 am to 8 pm (Monday - Saturday)",
+      "accessibility": "20 mins from IG International Airport (13 km), Near Malviya Nagar Metro station",
+      "mapLink": "https://www.google.com/maps/dir//max+saket/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x390ce1f427d4c5fb:0x582d47bbf4970bc1?sa=X&ved=2ahUKEwjmobCkg8jsAhXhwjgGHUKZCbEQ9RcwDnoECBsQBQ"
     }
   ],
   "globalDoctors": [
@@ -4546,66 +3091,6 @@
       "cta": {
         "label": "View Details",
         "href": "/hospitalDetails/HDEL0001"
-      }
-    },
-    {
-      "id": 2,
-      "name": "Mayo Clinic",
-      "location": "Delhi, India",
-      "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600",
-      "type": "Hospital",
-      "typeColor": "#04CE78",
-      "rating": 9.8,
-      "ratingCount": "12k+",
-      "doctorCount": 120,
-      "cta": {
-        "label": "View Details",
-        "href": "/hospitalDetails/2"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Johns Hopkins Hospital",
-      "location": "Bangalore, India",
-      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600",
-      "type": "Hospital",
-      "typeColor": "#04CE78",
-      "rating": 9.7,
-      "ratingCount": "10k+",
-      "doctorCount": 95,
-      "cta": {
-        "label": "View Details",
-        "href": "/hospitalDetails/3"
-      }
-    },
-    {
-      "id": 4,
-      "name": "Massachusetts General Hospital",
-      "location": "Chennai, India",
-      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
-      "type": "Hospital",
-      "typeColor": "#04CE78",
-      "rating": 9.6,
-      "ratingCount": "8.5k+",
-      "doctorCount": 110,
-      "cta": {
-        "label": "View Details",
-        "href": "/hospitalDetails/4"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Stanford Health Care",
-      "location": "Hyderabad, India",
-      "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600",
-      "type": "Hospital",
-      "typeColor": "#04CE78",
-      "rating": 9.5,
-      "ratingCount": "7.2k+",
-      "doctorCount": 85,
-      "cta": {
-        "label": "View Details",
-        "href": "/hospitalDetails/5"
       }
     }
   ],

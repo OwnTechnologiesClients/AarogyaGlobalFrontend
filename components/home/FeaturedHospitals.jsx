@@ -23,12 +23,13 @@ const FeaturedHospitals = () => {
   const swiperRef = React.useRef(null);
   const router = useRouter();
 
-  // Get top 8 hospitals from all specialties with detailed information
+  // Get top 8 hospitals from all specialties and global hospitals with detailed information
   const getAllHospitals = () => {
     const allHospitals = [];
     const seenNames = new Set(); // Track hospital names to avoid duplicates
     const specialties = ['cardiology', 'gynaecology', 'neurology', 'oncology', 'orthopaedics', 'urology'];
 
+    // First, add hospitals from specialty arrays
     specialties.forEach(specialty => {
       if (unifiedData.specialties[specialty] && unifiedData.specialties[specialty].hospitals) {
         unifiedData.specialties[specialty].hospitals.forEach(hospital => {
@@ -50,6 +51,27 @@ const FeaturedHospitals = () => {
         });
       }
     });
+
+    // Then, add hospitals from globalHospitals array
+    if (unifiedData.globalHospitals && unifiedData.globalHospitals.length > 0) {
+      unifiedData.globalHospitals.forEach(hospital => {
+        // Check if hospital already exists by ID or name (avoid duplicates)
+        const existingHospitalById = allHospitals.find(h => h.id === hospital.id);
+        const hospitalNameExists = seenNames.has(hospital.name.toLowerCase());
+
+        if (!existingHospitalById && !hospitalNameExists) {
+          seenNames.add(hospital.name.toLowerCase());
+          allHospitals.push({
+            ...hospital,
+            type: 'Hospital',
+            typeColor: '#04CE78',
+            doctorCount: hospital.doctorsCount ? hospital.doctorsCount.toString() : 'N/A',
+            hasEmergency: true, // Assume major hospitals have emergency services
+            hasParkade: true, // Assume major hospitals have parking
+          });
+        }
+      });
+    }
 
     // Sort by rating and return top 8
     return allHospitals
