@@ -105,213 +105,7 @@
           ]
         }
       ],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Dr. Steven Nissen",
-          "specialty": "Interventional Cardiologist",
-          "location": "Mumbai, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "30+ years",
-          "rating": "9.9",
-          "patientsTreated": "50,000+",
-          "successRate": "98.2%",
-          "expertise": [
-            "Interventional Cardiology",
-            "Clinical Trials",
-            "Preventive Cardiology",
-            "Coronary Artery Disease",
-            "Structural Heart Disease"
-          ],
-          "hospital": "Cleveland Clinic",
-          "education": "Harvard Medical School",
-          "certifications": [
-            "FACC",
-            "FSCAI",
-            "FESC"
-          ],
-          "languages": [
-            "English",
-            "Spanish"
-          ],
-          "researchPapers": "500+ publications",
-          "awards": [
-            "Distinguished Scientist Award",
-            "Top Cardiologist 2023"
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Dr. Valentin Fuster",
-          "specialty": "Preventive Cardiologist",
-          "location": "Noida, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "35+ years",
-          "rating": "9.8",
-          "patientsTreated": "45,000+",
-          "successRate": "97.8%",
-          "expertise": [
-            "Preventive Cardiology",
-            "Atherosclerosis",
-            "Global Health",
-            "Cardiovascular Imaging",
-            "Clinical Research"
-          ],
-          "hospital": "Mount Sinai Medical Center",
-          "education": "University of Barcelona",
-          "certifications": [
-            "FACC",
-            "FESC",
-            "FAHA"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Catalan"
-          ],
-          "researchPapers": "1,000+ publications",
-          "awards": [
-            "Prince of Asturias Award",
-            "National Medal of Science"
-          ]
-        },
-        {
-          "id": 3,
-          "name": "Dr. Eugene Braunwald",
-          "specialty": "Cardiologist",
-          "location": "Chennai, India",
-          "image": "/RelatedSpecialists/img3.png",
-          "experience": "40+ years",
-          "rating": "9.7",
-          "patientsTreated": "60,000+",
-          "successRate": "97.5%",
-          "expertise": [
-            "Heart Failure",
-            "Clinical Research",
-            "Medical Education",
-            "Cardiovascular Medicine",
-            "Clinical Trials"
-          ],
-          "hospital": "Brigham and Women's Hospital",
-          "education": "New York University",
-          "certifications": [
-            "FACC",
-            "FAHA",
-            "FRCP"
-          ],
-          "languages": [
-            "English",
-            "German"
-          ],
-          "researchPapers": "1,200+ publications",
-          "awards": [
-            "Lasker Award",
-            "National Medal of Science"
-          ]
-        },
-        {
-          "id": 4,
-          "name": "Dr. Deepak L. Bhatt",
-          "specialty": "Interventional Cardiologist",
-          "location": "Chennai, India",
-          "image": "/RelatedSpecialists/img4.png",
-          "experience": "25+ years",
-          "rating": "9.6",
-          "patientsTreated": "35,000+",
-          "successRate": "97.1%",
-          "expertise": [
-            "Interventional Cardiology",
-            "Clinical Trials",
-            "Cardiovascular Outcomes",
-            "Preventive Cardiology",
-            "Antithrombotic Therapy"
-          ],
-          "hospital": "Brigham and Women's Hospital",
-          "education": "Cornell University",
-          "certifications": [
-            "FACC",
-            "FSCAI",
-            "FAHA"
-          ],
-          "languages": [
-            "English",
-            "Hindi"
-          ],
-          "researchPapers": "800+ publications",
-          "awards": [
-            "Distinguished Scientist Award",
-            "Top Cardiologist 2022"
-          ]
-        },
-        {
-          "id": 5,
-          "name": "Dr. Robert O. Bonow",
-          "specialty": "Cardiologist",
-          "location": "Pune, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "35+ years",
-          "rating": "9.5",
-          "patientsTreated": "40,000+",
-          "successRate": "96.8%",
-          "expertise": [
-            "Valvular Heart Disease",
-            "Cardiovascular Imaging",
-            "Heart Failure",
-            "Clinical Cardiology",
-            "Echocardiography"
-          ],
-          "hospital": "Northwestern Memorial Hospital",
-          "education": "Stanford University",
-          "certifications": [
-            "FACC",
-            "FAHA",
-            "FASE"
-          ],
-          "languages": [
-            "English",
-            "Spanish"
-          ],
-          "researchPapers": "600+ publications",
-          "awards": [
-            "Distinguished Service Award",
-            "Lifetime Achievement Award"
-          ]
-        },
-        {
-          "id": 6,
-          "name": "Dr. Christine E. Seidman",
-          "specialty": "Cardiologist",
-          "location": "Chennai, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "30+ years",
-          "rating": "9.4",
-          "patientsTreated": "25,000+",
-          "successRate": "96.5%",
-          "expertise": [
-            "Genetic Cardiology",
-            "Cardiomyopathy",
-            "Molecular Cardiology",
-            "Clinical Genetics",
-            "Research"
-          ],
-          "hospital": "Brigham and Women's Hospital",
-          "education": "Harvard Medical School",
-          "certifications": [
-            "FACC",
-            "FAHA",
-            "FACP"
-          ],
-          "languages": [
-            "English",
-            "French"
-          ],
-          "researchPapers": "400+ publications",
-          "awards": [
-            "Breakthrough Prize",
-            "National Academy of Sciences"
-          ]
-        }
-      ],
+      "doctors": [],
       "treatments": [
         {
           "id": "CARD0001",
@@ -669,50 +463,7 @@
         ]
       },
       "hospitals": [],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Dr. Togas Tulandi",
-          "specialty": "Gynecologist",
-          "location": "Jaipur, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "30+ years",
-          "expertise": [
-            "Fertility Treatment",
-            "Reproductive Surgery",
-            "IVF"
-          ],
-          "hospital": "McGill University Health Centre"
-        },
-        {
-          "id": 2,
-          "name": "Dr. Camran Nezhat",
-          "specialty": "Gynecologist",
-          "location": "Hyderabad, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "35+ years",
-          "expertise": [
-            "Minimally Invasive Surgery",
-            "Endometriosis",
-            "Robotic Surgery"
-          ],
-          "hospital": "Stanford University Medical Center"
-        },
-        {
-          "id": 3,
-          "name": "Dr. Alan DeCherney",
-          "specialty": "Gynecologist",
-          "location": "Kolkata, India",
-          "image": "/RelatedSpecialists/img3.png",
-          "experience": "40+ years",
-          "expertise": [
-            "Reproductive Medicine",
-            "IVF",
-            "Clinical Research"
-          ],
-          "hospital": "UCLA Medical Center"
-        }
-      ],
+      "doctors": [],
       "treatments": [
         {
           "id": "gynaecology_1",
@@ -1026,218 +777,7 @@
           ]
         }
       ],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Dr. Joseph Jankovic",
-          "specialty": "Movement Disorder Neurologist",
-          "location": "Gurugram, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "35+ years",
-          "rating": "9.9",
-          "patientsTreated": "55,000+",
-          "successRate": "98.1%",
-          "expertise": [
-            "Movement Disorders",
-            "Parkinson's Disease",
-            "Dystonia",
-            "Tremor Disorders",
-            "Deep Brain Stimulation"
-          ],
-          "hospital": "Baylor College of Medicine",
-          "education": "University of Belgrade",
-          "certifications": [
-            "FACP",
-            "FANA",
-            "Movement Disorders"
-          ],
-          "languages": [
-            "English",
-            "Serbian",
-            "Spanish"
-          ],
-          "researchPapers": "800+ publications",
-          "awards": [
-            "Distinguished Scientist Award",
-            "Movement Disorders Pioneer"
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Dr. Stephen Hauser",
-          "specialty": "Multiple Sclerosis Specialist",
-          "location": "Ahmedabad, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "30+ years",
-          "rating": "9.8",
-          "patientsTreated": "45,000+",
-          "successRate": "97.8%",
-          "expertise": [
-            "Multiple Sclerosis",
-            "Autoimmune Neurology",
-            "Clinical Trials",
-            "Neuroimmunology",
-            "Precision Medicine"
-          ],
-          "hospital": "UCSF Medical Center",
-          "education": "Harvard Medical School",
-          "certifications": [
-            "FACP",
-            "FANA",
-            "Autoimmune Neurology"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "French"
-          ],
-          "researchPapers": "600+ publications",
-          "awards": [
-            "Multiple Sclerosis Research Award",
-            "Clinical Excellence"
-          ]
-        },
-        {
-          "id": 3,
-          "name": "Dr. Jeffrey Saver",
-          "specialty": "Stroke Neurologist",
-          "location": "Kolkata, India",
-          "image": "/RelatedSpecialists/img3.png",
-          "experience": "25+ years",
-          "rating": "9.7",
-          "patientsTreated": "40,000+",
-          "successRate": "97.5%",
-          "expertise": [
-            "Stroke Treatment",
-            "Interventional Neurology",
-            "Clinical Research",
-            "Thrombolysis",
-            "Endovascular Therapy"
-          ],
-          "hospital": "UCLA Medical Center",
-          "education": "Stanford University",
-          "certifications": [
-            "FACP",
-            "FANA",
-            "Interventional Neurology"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Mandarin"
-          ],
-          "researchPapers": "500+ publications",
-          "awards": [
-            "Stroke Research Excellence",
-            "Clinical Innovation Award"
-          ]
-        },
-        {
-          "id": 4,
-          "name": "Dr. Anthony Lang",
-          "specialty": "Movement Disorder Neurologist",
-          "location": "Lucknow, India",
-          "image": "/RelatedSpecialists/img4.png",
-          "experience": "30+ years",
-          "rating": "9.6",
-          "patientsTreated": "42,000+",
-          "successRate": "97.2%",
-          "expertise": [
-            "Parkinson's Disease",
-            "Movement Disorders",
-            "Deep Brain Stimulation",
-            "Clinical Trials",
-            "Neurodegenerative Diseases"
-          ],
-          "hospital": "Toronto Western Hospital",
-          "education": "University of Toronto",
-          "certifications": [
-            "FRCPC",
-            "FANA",
-            "Movement Disorders"
-          ],
-          "languages": [
-            "English",
-            "French",
-            "Italian"
-          ],
-          "researchPapers": "550+ publications",
-          "awards": [
-            "Canadian Medical Association Award",
-            "Research Excellence"
-          ]
-        },
-        {
-          "id": 5,
-          "name": "Dr. Howard Weiner",
-          "specialty": "Multiple Sclerosis Specialist",
-          "location": "Chennai, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "35+ years",
-          "rating": "9.5",
-          "patientsTreated": "48,000+",
-          "successRate": "97.0%",
-          "expertise": [
-            "Multiple Sclerosis",
-            "Neuroimmunology",
-            "Clinical Trials",
-            "Autoimmune Neurology",
-            "Precision Medicine"
-          ],
-          "hospital": "Brigham and Women's Hospital",
-          "education": "Harvard Medical School",
-          "certifications": [
-            "FACP",
-            "FANA",
-            "Neuroimmunology"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "Hebrew"
-          ],
-          "researchPapers": "700+ publications",
-          "awards": [
-            "Multiple Sclerosis Research Award",
-            "Lifetime Achievement"
-          ]
-        },
-        {
-          "id": 6,
-          "name": "Dr. David Holtzman",
-          "specialty": "Alzheimer's Specialist",
-          "location": "Surat, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "25+ years",
-          "rating": "9.4",
-          "patientsTreated": "35,000+",
-          "successRate": "96.8%",
-          "expertise": [
-            "Alzheimer's Disease",
-            "Dementia",
-            "Neurodegenerative Diseases",
-            "Clinical Research",
-            "Biomarker Development"
-          ],
-          "hospital": "Washington University School of Medicine",
-          "education": "Johns Hopkins University",
-          "certifications": [
-            "FACP",
-            "FANA",
-            "Dementia"
-          ],
-          "languages": [
-            "English",
-            "Spanish",
-            "German"
-          ],
-          "researchPapers": "450+ publications",
-          "awards": [
-            "Alzheimer's Research Award",
-            "Scientific Excellence"
-          ]
-        }
-      ],
+      "doctors": [],
       "treatments": [
         {
           "id": "NEUR0001",
@@ -1430,50 +970,7 @@
           ]
         }
       ],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Dr. Patrick Soon-Shiong",
-          "specialty": "Oncologist",
-          "location": "Kolkata, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "30+ years",
-          "expertise": [
-            "Immunotherapy",
-            "Precision Medicine",
-            "Clinical Trials"
-          ],
-          "hospital": "UCLA Medical Center"
-        },
-        {
-          "id": 2,
-          "name": "Dr. Siddhartha Mukherjee",
-          "specialty": "Oncologist",
-          "location": "Noida, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "25+ years",
-          "expertise": [
-            "Hematological Oncology",
-            "Stem Cell Transplantation",
-            "Research"
-          ],
-          "hospital": "Columbia University Medical Center"
-        },
-        {
-          "id": 3,
-          "name": "Dr. Susan Love",
-          "specialty": "Oncologist",
-          "location": "Kolkata, India",
-          "image": "/RelatedSpecialists/img3.png",
-          "experience": "35+ years",
-          "expertise": [
-            "Breast Cancer",
-            "Women's Health",
-            "Prevention"
-          ],
-          "hospital": "UCLA Medical Center"
-        }
-      ],
+      "doctors": [],
       "treatments": [
         {
           "id": "ONC0001",
@@ -1499,105 +996,7 @@
           "topDoctors": {
             "title": "Top-rated oncologists worldwide",
             "description": "How to select the best doctor?",
-            "doctors": [
-              {
-                "id": 1,
-                "name": "Dr. Patrick Soon-Shiong",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img1.png",
-                "experience": "30+ years",
-                "rating": "9.9",
-                "patientsTreated": "50,000+",
-                "successRate": "98.2%",
-                "expertise": [
-                  "Immunotherapy",
-                  "Precision Medicine",
-                  "Clinical Trials"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish"
-                ],
-                "researchPapers": "500+ publications",
-                "awards": [
-                  "Distinguished Scientist Award",
-                  "Top Oncologist 2023"
-                ]
-              },
-              {
-                "id": 2,
-                "name": "Dr. Siddhartha Mukherjee",
-                "specialty": "Oncologist",
-                "location": "Noida, India",
-                "image": "/RelatedSpecialists/img2.png",
-                "experience": "25+ years",
-                "rating": "9.8",
-                "patientsTreated": "45,000+",
-                "successRate": "97.8%",
-                "expertise": [
-                  "Hematological Oncology",
-                  "Stem Cell Transplantation",
-                  "Research"
-                ],
-                "hospital": "Columbia University Medical Center",
-                "education": "Stanford University",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Hematology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish",
-                  "Hindi"
-                ],
-                "researchPapers": "800+ publications",
-                "awards": [
-                  "Pulitzer Prize",
-                  "National Book Award"
-                ]
-              },
-              {
-                "id": 3,
-                "name": "Dr. Susan Love",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img3.png",
-                "experience": "35+ years",
-                "rating": "9.7",
-                "patientsTreated": "40,000+",
-                "successRate": "97.5%",
-                "expertise": [
-                  "Breast Cancer",
-                  "Women's Health",
-                  "Prevention"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Breast Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "French"
-                ],
-                "researchPapers": "600+ publications",
-                "awards": [
-                  "Women in Science Award",
-                  "Clinical Excellence"
-                ]
-              }
-            ],
+            "doctors": [],
             "selectionCriteria": [
               "Check board certification",
               "volume with ICIs",
@@ -1683,105 +1082,7 @@
           "topDoctors": {
             "title": "Top-rated oncologists worldwide",
             "description": "How to select the best doctor?",
-            "doctors": [
-              {
-                "id": 1,
-                "name": "Dr. Patrick Soon-Shiong",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img1.png",
-                "experience": "30+ years",
-                "rating": "9.9",
-                "patientsTreated": "50,000+",
-                "successRate": "98.2%",
-                "expertise": [
-                  "Immunotherapy",
-                  "Precision Medicine",
-                  "Clinical Trials"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish"
-                ],
-                "researchPapers": "500+ publications",
-                "awards": [
-                  "Distinguished Scientist Award",
-                  "Top Oncologist 2023"
-                ]
-              },
-              {
-                "id": 2,
-                "name": "Dr. Siddhartha Mukherjee",
-                "specialty": "Oncologist",
-                "location": "Noida, India",
-                "image": "/RelatedSpecialists/img2.png",
-                "experience": "25+ years",
-                "rating": "9.8",
-                "patientsTreated": "45,000+",
-                "successRate": "97.8%",
-                "expertise": [
-                  "Hematological Oncology",
-                  "Stem Cell Transplantation",
-                  "Research"
-                ],
-                "hospital": "Columbia University Medical Center",
-                "education": "Stanford University",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Hematology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish",
-                  "Hindi"
-                ],
-                "researchPapers": "800+ publications",
-                "awards": [
-                  "Pulitzer Prize",
-                  "National Book Award"
-                ]
-              },
-              {
-                "id": 3,
-                "name": "Dr. Susan Love",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img3.png",
-                "experience": "35+ years",
-                "rating": "9.7",
-                "patientsTreated": "40,000+",
-                "successRate": "97.5%",
-                "expertise": [
-                  "Breast Cancer",
-                  "Women's Health",
-                  "Prevention"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Breast Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "French"
-                ],
-                "researchPapers": "600+ publications",
-                "awards": [
-                  "Women in Science Award",
-                  "Clinical Excellence"
-                ]
-              }
-            ],
+            "doctors": [],
             "selectionCriteria": [
               "Check board certification",
               "volume with ICIs",
@@ -1849,105 +1150,7 @@
           "topDoctors": {
             "title": "Top-rated oncologists worldwide",
             "description": "How to select the best doctor?",
-            "doctors": [
-              {
-                "id": 1,
-                "name": "Dr. Patrick Soon-Shiong",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img1.png",
-                "experience": "30+ years",
-                "rating": "9.9",
-                "patientsTreated": "50,000+",
-                "successRate": "98.2%",
-                "expertise": [
-                  "Immunotherapy",
-                  "Precision Medicine",
-                  "Clinical Trials"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish"
-                ],
-                "researchPapers": "500+ publications",
-                "awards": [
-                  "Distinguished Scientist Award",
-                  "Top Oncologist 2023"
-                ]
-              },
-              {
-                "id": 2,
-                "name": "Dr. Siddhartha Mukherjee",
-                "specialty": "Oncologist",
-                "location": "Noida, India",
-                "image": "/RelatedSpecialists/img2.png",
-                "experience": "25+ years",
-                "rating": "9.8",
-                "patientsTreated": "45,000+",
-                "successRate": "97.8%",
-                "expertise": [
-                  "Hematological Oncology",
-                  "Stem Cell Transplantation",
-                  "Research"
-                ],
-                "hospital": "Columbia University Medical Center",
-                "education": "Stanford University",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Hematology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish",
-                  "Hindi"
-                ],
-                "researchPapers": "800+ publications",
-                "awards": [
-                  "Pulitzer Prize",
-                  "National Book Award"
-                ]
-              },
-              {
-                "id": 3,
-                "name": "Dr. Susan Love",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img3.png",
-                "experience": "35+ years",
-                "rating": "9.7",
-                "patientsTreated": "40,000+",
-                "successRate": "97.5%",
-                "expertise": [
-                  "Breast Cancer",
-                  "Women's Health",
-                  "Prevention"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Breast Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "French"
-                ],
-                "researchPapers": "600+ publications",
-                "awards": [
-                  "Women in Science Award",
-                  "Clinical Excellence"
-                ]
-              }
-            ],
+            "doctors": [],
             "selectionCriteria": [
               "Check board certification",
               "volume with ICIs",
@@ -2016,105 +1219,7 @@
           "topDoctors": {
             "title": "Top-rated oncologists worldwide",
             "description": "How to select the best doctor?",
-            "doctors": [
-              {
-                "id": 1,
-                "name": "Dr. Patrick Soon-Shiong",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img1.png",
-                "experience": "30+ years",
-                "rating": "9.9",
-                "patientsTreated": "50,000+",
-                "successRate": "98.2%",
-                "expertise": [
-                  "Immunotherapy",
-                  "Precision Medicine",
-                  "Clinical Trials"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish"
-                ],
-                "researchPapers": "500+ publications",
-                "awards": [
-                  "Distinguished Scientist Award",
-                  "Top Oncologist 2023"
-                ]
-              },
-              {
-                "id": 2,
-                "name": "Dr. Siddhartha Mukherjee",
-                "specialty": "Oncologist",
-                "location": "Noida, India",
-                "image": "/RelatedSpecialists/img2.png",
-                "experience": "25+ years",
-                "rating": "9.8",
-                "patientsTreated": "45,000+",
-                "successRate": "97.8%",
-                "expertise": [
-                  "Hematological Oncology",
-                  "Stem Cell Transplantation",
-                  "Research"
-                ],
-                "hospital": "Columbia University Medical Center",
-                "education": "Stanford University",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Hematology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish",
-                  "Hindi"
-                ],
-                "researchPapers": "800+ publications",
-                "awards": [
-                  "Pulitzer Prize",
-                  "National Book Award"
-                ]
-              },
-              {
-                "id": 3,
-                "name": "Dr. Susan Love",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img3.png",
-                "experience": "35+ years",
-                "rating": "9.7",
-                "patientsTreated": "40,000+",
-                "successRate": "97.5%",
-                "expertise": [
-                  "Breast Cancer",
-                  "Women's Health",
-                  "Prevention"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Breast Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "French"
-                ],
-                "researchPapers": "600+ publications",
-                "awards": [
-                  "Women in Science Award",
-                  "Clinical Excellence"
-                ]
-              }
-            ],
+            "doctors": [],
             "selectionCriteria": [
               "Check board certification",
               "volume with ICIs",
@@ -2182,105 +1287,7 @@
           "topDoctors": {
             "title": "Top-rated oncologists worldwide",
             "description": "How to select the best doctor?",
-            "doctors": [
-              {
-                "id": 1,
-                "name": "Dr. Patrick Soon-Shiong",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img1.png",
-                "experience": "30+ years",
-                "rating": "9.9",
-                "patientsTreated": "50,000+",
-                "successRate": "98.2%",
-                "expertise": [
-                  "Immunotherapy",
-                  "Precision Medicine",
-                  "Clinical Trials"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish"
-                ],
-                "researchPapers": "500+ publications",
-                "awards": [
-                  "Distinguished Scientist Award",
-                  "Top Oncologist 2023"
-                ]
-              },
-              {
-                "id": 2,
-                "name": "Dr. Siddhartha Mukherjee",
-                "specialty": "Oncologist",
-                "location": "Noida, India",
-                "image": "/RelatedSpecialists/img2.png",
-                "experience": "25+ years",
-                "rating": "9.8",
-                "patientsTreated": "45,000+",
-                "successRate": "97.8%",
-                "expertise": [
-                  "Hematological Oncology",
-                  "Stem Cell Transplantation",
-                  "Research"
-                ],
-                "hospital": "Columbia University Medical Center",
-                "education": "Stanford University",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Hematology"
-                ],
-                "languages": [
-                  "English",
-                  "Spanish",
-                  "Hindi"
-                ],
-                "researchPapers": "800+ publications",
-                "awards": [
-                  "Pulitzer Prize",
-                  "National Book Award"
-                ]
-              },
-              {
-                "id": 3,
-                "name": "Dr. Susan Love",
-                "specialty": "Oncologist",
-                "location": "Kolkata, India",
-                "image": "/RelatedSpecialists/img3.png",
-                "experience": "35+ years",
-                "rating": "9.7",
-                "patientsTreated": "40,000+",
-                "successRate": "97.5%",
-                "expertise": [
-                  "Breast Cancer",
-                  "Women's Health",
-                  "Prevention"
-                ],
-                "hospital": "UCLA Medical Center",
-                "education": "Harvard Medical School",
-                "certifications": [
-                  "FACP",
-                  "FANA",
-                  "Breast Oncology"
-                ],
-                "languages": [
-                  "English",
-                  "French"
-                ],
-                "researchPapers": "600+ publications",
-                "awards": [
-                  "Women in Science Award",
-                  "Clinical Excellence"
-                ]
-              }
-            ],
+            "doctors": [],
             "selectionCriteria": [
               "Check board certification",
               "volume with ICIs",
@@ -2309,7 +1316,7 @@
       "description": "Specialized care for bones, joints, muscles, and skeletal system",
       "icon": "/specialties/orthopaedics.png",
       "color": "#F6EB61",
-      "count": 3,
+      "count": 4,
       "overview": {
         "description": "Orthopaedics is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the musculoskeletal system including bones, joints, muscles, ligaments, and tendons. Our medical tourism platform connects patients with the best orthopedic hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -2397,46 +1404,39 @@
       ],
       "doctors": [
         {
-          "id": 1,
-          "name": "Dr. James Andrews",
-          "specialty": "Orthopedic Surgeon",
-          "location": "Kanpur, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "40+ years",
+          "id": "HDEL0001",
+          "name": "Dr. Jayant Arora",
+          "specialty": "Orthopaedic Surgeon",
+          "location": "Gurgaon, India",
+          "image": "/doctors/dr-jayant-arora.jpg",
+          "experience": "24+ years",
+          "rating": "4.9",
+          "patientsTreated": "10,000+",
+          "successRate": "98.5%",
           "expertise": [
-            "Sports Medicine",
-            "Knee Surgery",
-            "Shoulder Surgery"
+            "Joint Replacement Surgery",
+            "Arthroscopic Surgery",
+            "Robotic Knee Replacement",
+            "Sports Injury Treatment",
+            "Computer-Navigated Surgery"
           ],
-          "hospital": "Andrews Sports Medicine"
-        },
-        {
-          "id": 2,
-          "name": "Dr. Thomas Satterthwaite",
-          "specialty": "Orthopedic Surgeon",
-          "location": "Noida, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "25+ years",
-          "expertise": [
-            "Joint Replacement",
-            "Hip Surgery",
-            "Knee Surgery"
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+          "education": "Maulana Azad Medical College, University of Delhi",
+          "certifications": [
+            "MRCS",
+            "CCBST",
+            "ATLS"
           ],
-          "hospital": "Hospital for Special Surgery"
-        },
-        {
-          "id": 3,
-          "name": "Dr. Scott Rodeo",
-          "specialty": "Orthopedic Surgeon",
-          "location": "Noida, India",
-          "image": "/RelatedSpecialists/img3.png",
-          "experience": "30+ years",
-          "expertise": [
-            "Sports Medicine",
-            "Shoulder Surgery",
-            "Clinical Research"
+          "languages": [
+            "English",
+            "Hindi"
           ],
-          "hospital": "Hospital for Special Surgery"
+          "researchPapers": "15+ publications",
+          "awards": [
+            "Oxford Partial Knee Instructional Course Faculty",
+            "International Speaker at ESSKA, EFFORT, CEOC",
+            "Pioneer in Robotic-Assisted Knee Replacement in India"
+          ]
         }
       ],
       "treatments": [
@@ -2725,215 +1725,7 @@
         ]
       },
       "hospitals": [],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Prof. Dr. med. J. U. Stolzenburg",
-          "specialty": "Robotic Urologist",
-          "location": "Agra, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "25+ years",
-          "rating": "9.8",
-          "patientsTreated": "35,000+",
-          "successRate": "97.8%",
-          "expertise": [
-            "Robotic Prostate Surgery",
-            "Kidney Cancer",
-            "Bladder Surgery",
-            "Minimally Invasive Urology",
-            "Laparoscopic Surgery"
-          ],
-          "hospital": "University Hospital Leipzig",
-          "education": "University of Leipzig",
-          "certifications": [
-            "FEBU",
-            "German Board",
-            "Robotic Surgery"
-          ],
-          "languages": [
-            "German",
-            "English"
-          ],
-          "researchPapers": "300+ publications",
-          "awards": [
-            "German Urology Award",
-            "Robotic Surgery Excellence"
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Prof. Dr. med. M. Fisch",
-          "specialty": "Urological Oncologist",
-          "location": "Thane, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "30+ years",
-          "rating": "9.7",
-          "patientsTreated": "42,000+",
-          "successRate": "97.5%",
-          "expertise": [
-            "Urological Oncology",
-            "Reconstructive Urology",
-            "Kidney Transplant",
-            "Bladder Cancer",
-            "Prostate Cancer"
-          ],
-          "hospital": "University Medical Center Hamburg-Eppendorf",
-          "education": "University of Hamburg",
-          "certifications": [
-            "FEBU",
-            "German Board",
-            "Oncology"
-          ],
-          "languages": [
-            "German",
-            "English",
-            "Turkish"
-          ],
-          "researchPapers": "450+ publications",
-          "awards": [
-            "European Urology Award",
-            "Oncology Excellence"
-          ]
-        },
-        {
-          "id": 3,
-          "name": "Prof. Dr. med. M. Hohenfellner",
-          "specialty": "Urologist",
-          "location": "Bhopal, India",
-          "image": "/RelatedSpecialists/img3.png",
-          "experience": "28+ years",
-          "rating": "9.6",
-          "patientsTreated": "38,000+",
-          "successRate": "97.2%",
-          "expertise": [
-            "Kidney Stone Treatment",
-            "Prostate Surgery",
-            "Male Infertility",
-            "Endourology",
-            "Urological Trauma"
-          ],
-          "hospital": "University Hospital Heidelberg",
-          "education": "University of Heidelberg",
-          "certifications": [
-            "FEBU",
-            "German Board",
-            "Endourology"
-          ],
-          "languages": [
-            "German",
-            "English",
-            "French"
-          ],
-          "researchPapers": "380+ publications",
-          "awards": [
-            "Heidelberg Medical Award",
-            "Stone Treatment Excellence"
-          ]
-        },
-        {
-          "id": 4,
-          "name": "Dr. Inderbir S. Gill",
-          "specialty": "Robotic Urologist",
-          "location": "Kolkata, India",
-          "image": "/RelatedSpecialists/img4.png",
-          "experience": "25+ years",
-          "rating": "9.5",
-          "patientsTreated": "45,000+",
-          "successRate": "98.1%",
-          "expertise": [
-            "Robotic Urology",
-            "Kidney Cancer",
-            "Prostate Surgery",
-            "Minimally Invasive Surgery",
-            "Clinical Research"
-          ],
-          "hospital": "Keck Medicine of USC",
-          "education": "All India Institute of Medical Sciences",
-          "certifications": [
-            "FACS",
-            "FACS",
-            "Robotic Surgery"
-          ],
-          "languages": [
-            "English",
-            "Hindi",
-            "Punjabi"
-          ],
-          "researchPapers": "500+ publications",
-          "awards": [
-            "Distinguished Scientist Award",
-            "Robotic Surgery Pioneer"
-          ]
-        },
-        {
-          "id": 5,
-          "name": "Dr. Peter T. Scardino",
-          "specialty": "Urological Oncologist",
-          "location": "Noida, India",
-          "image": "/RelatedSpecialists/img1.png",
-          "experience": "35+ years",
-          "rating": "9.4",
-          "patientsTreated": "50,000+",
-          "successRate": "97.9%",
-          "expertise": [
-            "Prostate Cancer",
-            "Urological Oncology",
-            "Clinical Trials",
-            "Preventive Urology",
-            "Medical Education"
-          ],
-          "hospital": "Memorial Sloan Kettering Cancer Center",
-          "education": "Harvard Medical School",
-          "certifications": [
-            "FACS",
-            "FACS",
-            "Oncology"
-          ],
-          "languages": [
-            "English",
-            "Spanish"
-          ],
-          "researchPapers": "600+ publications",
-          "awards": [
-            "Lasker Award",
-            "Prostate Cancer Research Excellence"
-          ]
-        },
-        {
-          "id": 6,
-          "name": "Dr. Christopher P. Evans",
-          "specialty": "Urologist",
-          "location": "Nagpur, India",
-          "image": "/RelatedSpecialists/img2.png",
-          "experience": "30+ years",
-          "rating": "9.3",
-          "patientsTreated": "40,000+",
-          "successRate": "97.6%",
-          "expertise": [
-            "Prostate Cancer",
-            "Bladder Cancer",
-            "Kidney Cancer",
-            "Clinical Research",
-            "Immunotherapy"
-          ],
-          "hospital": "UC Davis Medical Center",
-          "education": "University of California, Davis",
-          "certifications": [
-            "FACS",
-            "FACS",
-            "Oncology"
-          ],
-          "languages": [
-            "English",
-            "Spanish"
-          ],
-          "researchPapers": "400+ publications",
-          "awards": [
-            "UC Davis Excellence Award",
-            "Cancer Research Pioneer"
-          ]
-        }
-      ],
+      "doctors": [],
       "treatments": [
         {
           "id": "urology_1",
@@ -3218,14 +2010,7 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Specialist Doctors",
-          "specialty": "Multi-Specialty Team",
-          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
-        }
-      ],
+      "doctors": [],
       "coordinates": {
         "latitude": 28.4595,
         "longitude": 77.0266
@@ -3316,14 +2101,7 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Specialist Doctors",
-          "specialty": "Multi-Specialty Team",
-          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
-        }
-      ],
+      "doctors": [],
       "coordinates": {
         "latitude": 28.4595,
         "longitude": 77.0266
@@ -3428,14 +2206,7 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [
-        {
-          "id": 1,
-          "name": "Specialist Doctors",
-          "specialty": "Multi-Specialty Team",
-          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400"
-        }
-      ],
+      "doctors": [],
       "coordinates": {
         "latitude": 28.5276,
         "longitude": 77.2026
@@ -3459,416 +2230,122 @@
   ],
   "globalDoctors": [
     {
-      "id": 1,
-      "name": "Dr. Suresh Reddy",
-      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400",
-      "specialty": "Interventional Cardiologist",
-      "experience": "20 years",
+      "id": "HDEL0001",
+      "name": "Dr. Jayant Arora",
+      "image": "/doctors/dr-jayant-arora.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "24+ years",
       "rating": "4.9",
-      "location": "Chennai, India",
-      "hospital": "Fortis Memorial Research Institute",
-      "consultationFee": "₹2000",
+      "location": "Gurgaon, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹3000",
       "treatments": [
-        "Angioplasty",
-        "Cardiac Catheterization",
-        "Stent Placement",
-        "Heart Valve Repair",
-        "Pacemaker Implantation"
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
       ],
       "qualifications": [
-        "MBBS",
-        "MD Cardiology",
-        "DM Interventional Cardiology"
+        "M.B.B.S – Maulana Azad Medical College, University of Delhi (1996)",
+        "M.S. (Orthopaedics) – Safdarjung Hospital, University of Delhi (2000)",
+        "DNB (Orthopaedics) – PGI Chandigarh, National Board of Examinations (2001)",
+        "MRCS (Edinburgh) – Royal College of Surgeons of Edinburgh, UK (2003)",
+        "CCBST – Royal College of Surgeons of Great Britain and Ireland (2006)"
       ],
-      "about": "Dr. Suresh Reddy is a highly experienced interventional cardiologist with over 20 years of expertise in treating complex cardiac conditions. He has performed more than 5000 successful angioplasty procedures and is known for his precision and patient care.",
+      "about": "Dr. Jayant Arora is a leading Orthopaedic surgeon with over 24 years of experience, specializing in joint replacement, robotic knee surgery, and sports injury management. Trained in premier institutions across India and the UK, he has pioneered computer-navigated and robotic-assisted knee replacements in India. As Senior Director & Unit Head of Orthopaedics at Fortis Memorial Research Institute, Gurgaon, Dr. Arora is renowned for delivering world-class outcomes in complex surgeries with cutting-edge technology and minimally invasive techniques.",
       "education": [
         {
-          "degree": "MBBS",
-          "institution": "Madras Medical College",
+          "degree": "M.B.B.S",
+          "institution": "Maulana Azad Medical College, University of Delhi",
+          "year": "1996"
+        },
+        {
+          "degree": "M.S. (Orthopaedics)",
+          "institution": "Safdarjung Hospital, University of Delhi",
           "year": "2000"
         },
         {
-          "degree": "MD Cardiology",
-          "institution": "AIIMS Delhi",
-          "year": "2005"
-        },
-        {
-          "degree": "DM Interventional Cardiology",
-          "institution": "Cleveland Clinic, USA",
-          "year": "2008"
-        }
-      ],
-      "workExperience": [
-        {
-          "position": "Senior Cardiologist",
-          "hospital": "Fortis Memorial Research Institute",
-          "duration": "2010 - Present"
-        },
-        {
-          "position": "Interventional Cardiologist",
-          "hospital": "Fortis Hospital Mumbai",
-          "duration": "2008 - 2010"
-        }
-      ],
-      "specializations": [
-        "Interventional Cardiology",
-        "Coronary Angioplasty",
-        "Structural Heart Disease",
-        "Peripheral Vascular Disease"
-      ],
-      "awards": [
-        "Best Cardiologist Award 2022",
-        "Excellence in Interventional Cardiology 2020",
-        "Patient Choice Award 2019"
-      ],
-      "languages": [
-        "English",
-        "Hindi",
-        "Tamil",
-        "Telugu"
-      ],
-      "availability": {
-        "monday": "9:00 AM - 5:00 PM",
-        "tuesday": "9:00 AM - 5:00 PM",
-        "wednesday": "9:00 AM - 5:00 PM",
-        "thursday": "9:00 AM - 5:00 PM",
-        "friday": "9:00 AM - 5:00 PM",
-        "saturday": "9:00 AM - 2:00 PM",
-        "sunday": "Closed"
-      },
-      "contact": {
-        "phone": "+91-98765-43210",
-        "email": "dr.suresh.reddy@apollo.com"
-      }
-    },
-    {
-      "id": 2,
-      "name": "Dr. Meera Joshi",
-      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
-      "specialty": "Cardiac Surgeon",
-      "experience": "16 years",
-      "rating": "4.8",
-      "location": "Pune, India",
-      "hospital": "Ruby Hall Clinic",
-      "consultationFee": "₹1800",
-      "treatments": [
-        "Bypass Surgery",
-        "Heart Valve Repair",
-        "Pacemaker Implantation",
-        "Aortic Aneurysm Repair",
-        "Heart Transplant"
-      ],
-      "qualifications": [
-        "MBBS",
-        "MS General Surgery",
-        "MCh Cardiothoracic Surgery"
-      ],
-      "about": "Dr. Meera Joshi is a renowned cardiac surgeon specializing in complex heart surgeries. With over 16 years of experience, she has successfully performed more than 2000 cardiac surgeries and is known for her innovative surgical techniques.",
-      "education": [
-        {
-          "degree": "MBBS",
-          "institution": "B.J. Medical College, Pune",
-          "year": "2005"
-        },
-        {
-          "degree": "MS General Surgery",
-          "institution": "Sassoon Hospital, Pune",
-          "year": "2010"
-        },
-        {
-          "degree": "MCh Cardiothoracic Surgery",
-          "institution": "AIIMS Delhi",
-          "year": "2013"
-        }
-      ],
-      "workExperience": [
-        {
-          "position": "Senior Cardiac Surgeon",
-          "hospital": "Ruby Hall Clinic, Pune",
-          "duration": "2015 - Present"
-        },
-        {
-          "position": "Cardiac Surgeon",
-          "hospital": "KEM Hospital, Mumbai",
-          "duration": "2013 - 2015"
-        }
-      ],
-      "specializations": [
-        "Coronary Artery Bypass Surgery",
-        "Valve Replacement Surgery",
-        "Minimally Invasive Cardiac Surgery",
-        "Heart Failure Surgery"
-      ],
-      "awards": [
-        "Outstanding Cardiac Surgeon 2021",
-        "Innovation in Cardiac Surgery 2019",
-        "Women in Medicine Award 2018"
-      ],
-      "languages": [
-        "English",
-        "Hindi",
-        "Marathi"
-      ],
-      "availability": {
-        "monday": "8:00 AM - 6:00 PM",
-        "tuesday": "8:00 AM - 6:00 PM",
-        "wednesday": "8:00 AM - 6:00 PM",
-        "thursday": "8:00 AM - 6:00 PM",
-        "friday": "8:00 AM - 6:00 PM",
-        "saturday": "8:00 AM - 1:00 PM",
-        "sunday": "Emergency Only"
-      },
-      "contact": {
-        "phone": "+91-98765-43211",
-        "email": "dr.meera.joshi@rubyhall.com"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Dr. Vikram Singh",
-      "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400",
-      "specialty": "Pediatric Cardiologist",
-      "experience": "14 years",
-      "rating": "4.7",
-      "location": "Delhi, India",
-      "hospital": "Fortis Hospital",
-      "consultationFee": "₹1600",
-      "treatments": [
-        "Congenital Heart Disease",
-        "Pediatric Interventions",
-        "Fetal Cardiology",
-        "Pediatric Cardiac Surgery"
-      ],
-      "qualifications": [
-        "MBBS",
-        "MD Pediatrics",
-        "DM Pediatric Cardiology"
-      ],
-      "about": "Dr. Vikram Singh is a dedicated pediatric cardiologist with expertise in treating congenital heart diseases in children. He has helped thousands of children with heart conditions and is known for his gentle approach with young patients.",
-      "education": [
-        {
-          "degree": "MBBS",
-          "institution": "Maulana Azad Medical College",
-          "year": "2007"
-        },
-        {
-          "degree": "MD Pediatrics",
-          "institution": "AIIMS Delhi",
-          "year": "2012"
-        },
-        {
-          "degree": "DM Pediatric Cardiology",
-          "institution": "AIIMS Delhi",
-          "year": "2015"
-        }
-      ],
-      "workExperience": [
-        {
-          "position": "Senior Pediatric Cardiologist",
-          "hospital": "Fortis Hospital, Delhi",
-          "duration": "2017 - Present"
-        },
-        {
-          "position": "Pediatric Cardiologist",
-          "hospital": "Safdarjung Hospital",
-          "duration": "2015 - 2017"
-        }
-      ],
-      "specializations": [
-        "Congenital Heart Disease",
-        "Fetal Cardiology",
-        "Pediatric Interventional Cardiology",
-        "Pediatric Cardiac Imaging"
-      ],
-      "awards": [
-        "Best Pediatric Cardiologist 2023",
-        "Excellence in Child Care 2021",
-        "Young Achiever Award 2019"
-      ],
-      "languages": [
-        "English",
-        "Hindi",
-        "Punjabi"
-      ],
-      "availability": {
-        "monday": "10:00 AM - 6:00 PM",
-        "tuesday": "10:00 AM - 6:00 PM",
-        "wednesday": "10:00 AM - 6:00 PM",
-        "thursday": "10:00 AM - 6:00 PM",
-        "friday": "10:00 AM - 6:00 PM",
-        "saturday": "10:00 AM - 3:00 PM",
-        "sunday": "Emergency Only"
-      },
-      "contact": {
-        "phone": "+91-98765-43212",
-        "email": "dr.vikram.singh@fortis.com"
-      }
-    },
-    {
-      "id": 4,
-      "name": "Dr. Priya Sharma",
-      "image": "https://images.unsplash.com/photo-1594824475545-9d0c7c495946?w=400",
-      "specialty": "Neurologist",
-      "experience": "18 years",
-      "rating": "4.9",
-      "location": "Mumbai, India",
-      "hospital": "Kokilaben Hospital",
-      "consultationFee": "₹2200",
-      "treatments": [
-        "Stroke Treatment",
-        "Epilepsy Management",
-        "Multiple Sclerosis",
-        "Parkinson's Disease",
-        "Brain Tumor Surgery"
-      ],
-      "qualifications": [
-        "MBBS",
-        "MD Neurology",
-        "DM Neurology"
-      ],
-      "about": "Dr. Priya Sharma is a leading neurologist with extensive experience in treating complex neurological disorders. She specializes in stroke treatment and has been instrumental in establishing stroke units across multiple hospitals.",
-      "education": [
-        {
-          "degree": "MBBS",
-          "institution": "Grant Medical College, Mumbai",
-          "year": "2003"
-        },
-        {
-          "degree": "MD Neurology",
-          "institution": "KEM Hospital, Mumbai",
-          "year": "2008"
-        },
-        {
-          "degree": "DM Neurology",
-          "institution": "NIMHANS, Bangalore",
-          "year": "2011"
-        }
-      ],
-      "workExperience": [
-        {
-          "position": "Senior Neurologist",
-          "hospital": "Kokilaben Hospital, Mumbai",
-          "duration": "2015 - Present"
-        },
-        {
-          "position": "Neurologist",
-          "hospital": "Jaslok Hospital, Mumbai",
-          "duration": "2011 - 2015"
-        }
-      ],
-      "specializations": [
-        "Stroke Medicine",
-        "Epilepsy",
-        "Movement Disorders",
-        "Neurocritical Care"
-      ],
-      "awards": [
-        "Best Neurologist Award 2023",
-        "Stroke Care Excellence 2022",
-        "Women in Neurology Award 2020"
-      ],
-      "languages": [
-        "English",
-        "Hindi",
-        "Marathi",
-        "Gujarati"
-      ],
-      "availability": {
-        "monday": "9:00 AM - 5:00 PM",
-        "tuesday": "9:00 AM - 5:00 PM",
-        "wednesday": "9:00 AM - 5:00 PM",
-        "thursday": "9:00 AM - 5:00 PM",
-        "friday": "9:00 AM - 5:00 PM",
-        "saturday": "9:00 AM - 2:00 PM",
-        "sunday": "Emergency Only"
-      },
-      "contact": {
-        "phone": "+91-98765-43213",
-        "email": "dr.priya.sharma@kokilaben.com"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Dr. Rajesh Kumar",
-      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400",
-      "specialty": "Orthopedic Surgeon",
-      "experience": "22 years",
-      "rating": "4.8",
-      "location": "Bangalore, India",
-      "hospital": "Manipal Hospital",
-      "consultationFee": "₹1900",
-      "treatments": [
-        "Joint Replacement",
-        "Arthroscopic Surgery",
-        "Spine Surgery",
-        "Sports Injury",
-        "Fracture Treatment"
-      ],
-      "qualifications": [
-        "MBBS",
-        "MS Orthopedics",
-        "Fellowship in Joint Replacement"
-      ],
-      "about": "Dr. Rajesh Kumar is a highly skilled orthopedic surgeon with expertise in joint replacement and arthroscopic surgeries. He has performed over 3000 successful joint replacement surgeries and is known for his precision and patient outcomes.",
-      "education": [
-        {
-          "degree": "MBBS",
-          "institution": "Bangalore Medical College",
+          "degree": "DNB (Orthopaedics)",
+          "institution": "PGI Chandigarh, National Board of Examinations",
           "year": "2001"
         },
         {
-          "degree": "MS Orthopedics",
-          "institution": "KMC Manipal",
-          "year": "2006"
+          "degree": "MRCS (Edinburgh)",
+          "institution": "Royal College of Surgeons of Edinburgh, UK",
+          "year": "2003"
         },
         {
-          "degree": "Fellowship in Joint Replacement",
-          "institution": "Hospital for Special Surgery, New York",
-          "year": "2009"
+          "degree": "CCBST",
+          "institution": "Royal College of Surgeons of Great Britain and Ireland",
+          "year": "2006"
         }
       ],
       "workExperience": [
         {
-          "position": "Senior Orthopedic Surgeon",
-          "hospital": "Manipal Hospital, Bangalore",
-          "duration": "2012 - Present"
-        },
-        {
-          "position": "Orthopedic Surgeon",
-          "hospital": "Apollo Hospital, Bangalore",
-          "duration": "2009 - 2012"
+          "position": "SENIOR DIRECTOR & UNIT HEAD ORTHOPAEDICS",
+          "hospital": "Fortis Gurgaon",
+          "duration": "Present"
         }
       ],
       "specializations": [
         "Joint Replacement Surgery",
         "Arthroscopic Surgery",
-        "Sports Medicine",
-        "Spine Surgery"
+        "Orthopaedics",
+        "Robotic Knee Replacement",
+        "Sports Injury Treatment"
       ],
       "awards": [
-        "Excellence in Orthopedics 2023",
-        "Best Joint Replacement Surgeon 2021",
-        "Innovation in Surgery Award 2019"
+        "Faculty Appointments: Oxford Partial Knee Instructional Course – Faculty (Nov 2015, Nov 2017)",
+        "CCJR Winter Meeting, Florida, USA (2014)",
+        "AIIMS Revision Knee Course (2012)",
+        "UP Orthocon, Faridabad & Delhi Ortho Associations – Multiple Events",
+        "International Recognition: Invited speaker and podium presenter at leading international congresses including ESSKA (Austria), EFFORT (Portugal), Quincentenary Congress (Scotland), CEOC (Prague)",
+        "Presentations praised for depth in MRI assessment protocols, joint revision strategies, and arthroscopic techniques",
+        "Training & Mentorship: Actively involved in training young orthopaedic surgeons in India and abroad in robotic and partial knee replacement surgery",
+        "Participated as teaching faculty in cadaveric workshops, arthroscopy skill courses, and surgical simulation modules",
+        "Pioneer in Technology-Driven Surgery: Among the first in India to perform Computer-Navigated and Robotic-Assisted Partial Knee Replacements",
+        "Recognized as a leading figure in Gurgaon and Delhi NCR for joint preservation techniques and minimally invasive orthopaedic procedures"
       ],
       "languages": [
         "English",
-        "Hindi",
-        "Kannada",
-        "Tamil"
+        "Hindi"
       ],
       "availability": {
-        "monday": "8:00 AM - 6:00 PM",
-        "tuesday": "8:00 AM - 6:00 PM",
-        "wednesday": "8:00 AM - 6:00 PM",
-        "thursday": "8:00 AM - 6:00 PM",
-        "friday": "8:00 AM - 6:00 PM",
-        "saturday": "8:00 AM - 2:00 PM",
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
         "sunday": "Emergency Only"
       },
       "contact": {
-        "phone": "+91-98765-43214",
-        "email": "dr.rajesh.kumar@manipal.com"
-      }
+        "phone": "+91-98765-43215",
+        "email": "dr.jayant.arora@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Jayant Arora has an extensive research background in the fields of knee arthroplasty, joint replacement, and orthopaedic trauma. His research work spans both clinical and surgical domains, focusing on: Computer-Navigated and Robotic-Assisted Knee Replacement: Dr. Arora has been a pioneer in integrating advanced technologies in knee surgeries, including patient-specific implants and computer navigation systems. Osteolysis in Modular Knee Implants: His work studied the prevalence and implications of osteolysis in primary modular Freeman Samuelson total knee replacements. Preoperative Templating in Total Knee Replacement: Investigated the effectiveness of preoperative planning and templating on outcomes in TKR patients. Arthroscopic Techniques in Sports Injuries: Conducted research and case studies on arthroscopic surgical approaches for managing soft tissue injuries and chronic conditions like shoulder instability. Innovations in External Fixation: Studied the role and efficacy of external fixators in intra-articular distal radius fractures, including prospective trials and long-term outcomes. Joint Preservation and Partial Knee Replacement: He contributed research on the Oxford Partial Knee Replacement and minimally invasive surgery for joint preservation. Rare Orthopaedic Cases: Authored case reports on rare orthopaedic conditions such as recurrent osteoid osteoma and transulnar dislocations. His research was recognized during his clinical fellowship in the UK and he has been actively involved in mentoring and training orthopaedic surgeons through his research findings and clinical experience.",
+      "publications": [
+        "Osteolysis in Proximally Cemented Primary Freeman Samuelson TKR - J Bone Joint Surg Br, 2005; 87-B: 1502-1506",
+        "External Fixation in Intra-Articular Fractures of Distal Radius: Is It Sufficient? - Archives of Orthopaedic and Trauma Surgery, 2005; 125(8): 536-540",
+        "Role of Preoperative Templating in Primary Total Knee Replacement - Knee Surgery Sports Traumatology Arthroscopy, 2005; 13(3): 187-189",
+        "Recurrent Osteoid Osteoma of the Lunate: A Case Report - Hand Surgery, 2003; 8: 239-242",
+        "Transulnar Styloid Volar Scapholunate Dislocation with Median Nerve Injury - Archives of Orthopaedic and Trauma Surgery, 2005; 125: 120-123",
+        "Closed Reduction and POP Immobilization vs External Fixation - Indian Journal of Orthopaedics, 2004; 38(2): 113-117",
+        "Transfixation of Ganglion: A New Treatment Method - Indian Journal of Orthopaedics, 2004; 38(6): 78-83",
+        "The Sprain Fracture of the Calcaneus Revisited - The Foot, 2005; 15: 198-201",
+        "Hospital Acquired Bacillus Cereus Infection in Orthopaedic Patients - Surgical Infection – Accepted for publication",
+        "Dislocation of Carpal Scaphoid: A Case Report - Injury Extra, 2006; 37(5): 184-186"
+      ],
+      "certifications": [
+        "MRCS – Royal College of Surgeons, Edinburgh",
+        "CCBST – Royal College of Surgeons of Great Britain and Ireland",
+        "ATLS – Crosshouse Hospital, UK",
+        "Advanced Shoulder Arthroscopy and Hip Resurfacing Courses",
+        "Basic Surgical Skills and Arthroscopic Skills Courses – Royal College of Surgeons",
+        "Clinical Research Fellowships in Joint Replacement and Arthroscopy (Newcastle, UK)",
+        "Visiting Fellow – Knee Arthroplasty, Belgium"
+      ]
     }
   ],
   "featuredHospitals": [
@@ -3925,7 +2402,7 @@
       "slug": "orthopaedics",
       "icon": "/specialties/orthopaedics.png",
       "label": "Orthopaedics",
-      "count": 0,
+      "count": 1,
       "color": "#F6EB61",
       "description": "Specialized care for bones, joints, muscles, and skeletal system"
     }

@@ -104,9 +104,36 @@ const DoctorProfile = ({ doctor }) => {
         { degree: "Board Certification", institution: "Medical Board", year: "Certified Specialist" }
       ];
     }
-    if (Array.isArray(education)) return education;
+
+    // If it's already an array, validate each item has required properties
+    if (Array.isArray(education)) {
+      return education.map(edu => {
+        // Ensure each education item has the required properties
+        if (typeof edu === 'object' && edu !== null) {
+          return {
+            degree: edu.degree || "Medical Degree",
+            institution: edu.institution || "Medical Institution",
+            year: edu.year || "Graduate"
+          };
+        }
+        // If it's not an object, convert to proper format
+        return {
+          degree: "Medical Degree",
+          institution: String(edu) || "Medical Institution",
+          year: "Graduate"
+        };
+      });
+    }
+
     // If it's a string, convert to array format
-    return [{ degree: "Medical Degree", institution: education, year: "Graduate" }];
+    if (typeof education === 'string') {
+      return [{ degree: "Medical Degree", institution: education, year: "Graduate" }];
+    }
+
+    // Fallback for any other type
+    return [
+      { degree: "Medical Degree", institution: "Medical Institution", year: "Graduate" }
+    ];
   };
 
   // Helper function to handle work experience data (can be array or undefined)
@@ -120,7 +147,27 @@ const DoctorProfile = ({ doctor }) => {
         { position: "Chief Resident", hospital: "Teaching Hospital", duration: "2 years" }
       ];
     }
-    if (Array.isArray(workExperience)) return workExperience;
+
+    // If it's already an array, validate each item has required properties
+    if (Array.isArray(workExperience)) {
+      return workExperience.map(exp => {
+        // Ensure each work experience item has the required properties
+        if (typeof exp === 'object' && exp !== null) {
+          return {
+            position: exp.position || "Medical Position",
+            hospital: exp.hospital || "Medical Institution",
+            duration: exp.duration || "Experience"
+          };
+        }
+        // If it's not an object, convert to proper format
+        return {
+          position: "Medical Position",
+          hospital: String(exp) || "Medical Institution",
+          duration: "Experience"
+        };
+      });
+    }
+
     return [];
   };
 
@@ -279,7 +326,7 @@ const DoctorProfile = ({ doctor }) => {
             {getSpecializations(doctor).map((specialization, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p className="font-semibold">{specialization}</p>
+                <p className="font-semibold">{typeof specialization === 'string' ? specialization : String(specialization)}</p>
               </div>
             ))}
           </div>
@@ -299,7 +346,8 @@ const DoctorProfile = ({ doctor }) => {
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
                 <p>
                   <span className="font-semibold">{edu.institution}</span>{" "}
-                  <span className="text-sm">({edu.degree} - {edu.year})</span>
+                  <span className="font-semibold">{edu.degree}</span>{" "}
+                  <span className="text-sm">({edu.year})</span>
                 </p>
               </div>
             ))}
@@ -336,10 +384,10 @@ const DoctorProfile = ({ doctor }) => {
             Dr. {doctor.name.split(' ').pop()} offers the following treatments and procedures:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#000D44]">
-            {doctor.treatments?.map((treatment, index) => (
+            {getTreatments(doctor).map((treatment, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p className="font-semibold">{treatment}</p>
+                <p className="font-semibold">{typeof treatment === 'string' ? treatment : String(treatment)}</p>
               </div>
             ))}
           </div>
@@ -357,7 +405,7 @@ const DoctorProfile = ({ doctor }) => {
             {doctor.awards?.map((award, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p>{award}</p>
+                <p>{typeof award === 'string' ? award : String(award)}</p>
               </div>
             ))}
           </div>
@@ -369,9 +417,9 @@ const DoctorProfile = ({ doctor }) => {
             Languages Spoken
           </h3>
           <div className="flex flex-wrap gap-2">
-            {doctor.languages?.map((language, index) => (
+            {getLanguages(doctor).map((language, index) => (
               <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                {language}
+                {typeof language === 'string' ? language : String(language)}
               </span>
             ))}
           </div>

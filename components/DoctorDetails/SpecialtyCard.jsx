@@ -1,4 +1,4 @@
-import { Star, Syringe, Clock3 } from "lucide-react";
+import { Star, Clock3 } from "lucide-react";
 
 const SpecialtyCard = ({ doctor }) => {
   if (!doctor) return null;
@@ -25,13 +25,7 @@ const SpecialtyCard = ({ doctor }) => {
       </div>
 
 
-      <div className="bg-gray-50 rounded-md px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Syringe className="w-5 h-5 text-teal-600" />
-          <span className="text-sm text-gray-700 font-medium">Surgeries</span>
-        </div>
-        <span className="text-lg font-semibold text-gray-900">{doctor.surgeries || doctor.surgeriesCount || '500+'}</span>
-      </div>
+
 
       {/* Experience */}
       <div className="bg-gray-50 rounded-md px-4 py-3 flex items-center justify-between">

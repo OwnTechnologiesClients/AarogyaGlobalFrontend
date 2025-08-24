@@ -8,13 +8,13 @@ import dataService from '@/lib/dataService';
 export async function generateStaticParams() {
   const doctors = dataService.getAllUniqueDoctors();
   return doctors.map((doctor) => ({
-    doctorId: doctor.id.toString(),
+    doctorId: doctor.id,
   }));
 }
 
-export default function DoctorDetailsPage({ params }) {
-  const { doctorId } = params;
-  const doctor = dataService.getDoctorById(parseInt(doctorId));
+export default async function DoctorDetailsPage({ params }) {
+  const { doctorId } = await params;
+  const doctor = dataService.getDoctorById(doctorId);
   const { title, routes } = getPageHeaderData('/doctorDetails');
 
   if (!doctor) {
