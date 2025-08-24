@@ -173,7 +173,37 @@ const DoctorProfile = ({ doctor }) => {
 
   // Helper function to generate treatments
   const getTreatments = (doctor) => {
-    if (doctor.treatments && doctor.treatments.length > 0) return doctor.treatments;
+    if (doctor.treatments && doctor.treatments.length > 0) {
+      // If treatments are treatment IDs (like "ORT0001"), convert them to readable names
+      const treatmentNames = {
+        // Orthopaedics treatments
+        "ORT0001": "Total Knee Replacement (TKR)",
+        "ORT0002": "Total Hip Replacement (THR)",
+        "ORT0003": "ACL/MCL Ligament Reconstruction",
+        "ORT0004": "Shoulder Replacement (Anatomic/Reverse)",
+        // Cardiology treatments
+        "CARD0001": "Coronary Artery Bypass Graft (CABG)",
+        "CAR0002": "Angioplasty & Stenting (PCI)",
+        "CAR0003": "Valve Repair & Replacement (SAVR/TAVR)",
+        "CAR0004": "Pacemaker & ICD Implantation",
+        "CAR0005": "Catheter Ablation (for Arrhythmias)",
+        // Neurology treatments
+        "NEUR0001": "IV Thrombolysis/Mechanical Thrombectomy for Acute Ischemic Stroke",
+        // Oncology treatments
+        "ONC0001": "Immune Checkpoint Inhibitors (PD-1/PD-L1, CTLA-4)",
+        "ONC0002": "Mastectomy",
+        "ONC0003": "Radical Prostatectomy",
+        "ONC0004": "Colectomy",
+        "ONC0005": "Debulking Surgery"
+      };
+
+      return doctor.treatments.map(treatment => {
+        if (typeof treatment === 'string' && treatmentNames[treatment]) {
+          return treatmentNames[treatment];
+        }
+        return typeof treatment === 'string' ? treatment : String(treatment);
+      });
+    }
 
     const defaultTreatments = {
       "Interventional Cardiologist": [

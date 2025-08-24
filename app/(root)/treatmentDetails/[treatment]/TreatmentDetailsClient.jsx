@@ -4,11 +4,13 @@ import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lu
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
 import DoctorsSwiper from '../../../../components/TreatmentDetails/DoctorsSwiper';
 import HospitalsSwiper from '../../../../components/TreatmentDetails/HospitalsSwiper';
+import dataService from '../../../../lib/dataService';
 
 const TreatmentDetailsClient = ({ treatmentData }) => {
     const [expandedSections, setExpandedSections] = useState({});
     const [expandedFAQ, setExpandedFAQ] = useState({});
     const [activeTab, setActiveTab] = useState('Overview');
+    const [treatmentDoctors, setTreatmentDoctors] = useState([]);
 
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
     const convertToRupees = (euroString) => {
@@ -171,6 +173,13 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Fetch doctors for this treatment
+    useEffect(() => {
+        if (treatment && treatment.topDoctors && treatment.topDoctors.doctors) {
+            setTreatmentDoctors(treatment.topDoctors.doctors);
+        }
+    }, [treatment]);
+
     return (
         <div className="min-h-screen bg-white">
             <div className="container mx-auto px-4 py-8">
@@ -225,16 +234,16 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* Top Doctors Section */}
                         <section id="doctors" className="mb-12">
                             <DoctorsSwiper
-                                doctors={treatment.topDoctors.doctors}
-                                title={treatment.topDoctors.title}
+                                doctors={treatmentDoctors}
+                                title="Top Doctors for this Treatment"
                             />
 
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
-                                    {treatment.topDoctors.description}
+                                    How to select the best doctor?
                                 </h3>
                                 <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                    {treatment.topDoctors.selectionCriteria.map((criteria, index) => (
+                                    {treatment.topDoctors && treatment.topDoctors.selectionCriteria && treatment.topDoctors.selectionCriteria.map((criteria, index) => (
                                         <li key={index}>{criteria}</li>
                                     ))}
                                 </ul>

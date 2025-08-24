@@ -127,7 +127,7 @@
             "arterial‑graft program",
             "cardiac rehab availability"
           ],
-          "topDoctors": "How to select the best doctor?",
+          "topDoctors": [],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
             "CT surgeons with >100 CABGs/year",
@@ -183,7 +183,7 @@
             "use of FFR/iFR and IVUS/OCT",
             "cardiac surgery support"
           ],
-          "topDoctors": "How to select the best doctor?",
+          "topDoctors": [],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
             "Ask operator/hospital PCI volumes and outcomes",
@@ -238,7 +238,7 @@
             "outcomes registry",
             "3D echo and CT planning"
           ],
-          "topDoctors": "How to select the best doctor?",
+          "topDoctors": [],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
             "Ask SAVR/TAVR volumes and stroke/mortality rates",
@@ -292,7 +292,7 @@
             "lead extraction capability",
             "infection rates"
           ],
-          "topDoctors": "How to select the best doctor?",
+          "topDoctors": [],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
             "Operator/device volumes and complication rates",
@@ -344,7 +344,7 @@
             "complication‑management pathways",
             "day‑care protocols"
           ],
-          "topDoctors": "How to select the best doctor?",
+          "topDoctors": [],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
             "Ask success and complication rates for your arrhythmia",
@@ -799,7 +799,7 @@
             "neuro‑ICU",
             "rehab team"
           ],
-          "topDoctors": "How to select the best doctor?",
+          "topDoctors": [],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
             "Endovascular neurologist/neurosurgeon with regular thrombectomy volumes",
@@ -993,18 +993,7 @@
             "emergency response for irAEs",
             "access to clinical trials"
           ],
-          "topDoctors": {
-            "title": "Top-rated oncologists worldwide",
-            "description": "How to select the best doctor?",
-            "doctors": [],
-            "selectionCriteria": [
-              "Check board certification",
-              "volume with ICIs",
-              "participation in trials",
-              "and outcomes",
-              "seek second opinion when major decisions are needed"
-            ]
-          },
+          "topDoctors": [],
           "diagnosticTools": [
             "PD‑L1 IHC",
             "MSI‑H/dMMR",
@@ -1079,18 +1068,7 @@
             "can reduce re‑excision risk vs lumpectomy in select scenarios"
           ],
           "costConsiderations": "$2,580–3,900 typical (city/hospital dependent).",
-          "topDoctors": {
-            "title": "Top-rated oncologists worldwide",
-            "description": "How to select the best doctor?",
-            "doctors": [],
-            "selectionCriteria": [
-              "Check board certification",
-              "volume with ICIs",
-              "participation in trials",
-              "and outcomes",
-              "seek second opinion when major decisions are needed"
-            ]
-          },
+          "topDoctors": [],
           "faq": [
             {
               "question": "Is reconstruction mandatory?",
@@ -1147,18 +1125,7 @@
           ],
           "costConsiderations": "Approach (robotic vs open), LOS, consumables.",
           "detailedCost": "Driver = approach (robotic vs open), LOS, consumables. Insurance coverage varies.",
-          "topDoctors": {
-            "title": "Top-rated oncologists worldwide",
-            "description": "How to select the best doctor?",
-            "doctors": [],
-            "selectionCriteria": [
-              "Check board certification",
-              "volume with ICIs",
-              "participation in trials",
-              "and outcomes",
-              "seek second opinion when major decisions are needed"
-            ]
-          },
+          "topDoctors": [],
           "faq": [
             {
               "question": "Catheter for how long?",
@@ -1216,18 +1183,7 @@
           ],
           "costConsiderations": "$840–2,160",
           "detailedCost": "Costs vary by extent and approach; private‑hospital estimates in India often ~$840–2,160 for straightforward cases; complex cases higher.",
-          "topDoctors": {
-            "title": "Top-rated oncologists worldwide",
-            "description": "How to select the best doctor?",
-            "doctors": [],
-            "selectionCriteria": [
-              "Check board certification",
-              "volume with ICIs",
-              "participation in trials",
-              "and outcomes",
-              "seek second opinion when major decisions are needed"
-            ]
-          },
+          "topDoctors": [],
           "faq": [
             {
               "question": "Will I need a stoma?",
@@ -1284,18 +1240,7 @@
           ],
           "costConsiderations": "High due to OR time, ICU, transfusions.",
           "detailedCost": "High due to OR time, ICU, transfusions; discuss risk of bowel/urinary resections and ostomy.",
-          "topDoctors": {
-            "title": "Top-rated oncologists worldwide",
-            "description": "How to select the best doctor?",
-            "doctors": [],
-            "selectionCriteria": [
-              "Check board certification",
-              "volume with ICIs",
-              "participation in trials",
-              "and outcomes",
-              "seek second opinion when major decisions are needed"
-            ]
-          },
+          "topDoctors": [],
           "faq": [
             {
               "question": "Is HIPEC always used?",
@@ -1540,8 +1485,7 @@
           "topDoctors": [
             "DOC0001",
             "DOC0002",
-            "DOC0003",
-            "DOC0004"
+            "DOC0003"
           ],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
@@ -1607,8 +1551,7 @@
           ],
           "topDoctors": [
             "DOC0001",
-            "DOC0002",
-            "DOC0004"
+            "DOC0002"
           ],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
@@ -1731,9 +1674,7 @@
           ],
           "topDoctors": [
             "DOC0001",
-            "DOC0002",
-            "DOC0003",
-            "DOC0004"
+            "DOC0002"
           ],
           "doctorSelectionCriteria": "How to select the best doctor?",
           "doctorSelectionList": [
@@ -2045,7 +1986,7 @@
       "rating": "4.5",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
-      "doctorsCount": 4,
+      "doctorsCount": 200,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2133,16 +2074,6 @@
           "experience": "25+ years (including 10 years in the UK)",
           "location": "Gurgaon, India",
           "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
-        },
-        {
-          "id": "DOC0004",
-          "name": "Dr. Kiran Harsha Melkote",
-          "specialty": "Orthopaedic Surgeon",
-          "image": "/doctors/dr-kiran-harsha-melkote.jpg",
-          "rating": "4.7",
-          "experience": "11+ years",
-          "location": "Gurgaon, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
         }
       ],
       "coordinates": {
@@ -2153,7 +2084,7 @@
         "userScore": "9.5",
         "founded": "2013",
         "patients": "2 Mn +",
-        "doctors": "4+",
+        "doctors": "200+",
         "sizeCapacity": "OT: 15, ICU: 105, Patient Bed: 330+",
         "clinicType": "Quaternary Care Multi-Specialty",
         "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
@@ -2703,7 +2634,7 @@
     {
       "id": "DOC0004",
       "name": "Dr. Kiran Harsha Melkote",
-      "image": "/doctors/dr-kiran-harsha-melkote.jpg",
+      "image": "/doctors/dr-kiran-melkote.jpg",
       "specialty": "Orthopaedic Surgeon",
       "experience": "11+ years",
       "rating": "4.7",
@@ -2770,7 +2701,7 @@
       "contact": {
         "phone": "+91-98765-43218",
         "email": "dr.kiran.melkote@fortishealthcare.com"
-      },
+      ],
       "researchWork": "Dr. Melkote is deeply involved in academic and public health-related research. He has an active interest in Harm Reduction as a Public Health Tool, especially in the Indian context. He has been a prominent voice advocating for Tobacco Harm Reduction and is a member of the Association for Harm Reduction, Education and Research, contributing to interdisciplinary work combining medicine, public health, and behavioral change strategies.",
       "publications": [
         "Dr. Melkote has contributed to research and advocacy efforts in public health awareness, particularly around harm reduction. He is also known for participation in health education sessions and institutional audits."
@@ -2836,7 +2767,7 @@
       "slug": "orthopaedics",
       "icon": "/specialties/orthopaedics.png",
       "label": "Orthopaedics",
-      "count": 4,
+      "count": 3,
       "color": "#F6EB61",
       "description": "Specialized care for bones, joints, muscles, and skeletal system"
     }

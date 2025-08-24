@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, MapPin, Award, Users, GraduationCap, Languages, BookOpen, Trophy } from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 
 const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwide" }) => {
   const swiperRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const breakpoints = {
     320: {
@@ -28,28 +29,37 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
     },
   };
 
+  const handleSlideChange = (swiper) => {
+    setCurrentSlide(swiper.realIndex);
+  };
+
+  const totalSlides = Math.ceil(doctors.length / 2);
+  const showNavigation = doctors.length > 2;
+
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-gray-800">{title}</h3>
-        <div className="flex gap-2">
-          <button
-            onClick={() => swiperRef.current?.swiper.slidePrev()}
-            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
-            aria-label="Previous doctors"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={() => swiperRef.current?.swiper.slideNext()}
-            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
-            aria-label="Next doctors"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
+        {showNavigation && (
+          <div className="flex gap-2">
+            <button
+              onClick={() => swiperRef.current?.swiper.slidePrev()}
+              className="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-gray-100 hover:bg-gray-200 text-gray-600"
+              aria-label="Previous doctors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => swiperRef.current?.swiper.slideNext()}
+              className="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-gray-100 hover:bg-gray-200 text-gray-600"
+              aria-label="Next doctors"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
-      
+
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
         <Swiper
           ref={swiperRef}
@@ -57,6 +67,9 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
           slidesPerView={2}
           spaceBetween={24}
           loop={true}
+          navigation={false}
+          onSlideChange={handleSlideChange}
+          allowTouchMove={true}
           breakpoints={breakpoints}
           className="doctors-swiper"
         >
@@ -130,7 +143,23 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                       <GraduationCap className="w-3 h-3 text-indigo-600" />
                       <span className="font-medium text-gray-700">Education</span>
                     </div>
-                    <p className="text-xs text-gray-600 line-clamp-1">{doctor.education}</p>
+                    <div className="text-xs text-gray-600">
+                      {Array.isArray(doctor.education) ? (
+                        doctor.education.slice(0, 2).map((edu, idx) => (
+                          <div key={idx} className="line-clamp-1">
+                            {typeof edu === 'object' && edu.institution ?
+                              `${edu.institution} - ${edu.degree}` :
+                              String(edu)
+                            }
+                          </div>
+                        ))
+                      ) : (
+                        <div className="line-clamp-1">{String(doctor.education)}</div>
+                      )}
+                      {Array.isArray(doctor.education) && doctor.education.length > 2 && (
+                        <div className="text-gray-500 text-xs">+{doctor.education.length - 2} more</div>
+                      )}
+                    </div>
                   </div>
                 )}
 

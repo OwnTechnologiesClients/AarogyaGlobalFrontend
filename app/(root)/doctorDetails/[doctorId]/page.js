@@ -11,7 +11,8 @@ export async function generateStaticParams() {
   const params = [
     { doctorId: 'DOC0001' },
     { doctorId: 'DOC0002' },
-    { doctorId: 'DOC0003' }
+    { doctorId: 'DOC0003' },
+    { doctorId: 'DOC0004' }
   ];
 
   console.log('generateStaticParams: Generated params:', params);
