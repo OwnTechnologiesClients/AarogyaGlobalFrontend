@@ -6,15 +6,25 @@ import RelatedSpecialists from "@/components/DoctorDetails/RelatedSpecialists";
 import dataService from '@/lib/dataService';
 
 export async function generateStaticParams() {
-  const doctors = dataService.getAllUniqueDoctors();
-  return doctors.map((doctor) => ({
-    doctorId: doctor.id,
-  }));
+  // For now, return the known doctor IDs directly
+  // This ensures the static paths are generated correctly
+  const params = [
+    { doctorId: 'DOC0001' },
+    { doctorId: 'DOC0002' },
+    { doctorId: 'DOC0003' }
+  ];
+
+  console.log('generateStaticParams: Generated params:', params);
+  return params;
 }
 
 export default async function DoctorDetailsPage({ params }) {
   const { doctorId } = await params;
+  console.log('DoctorDetailsPage: Received doctorId:', doctorId);
+
   const doctor = dataService.getDoctorById(doctorId);
+  console.log('DoctorDetailsPage: Found doctor:', doctor ? doctor.name : 'Not found');
+
   const { title, routes } = getPageHeaderData('/doctorDetails');
 
   if (!doctor) {

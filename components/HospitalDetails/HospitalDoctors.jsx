@@ -24,51 +24,18 @@ const HospitalDoctors = ({ hospital }) => {
 
   useEffect(() => {
     if (hospital) {
-      // Get all unique doctors to avoid duplicates
-      const allDoctors = dataService.getAllUniqueDoctors();
+      // Use only the doctors that are specifically associated with this hospital
+      let hospitalDoctors = [];
 
-      // Filter doctors by hospital if hospital has specialties
-      let filteredDoctors = allDoctors;
-      if (hospital.specialties && hospital.specialties.length > 0) {
-        filteredDoctors = allDoctors.filter(doctor => {
-          const match = hospital.specialties.some(hospitalSpecialty => {
-            const hospitalSpec = hospitalSpecialty.toLowerCase();
-            const doctorSpec = doctor.specialty?.toLowerCase() || '';
-
-            // More flexible matching logic
-            const isMatch = (
-              // Direct match
-              doctorSpec.includes(hospitalSpec) ||
-              hospitalSpec.includes(doctorSpec) ||
-              // Specialty name variations
-              (hospitalSpec.includes('cardiology') && doctorSpec.includes('cardiologist')) ||
-              (hospitalSpec.includes('cardiac surgery') && doctorSpec.includes('cardiac surgeon')) ||
-              (hospitalSpec.includes('neurology') && doctorSpec.includes('neurologist')) ||
-              (hospitalSpec.includes('orthopedics') && doctorSpec.includes('orthopedic')) ||
-              (hospitalSpec.includes('oncology') && doctorSpec.includes('oncologist')) ||
-              (hospitalSpec.includes('urology') && doctorSpec.includes('urologist')) ||
-              (hospitalSpec.includes('gynaecology') && doctorSpec.includes('gynecologist')) ||
-              // Subspecialty matching
-              (hospitalSpec.includes('interventional') && doctorSpec.includes('interventional')) ||
-              (hospitalSpec.includes('pediatric') && doctorSpec.includes('pediatric')) ||
-              (hospitalSpec.includes('robotic') && doctorSpec.includes('robotic')) ||
-              // General matching for common terms
-              (hospitalSpec.includes('surgery') && doctorSpec.includes('surgeon')) ||
-              (hospitalSpec.includes('medicine') && doctorSpec.includes('physician'))
-            );
-
-            return isMatch;
-          });
-          return match;
-        });
+      if (hospital.doctors && hospital.doctors.length > 0) {
+        // Use the hospital's own doctors array
+        hospitalDoctors = hospital.doctors;
+      } else {
+        // If no doctors are assigned to this hospital, show empty state
+        hospitalDoctors = [];
       }
 
-      // If no doctors match the specialties, show some general doctors
-      if (filteredDoctors.length === 0) {
-        filteredDoctors = allDoctors.slice(0, 6);
-      }
-
-      setDoctors(filteredDoctors.slice(0, 6)); // Limit to 6 doctors
+      setDoctors(hospitalDoctors);
     }
     setLoading(false);
   }, [hospital]);
@@ -77,7 +44,8 @@ const HospitalDoctors = ({ hospital }) => {
     router.push(`/doctorDetails/${doctorId}`);
   };
 
-  const specialties = ["All", "Cardiology", "Neurology", "Orthopedics", "Pediatrics", "General Medicine", "Ophthalmology"];
+  // Get unique specialties from the hospital's doctors
+  const specialties = ["All", ...new Set(doctors.map(doctor => doctor.specialty).filter(Boolean))];
 
   const filteredDoctors = doctors.filter(doctor => {
     const matchesSpecialty = selectedSpecialty === "All" || doctor.specialty === selectedSpecialty;
@@ -200,28 +168,8 @@ const HospitalDoctors = ({ hospital }) => {
                     </div>
                   </div>
 
-                  {/* Specializations */}
-                  {doctor.specializations && doctor.specializations.length > 0 && (
-                    <div className="mb-4">
-                      <p className="text-sm font-semibold text-gray-700 mb-2">Specializations:</p>
-                      <div className="flex flex-wrap gap-1">
-                        {doctor.specializations.slice(0, 3).map((spec, index) => (
-                          <span
-                            key={`${doctor.id}-spec-${index}`}
-                            className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
                   {/* CTA */}
-                  <div className="flex justify-between items-center">
-                    <div className="text-green-600 font-bold">
-                      {doctor.consultationFee}
-                    </div>
+                  <div className="flex justify-end">
                     <button
                       onClick={() => handleDoctorClick(doctor.id)}
                       className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold cursor-pointer"

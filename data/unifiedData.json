@@ -1316,7 +1316,7 @@
       "description": "Specialized care for bones, joints, muscles, and skeletal system",
       "icon": "/specialties/orthopaedics.png",
       "color": "#F6EB61",
-      "count": 4,
+      "count": 6,
       "overview": {
         "description": "Orthopaedics is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the musculoskeletal system including bones, joints, muscles, ligaments, and tendons. Our medical tourism platform connects patients with the best orthopedic hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -1404,14 +1404,14 @@
       ],
       "doctors": [
         {
-          "id": "HDEL0001",
+          "id": "DOC0001",
           "name": "Dr. Jayant Arora",
           "specialty": "Orthopaedic Surgeon",
           "location": "Gurgaon, India",
           "image": "/doctors/dr-jayant-arora.jpg",
           "experience": "24+ years",
           "rating": "4.9",
-          "patientsTreated": "10,000+",
+          "patientsTreated": "",
           "successRate": "98.5%",
           "expertise": [
             "Joint Replacement Surgery",
@@ -1436,6 +1436,82 @@
             "Oxford Partial Knee Instructional Course Faculty",
             "International Speaker at ESSKA, EFFORT, CEOC",
             "Pioneer in Robotic-Assisted Knee Replacement in India"
+          ]
+        },
+        {
+          "id": "DOC0002",
+          "name": "Dr. Subhash Jangid",
+          "specialty": "Orthopaedic Surgeon",
+          "location": "Gurgaon, India",
+          "image": "/doctors/dr-subhash-jangid.jpg",
+          "experience": "25+ years",
+          "rating": "4.8",
+          "patientsTreated": "",
+          "successRate": "99.2%",
+          "expertise": [
+            "Orthopaedic & Joint Replacement Surgery",
+            "Robotic and Computer-Navigated Knee Arthroplasty",
+            "Hip and Shoulder Arthroplasty",
+            "Orthopaedic Oncology",
+            "Peri-articular Trauma",
+            "Sports Medicine"
+          ],
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+          "education": "AIIMS, New Delhi",
+          "certifications": [
+            "MS (Orthopaedics)",
+            "DNB (Orthopaedics)",
+            "MCh (Orthopaedics)",
+            "MRCS (Glasgow)"
+          ],
+          "languages": [
+            "English",
+            "Hindi"
+          ],
+          "researchPapers": "10+ publications",
+          "awards": [
+            "Gold Medal in MS Orthopaedics",
+            "First Prize at Regional Orthopedic Conference",
+            "USFDA-approved Surgical Instrument Patent",
+            "Pioneer in NAV 3 Computer Navigation and NAVIO Robotic Surgery"
+          ]
+        },
+        {
+          "id": "DOC0003",
+          "name": "Dr. Manoj Padman",
+          "specialty": "Paediatric Orthopaedic Surgeon",
+          "location": "Gurgaon, India",
+          "image": "/doctors/dr-manoj-padman.jpg",
+          "experience": "25+ years (including 10 years in the UK)",
+          "rating": "4.9",
+          "patientsTreated": "",
+          "successRate": "98.8%",
+          "expertise": [
+            "Paediatric Orthopaedics",
+            "Trauma",
+            "Hip Reconstruction",
+            "Deformity Correction",
+            "Limb Reconstruction",
+            "Neuromuscular Pathologies",
+            "Foot and Ankle Disorders"
+          ],
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon, Madhukar Rainbow Children's Hospital, New Delhi",
+          "education": "Jawaharlal Institute of Postgraduate Medical Education and Research (JIPMER), Pondicherry",
+          "certifications": [
+            "FRCS (Glasgow)",
+            "FRCS (Trauma & Orthopaedics)",
+            "MSc Research (University of Leeds, UK)",
+            "National Fellowship in Paediatric Orthopaedics (UK)"
+          ],
+          "languages": [
+            "English",
+            "Hindi"
+          ],
+          "researchPapers": "Multiple publications",
+          "awards": [
+            "Prestigious national and international fellowships",
+            "Senior consultant roles in UK",
+            "Member of various professional societies"
           ]
         }
       ],
@@ -2010,7 +2086,38 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [],
+      "doctors": [
+        {
+          "id": "DOC0001",
+          "name": "Dr. Jayant Arora",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-jayant-arora.jpg",
+          "rating": "4.9",
+          "experience": "24+ years",
+          "location": "Gurgaon, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0002",
+          "name": "Dr. Subhash Jangid",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-subhash-jangid.jpg",
+          "rating": "4.8",
+          "experience": "25+ years",
+          "location": "Gurgaon, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0003",
+          "name": "Dr. Manoj Padman",
+          "specialty": "Paediatric Orthopaedic Surgeon",
+          "image": "/doctors/dr-manoj-padman.jpg",
+          "rating": "4.9",
+          "experience": "25+ years (including 10 years in the UK)",
+          "location": "Gurgaon, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        }
+      ],
       "coordinates": {
         "latitude": 28.4595,
         "longitude": 77.0266
@@ -2230,7 +2337,7 @@
   ],
   "globalDoctors": [
     {
-      "id": "HDEL0001",
+      "id": "DOC0001",
       "name": "Dr. Jayant Arora",
       "image": "/doctors/dr-jayant-arora.jpg",
       "specialty": "Orthopaedic Surgeon",
@@ -2346,6 +2453,225 @@
         "Clinical Research Fellowships in Joint Replacement and Arthroscopy (Newcastle, UK)",
         "Visiting Fellow – Knee Arthroplasty, Belgium"
       ]
+    },
+    {
+      "id": "DOC0002",
+      "name": "Dr. Subhash Jangid",
+      "image": "/doctors/dr-subhash-jangid.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "25+ years",
+      "rating": "4.8",
+      "location": "Gurgaon, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹3500",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS – Sardar Patel Medical College, Bikaner (1999)",
+        "MS (Orthopaedics) – AIIMS, New Delhi (2002)",
+        "DNB (Orthopaedics) – AIIMS, New Delhi (2005)",
+        "MCh (Orthopaedics) – American Institute of Medicine, University of Seychelles (2008)",
+        "Membership, Royal College of Physicians & Surgeons, Glasgow"
+      ],
+      "about": "Dr. Subhash Jangid is a globally recognized orthopaedic surgeon and Senior Director at Fortis Memorial Research Institute, Gurgaon, with over 25 years of experience and more than 20,000 successful procedures. A pioneer in robotic and computer-navigated joint replacement, he has contributed to implant innovation and led India's first bone bank initiative. His expertise in complex knee, hip, and shoulder replacements, coupled with minimally invasive techniques, makes him a leading choice for international patients seeking advanced orthopaedic care in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Sardar Patel Medical College, Bikaner",
+          "year": "1999"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "AIIMS, New Delhi",
+          "year": "2002"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "AIIMS, New Delhi",
+          "year": "2005"
+        },
+        {
+          "degree": "MCh (Orthopaedics)",
+          "institution": "American Institute of Medicine, University of Seychelles",
+          "year": "2008"
+        },
+        {
+          "degree": "MRCS",
+          "institution": "Royal College of Physicians & Surgeons, Glasgow",
+          "year": "2008"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "SENIOR DIRECTOR & UNIT HEAD ORTHOPAEDICS",
+          "hospital": "Fortis Gurgaon",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedic & Joint Replacement Surgery",
+        "Robotic and Computer-Navigated Knee Arthroplasty",
+        "Hip and Shoulder Arthroplasty",
+        "Orthopaedic Oncology",
+        "Peri-articular Trauma",
+        "Sports Medicine"
+      ],
+      "awards": [
+        "Gold Medal in MS Orthopaedics for academic excellence",
+        "First Prize at regional orthopedic conference for exceptional case presentation",
+        "Best Poster and Best Free Paper Awards at multiple scientific meetings",
+        "Young Achievers Award in recognition of early contributions to orthopaedic innovation",
+        "USFDA-approved surgical instrument for removing femoral implants",
+        "First surgeon in India to perform knee replacement using NAV 3 computer navigation and NAVIO robotic-assisted surgery"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43216",
+        "email": "dr.subhash.jangid@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Subhash Jangid has been actively involved in clinical and surgical research within the field of orthopaedics, particularly focusing on joint replacement surgery, arthroscopy, and bone preservation techniques. His research interests include: Joint Replacement Innovations: He contributed to the development of a customized knee implant designed specifically for the Asian population, optimizing fit and function for regional anatomical variations. Minimally Invasive Surgery: He has studied the impact of computer navigation and robotic-assisted joint replacements on patient outcomes, precision in implant placement, and faster recovery times. Bone Banking: He was part of the team that helped establish India's first bone bank based on international tissue preservation standards—critical for cases needing bone grafts during joint or trauma surgery. Implant Design & Instrumentation: He holds a USFDA-approved patent for a femoral component extraction instrument used in revision knee replacement surgeries. Postoperative Recovery Protocols: His work also explores protocols that reduce hospital stay and improve post-surgical mobility in elderly patients.",
+      "publications": [
+        "Jangid S, Sinha S, Goyal T. Progressive massive osteolysis of humerus. Journal of Shoulder and Elbow Surgery. 2006;15(3):e20–e23. PMID: 16679252",
+        "Jangid S, Yadav S, Arora R. Freeman–Sheldon syndrome: challenges in orthopaedic and anaesthetic management. Indian Pediatrics. 2005;42(1):89–91. PMID: 15695891",
+        "Jangid S. Management of post-traumatic elbow stiffness. CME, Indian Orthopaedic Association. 2003. [Educational Review Article]",
+        "Jangid S, et al. Approach to neglected elbow dislocations. DOACON Conference Proceedings. 2003. [Awarded: First Prize – Best Case Presentation]",
+        "Jangid S. Elbow stiffness – causes and surgical release. IOACON (Indian Orthopaedic Association Conference). 2003. [Oral Paper Presentation]"
+      ],
+      "certifications": [
+        "MBBS – Undergraduate medical degree",
+        "MS in Orthopaedics – Postgraduate surgical specialization",
+        "DNB (Orthopaedics) – Diplomate of National Board, Orthopaedic Surgery",
+        "MNAMS – Member of the National Academy of Medical Sciences",
+        "MRCS (Glasgow) – Membership of the Royal College of Surgeons, UK",
+        "MCh (Orthopaedics) – Super-specialization in Orthopaedics"
+      ]
+    },
+    {
+      "id": "DOC0003",
+      "name": "Dr. Manoj Padman",
+      "image": "/doctors/dr-manoj-padman.jpg",
+      "specialty": "Paediatric Orthopaedic Surgeon",
+      "experience": "25+ years (including 10 years in the UK)",
+      "rating": "4.9",
+      "location": "Gurgaon, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon, Madhukar Rainbow Children's Hospital, New Delhi",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹4000",
+      "treatments": [
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "M.S. (Orthopaedics) – JIPMER, Pondicherry",
+        "DNB (Orthopaedics) – National Board of Examinations",
+        "M.Sc. (Research) – University of Leeds, UK",
+        "FRCS – Royal College of Physicians and Surgeons of Glasgow",
+        "FRCS (Trauma & Orthopaedics) – Intercollegiate Board, UK"
+      ],
+      "about": "Dr. Manoj Padman is a leading Paediatric Orthopaedic Surgeon with over 25 years of experience, including a decade of advanced training and practice in the UK. Currently Director of Paediatric Orthopaedics at Fortis Memorial Research Institute, Gurgaon, he specializes in complex hip reconstruction, deformity correction, limb lengthening, and neuromuscular disorders. With global fellowships, UK board certifications, and a research degree from the University of Leeds, he brings world-class expertise to children requiring highly specialized orthopaedic care in India.",
+      "education": [
+        {
+          "degree": "M.S. (Orthopaedics)",
+          "institution": "JIPMER, Pondicherry",
+          "year": "1998"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "National Board of Examinations",
+          "year": "2000"
+        },
+        {
+          "degree": "M.Sc. (Research)",
+          "institution": "University of Leeds, UK",
+          "year": "2004"
+        },
+        {
+          "degree": "FRCS",
+          "institution": "Royal College of Physicians and Surgeons of Glasgow",
+          "year": "2005"
+        },
+        {
+          "degree": "FRCS (Trauma & Orthopaedics)",
+          "institution": "Intercollegiate Board, UK",
+          "year": "2006"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "DIRECTOR PAEDIATRIC ORTHOPAEDICS",
+          "hospital": "Fortis Gurgaon",
+          "duration": "Present"
+        },
+        {
+          "position": "Founder & Director",
+          "hospital": "Centre for Paediatric Orthopaedics & Disabilities (CPOD)",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Paediatric Orthopaedics",
+        "Trauma",
+        "Hip Reconstruction",
+        "Deformity Correction",
+        "Limb Reconstruction",
+        "Neuromuscular Pathologies",
+        "Foot and Ankle Disorders"
+      ],
+      "awards": [
+        "Prestigious national and international fellowships",
+        "Senior consultant roles in UK",
+        "Member of various professional societies including:",
+        "Pediatric Orthopaedic Society of India",
+        "Indian Orthopaedic Association",
+        "Delhi Orthopaedic Association",
+        "American Academy of Orthopaedic Surgeons",
+        "Sharrard Society, Sheffield, UK"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43217",
+        "email": "dr.manoj.padman@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Padman has a robust academic and research background. During his training in the UK, he conducted foundational research on biological reactions to conventional and modern polyethylene materials used in arthroplasty. This research earned him a Master's in Research from the University of Leeds. He has a clinical interest in post-infective and post-traumatic orthopaedic sequelae, hip pathology, and deformity correction, and he has contributed to developing surgical protocols for managing neuromuscular and congenital paediatric conditions.",
+      "publications": [
+        "He completed a Master's in Research at the University of Leeds (UK) in 2004, during which he studied the biological reaction to conventional versus newer polyethylene implants used in joint replacements.",
+        "He presented clinical and case‑based lectures at regional, national, and international conferences—such as POSI (Paediatric Orthopaedic Society of India) events—focusing on pediatric trauma and elbow injuries, including sessions on lateral condyle and supracondylar fractures. He served as faculty for several of these workshops."
+      ],
+      "certifications": [
+        "FRCS (Glasgow)",
+        "FRCS (Trauma & Orthopaedics)",
+        "MSc Research (University of Leeds, UK)",
+        "National Fellowship in Paediatric Orthopaedics (UK)",
+        "Member of various professional societies"
+      ]
     }
   ],
   "featuredHospitals": [
@@ -2402,7 +2728,7 @@
       "slug": "orthopaedics",
       "icon": "/specialties/orthopaedics.png",
       "label": "Orthopaedics",
-      "count": 1,
+      "count": 3,
       "color": "#F6EB61",
       "description": "Specialized care for bones, joints, muscles, and skeletal system"
     }
