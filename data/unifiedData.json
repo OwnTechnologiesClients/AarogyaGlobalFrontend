@@ -1337,7 +1337,7 @@
       "description": "Comprehensive cancer care and treatment",
       "icon": "/specialties/oncology.png",
       "color": "#E7C2D4",
-      "count": 3,
+      "count": 5,
       "overview": {
         "description": "Oncology is a medical specialty that focuses on the diagnosis and treatment of cancer. Our medical tourism platform connects patients with the best oncology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -1361,7 +1361,12 @@
           "Treatments"
         ],
         "treatments": [
-          "Chemotherapy"
+          "Chemotherapy",
+          "Immune Checkpoint Inhibitors (PD-1/PD-L1, CTLA-4)",
+          "Mastectomy",
+          "Radical Prostatectomy",
+          "Colectomy (Colon Resection)",
+          "Debulking (Cytoreductive) Surgery"
         ],
         "facilities": [
           "Chemotherapy Unit",
@@ -1469,39 +1474,831 @@
           "hospital": "UCLA Medical Center"
         }
       ],
-      "treatments": [],
-      "costs": [
+      "treatments": [
         {
-          "name": "Oncology consultation",
-          "cost": "€500 - €1,000"
+          "id": "ONC0001",
+          "category": "Oncology",
+          "name": "Immune Checkpoint Inhibitors (PD-1/PD-L1, CTLA-4)",
+          "description": "IV monoclonal antibodies that block PD‑1/PD‑L1 or CTLA‑4 to help T‑cells attack cancer.",
+          "duration": "Infusion ~30–60 min; given every 3 or 6 weeks depending on drug/regimen; total course often 6–24 months or until progression.",
+          "recovery": "Outpatient. Monitoring needed for immune‑related adverse events which can occur during treatment or weeks after.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Look for NABH accreditation",
+            "National Cancer Grid (NCG) membership",
+            "day‑care chemo unit",
+            "on‑site labs (TSH, LFTs)",
+            "emergency response for irAEs",
+            "access to clinical trials"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [
+              {
+                "id": 1,
+                "name": "Dr. Patrick Soon-Shiong",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img1.png",
+                "experience": "30+ years",
+                "rating": "9.9",
+                "patientsTreated": "50,000+",
+                "successRate": "98.2%",
+                "expertise": [
+                  "Immunotherapy",
+                  "Precision Medicine",
+                  "Clinical Trials"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish"
+                ],
+                "researchPapers": "500+ publications",
+                "awards": [
+                  "Distinguished Scientist Award",
+                  "Top Oncologist 2023"
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Dr. Siddhartha Mukherjee",
+                "specialty": "Oncologist",
+                "location": "Noida, India",
+                "image": "/RelatedSpecialists/img2.png",
+                "experience": "25+ years",
+                "rating": "9.8",
+                "patientsTreated": "45,000+",
+                "successRate": "97.8%",
+                "expertise": [
+                  "Hematological Oncology",
+                  "Stem Cell Transplantation",
+                  "Research"
+                ],
+                "hospital": "Columbia University Medical Center",
+                "education": "Stanford University",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Hematology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish",
+                  "Hindi"
+                ],
+                "researchPapers": "800+ publications",
+                "awards": [
+                  "Pulitzer Prize",
+                  "National Book Award"
+                ]
+              },
+              {
+                "id": 3,
+                "name": "Dr. Susan Love",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img3.png",
+                "experience": "35+ years",
+                "rating": "9.7",
+                "patientsTreated": "40,000+",
+                "successRate": "97.5%",
+                "expertise": [
+                  "Breast Cancer",
+                  "Women's Health",
+                  "Prevention"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Breast Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "French"
+                ],
+                "researchPapers": "600+ publications",
+                "awards": [
+                  "Women in Science Award",
+                  "Clinical Excellence"
+                ]
+              }
+            ],
+            "selectionCriteria": [
+              "Check board certification",
+              "volume with ICIs",
+              "participation in trials",
+              "and outcomes",
+              "seek second opinion when major decisions are needed"
+            ]
+          },
+          "diagnosticTools": [
+            "PD‑L1 IHC",
+            "MSI‑H/dMMR",
+            "TMB",
+            "baseline labs (CBC, LFTs, TFTs)",
+            "organ‑specific tests as indicated"
+          ],
+          "advancedTreatmentOptions": [
+            "Combo regimens (e.g., PD‑1 + CTLA‑4)",
+            "maintenance immunotherapy",
+            "management pathways for irAEs"
+          ],
+          "advantages": [
+            "Potential for durable responses",
+            "survival benefit in several cancers"
+          ],
+          "costConsiderations": "High drug cost drives treatment.",
+          "detailedCost": "Drug cost is the main driver. India reference prices: pembrolizumab 100 mg ~₹1.6–1.9 Lakh/vial; 200 mg ~₹2.8–3.6 Lakh (before hospital fees). Dosing 200 mg q3w or 400 mg q6w. Pre‑auth and biomarker testing needed.",
+          "faq": [
+            {
+              "question": "Which cancers?",
+              "answer": "Many—including lung, melanoma, kidney, H&N—subject to biomarkers."
+            },
+            {
+              "question": "How long?",
+              "answer": "Until response plateau or 2 years typical."
+            },
+            {
+              "question": "Side effects?",
+              "answer": "Immune‑related issues—report early."
+            }
+          ]
         },
         {
-          "name": "Chemotherapy",
-          "cost": "€10,000 - €25,000"
+          "id": "ONC0002",
+          "name": "Mastectomy",
+          "description": "Surgical removal of a breast; may include sentinel lymph node biopsy and/or reconstruction.",
+          "duration": "2–3 hours for simple/skin‑sparing; longer with reconstruction.",
+          "recovery": "Hospital stay ~1–3 days; return to routine in ~4–6 weeks; limited arm activity initially.",
+          "hospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "Accreditation; high breast‑surgery volume; availability of oncoplastic reconstruction; pathology turnaround; tumor board.",
+          "hospitalSelectionList": [
+            "Accreditation",
+            "High breast‑surgery volume",
+            "Availability of oncoplastic reconstruction",
+            "Pathology turnaround",
+            "Tumor board"
+          ],
+          "doctorSelectionCriteria": "Experience with sentinel‑node and oncoplastic techniques; infection and re‑op rates; patient‑reported outcomes.",
+          "doctorSelectionList": [
+            "Experience with sentinel‑node and oncoplastic techniques",
+            "Infection and re‑op rates",
+            "Patient‑reported outcomes"
+          ],
+          "diagnosticTools": [
+            "Mammography/US",
+            "breast MRI when indicated",
+            "core needle biopsy",
+            "receptor testing (ER/PR/HER2)"
+          ],
+          "advancedTreatmentOptions": [
+            "Nipple/skin‑sparing approaches",
+            "immediate reconstruction",
+            "enhanced‑recovery protocols"
+          ],
+          "advantages": [
+            "Oncologic control",
+            "can reduce re‑excision risk vs lumpectomy in select scenarios"
+          ],
+          "costConsiderations": "$2,580–3,900 typical (city/hospital dependent).",
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [
+              {
+                "id": 1,
+                "name": "Dr. Patrick Soon-Shiong",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img1.png",
+                "experience": "30+ years",
+                "rating": "9.9",
+                "patientsTreated": "50,000+",
+                "successRate": "98.2%",
+                "expertise": [
+                  "Immunotherapy",
+                  "Precision Medicine",
+                  "Clinical Trials"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish"
+                ],
+                "researchPapers": "500+ publications",
+                "awards": [
+                  "Distinguished Scientist Award",
+                  "Top Oncologist 2023"
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Dr. Siddhartha Mukherjee",
+                "specialty": "Oncologist",
+                "location": "Noida, India",
+                "image": "/RelatedSpecialists/img2.png",
+                "experience": "25+ years",
+                "rating": "9.8",
+                "patientsTreated": "45,000+",
+                "successRate": "97.8%",
+                "expertise": [
+                  "Hematological Oncology",
+                  "Stem Cell Transplantation",
+                  "Research"
+                ],
+                "hospital": "Columbia University Medical Center",
+                "education": "Stanford University",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Hematology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish",
+                  "Hindi"
+                ],
+                "researchPapers": "800+ publications",
+                "awards": [
+                  "Pulitzer Prize",
+                  "National Book Award"
+                ]
+              },
+              {
+                "id": 3,
+                "name": "Dr. Susan Love",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img3.png",
+                "experience": "35+ years",
+                "rating": "9.7",
+                "patientsTreated": "40,000+",
+                "successRate": "97.5%",
+                "expertise": [
+                  "Breast Cancer",
+                  "Women's Health",
+                  "Prevention"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Breast Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "French"
+                ],
+                "researchPapers": "600+ publications",
+                "awards": [
+                  "Women in Science Award",
+                  "Clinical Excellence"
+                ]
+              }
+            ],
+            "selectionCriteria": [
+              "Check board certification",
+              "volume with ICIs",
+              "participation in trials",
+              "and outcomes",
+              "seek second opinion when major decisions are needed"
+            ]
+          },
+          "faq": [
+            {
+              "question": "Is reconstruction mandatory?",
+              "answer": "Optional."
+            },
+            {
+              "question": "Is sentinel node always done?",
+              "answer": "Usually, to stage spread."
+            },
+            {
+              "question": "Hospital stay?",
+              "answer": "~1–3 days."
+            }
+          ]
         },
         {
-          "name": "Radiation therapy",
-          "cost": "€15,000 - €30,000"
+          "id": "ONC0003",
+          "name": "Radical Prostatectomy",
+          "description": "Removal of prostate and seminal vesicles; can be open, laparoscopic, or robotic.",
+          "duration": "2–4 hours.",
+          "recovery": "Hospital stay 1–2 days; urinary catheter ~1–2 weeks; back to desk work ~2–4 weeks.",
+          "hospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "High surgeon and hospital volumes; continence/erectile function programs; multidisciplinary care.",
+          "hospitalSelectionList": [
+            "High surgeon and hospital volumes",
+            "Continence/erectile function programs",
+            "Multidisciplinary care"
+          ],
+          "doctorSelectionCriteria": "Ask surgeon's annual volumes and positive margin, continence/erection outcomes; get a second opinion.",
+          "doctorSelectionList": [
+            "Ask surgeon's annual volumes",
+            "Positive margin rates",
+            "Continence/erection outcomes",
+            "Get a second opinion"
+          ],
+          "diagnosticTools": [
+            "PSA",
+            "multiparametric prostate MRI",
+            "MRI‑targeted biopsy",
+            "bone scan/PSMA PET if high‑risk"
+          ],
+          "advancedTreatmentOptions": [
+            "Nerve‑sparing",
+            "pelvic lymph node dissection",
+            "enhanced‑recovery pathways"
+          ],
+          "advantages": [
+            "Definitive local control in localized disease",
+            "accurate pathologic staging"
+          ],
+          "costConsiderations": "Approach (robotic vs open), LOS, consumables.",
+          "detailedCost": "Driver = approach (robotic vs open), LOS, consumables. Insurance coverage varies.",
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [
+              {
+                "id": 1,
+                "name": "Dr. Patrick Soon-Shiong",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img1.png",
+                "experience": "30+ years",
+                "rating": "9.9",
+                "patientsTreated": "50,000+",
+                "successRate": "98.2%",
+                "expertise": [
+                  "Immunotherapy",
+                  "Precision Medicine",
+                  "Clinical Trials"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish"
+                ],
+                "researchPapers": "500+ publications",
+                "awards": [
+                  "Distinguished Scientist Award",
+                  "Top Oncologist 2023"
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Dr. Siddhartha Mukherjee",
+                "specialty": "Oncologist",
+                "location": "Noida, India",
+                "image": "/RelatedSpecialists/img2.png",
+                "experience": "25+ years",
+                "rating": "9.8",
+                "patientsTreated": "45,000+",
+                "successRate": "97.8%",
+                "expertise": [
+                  "Hematological Oncology",
+                  "Stem Cell Transplantation",
+                  "Research"
+                ],
+                "hospital": "Columbia University Medical Center",
+                "education": "Stanford University",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Hematology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish",
+                  "Hindi"
+                ],
+                "researchPapers": "800+ publications",
+                "awards": [
+                  "Pulitzer Prize",
+                  "National Book Award"
+                ]
+              },
+              {
+                "id": 3,
+                "name": "Dr. Susan Love",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img3.png",
+                "experience": "35+ years",
+                "rating": "9.7",
+                "patientsTreated": "40,000+",
+                "successRate": "97.5%",
+                "expertise": [
+                  "Breast Cancer",
+                  "Women's Health",
+                  "Prevention"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Breast Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "French"
+                ],
+                "researchPapers": "600+ publications",
+                "awards": [
+                  "Women in Science Award",
+                  "Clinical Excellence"
+                ]
+              }
+            ],
+            "selectionCriteria": [
+              "Check board certification",
+              "volume with ICIs",
+              "participation in trials",
+              "and outcomes",
+              "seek second opinion when major decisions are needed"
+            ]
+          },
+          "faq": [
+            {
+              "question": "Catheter for how long?",
+              "answer": "~7–14 days."
+            },
+            {
+              "question": "Main risks?",
+              "answer": "Incontinence, ED; improve over months."
+            },
+            {
+              "question": "Active surveillance an option?",
+              "answer": "For low‑risk disease."
+            }
+          ]
         },
         {
-          "name": "Immunotherapy",
-          "cost": "€25,000 - €50,000"
+          "id": "ONC0004",
+          "name": "Colectomy (Colon Resection)",
+          "description": "Surgical removal of part/all of the colon with re‑anastomosis or stoma.",
+          "duration": "2–4 hours (open or laparoscopic).",
+          "recovery": "Hospital stay ~3–7 days; full recovery ~6 weeks; ERAS pathways speed recovery.",
+          "hospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "High colorectal‑surgery volumes; stoma nurse; ICU; ERAS program.",
+          "hospitalSelectionList": [
+            "High colorectal‑surgery volumes",
+            "Stoma nurse",
+            "ICU",
+            "ERAS program"
+          ],
+          "doctorSelectionCriteria": "Ask for leak rates, conversion rates (lap to open), LOS, and 30‑day readmissions.",
+          "doctorSelectionList": [
+            "Ask for leak rates",
+            "Conversion rates (lap to open)",
+            "Length of stay (LOS)",
+            "30‑day readmissions"
+          ],
+          "diagnosticTools": [
+            "Colonoscopy + biopsy",
+            "CT chest/abdomen/pelvis",
+            "CEA",
+            "MSI testing for stage II/III"
+          ],
+          "advancedTreatmentOptions": [
+            "Minimally invasive/robotic colectomy",
+            "ICG perfusion assessment",
+            "selective HIPEC for peritoneal spread (specialized centers)"
+          ],
+          "advantages": [
+            "Curative in localized disease",
+            "symptom relief in obstruction/bleeding"
+          ],
+          "costConsiderations": "$840–2,160",
+          "detailedCost": "Costs vary by extent and approach; private‑hospital estimates in India often ~$840–2,160 for straightforward cases; complex cases higher.",
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [
+              {
+                "id": 1,
+                "name": "Dr. Patrick Soon-Shiong",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img1.png",
+                "experience": "30+ years",
+                "rating": "9.9",
+                "patientsTreated": "50,000+",
+                "successRate": "98.2%",
+                "expertise": [
+                  "Immunotherapy",
+                  "Precision Medicine",
+                  "Clinical Trials"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish"
+                ],
+                "researchPapers": "500+ publications",
+                "awards": [
+                  "Distinguished Scientist Award",
+                  "Top Oncologist 2023"
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Dr. Siddhartha Mukherjee",
+                "specialty": "Oncologist",
+                "location": "Noida, India",
+                "image": "/RelatedSpecialists/img2.png",
+                "experience": "25+ years",
+                "rating": "9.8",
+                "patientsTreated": "45,000+",
+                "successRate": "97.8%",
+                "expertise": [
+                  "Hematological Oncology",
+                  "Stem Cell Transplantation",
+                  "Research"
+                ],
+                "hospital": "Columbia University Medical Center",
+                "education": "Stanford University",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Hematology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish",
+                  "Hindi"
+                ],
+                "researchPapers": "800+ publications",
+                "awards": [
+                  "Pulitzer Prize",
+                  "National Book Award"
+                ]
+              },
+              {
+                "id": 3,
+                "name": "Dr. Susan Love",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img3.png",
+                "experience": "35+ years",
+                "rating": "9.7",
+                "patientsTreated": "40,000+",
+                "successRate": "97.5%",
+                "expertise": [
+                  "Breast Cancer",
+                  "Women's Health",
+                  "Prevention"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Breast Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "French"
+                ],
+                "researchPapers": "600+ publications",
+                "awards": [
+                  "Women in Science Award",
+                  "Clinical Excellence"
+                ]
+              }
+            ],
+            "selectionCriteria": [
+              "Check board certification",
+              "volume with ICIs",
+              "participation in trials",
+              "and outcomes",
+              "seek second opinion when major decisions are needed"
+            ]
+          },
+          "faq": [
+            {
+              "question": "Will I need a stoma?",
+              "answer": "Sometimes, based on location/urgency."
+            },
+            {
+              "question": "Hospital stay?",
+              "answer": "Typically 3–7 days."
+            },
+            {
+              "question": "When can I eat?",
+              "answer": "Often within 24–48 hrs with ERAS."
+            }
+          ]
         },
         {
-          "name": "Surgery",
-          "cost": "€20,000 - €60,000"
-        },
-        {
-          "name": "Stem cell transplant",
-          "cost": "€50,000 - €100,000"
-        },
-        {
-          "name": "Proton therapy",
-          "cost": "€30,000 - €80,000"
-        },
-        {
-          "name": "Clinical trials",
-          "cost": "€0 - €25,000"
+          "id": "ONC0005",
+          "name": "Debulking (Cytoreductive) Surgery",
+          "description": "Extensive surgery to remove as much tumor as possible (commonly in advanced ovarian cancer).",
+          "duration": "Can take 4–8+ hours depending on disease spread.",
+          "recovery": "ICU step‑down common; hospital stay ~7–10 days; full recovery 6–8 weeks.",
+          "hospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "Experienced gyn‑onc team; high‑volume cytoreduction program; MDT with medical oncology and radiology; nutrition and rehab support.",
+          "hospitalSelectionList": [
+            "Experienced gyn‑onc team",
+            "High‑volume cytoreduction program",
+            "MDT with medical oncology and radiology",
+            "Nutrition and rehab support"
+          ],
+          "doctorSelectionCriteria": "Ask optimal‑debulking rates, transfusion and complication rates, LOS; ensure center offers MDT review.",
+          "doctorSelectionList": [
+            "Ask optimal‑debulking rates",
+            "Transfusion rates",
+            "Complication rates",
+            "Length of stay (LOS)",
+            "Ensure center offers MDT review"
+          ],
+          "diagnosticTools": [
+            "CA‑125/HE4",
+            "pelvic ultrasound",
+            "CT chest/abdomen/pelvis",
+            "diagnostic laparoscopy to gauge resectability"
+          ],
+          "advancedTreatmentOptions": [
+            "Neoadjuvant chemo + interval debulking",
+            "HIPEC in select cases at specialized centers"
+          ],
+          "advantages": [
+            "Greater residual‑tumor clearance correlates with better survival in ovarian cancer"
+          ],
+          "costConsiderations": "High due to OR time, ICU, transfusions.",
+          "detailedCost": "High due to OR time, ICU, transfusions; discuss risk of bowel/urinary resections and ostomy.",
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [
+              {
+                "id": 1,
+                "name": "Dr. Patrick Soon-Shiong",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img1.png",
+                "experience": "30+ years",
+                "rating": "9.9",
+                "patientsTreated": "50,000+",
+                "successRate": "98.2%",
+                "expertise": [
+                  "Immunotherapy",
+                  "Precision Medicine",
+                  "Clinical Trials"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish"
+                ],
+                "researchPapers": "500+ publications",
+                "awards": [
+                  "Distinguished Scientist Award",
+                  "Top Oncologist 2023"
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Dr. Siddhartha Mukherjee",
+                "specialty": "Oncologist",
+                "location": "Noida, India",
+                "image": "/RelatedSpecialists/img2.png",
+                "experience": "25+ years",
+                "rating": "9.8",
+                "patientsTreated": "45,000+",
+                "successRate": "97.8%",
+                "expertise": [
+                  "Hematological Oncology",
+                  "Stem Cell Transplantation",
+                  "Research"
+                ],
+                "hospital": "Columbia University Medical Center",
+                "education": "Stanford University",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Hematology"
+                ],
+                "languages": [
+                  "English",
+                  "Spanish",
+                  "Hindi"
+                ],
+                "researchPapers": "800+ publications",
+                "awards": [
+                  "Pulitzer Prize",
+                  "National Book Award"
+                ]
+              },
+              {
+                "id": 3,
+                "name": "Dr. Susan Love",
+                "specialty": "Oncologist",
+                "location": "Kolkata, India",
+                "image": "/RelatedSpecialists/img3.png",
+                "experience": "35+ years",
+                "rating": "9.7",
+                "patientsTreated": "40,000+",
+                "successRate": "97.5%",
+                "expertise": [
+                  "Breast Cancer",
+                  "Women's Health",
+                  "Prevention"
+                ],
+                "hospital": "UCLA Medical Center",
+                "education": "Harvard Medical School",
+                "certifications": [
+                  "FACP",
+                  "FANA",
+                  "Breast Oncology"
+                ],
+                "languages": [
+                  "English",
+                  "French"
+                ],
+                "researchPapers": "600+ publications",
+                "awards": [
+                  "Women in Science Award",
+                  "Clinical Excellence"
+                ]
+              }
+            ],
+            "selectionCriteria": [
+              "Check board certification",
+              "volume with ICIs",
+              "participation in trials",
+              "and outcomes",
+              "seek second opinion when major decisions are needed"
+            ]
+          },
+          "faq": [
+            {
+              "question": "Is HIPEC always used?",
+              "answer": "No—select cases only."
+            },
+            {
+              "question": "Why is 'optimal debulking' important?",
+              "answer": "Less residual disease improves outcomes."
+            }
+          ]
         }
       ]
     },

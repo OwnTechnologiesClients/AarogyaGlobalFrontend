@@ -7,20 +7,34 @@ import dataService from '@/lib/dataService';
 
 // Cache for static params to prevent hydration mismatches
 let cachedParams = null;
+let cacheTimestamp = 0;
 
 // Force cache refresh for development
 if (process.env.NODE_ENV === 'development') {
   cachedParams = null;
+  cacheTimestamp = 0;
+}
+
+// Function to manually clear cache if needed
+export function clearStaticParamsCache() {
+  cachedParams = null;
+  cacheTimestamp = 0;
+  console.log('generateStaticParams: Cache manually cleared');
 }
 
 // Generate static params for all specialties and individual treatments
 export async function generateStaticParams() {
   try {
-    // Return cached params if available
-    if (cachedParams) {
+    // Return cached params if available and not expired
+    const now = Date.now();
+    const cacheExpiry = 5 * 60 * 1000; // 5 minutes cache expiry
+
+    if (cachedParams && (now - cacheTimestamp) < cacheExpiry) {
       console.log('generateStaticParams: Using cached params');
       return cachedParams;
     }
+
+    console.log('generateStaticParams: Cache expired or missing, regenerating params');
 
     // Get all specialties
     const specialties = dataService.getAllSpecialties();
@@ -50,14 +64,20 @@ export async function generateStaticParams() {
         } else {
           console.log(`generateStaticParams: No treatments found for ${specialty.slug}`);
         }
+
+        // Additional debugging for oncology specifically
+        if (specialty.slug === 'oncology') {
+          console.log(`generateStaticParams: Oncology specialty data:`, JSON.stringify(specialtyData, null, 2));
+        }
       }
     }
 
     // Sort params to ensure consistent ordering
     params.sort((a, b) => a.treatment.localeCompare(b.treatment));
 
-    // Cache the params
+    // Cache the params with timestamp
     cachedParams = params;
+    cacheTimestamp = Date.now();
 
     console.log('generateStaticParams: Generated and cached params:', params);
     return params;
