@@ -79,39 +79,8 @@
               }
             ]
           }
-        },
-        {
-          "label": "Gynaecology",
-          "href": "/specialties/gynaecology",
-          "pageHeader": {
-            "title": "Gynaecology",
-            "routes": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "Gynaecology"
-              }
-            ]
-          }
-        },
-        {
-          "label": "Urology",
-          "href": "/specialties/urology",
-          "pageHeader": {
-            "title": "Urology",
-            "routes": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "Urology"
-              }
-            ]
-          }
         }
+       
       ]
     },
     {

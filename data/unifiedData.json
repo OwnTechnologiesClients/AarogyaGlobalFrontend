@@ -3900,16 +3900,6 @@
       "description": "Expert heart and cardiovascular care services"
     },
     {
-      "id": "gynaecology",
-      "name": "Gynaecology",
-      "slug": "gynaecology",
-      "icon": "/specialties/gynaecology.png",
-      "label": "Gynaecology",
-      "count": 0,
-      "color": "#92BDF6",
-      "description": "Women's health and reproductive care"
-    },
-    {
       "id": "neurology",
       "name": "Neurology",
       "slug": "neurology",
@@ -3938,16 +3928,6 @@
       "count": 0,
       "color": "#F6EB61",
       "description": "Specialized care for bones, joints, muscles, and skeletal system"
-    },
-    {
-      "id": "urology",
-      "name": "Urology",
-      "slug": "urology",
-      "icon": "lucide/Kidney",
-      "label": "Urology",
-      "count": 0,
-      "color": "#4F46E5",
-      "description": "Expert urological care for kidney, bladder, and reproductive system conditions"
     }
   ]
 }
