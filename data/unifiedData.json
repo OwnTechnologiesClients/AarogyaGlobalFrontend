@@ -12,7 +12,7 @@
       "description": "Expert heart and cardiovascular care services",
       "icon": "lucide/HeartPulse",
       "color": "#A3DAC2",
-      "count": 3,
+      "count": 8,
       "overview": {
         "description": "Cardiology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the heart and cardiovascular system. Our medical tourism platform connects patients with the best cardiology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -36,7 +36,12 @@
           "Treatments"
         ],
         "treatments": [
-          "Angioplasty"
+          "Angioplasty",
+          "Coronary Artery Bypass Graft (CABG)",
+          "Angioplasty & Stenting (PCI)",
+          "Valve Repair & Replacement (SAVR/TAVR)",
+          "Pacemaker & ICD Implantation",
+          "Catheter Ablation (for Arrhythmias)"
         ],
         "facilities": [
           "Cardiac Cath Lab",
@@ -309,183 +314,275 @@
       ],
       "treatments": [
         {
-          "id": "cardiology_1",
-          "name": "Coronary Angioplasty",
-          "image": "/hospitaldirectory/img1.png",
-          "price": "€8,500",
-          "description": "Minimally invasive procedure to open blocked coronary arteries",
-          "duration": "1-2 hours",
-          "recovery": "1-3 days",
-          "includes": [
-            "Pre-operative consultation",
-            "Procedure",
-            "Post-operative care",
-            "Follow-up visits"
+          "id": "CARD0001",
+          "category": "Cardiology",
+          "name": "Coronary Artery Bypass Graft (CABG)",
+          "description": "Bypasses blocked coronary arteries using grafts to restore blood flow to heart muscle.",
+          "duration": "Surgery ~3–6 hours (on‑pump or off‑pump).",
+          "recovery": "ICU 1–2 days; hospital 5–7 days; return to normal activities in ~6–12 weeks with cardiac rehab.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Accreditation",
+            "high CABG volume",
+            "mortality and 30‑day readmission rates",
+            "arterial‑graft program",
+            "cardiac rehab availability"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "CT surgeons with >100 CABGs/year",
+            "outcomes transparency",
+            "total arterial grafting expertise",
+            "verify credentials"
+          ],
+          "diagnosticTools": [
+            "ECG, echocardiography, stress testing",
+            "coronary angiography",
+            "coronary CT angiography in selected cases"
+          ],
+          "advancedTreatmentOptions": [
+            "Off‑pump CABG",
+            "minimally invasive/robotic",
+            "total arterial grafting (LIMA/RIMA/radial)",
+            "hybrid revascularization",
+            "enhanced recovery"
+          ],
+          "advantages": [
+            "Proven symptom relief and survival benefit in left‑main/multivessel disease",
+            "durable revascularization vs PCI in complex CAD"
+          ],
+          "costConsiderations": "₹2–7 lakh",
+          "detailedCost": "India private hospitals: ~₹2–7 lakh depending on city, grafts, and risk profile; extra for ICU days/complications.",
+          "faq": [
+            {
+              "question": "How long do grafts last?",
+              "answer": "Arterial grafts often >10–15 yrs; vein grafts shorter."
+            },
+            {
+              "question": "When can I fly?",
+              "answer": "Usually after surgeon clearance post‑rehab."
+            }
           ]
         },
         {
-          "id": "cardiology_2",
-          "name": "Heart Bypass Surgery",
-          "image": "/hospitaldirectory/img2.png",
-          "price": "€25,000",
-          "description": "Surgical procedure to create new routes around blocked arteries",
-          "duration": "4-6 hours",
-          "recovery": "6-8 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "ICU care",
-            "Rehabilitation"
+          "id": "CAR0002",
+          "category": "Cardiology",
+          "name": "Angioplasty & Stenting (PCI)",
+          "description": "Catheter‑based reopening of blocked coronary arteries with balloons and stents.",
+          "duration": "Typically 30–90 min; complex cases longer.",
+          "recovery": "Home same/next day in many cases; full recovery in ~1 week for uncomplicated cases.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Cath‑lab volumes",
+            "door‑to‑balloon metrics",
+            "use of FFR/iFR and IVUS/OCT",
+            "cardiac surgery support"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Ask operator/hospital PCI volumes and outcomes",
+            "guideline‑directed use of FFR/IVUS/OCT",
+            "radial‑first practice"
+          ],
+          "diagnosticTools": [
+            "Coronary angiography",
+            "physiology (FFR/iFR)",
+            "intravascular imaging (IVUS/OCT)",
+            "CT‑FFR in planning"
+          ],
+          "advancedTreatmentOptions": [
+            "Physiology‑guided PCI",
+            "drug‑eluting stents",
+            "atherectomy",
+            "mechanical circulatory support in high‑risk PCI"
+          ],
+          "advantages": [
+            "Rapid symptom relief and improved outcomes in ACS",
+            "short recovery"
+          ],
+          "costConsiderations": "₹1.2–3.5 lakh",
+          "detailedCost": "India private‑hospital ballpark for straightforward PCI often ₹1.2–3.5 lakh. Stent type/number and imaging add cost.",
+          "faq": [
+            {
+              "question": "When is CABG preferred?",
+              "answer": "Left‑main/multivessel diabetes or complex scores—team decision."
+            },
+            {
+              "question": "When can I drive?",
+              "answer": "Usually in a week if uncomplicated."
+            }
           ]
         },
         {
-          "id": "cardiology_3",
-          "name": "Pacemaker Implantation",
-          "image": "/hospitaldirectory/img3.png",
-          "price": "€12,000",
-          "description": "Device implantation to regulate heart rhythm",
-          "duration": "1-2 hours",
-          "recovery": "1-2 weeks",
-          "includes": [
-            "Device selection",
-            "Implantation",
-            "Programming",
-            "Follow-up care"
+          "id": "CAR0003",
+          "category": "Cardiology",
+          "name": "Valve Repair & Replacement (SAVR/TAVR)",
+          "description": "Surgical (SAVR/repair) or catheter‑based (TAVR) correction of diseased heart valves.",
+          "duration": "SAVR/repair 2–4+ hours; TAVR ~1–2 hours.",
+          "recovery": "SAVR stay ~5–8 days; full recovery 4–8 weeks. TAVR often 1–3 day stay; faster recovery (days).",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Dedicated valve clinic",
+            "volumes",
+            "outcomes registry",
+            "3D echo and CT planning"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Ask SAVR/TAVR volumes and stroke/mortality rates",
+            "shared decision‑making on valve type (mechanical vs tissue)"
+          ],
+          "diagnosticTools": [
+            "Echo (TTE/TEE)",
+            "cardiac CT for TAVR planning",
+            "coronary angiography",
+            "frailty assessment"
+          ],
+          "advancedTreatmentOptions": [
+            "Minimally invasive SAVR",
+            "TAVR",
+            "valve‑in‑valve",
+            "transcatheter edge‑to‑edge repair (TEER)"
+          ],
+          "advantages": [
+            "Symptom relief and survival benefit in severe valve disease",
+            "quicker recovery with TAVR"
+          ],
+          "costConsiderations": "₹25–35 lakh",
+          "detailedCost": "In India, TAVR devices + hospitalization commonly ~$30,000–$42,000 in private centers; SAVR markedly less. Anticoagulation considerations for mechanical valves.",
+          "faq": [
+            {
+              "question": "How soon can I walk?",
+              "answer": "Day 1 post‑op typically."
+            },
+            {
+              "question": "Anticoagulation lifelong?",
+              "answer": "For mechanical valves, yes."
+            }
           ]
         },
         {
-          "id": "cardiology_4",
-          "name": "Heart Valve Replacement",
-          "image": "/hospitaldirectory/img4.png",
-          "price": "€35,000",
-          "description": "Surgical replacement of damaged heart valves",
-          "duration": "3-5 hours",
-          "recovery": "8-12 weeks",
-          "includes": [
-            "Pre-operative assessment",
-            "Valve replacement surgery",
-            "Post-operative care",
-            "Cardiac rehabilitation"
+          "id": "CAR0004",
+          "category": "Cardiology",
+          "name": "Pacemaker & ICD Implantation",
+          "description": "Device implantation to treat bradyarrhythmias (pacemaker) or prevent malignant ventricular arrhythmias (ICD).",
+          "duration": "Pacemaker ~1–2 hours; ICD ~2–3 hours.",
+          "recovery": "Overnight stay common; arm movement restricted for 1–2 weeks; return to normal activity in ~1–2 weeks.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Device clinic follow‑up",
+            "remote monitoring",
+            "lead extraction capability",
+            "infection rates"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Operator/device volumes and complication rates",
+            "remote monitoring program"
+          ],
+          "diagnosticTools": [
+            "ECG/Holter",
+            "echocardiography",
+            "EP study if needed"
+          ],
+          "advancedTreatmentOptions": [
+            "Leadless pacemaker",
+            "subcutaneous ICD",
+            "CRT‑P/CRT‑D",
+            "conduction‑system pacing"
+          ],
+          "advantages": [
+            "Symptom relief and mortality reduction in indicated patients"
+          ],
+          "costConsiderations": "Cost varies with device type and brand",
+          "detailedCost": "Cost varies with device type (single/dual, CRT, ICD) and brand. Insurance pre‑authorization and device warranty are key.",
+          "faq": [
+            {
+              "question": "Airport security?",
+              "answer": "Carry device ID card."
+            },
+            {
+              "question": "MRI‑compatible?",
+              "answer": "Many new systems are; confirm model."
+            }
           ]
         },
         {
-          "id": "cardiology_5",
-          "name": "Cardiac Ablation",
-          "image": "/hospitaldirectory/img5.png",
-          "price": "€18,000",
-          "description": "Procedure to treat heart rhythm disorders",
-          "duration": "2-4 hours",
-          "recovery": "1-2 weeks",
-          "includes": [
-            "Electrophysiology study",
-            "Ablation procedure",
-            "Post-procedure monitoring",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "cardiology_6",
-          "name": "TAVR Procedure",
-          "image": "/hospitaldirectory/img6.png",
-          "price": "€45,000",
-          "description": "Transcatheter aortic valve replacement",
-          "duration": "1-3 hours",
-          "recovery": "1-2 weeks",
-          "includes": [
-            "Pre-procedure evaluation",
-            "TAVR procedure",
-            "Post-procedure care",
-            "Follow-up monitoring"
-          ]
-        },
-        {
-          "id": "cardiology_7",
-          "name": "Cardiac Catheterization",
-          "image": "/hospitaldirectory/img7.png",
-          "price": "€6,500",
-          "description": "Diagnostic procedure to examine heart function",
-          "duration": "30-60 minutes",
-          "recovery": "1 day",
-          "includes": [
-            "Pre-procedure consultation",
-            "Catheterization procedure",
-            "Post-procedure monitoring",
-            "Results discussion"
-          ]
-        },
-        {
-          "id": "cardiology_8",
-          "name": "Echocardiography",
-          "image": "/hospitaldirectory/img8.png",
-          "price": "€800",
-          "description": "Ultrasound imaging of the heart",
-          "duration": "15-30 minutes",
-          "recovery": "No recovery time",
-          "includes": [
-            "Cardiac ultrasound",
-            "Image analysis",
-            "Report generation",
-            "Consultation"
-          ]
-        },
-        {
-          "id": "cardiology_9",
-          "name": "Cardiac Rehabilitation",
-          "image": "/hospitaldirectory/img9.png",
-          "price": "€3,500",
-          "description": "Comprehensive cardiac recovery program",
-          "duration": "12 weeks",
-          "recovery": "Ongoing",
-          "includes": [
-            "Exercise training",
-            "Education sessions",
-            "Lifestyle counseling",
-            "Progress monitoring"
-          ]
-        },
-        {
-          "id": "cardiology_10",
-          "name": "Heart Transplant",
-          "image": "/hospitaldirectory/img10.png",
-          "price": "€120,000",
-          "description": "Complete heart transplant surgery",
-          "duration": "6-8 hours",
-          "recovery": "3-6 months",
-          "includes": [
-            "Donor matching",
-            "Transplant surgery",
-            "ICU care",
-            "Long-term monitoring"
-          ]
-        },
-        {
-          "id": "cardiology_11",
-          "name": "Cardiac Resynchronization",
-          "image": "/hospitaldirectory/img11.png",
-          "price": "€22,000",
-          "description": "Device therapy for heart failure",
-          "duration": "2-3 hours",
-          "recovery": "1-2 weeks",
-          "includes": [
-            "Device selection",
-            "Implantation",
-            "Programming",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "cardiology_12",
-          "name": "Coronary Artery Bypass",
-          "image": "/hospitaldirectory/img12.png",
-          "price": "€28,000",
-          "description": "Surgical bypass of blocked coronary arteries",
-          "duration": "4-6 hours",
-          "recovery": "6-8 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Bypass surgery",
-            "Post-operative care",
-            "Rehabilitation"
+          "id": "CAR0005",
+          "category": "Cardiology",
+          "name": "Catheter Ablation (for Arrhythmias)",
+          "description": "Catheter‑based destruction of arrhythmogenic tissue using radiofrequency or cryoenergy.",
+          "duration": "1–3 hours depending on arrhythmia type; GA or conscious sedation.",
+          "recovery": "Most return to work in ~1 week; avoid heavy lifting 1 week.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "EP lab volumes",
+            "3D mapping/navigation",
+            "complication‑management pathways",
+            "day‑care protocols"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Ask success and complication rates for your arrhythmia",
+            "redo policy",
+            "access to cryo and RF"
+          ],
+          "diagnosticTools": [
+            "12‑lead ECG",
+            "Holter/patch monitors",
+            "echo",
+            "CT/MRI for AF mapping when indicated"
+          ],
+          "advancedTreatmentOptions": [
+            "Cryo‑balloon vs RF",
+            "contact‑force catheters",
+            "pulsed‑field ablation (emerging)"
+          ],
+          "advantages": [
+            "High success for SVT",
+            "disease‑modifying for AF in selected patients"
+          ],
+          "costConsiderations": "Cost varies with mapping system and energy source",
+          "detailedCost": "Drivers: mapping system, energy source, LOS. Many centers perform as overnight or day‑care in uncomplicated cases.",
+          "faq": [
+            {
+              "question": "Will I be off meds?",
+              "answer": "Often reduced/ceased if successful."
+            },
+            {
+              "question": "Recurrence?",
+              "answer": "Possible—sometimes repeat ablation needed."
+            }
           ]
         }
       ],
@@ -1140,188 +1237,7 @@
           ]
         }
       ],
-      "treatments": [
-        {
-          "id": "neurology_1",
-          "name": "Deep Brain Stimulation",
-          "image": "/hospitaldirectory/img1.png",
-          "price": "€35,000",
-          "description": "Surgical procedure to implant electrodes in the brain for movement disorders",
-          "duration": "4-6 hours",
-          "recovery": "4-6 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Programming",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "neurology_2",
-          "name": "Brain Tumor Surgery",
-          "image": "/hospitaldirectory/img2.png",
-          "price": "€45,000",
-          "description": "Surgical removal of brain tumors using advanced techniques",
-          "duration": "6-8 hours",
-          "recovery": "6-8 weeks",
-          "includes": [
-            "Pre-operative planning",
-            "Surgery",
-            "ICU care",
-            "Rehabilitation"
-          ]
-        },
-        {
-          "id": "neurology_3",
-          "name": "Epilepsy Surgery",
-          "image": "/hospitaldirectory/img3.png",
-          "price": "€30,000",
-          "description": "Surgical treatment for drug-resistant epilepsy",
-          "duration": "3-5 hours",
-          "recovery": "4-6 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgery",
-            "Monitoring",
-            "Follow-up"
-          ]
-        },
-        {
-          "id": "neurology_4",
-          "name": "Stroke Treatment",
-          "image": "/hospitaldirectory/img4.png",
-          "price": "€25,000",
-          "description": "Emergency treatment for acute stroke and rehabilitation",
-          "duration": "Varies",
-          "recovery": "3-12 months",
-          "includes": [
-            "Emergency evaluation",
-            "Treatment",
-            "Rehabilitation",
-            "Long-term care"
-          ]
-        },
-        {
-          "id": "neurology_5",
-          "name": "Multiple Sclerosis Treatment",
-          "image": "/hospitaldirectory/img5.png",
-          "price": "€40,000",
-          "description": "Comprehensive treatment for multiple sclerosis",
-          "duration": "Lifetime management",
-          "recovery": "Ongoing",
-          "includes": [
-            "Disease-modifying therapy",
-            "Symptom management",
-            "Rehabilitation",
-            "Monitoring"
-          ]
-        },
-        {
-          "id": "neurology_6",
-          "name": "Parkinson's Treatment",
-          "image": "/hospitaldirectory/img6.png",
-          "price": "€20,000",
-          "description": "Treatment for Parkinson's disease symptoms",
-          "duration": "Lifetime management",
-          "recovery": "Ongoing",
-          "includes": [
-            "Medication management",
-            "Deep brain stimulation",
-            "Physical therapy",
-            "Supportive care"
-          ]
-        },
-        {
-          "id": "neurology_7",
-          "name": "Alzheimer's Treatment",
-          "image": "/hospitaldirectory/img7.png",
-          "price": "€15,000",
-          "description": "Comprehensive care for Alzheimer's disease",
-          "duration": "Lifetime management",
-          "recovery": "Ongoing",
-          "includes": [
-            "Medication therapy",
-            "Cognitive training",
-            "Support services",
-            "Family counseling"
-          ]
-        },
-        {
-          "id": "neurology_8",
-          "name": "Neurological Rehabilitation",
-          "image": "/hospitaldirectory/img8.png",
-          "price": "€8,000",
-          "description": "Rehabilitation for neurological conditions",
-          "duration": "6-12 weeks",
-          "recovery": "Ongoing",
-          "includes": [
-            "Physical therapy",
-            "Occupational therapy",
-            "Speech therapy",
-            "Progress monitoring"
-          ]
-        },
-        {
-          "id": "neurology_9",
-          "name": "Neurostimulation",
-          "image": "/hospitaldirectory/img9.png",
-          "price": "€18,000",
-          "description": "Electrical stimulation for neurological disorders",
-          "duration": "1-2 hours",
-          "recovery": "1-2 weeks",
-          "includes": [
-            "Evaluation",
-            "Stimulation procedure",
-            "Programming",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "neurology_10",
-          "name": "Brain Mapping",
-          "image": "/hospitaldirectory/img10.png",
-          "price": "€12,000",
-          "description": "Advanced brain imaging and mapping techniques",
-          "duration": "2-4 hours",
-          "recovery": "1 day",
-          "includes": [
-            "Brain imaging",
-            "Mapping procedure",
-            "Analysis",
-            "Report generation"
-          ]
-        },
-        {
-          "id": "neurology_11",
-          "name": "Neuroendoscopy",
-          "image": "/hospitaldirectory/img11.png",
-          "price": "€25,000",
-          "description": "Minimally invasive brain surgery using endoscope",
-          "duration": "2-4 hours",
-          "recovery": "2-4 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Endoscopic surgery",
-            "Post-operative care",
-            "Follow-up"
-          ]
-        },
-        {
-          "id": "neurology_12",
-          "name": "Neurogenetics",
-          "image": "/hospitaldirectory/img12.png",
-          "price": "€8,000",
-          "description": "Genetic testing and counseling for neurological conditions",
-          "duration": "2-4 weeks",
-          "recovery": "No recovery time",
-          "includes": [
-            "Genetic testing",
-            "Counseling",
-            "Risk assessment",
-            "Family planning"
-          ]
-        }
-      ],
+      "treatments": [],
       "costs": [
         {
           "name": "Neurology consultation",
