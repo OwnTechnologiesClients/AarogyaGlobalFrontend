@@ -8,6 +8,11 @@ import dataService from '@/lib/dataService';
 // Cache for static params to prevent hydration mismatches
 let cachedParams = null;
 
+// Force cache refresh for development
+if (process.env.NODE_ENV === 'development') {
+  cachedParams = null;
+}
+
 // Generate static params for all specialties and individual treatments
 export async function generateStaticParams() {
   try {
@@ -19,6 +24,7 @@ export async function generateStaticParams() {
 
     // Get all specialties
     const specialties = dataService.getAllSpecialties();
+    console.log('generateStaticParams: All specialties:', specialties.map(s => ({ slug: s.slug, name: s.name })));
     const params = [];
 
     // Add specialty slugs first
@@ -32,12 +38,17 @@ export async function generateStaticParams() {
     for (const specialty of specialties) {
       if (specialty && specialty.slug) {
         const specialtyData = dataService.getSpecialtyBySlug(specialty.slug);
+        console.log(`generateStaticParams: Processing specialty ${specialty.slug}, found ${specialtyData?.treatments?.length || 0} treatments`);
         if (specialtyData && specialtyData.treatments && Array.isArray(specialtyData.treatments)) {
+          console.log(`generateStaticParams: Treatments for ${specialty.slug}:`, specialtyData.treatments.map(t => t.id));
           for (const treatment of specialtyData.treatments) {
             if (treatment && treatment.id) {
+              console.log(`generateStaticParams: Adding treatment ID: ${treatment.id}`);
               params.push({ treatment: treatment.id });
             }
           }
+        } else {
+          console.log(`generateStaticParams: No treatments found for ${specialty.slug}`);
         }
       }
     }

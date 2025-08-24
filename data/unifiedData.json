@@ -937,7 +937,7 @@
       "description": "Advanced brain and nervous system treatments",
       "icon": "/specialties/neurology.png",
       "color": "#FEC091",
-      "count": 3,
+      "count": 4,
       "overview": {
         "description": "Neurology is a medical specialty that focuses on the diagnosis and treatment of conditions affecting the brain, spinal cord, and nervous system. Our medical tourism platform connects patients with the best neurology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -961,7 +961,8 @@
           "Treatments"
         ],
         "treatments": [
-          "Brain Surgery"
+          "Brain Surgery",
+          "IV Thrombolysis/Mechanical Thrombectomy for Acute Ischemic Stroke"
         ],
         "facilities": [
           "Neurology ICU",
@@ -1237,7 +1238,63 @@
           ]
         }
       ],
-      "treatments": [],
+      "treatments": [
+        {
+          "id": "NEUR0001",
+          "category": "Neurology",
+          "name": "IV Thrombolysis/Mechanical Thrombectomy for Acute Ischemic Stroke",
+          "description": "Emergency reperfusion treatments for blocked brain arteries to reduce disability.",
+          "duration": "IV thrombolysis decision within minutes; thrombectomy procedure typically ~1–2 hours.",
+          "recovery": "Hospital stay varies; early rehab starts in 24–48 h; recovery spans weeks to months depending on severity.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Stroke‑center certification (TSC/CSC or NABH Stroke)",
+            "door‑to‑needle metrics",
+            "24x7 CT/CTA/CTP/MRI",
+            "neuro‑ICU",
+            "rehab team"
+          ],
+          "topDoctors": "How to select the best doctor?",
+          "doctorSelectionCriteria": "How to select the best doctor?",
+          "doctorSelectionList": [
+            "Endovascular neurologist/neurosurgeon with regular thrombectomy volumes",
+            "stroke neurologist leading protocol‑driven care"
+          ],
+          "diagnosticTools": [
+            "Non‑contrast CT",
+            "CT angiography",
+            "CT perfusion or MRI DWI/PWI",
+            "NIHSS scoring",
+            "glucose and labs"
+          ],
+          "advancedTreatmentOptions": [
+            "IV alteplase (within 4.5 h in eligible)",
+            "tenecteplase in some centers",
+            "mechanical thrombectomy up to 16–24 h in selected cases"
+          ],
+          "advantages": [
+            "Large disability reduction when delivered rapidly",
+            "extended‑window thrombectomy benefits carefully selected patients"
+          ],
+          "costConsiderations": "Drug cost (TNK/TPA) often ₹0.45–1.2 lakh; mechanical thrombectomy commonly ~₹5–6 lakh mean in private centers; rehab adds extra.",
+          "detailedCost": "Drug cost (TNK/TPA) often ₹0.45–1.2 lakh; mechanical thrombectomy commonly ~₹5–6 lakh mean in private centers; rehab adds extra.",
+          "faq": [
+            {
+              "question": "What is the time window?",
+              "answer": "IVT ≤4.5 h; EVT up to 16–24 h in selected patients."
+            },
+            {
+              "question": "Can every stroke get these?",
+              "answer": "Only ischemic strokes meeting criteria."
+            }
+          ]
+        }
+      ],
       "costs": [
         {
           "name": "Neurology consultation",
@@ -1412,188 +1469,7 @@
           "hospital": "UCLA Medical Center"
         }
       ],
-      "treatments": [
-        {
-          "id": "oncology_1",
-          "name": "Chemotherapy",
-          "image": "/hospitaldirectory/img1.png",
-          "price": "€15,000",
-          "description": "Drug treatment to destroy cancer cells throughout the body",
-          "duration": "3-6 months",
-          "recovery": "Varies by patient",
-          "includes": [
-            "Treatment planning",
-            "Chemotherapy sessions",
-            "Monitoring",
-            "Supportive care"
-          ]
-        },
-        {
-          "id": "oncology_2",
-          "name": "Radiation Therapy",
-          "image": "/hospitaldirectory/img2.png",
-          "price": "€20,000",
-          "description": "High-energy radiation to destroy cancer cells in specific areas",
-          "duration": "5-7 weeks",
-          "recovery": "2-6 weeks",
-          "includes": [
-            "Treatment planning",
-            "Radiation sessions",
-            "Monitoring",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "oncology_3",
-          "name": "Immunotherapy",
-          "image": "/hospitaldirectory/img3.png",
-          "price": "€35,000",
-          "description": "Treatment that uses the body's immune system to fight cancer",
-          "duration": "6-12 months",
-          "recovery": "Ongoing monitoring",
-          "includes": [
-            "Treatment planning",
-            "Immunotherapy sessions",
-            "Monitoring",
-            "Long-term care"
-          ]
-        },
-        {
-          "id": "oncology_4",
-          "name": "Surgery",
-          "image": "/hospitaldirectory/img4.png",
-          "price": "€40,000",
-          "description": "Surgical removal of cancerous tumors and surrounding tissue",
-          "duration": "2-6 hours",
-          "recovery": "4-8 weeks",
-          "includes": [
-            "Pre-operative evaluation",
-            "Surgical procedure",
-            "Post-operative care",
-            "Rehabilitation"
-          ]
-        },
-        {
-          "id": "oncology_5",
-          "name": "Targeted Therapy",
-          "image": "/hospitaldirectory/img5.png",
-          "price": "€25,000",
-          "description": "Drugs that target specific cancer cell molecules",
-          "duration": "3-12 months",
-          "recovery": "Ongoing monitoring",
-          "includes": [
-            "Genetic testing",
-            "Treatment planning",
-            "Targeted therapy sessions",
-            "Monitoring"
-          ]
-        },
-        {
-          "id": "oncology_6",
-          "name": "Stem Cell Transplant",
-          "image": "/hospitaldirectory/img6.png",
-          "price": "€80,000",
-          "description": "Transplantation of healthy stem cells to replace damaged ones",
-          "duration": "2-4 weeks",
-          "recovery": "3-6 months",
-          "includes": [
-            "Stem cell collection",
-            "Transplantation procedure",
-            "Post-transplant care",
-            "Long-term monitoring"
-          ]
-        },
-        {
-          "id": "oncology_7",
-          "name": "Proton Therapy",
-          "image": "/hospitaldirectory/img7.png",
-          "price": "€60,000",
-          "description": "Advanced radiation therapy using proton beams",
-          "duration": "6-8 weeks",
-          "recovery": "2-4 weeks",
-          "includes": [
-            "Treatment planning",
-            "Proton therapy sessions",
-            "Monitoring",
-            "Follow-up care"
-          ]
-        },
-        {
-          "id": "oncology_8",
-          "name": "Hormone Therapy",
-          "image": "/hospitaldirectory/img8.png",
-          "price": "€12,000",
-          "description": "Treatment to block or remove hormones that fuel cancer",
-          "duration": "6-12 months",
-          "recovery": "Ongoing treatment",
-          "includes": [
-            "Hormone testing",
-            "Treatment planning",
-            "Hormone therapy",
-            "Monitoring"
-          ]
-        },
-        {
-          "id": "oncology_9",
-          "name": "Clinical Trials",
-          "image": "/hospitaldirectory/img9.png",
-          "price": "€0 - €25,000",
-          "description": "Experimental treatments in clinical research studies",
-          "duration": "Varies by trial",
-          "recovery": "Varies by trial",
-          "includes": [
-            "Trial screening",
-            "Experimental treatment",
-            "Monitoring",
-            "Data collection"
-          ]
-        },
-        {
-          "id": "oncology_10",
-          "name": "Bone Marrow Transplant",
-          "image": "/hospitaldirectory/img10.png",
-          "price": "€90,000",
-          "description": "Transplantation of healthy bone marrow cells",
-          "duration": "2-4 weeks",
-          "recovery": "3-6 months",
-          "includes": [
-            "Donor matching",
-            "Transplantation",
-            "Post-transplant care",
-            "Long-term monitoring"
-          ]
-        },
-        {
-          "id": "oncology_11",
-          "name": "Precision Medicine",
-          "image": "/hospitaldirectory/img11.png",
-          "price": "€15,000",
-          "description": "Personalized treatment based on genetic profile",
-          "duration": "Varies",
-          "recovery": "Varies",
-          "includes": [
-            "Genetic testing",
-            "Treatment planning",
-            "Personalized therapy",
-            "Monitoring"
-          ]
-        },
-        {
-          "id": "oncology_12",
-          "name": "Palliative Care",
-          "image": "/hospitaldirectory/img12.png",
-          "price": "€5,000",
-          "description": "Comprehensive supportive care for cancer patients",
-          "duration": "Ongoing",
-          "recovery": "Ongoing",
-          "includes": [
-            "Pain management",
-            "Symptom control",
-            "Emotional support",
-            "Family counseling"
-          ]
-        }
-      ],
+      "treatments": [],
       "costs": [
         {
           "name": "Oncology consultation",
