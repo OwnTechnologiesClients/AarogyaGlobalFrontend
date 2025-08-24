@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "@/components/layout/PageHeader";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import DoctorProfile from "@/components/DoctorDetails/DoctorProfile";
-import RelatedSpecialists from "@/components/DoctorDetails/RelatedSpecialists";
+
 import dataService from '@/lib/dataService';
 
 export async function generateStaticParams() {
@@ -40,7 +40,6 @@ export default async function DoctorDetailsPage({ params }) {
     <>
       <PageHeader title={`${doctor.name} - ${doctor.specialty}`} routes={routes} />
       <DoctorProfile doctor={doctor} />
-      <RelatedSpecialists currentDoctorId={doctor.id} />
     </>
   );
 } 
