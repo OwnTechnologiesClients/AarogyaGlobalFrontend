@@ -14,6 +14,11 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
     const convertToRupees = (euroString) => {
+        // Handle undefined or null values
+        if (!euroString) {
+            return "Contact for pricing";
+        }
+
         const euroMatch = euroString.match(/€([\d,]+)/);
         if (euroMatch) {
             const euroAmount = parseFloat(euroMatch[1].replace(/,/g, ''));
@@ -25,6 +30,11 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
     // Helper function to convert rupees to dollars (approximate rate: 1 INR = 0.012 USD)
     const convertToDollars = (rupeeString) => {
+        // Handle undefined or null values
+        if (!rupeeString) {
+            return "Contact for pricing";
+        }
+
         // Convert "lakh" to actual numbers (1 lakh = 100,000)
         let convertedString = rupeeString;
 

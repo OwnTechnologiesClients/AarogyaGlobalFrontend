@@ -52,6 +52,28 @@
           "Cardiac Rehabilitation"
         ]
       },
+      "doctors": [
+        {
+          "id": "DOC0005",
+          "name": "Dr. Rajesh Kumar",
+          "specialty": "Cardiologist",
+          "image": "/doctors/dr-rajesh-kumar.jpg",
+          "rating": "4.8",
+          "experience": "18+ years",
+          "location": "Gurgaon, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0006",
+          "name": "Dr. Priya Sharma",
+          "specialty": "Cardiologist",
+          "image": "/doctors/dr-priya-sharma.jpg",
+          "rating": "4.7",
+          "experience": "15+ years",
+          "location": "New Delhi, India",
+          "hospital": "Max Super Speciality Hospital, Saket"
+        }
+      ],
       "hospitals": [
         {
           "id": "HDEL0001",
