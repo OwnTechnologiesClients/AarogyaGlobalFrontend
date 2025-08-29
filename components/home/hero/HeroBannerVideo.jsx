@@ -32,28 +32,7 @@ const HeroBannerVideo = () => {
             />
           </video>
 
-          {/* Green diagonal strip with marquee text */}
-          <div className="absolute bottom-3 left-0 w-full h-15 bg-[#04CE78] transform -skew-y-6 origin-bottom-left z-10">
-            <div className="flex items-center h-full overflow-hidden">
-              <div className="flex animate-marquee whitespace-nowrap text-white font-bold text-lg md:text-xl lg:text-2xl">
-                <span>• Pre-Op Specialist</span>
-                <span className="mx-6">•</span>
-                <span>Teleconsultations</span>
-                <span className="mx-6">•</span>
-                <span>Comprehensive Treatment Plans</span>
-                <span className="mx-6">•</span>
-                <span>Medical Travel Planning</span>
-                <span className="mx-6">•</span>
-                <span>Pre-Op Specialist</span>
-                <span className="mx-6">•</span>
-                <span>Teleconsultations</span>
-                <span className="mx-6">•</span>
-                <span>Comprehensive Treatment Plans</span>
-                <span className="mx-6">•</span>
-                <span>Medical Travel Planning</span>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
