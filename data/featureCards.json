@@ -4,7 +4,7 @@
       "id": "find-doctor",
       "icon": "featurecards/doctor.svg",
       "title": "Find Doctor",
-      "description": "Browse through 100+ recognized specialists in India. Schedule consultations from the comfort of your home.",
+      "description": "Browse through 100+ recognized specialists in India. Compare expertise, check profiles, and find the right doctor for your treatment needs.",
       "cta": {
         "label": "View All Doctors",
         "href": "/doctors"
@@ -15,8 +15,8 @@
     {
       "id": "support",
       "icon": "featurecards/phone-big.svg",
-      "title": "View Details",
-      "description": "With a focus on compassionate personalize environment where patient feel valued respected and well informed about their health",
+      "title": "Book Appointment",
+      "description": "Schedule a personalized consultation with trusted Indian doctors from the comfort of your home. Get clarity on treatment plans, costs, and next steps before you travel.",
       "cta": {
         "label": "Contact Us",
         "href": "/contact"
@@ -28,7 +28,7 @@
       "id": "appointment",
       "icon": "featurecards/medical-history.svg",
       "title": "Explore Treatment facilities",
-      "description": "With a focus on compassionate personalize environment where patient feel valued respected and well informed about their health",
+      "description": "Discover world-class hospitals and treatment centers in India. Learn about available specialties, advanced technologies, and personalized care options.",
       "cta": {
         "label": "Request An Appointment",
         "href": "/appointment"
