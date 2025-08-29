@@ -36,6 +36,25 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
   const totalSlides = Math.ceil(doctors.length / 2);
   const showNavigation = doctors.length > 2;
 
+  // If no doctors are available, show a message instead of the swiper
+  if (!doctors || doctors.length === 0) {
+    return (
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+        </div>
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
+          <div className="text-gray-500 text-lg mb-2">
+            No specific doctors are currently mapped to this treatment
+          </div>
+          <p className="text-gray-400 text-sm">
+            We're working on connecting you with the best specialists. Please contact us for doctor recommendations.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-6">
