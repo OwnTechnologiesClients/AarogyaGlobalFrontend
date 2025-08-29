@@ -263,7 +263,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* Diagnostic Tools Section */}
                         <section id="diagnostic" className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                Diagnostic Tools for Total Knee Replacement (TKR)
+                                Diagnostic Tools for {treatment.name || 'Treatment'}
                             </h2>
 
                             <div className="space-y-3">
@@ -325,7 +325,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* Advanced Treatments Section */}
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                Advanced Treatment Options for Total Knee Replacement (TKR)
+                                Advanced Treatment Options for {treatment.name || 'Treatment'}
                             </h2>
 
                             <div className="space-y-3">
@@ -345,7 +345,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                         {/* Advantages Section */}
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                                Advantages of Total Knee Replacement (TKR)
+                                Advantages of {treatment.name || 'Treatment'}
                             </h2>
 
                             <div className="space-y-3">
