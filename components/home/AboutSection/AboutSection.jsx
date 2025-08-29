@@ -41,7 +41,6 @@ const AboutSection = () => {
                     alt={feature.title}
                     width={40}
                     height={40}
-                    className="text-[#1F5FFF]"
                   />
                 </div>
                 <div>

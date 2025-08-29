@@ -4,17 +4,17 @@
   "aboutLabel": "ABOUT AAROGYA GLOBAL",
   "features": [
     {
-      "icon": "featurecards/globe.png",
+      "icon": "/featurecards/globe.png",
       "title": "Truly Global, Deeply Personal: ",
       "description": "Our culturally diverse team from India, Africa, and the Middle East understands your needs and speaks your language — literally and figuratively."
     },
     {
-      "icon": "featurecards/cross-shield.png",
+      "icon": "/featurecards/cross-shield.png",
       "title": " Decades of Healthcare Expertise",
       "description": "Backed by 40+ years of team experience across leading hospitals, lifesciences companies, and healthcare systems worldwide."
     },
     {
-      "icon": "featurecards/customer-behavior.png",
+      "icon": "/featurecards/customer-behavior.png",
       "title": "End-to-End Care",
       "description": "From choosing the right doctor to managing your visa, travel, and recovery — we handle every detail, so you can focus entirely on healing."
     }
@@ -24,7 +24,7 @@
     "link": "/about"
   },
   "emergency": {
-    "icon": "featurecards/phone-big.svg",
+    "icon": "/featurecards/phone-big.svg",
     "label": "Emergency Line",
     "phone": "+91 9988765432"
   }

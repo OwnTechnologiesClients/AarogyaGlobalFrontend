@@ -2,7 +2,7 @@
   "cards": [
     {
       "id": "find-doctor",
-      "icon": "featurecards/doctor.svg",
+      "icon": "/featurecards/doctor.svg",
       "title": "Find Doctor",
       "description": "Browse through 100+ recognized specialists in India. Compare expertise, check profiles, and find the right doctor for your treatment needs.",
       "cta": {
@@ -14,7 +14,7 @@
     },
     {
       "id": "support",
-      "icon": "featurecards/phone-big.svg",
+      "icon": "/featurecards/phone-big.svg",
       "title": "Book Appointment",
       "description": "Schedule a personalized consultation with trusted Indian doctors from the comfort of your home. Get clarity on treatment plans, costs, and next steps before you travel.",
       "cta": {
@@ -26,7 +26,7 @@
     },
     {
       "id": "appointment",
-      "icon": "featurecards/medical-history.svg",
+      "icon": "/featurecards/medical-history.svg",
       "title": "Explore Treatment facilities",
       "description": "Discover world-class hospitals and treatment centers in India. Learn about available specialties, advanced technologies, and personalized care options.",
       "cta": {
