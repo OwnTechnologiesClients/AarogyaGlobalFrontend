@@ -1,26 +1,26 @@
 [
   {
     "id": "01",
-    "title": "Connect & Share Medical History",
-    "description": "Book a free consultation with us and upload medical reports. Our team reviews them with expert doctors to assess further diagnostics needed to arrive at a treatment plan.",
+    "title": "Share Your Medical History",
+    "description": "Upload your reports and book a free consultation. Our doctors review your case to design a personalized treatment plan.",
     "image": "/workprocess/img1.jpg"
   },
   {
     "id": "02",
-    "title": "Receive Expert Opinions",
-    "description": "Get multiple opinions from top specialists, detailed cost estimates, and visa support documents tailored to your case.",
+    "title": "Get Expert Opinions",
+    "description": "Receive multiple opinions from top specialists, clear cost estimates, and visa support documents — tailored to your needs.",
     "image": "/workprocess/img2.jpg"
   },
   {
     "id": "03",
     "title": "Travel to India",
-    "description": "Our team coordinates visa, travel, airport pickup, hospital admission, and offers multilingual care support throughout the stay.",
+    "description": "We arrange your visa, airport pickup, hospital admission, and provide multilingual support throughout your stay.",
     "image": "/workprocess/img3.jpg"
   },
   {
     "id": "04",
-    "title": "Recover, Follow Up & Return Home Safely",
-    "description": "After successful treatment, our team assists with recovery planning, virtual follow-ups, and ensures smooth return travel. We partner with your local hospitals to ensure continued support.",
+    "title": "Recover & Return Home Safely",
+    "description": "Our team supports recovery, virtual follow-ups, and smooth return travel, while partnering with your local doctors for ongoing care.",
     "image": "/workprocess/img3.jpg"
   }
 ]
