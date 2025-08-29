@@ -95,16 +95,16 @@ const BeyondBookingsPayments = () => {
         <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] lg:h-[550px] mt-6 lg:mt-0">
           {/* Background Image */}
           <Image
-            src="/beyondbooking/mainImg.png"
-            alt="Doctor Team"
+            src="/beyondbooking/why-choose-aarogya-global-1.jpg"
+            alt="Why Choose Aarogya Global"
             fill
             className="object-cover object-center rounded-2xl"
           />
           {/* Overlay Image */}
           <div className="absolute hidden lg:block bottom-3 left-[-20px] bg-white rounded-xl overflow-hidden shadow-lg border-3 border-white w-[180px] h-[120px] md:w-[220px] md:h-[140px]">
             <Image
-              src="/beyondbooking/img2.png"
-              alt="Nurse with Patient"
+              src="/beyondbooking/why-choose-aarogya-global-2.jpg"
+              alt="Why Choose Aarogya Global"
               fill
               className="object-cover object-center"
             />
