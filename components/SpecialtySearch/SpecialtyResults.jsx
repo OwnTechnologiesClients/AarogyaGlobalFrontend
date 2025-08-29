@@ -5,12 +5,12 @@ import SpecialtyHospitalCard from './SpecialtyHospitalCard';
 import TreatmentCard from './TreatmentCard';
 import { ArrowRight } from 'lucide-react';
 
-const SpecialtyResults = ({ 
-  doctors = [], 
-  hospitals = [], 
-  treatments = [], 
-  activeCategory, 
-  specialtyName 
+const SpecialtyResults = ({
+  doctors = [],
+  hospitals = [],
+  treatments = [],
+  activeCategory,
+  specialtyName
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [displayData, setDisplayData] = useState([]);
@@ -92,7 +92,7 @@ const SpecialtyResults = ({
           </div>
         </div>
         <a
-          href="tel:+919876543210"
+          href="tel:+380931281076"
           className="mt-4 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
         >
           <span>Request Callback</span>
@@ -112,7 +112,7 @@ const SpecialtyResults = ({
             {renderCard(item, index)}
           </div>
         );
-        
+
         // Add CTA after every 6 treatments (after every 2 complete columns of 3 cards)
         // This ensures: 3 cards in first column, 3 cards in second column, then CTA
         if ((index + 1) % 6 === 0 && index < currentCards.length - 1) {
@@ -123,14 +123,14 @@ const SpecialtyResults = ({
           );
         }
       });
-      
+
       return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items}
         </div>
       );
     }
-    
+
     // For other categories, render normally
     return (
       <div className={getGridClass()}>
@@ -150,7 +150,7 @@ const SpecialtyResults = ({
     <div className="mt-8">
       <section className="gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 bg-white rounded-lg border border-black-100 shadow-md mx-2 sm:mx-4 md:mx-8 lg:mx-10 my-3 sm:my-4 md:my-5">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Results Header */}
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-2">
@@ -181,21 +181,20 @@ const SpecialtyResults = ({
                   >
                     Previous
                   </button>
-                  
+
                   {[...Array(totalPages)].map((_, index) => (
                     <button
                       key={index + 1}
                       onClick={() => handlePageChange(index + 1)}
-                      className={`px-4 py-2 text-sm font-medium rounded-md ${
-                        currentPage === index + 1
-                          ? 'bg-blue-600 text-white border border-blue-600'
-                          : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
-                      }`}
+                      className={`px-4 py-2 text-sm font-medium rounded-md ${currentPage === index + 1
+                        ? 'bg-blue-600 text-white border border-blue-600'
+                        : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                        }`}
                     >
                       {index + 1}
                     </button>
                   ))}
-                  
+
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
@@ -238,7 +237,7 @@ const SpecialtyResults = ({
               </div>
             </div>
             <a
-              href="tel:+919876543210"
+              href="tel:+380931281076"
               className="mt-4 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
             >
               <span>Request Callback</span>

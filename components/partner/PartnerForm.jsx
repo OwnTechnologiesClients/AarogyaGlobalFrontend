@@ -181,7 +181,7 @@ const PartnerForm = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600 break-all text-sm leading-relaxed">partnership@aarogyaglobal.com</p>
+                    <p className="text-gray-600 break-all text-sm leading-relaxed">aarogyaglobalforyou@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -190,7 +190,7 @@ const PartnerForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="text-gray-600">+380 93 128 1076</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

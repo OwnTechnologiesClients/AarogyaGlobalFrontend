@@ -39,7 +39,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
     <div className="mt-8">
       <section className="gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 bg-white rounded-lg border border-black-100 shadow-md mx-2 sm:mx-4 md:mx-8 lg:mx-10 my-3 sm:my-4 md:my-5">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Results Header */}
           <div className="mb-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -51,7 +51,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                   Found {doctors.length} doctors out of {totalDoctors} total doctors
                 </p>
               </div>
-              
+
               {/* Stats */}
               <div className="flex flex-wrap gap-4 text-sm">
                 <div className="flex items-center gap-2 text-blue-600">
@@ -105,7 +105,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                   >
                     Previous
                   </button>
-                  
+
                   {[...Array(totalPages)].map((_, index) => {
                     const pageNumber = index + 1;
                     // Show first page, last page, current page, and pages around current
@@ -118,11 +118,10 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                         <button
                           key={pageNumber}
                           onClick={() => handlePageChange(pageNumber)}
-                          className={`px-4 py-2 text-sm font-medium rounded-md ${
-                            currentPage === pageNumber
+                          className={`px-4 py-2 text-sm font-medium rounded-md ${currentPage === pageNumber
                               ? 'bg-blue-600 text-white border border-blue-600'
                               : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
-                          }`}
+                            }`}
                         >
                           {pageNumber}
                         </button>
@@ -135,7 +134,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                     }
                     return null;
                   })}
-                  
+
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
@@ -161,7 +160,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
               Need Help Finding the Right Doctor?
             </h3>
             <p className="text-gray-600 mb-6">
-              Our medical tourism experts are here to help you find the perfect doctor for your needs. 
+              Our medical tourism experts are here to help you find the perfect doctor for your needs.
               Get personalized recommendations and support throughout your medical journey.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -190,7 +189,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+919876543210"
+                href="tel:+380931281076"
                 className="flex-1 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <span>Request Callback</span>

@@ -2,31 +2,70 @@
   "logo": "/Logo.png",
   "description": "Health without Boundaries, Care without Compromise",
   "socials": [
-    { "icon": "facebook", "url": "#" },
-    { "icon": "x", "url": "#" },
-    { "icon": "instagram", "url": "#" },
-    { "icon": "linkedin", "url": "#" }
+    {
+      "icon": "facebook",
+      "url": "#"
+    },
+    {
+      "icon": "x",
+      "url": "#"
+    },
+    {
+      "icon": "instagram",
+      "url": "#"
+    },
+    {
+      "icon": "linkedin",
+      "url": "#"
+    }
   ],
   "quickLinks": [
-    { "label": "Top Doctors", "url": "#" },
-    { "label": "Latest News", "url": "#" },
-    { "label": "Why Choose Us", "url": "#" },
-    { "label": "Contact Detail", "url": "#" }
+    {
+      "label": "Top Doctors",
+      "url": "#"
+    },
+    {
+      "label": "Latest News",
+      "url": "#"
+    },
+    {
+      "label": "Why Choose Us",
+      "url": "#"
+    },
+    {
+      "label": "Contact Detail",
+      "url": "#"
+    }
   ],
   "usefulLinks": [
-    { "label": "Featured Hospitals", "url": "#" },
-    { "label": "How It Works", "url": "#" },
-    { "label": "Find A Location", "url": "#" },
-    { "label": "Doctors Search", "url": "#" },
-    { "label": "Telemedicine Services", "url": "#" }
+    {
+      "label": "Featured Hospitals",
+      "url": "#"
+    },
+    {
+      "label": "How It Works",
+      "url": "#"
+    },
+    {
+      "label": "Find A Location",
+      "url": "#"
+    },
+    {
+      "label": "Doctors Search",
+      "url": "#"
+    },
+    {
+      "label": "Telemedicine Services",
+      "url": "#"
+    }
   ],
   "contact": {
     "location": "Innov8 Orchid Center, Gurugram, India, 122001",
-    "email": "support@aaogya.com",
-    "phone": "+91-9922345678"
+    "email": "aarogyaglobalforyou@gmail.com",
+    "phone": "+380 93 128 1076"
   },
   "bottomFooter": {
     "privacyPolicy": "/privacy-policy",
     "terms": "/terms-and-conditions"
   }
-} 
+}

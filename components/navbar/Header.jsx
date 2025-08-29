@@ -46,7 +46,7 @@ function Header() {
               <PhoneCall className="text-blue-600" />
               <div className="flex flex-col gap-2">
                 <p className="font-medium">Emergency Line</p>
-                <p className="font-semibold text-[#000D44]">+91 9876543212</p>
+                <p className="font-semibold text-[#000D44]">+380 93 128 1076</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -54,7 +54,7 @@ function Header() {
               <div className="flex flex-col gap-2">
                 <p className="font-medium">Support Email</p>
                 <p className="font-semibold text-[#000D44]">
-                  support@aarogya.com
+                  aarogyaglobalforyou@gmail.com
                 </p>
               </div>
             </div>

@@ -26,7 +26,7 @@ const ContactCard = () => {
               you make an appointment that's convenient for you.
             </div>
             <button className="bg-[#1E40FF] cursor-pointer text-white text-xs sm:text-sm font-semibold font-poppins w-full py-2 rounded-md flex items-center justify-center gap-2 hover:bg-[#1a39e6] transition-colors duration-300">
-              Call Support: +91 9876565678
+              Call Support: +380 93 128 1076
               <Image
                 src="/contact/phone-large.svg"
                 alt="call"

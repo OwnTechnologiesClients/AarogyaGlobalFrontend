@@ -52,7 +52,7 @@ const Footer = () => {
                     Emergency Line
                   </p>
                   <p className="text-[#000D44] text-sm md:text-base font-semibold">
-                    +91 9876543212
+                    +380 93 128 1076
                   </p>
                 </div>
               </div>
