@@ -62,7 +62,7 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label} className="relative group">
               <button
                 type="button"
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 xl:py-3 2xl:px-6 2xl:py-4 2xl:text-xl transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                   }`}
               >
                 {link.label}
@@ -91,7 +91,7 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 xl:py-3 2xl:px-6 2xl:py-4 2xl:text-xl transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                   }`}
               >
                 {link.label}

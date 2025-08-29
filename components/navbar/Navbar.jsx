@@ -55,7 +55,7 @@ const Navbar = ({
               alt="Logo"
               width={120}
               height={70}
-              className="h-11 w-auto object-contain"
+              className="h-11 2xl:h-16 w-auto object-contain"
               priority
             />
           </Link>
@@ -73,15 +73,15 @@ const Navbar = ({
               href="/login"
               className={`flex items-center gap-2 ${textColor} hover:text-[#04CE78] font-semibold transition-colors whitespace-nowrap cursor-pointer`}
             >
-              <UserCircle className="w-6 h-6" />
+              <UserCircle className="w-6 h-6 2xl:w-10 2xl:h-10" />
             </Link>
 
             <Link href="/appointment">
               <CustomButton
                 text="Make An Appointment"
-                textSize="text-sm"
+                textSize="text-sm 2xl:text-lg"
                 iconSize={28}
-                padding="px-3 py-2"
+                padding="px-3 py-2 2xl:px-8 2xl:py-4"
               />
             </Link>
           </div>

@@ -13,7 +13,7 @@ const NavbarToFilterLayout = () => {
         {/* Content */}
         <div className="relative z-30 py-2 md:py-4">
           <Navbar />
-          <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+          <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-4">
             <HeroInfo />
           </div>
         </div>
