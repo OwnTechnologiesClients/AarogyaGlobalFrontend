@@ -144,7 +144,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -206,7 +207,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -266,7 +268,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -325,7 +328,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -382,7 +386,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -841,7 +846,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1039,7 +1045,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1109,7 +1116,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "Accreditation; high breast‑surgery volume; availability of oncoplastic reconstruction; pathology turnaround; tumor board.",
           "hospitalSelectionList": [
@@ -1182,7 +1190,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "High surgeon and hospital volumes; continence/erectile function programs; multidisciplinary care.",
           "hospitalSelectionList": [
@@ -1255,7 +1264,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "High colorectal‑surgery volumes; stoma nurse; ICU; ERAS program.",
           "hospitalSelectionList": [
@@ -1329,7 +1339,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "Experienced gyn‑onc team; high‑volume cytoreduction program; MDT with medical oncology and radiology; nutrition and rehab support.",
           "hospitalSelectionList": [
@@ -1608,7 +1619,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1680,7 +1692,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1751,7 +1764,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1818,7 +1832,8 @@
             "HCHE001",
             "HMUM001",
             "HBEN001",
-            "HBEN002"
+            "HBEN002",
+            "HCHE002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -3008,6 +3023,119 @@
         "Teleconsultations",
         "Customized health packages",
         "Post-treatment follow-ups"
+      ]
+    },
+    {
+      "id": "HCHE002",
+      "name": "Gleneagles Global Health City",
+      "image": "/gleneagles/gleneagles-1.png",
+      "rating": "4.7",
+      "location": "Chennai, Tamil Nadu, India",
+      "address": "439, Cheran Nagar, Perumbakkam, Sholinganallur, Chennai, Tamil Nadu – 600100, India",
+      "doctorsCount": 250,
+      "specialties": [
+        "Liver, Kidney, Heart, Lung & Bone Marrow Transplants",
+        "Oncology (Medical, Surgical, Radiation, HIPEC)",
+        "Neurosurgery & Neurology",
+        "Cardiology & Cardiothoracic Surgery",
+        "Orthopedics & Joint Replacement",
+        "Gastroenterology & Hepatobiliary Surgery",
+        "Urology & Nephrology",
+        "Endocrinology",
+        "Pulmonology",
+        "ENT",
+        "Ophthalmology",
+        "Dermatology",
+        "Obstetrics & Gynaecology",
+        "Psychiatry",
+        "Emergency Medicine",
+        "Pediatrics & Pediatric Cardiac Surgery"
+      ],
+      "facilities": [
+        "Liver, Kidney, Heart, Lung & Bone Marrow Transplants",
+        "Oncology (Medical, Surgical, Radiation, HIPEC)",
+        "Neurosurgery & Neurology",
+        "Cardiology & Cardiothoracic Surgery",
+        "Orthopedics & Joint Replacement",
+        "Gastroenterology & Hepatobiliary Surgery",
+        "Urology & Nephrology",
+        "Endocrinology",
+        "Pulmonology",
+        "ENT",
+        "Ophthalmology",
+        "Dermatology",
+        "Obstetrics & Gynaecology",
+        "Psychiatry",
+        "Emergency Medicine",
+        "Pediatrics & Pediatric Cardiac Surgery"
+      ],
+      "treatments": [
+        "Organ Transplantation",
+        "Cancer Treatment",
+        "Neurosurgery",
+        "Cardiac Surgery",
+        "Orthopedic Surgery",
+        "Gastroenterology Surgery",
+        "Urology Surgery",
+        "Pediatric Surgery"
+      ],
+      "about": "Gleneagles Global Health City is one of South India's largest and most advanced multi-organ transplant centers. It is part of the IHH Healthcare network and is known for pioneering procedures like India's first adult swap liver transplant, uterus transplant, and minimally invasive lung transplant. The hospital integrates cutting-edge technology with compassionate care, attracting patients from over 50 countries.\n\nVision:\nTo be the most trusted destination for advanced healthcare in Asia.\n\nMission:\nTo deliver world-class medical care through innovation, integrity, and patient-centric excellence.",
+      "established": "1999",
+      "accreditation": [
+        "JCI",
+        "NABH",
+        "NABL"
+      ],
+      "contact": {
+        "phone": "+91-44-4477-7000",
+        "email": "info@gleneaglesglobal.com",
+        "website": "www.gleneaglesglobal.com"
+      },
+      "gallery": [
+        "/gleneagles/gleneagles-1.png",
+        "/gleneagles/gleneagles-2.png",
+        "/gleneagles/gleneagles-3.png",
+        "/gleneagles/gleneagles-4.png",
+        "/gleneagles/gleneagles-5.png"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Patient Review",
+          "rating": 4.7,
+          "comment": "Based on 7,962 patient reviews",
+          "date": "2024-01-15"
+        }
+      ],
+      "doctors": [],
+      "coordinates": {
+        "latitude": 12.8978488,
+        "longitude": 80.2061841
+      },
+      "hospitalStats": {
+        "userScore": "9.3",
+        "founded": "1999",
+        "patients": "Multiple specialties",
+        "doctors": "250+",
+        "sizeCapacity": "Beds: 1000+, ICU Beds: 300+, Operation Theatres: 17, Campus Size: 21 acres",
+        "clinicType": "Quaternary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Pediatric, Adult, Geriatric",
+        "googleRating": "4.7 (based on 7,962 reviews)"
+      },
+      "emergencySupport": "24/7 Emergency Services",
+      "opdHours": "OPD: 9 AM – 8 PM (Monday to Saturday)",
+      "accessibility": "By Air: 16 km from Chennai International Airport (~35 mins), By Train: 25 km from Chennai Central (~50 mins), By Car: Free parking (500+ spaces), valet service available, Nearby Hotels: Novotel, IBIS, Citadines, Vivanta, Fairfield by Marriott",
+      "mapLink": "https://www.google.com/maps/place/Gleneagles+HealthCity,+Perumbakkam+-+Sholinganallur,+Chennai/@12.8978488,80.2036092,17z/data=!4m14!1m7!3m6!1s0x3a525c0a673ba10f:0xcba7fa2ab4f51143!2sGleneagles+HealthCity,+Perumbakkam+-+Sholinganallur,+Chennai!8m2!3d12.8978488!4d80.2061841!16s%2Fg%2F11bbx05xd4!3m5!1s0x3a525c0a673ba10f:0xcba7fa2ab4f51143!8m2!3d12.8978488!4d80.2061841!16s%2Fg%2F11bbx05xd4?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "internationalServices": [
+        "Visa & travel assistance",
+        "Airport pickup & drop",
+        "Dedicated international desk",
+        "Language interpreters",
+        "Customized dietary options",
+        "Teleconsultations & follow-ups",
+        "Transparent pricing & insurance coordination",
+        "International lounge & concierge services"
       ]
     }
   ],
