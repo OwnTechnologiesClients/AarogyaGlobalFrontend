@@ -30,26 +30,48 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
 
   return (
     <div className="mb-8">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
-        <div className="flex gap-2">
+      {/* Mobile Layout - Centered */}
+      <div className="flex flex-col items-center mb-6 md:hidden">
+        <h3 className="text-xl font-bold text-gray-800 mb-4">{title}</h3>
+        <div className="flex gap-3">
           <button
             onClick={() => swiperRef.current?.swiper.slidePrev()}
-            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             aria-label="Previous hospitals"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={() => swiperRef.current?.swiper.slideNext()}
-            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             aria-label="Next hospitals"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
       </div>
-      
+
+      {/* Desktop/Laptop Layout - Original */}
+      <div className="hidden md:flex items-center justify-between mb-6">
+        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+        <div className="flex gap-3">
+          <button
+            onClick={() => swiperRef.current?.swiper.slidePrev()}
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            aria-label="Previous hospitals"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={() => swiperRef.current?.swiper.slideNext()}
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            aria-label="Next hospitals"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+      </div>
+
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
         <Swiper
           ref={swiperRef}

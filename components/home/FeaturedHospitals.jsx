@@ -111,7 +111,34 @@ const FeaturedHospitals = () => {
         alignment="center"
         className="text-base mt-6 mb-4"
       />
-      <div className="flex w-full justify-between items-center md:mb-8 mb-4">
+      {/* Mobile Layout - Centered */}
+      <div className="flex flex-col items-center md:mb-8 mb-4 md:hidden">
+        <h3 className="text-xl font-extrabold text-[#1A0142] leading-tight mb-6">
+          Aarogya Global Featured Hospitals
+        </h3>
+
+        <div className="flex gap-4">
+          <button
+            aria-label="Previous"
+            className="w-14 h-14 rounded-full bg-[#1F5FFF] flex items-center justify-center text-white text-2xl shadow-lg hover:bg-[#4B00B4] transition-colors"
+            onClick={() => swiperRef.current?.swiper.slidePrev()}
+            type="button"
+          >
+            <ChevronLeft size={32} />
+          </button>
+          <button
+            aria-label="Next"
+            className="w-14 h-14 rounded-full bg-[#1F5FFF] flex items-center justify-center text-white text-2xl shadow-lg hover:bg-[#4B00B4] transition-colors"
+            onClick={() => swiperRef.current?.swiper.slideNext()}
+            type="button"
+          >
+            <ChevronRight size={32} />
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop/Laptop Layout - Original */}
+      <div className="hidden md:flex w-full justify-between items-center md:mb-8 mb-4">
         <h3 className="text-xl md:text-3xl font-extrabold text-[#1A0142] leading-tight">
           Aarogya Global Featured Hospitals
         </h3>

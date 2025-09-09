@@ -78,17 +78,17 @@ const FilterBar = () => {
   return (
     <div className="w-full flex justify-center relative z-50 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 mb-2 sm:mb-3 md:mb-4 lg:mb-5">
       {/* Main Filter Container */}
-      <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 w-full max-w-[1400px] relative z-50 shadow-2xl backdrop-blur-sm">
+      <div className="bg-white/40 rounded-xl sm:rounded-2xl border border-gray-200/50 w-full max-w-[1400px] relative z-50 shadow-2xl backdrop-blur-sm">
         {/* Toggle Buttons - Enhanced responsive positioning */}
         <div className="absolute -top-6 sm:-top-8 md:-top-10 lg:-top-12 xl:-top-14 left-1/2 transform -translate-x-1/2 z-[60] w-full max-w-fit px-2 sm:px-3 md:px-4">
-          <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 bg-white rounded-lg md:rounded-xl p-1.5 sm:p-2 md:p-3 lg:p-4 xl:p-5 justify-center border border-gray-200 shadow-lg backdrop-blur-sm">
+          <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 bg-white/80 rounded-lg md:rounded-xl p-1.5 sm:p-2 md:p-3 lg:p-4 xl:p-5 justify-center border border-gray-200/50 shadow-lg backdrop-blur-sm">
             {filters.toggles.map((toggle) => (
               <button
                 key={toggle.value}
                 className={`px-2.5 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 rounded-md font-semibold transition-all duration-200 text-xs sm:text-sm md:text-base focus:outline-none whitespace-nowrap min-w-fit cursor-pointer select-none relative z-[70]
               ${activeToggle === toggle.value
                     ? "bg-[#04CE78] text-white shadow-md border border-transparent"
-                    : "bg-white text-[#000D44] hover:bg-gray-50 border-2 border-[#000D44]"
+                    : "bg-white/90 text-[#000D44] hover:bg-white/70 border-2 border-[#000D44]/80"
                   }`}
                 onClick={(e) => {
                   e.preventDefault();
