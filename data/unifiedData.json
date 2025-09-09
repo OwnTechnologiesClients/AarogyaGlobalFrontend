@@ -142,7 +142,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -202,7 +203,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -260,7 +262,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -317,7 +320,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -372,7 +376,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -829,7 +834,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1025,7 +1031,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1093,7 +1100,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "Accreditation; high breast‑surgery volume; availability of oncoplastic reconstruction; pathology turnaround; tumor board.",
           "hospitalSelectionList": [
@@ -1164,7 +1172,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "High surgeon and hospital volumes; continence/erectile function programs; multidisciplinary care.",
           "hospitalSelectionList": [
@@ -1235,7 +1244,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "High colorectal‑surgery volumes; stoma nurse; ICU; ERAS program.",
           "hospitalSelectionList": [
@@ -1307,7 +1317,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "Experienced gyn‑onc team; high‑volume cytoreduction program; MDT with medical oncology and radiology; nutrition and rehab support.",
           "hospitalSelectionList": [
@@ -1584,7 +1595,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1654,7 +1666,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1723,7 +1736,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1788,7 +1802,8 @@
             "HDEL0003",
             "HDEL0004",
             "HCHE001",
-            "HMUM001"
+            "HMUM001",
+            "HBEN001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -2755,6 +2770,116 @@
         "Concierge & transport services",
         "Customized health packages",
         "Cultural dietary options",
+        "Post-treatment follow-ups"
+      ]
+    },
+    {
+      "id": "HBEN001",
+      "name": "Manipal Hospital",
+      "image": "/manipal/manipal-1.png",
+      "rating": "4.6",
+      "location": "Bengaluru, Karnataka, India",
+      "address": "98, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka – 560017, India",
+      "doctorsCount": 2000,
+      "specialties": [
+        "Oncology (Surgical, Medical, Radiation)",
+        "Cardiology & Cardiothoracic Surgery",
+        "Neurology & Neurosurgery",
+        "Orthopedics & Spine Surgery",
+        "Gastroenterology",
+        "Nephrology & Urology",
+        "ENT & Cochlear Implants",
+        "Pediatrics & Pediatric Surgery",
+        "IVF & Reproductive Medicine",
+        "General Surgery",
+        "Cosmetology & Plastic Surgery",
+        "Gender Reassignment Surgery",
+        "Pulmonology",
+        "Internal Medicine"
+      ],
+      "facilities": [
+        "24/7 Emergency & Trauma Care",
+        "Advanced ICU & NICU",
+        "Robotic Surgery",
+        "Comprehensive Cancer Centre",
+        "Rehabilitation Services (Physiotherapy, Speech, Occupational Therapy)",
+        "In-house Pharmacy",
+        "Cafeteria, Parking, Spacious Waiting Areas",
+        "Health Packages for all age groups",
+        "Advanced Equipment:",
+        "128-slice CT Scanner",
+        "3 Tesla MRI",
+        "PET-CT",
+        "Digital Mammography",
+        "Modular Operation Theatres",
+        "Molecular Biology & Toxicology Labs"
+      ],
+      "treatments": [
+        "Cancer Treatment",
+        "Cardiac Surgery",
+        "Neurosurgery",
+        "Orthopedic Surgery",
+        "Spine Surgery",
+        "IVF Treatment",
+        "Cochlear Implants",
+        "Gender Reassignment Surgery",
+        "Plastic Surgery"
+      ],
+      "about": "Manipal Hospital Bengaluru is the flagship facility of the Manipal Hospitals Group, one of India's largest healthcare networks. Known for its evidence-based practices and patient-first philosophy, the hospital has been a pioneer in medical research and innovation. It attracts patients from across India and abroad for its clinical excellence and compassionate care.\n\nVision:\nTo be the most respected and preferred healthcare provider in India.\n\nMission:\nTo deliver affordable, accessible, and quality healthcare through innovation and excellence.",
+      "established": "1991",
+      "accreditation": [
+        "NABH"
+      ],
+      "contact": {
+        "phone": "+91-80-2502-4444",
+        "email": "info@manipalhospitals.com",
+        "website": "www.manipalhospitals.com"
+      },
+      "gallery": [
+        "/manipal/manipal-1.png",
+        "/manipal/manipal-2.png",
+        "/manipal/manipal-3.png",
+        "/manipal/manipal-4.png",
+        "/manipal/manipal-5.png",
+        "/manipal/manipal-6.png"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Patient Review",
+          "rating": 4.6,
+          "comment": "Based on 25,000+ patient reviews",
+          "date": "2024-01-15"
+        }
+      ],
+      "doctors": [],
+      "coordinates": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "hospitalStats": {
+        "userScore": "9.0",
+        "founded": "1991",
+        "patients": "Multiple specialties",
+        "doctors": "2000+ across the Manipal network",
+        "sizeCapacity": "Beds: 600+, ICU Beds: 144+, Operating Theatres: 20 Modular OTs",
+        "clinicType": "Tertiary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Pediatric, Adult, Geriatric",
+        "googleRating": "4.6 (based on 25k+ patient reviews)"
+      },
+      "emergencySupport": "24/7 Emergency Services",
+      "opdHours": "OPD: 9 AM – 8 PM (Monday to Saturday)",
+      "accessibility": "By Air: 18 km from Kempegowda International Airport (~40 mins), By Train: 12 km from Bengaluru City Railway Station (~24 mins), By Metro: 3 km from Indiranagar Metro Station (~13 mins), By Car: Free parking (500+ spaces), valet service available",
+      "mapLink": "https://www.google.com/maps/dir//Manipal+Hospitals,+98,+HAL+Old+Airport+Rd,+Kodihalli,+Bengaluru,+Karnataka+560017/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bae13c0c0c6206b:0x12d8d4c39197c7dd?sa=X&ved=1t:57443&ictx=111",
+      "internationalServices": [
+        "Visa & travel assistance",
+        "Priority appointments",
+        "Multilingual interpreters",
+        "Teleconsultations",
+        "Accommodation for attendants",
+        "Concierge & transport services",
+        "Customized health packages",
         "Post-treatment follow-ups"
       ]
     }
