@@ -143,7 +143,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -204,7 +205,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -263,7 +265,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -321,7 +324,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -377,7 +381,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -835,7 +840,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1032,7 +1038,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1101,7 +1108,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "Accreditation; high breast‑surgery volume; availability of oncoplastic reconstruction; pathology turnaround; tumor board.",
           "hospitalSelectionList": [
@@ -1173,7 +1181,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "High surgeon and hospital volumes; continence/erectile function programs; multidisciplinary care.",
           "hospitalSelectionList": [
@@ -1245,7 +1254,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "High colorectal‑surgery volumes; stoma nurse; ICU; ERAS program.",
           "hospitalSelectionList": [
@@ -1318,7 +1328,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "Experienced gyn‑onc team; high‑volume cytoreduction program; MDT with medical oncology and radiology; nutrition and rehab support.",
           "hospitalSelectionList": [
@@ -1596,7 +1607,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1667,7 +1679,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1737,7 +1750,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1803,7 +1817,8 @@
             "HDEL0004",
             "HCHE001",
             "HMUM001",
-            "HBEN001"
+            "HBEN001",
+            "HBEN002"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -2879,6 +2894,118 @@
         "Teleconsultations",
         "Accommodation for attendants",
         "Concierge & transport services",
+        "Customized health packages",
+        "Post-treatment follow-ups"
+      ]
+    },
+    {
+      "id": "HBEN002",
+      "name": "Narayana Health City",
+      "image": "/narayana/narayana-1.png",
+      "rating": "4.7",
+      "location": "Bengaluru, Karnataka, India",
+      "address": "143b, Hebbagodi, Bommasandra Industrial Area, Bengaluru, Karnataka – 560099, India",
+      "doctorsCount": 1000,
+      "specialties": [
+        "Cardiology & Cardiothoracic Surgery",
+        "Oncology (Mazumdar Shaw Cancer Center)",
+        "Neurology & Neurosurgery",
+        "Orthopedics & Spine Surgery",
+        "Gastroenterology",
+        "Nephrology & Urology",
+        "Liver, Kidney & Bone Marrow Transplants",
+        "Pediatric Surgery",
+        "Endocrinology",
+        "Pulmonology",
+        "Ophthalmology",
+        "ENT",
+        "Plastic & Reconstructive Surgery"
+      ],
+      "facilities": [
+        "Narayana Institute of Cardiac Sciences",
+        "Mazumdar Shaw Medical Center (Cancer & Transplants)",
+        "5 Digital Cath Labs including Hybrid Cath Lab",
+        "Dedicated Cardiac OTs",
+        "India's Largest Bone Marrow Transplant Unit",
+        "Level III NICU & PICU",
+        "24/7 Emergency & Trauma Services",
+        "In-house Pharmacy & Cafeteria",
+        "Family Accommodation & Prayer Rooms",
+        "Health Check Packages",
+        "Dedicated Patient Care Managers",
+        "Advanced Equipment:",
+        "Intraoperative MRI & CT",
+        "PET-CT & SPECT",
+        "Robotic Surgery Systems",
+        "High-Precision Radiation Therapy",
+        "Modular Operation Theatres",
+        "Advanced Pathology & Imaging Labs"
+      ],
+      "treatments": [
+        "Cardiac Surgery",
+        "Cancer Treatment",
+        "Neurosurgery",
+        "Orthopedic Surgery",
+        "Spine Surgery",
+        "Organ Transplantation",
+        "Bone Marrow Transplant",
+        "Pediatric Surgery",
+        "Plastic Surgery"
+      ],
+      "about": "Narayana Health City is the flagship campus of Narayana Health, founded by renowned cardiac surgeon Dr. Devi Shetty. It is home to some of the largest and most advanced cardiac and cancer hospitals in the world. The hospital is known for its commitment to affordable healthcare without compromising quality, serving both domestic and international patients.\n\nVision:\nTo deliver high-quality healthcare that is affordable and accessible to all.\n\nMission:\nTo provide world-class medical care with compassion, innovation, and integrity.",
+      "established": "2001",
+      "accreditation": [
+        "JCI",
+        "NABH"
+      ],
+      "contact": {
+        "phone": "+91-80-6750-6750",
+        "email": "info@narayanahealth.com",
+        "website": "www.narayanahealth.com"
+      },
+      "gallery": [
+        "/narayana/narayana-1.png",
+        "/narayana/narayana-3.png",
+        "/narayana/narayana-4.png",
+        "/narayana/narayana-5.png",
+        "/narayana/narayana-6.png"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Patient Review",
+          "rating": 4.7,
+          "comment": "Based on 3,641 patient reviews",
+          "date": "2024-01-15"
+        }
+      ],
+      "doctors": [],
+      "coordinates": {
+        "latitude": 12.8091968,
+        "longitude": 77.6950971
+      },
+      "hospitalStats": {
+        "userScore": "9.1",
+        "founded": "2001",
+        "patients": "Multiple specialties",
+        "doctors": "1,000+ across the Narayana Health network",
+        "sizeCapacity": "Beds: 6,900+ across 26 hospitals",
+        "clinicType": "Tertiary & Quaternary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Pediatric, Adult, Geriatric",
+        "googleRating": "4.7 (based on 3,641 reviews)"
+      },
+      "emergencySupport": "24/7 Emergency Services",
+      "opdHours": "OPD: 9 AM – 8 PM (Monday to Saturday)",
+      "accessibility": "By Air: 52 km from Kempegowda International Airport (~1 hr 15 mins), By Train: 25 km from Bengaluru City Railway Station (~45 mins), By Car: Free parking (500+ spaces), valet service available, Nearby Hotels: Keys Select, Lemon Tree, Radha Regent",
+      "mapLink": "https://www.google.com/maps/place/Narayana+Health+City/@12.8091968,77.6925222,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae6d92c697eb31:0x77ddda80dabce1ec!8m2!3d12.8091968!4d77.6950971!16s%2Fg%2F11g1y4twfm?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "internationalServices": [
+        "Visa registration & assistance",
+        "Airport transfers",
+        "Interpreter services (English, Hindi, Bengali)",
+        "Flight & hotel booking",
+        "Dedicated international desk",
+        "Teleconsultations",
         "Customized health packages",
         "Post-treatment follow-ups"
       ]
