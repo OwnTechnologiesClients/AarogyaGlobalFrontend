@@ -5,7 +5,10 @@ import HospitalDetailsClient from './HospitalDetailsClient';
 export async function generateStaticParams() {
   try {
     console.log('DataService data keys:', Object.keys(dataService.data));
-    console.log('Global hospitals data:', dataService.data.globalHospitals);
+
+    // Always ensure key hospitals are included first
+    const keyHospitals = ["HDEL0001", "HDEL0002", "HDEL0003", "HDEL0004", "HCHE001", "HMUM001"];
+    let result = keyHospitals.map(hospitalId => ({ hospitalId }));
 
     const allHospitals = [];
 
@@ -27,37 +30,19 @@ export async function generateStaticParams() {
     // Debug logging
     console.log('Total hospitals found:', allHospitals.length);
     console.log('Global hospitals count:', dataService.data.globalHospitals?.length || 0);
-    console.log('First few hospitals:', allHospitals.slice(0, 3).map(h => ({ id: h.id, name: h.name })));
-    console.log('All hospital IDs:', allHospitals.map(h => h.id));
 
-    // Deduplicate by ID (keep the first occurrence)
-    const uniqueHospitals = [];
-    const seenIds = new Set();
+    // Deduplicate by ID and add any additional hospitals
+    const seenIds = new Set(keyHospitals);
 
     for (const hospital of allHospitals) {
       if (hospital && hospital.id && !seenIds.has(hospital.id)) {
         seenIds.add(hospital.id);
-        uniqueHospitals.push(hospital);
-      }
-    }
-
-    console.log('Unique hospitals count:', uniqueHospitals.length);
-    console.log('Unique hospital IDs:', uniqueHospitals.slice(0, 5).map(h => h.id));
-
-    let result = uniqueHospitals.map((hospital) => ({
-      hospitalId: hospital.id.toString(),
-    }));
-
-    // Ensure key hospitals are included
-    const keyHospitals = ["HDEL0001", "HDEL0002", "HDEL0003", "HDEL0004", "HCHE001"];
-    for (const hospitalId of keyHospitals) {
-      if (!result.some(r => r.hospitalId === hospitalId)) {
-        result.unshift({ hospitalId });
-        console.log(`Added ${hospitalId} to result`);
+        result.push({ hospitalId: hospital.id.toString() });
       }
     }
 
     console.log('Final result:', result);
+    console.log('Total unique hospitals:', result.length);
     return result;
   } catch (error) {
     console.error('Error in generateStaticParams:', error);
@@ -67,7 +52,8 @@ export async function generateStaticParams() {
       { hospitalId: "HDEL0002" },
       { hospitalId: "HDEL0003" },
       { hospitalId: "HDEL0004" },
-      { hospitalId: "HCHE001" }
+      { hospitalId: "HCHE001" },
+      { hospitalId: "HMUM001" }
     ];
   }
 }
