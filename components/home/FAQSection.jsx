@@ -84,7 +84,7 @@ export default function FAQSection() {
         </div>
         {/* Right: FAQ Accordion */}
         <div className="flex-1 flex flex-col gap-4">
-          {faqData.map((faq, idx) => {
+          {faqData.slice(0, 5).map((faq, idx) => {
             const isOpen = open === `faq-${idx}`;
             return (
               <div
@@ -112,6 +112,15 @@ export default function FAQSection() {
               </div>
             );
           })}
+          {/* See All Button */}
+          <div className="mt-4 flex justify-center">
+            <Link href="/faq">
+              <button className="inline-flex items-center gap-2 text-[#1F5FFF] hover:text-[#4B00B4] font-medium text-sm md:text-base transition-colors duration-200">
+                See All FAQs
+                <ArrowRight size={16} />
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
