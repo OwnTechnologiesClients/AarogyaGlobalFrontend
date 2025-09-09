@@ -140,7 +140,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -198,7 +199,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -254,7 +256,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -309,7 +312,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -362,7 +366,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -817,7 +822,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1011,7 +1017,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1077,7 +1084,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "Accreditation; high breast‑surgery volume; availability of oncoplastic reconstruction; pathology turnaround; tumor board.",
           "hospitalSelectionList": [
@@ -1146,7 +1154,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "High surgeon and hospital volumes; continence/erectile function programs; multidisciplinary care.",
           "hospitalSelectionList": [
@@ -1215,7 +1224,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "High colorectal‑surgery volumes; stoma nurse; ICU; ERAS program.",
           "hospitalSelectionList": [
@@ -1285,7 +1295,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "Experienced gyn‑onc team; high‑volume cytoreduction program; MDT with medical oncology and radiology; nutrition and rehab support.",
           "hospitalSelectionList": [
@@ -1560,7 +1571,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1628,7 +1640,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1695,7 +1708,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1758,7 +1772,8 @@
             "HDEL0001",
             "HDEL0002",
             "HDEL0003",
-            "HDEL0004"
+            "HDEL0004",
+            "HCHE001"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -2485,6 +2500,118 @@
       "opdHours": "OPD Hours 9 am to 8 pm (Monday - Saturday)",
       "accessibility": "35 mins from IG International Airport (21 km), By Car: Free parking (500+ spaces), valet service available, By Bus: Medical Center (50m), Central Station (200m), By Metro: Central Metro Station – 5 min walk (Blue Line, Red Line), By Air: Delhi Airport – 45 min drive, airport shuttle available",
       "mapLink": "https://www.google.com/maps/place/Artemis+Hospital+Gurgaon/data=!4m2!3m1!1s0x0:0x404085140375fa28?sa=X&ved=1t:2428&ictx=111",
+      "internationalServices": [
+        "Visa & travel assistance",
+        "Multilingual interpreters",
+        "Dedicated international desk",
+        "Teleconsultations & medical record transfers",
+        "Customized dietary options",
+        "Concierge & accommodation support",
+        "Insurance coordination",
+        "Psychological & nutritional counseling"
+      ]
+    },
+    {
+      "id": "HCHE001",
+      "name": "Apollo Hospital",
+      "image": "/apollo/apollo-1.png",
+      "rating": "4.7",
+      "location": "Chennai, Tamil Nadu, India",
+      "address": "21, Greams Lane, Off Greams Road, Chennai – 600006, Tamil Nadu, India",
+      "doctorsCount": 600,
+      "specialties": [
+        "Cardiology & Cardiothoracic Surgery",
+        "Oncology (Medical, Surgical, Radiation)",
+        "Neurosciences & Neurosurgery",
+        "Gastroenterology & GI Surgery",
+        "Orthopedics & Joint Replacement",
+        "Urology & Nephrology",
+        "Liver & Kidney Transplants",
+        "Endocrinology",
+        "Pulmonology",
+        "Rheumatology",
+        "Plastic & Reconstructive Surgery",
+        "Pediatrics",
+        "ENT",
+        "Ophthalmology",
+        "Psychiatry",
+        "Dermatology"
+      ],
+      "facilities": [
+        "24/7 Emergency & Trauma Care",
+        "Advanced ICU & Critical Care Units",
+        "Robotic Surgery Center (Da Vinci)",
+        "Gamma Knife Radiosurgery",
+        "PET-CT Scanner",
+        "Proton Therapy for Cancer",
+        "Rehabilitation & Physiotherapy Units",
+        "In-house Pharmacy",
+        "VIP & Suite Rooms for International Patients",
+        "Helipad for Emergency Transfers",
+        "Advanced Equipment:",
+        "MRI & CT Imaging",
+        "Cardiac Cath Labs",
+        "Minimally Invasive Surgery Tools",
+        "Robotic Surgical Systems"
+      ],
+      "treatments": [
+        "Cardiac Surgery",
+        "Cancer Treatment",
+        "Organ Transplantation",
+        "Robotic Surgery",
+        "Minimally Invasive Procedures",
+        "Neurosurgery",
+        "Orthopedic Surgery"
+      ],
+      "about": "Apollo Hospitals Chennai is the flagship facility of the Apollo Group, established in 1983. It is one of India's most respected healthcare institutions, known for pioneering advanced treatments and international standards of care. With over 60 departments and a strong focus on research, education, and innovation, Apollo Chennai is a preferred destination for patients from India and abroad.\n\nVision:\nTo bring healthcare of international standards within the reach of every individual.\n\nMission:\nTo achieve and uphold excellence in healthcare, research, and education.",
+      "established": "1983",
+      "accreditation": [
+        "JCI",
+        "NABH"
+      ],
+      "certificates": "JCI, NABH",
+      "contact": {
+        "phone": "+91-44-2829-3333",
+        "email": "info@apollohospitals.com",
+        "website": "www.apollohospitals.com"
+      },
+      "gallery": [
+        "/apollo/apollo-1.png",
+        "/apollo/apollo-2.png",
+        "/apollo/apollo-3.png",
+        "/apollo/apollo-4.png",
+        "/apollo/apollo-6.png",
+        "/apollo/apollo-7.png"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Patient Review",
+          "rating": 4.7,
+          "comment": "Based on 53,000 patient reviews on Google",
+          "date": "2024-01-15"
+        }
+      ],
+      "doctors": [],
+      "coordinates": {
+        "latitude": 13.0631824,
+        "longitude": 80.2515375
+      },
+      "hospitalStats": {
+        "userScore": "9.7",
+        "founded": "1983",
+        "patients": "Multiple specialties",
+        "doctors": "600+",
+        "sizeCapacity": "Beds: 600+",
+        "clinicType": "Quaternary Care Multi-Specialty",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Pediatric, Adult, Geriatric",
+        "googleRating": "4.7 (based on patient reviews)"
+      },
+      "emergencySupport": "24/7 Emergency Services",
+      "opdHours": "OPD: 9 AM – 8 PM (Monday to Saturday)",
+      "accessibility": "By Air: 17 km from Chennai International Airport, By Train: 5 km from Chennai Central Railway Station, By Car: Free parking (500+ spaces), valet service available, Nearby Hotels: Taj Coromandel, The Park Chennai, Courtyard by Marriott",
+      "mapLink": "https://www.google.com/maps/place/Apollo+Hospital+Greams+Lane+Chennai/data=!4m7!3m6!1s0x3a52666accdfbb59:0x2e0d1b10a5e06d2f!8m2!3d13.0631824!4d80.2515375!16s%2Fg%2F1tgn811b!19sChIJWbvfzGpmUjoRL23gpRAbDS4?authuser=0&hl=en&rclk=1",
       "internationalServices": [
         "Visa & travel assistance",
         "Multilingual interpreters",

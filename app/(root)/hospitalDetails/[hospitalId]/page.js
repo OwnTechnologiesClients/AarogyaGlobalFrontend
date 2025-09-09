@@ -44,14 +44,17 @@ export async function generateStaticParams() {
     console.log('Unique hospitals count:', uniqueHospitals.length);
     console.log('Unique hospital IDs:', uniqueHospitals.slice(0, 5).map(h => h.id));
 
-    let result = uniqueHospitals.slice(0, 15).map((hospital) => ({
+    let result = uniqueHospitals.map((hospital) => ({
       hospitalId: hospital.id.toString(),
     }));
 
-    // Ensure HDEL0001 is included
-    if (!result.some(r => r.hospitalId === "HDEL0001")) {
-      result.unshift({ hospitalId: "HDEL0001" });
-      console.log('Added HDEL0001 to result');
+    // Ensure key hospitals are included
+    const keyHospitals = ["HDEL0001", "HDEL0002", "HDEL0003", "HDEL0004", "HCHE001"];
+    for (const hospitalId of keyHospitals) {
+      if (!result.some(r => r.hospitalId === hospitalId)) {
+        result.unshift({ hospitalId });
+        console.log(`Added ${hospitalId} to result`);
+      }
     }
 
     console.log('Final result:', result);
@@ -61,8 +64,10 @@ export async function generateStaticParams() {
     // Fallback to ensure we at least generate some params
     return [
       { hospitalId: "HDEL0001" },
-      { hospitalId: "2" },
-      { hospitalId: "3" }
+      { hospitalId: "HDEL0002" },
+      { hospitalId: "HDEL0003" },
+      { hospitalId: "HDEL0004" },
+      { hospitalId: "HCHE001" }
     ];
   }
 }

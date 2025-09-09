@@ -210,6 +210,15 @@ const HospitalFeatures = ({ hospital }) => {
 
       {/* Certifications & Accreditations */}
       <CertificateSwiper
+        certificates={hospital?.accreditation?.map(acc => ({
+          name: `${acc} Accreditation`,
+          logo: acc === 'JCI' ? '/CertificatesImg/img3.png' :
+            acc === 'NABH' ? '/CertificatesImg/img2.png' :
+              acc === 'NABL' ? '/CertificatesImg/img4.png' : '/CertificatesImg/img1.png',
+          description: acc === 'JCI' ? 'Joint Commission International' :
+            acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
+              acc === 'NABL' ? 'National Accreditation Board for Testing' : acc
+        })) || []}
         variant="default"
         title="Certifications & Accreditations"
         showNavigation={true}
