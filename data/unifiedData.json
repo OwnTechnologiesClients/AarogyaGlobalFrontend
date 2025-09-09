@@ -139,7 +139,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -196,7 +197,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -251,7 +253,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -305,7 +308,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -357,7 +361,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -811,7 +816,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1004,7 +1010,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1069,7 +1076,8 @@
           "hospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "Accreditation; high breast‑surgery volume; availability of oncoplastic reconstruction; pathology turnaround; tumor board.",
           "hospitalSelectionList": [
@@ -1137,7 +1145,8 @@
           "hospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "High surgeon and hospital volumes; continence/erectile function programs; multidisciplinary care.",
           "hospitalSelectionList": [
@@ -1205,7 +1214,8 @@
           "hospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "High colorectal‑surgery volumes; stoma nurse; ICU; ERAS program.",
           "hospitalSelectionList": [
@@ -1274,7 +1284,8 @@
           "hospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "Experienced gyn‑onc team; high‑volume cytoreduction program; MDT with medical oncology and radiology; nutrition and rehab support.",
           "hospitalSelectionList": [
@@ -1548,7 +1559,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1615,7 +1627,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1681,7 +1694,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -1743,7 +1757,8 @@
           "topHospitals": [
             "HDEL0001",
             "HDEL0002",
-            "HDEL0003"
+            "HDEL0003",
+            "HDEL0004"
           ],
           "hospitalSelectionCriteria": "What helps to find the best hospital?",
           "hospitalSelectionList": [
@@ -2382,6 +2397,104 @@
       "opdHours": "OPD Hours 9 am to 8 pm (Monday - Saturday)",
       "accessibility": "20 mins from IG International Airport (13 km), Near Malviya Nagar Metro station",
       "mapLink": "https://www.google.com/maps/dir//max+saket/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x390ce1f427d4c5fb:0x582d47bbf4970bc1?sa=X&ved=2ahUKEwjmobCkg8jsAhXhwjgGHUKZCbEQ9RcwDnoECBsQBQ"
+    },
+    {
+      "id": "HDEL0004",
+      "name": "Artemis Hospital",
+      "image": "/artemis/artemis-1.png",
+      "rating": "4.1",
+      "location": "Gurugram, Delhi NCR, Haryana",
+      "address": "Sector 51, Gurugram, Haryana 122001",
+      "doctorsCount": 300,
+      "specialties": [
+        "Cardiology",
+        "Neurology",
+        "Gastroenterology",
+        "Oncology",
+        "Nephrology & Kidney Transplant",
+        "Orthopedics & Joint Replacement",
+        "Urology & Kidney Transplant",
+        "Liver Transplant & Hepatology"
+      ],
+      "facilities": [
+        "Gamma Knife – Gold Standard for Brain Tumor Surgery",
+        "Robotic Surgery – Da Vinci",
+        "NABH Accredited Healthcare Treatment",
+        "CAT Lab – State-of-the-art Cardiac Catheterization Laboratory",
+        "Minimally Invasive Procedures – Modern medical facility for patient care",
+        "Hybrid OT's – Modern medical facility for patient care",
+        "Advanced Medical Equipment:",
+        "MRI Scanner – State-of-the-art detailed imaging",
+        "Cardiac Cath Lab – State-of-the-art cardiac catheterization laboratory"
+      ],
+      "treatments": [
+        "Cardiac Surgery",
+        "Brain Tumor Surgery",
+        "Cancer Treatment",
+        "Organ Transplantation",
+        "Robotic Surgery",
+        "Minimally Invasive Procedures"
+      ],
+      "about": "Artemis Hospitals is a leading integrated healthcare delivery service provider in India. The 9-acre campus features a 500+ bed facility and offers advanced medical services.\n\nA trailblazer in the healthcare landscape of Gurgaon, Artemis Health Institute scripted history by becoming the first hospital in the region to receive accreditation from the prestigious Joint Commission International (JCI) in 2013. This remarkable feat underscored Artemis's unwavering dedication to global standards of quality, patient safety, and exceptional healthcare delivery.\n\nThe hospital's state-of-the-art infrastructure, cutting-edge medical technology, and a team of highly skilled healthcare professionals have collectively positioned Artemis as a beacon of transformative healthcare solutions.\n\nVision:\nTo create a world-class integrated healthcare delivery system in India entailing the finest medical skills combined with compassionate patient care.\n\nMission:\nTo deliver an easily accessible health system to all sections of society with excellence in clinical outcomes and patient experience at an affordable cost.",
+      "established": "2007",
+      "accreditation": [
+        "JCI",
+        "NABH",
+        "NABL"
+      ],
+      "contact": {
+        "phone": "+91-124-496-7000",
+        "email": "info@artemishospitals.com",
+        "website": "www.artemishospitals.com"
+      },
+      "gallery": [
+        "/artemis/artemis-1.png",
+        "/artemis/artemis-2.png",
+        "/artemis/artemis-3.png",
+        "/artemis/artemis-4.png",
+        "/artemis/artemis-5.png",
+        "/artemis/artemis-6.png",
+        "/artemis/artemis-7.png"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "patientName": "Patient Review",
+          "rating": 4.1,
+          "comment": "Based on 5,541 patient reviews on Google",
+          "date": "2024-01-15"
+        }
+      ],
+      "doctors": [],
+      "coordinates": {
+        "latitude": 28.4595,
+        "longitude": 77.0266
+      },
+      "hospitalStats": {
+        "userScore": "9.2",
+        "founded": "2007",
+        "patients": "1.5 Lac OPD",
+        "doctors": "300+",
+        "sizeCapacity": "Patient Beds: 750+",
+        "clinicType": "Super-Specialty (Multi-Specialty)",
+        "typeOfCare": "Inpatient, Outpatient, Emergency, Daycare",
+        "ageGroup": "Kids, Adults, Geriatric",
+        "googleRating": "4.1 (based on patient reviews)"
+      },
+      "emergencySupport": "24/7 365 days Emergency Support",
+      "opdHours": "OPD Hours 9 am to 8 pm (Monday - Saturday)",
+      "accessibility": "35 mins from IG International Airport (21 km), By Car: Free parking (500+ spaces), valet service available, By Bus: Medical Center (50m), Central Station (200m), By Metro: Central Metro Station – 5 min walk (Blue Line, Red Line), By Air: Delhi Airport – 45 min drive, airport shuttle available",
+      "mapLink": "https://www.google.com/maps/place/Artemis+Hospital+Gurgaon/data=!4m2!3m1!1s0x0:0x404085140375fa28?sa=X&ved=1t:2428&ictx=111",
+      "internationalServices": [
+        "Visa & travel assistance",
+        "Multilingual interpreters",
+        "Dedicated international desk",
+        "Teleconsultations & medical record transfers",
+        "Customized dietary options",
+        "Concierge & accommodation support",
+        "Insurance coordination",
+        "Psychological & nutritional counseling"
+      ]
     }
   ],
   "globalDoctors": [
