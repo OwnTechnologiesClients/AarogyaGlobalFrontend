@@ -2157,7 +2157,7 @@
       "rating": "4.5",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
-      "doctorsCount": 14,
+      "doctorsCount": 15,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2355,6 +2355,16 @@
           "experience": "26+ years",
           "location": "Jaipur, India",
           "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0020",
+          "name": "Dr. Bhushan Nariani",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-bhushan-nariani.jpg",
+          "rating": "4.9",
+          "experience": "20+ years",
+          "location": "New Delhi, India",
+          "hospital": "BLK-Max Super Speciality Hospital"
         }
       ],
       "coordinates": {
@@ -2475,7 +2485,7 @@
       "rating": "4.2",
       "location": "New Delhi, Delhi",
       "address": "1-2, Press Enclave Road, Saket, New Delhi",
-      "doctorsCount": 531,
+      "doctorsCount": 534,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2562,6 +2572,36 @@
           "experience": "40+ years",
           "location": "Delhi NCR, India",
           "hospital": "Max Super Speciality Hospital, Saket"
+        },
+        {
+          "id": "DOC0016",
+          "name": "Dr. Ramneek Mahajan",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-ramneek-mahajan.jpg",
+          "rating": "4.9",
+          "experience": "26+ years",
+          "location": "New Delhi, India",
+          "hospital": "Max Super Speciality Hospital, Saket"
+        },
+        {
+          "id": "DOC0017",
+          "name": "Dr. (Prof.) Anil Arora",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-anil-arora.jpg",
+          "rating": "4.9",
+          "experience": "37+ years",
+          "location": "Delhi NCR, India",
+          "hospital": "Max Super Speciality Hospital, Patparganj"
+        },
+        {
+          "id": "DOC0019",
+          "name": "Dr. Sujoy Bhattacharjee",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-sujoy-bhattacharjee.png",
+          "rating": "4.9",
+          "experience": "26+ years",
+          "location": "New Delhi, India",
+          "hospital": "Max Smart Super Speciality Hospital, Saket"
         }
       ],
       "coordinates": {
@@ -2801,7 +2841,7 @@
       "rating": "4.7",
       "location": "Mumbai, Maharashtra, India",
       "address": "Rao Saheb Achutrao Patwardhan Marg, Four Bungalows, Andheri West, Mumbai, Maharashtra – 400053, India",
-      "doctorsCount": 410,
+      "doctorsCount": 411,
       "specialties": [
         "Neurosurgery & Neurology",
         "Oncology (Medical, Surgical, Radiation)",
@@ -2882,7 +2922,18 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [],
+      "doctors": [
+        {
+          "id": "DOC0018",
+          "name": "Dr. Pradeep B. Bhosale",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-pradeep-b-bhosale.jpg",
+          "rating": "4.9",
+          "experience": "37+ years",
+          "location": "Mumbai, India",
+          "hospital": "Nanavati Max Super Speciality Hospital"
+        }
+      ],
       "coordinates": {
         "latitude": 19.1197,
         "longitude": 72.8464
@@ -4758,6 +4809,487 @@
         "Former President/Office Bearer: Indian Orthopaedic Association, Indian Arthroplasty Association, Indian Society of Hip & Knee Surgeons, Delhi Orthopaedic Association",
         "Chair – Knee Arthroplasty, SICOT; Permanent Board Member – Asia Pacific Arthroplasty Society; AO Faculty – Switzerland; Member – AAHS",
         "Past Vice-Chairman of Max Healthcare board; Visiting Faculty at IIT Kharagpur (Human Body Mechanics)"
+      ]
+    },
+    {
+      "id": "DOC0016",
+      "name": "Dr. Ramneek Mahajan",
+      "image": "/doctors/dr-ramneek-mahajan.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "26+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Max Smart Super Speciality Hospital, Saket",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MS (Orthopaedics)",
+        "MCh (Orthopaedics)"
+      ],
+      "about": "Dr. Ramneek Mahajan is the Chairman of Orthopaedics, Joint Replacement, and Chief Robotic Joint Replacement at Max Smart Super Speciality Hospital, New Delhi, with over 26 years of clinical experience. A global expert in robotic and computer-navigated joint replacement, arthroscopy, and sports injury management, he has pioneered innovative approaches in hip and knee arthroplasty. Internationally trained and award-winning, Dr. Mahajan combines advanced surgical precision with research-driven techniques, making him a preferred choice for complex orthopedic procedures.",
+      "education": [
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Government Medical College, Aurangabad",
+          "year": "N/A"
+        },
+        {
+          "degree": "MCh (Orthopaedics)",
+          "institution": "Government Medical College, Aurangabad",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Chairman - Orthopaedics, Joint Replacement & Chief Robotic Joint Replacement",
+          "hospital": "Max Smart Super Speciality Hospital, Saket, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics & Joint Replacement",
+        "Arthroscopy & Sports Injury",
+        "Robotic Surgery"
+      ],
+      "awards": [
+        "Best Thesis Award – M.Ch. Degree",
+        "Best Paper – \"Advances in TKA\" – IOACON 2007",
+        "Honor Award – Geriatric Society of India, 2010",
+        "Award of Honor – ICMR Conference, 2011",
+        "\"Sushruta Award\" – 2017",
+        "\"Rising Star – Orthopedics\" – Times Healthcare Achievers, 2017",
+        "\"IMA Tiger\" – National Award, 2018",
+        "\"Inspiring Orthopaedicians of India\" – Economic Times, 2022",
+        "Academic excellence during MBBS – 2nd and 3rd year university ranks"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43230",
+        "email": "dr.ramneek.mahajan@maxhealthcare.com"
+      },
+      "researchWork": "Dr. Mahajan has been actively involved in several clinical and comparative studies, especially in the areas of knee and hip arthroplasty. His research includes studies on the effectiveness of different intra-articular corticosteroids in knee osteoarthritis, cemented versus uncemented arthroplasty techniques, and use of robotic and navigation-assisted surgeries.",
+      "publications": [
+        "\"Study of Primary Cemented Total Hip Arthroplasty in Fracture Neck Femur above the Age of Sixty Years\"",
+        "\"Role of Non-Cemented Bipolar Arthroplasty in Various Hip Disorders\"",
+        "\"Early Functional Evaluation of Posterior Cruciate Retaining TKA in Osteoarthritis\"",
+        "\"Comparative Analysis of Methyl Prednisolone vs. Triamcinolone Injections in OA Knee\"",
+        "\"Posterior Stabilized vs. Cruciate Retaining in TKA: Our Experience\"",
+        "\"Total Knee Replacement in Post-Infective Stiff Knee\"",
+        "\"Total Hip Arthroplasty in Dysplastic Hips\" (AIIMS Cadaveric Meet, 2016)",
+        "\"TKA in Extra-Articular Deformities\" (SICOT Rome, 2016)",
+        "\"Comparison of Tibial Morphometry with Indian TKR Components\" (Ongoing)",
+        "\"Spontaneous Bilateral Quadriceps Tendon Rupture in CKD\" – JAJS, 2018",
+        "\"Femoral Nerve Block vs. Adductor Canal Block after TKA\" – J Anaesthesiol Clin Pharmacol, 2018",
+        "\"Effective Diagnosis of Chronic Monoarthropathy\" – Nigerian J Orthop Trauma"
+      ],
+      "certifications": [
+        "Fellowship in Joint Replacement – Singapore General Hospital, Singapore",
+        "Fellowship in Arthroplasty – Puettlingen Hospital, Germany",
+        "Fellowship – The Prince Charles Hospital, Brisbane, Australia",
+        "Certified in Computer Navigation and Robotic-Assisted Joint Replacement Surgery"
+      ]
+    },
+    {
+      "id": "DOC0017",
+      "name": "Dr. (Prof.) Anil Arora",
+      "image": "/doctors/dr-anil-arora.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "37+ years",
+      "rating": "4.9",
+      "location": "Delhi NCR, India",
+      "hospital": "Max Super Speciality Hospital, Patparganj",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "DNB (Orthopaedics)"
+      ],
+      "about": "Dr. (Prof.) Anil Arora is the Vice Chairman and Head of Orthopaedics & Joint Replacement Surgery at Max Super Speciality Hospital, Patparganj, and Principal Director of Prof. Arora's Knee & Hip Surgery Clinic. With over 37 years of experience, he is a pioneer in robotic and pinless computer-navigated knee and hip replacements, as well as complex revision surgeries. Dr. Arora has authored more than 50 research papers, contributed over 20 textbook chapters, and delivered 240+ lectures globally. Renowned for surgical innovation, he holds multiple awards and international fellowships, making him a top choice for advanced joint replacement procedures in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Dr. Sampurnanand Medical College, Jodhpur",
+          "year": "1984"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Dr. Sampurnanand Medical College, Jodhpur",
+          "year": "1989"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "Dr. Sampurnanand Medical College, Jodhpur",
+          "year": "1991"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Vice Chairman & Head, Department of Orthopaedics & Joint Replacement Surgery",
+          "hospital": "Max Super Speciality Hospital, Patparganj (Delhi)",
+          "duration": "Present"
+        },
+        {
+          "position": "Principal Director",
+          "hospital": "Prof. Arora's Knee & Hip Surgery Clinic (Ghaziabad/Noida)",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Robotic Total Knee & Hip Replacement",
+        "Pinless Computer‑Navigated Knee Arthroplasty",
+        "Complex & Revision Hip, Knee, Shoulder & Elbow Replacements",
+        "Custom & Massive Knee Replacements"
+      ],
+      "awards": [
+        "Guinness World Record 2018 (largest gathering of joint replacement patients)",
+        "Limca Book of Records 2017 (enabling full ambulation in a patient bedridden for 30 years)",
+        "ET \"Top Knee & Hip Surgeon of the Year\" (2022)",
+        "\"Most Trusted Knee & Hip Surgeon\" (2022)",
+        "Multiple \"Best Joint Replacement Surgeon\" awards before 2021",
+        "SIROT Award (USA)",
+        "Fellowship distinctions from APOA, SICOT, IGOF, IMA, IOA"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43231",
+        "email": "dr.anil.arora@maxhealthcare.com"
+      },
+      "researchWork": "Innovated PINLESS computer-navigated knee replacement procedures in North India; developed and lectured on robotic and pinless navigation techniques; contributed to evidence-based practice protocols in arthroplasty. Authored approximately 50 peer-reviewed research papers; contributed 20+ textbook chapters; delivered over 240 lectures at national & international conferences; served as External Examiner and Editor for the Delhi Journal of Orthopaedics.",
+      "publications": [
+        "Authored approximately 50 peer-reviewed research papers",
+        "Contributed 20+ textbook chapters",
+        "Delivered over 240 lectures at national & international conferences",
+        "Served as External Examiner and Editor for the Delhi Journal of Orthopaedics"
+      ],
+      "certifications": [
+        "Commonwealth Fellowship (UK)",
+        "APOA Ambassadorial Fellowship",
+        "Indo-German & Indo-British traveling fellowships",
+        "SIROT (USA) Fellowship",
+        "Recognized for PINLESS Computer Navigation technique",
+        "Member/office-bearer: Delhi Orthopaedic Association (Past President/Vice-President/Secretary)",
+        "Indian Orthopaedic Association",
+        "Executive & faculty roles in national and global orthopaedic associations"
+      ]
+    },
+    {
+      "id": "DOC0018",
+      "name": "Dr. Pradeep B. Bhosale",
+      "image": "/doctors/dr-pradeep-b-bhosale.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "37+ years",
+      "rating": "4.9",
+      "location": "Mumbai, India",
+      "hospital": "Nanavati Max Super Speciality Hospital",
+      "hospitalId": "HMUM001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "DNB (Orthopaedics)"
+      ],
+      "about": "Dr. Pradeep B. Bhosale is Senior Director of Robotic Joint Replacement Surgery for Hip & Knee at Nanavati Max Super Speciality Hospital, Mumbai. With over 37 years of experience, he is an expert in complex primary and revision hip, knee, and shoulder replacements, including robotic and computer-assisted procedures. Dr. Bhosale has trained internationally through Ranawat, AO, Exeter, and Wrightington fellowships, and has pioneered advanced joint replacement programs in India. He has authored numerous academic papers, presented at global conferences, and received multiple awards recognizing his leadership in robotic and minimally invasive arthroplasty.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Seth G.S. Medical College & K.E.M. Hospital, Mumbai",
+          "year": "N/A"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Seth G.S. Medical College & K.E.M. Hospital, Mumbai",
+          "year": "N/A"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "Seth G.S. Medical College & K.E.M. Hospital, Mumbai",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director – Robotic Joint Replacement Surgery, Hip & Knee",
+          "hospital": "Nanavati Max Super Speciality Hospital, Mumbai",
+          "duration": "Present"
+        },
+        {
+          "position": "Former Head of Orthopaedic Department",
+          "hospital": "Seth G.S. Medical College & K.E.M. Hospital, Mumbai",
+          "duration": "Previous"
+        }
+      ],
+      "specializations": [
+        "Complex Primary & Revision Hip, Knee & Shoulder Joint Replacement",
+        "Robotic and Computer-Assisted Arthroplasty"
+      ],
+      "awards": [
+        "Felicitated by Maharashtra Health & Family Welfare Minister (India News Health Award, 2018)",
+        "Recognized as a leading robotic joint replacement surgeon",
+        "Featured in national rankings",
+        "\"Golden Aim Health Award\"",
+        "\"Man of the Year\" by Nanavati Hospital",
+        "\"Sushruta Award\" by Max Healthcare (2022)",
+        "Multiple other honors"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43232",
+        "email": "dr.pradeep.bhosale@nanavati.com"
+      },
+      "researchWork": "Instrumental in instituting the first dedicated Joint Replacement OT at KEM Hospital (inaugurated 2009). Pioneered complex primary and revision hip and knee arthroplasty techniques, including robotic and computer-navigated procedures. Invited speaker at international joint replacement forums across the USA, UK, China, Korea, Southeast Asia, Middle East. Authored and contributed to numerous peer-reviewed academic papers and invited to present at international conferences.",
+      "publications": [
+        "Authored and contributed to numerous peer-reviewed academic papers",
+        "Invited to present at international conferences",
+        "Pioneered complex primary and revision hip and knee arthroplasty techniques",
+        "Instrumental in instituting the first dedicated Joint Replacement OT at KEM Hospital (2009)"
+      ],
+      "certifications": [
+        "Ranawat Fellowship in Total Joint Replacement (USA)",
+        "AO Fellowships in Orthopaedics (Switzerland & Germany)",
+        "Fellowships at Exeter & Wrightington (UK)",
+        "Certified in computer-assisted and robotic arthroplasty (Australia/Singapore)",
+        "Founder member: Indian Society of Hip & Knee Surgeons (ISHKS)",
+        "Executive committee member: Indian Arthroplasty Association (IAA)"
+      ]
+    },
+    {
+      "id": "DOC0019",
+      "name": "Dr. Sujoy Bhattacharjee",
+      "image": "/doctors/dr-sujoy-bhattacharjee.png",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "26+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Max Smart Super Speciality Hospital, Saket",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "MCh (Orthopaedics)",
+        "FACS",
+        "FICS"
+      ],
+      "about": "Dr. Sujoy Bhattacharjee is Chairman of Robotic Joint Replacement at Max Smart Super Speciality Hospital, Saket, New Delhi. With over 26 years of experience, he specializes in robotic and AI-assisted arthroplasty, arthroscopy, and sports injury management. Dr. Bhattacharjee is recognized internationally for pioneering advanced techniques in joint replacement, including the world's first cruciate-retaining knee replacement using an active robot. His research spans complex joint cases, including patients with comorbidities such as haemophilia, osteoporosis, and rheumatoid arthritis. He has multiple international fellowships and certifications and has been invited as faculty across Europe, Asia, and North America, with awards in global record books for surgical innovation and excellence.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Silchar Medical College, Guwahati University",
+          "year": "N/A"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Silchar Medical College, Guwahati University",
+          "year": "N/A"
+        },
+        {
+          "degree": "MCh (Orthopaedics)",
+          "institution": "Silchar Medical College, Guwahati University",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Chairman – Robotic Joint Replacement",
+          "hospital": "Max Smart Super Speciality Hospital, Saket, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Robotic Joint Replacement",
+        "Arthroplasty",
+        "Arthroscopy & Sports Injury"
+      ],
+      "awards": [
+        "World's First Cruciate Retaining Knee Replacement with Active Robot – Recognized by World Book of Records (London)",
+        "International Book of Records, India Book of Records, Curexo (Korea)",
+        "Limca Book of Records – For operating on a 104-year-old hip surgery patient",
+        "Best Outgoing MBBS Graduate – Silchar Medical College (1995)",
+        "International Guest Faculty – Kazakhstan (First active robotic TKR), Serbia, Canada, Singapore, and others",
+        "Recognized for pioneering work in AI/AR-based arthroplasty surgeries"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43233",
+        "email": "dr.sujoy.bhattacharjee@maxhealthcare.com"
+      },
+      "researchWork": "Focuses on robotic and AI-assisted arthroplasty techniques, joint preservation, and orthopaedic complications in complex cases including comorbidities like haemophilia and osteoporosis. Pioneered advanced techniques in joint replacement, including the world's first cruciate-retaining knee replacement using an active robot. Research spans complex joint cases, including patients with comorbidities such as haemophilia, osteoporosis, and rheumatoid arthritis.",
+      "publications": [
+        "The outcomes of total knee arthroplasty following the incidental finding of tuberculosis and its treatment: A prospective study",
+        "Total Hip Arthroplasty in Ochronotic Arthroplasty: A Case Report",
+        "TKA Complications in 80-year-patient: A Case Report",
+        "Total Hip Replacement in Severe Haemophilia A: Challenges and Feasibility",
+        "Distal Femur Intraarticular Fracture in a Late Arthritic Knee Treated With Osteosynthesis and Computer Navigation Assisted Primary Total Knee Replacement",
+        "Osteoporosis in Indian Patients undergoing Elective Arthroplasty and Spinal Procedures: An Observational Study",
+        "Posterior cruciate-retaining total knee arthroplasty in patients with systemic rheumatoid arthritis - A retrospective observational analysis",
+        "Computer Navigation-assisted Bilateral Total Knee Arthroplasty with Osteosynthesis in Single Sitting in Patients Presenting with Distal Femur Fracture with Pre-existing Knee Arthritis",
+        "Comparative Analysis of Joint Awareness and Functional Outcomes in Robotic vs Conventional Total Knee Arthroplasty: A Retrospective Study with 1-year Follow-up",
+        "Incidence of Common Peroneal Nerve Palsy among Patients with Varus Deformity Undergoing Bilateral Simultaneous Total Knee Replacement – A Retrospective Observation"
+      ],
+      "certifications": [
+        "Fellowship (Arthroplasty) – France",
+        "FACS – American College of Surgeons",
+        "FICS – International College of Surgeons (Australia Chapter)",
+        "Fellowships – San Diego (USA), Exeter (UK), Germany, Monash Health (Australia), OKM Clinic (Germany)",
+        "FMIS – Ohio Pain Clinic (USA)",
+        "Certified in Robotic & AI-assisted Joint Replacement Techniques"
+      ]
+    },
+    {
+      "id": "DOC0020",
+      "name": "Dr. Bhushan Nariani",
+      "image": "/doctors/dr-bhushan-nariani.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "20+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "BLK-Max Super Speciality Hospital",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)"
+      ],
+      "about": "Dr. Bhushan Nariani is a highly experienced orthopedic surgeon specializing in primary, complex, and revision hip and knee replacements, trauma surgery, and robot-assisted & computer-navigated arthroplasty. With over 20 years of clinical expertise, he has played a pivotal role in advancing minimally invasive and technology-driven joint replacement techniques in India. Dr. Nariani is actively involved in training and mentoring orthopedic surgeons through fellowships and workshops, and he has contributed extensively to academic forums with case studies, presentations, and lectures. He currently serves as the Vice Chairman of Joint Diseases & Joint Replacement at BLK-Max Super Speciality Hospital, Delhi.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Motilal Nehru Medical College, Allahabad",
+          "year": "1999"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "University of Allahabad",
+          "year": "2002"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Vice Chairman – Joint Diseases & Joint Replacement",
+          "hospital": "BLK–Max Super Speciality Hospital (including Dwarka)",
+          "duration": "Present"
+        },
+        {
+          "position": "Former Chief, Joint Replacement Dept.",
+          "hospital": "Indian Spinal Injuries Hospital, Vasant Kunj",
+          "duration": "Previous"
+        }
+      ],
+      "specializations": [
+        "Primary, complex & revision Hip and Knee Replacement",
+        "Trauma Surgery",
+        "Robot-Assisted & Computer-Navigated Arthroplasty"
+      ],
+      "awards": [
+        "Recognized as one of India's top joint replacement surgeons",
+        "Has trained numerous DNB candidates under supervision of Dr. P.S. Maini & others",
+        "Frequent invitee as faculty at international orthopedic workshops & conferences"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43234",
+        "email": "dr.bhushan.nariani@blkmax.com"
+      },
+      "researchWork": "Focused on robot-assisted and computer-navigated joint replacement surgeries with minimized trauma and enhanced recovery protocols. Conducts regular fellowships and training programs for orthopedic surgeons annually. Authored and delivered over 50 presentations and lectures at clinical forums; contributes case studies and industry articles.",
+      "publications": [
+        "Authored and delivered over 50 presentations and lectures at clinical forums",
+        "Contributes case studies and industry articles",
+        "Conducts regular fellowships and training programs for orthopedic surgeons annually",
+        "Focused on robot-assisted and computer-navigated joint replacement surgeries with minimized trauma and enhanced recovery protocols"
+      ],
+      "certifications": [
+        "DePuy Fellowship in Arthroplasty under Dr. P.S. Maini (Sir Ganga Ram Hospital)",
+        "Fellowships in Joint Replacement & Arthroscopy (Australia, UK, Netherlands)",
+        "Fellowships in arthroplasty and joint replacement from recognized institutes in Australia, UK, Germany, Netherlands, and USA",
+        "Life member – Indian Orthopaedics Association, Indian Arthroplasty Association, Delhi Orthopaedic Association, Indian Medical Association, North Zone IOA, Indian Arthroscopy Association"
       ]
     }
   ],
