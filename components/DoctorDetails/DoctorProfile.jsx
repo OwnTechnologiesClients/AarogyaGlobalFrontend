@@ -441,6 +441,38 @@ const DoctorProfile = ({ doctor }) => {
           </div>
         </section>
 
+        {/* Research Work */}
+        {doctor.researchWork && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Research Work
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              {doctor.researchWork}
+            </p>
+          </section>
+        )}
+
+        {/* Publications */}
+        {doctor.publications && doctor.publications.length > 0 && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Publications & Research
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Dr. {doctor.name.split(' ').pop()} has contributed to medical literature through:
+            </p>
+            <div className="flex flex-col gap-3 text-gray-800">
+              {doctor.publications.map((publication, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
+                  <p>{typeof publication === 'string' ? publication : String(publication)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Languages */}
         <section>
           <h3 className="text-3xl font-bold text-[#000D44] mb-4">

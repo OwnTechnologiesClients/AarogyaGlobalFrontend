@@ -2157,7 +2157,7 @@
       "rating": "4.5",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
-      "doctorsCount": 4,
+      "doctorsCount": 10,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2254,6 +2254,66 @@
           "rating": "4.7",
           "experience": "11+ years",
           "location": "Gurgaon, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0005",
+          "name": "Dr. Sukant Vijay",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-sukant-vijay.jpg",
+          "rating": "4.8",
+          "experience": "10+ years",
+          "location": "Gurgaon, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0006",
+          "name": "Dr. Aman Dua",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-aman-dua.jpg",
+          "rating": "4.9",
+          "experience": "22+ years",
+          "location": "New Delhi, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0007",
+          "name": "Dr. Kaushal Kant Mishra",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-kaushal-kant-mishra.jpg",
+          "rating": "4.9",
+          "experience": "26+ years",
+          "location": "New Delhi, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0008",
+          "name": "Dr. Amite Pankaj Aggarwal",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-amite-pankaj-aggarwal.jpg",
+          "rating": "4.9",
+          "experience": "25+ years",
+          "location": "New Delhi, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0009",
+          "name": "Dr. Gurinder Bedi",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-gurinder-bedi.jpg",
+          "rating": "4.9",
+          "experience": "30+ years",
+          "location": "New Delhi, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0010",
+          "name": "Dr. Manoj Miglani",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-manoj-miglani.jpg",
+          "rating": "4.9",
+          "experience": "25+ years",
+          "location": "New Delhi, India",
           "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
         }
       ],
@@ -3556,6 +3616,588 @@
         "Affiliate Member – Royal College of Surgeons, Edinburgh",
         "Member – Association for Harm Reduction, Education and Research",
         "Active participant in orthopedic workshops and public health seminars"
+      ]
+    },
+    {
+      "id": "DOC0005",
+      "name": "Dr. Sukant Vijay",
+      "image": "/doctors/dr-sukant-vijay.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "10+ years",
+      "rating": "4.8",
+      "location": "Gurgaon, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹2000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS",
+        "DNB Orthopaedics – National Board of Examinations, New Delhi"
+      ],
+      "about": "Dr. Sukant Vijay is an accomplished Orthopaedic Surgeon at Fortis Memorial Research Institute, Gurgaon, with over 10 years of experience in joint replacement, arthroscopy, and minimally invasive spine surgery. He is actively involved in research and academic initiatives to enhance surgical outcomes and patient recovery. Combining advanced surgical expertise with a patient-centered approach, Dr. Vijay offers world-class orthopaedic care for complex musculoskeletal conditions in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Medical College",
+          "year": "N/A"
+        },
+        {
+          "degree": "DNB Orthopaedics",
+          "institution": "National Board of Examinations, New Delhi",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "ASSOCIATE CONSULTANT ORTHOPAEDICS",
+          "hospital": "Fortis Gurgaon",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics",
+        "Joint Replacement Surgery",
+        "Arthroscopy",
+        "Minimally Invasive Spine Surgery",
+        "Endoscopic Spine Surgery"
+      ],
+      "awards": [
+        "Certified Orthopaedic Surgeon under the National Board of Examinations",
+        "Participant in national and international orthopaedic workshops and seminars"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43219",
+        "email": "dr.sukant.vijay@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Sukant Vijay has participated in research work and workshops within the Orthopaedics department. His clinical interest spans complex procedures in arthroscopy and minimally invasive spine surgery. His research contributions are oriented towards improving outcomes in joint replacement and endoscopic spine procedures.",
+      "publications": [
+        "Dr. Sukant Vijay has authored multiple papers related to orthopaedic surgical techniques, especially in the fields of arthroplasty and minimally invasive spine surgery. Specific publication titles or journals are not listed in public sources, but he is actively engaged in academic work related to orthopaedic advancements."
+      ],
+      "certifications": [
+        "Certified Orthopaedic Surgeon under the National Board of Examinations",
+        "Participant in national and international orthopaedic workshops and seminars"
+      ]
+    },
+    {
+      "id": "DOC0006",
+      "name": "Dr. Aman Dua",
+      "image": "/doctors/dr-aman-dua.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "22+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹3500",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS – Dayanand Medical College & Hospital, Ludhiana, Punjab (2000)",
+        "MS (Orthopaedics) – All India Institute of Medical Sciences (AIIMS), New Delhi (2005)",
+        "DNB Orthopaedics – National Board of Examinations (2006)",
+        "Fellowship – Revision Joint Replacement & Bone Transplantation, Princess Alexandra Hospital & Queensland Bone Bank, Australia",
+        "Ranawat Fellowship – Ranawat Orthopaedic Research Foundation"
+      ],
+      "about": "Dr. Aman Dua is a distinguished Orthopaedic Surgeon and Director of Joint Replacement at Fortis Escorts Heart Institute, New Delhi, with over 22 years of surgical experience, including 17+ years specializing in complex joint replacement. Trained at AIIMS, New Delhi, and internationally in Australia under the Ranawat Fellowship, he excels in hip and knee arthroplasty, revision surgeries, computer-navigated procedures, and bone & cartilage transplantation. Renowned for combining advanced surgical techniques with personalized care, Dr. Dua is a preferred choice for international patients seeking world-class orthopaedic solutions in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Dayanand Medical College & Hospital, Ludhiana, Punjab",
+          "year": "2000"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "All India Institute of Medical Sciences (AIIMS), New Delhi",
+          "year": "2005"
+        },
+        {
+          "degree": "DNB Orthopaedics",
+          "institution": "National Board of Examinations",
+          "year": "2006"
+        },
+        {
+          "degree": "Fellowship",
+          "institution": "Princess Alexandra Hospital & Queensland Bone Bank, Australia",
+          "year": "N/A"
+        },
+        {
+          "degree": "Ranawat Fellowship",
+          "institution": "Ranawat Orthopaedic Research Foundation",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Director of Joint Replacement & Orthopaedics",
+          "hospital": "Fortis Escorts Heart Institute (Okhla), New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Joint Replacement Surgery (Hip & Knee)",
+        "Revision Joint Replacement",
+        "Computer-Navigated Orthopaedic Surgery",
+        "Bone & Cartilage Transplantation",
+        "Arthroscopy"
+      ],
+      "awards": [
+        "Mittal–Panday Scholarship (Best Medical Student, 1996)",
+        "B. Braun Medical Trust Scholarship (Outstanding PG Orthopaedics, 2004)",
+        "Ranawat Orthopaedic Research Foundation Fellowship"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43220",
+        "email": "dr.aman.dua@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Dua has significant academic contributions, focusing on acetabular reconstruction, femoral revision techniques, Hoffa fractures, carpal tunnel release methods, anterior shoulder dislocation management, pediatric elbow osteotomy, and the application of bone allografts in arthroplasty. His work extends to CSIR-funded morphological studies and multicenter clinical outcomes trials.",
+      "publications": [
+        "Acetabular Reconstruction using Fresh Frozen Bone Allograft (Hip International, 2010)",
+        "Femoral Revision using Hydroxyapatite-coated Stem (Archives of Orthopaedics and Trauma Surgery)",
+        "Bicondylar Hoffa Fracture ORIF (Journal of Knee Surgery, 2010)",
+        "Endoscopic vs. Open Carpal Tunnel Release (Indian Journal of Orthopaedics, 2007)",
+        "External Rotation Method in Shoulder Dislocations (J Bone Joint Surg Am, 2004)",
+        "Percutaneous Pinning of Supracondylar Humerus Fractures in Children (Chinese Journal of Traumatology, 2011)",
+        "Dome Osteotomy Technique for Cubitus Varus (Journal of Pediatric Orthopedics, 2006)",
+        "Chapters: Synovial Fluid & Synovial Disorders in Textbook of Orthopedics and Trauma (Jaypee, 2016)"
+      ],
+      "certifications": [
+        "MBBS, MS (Orthopaedics), DNB (Orthopaedics)",
+        "Fellowship in Bone Transplantation & Revision Joint Surgery (Australia)"
+      ]
+    },
+    {
+      "id": "DOC0007",
+      "name": "Dr. Kaushal Kant Mishra",
+      "image": "/doctors/dr-kaushal-kant-mishra.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "26+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹4000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS – GSVM Medical College, Kanpur",
+        "MS Orthopaedics – Bundelkhand Medical College, 2004",
+        "MCh Orthopaedics – University of Victoria (Seychelles)"
+      ],
+      "about": "Dr. Kaushal Kant Mishra is a globally recognized Orthopaedic Surgeon and Director of Orthopaedics & Joint Replacement at Fortis Escorts Heart Institute, New Delhi, with over 26 years of experience. He specializes in knee, hip, and shoulder replacements, robotic and computer-navigated joint reconstruction, orthopaedic oncology, sports medicine, and complex trauma care. Known for pioneering surgeries worldwide—including hip replacements for centenarian patients and record-setting minimally invasive procedures—Dr. Mishra combines cutting-edge innovation with personalized care, making him a top choice for international patients seeking advanced orthopaedic treatment in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "GSVM Medical College, Kanpur",
+          "year": "N/A"
+        },
+        {
+          "degree": "MS Orthopaedics",
+          "institution": "Bundelkhand Medical College",
+          "year": "2004"
+        },
+        {
+          "degree": "MCh Orthopaedics",
+          "institution": "University of Victoria (Seychelles)",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Director, Orthopaedics & Joint Replacement",
+          "hospital": "Fortis Escorts Heart Institute (Okhla), New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Knee, Hip & Shoulder Joint Replacement",
+        "Robotic & Computer-Navigated Joint Reconstruction",
+        "Orthopaedic Oncology",
+        "Sports Medicine",
+        "Complex Trauma & Spine Surgery"
+      ],
+      "awards": [
+        "First uncemented hip replacement in Tanzania (2010)",
+        "Hip replacement performed on 107-year-old patient—nominated for Guinness World Records",
+        "Fastest hip replacement surgery (18 min) and world's smallest incision (2‑inch on 92-year-old)—pending records",
+        "Youngest hip replacement in Nigeria (2011)",
+        "First-prize poster presentation at UPICON (2004)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43221",
+        "email": "dr.kaushal.mishra@fortishealthcare.com"
+      },
+      "researchWork": "Developed novel orthopedic instruments (2 patents; additional patents pending). Established and managed a bone bank at AIIMS Delhi. Engaged in evidence-based practice and innovation in computer-navigated joint replacement and complex trauma care.",
+      "publications": [
+        "Multiple research publications in orthopaedic surgery and joint replacement",
+        "Patents for novel orthopedic instruments",
+        "Research on computer-navigated joint replacement techniques",
+        "Studies on complex trauma care and bone banking"
+      ],
+      "certifications": [
+        "Member – Indian Orthopaedic Association",
+        "Member – Indian Federation of Sports Medicine",
+        "Affiliate Member – French & American Orthopaedics Associations",
+        "ICJR Arthroplasty Association Member",
+        "Registered with Tanzanian and Nigerian Medical Councils",
+        "Fellowship – AIIMS Johnson & Johnson Joint Replacement Fellowship"
+      ]
+    },
+    {
+      "id": "DOC0008",
+      "name": "Dr. Amite Pankaj Aggarwal",
+      "image": "/doctors/dr-amite-pankaj-aggarwal.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "25+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹4500",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS – All India Institute of Medical Sciences (AIIMS), New Delhi",
+        "MS (Orthopaedics) – AIIMS, New Delhi",
+        "DNB Orthopaedics – National Board of Examinations",
+        "MRCS (Edinburgh)",
+        "MNAMS"
+      ],
+      "about": "Dr. Amite Pankaj Aggarwal is a globally acclaimed Orthopaedic Surgeon and Principal Director of Orthopaedics & Joint Replacement at Fortis Hospital, Shalimar Bagh, New Delhi, with over 25 years of experience. He has performed more than 10,000 joint replacement surgeries, including complex, robotic, and revision procedures, and pioneered \"Fast-Track\" Total Knee Arthroplasty for rapid post-surgical recovery. Renowned for his expertise in hip, knee, and shoulder arthroplasty, sports medicine, and paediatric orthopaedics, Dr. Aggarwal combines cutting-edge innovation with patient-centered care, making him a top choice for international patients seeking advanced orthopaedic solutions in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "All India Institute of Medical Sciences (AIIMS), New Delhi",
+          "year": "N/A"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "AIIMS, New Delhi",
+          "year": "N/A"
+        },
+        {
+          "degree": "DNB Orthopaedics",
+          "institution": "National Board of Examinations",
+          "year": "N/A"
+        },
+        {
+          "degree": "MRCS (Edinburgh)",
+          "institution": "Royal College of Surgeons of Edinburgh",
+          "year": "N/A"
+        },
+        {
+          "degree": "MNAMS",
+          "institution": "National Academy of Medical Sciences",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Principal Director & Head of Orthopaedics & Joint Replacement",
+          "hospital": "Fortis Hospital, Shalimar Bagh, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Robotic & Computer-Navigated Joint Reconstruction",
+        "Hip, Knee & Shoulder Arthroplasty",
+        "Sports Medicine & Arthroscopy",
+        "Paediatric Orthopaedics",
+        "Complex Deformity & Revision Knee Surgery"
+      ],
+      "awards": [
+        "National Topper at several career milestones, including AIIMS MBBS entrance",
+        "Gold Medal at AIIMS (undergraduate)",
+        "IOS‑UK Fellowship Award (2010)",
+        "IOA‑AOA Fellowship Award (2011)",
+        "IOA‑Johnson & Johnson Fellowship (2008)",
+        "Ranawat's K. T. Dholakia Award for excellence in joint replacement (2007)",
+        "Australian Pain Society Award (2004)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43222",
+        "email": "dr.amite.aggarwal@fortishealthcare.com"
+      },
+      "researchWork": "Pioneered use of \"Fast-Track\" Total Knee Arthroplasty, enabling mobilization within hours post-surgery. Performed >10,000 joint replacement surgeries, including complex primary, robotic, and revision procedures using allografts. Served as faculty in live surgical sessions, taught at cadaveric workshops, and contributed to CME courses in arthroscopy and arthroplasty. Actively holds editorial roles and is a reviewer for multiple indexed orthopedic journals.",
+      "publications": [
+        "Authored over 70 research papers in journals such as Journal of Bone and Joint Surgery, Archives of Orthopaedic Surgery, and Knee Surgery, Sports Traumatology, Arthroscopy",
+        "Contributed 16 book chapters, including one on Total Knee Replacement in Turek's Orthopaedics",
+        "Delivered 100+ CME lectures and 20 international presentations on orthopedic topics"
+      ],
+      "certifications": [
+        "MBBS, MS, DNB, MRCS (Edinburgh), MNAMS",
+        "Affiliate Fellow – American College of Surgeons",
+        "Executive Member – Indian Arthroscopy Society & ISKSAA",
+        "Deputy Editor – Journal of Arthroscopy and Joint Surgery",
+        "Member – Delhi Orthopaedic Association"
+      ]
+    },
+    {
+      "id": "DOC0009",
+      "name": "Dr. Gurinder Bedi",
+      "image": "/doctors/dr-gurinder-bedi.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "30+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS – University College of Medical Sciences (UCMS), New Delhi, 1988",
+        "MS (Orthopaedics) – Maulana Azad Medical College (MAMC), Delhi",
+        "DNB (Orthopaedics) – National Board of Examinations, New Delhi, 1994",
+        "FRCS – Royal College of Surgeons, 2000",
+        "Intercollegiate FRCS‑orthopaedics, 2004"
+      ],
+      "about": "Dr. Gurinder Bedi is a highly experienced Orthopaedic Surgeon and Principal Director of Orthopaedics & Joint Reconstruction at Fortis Hospital, Vasant Kunj, New Delhi, with over 30 years of clinical expertise. He specializes in hip, knee, and shoulder arthroplasty, spine surgery, trauma and fracture management, foot and ankle surgery, and sports medicine. Renowned for his advanced techniques in computer-navigated and minimally invasive surgeries, Dr. Bedi combines global academic insight with patient-focused care, making him a trusted choice for international patients seeking complex orthopaedic treatments in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "University College of Medical Sciences (UCMS), New Delhi",
+          "year": "1988"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Maulana Azad Medical College (MAMC), Delhi",
+          "year": "N/A"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "National Board of Examinations, New Delhi",
+          "year": "1994"
+        },
+        {
+          "degree": "FRCS",
+          "institution": "Royal College of Surgeons",
+          "year": "2000"
+        },
+        {
+          "degree": "Intercollegiate FRCS‑orthopaedics",
+          "institution": "Royal College of Surgeons",
+          "year": "2004"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Principal Director & Head of Orthopaedics and Joint Reconstruction",
+          "hospital": "Fortis Hospital, Vasant Kunj, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Hip, Knee & Shoulder Arthroplasty",
+        "Spine Surgery & Pain Management",
+        "Foot & Ankle Surgery",
+        "Trauma & Fracture Management",
+        "Arthroscopy & Sports Medicine"
+      ],
+      "awards": [
+        "Junior Science Talent Scholarship (1982)",
+        "National Talent Scholarship (2004)",
+        "Registrar's Prize (Best Paper, University Hospitals Bristol, UK – 2005)",
+        "Luminaries of Healthcare (2015)",
+        "Healthcare Excellence, Legends, and NewsX Healthcare Achievement Awards (2015–2018)",
+        "Recognized as a Top 10 Orthopaedic Surgeon in Delhi"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43223",
+        "email": "dr.gurinder.bedi@fortishealthcare.com"
+      },
+      "researchWork": "Academic reviewer for Indian Journal of Orthopaedics and Journal of Clinical Orthopaedics & Trauma. Authored editorials such as: \"Where the mind is without fear\" (Dec 2011), \"See one, Do one, Teach one – Training Young Orthopedic Surgeons\" (June 2010), \"Lumbar Disc Replacement\" (Dec 2010). AO Trauma trainer and faculty at national/international conferences. Emphasis on advanced techniques such as computer-navigated and minimally invasive joint replacement and spine surgeries.",
+      "publications": [
+        "Harris-Galante Porous Coated Total Hip Replacement – our experience. Indian Journal of Orthopaedics, Vol. 32(3), July 1998",
+        "The Reliability of the American Knee Society Score. Acta Orthopaedica Scandinavica, 2000; 71(6): 603–608",
+        "Comparison of Three Knee Function Evaluation Scores. Orthopedics, Vol. 26(2), Feb 2003",
+        "Design and Validation of a Surrogate Humerus for Biomechanical Testing. Journal of Biomechanics, Vol. 35, 533–536, April 2002",
+        "A Biomechanical Comparison of Three Plating Techniques for Humeral Fractures. Journal of Applied Biomaterials & Biomechanics, Vol. 1, 139–147 (2003)",
+        "Experience with AO Spiral Blade Nail. Injury, 2003",
+        "Tomography for Tibial Plateau Fractures. published as abstract in Injury"
+      ],
+      "certifications": [
+        "Member: Royal College of Surgeons (UK)",
+        "Indian Orthopaedic Association",
+        "Delhi Orthopaedic Association",
+        "South Delhi Orthopaedic Association",
+        "American Academy of Orthopaedic Surgeons",
+        "AO Trauma",
+        "Reviewer: Indian Journal of Orthopaedics, Journal of Clinical Orthopaedics & Trauma"
+      ]
+    },
+    {
+      "id": "DOC0010",
+      "name": "Dr. Manoj Miglani",
+      "image": "/doctors/dr-manoj-miglani.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "25+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹4500",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS – Maulana Azad Medical College / G.B. Pant Hospital, New Delhi (1997)",
+        "MS (Orthopaedics) – All India Institute of Medical Sciences (AIIMS), New Delhi (2000)"
+      ],
+      "about": "Dr. Manoj Miglani is a leading Orthopaedic and Spine Surgeon, serving as Principal Director of Orthopaedics, Spine Surgery, and Joint Replacement at Fortis Hospital, Vasant Kunj, New Delhi, with over 25 years of clinical experience. He specializes in spine surgery, minimally invasive spine procedures, hip and knee joint replacements, revision arthroplasty, and sports injury management. Trained at AIIMS, New Delhi, with international fellowships in spine and arthroplasty, Dr. Miglani combines cutting-edge surgical expertise with personalized care, making him a preferred choice for international patients seeking complex orthopaedic and spine treatments in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Maulana Azad Medical College / G.B. Pant Hospital, New Delhi",
+          "year": "1997"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "All India Institute of Medical Sciences (AIIMS), New Delhi",
+          "year": "2000"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Principal Director – Orthopaedics, Spine Surgery & Joint Replacement",
+          "hospital": "Fortis Hospital, Vasant Kunj, New Delhi",
+          "duration": "Present"
+        },
+        {
+          "position": "Senior Consultant",
+          "hospital": "Fortis Shalimar Bagh, New Delhi",
+          "duration": "Present"
+        },
+        {
+          "position": "Additional Director",
+          "hospital": "Fortis Vasant Kunj, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Spine Surgery",
+        "Minimally Invasive Spine Procedures",
+        "Joint Replacement (Hip & Knee)",
+        "Revision Arthroplasty",
+        "Sports Injuries",
+        "Elbow & Ligament Reconstruction"
+      ],
+      "awards": [
+        "Earned an AO Spine Fellowship in the UK, a prestigious fellowship awarded through the Queen's Medical Center, Nottingham",
+        "Recognized for leadership in spine and orthopaedic surgery at Fortis Hospital, Vasant Kunj",
+        "Membership and recognition by professional bodies such as AO Spine Asia-Pacific, Association of Spine Surgeons of India (ASSI), and the Delhi Orthopaedic Association"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43224",
+        "email": "dr.manoj.miglani@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Miglani conducted an ICMR-supported study titled \"Role of SPECT Bone Imaging in Unexplained Chronic Low Back Pain\", collaboratively undertaken at the Departments of Orthopaedics and Nuclear Medicine, AIIMS New Delhi, under the guidance of Prof. P.K. Dave. He regularly contributes to medical education as faculty for spine cadaveric workshops and minimally invasive surgery training programs. He has been an invited presenter at orthopaedic and spine symposia such as DOACON, ASSICON, AO Spine conferences, and arthroplasty forums held at AIIMS and other institutions. Clinical fellowships include an AO Spine Fellowship (UK) and a Stryker Arthroplasty Fellowship at Indraprastha Apollo Hospital, New Delhi, which involved exposure to contemporary trauma, spine, and joint replacement protocols.",
+      "publications": [
+        "A thesis on \"Role of SPECT Bone Imaging in Unexplained Chronic Low Back Pain\" (AIIMS, Orthopaedics & Nuclear Medicine departments)"
+      ],
+      "certifications": [
+        "AO Spine Fellowship (Queen's Medical Center, Nottingham, UK)",
+        "Member – Delhi Orthopaedic Association",
+        "Association of Spine Surgeons of India (ASSI)",
+        "Registered with Delhi Medical Council (Reg. DMC‑12088)"
       ]
     }
   ],
