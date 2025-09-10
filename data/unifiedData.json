@@ -2157,7 +2157,7 @@
       "rating": "4.5",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
-      "doctorsCount": 10,
+      "doctorsCount": 14,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2315,6 +2315,46 @@
           "experience": "25+ years",
           "location": "New Delhi, India",
           "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0011",
+          "name": "Dr. Narayan Hulse",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-narayan-hulse.png",
+          "rating": "4.9",
+          "experience": "25+ years",
+          "location": "Bengaluru, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0012",
+          "name": "Dr. Atul Mishra",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-atul-mishra.png",
+          "rating": "4.9",
+          "experience": "22+ years",
+          "location": "Noida, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0013",
+          "name": "Dr. Dhananjay Gupta",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-dhananjay-gupta.jpg",
+          "rating": "4.9",
+          "experience": "28+ years",
+          "location": "New Delhi, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+        },
+        {
+          "id": "DOC0014",
+          "name": "Dr. Anoop Jhurani",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-anoop-jhurani.jpg",
+          "rating": "4.9",
+          "experience": "26+ years",
+          "location": "Jaipur, India",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
         }
       ],
       "coordinates": {
@@ -2435,7 +2475,7 @@
       "rating": "4.2",
       "location": "New Delhi, Delhi",
       "address": "1-2, Press Enclave Road, Saket, New Delhi",
-      "doctorsCount": 530,
+      "doctorsCount": 531,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2512,7 +2552,18 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [],
+      "doctors": [
+        {
+          "id": "DOC0015",
+          "name": "Dr. S.K.S. Marya",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-S-K-S-marya.png",
+          "rating": "4.9",
+          "experience": "40+ years",
+          "location": "Delhi NCR, India",
+          "hospital": "Max Super Speciality Hospital, Saket"
+        }
+      ],
       "coordinates": {
         "latitude": 28.5276,
         "longitude": 77.2026
@@ -4198,6 +4249,515 @@
         "Member – Delhi Orthopaedic Association",
         "Association of Spine Surgeons of India (ASSI)",
         "Registered with Delhi Medical Council (Reg. DMC‑12088)"
+      ]
+    },
+    {
+      "id": "DOC0011",
+      "name": "Dr. Narayan Hulse",
+      "image": "/doctors/dr-narayan-hulse.png",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "25+ years",
+      "rating": "4.9",
+      "location": "Bengaluru, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002"
+      ],
+      "qualifications": [
+        "MBBS – Bangalore Medical College",
+        "MS (Orthopaedics) – Madras Medical College (Gold Medalist)",
+        "MRCS – Royal College of Surgeons, UK",
+        "FRCS (Trauma & Orthopaedics) – Royal College of Surgeons of Edinburgh",
+        "MCh (Orthopaedics) – University of Liverpool",
+        "Fellowships – University of Toronto (Arthroplasty), St. George's Hospital, London (Pelvic Trauma)"
+      ],
+      "about": "Dr. Narayan Hulse is a distinguished Orthopaedic and Joint Replacement Surgeon with over 25 years of experience, serving as Director of Orthopaedics, Joint Replacement & Robotic Surgery at Fortis Hospital, Bengaluru. A pioneer in robotic-assisted joint replacement in India, he has performed over 2,000 robotic procedures and developed advanced surgical protocols using MAKO, Cuvis, and VELYS platforms. Trained at Bangalore Medical College, Madras Medical College, and internationally in Toronto and London, Dr. Hulse combines cutting-edge robotic surgery with personalized care, making him a top choice for international patients seeking complex orthopaedic solutions.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Bangalore Medical College",
+          "year": "N/A"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Madras Medical College (Gold Medalist)",
+          "year": "N/A"
+        },
+        {
+          "degree": "MRCS",
+          "institution": "Royal College of Surgeons, UK",
+          "year": "N/A"
+        },
+        {
+          "degree": "FRCS (Trauma & Orthopaedics)",
+          "institution": "Royal College of Surgeons of Edinburgh",
+          "year": "N/A"
+        },
+        {
+          "degree": "MCh (Orthopaedics)",
+          "institution": "University of Liverpool",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Director – Department of Orthopaedics, Joint Replacement & Robotic Surgery",
+          "hospital": "Fortis Hospital, Bannerghatta Road, Bengaluru",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Joint Replacement Surgery",
+        "Robotic Orthopaedics",
+        "Pelvic and Acetabular Trauma"
+      ],
+      "awards": [
+        "University and State Gold Medalist in MS Orthopaedics from Madras Medical College",
+        "First Surgeon in Karnataka to perform a robotic direct anterior hip replacement",
+        "Completed over 2,000 robotic joint replacements",
+        "Recognized speaker and trainer at international orthopedic conferences and surgical fellowships",
+        "Recipient of multiple awards for excellence in surgical training and innovation in orthopaedics"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43225",
+        "email": "dr.narayan.hulse@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Hulse has been a pioneer in robotic joint replacement in India, particularly in the southern region. He has developed and led advanced joint replacement programs, especially focused on robotic-assisted procedures. He has been involved in major multicenter research studies, surgical skill transfer programs, and led academic fellowship initiatives for orthopedic surgeons across India. Notably, he has developed clinical protocols integrating robotic platforms like MAKO, Cuvis, and VELYS, contributing to innovations in patient outcomes.",
+      "publications": [
+        "Dr. Hulse has authored over 20 peer-reviewed journal articles and textbook chapters",
+        "Hulse N., et al. \"Outcome of Robotic Assisted Knee Replacement in Indian Population.\" Indian Journal of Orthopaedics, 2022",
+        "Hulse N., \"Anterior Hip Replacement Using Robotic Technology – Indian Experience.\" Journal of Bone and Joint Surgery, 2023",
+        "Hulse N., \"Reducing Surgical Variability in Knee Arthroplasty: Role of Robotics.\" International Orthopaedics, 2021",
+        "He also authored a patient-focused book titled \"Joint Replacement: A Patient's Handbook\" (2025), simplifying surgical expectations for patients"
+      ],
+      "certifications": [
+        "FRCS (Trauma & Ortho), Edinburgh",
+        "Fellowship in Arthroplasty – University of Toronto",
+        "Fellowship in Pelvic Trauma – St. George's Hospital, London",
+        "Certified Robotic Surgeon – MAKO, Cuvis, and VELYS systems",
+        "ATLS and BLS Certified (UK and India)"
+      ]
+    },
+    {
+      "id": "DOC0012",
+      "name": "Dr. Atul Mishra",
+      "image": "/doctors/dr-atul-mishra.png",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "22+ years",
+      "rating": "4.9",
+      "location": "Noida, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS – Rabindranath Tagore Medical College (RNT), Udaipur, University of Rajasthan (1996)",
+        "MS (Orthopaedics) – NHL Municipal Medical College & Seth K.M. School of Post Graduate Medical Research, Ahmedabad, Gujarat University (2001)",
+        "Fellowship in Orthopaedic Sports Traumatology – Rizzoli Orthopaedic Institute, Bologna, Italy (2006)",
+        "Fellowship in Knee Reconstruction – Philips University, Marburg, Germany and National Chiba University Hospital, Chiba, Japan (2005)"
+      ],
+      "about": "Dr. Atul Mishra is a leading Orthopaedic Surgeon and Senior Director at Fortis Hospital, Noida, with over 22 years of experience in hip and knee replacement, arthroscopy, and minimally invasive joint reconstruction. Trained at prestigious institutions across Italy, Germany, and Japan, he specializes in advanced sports traumatology, rapid recovery joint replacement protocols, and complex ligament repair. Renowned for combining global expertise with personalized patient care, Dr. Mishra is a preferred choice for international patients seeking world-class orthopaedic treatment in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Rabindranath Tagore Medical College (RNT), Udaipur, University of Rajasthan",
+          "year": "1996"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "NHL Municipal Medical College & Seth K.M. School of Post Graduate Medical Research, Ahmedabad, Gujarat University",
+          "year": "2001"
+        },
+        {
+          "degree": "Fellowship in Orthopaedic Sports Traumatology",
+          "institution": "Rizzoli Orthopaedic Institute, Bologna, Italy",
+          "year": "2006"
+        },
+        {
+          "degree": "Fellowship in Knee Reconstruction",
+          "institution": "Philips University, Marburg, Germany and National Chiba University Hospital, Chiba, Japan",
+          "year": "2005"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director & Head – Orthopaedics",
+          "hospital": "Fortis Hospital, Sector 62, Noida",
+          "duration": "Present"
+        },
+        {
+          "position": "Associated Consultant",
+          "hospital": "Fortis Escorts Heart Institute, Okhla Road, Delhi NCR",
+          "duration": "Present"
+        },
+        {
+          "position": "Additional Consulting Roles",
+          "hospital": "Fortis-affiliated hospitals at Patparganj and other locations",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Hip & Knee Replacement Surgery",
+        "Arthroscopy",
+        "Sports Traumatology",
+        "Minimally Invasive Joint Reconstruction"
+      ],
+      "awards": [
+        "Chikitsa Gaurav Samman (2008) - Presented by the Akhil Bharatiya Swatantra Lekhak Manch for excellence in orthopaedic surgery and healthcare delivery",
+        "Award of Honour (2010) - For conducting a teaching session on \"Revision Total Knee Arthroplasty\" at the 28th Annual Scientific Session hosted by Dr. L.H. Lobo Memorial Trust, Christian Medical College, Ludhiana",
+        "Frequently recognized by Fortis Healthcare for: High patient satisfaction scores, Volume of successful joint replacement surgeries annually (1,000+ cases/year), Mentorship and surgical training programs for orthopaedic residents and fellows"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43226",
+        "email": "dr.atul.mishra@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Atul Mishra has been involved in international fellowships and research training in orthopaedic sports traumatology and knee reconstruction at globally recognized institutions: Rizzoli Orthopaedic Institute, Bologna, Italy; Philips University, Marburg, Germany; Chiba University Hospital, Japan. His research has focused on minimally invasive joint surgery techniques, arthroscopic ligament repair, and rapid recovery protocols after joint replacement surgery. He has contributed to the development of surgical protocols for ACL reconstruction, rotator cuff repair, and minimally invasive total knee replacement in North India.",
+      "publications": [
+        "He has authored conference abstracts, clinical case presentations, and has been a faculty speaker in orthopedic CME events, notably at: Christian Medical College (CMC), Ludhiana, National Arthroscopy Conferences, Fortis internal clinical excellence meetings",
+        "He has also contributed content to patient education booklets on joint replacement surgery and rehabilitation pathways, used in Fortis Noida and Delhi NCR centers"
+      ],
+      "certifications": [
+        "Fellowships in Orthopaedic Sports Traumatology (Rizzoli Institute, Italy) and Knee Reconstruction (Philips University, Germany; Chiba University, Japan)",
+        "Specialized training in shoulder surgery from the University of Arizona, USA",
+        "Member in professional societies: Indian Medical Association (IMA), Delhi Orthopaedic Association, Indian Arthroscopy Society"
+      ]
+    },
+    {
+      "id": "DOC0013",
+      "name": "Dr. Dhananjay Gupta",
+      "image": "/doctors/dr-dhananjay-gupta.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "28+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS – Jiwaji University, Gwalior (1991)",
+        "Diploma in Orthopaedics – G.R. Medical College, Gwalior (1994)",
+        "DNB Orthopaedics – National Board of Examinations, New Delhi (2000)",
+        "M.Ch. Orthopaedics – Advanced degree (specific university unspecified)",
+        "MNAMS – Member of National Academy of Medical Sciences",
+        "FIMSA – Fellow of International Medical Sciences Academy",
+        "PhD Scholar – (Current or ongoing)"
+      ],
+      "about": "Dr. Dhananjay Gupta is a Senior Director and leading Orthopaedic Surgeon at Fortis Vasant Kunj, New Delhi, with over 28 years of expertise in joint replacement, regenerative orthopaedics, and minimally invasive procedures. He specializes in complex primary and revision hip and knee surgeries, combining advanced computer-navigated techniques with regenerative medicine approaches for faster recovery. Recognized nationally for surgical excellence, Dr. Gupta is a trusted choice for international patients seeking innovative and precise orthopedic care in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Jiwaji University, Gwalior",
+          "year": "1991"
+        },
+        {
+          "degree": "Diploma in Orthopaedics",
+          "institution": "G.R. Medical College, Gwalior",
+          "year": "1994"
+        },
+        {
+          "degree": "DNB Orthopaedics",
+          "institution": "National Board of Examinations, New Delhi",
+          "year": "2000"
+        },
+        {
+          "degree": "M.Ch. Orthopaedics",
+          "institution": "Advanced degree (specific university unspecified)",
+          "year": "N/A"
+        },
+        {
+          "degree": "MNAMS",
+          "institution": "Member of National Academy of Medical Sciences",
+          "year": "N/A"
+        },
+        {
+          "degree": "FIMSA",
+          "institution": "Fellow of International Medical Sciences Academy",
+          "year": "N/A"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director – Department of Orthopaedics & Joint Replacement",
+          "hospital": "Fortis Flt. Lt. Rajan Dhall Hospital, Vasant Kunj, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics & Joint Replacement Surgery",
+        "Regenerative Medicine",
+        "Arthroscopic and Minimally Invasive Orthopaedic Procedures"
+      ],
+      "awards": [
+        "\"Best Orthopedic Surgeon in Vasant Kunj\", awarded by the Times Health Survey (2020)",
+        "Named \"Top Joint Replacement Surgeon\" by the Indian Medical Association (2018)",
+        "Appointed Honorary Consultant at Indian Spinal Injuries Centre, New Delhi—an acknowledgment of his standing in orthopedic trauma and rehabilitation",
+        "Recognized for completing over 3,000 joint surgeries, with deep influence across trauma, sports injuries, and reconstructive orthopedics"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43227",
+        "email": "dr.dhananjay.gupta@fortishealthcare.com"
+      },
+      "researchWork": "Dr. Gupta is the Director and Senior Consultant of Orthopaedics & Joint Reconstruction at Fortis Flt. Lt. Rajan Dhall Hospital, Vasant Kunj. With over 28–30 years of experience, he leads one of Fortis's flagship regenerative and reconstructive orthopedic surgery departments. Key areas include: Reconstructive & Complex Joint Surgery: Expertise in complex primary and revision knee and hip replacements. Computer-Navigated & Minimally Invasive Techniques: Utilizes advanced navigation for precise surgical accuracy. Regenerative Medicine Initiatives: Headed development of a regenerative orthopaedics unit within the institute, focusing on leveraging the body's healing capabilities in fracture recovery, joint reconstruction, and athletic injuries. Education & Training: Frequently invited as faculty for academic workshops, conferences, and surgical training programs across India.",
+      "publications": [
+        "Although comprehensive peer-reviewed journals are not fully listed publicly, Dr. Gupta's contributions include: Numerous technically detailed conference presentations and workshop papers covering topics such as robotic-assisted joint surgery, trauma reconstruction, and novel fracture management strategies",
+        "He is credited as Chief Editor and Author of the \"Manual of Proximal Femoral Fracture Surgery\" published by Jaypee Publications",
+        "Actively participates in scientific meetings and orthopedic forums, contributing to continuing medical education and peer-learning"
+      ],
+      "certifications": [
+        "MBBS, Diploma, DNB (Orthopaedics)",
+        "M.Ch. Orthopaedics (Advanced specialization)",
+        "MNAMS & FIMSA Fellow",
+        "Extensive training and faculty roles in minimally invasive and regenerative orthopaedics"
+      ]
+    },
+    {
+      "id": "DOC0014",
+      "name": "Dr. Anoop Jhurani",
+      "image": "/doctors/dr-anoop-jhurani.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "26+ years",
+      "rating": "4.9",
+      "location": "Jaipur, India",
+      "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002"
+      ],
+      "qualifications": [
+        "MBBS – SMS Medical College, Jaipur (1993)",
+        "MS (Orthopaedics) – SMS Medical College, Jaipur (1996)"
+      ],
+      "about": "Dr. Anoop Jhurani is the Director of Orthopaedics & Joint Replacement at Fortis Escorts Hospital, Jaipur, with over 26 years of experience in hip and knee arthroplasty. A pioneer in robotic and computer-navigated joint reconstruction in Rajasthan, he has performed thousands of advanced joint replacement procedures and trains surgeons worldwide in robotic and navigated techniques. Recognized nationally and internationally for surgical excellence and innovation, Dr. Jhurani is a preferred choice for patients seeking precise, high-quality orthopedic care in India.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "SMS Medical College, Jaipur",
+          "year": "1993"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "SMS Medical College, Jaipur",
+          "year": "1996"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Director – Orthopaedics & Joint Replacement",
+          "hospital": "Fortis Escorts Hospital, Jaipur",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Hip & Knee Joint Replacement Surgery",
+        "Robotic & Computer-Navigated Arthroplasty"
+      ],
+      "awards": [
+        "President (and Past Secretary) of the Indian Arthroplasty Association (IAA), recognized nationally for leadership in joint reconstruction in India",
+        "Performed robotic knee replacement on a 97-year-old Freedom Fighter, setting a regional milestone and featured in national media, potentially qualifying for Guinness World Record",
+        "Credited with pioneering several landmark procedures in joint replacement in Rajasthan, including early robotic hip and knee surgeries since 2008–2018",
+        "Frequently invited as faculty at national and international conferences and recognized for excellence in surgical training, implant development and robotic practice across India and abroad"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43228",
+        "email": "dr.anoop.jhurani@fortishealthcare.com"
+      },
+      "researchWork": "Pioneered robotic & computer-navigated joint reconstruction in Rajasthan; established a high-volume robotic arthroplasty program performing thousands of hip and knee replacements annually. Mentors robotic fellowship programs at Fortis Jaipur and trains visiting surgeons in robotic MAKO, navigation, and revision protocols, including live surgery sessions and cadaveric workshops. Developing and contributing to innovations in joint implant instrumentation and surgical workflow protocols for knee, hip and partial knee replacements.",
+      "publications": [
+        "Chief Editor of the book \"Arthritis – Cause and Cures\" aimed at patient education and public awareness activities",
+        "Regular contributor to orthopedic literature, continuing medical education content, and workshop-based surgical technique dissemination"
+      ],
+      "certifications": [
+        "MS Orthopaedics (SMS Medical College, Jaipur)",
+        "Fellowship Experiences: Hospital for Special Surgery (New York), University of Mannheim (Germany), Harvard Medical School (Boston), Mayo Clinic (Rochester), Rush Medical (Chicago), Columbus NASH Center (Ohio), AAHKS / Dallas robotic training",
+        "Member – Indian Arthroplasty Association (President), Indian Society of Hip & Knee Surgeons, Trauma Society of India, Indo-German Orthopaedic Foundation, IMA",
+        "Editor-in-Chief – Indian Journal of Arthroplasty"
+      ]
+    },
+    {
+      "id": "DOC0015",
+      "name": "Dr. S.K.S. Marya",
+      "image": "/doctors/dr-S-K-S-marya.png",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "40+ years",
+      "rating": "4.9",
+      "location": "Delhi NCR, India",
+      "hospital": "Max Super Speciality Hospital, Saket",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS – Maharishi Dayanand University / Pt. B. D. Sharma Medical College, Rohtak (1981)",
+        "MS (Orthopaedics) – PGIMER Chandigarh (1984)",
+        "DNB (Orthopaedics) – National Board of Examinations (1985)",
+        "MCh Orthopaedics – University of Liverpool, UK (1991)",
+        "FRCS – Royal College of Surgeons, England (2012)",
+        "DSc (Honoris Causa) – Amity University, Noida (2019)"
+      ],
+      "about": "Dr. S.K.S. Marya is the Group Chairman and Chief Surgeon of Orthopaedics, Joints & Robotic Surgery at Max Healthcare, Delhi NCR, with over 40 years of global experience. A pioneer in computer-assisted and robotic joint replacements, he has performed more than 20,000 procedures across all major joints and introduced innovative techniques such as bilateral same‑sitting hip and knee replacements in India. Internationally recognized for surgical excellence, research, and education, Dr. Marya is a leading choice for complex joint reconstruction and arthroplasty treatments.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Maharishi Dayanand University / Pt. B. D. Sharma Medical College, Rohtak",
+          "year": "1981"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "PGIMER Chandigarh",
+          "year": "1984"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "National Board of Examinations",
+          "year": "1985"
+        },
+        {
+          "degree": "MCh Orthopaedics",
+          "institution": "University of Liverpool, UK",
+          "year": "1991"
+        },
+        {
+          "degree": "FRCS",
+          "institution": "Royal College of Surgeons, England",
+          "year": "2012"
+        },
+        {
+          "degree": "DSc (Honoris Causa)",
+          "institution": "Amity University, Noida",
+          "year": "2019"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Group Chairman & Chief Surgeon – Orthopaedics, Joints & Robotic Surgery",
+          "hospital": "Max Healthcare Institute Limited",
+          "duration": "Present"
+        },
+        {
+          "position": "Chief Advisor",
+          "hospital": "Max Healthcare Institute Limited",
+          "duration": "Present"
+        },
+        {
+          "position": "Former Chief Surgeon",
+          "hospital": "Medanta Bone & Joint Institute, Gurugram",
+          "duration": "2016–2019"
+        }
+      ],
+      "specializations": [
+        "Joint Replacement (Hip, Knee, Shoulder, Elbow, Digit Joints) – Primary & Revision",
+        "Trauma (AO principles)",
+        "Unicompartmental Knee Replacement",
+        "Computer‑Assisted & Robotic Arthroplasty",
+        "Sports & Arthroscopic Surgery"
+      ],
+      "awards": [
+        "Performed over 20,000 joint replacements across all major joints",
+        "Bharat Jyoti Award for outstanding service (2003)",
+        "DMA Distinguished Services Award (Doctors' Day, 2005)",
+        "Bombay Orthopaedic Society Book Award for Surface Replacement of Hip (2007–08)",
+        "Best Publication Award, Delhi Orthopaedic Association (2008)",
+        "Award of Merit by Government of Punjab (2010)",
+        "Haryana Vigyan Ratna Award (2012)",
+        "B.N. Sinha Meritorious Award, Indian Orthopaedic Association (2018)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43229",
+        "email": "dr.sks.marya@maxhealthcare.com"
+      },
+      "researchWork": "Dr. Marya is renowned for pioneering surgical innovations, including: Bilateral same‑sitting hip and knee replacements, Introduction of unicompartmental (half‑knee) replacement in India, Computer‑assisted and robotic joint reconstruction techniques. Authored key textbooks such as Complex Primary Total Hip Replacement (2012) and Knee Replacement (2025), co-edited with Rajiv Thukral. Served on editorial boards of multiple orthopaedic journals, delivered over 280 lectures, and led arthroplasty fellowships and live surgical teaching sessions globally.",
+      "publications": [
+        "Authored nine orthopaedic books, including titles on hip and knee arthroplasty and surface replacement (Jaypee Brothers, 2012 & 2025 editions)",
+        "Contributed 94 medical papers in peer-reviewed journals and conference proceedings"
+      ],
+      "certifications": [
+        "FRCS (England), DNB, MCh Orthopaedics",
+        "Former President/Office Bearer: Indian Orthopaedic Association, Indian Arthroplasty Association, Indian Society of Hip & Knee Surgeons, Delhi Orthopaedic Association",
+        "Chair – Knee Arthroplasty, SICOT; Permanent Board Member – Asia Pacific Arthroplasty Society; AO Faculty – Switzerland; Member – AAHS",
+        "Past Vice-Chairman of Max Healthcare board; Visiting Faculty at IIT Kharagpur (Human Body Mechanics)"
       ]
     }
   ],
