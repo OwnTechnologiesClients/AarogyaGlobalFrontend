@@ -2157,7 +2157,7 @@
       "rating": "4.5",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
-      "doctorsCount": 15,
+      "doctorsCount": 17,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2365,6 +2365,26 @@
           "experience": "20+ years",
           "location": "New Delhi, India",
           "hospital": "BLK-Max Super Speciality Hospital"
+        },
+        {
+          "id": "DOC0023",
+          "name": "Dr. Rakesh Mahajan",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-rakesh-mahajan.jpg",
+          "rating": "4.9",
+          "experience": "41+ years",
+          "location": "New Delhi, India",
+          "hospital": "BLK-Max Super Speciality Hospital"
+        },
+        {
+          "id": "DOC0025",
+          "name": "Dr. Ishwar Bohra",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-shwar-bohra.jpg",
+          "rating": "4.9",
+          "experience": "20+ years",
+          "location": "New Delhi, India",
+          "hospital": "BLK-Max Super Speciality Hospital"
         }
       ],
       "coordinates": {
@@ -2394,7 +2414,7 @@
       "rating": "4.0",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Medanta - The Medicity, Gurgaon 122001, India",
-      "doctorsCount": 900,
+      "doctorsCount": 901,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2457,7 +2477,18 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [],
+      "doctors": [
+        {
+          "id": "DOC0022",
+          "name": "Dr. B.S. Murthy",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-B-S-murthy.jpg",
+          "rating": "4.9",
+          "experience": "39+ years",
+          "location": "Noida, India",
+          "hospital": "Max Super Speciality Hospital, Noida"
+        }
+      ],
       "coordinates": {
         "latitude": 28.4595,
         "longitude": 77.0266
@@ -2485,7 +2516,7 @@
       "rating": "4.2",
       "location": "New Delhi, Delhi",
       "address": "1-2, Press Enclave Road, Saket, New Delhi",
-      "doctorsCount": 534,
+      "doctorsCount": 535,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2602,6 +2633,16 @@
           "experience": "26+ years",
           "location": "New Delhi, India",
           "hospital": "Max Smart Super Speciality Hospital, Saket"
+        },
+        {
+          "id": "DOC0021",
+          "name": "Dr. H.N. Bajaj",
+          "specialty": "Orthopaedic & Spine Surgeon",
+          "image": "/doctors/dr-H-N-bajaj.png",
+          "rating": "4.9",
+          "experience": "37+ years",
+          "location": "New Delhi, India",
+          "hospital": "Max Super Speciality Hospital, Saket"
         }
       ],
       "coordinates": {
@@ -2631,7 +2672,7 @@
       "rating": "4.1",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Sector 51, Gurugram, Haryana 122001",
-      "doctorsCount": 300,
+      "doctorsCount": 301,
       "specialties": [
         "Cardiology",
         "Neurology",
@@ -2691,7 +2732,18 @@
           "date": "2024-01-15"
         }
       ],
-      "doctors": [],
+      "doctors": [
+        {
+          "id": "DOC0024",
+          "name": "Dr. L. Tomar",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-L-tomar.jpg",
+          "rating": "4.9",
+          "experience": "25+ years",
+          "location": "New Delhi, India",
+          "hospital": "Max Super Speciality Hospital, Shalimar Bagh"
+        }
+      ],
       "coordinates": {
         "latitude": 28.4595,
         "longitude": 77.0266
@@ -5290,6 +5342,470 @@
         "Fellowships in Joint Replacement & Arthroscopy (Australia, UK, Netherlands)",
         "Fellowships in arthroplasty and joint replacement from recognized institutes in Australia, UK, Germany, Netherlands, and USA",
         "Life member – Indian Orthopaedics Association, Indian Arthroplasty Association, Delhi Orthopaedic Association, Indian Medical Association, North Zone IOA, Indian Arthroscopy Association"
+      ]
+    },
+    {
+      "id": "DOC0021",
+      "name": "Dr. H.N. Bajaj",
+      "image": "/doctors/dr-H-N-bajaj.png",
+      "specialty": "Orthopaedic & Spine Surgeon",
+      "experience": "37+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Max Super Speciality Hospital, Saket",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS",
+        "Diploma in Orthopaedics",
+        "MS (Orthopaedics)"
+      ],
+      "about": "Dr. H.N. Bajaj is a distinguished orthopedic and spine surgeon with over 37 years of experience, specializing in spine surgery, joint replacement, arthroscopy, and sports injury management. He has pioneered advanced surgical techniques, including the anterior approach for complex spinal disorders and implant fixation in spinal tuberculosis. Dr. Bajaj has contributed significantly to academic research, with numerous publications in national and international journals, and has served as faculty and lecturer at conferences across India. He currently serves as the Principal Director and Head of Orthopaedics & Spine Surgery at Max Super Speciality Hospital in Saket and Gurgaon, Delhi.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "University of Mysore",
+          "year": "1983"
+        },
+        {
+          "degree": "Diploma in Orthopaedics",
+          "institution": "Kasturba Medical College, Manipal",
+          "year": "1985"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Kasturba Medical College, Manipal",
+          "year": "1986"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Principal Director, Head of Orthopaedics & Spine Surgery",
+          "hospital": "Max Super Speciality Hospital (Saket, Delhi / Gurgaon)",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Spine Surgery",
+        "Orthopaedics & Joint Replacement",
+        "Arthroscopy & Sports Injury"
+      ],
+      "awards": [
+        "Awarded the Chairman Award for Outstanding Services, Max Healthcare, 2011",
+        "Recognized for significant contributions to national orthopedic and spine care",
+        "Multiple service recognitions in public records"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43235",
+        "email": "dr.h.n.bajaj@maxhealthcare.com"
+      },
+      "researchWork": "Pioneered the use of the anterior surgical approach for complex spinal disorders and advocated implant fixation in spinal tuberculosis. Has contributed to academic discussions on spinal pain management, disc surgery, spinal infections, and spinal stenosis. Published numerous articles in national and international orthopaedic and spine journals. Served as faculty and lecturer at conferences; contributed to academic journals including editing for the Delhi Journal of Orthopaedics.",
+      "publications": [
+        "Published numerous articles in national and international orthopaedic and spine journals",
+        "Served as faculty and lecturer at conferences",
+        "Contributed to academic journals including editing for the Delhi Journal of Orthopaedics",
+        "Pioneered the use of the anterior surgical approach for complex spinal disorders",
+        "Advocated implant fixation in spinal tuberculosis",
+        "Contributed to academic discussions on spinal pain management, disc surgery, spinal infections, and spinal stenosis"
+      ],
+      "certifications": [
+        "Senior Member – Association of Spine Surgeons of India",
+        "Delhi Orthopaedic Association",
+        "Registered with Delhi Medical Council (Reg. 18573, 2003)"
+      ]
+    },
+    {
+      "id": "DOC0022",
+      "name": "Dr. B.S. Murthy",
+      "image": "/doctors/dr-B-S-murthy.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "39+ years",
+      "rating": "4.9",
+      "location": "Noida, India",
+      "hospital": "Max Super Speciality Hospital, Noida",
+      "hospitalId": "HDEL0002",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "FICS (USA)"
+      ],
+      "about": "Dr. B.S. Murthy is a highly experienced orthopedic surgeon with over 39 years of clinical practice, specializing in total joint replacement of the knee, hip, and shoulder (both primary and revision), arthroscopic surgeries of the shoulder, knee, and ankle, and complex periarticular fracture management. He has made significant contributions to clinical research in joint replacement and arthroscopy, presenting multiple papers internationally and publishing extensively in national and international journals. Dr. Murthy currently serves as the Principal Director of Orthopaedics, Joint Replacement, and Arthroscopy Surgery at Max Super Speciality Hospital, Noida, and has been recognized with numerous awards including the International Business Award for Medical Tourism (2024) and Healthcare Change Maker Award (2023).",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "SCB Medical College, Cuttack, Odisha",
+          "year": "1984"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "MKCG Medical College, Berhampur",
+          "year": "1990"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Principal Director – Orthopaedics, Joint Replacement and Arthroscopy Surgery",
+          "hospital": "Max Super Speciality Hospital, Noida",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Total Joint Replacement: Knee, Hip, and Shoulder (Primary & Revision)",
+        "Arthroscopic Surgeries: Shoulder, Knee & Ankle",
+        "Complex Periarticular Fractures: Acetabulum, Pelvis, Knee & Wrist"
+      ],
+      "awards": [
+        "International Business Award – Medical Tourism (2024)",
+        "Healthcare Change Maker Award – Heal Foundation (2023)",
+        "Certificate of Excellence in Joint Replacement – Dainik Jagran (2023)",
+        "Odisha Bhushan – Kalinga Shikshya Samaj (2015)",
+        "Best Paper Presentation – International College of Surgeons, USA (1997 & 1998)",
+        "Best All-Rounder & Outgoing Student – SCB Medical College (1984)",
+        "College Blue Award – SCB Medical College (1981)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43236",
+        "email": "dr.b.s.murthy@maxhealthcare.com"
+      },
+      "researchWork": "Actively involved in clinical research in joint replacement and arthroscopic techniques; presented multiple research papers internationally. Published several papers in national and international orthopedic journals; recipient of Best Paper Presentation at International College of Surgeons, USA (1997 & 1998).",
+      "publications": [
+        "Published several papers in national and international orthopedic journals",
+        "Recipient of Best Paper Presentation at International College of Surgeons, USA (1997 & 1998)",
+        "Actively involved in clinical research in joint replacement and arthroscopic techniques",
+        "Presented multiple research papers internationally"
+      ],
+      "certifications": [
+        "Fellow of the International College of Surgeons (FICS), USA (1991)"
+      ]
+    },
+    {
+      "id": "DOC0023",
+      "name": "Dr. Rakesh Mahajan",
+      "image": "/doctors/dr-rakesh-mahajan.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "41+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "BLK-Max Super Speciality Hospital",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "Diploma in Orthopaedics",
+        "DNB Orthopaedics",
+        "MS (Orthopaedics)",
+        "MCh in Joint Replacement & Sports Medicine (NHU, Singapore)",
+        "Fellowship in Shoulder Arthroscopy & Sports Trauma (South Africa)"
+      ],
+      "about": "Dr. Rakesh Mahajan is a distinguished orthopedic surgeon with over 41 years of experience, specializing in primary hip, knee, and shoulder arthroplasty, arthroscopy and sports medicine, complex fracture reconstruction, and robotic and minimally invasive joint replacement. He currently serves as Senior Director and Head of the Centre for Orthopaedics at BLK‑Max Super Speciality Hospital, New Delhi. Dr. Mahajan has pioneered robotic-assisted knee replacements and advanced reconstructive protocols, and has contributed significantly to research, authoring over 50 indexed papers and textbook chapters. He is a sought-after faculty at national and international conferences, recognized with awards including the Amar Jyoti and Bharat Gaurav Awards, and is highly regarded for establishing evidence-based surgical protocols in joint replacement and sports medicine.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Maharishi Dayanand University, Rohtak",
+          "year": "1983"
+        },
+        {
+          "degree": "Diploma in Orthopaedics",
+          "institution": "Maharishi Dayanand University, Rohtak",
+          "year": "1985"
+        },
+        {
+          "degree": "DNB Orthopaedics",
+          "institution": "Recognized institutions in India",
+          "year": "1987"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Recognized institutions in India",
+          "year": "1989"
+        },
+        {
+          "degree": "MCh in Joint Replacement & Sports Medicine",
+          "institution": "National University Hospital, Singapore",
+          "year": "2002"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director & Head of Department, Centre for Orthopaedics, Institute for Bone, Joint Replacement, Orthopaedics, Spine & Sports Medicine",
+          "hospital": "BLK‑Max Super Speciality Hospital, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Primary hip, knee and shoulder Arthroplasty",
+        "Arthroscopy & Sports Medicine",
+        "Complex Fracture Reconstruction",
+        "Robotic & Minimally Invasive Joint Replacement"
+      ],
+      "awards": [
+        "Awarded at DOACON regional forum for excellence in Unicondylar Knee Replacement & Complex Arthroplasty",
+        "Received recognition such as the Amar Jyoti and Bharat Gaurav awards (India)",
+        "Honored as a top orthopedic surgeon by multiple industry and media bodies"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43237",
+        "email": "dr.rakesh.mahajan@blkmax.com"
+      },
+      "researchWork": "Advocate of robotic-assisted knee replacements, limb lengthening procedures, reconstructive surgery for complex fractures; established evidence-based protocols in robotic hip and knee surgery. Authored ~50+ indexed papers and textbook chapters; presented at DOACON (received awards for unicondylar and complex arthroplasty presentations); over 240 invited clinical lectures nationally and internationally.",
+      "publications": [
+        "Authored ~50+ indexed papers and textbook chapters",
+        "Presented at DOACON (received awards for unicondylar and complex arthroplasty presentations)",
+        "Over 240 invited clinical lectures nationally and internationally",
+        "Advocate of robotic-assisted knee replacements",
+        "Established evidence-based protocols in robotic hip and knee surgery",
+        "Pioneered limb lengthening procedures and reconstructive surgery for complex fractures"
+      ],
+      "certifications": [
+        "Fellowship in Joint Replacement & Sports Medicine — National University Hospital, Singapore (2002)",
+        "Fellowship in Shoulder Arthroscopy & Sports Trauma — South Africa",
+        "MS (Orthopaedics), DNB (Orthopaedics), M.Ch. in Orthopaedics & Sports Medicine"
+      ]
+    },
+    {
+      "id": "DOC0024",
+      "name": "Dr. L. Tomar",
+      "image": "/doctors/dr-L-tomar.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "25+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "Max Super Speciality Hospital, Shalimar Bagh",
+      "hospitalId": "HDEL0004",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "Fellow – Germany & Switzerland",
+        "AO Fellow – Germany"
+      ],
+      "about": "Dr. L. Tomar is a highly experienced orthopedic surgeon with over 25 years of expertise in joint replacement, orthopedic trauma, and sports injury management. He currently serves as Principal Director and Unit Head of the Department of Orthopaedics and Joint Replacement at Max Super Speciality Hospital, Shalimar Bagh, Delhi. Dr. Tomar has developed evidence-based protocols for primary and revision arthroplasty, focusing on rapid recovery and optimal patient outcomes. His work encompasses complex orthopedic reconstructions, trauma care, and sports injury management. He has authored numerous case reports, systematic reviews, and observational studies in international peer-reviewed journals. Recognized nationally and internationally, he has received multiple honors, including the Manav Seva Samman, Rashtriya Ratna Shiromani Award, and Global Healthcare Excellence Award for Best Joint Replacement Surgeon in Delhi & NCR.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Meerut University",
+          "year": "1999"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Meerut University",
+          "year": "2001"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Principal Director and Unit Head department of Orthopaedic and Joint Replacement",
+          "hospital": "Max Super Speciality Hospital, Shalimar Bagh",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Joint Replacement",
+        "Orthopaedic Trauma",
+        "Sports Injury"
+      ],
+      "awards": [
+        "Manav Seva Samman, New Delhi (2001)",
+        "Rashtriya Ratna Shiromani Award (2002)",
+        "Chikitsak Ratna Award (2004)",
+        "Indian Hall of Fame Award by All India Achievers Conference (2005)",
+        "IMA Distinguished Service Award (Doctors' Day, 2003 & 2009)",
+        "Global Healthcare Excellence Award for Best Joint Replacement Surgeon in Delhi & NCR (2013)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43238",
+        "email": "dr.l.tomar@maxhealthcare.com"
+      },
+      "researchWork": "Focused on evidence‑based protocols in primary and revision arthroplasty. Developed best practices for rapid recovery joint replacement. Involved in trauma surgery, sports injury management, and complex orthopaedic reconstruction techniques. Titles include case reports, systematic reviews, and observational studies published in Cureus, Indian Journal of Orthopaedics, Arthroplasty, Malaysian Orthopaedic Journal, and other peer-reviewed journals (2020–2024 timeframe).",
+      "publications": [
+        "Bilateral Femoral Neck Stress Fracture... Managed by Simultaneous Bilateral Total Hip Arthroplasty (Cureus, Nov 2020)",
+        "Rehabilitation of Arthroplasty Patient during COVID‑19 (Indian Journal of Orthopaedics, Aug 2020)",
+        "Published in Cureus, Indian Journal of Orthopaedics, Arthroplasty, Malaysian Orthopaedic Journal",
+        "Numerous additional papers on COVID-related orthopaedic care and trauma case reports",
+        "Case reports, systematic reviews, and observational studies (2020–2024 timeframe)",
+        "Focused on evidence‑based protocols in primary and revision arthroplasty"
+      ],
+      "certifications": [
+        "Fellowship member, International College of Surgeons (USA)",
+        "AO Fellowship (Switzerland)",
+        "Visiting Fellowships in Joint Replacement from Australia, Germany, UK & USA",
+        "Member: AAOS, ICS (USA), IOA, ISHKS, APAS, Alumni – University of Dundee"
+      ]
+    },
+    {
+      "id": "DOC0025",
+      "name": "Dr. Ishwar Bohra",
+      "image": "/doctors/dr-shwar-bohra.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "20+ years",
+      "rating": "4.9",
+      "location": "New Delhi, India",
+      "hospital": "BLK-Max Super Speciality Hospital",
+      "hospitalId": "HDEL0001",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "Fellowship in Joint Replacement and Arthroscopy",
+        "Sports Trauma and Arthroscopy Fellowship",
+        "Upper Limb (Shoulder) Fellowship",
+        "Knee Replacement and Arthroscopy Fellowship"
+      ],
+      "about": "Dr. Ishwar Bohra is a distinguished orthopedic surgeon with over 20 years of experience specializing in joint replacement, robotic surgery, arthroscopy, sports medicine, and spine surgery. He currently serves as Senior Director of Orthopaedics & Joint Replacement at BLK-Max Super Speciality Hospital, New Delhi. Dr. Bohra has extensive international training, including fellowships in joint replacement, sports trauma, and upper limb surgery from reputed institutes in Spain, Scotland, and the UK. He focuses on knee, hip, and shoulder diseases, joint preservation, and complex joint replacement procedures. He has authored multiple publications in national and international journals and is recognized for his contributions to arthroscopy, robotic-assisted surgery, and sports injury management. Dr. Bohra is an active member of several professional bodies, including the National Academy of Medical Sciences, Indian Orthopaedic Association, and SICOT (Belgium).",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Rajasthan Medical University, Jaipur",
+          "year": "2004"
+        },
+        {
+          "degree": "Fellowship in Joint Replacement and Arthroscopy",
+          "institution": "Sancheti Institute of Orthopaedics and Rehabilitation, Pune",
+          "year": "2006"
+        },
+        {
+          "degree": "Sports Trauma and Arthroscopy Fellowship",
+          "institution": "Hospital Quirone, Barcelona, Spain",
+          "year": "2008"
+        },
+        {
+          "degree": "Upper Limb (Shoulder) Fellowship",
+          "institution": "University Hospital of Aberdeen, Scotland, UK",
+          "year": "2010"
+        },
+        {
+          "degree": "Knee Replacement and Arthroscopy Fellowship",
+          "institution": "University of North Tees & Hartlepool NHS, England",
+          "year": "2012"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director Orthopaedics & Joint Replacement, Robotic Surgery",
+          "hospital": "BLK-Max Super Speciality Hospital, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics & Joint Replacement",
+        "Robotic Surgery",
+        "Arthroscopy",
+        "Sports Medicine",
+        "Spine Surgery"
+      ],
+      "awards": [
+        "Arthroscopy and Sports Medicine Fellowship from Institute of Traumatology and Arthroscopy, Hospital Quirone, Barcelona, Spain (ISAKOS approved teaching centre)",
+        "Arthroplasty and Arthroscopy recognition from Sancheti Institute of Orthopaedics and Rehabilitation, Pune"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43239",
+        "email": "dr.ishwar.bohra@blkmax.com"
+      },
+      "researchWork": "Focused on knee, shoulder, and hip diseases, joint preservation, and joint replacement surgeries. Has presented multiple papers nationally and internationally. Authored multiple publications in national and international journals including 'Pantoea agglomerans infection behaving like a tumor after plant thorn injury: an unusual presentation.' Indian J Pathology & Microbiology, 2012, 'Aneurysmal Bone Cyst of Scapula, A case report.' Delhi Journal of Orthopaedics, 2008, THR in sickle cell anemia (accepted in Indian Journal of Orthopaedics), Various articles in journals, magazines, and print media.",
+      "publications": [
+        "Pantoea agglomerans infection behaving like a tumor after plant thorn injury: an unusual presentation. Indian J Pathology & Microbiology, 2012",
+        "Aneurysmal Bone Cyst of Scapula, A case report. Delhi Journal of Orthopaedics, 2008",
+        "THR in sickle cell anemia (accepted in Indian Journal of Orthopaedics)",
+        "Various articles in journals, magazines, and print media",
+        "Focused on knee, shoulder, and hip diseases, joint preservation, and joint replacement surgeries",
+        "Presented multiple papers nationally and internationally"
+      ],
+      "certifications": [
+        "Fellowships in joint replacement, arthroscopy, sports trauma, and upper limb surgeries from reputed international and national institutes",
+        "Memberships include National Academy of Medical Sciences (MAMS), Indian Orthopaedic Association, Indian Arthroscopy Society, SICOT (Belgium), Rajasthan Orthopaedic Association, Delhi Orthopaedic Association, SIOR, and ASSICON"
       ]
     }
   ],
