@@ -2414,7 +2414,7 @@
       "rating": "4.0",
       "location": "Gurugram, Delhi NCR, Haryana",
       "address": "Medanta - The Medicity, Gurgaon 122001, India",
-      "doctorsCount": 901,
+      "doctorsCount": 902,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2487,6 +2487,16 @@
           "experience": "39+ years",
           "location": "Noida, India",
           "hospital": "Max Super Speciality Hospital, Noida"
+        },
+        {
+          "id": "DOC0026",
+          "name": "Dr. Sanjay Gupta",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-sanjay-gupta.jpg",
+          "rating": "4.9",
+          "experience": "25+ years",
+          "location": "Vaishali, India",
+          "hospital": "Max Healthcare, Vaishali"
         }
       ],
       "coordinates": {
@@ -2516,7 +2526,7 @@
       "rating": "4.2",
       "location": "New Delhi, Delhi",
       "address": "1-2, Press Enclave Road, Saket, New Delhi",
-      "doctorsCount": 535,
+      "doctorsCount": 539,
       "specialties": [
         "Cardiology & Cardiac Surgery",
         "Oncology (Surgical, Medical & Radiotherapy)",
@@ -2643,6 +2653,46 @@
           "experience": "37+ years",
           "location": "New Delhi, India",
           "hospital": "Max Super Speciality Hospital, Saket"
+        },
+        {
+          "id": "DOC0027",
+          "name": "Dr. Ramesh Kumar Sen",
+          "specialty": "Orthopaedic Surgeon",
+          "image": "/doctors/dr-ramesh-kumar-sen.jpg",
+          "rating": "4.9",
+          "experience": "39+ years",
+          "location": "Saket, New Delhi",
+          "hospital": "Max Super Speciality Hospital, Saket, New Delhi"
+        },
+        {
+          "id": "DOC0028",
+          "name": "Dr. Mihir Bapat",
+          "specialty": "Orthopaedic & Spine Surgeon",
+          "image": "/doctors/dr-mihir-bapat.jpg",
+          "rating": "4.9",
+          "experience": "23+ years",
+          "location": "Saket, New Delhi",
+          "hospital": "Max Super Speciality Hospital, Saket, New Delhi"
+        },
+        {
+          "id": "DOC0029",
+          "name": "Dr. Vikas Gupta",
+          "specialty": "Orthopaedic & Hand Surgeon",
+          "image": "/doctors/dr-vikas-gupta.png",
+          "rating": "4.9",
+          "experience": "30+ years",
+          "location": "Saket, New Delhi",
+          "hospital": "Max Super Speciality Hospital, Saket, New Delhi"
+        },
+        {
+          "id": "DOC0030",
+          "name": "Dr. Hemant Gupta",
+          "specialty": "Orthopaedic & Trauma Surgeon",
+          "image": "/doctors/dr-hemant-gupta.jpg",
+          "rating": "4.9",
+          "experience": "34+ years",
+          "location": "Patparganj, New Delhi",
+          "hospital": "Max Super Speciality Hospital, Patparganj, New Delhi"
         }
       ],
       "coordinates": {
@@ -5806,6 +5856,477 @@
       "certifications": [
         "Fellowships in joint replacement, arthroscopy, sports trauma, and upper limb surgeries from reputed international and national institutes",
         "Memberships include National Academy of Medical Sciences (MAMS), Indian Orthopaedic Association, Indian Arthroscopy Society, SICOT (Belgium), Rajasthan Orthopaedic Association, Delhi Orthopaedic Association, SIOR, and ASSICON"
+      ]
+    },
+    {
+      "id": "DOC0026",
+      "name": "Dr. Sanjay Gupta",
+      "image": "/doctors/dr-sanjay-gupta.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "25+ years",
+      "rating": "4.9",
+      "location": "Vaishali, India",
+      "hospital": "Max Healthcare, Vaishali",
+      "hospitalId": "HDEL0002",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003",
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS Orthopaedics (Gold Medal)",
+        "MRCS",
+        "MCh (Orthopaedics)",
+        "FRCS (Trauma & Orthopaedics)"
+      ],
+      "about": "Dr. Sanjay Gupta is a highly experienced orthopedic surgeon with over 25 years of expertise in joint replacement, knee and hip arthroplasty, sports medicine, shoulder and elbow replacement, and trauma orthopaedics. He currently serves as Senior Director and Head of Orthopaedics & Joint Replacement at Max Healthcare. Dr. Gupta holds prestigious international qualifications, including FRCS (Trauma & Orthopaedics, UK), MCh Orthopaedics (University of Liverpool), and MRCS (Royal College of Surgeons, Edinburgh). He has a gold medal in MS Orthopaedics from S.N. Medical College, Agra. Dr. Gupta actively contributes to research on spinal and orthopedic disorders, with numerous publications in reputed national and international journals. He has received multiple accolades, including the Best Knee Replacement Surgeon Award in Delhi NCR. He is a life member of several professional bodies, including the British Orthopaedics Association and Indian Orthopaedics Association.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "B.R.D. Medical School, India",
+          "year": "1995"
+        },
+        {
+          "degree": "MS Orthopaedics (Gold Medal)",
+          "institution": "S.N. Medical College, Agra",
+          "year": "2000"
+        },
+        {
+          "degree": "MRCS",
+          "institution": "Royal College of Surgeons, Edinburgh, UK",
+          "year": "2005"
+        },
+        {
+          "degree": "MCh (Orthopaedics)",
+          "institution": "University of Liverpool, UK",
+          "year": "2006"
+        },
+        {
+          "degree": "FRCS (Trauma & Orthopaedics)",
+          "institution": "Intercollegiate Specialty Board, UK",
+          "year": "2009"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director & Head, Orthopaedics & Joint Replacement",
+          "hospital": "Max Healthcare, Vaishali",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics & Joint Replacement",
+        "Knee and Hip Arthroplasty",
+        "Sports Medicine",
+        "Shoulder & Elbow Replacement",
+        "Trauma Orthopaedics"
+      ],
+      "awards": [
+        "Gold Medal in MS Orthopaedics, S.N. Medical College, Agra (2000)",
+        "Golden Zimmer Knee Fellowship, Southampton University Hospital, UK (2010)",
+        "Best Knee Replacement Surgeon Award, Delhi NCR (2016)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43240",
+        "email": "dr.sanjay.gupta@maxhealthcare.com"
+      },
+      "researchWork": "Active in research involving spinal pathologies including trauma, infection, cancer, and degenerative disorders; work cited in medical forums. Authored numerous publications in reputed national and international journals on spinal disorders and surgical techniques.",
+      "publications": [
+        "Numerous publications in reputed national and international journals on spinal disorders and surgical techniques",
+        "Active in research involving spinal pathologies including trauma, infection, cancer, and degenerative disorders",
+        "Work cited in medical forums",
+        "Research contributions to orthopedic and spinal disorders"
+      ],
+      "certifications": [
+        "FRCS (Trauma & Orthopaedics), UK",
+        "MRCS, Royal College of Surgeons, Edinburgh",
+        "Fellowships and memberships with Royal College of Surgeons Edinburgh and Ireland",
+        "Life Member of British Orthopaedics Association, British Association of Knee Surgeons, Indian Orthopaedics Association, Delhi Orthopaedics Association, Indian Medical Association"
+      ]
+    },
+    {
+      "id": "DOC0027",
+      "name": "Dr. Ramesh Kumar Sen",
+      "image": "/doctors/dr-ramesh-kumar-sen.jpg",
+      "specialty": "Orthopaedic Surgeon",
+      "experience": "39+ years",
+      "rating": "4.9",
+      "location": "Saket, New Delhi",
+      "hospital": "Max Super Speciality Hospital, Saket, New Delhi",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002",
+        "ORT0003"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "DNB (Orthopaedics)",
+        "Ph.D (Orthopaedics)"
+      ],
+      "about": "Dr. Ramesh Kumar Sen is a distinguished orthopedic surgeon with over 39 years of experience in joint replacement, arthroscopy, sports injuries, and complex trauma management. He currently serves at Max Super Speciality Hospital, Saket, New Delhi. Dr. Sen holds an MBBS and MS (Orthopaedics) from Indira Gandhi Medical College, Shimla, along with DNB (Orthopaedics) and a Ph.D. in Orthopaedics. He has published over 115 research papers in indexed national and international journals, with ongoing work in pelvic-acetabular trauma, AVN of the hip, stem cell therapy, and advanced joint replacement techniques. Dr. Sen has received multiple prestigious awards, including the OASAC Oration Award (Colombo) and several national oration honors. He is an AO Trauma Gold Member and has been recognized internationally for his contributions to orthopedic education and surgical innovation.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Indira Gandhi Medical College (IGMC), Shimla, Himachal Pradesh",
+          "year": "1985"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Indira Gandhi Medical College (IGMC), Shimla, Himachal Pradesh",
+          "year": "1990"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "National Board of Examinations, India",
+          "year": "1992"
+        },
+        {
+          "degree": "Ph.D (Orthopaedics)",
+          "institution": "Recognized University",
+          "year": "2000"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Consultant",
+          "hospital": "Max Super Speciality Hospital, Saket, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics",
+        "Joint Replacement",
+        "Arthroscopy",
+        "Sports Injury"
+      ],
+      "awards": [
+        "OASAC Oration Award – Colombo (2012)",
+        "Plenary Speaker – Baltic States Ortho Conference, Latvia (2013)",
+        "Baroda Ortho Society Oration – Vadodara (2007)",
+        "Prof. BB Ohri Oration – IOACON, Bangalore (2008)",
+        "Multiple national IOA chapter oration awards from 2007–2016"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43241",
+        "email": "dr.ramesh.kumar.sen@maxhealthcare.com"
+      },
+      "researchWork": "Over 115 research publications in indexed national and international journals. Ongoing research interests: pelvic-acetabular trauma, AVN hip and stem cell therapy, complex trauma, joint replacement. Published extensively in leading orthopedic journals including Indian Journal of Orthopaedics, Chinese Journal of Traumatology, and Journal of Clinical Orthopaedics and Trauma.",
+      "publications": [
+        "\"Regeneration of articular cartilage defect using allogenic stem cells–a 1-year follow-up in osteoarthritic knee.\" Indian Journal of Orthopaedics. 2011.",
+        "\"Atypical subtrochanteric femoral fractures: Clinical experience in a tertiary care center in North India.\" Chinese Journal of Traumatology. 2021.",
+        "\"Bilateral neglected posterior hip dislocations: a rare case report and review of literature.\" Journal of Clinical Orthopaedics and Trauma.",
+        "Over 115 research publications in indexed national and international journals",
+        "Ongoing research interests: pelvic-acetabular trauma, AVN hip and stem cell therapy, complex trauma, joint replacement"
+      ],
+      "certifications": [
+        "AO Trauma Gold Member",
+        "Certified care manager – NACCM",
+        "International Fellowships and Oration Honors across SAARC and European countries"
+      ]
+    },
+    {
+      "id": "DOC0028",
+      "name": "Dr. Mihir Bapat",
+      "image": "/doctors/dr-mihir-bapat.jpg",
+      "specialty": "Orthopaedic & Spine Surgeon",
+      "experience": "23+ years",
+      "rating": "4.9",
+      "location": "Saket, New Delhi",
+      "hospital": "Max Super Speciality Hospital, Saket, New Delhi",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "DNB (Orthopaedics)"
+      ],
+      "about": "Dr. Mihir Bapat is a highly experienced orthopedic and spine surgeon with over 23 years of clinical practice. He currently serves as Senior Director of Orthopaedics & Spinal Surgery at Max Super Speciality Hospital, Saket, New Delhi. Dr. Bapat completed his MBBS, MS (Orthopaedics), and DNB (Orthopaedics) from Grant Medical College & Sir JJ Group of Hospitals, Mumbai. He has contributed extensively to clinical research in spinal trauma, deformity correction, spinal tumors, and tuberculosis of the spine, with more than 20 indexed publications. Dr. Bapat has been recognized with awards such as the Kamarkar Gold Medal, Pandurangi Award, and multiple research accolades from ASSI. He is an International AO Spine Faculty member, regularly participates as a faculty in national and international conferences, and has contributed to several key textbooks on orthopaedics and trauma.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Grant Medical College & Sir JJ Group of Hospitals, Mumbai",
+          "year": "1994"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Grant Medical College & Sir JJ Group of Hospitals, Mumbai",
+          "year": "1998"
+        },
+        {
+          "degree": "DNB (Orthopaedics)",
+          "institution": "National Board of Examinations, India",
+          "year": "2000"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director – Orthopaedics & Spinal Surgery",
+          "hospital": "Max Super Speciality Hospital, Saket, New Delhi",
+          "duration": "Present"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics",
+        "Spine Surgery",
+        "Joint Replacement"
+      ],
+      "awards": [
+        "Kamarkar Gold Medal – 1994 (Highest in Surgery – GS Medical College, Mumbai)",
+        "Pandurangi Award – 1996 (Best Resident in Orthopaedics)",
+        "IOACON Appreciation Award – 2005",
+        "Best Clinical Research Paper Award – ASSI, 2006",
+        "ASSI Award – Maximum peer-reviewed publications (2006)"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43242",
+        "email": "dr.mihir.bapat@maxhealthcare.com"
+      },
+      "researchWork": "Extensive clinical research in spine disorders, spinal trauma, tuberculosis of spine, deformity correction, spinal tumors. Clinical educator and contributor to spine surgery training and protocol development. Contributor to textbooks on orthopaedics and trauma. Over 20+ indexed research articles in spine-related conditions.",
+      "publications": [
+        "Bapat M, Narlawar R, et al. \"Mycotic aneurysm of the descending thoracic aorta with intraspinal extension causing paraplegia.\" Acta Orthop Scand. 2002.",
+        "Bapat M, et al. \"Approach to tuberculosis of the cervico-dorsal junction.\" Spine. 2006.",
+        "\"Paraplegia due to recurrent multiple hydatid cysts of the spine.\" Indian J Orthop. 2008.",
+        "\"MRI diagnosis of intradural disc herniation: A report of three cases.\" Internet J Orthop Surg. 2011.",
+        "Contributed chapters in: Textbook of Orthopaedics and Trauma (G.S. Kulkarni, Jaypee, 2008), Spine Infections and Trauma (Jaypee Publishers)",
+        "Over 20+ indexed research articles in spine-related conditions"
+      ],
+      "certifications": [
+        "International AO Spine Faculty",
+        "Johnson & Johnson Annual Travelling Fellowship",
+        "Member of ASSI, AO Spine, BOS, WIROC, MAOA",
+        "Regular speaker and faculty at ASSICON, IOACON"
+      ]
+    },
+    {
+      "id": "DOC0029",
+      "name": "Dr. Vikas Gupta",
+      "image": "/doctors/dr-vikas-gupta.png",
+      "specialty": "Orthopaedic & Hand Surgeon",
+      "experience": "30+ years",
+      "rating": "4.9",
+      "location": "Saket, New Delhi",
+      "hospital": "Max Super Speciality Hospital, Saket, New Delhi",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0004"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "Hand Surgery Fellowships (USA, Germany)"
+      ],
+      "about": "Dr. Vikas Gupta is a distinguished orthopedic surgeon specializing in hand, wrist, elbow, and shoulder surgery, with over 30 years of experience. He currently serves as Senior Director at the Max Institute of Musculoskeletal Sciences and Orthopaedics, Max Super Speciality Hospital, Saket, New Delhi. An alumnus of AIIMS, New Delhi, Dr. Gupta has completed fellowships in hand surgery in the USA and Germany. He has extensive experience in wrist arthroscopy, upper limb trauma, tendon reconstruction, and congenital hand anomalies. Dr. Gupta has authored multiple publications in national and international journals, contributed to textbooks on upper extremity surgery, and is recognized for pioneering procedures like India's first ceramic-on-ceramic wrist replacement. Fluent in English and Hindi, he is a life member of numerous professional associations, including the ISSH, IOA, DOA, and Indian Arthroscopy Society, and has performed over 6,000 complex upper limb surgeries.",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "All India Institute of Medical Sciences (AIIMS), New Delhi",
+          "year": "1990"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "All India Institute of Medical Sciences (AIIMS), New Delhi",
+          "year": "1994"
+        },
+        {
+          "degree": "Hand Surgery Fellowships",
+          "institution": "Mayo Clinic, Rochester, USA & Freiberg, Germany",
+          "year": "1996-1998"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director – Max Institute of Musculoskeletal Sciences and Orthopaedics",
+          "hospital": "Max Super Speciality Hospital, Saket, New Delhi",
+          "duration": "Present"
+        },
+        {
+          "position": "Former Associate Professor",
+          "hospital": "AIIMS, New Delhi",
+          "duration": "Previous"
+        },
+        {
+          "position": "Former Director",
+          "hospital": "Medanta Bone & Joint Institute",
+          "duration": "Previous"
+        }
+      ],
+      "specializations": [
+        "Hand Surgery",
+        "Wrist Surgery",
+        "Elbow Surgery",
+        "Shoulder Surgery",
+        "Orthopaedics",
+        "Sports Injury"
+      ],
+      "awards": [
+        "Best Paper Award – Wrist Arthroscopy, North Zone IOA, Srinagar (2004)",
+        "Nominated in Marquis Who's Who in Asia (2007)",
+        "First surgeon in India to perform ceramic-on-ceramic wrist replacement",
+        "Performed over 6000 complex hand and upper extremity surgeries"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43243",
+        "email": "dr.vikas.gupta@maxhealthcare.com"
+      },
+      "researchWork": "Extensive work in wrist arthroscopy, upper limb trauma, tendon reconstruction. Research in nerve injuries, congenital hand anomalies, and wrist kinematics. Faculty member and researcher at AIIMS and Medanta, contributing to upper extremity biomechanics and reconstructive surgery literature. Multiple publications in Indian Journal of Orthopaedics and international journals related to upper limb surgery.",
+      "publications": [
+        "Multiple publications in Indian Journal of Orthopaedics and international journals related to upper limb surgery",
+        "Known for papers and conference presentations on wrist arthroscopy and tendon injuries",
+        "Best Paper Award: Wrist Arthroscopy, NZIOA Conference, Srinagar, 2004",
+        "Contributed chapters in textbooks on hand surgery and upper extremity trauma",
+        "Research in nerve injuries, congenital hand anomalies, and wrist kinematics",
+        "Faculty member and researcher at AIIMS and Medanta, contributing to upper extremity biomechanics and reconstructive surgery literature"
+      ],
+      "certifications": [
+        "AO Fellowship – Freiberg, Germany",
+        "Fellowship in Hand Surgery – Mayo Clinic, Rochester, USA",
+        "Former Associate Professor – AIIMS, New Delhi",
+        "Former Director – Medanta Bone & Joint Institute",
+        "Life Member – Indian Society for Surgery of the Hand (ISSH), Indian Orthopaedic Association (IOA), Delhi Orthopaedic Association (DOA), Indian Arthroscopy Society, Indian Society of Hip & Knee Surgeons, Association of Spine Surgeons of India (ASSI), Orthopaedic Research Society (AIIMS), Indian Rheumatology Association, Indian Federation of Sports Medicine, Madhya Pradesh Orthopaedic Association"
+      ]
+    },
+    {
+      "id": "DOC0030",
+      "name": "Dr. Hemant Gupta",
+      "image": "/doctors/dr-hemant-gupta.jpg",
+      "specialty": "Orthopaedic & Trauma Surgeon",
+      "experience": "34+ years",
+      "rating": "4.9",
+      "location": "Patparganj, New Delhi",
+      "hospital": "Max Super Speciality Hospital, Patparganj, New Delhi",
+      "hospitalId": "HDEL0003",
+      "consultationFee": "₹5000",
+      "treatments": [
+        "ORT0001",
+        "ORT0002"
+      ],
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)"
+      ],
+      "about": "Dr. Hemant Gupta is a senior orthopedic surgeon with over 34 years of experience, specializing in orthopaedics, trauma, and joint replacement. He currently serves as Senior Director of Orthopaedics & Trauma at Max Super Speciality Hospital, Patparganj, New Delhi. An alumnus of Mahatma Gandhi Memorial (MGM) Medical College, Indore, Dr. Gupta completed his senior residency at Maulana Azad Medical College, LNJP Hospital, and GB Pant Hospital, New Delhi. He has actively contributed to clinical research, publishing numerous papers in national and international orthopedic journals. Dr. Gupta has been recognized twice by the Indian Medical Association (IMA–EDB) for his outstanding services to the medical profession. Fluent in English and Hindi, he is a life member of the Indian Medical Association (IMA), Indian Orthopaedic Association (IOA), and Delhi Orthopaedic Association (DOA).",
+      "education": [
+        {
+          "degree": "MBBS",
+          "institution": "Mahatma Gandhi Memorial (MGM) Medical College, Indore, Madhya Pradesh",
+          "year": "1985"
+        },
+        {
+          "degree": "MS (Orthopaedics)",
+          "institution": "Mahatma Gandhi Memorial (MGM) Medical College, Indore, Madhya Pradesh",
+          "year": "1989"
+        }
+      ],
+      "workExperience": [
+        {
+          "position": "Senior Director – Orthopaedics & Trauma",
+          "hospital": "Max Super Speciality Hospital, Patparganj, New Delhi",
+          "duration": "Present"
+        },
+        {
+          "position": "Senior Residency",
+          "hospital": "Maulana Azad Medical College, LNJP Hospital, and GB Pant Hospital, New Delhi",
+          "duration": "1981–1984"
+        }
+      ],
+      "specializations": [
+        "Orthopaedics & Trauma",
+        "Joint Replacement"
+      ],
+      "awards": [
+        "Awarded twice by Indian Medical Association (IMA–EDB) for services to the medical profession"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "availability": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 2:00 PM",
+        "sunday": "Emergency Only"
+      },
+      "contact": {
+        "phone": "+91-98765-43244",
+        "email": "dr.hemant.gupta@maxhealthcare.com"
+      },
+      "researchWork": "Actively involved in clinical research. Published several papers in national and international orthopedic journals. Contributed to clinical research in orthopaedics and trauma management.",
+      "publications": [
+        "Published several papers in national and international orthopedic journals",
+        "Actively involved in clinical research",
+        "Contributed to clinical research in orthopaedics and trauma management"
+      ],
+      "certifications": [
+        "Senior Residency at Maulana Azad Medical College, LNJP Hospital, and GB Pant Hospital, New Delhi (1981–1984)",
+        "Life Member – Indian Medical Association (IMA)",
+        "Life Member – Indian Orthopaedic Association (IOA)",
+        "Life Member – Delhi Orthopaedic Association (DOA)"
       ]
     }
   ],

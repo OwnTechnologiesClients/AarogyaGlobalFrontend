@@ -8,14 +8,14 @@ import dataService from '@/lib/dataService';
 export async function generateStaticParams() {
   // For now, return the known doctor IDs directly
   // This ensures the static paths are generated correctly
-  // Updated to include DOC0005 (Dr. Sukant Vijay), DOC0006 (Dr. Aman Dua), DOC0007 (Dr. Kaushal Kant Mishra), DOC0008 (Dr. Amite Pankaj Aggarwal), DOC0009 (Dr. Gurinder Bedi), DOC0010 (Dr. Manoj Miglani), DOC0011 (Dr. Narayan Hulse), DOC0012 (Dr. Atul Mishra), DOC0013 (Dr. Dhananjay Gupta), DOC0014 (Dr. Anoop Jhurani), DOC0015 (Dr. S.K.S. Marya), DOC0016 (Dr. Ramneek Mahajan), DOC0017 (Dr. Anil Arora), DOC0018 (Dr. Pradeep B. Bhosale), DOC0019 (Dr. Sujoy Bhattacharjee), DOC0020 (Dr. Bhushan Nariani), DOC0021 (Dr. H.N. Bajaj), and DOC0022 (Dr. B.S. Murthy)
-  // Force recompilation by updating comment - DOC0022 fix applied
+  // Updated to include DOC0005 (Dr. Sukant Vijay), DOC0006 (Dr. Aman Dua), DOC0007 (Dr. Kaushal Kant Mishra), DOC0008 (Dr. Amite Pankaj Aggarwal), DOC0009 (Dr. Gurinder Bedi), DOC0010 (Dr. Manoj Miglani), DOC0011 (Dr. Narayan Hulse), DOC0012 (Dr. Atul Mishra), DOC0013 (Dr. Dhananjay Gupta), DOC0014 (Dr. Anoop Jhurani), DOC0015 (Dr. S.K.S. Marya), DOC0016 (Dr. Ramneek Mahajan), DOC0017 (Dr. Anil Arora), DOC0018 (Dr. Pradeep B. Bhosale), DOC0019 (Dr. Sujoy Bhattacharjee), DOC0020 (Dr. Bhushan Nariani), DOC0021 (Dr. H.N. Bajaj), DOC0022 (Dr. B.S. Murthy), DOC0023 (Dr. Rakesh Mahajan), DOC0024 (Dr. L. Tomar), DOC0025 (Dr. Ishwar Bohra), and DOC0026 (Dr. Sanjay Gupta)
+  // Force recompilation by updating comment - DOC0026 fix applied
 
-  // Create params array with all doctor IDs including DOC0022, DOC0023, DOC0024, and DOC0025
+  // Create params array with all doctor IDs including DOC0022, DOC0023, DOC0024, DOC0025, DOC0026, DOC0027, DOC0028, DOC0029, and DOC0030
   const doctorIds = [
     'DOC0001', 'DOC0002', 'DOC0003', 'DOC0004', 'DOC0005', 'DOC0006', 'DOC0007', 'DOC0008', 'DOC0009', 'DOC0010',
     'DOC0011', 'DOC0012', 'DOC0013', 'DOC0014', 'DOC0015', 'DOC0016', 'DOC0017', 'DOC0018', 'DOC0019', 'DOC0020',
-    'DOC0021', 'DOC0022', 'DOC0023', 'DOC0024', 'DOC0025'
+    'DOC0021', 'DOC0022', 'DOC0023', 'DOC0024', 'DOC0025', 'DOC0026', 'DOC0027', 'DOC0028', 'DOC0029', 'DOC0030'
   ];
 
   const params = doctorIds.map(doctorId => ({ doctorId }));
@@ -23,6 +23,7 @@ export async function generateStaticParams() {
   console.log('generateStaticParams: Generated params for doctors:', params);
   console.log('Total doctors in static params:', params.length);
   console.log('DOC0022 specifically included:', params.some(p => p.doctorId === 'DOC0022'));
+  console.log('DOC0026 specifically included:', params.some(p => p.doctorId === 'DOC0026'));
 
   // Explicit check for DOC0022
   const doc0022Param = params.find(p => p.doctorId === 'DOC0022');
@@ -36,7 +37,19 @@ export async function generateStaticParams() {
     console.log('Added DOC0022 to params:', params[params.length - 1]);
   }
 
-  // Verify DOC0006, DOC0007, DOC0008, DOC0009, DOC0010, DOC0011, DOC0012, DOC0013, DOC0014, DOC0015, DOC0016, DOC0017, DOC0018, DOC0019, DOC0020, DOC0021, DOC0022, DOC0023, DOC0024, and DOC0025 are included
+  // Explicit check for DOC0026
+  const doc0026Param = params.find(p => p.doctorId === 'DOC0026');
+  console.log('DOC0026 param object:', doc0026Param);
+
+  if (!doc0026Param) {
+    console.error('CRITICAL ERROR: DOC0026 not found in params!');
+    console.error('Available doctor IDs:', params.map(p => p.doctorId));
+    // Force add DOC0026 if missing
+    params.push({ doctorId: 'DOC0026' });
+    console.log('Added DOC0026 to params:', params[params.length - 1]);
+  }
+
+  // Verify DOC0006, DOC0007, DOC0008, DOC0009, DOC0010, DOC0011, DOC0012, DOC0013, DOC0014, DOC0015, DOC0016, DOC0017, DOC0018, DOC0019, DOC0020, DOC0021, DOC0022, DOC0023, DOC0024, DOC0025, DOC0026, DOC0027, DOC0028, DOC0029, and DOC0030 are included
   const hasDOC0006 = params.some(p => p.doctorId === 'DOC0006');
   const hasDOC0007 = params.some(p => p.doctorId === 'DOC0007');
   const hasDOC0008 = params.some(p => p.doctorId === 'DOC0008');
@@ -57,6 +70,11 @@ export async function generateStaticParams() {
   const hasDOC0023 = params.some(p => p.doctorId === 'DOC0023');
   const hasDOC0024 = params.some(p => p.doctorId === 'DOC0024');
   const hasDOC0025 = params.some(p => p.doctorId === 'DOC0025');
+  const hasDOC0026 = params.some(p => p.doctorId === 'DOC0026');
+  const hasDOC0027 = params.some(p => p.doctorId === 'DOC0027');
+  const hasDOC0028 = params.some(p => p.doctorId === 'DOC0028');
+  const hasDOC0029 = params.some(p => p.doctorId === 'DOC0029');
+  const hasDOC0030 = params.some(p => p.doctorId === 'DOC0030');
   console.log('DOC0006 included in params:', hasDOC0006);
   console.log('DOC0007 included in params:', hasDOC0007);
   console.log('DOC0008 included in params:', hasDOC0008);
@@ -77,6 +95,11 @@ export async function generateStaticParams() {
   console.log('DOC0023 included in params:', hasDOC0023);
   console.log('DOC0024 included in params:', hasDOC0024);
   console.log('DOC0025 included in params:', hasDOC0025);
+  console.log('DOC0026 included in params:', hasDOC0026);
+  console.log('DOC0027 included in params:', hasDOC0027);
+  console.log('DOC0028 included in params:', hasDOC0028);
+  console.log('DOC0029 included in params:', hasDOC0029);
+  console.log('DOC0030 included in params:', hasDOC0030);
 
   if (!hasDOC0006) {
     console.error('ERROR: DOC0006 not found in static params!');
@@ -142,11 +165,56 @@ export async function generateStaticParams() {
     console.error('ERROR: DOC0025 not found in static params!');
     console.error('Available doctor IDs:', params.map(p => p.doctorId));
   }
+  if (!hasDOC0026) {
+    console.error('ERROR: DOC0026 not found in static params!');
+    console.error('Available doctor IDs:', params.map(p => p.doctorId));
+  }
+  if (!hasDOC0027) {
+    console.error('ERROR: DOC0027 not found in static params!');
+    console.error('Available doctor IDs:', params.map(p => p.doctorId));
+  }
+  if (!hasDOC0028) {
+    console.error('ERROR: DOC0028 not found in static params!');
+    console.error('Available doctor IDs:', params.map(p => p.doctorId));
+  }
+  if (!hasDOC0029) {
+    console.error('ERROR: DOC0029 not found in static params!');
+    console.error('Available doctor IDs:', params.map(p => p.doctorId));
+  }
+  if (!hasDOC0030) {
+    console.error('ERROR: DOC0030 not found in static params!');
+    console.error('Available doctor IDs:', params.map(p => p.doctorId));
+  }
 
   // Additional verification for DOC0022
   const doc0022Index = params.findIndex(p => p.doctorId === 'DOC0022');
   console.log('DOC0022 found at index:', doc0022Index);
   console.log('DOC0022 object:', params[doc0022Index]);
+
+  // Additional verification for DOC0026
+  const doc0026Index = params.findIndex(p => p.doctorId === 'DOC0026');
+  console.log('DOC0026 found at index:', doc0026Index);
+  console.log('DOC0026 object:', params[doc0026Index]);
+
+  // Additional verification for DOC0027
+  const doc0027Index = params.findIndex(p => p.doctorId === 'DOC0027');
+  console.log('DOC0027 found at index:', doc0027Index);
+  console.log('DOC0027 object:', params[doc0027Index]);
+
+  // Additional verification for DOC0028
+  const doc0028Index = params.findIndex(p => p.doctorId === 'DOC0028');
+  console.log('DOC0028 found at index:', doc0028Index);
+  console.log('DOC0028 object:', params[doc0028Index]);
+
+  // Additional verification for DOC0029
+  const doc0029Index = params.findIndex(p => p.doctorId === 'DOC0029');
+  console.log('DOC0029 found at index:', doc0029Index);
+  console.log('DOC0029 object:', params[doc0029Index]);
+
+  // Additional verification for DOC0030
+  const doc0030Index = params.findIndex(p => p.doctorId === 'DOC0030');
+  console.log('DOC0030 found at index:', doc0030Index);
+  console.log('DOC0030 object:', params[doc0030Index]);
 
   return params;
 }
