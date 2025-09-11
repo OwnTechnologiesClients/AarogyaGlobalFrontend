@@ -119,8 +119,8 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                           key={pageNumber}
                           onClick={() => handlePageChange(pageNumber)}
                           className={`px-4 py-2 text-sm font-medium rounded-md ${currentPage === pageNumber
-                              ? 'bg-blue-600 text-white border border-blue-600'
-                              : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                            ? 'bg-blue-600 text-white border border-blue-600'
+                            : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
                             }`}
                         >
                           {pageNumber}
@@ -190,7 +190,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+380931281076"
-                className="flex-1 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="flex-1 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
               >
                 <span>Request Callback</span>
                 <ArrowRight className="w-5 h-5" />

@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Star, MapPin, Award, Users, CheckCircle, Globe, Shield } from 'lucide-react';
+import Link from 'next/link';
+import { ChevronLeft, ChevronRight, Star, MapPin, Award, Users, CheckCircle, Globe, Shield, ExternalLink } from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -84,7 +85,7 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
         >
           {hospitals.map((hospital, index) => (
             <SwiperSlide key={hospital.id || index}>
-              <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 h-full">
+              <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col">
                 <div className="relative">
                   <img
                     src={hospital.image}
@@ -105,7 +106,7 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
                     </div>
                   )}
                 </div>
-                <div className="p-4">
+                <div className="p-4 flex-1 flex flex-col">
                   <h4 className="font-bold text-gray-800 text-sm mb-2 line-clamp-2">{hospital.name}</h4>
                   <div className="flex items-center gap-1 mb-3">
                     <MapPin className="w-3 h-3 text-gray-400" />
@@ -176,7 +177,7 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
 
                   {/* Facilities */}
                   {hospital.facilities && hospital.facilities.length > 0 && (
-                    <div>
+                    <div className="mb-4">
                       <p className="text-xs text-gray-600 font-medium mb-1">Facilities:</p>
                       <div className="flex flex-wrap gap-1">
                         {hospital.facilities.slice(0, 2).map((facility, idx) => (
@@ -190,6 +191,17 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
                       </div>
                     </div>
                   )}
+
+                  {/* View Details Button */}
+                  <div className="mt-auto pt-3">
+                    <Link
+                      href={`/hospitalDetails/${hospital.id}`}
+                      className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    >
+                      <span>View Details</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

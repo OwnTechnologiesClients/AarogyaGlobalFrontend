@@ -106,9 +106,9 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                 <div className="flex justify-center">
                     <button
                         onClick={handleCardClick}
-                        className="w-full text-center text-indigo-600 flex items-center justify-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-3 transition-colors duration-200 cursor-pointer"
+                        className="w-full bg-[#04CE78] hover:bg-green-600 text-white flex items-center justify-center space-x-2 rounded-lg p-3 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg font-semibold"
                     >
-                        <span className="font-semibold">View Details</span>
+                        <span>View Details</span>
                         <ArrowRight className="w-4 h-4" />
                     </button>
                 </div>
@@ -201,7 +201,7 @@ const HospitalMain = ({ hospitals }) => {
                                                     </div>
                                                     <a
                                                         href="tel:+380931281076"
-                                                        className="bg-indigo-950 text-white py-3 px-4 font-bold text-sm rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+                                                        className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-4 font-bold text-sm rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
                                                     >
                                                         <span>Request Callback</span>
                                                         <ArrowRight className="w-4 h-4" />

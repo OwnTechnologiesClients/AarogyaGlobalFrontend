@@ -95,7 +95,7 @@ const DoctorCard = ({ doctor }) => {
                     <div className="flex justify-end">
                         <button
                             onClick={handleViewDetails}
-                            className="bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-200 flex items-center gap-2 font-semibold text-base"
+                            className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-6 rounded-lg transition-all duration-300 flex items-center gap-2 font-semibold text-base transform hover:scale-105 hover:shadow-lg"
                         >
                             <span>View Details</span>
                             <ArrowRight className="w-5 h-5" />

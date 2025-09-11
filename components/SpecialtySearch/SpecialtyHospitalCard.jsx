@@ -80,7 +80,7 @@ const SpecialtyHospitalCard = ({ hospital }) => {
                 <div className="flex justify-between items-center">
                     <button
                         onClick={handleViewDetails}
-                        className="text-indigo-600 flex items-center space-x-2 hover:text-indigo-800 bg-indigo-100 rounded-lg p-2 cursor-pointer"
+                        className="bg-[#04CE78] hover:bg-green-600 text-white flex items-center space-x-2 rounded-lg p-3 cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                     >
                         <span className="font-semibold text-sm md:text-md">View Details</span>
                         <ArrowRight className="w-4 h-4" />

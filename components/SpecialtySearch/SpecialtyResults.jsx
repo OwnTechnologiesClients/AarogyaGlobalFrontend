@@ -93,7 +93,7 @@ const SpecialtyResults = ({
         </div>
         <a
           href="tel:+380931281076"
-          className="mt-4 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+          className="mt-4 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
         >
           <span>Request Callback</span>
           <ArrowRight className="w-5 h-5" />
@@ -238,7 +238,7 @@ const SpecialtyResults = ({
             </div>
             <a
               href="tel:+380931281076"
-              className="mt-4 bg-indigo-950 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-indigo-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="mt-4 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
             >
               <span>Request Callback</span>
               <ArrowRight className="w-5 h-5" />
