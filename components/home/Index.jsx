@@ -1,5 +1,6 @@
 import React from "react";
 import HeroBannerVideo from "./hero/HeroBannerVideo";
+import ConsultationForm from "./ConsultationForm";
 import MarqueeBanner from "./MarqueeBanner";
 import FeatureCards from "./FeatureCards";
 import TrustedBy from "./TrustedBy";
@@ -18,6 +19,7 @@ const HomeSection = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <HeroBannerVideo />
+      <ConsultationForm />
       <MarqueeBanner />
       <FeatureCards />
       <TrustedBy />
