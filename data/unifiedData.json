@@ -935,7 +935,7 @@
       "description": "Comprehensive cancer care and treatment",
       "icon": "/specialties/oncology.png",
       "color": "#E7C2D4",
-      "count": 5,
+      "count": 13,
       "overview": {
         "description": "Oncology is a medical specialty that focuses on the diagnosis and treatment of cancer. Our medical tourism platform connects patients with the best oncology hospitals and doctors worldwide, offering advanced diagnostic tools, cutting-edge treatment options, and cost-effective healthcare solutions.",
         "highlights": [
@@ -1392,6 +1392,423 @@
             {
               "question": "Why is 'optimal debulking' important?",
               "answer": "Less residual disease improves outcomes."
+            }
+          ]
+        },
+        {
+          "id": "ONC0006",
+          "category": "Oncology",
+          "name": "Alkylating Agents (e.g., Cyclophosphamide)",
+          "description": "Chemotherapy that damages DNA via alkylation, preventing cell replication.",
+          "duration": "Given IV or oral in cycles (often q3–4 weeks); infusion 30–120 min.",
+          "recovery": "Fatigue for a few days after each cycle; monitor counts and renal/hepatic function.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Chemo protocols",
+            "Safe handling",
+            "Growth‑factor availability",
+            "24×7 emergency care"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Experience with your regimen",
+              "Supportive‑care protocols",
+              "Access to clinical trials"
+            ]
+          },
+          "diagnosticTools": [
+            "CBC",
+            "Renal/hepatic panels",
+            "Fertility counseling when relevant"
+          ],
+          "advancedTreatmentOptions": [
+            "Dose‑dense regimens",
+            "Fertility preservation",
+            "Uro‑protection (e.g., mesna for ifosfamide)"
+          ],
+          "advantages": [
+            "Broad activity across many tumors",
+            "Often part of curative regimens"
+          ],
+          "costConsiderations": "Generics lower drug cost vs targeted agents; costs from labs, G‑CSF, antiemetics, and admissions can add up.",
+          "detailedCost": "Generics lower drug cost vs targeted agents; costs from labs, G‑CSF, antiemetics, and admissions can add up.",
+          "faq": [
+            {
+              "question": "Common side effects?",
+              "answer": "Nausea, hair loss, low counts."
+            },
+            {
+              "question": "Secondary cancer risk?",
+              "answer": "Small but real with some agents."
+            }
+          ]
+        },
+        {
+          "id": "ONC0007",
+          "category": "Oncology",
+          "name": "Anthracyclines (e.g., Doxorubicin)",
+          "description": "DNA‑intercalating chemotherapy with topoisomerase II inhibition.",
+          "duration": "Usually IV q2–3 weeks in combination regimens.",
+          "recovery": "Monitor for cardiotoxicity; echo at baseline and as indicated.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Cardio‑onc services",
+            "Access to liposomal formulations",
+            "Dexrazoxane where indicated"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Discuss cumulative dose limits",
+              "Echo monitoring plan",
+              "Risk‑mitigation"
+            ]
+          },
+          "diagnosticTools": [
+            "Baseline echo",
+            "Troponin/BNP where indicated",
+            "CBC and CMP"
+          ],
+          "advancedTreatmentOptions": [
+            "Pegylated liposomal doxorubicin to reduce cardiac risk",
+            "Dexrazoxane for high cumulative doses"
+          ],
+          "advantages": [
+            "High response rates in breast and sarcoma",
+            "Curative regimens in lymphoma/leukemia"
+          ],
+          "costConsiderations": "Generic drug costs; budget for cardiac monitoring and growth‑factor support.",
+          "detailedCost": "Generic drug costs; budget for cardiac monitoring and growth‑factor support.",
+          "faq": [
+            {
+              "question": "Heart damage risk?",
+              "answer": "Dose‑related; mitigated by liposomal forms and dexrazoxane."
+            },
+            {
+              "question": "Hair loss?",
+              "answer": "Common."
+            }
+          ]
+        },
+        {
+          "id": "ONC0008",
+          "category": "Oncology",
+          "name": "Platinum Compounds (Cisplatin/Carboplatin/Oxaliplatin)",
+          "description": "Cross‑links DNA, triggering apoptosis; backbone of many solid‑tumor regimens.",
+          "duration": "Typically IV every 3 weeks (carbo/cis) or q2 weeks with FOLFOX.",
+          "recovery": "Hydration and antiemetics for cisplatin; monitor for nephrotoxicity, myelosuppression, neuropathy.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Chemo safety protocols",
+            "Availability of audiology/neurology for toxicity"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Experience tailoring dose by renal function",
+              "Toxicity management"
+            ]
+          },
+          "diagnosticTools": [
+            "CBC",
+            "Creatinine/CrCl",
+            "Electrolytes",
+            "Audiometry if cisplatin",
+            "Neuropathy checks"
+          ],
+          "advancedTreatmentOptions": [
+            "Desensitization for hypersensitivity",
+            "Switch between cisplatin/carboplatin based on tolerance"
+          ],
+          "advantages": [
+            "Improves survival in many cancers (lung, ovary, GI)"
+          ],
+          "costConsiderations": "Generic drugs reduce cost; monitor costs of hydration, antiemetics, and toxicity management.",
+          "detailedCost": "Generic drugs reduce cost; monitor costs of hydration, antiemetics, and toxicity management.",
+          "faq": [
+            {
+              "question": "Which is 'stronger'?",
+              "answer": "Cisplatin is more emetogenic/nephrotoxic; carboplatin more myelosuppressive; oxaliplatin—neuropathy."
+            }
+          ]
+        },
+        {
+          "id": "ONC0009",
+          "category": "Oncology",
+          "name": "Antimetabolites (e.g., 5‑FU/Capecitabine)",
+          "description": "Analogues that disrupt DNA/RNA synthesis; oral capecitabine is a prodrug of 5‑FU.",
+          "duration": "Given IV (bolus/continuous) or oral in 2‑ or 3‑week cycles.",
+          "recovery": "Monitor for hand‑foot syndrome, mucositis, diarrhea; consider DPD testing where available.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Protocols for early toxicity escalation",
+            "DPD testing access or referral"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Discuss DPD deficiency risk",
+              "Dose holds/reductions",
+              "Supportive care plan"
+            ]
+          },
+          "diagnosticTools": [
+            "CBC",
+            "Renal/hepatic tests",
+            "DPD testing before capecitabine/5‑FU when possible"
+          ],
+          "advancedTreatmentOptions": [
+            "Use of ambulatory pumps for continuous 5‑FU",
+            "Switch to oral or vice‑versa based on tolerance"
+          ],
+          "advantages": [
+            "Oral option",
+            "Effective across GI and breast protocols"
+          ],
+          "costConsiderations": "Lower drug price vs biologics; watch for ER visits from dehydration or severe diarrhea.",
+          "detailedCost": "Lower drug price vs biologics; watch for ER visits from dehydration or severe diarrhea.",
+          "faq": [
+            {
+              "question": "Can I work during therapy?",
+              "answer": "Many can between cycles."
+            },
+            {
+              "question": "Diet?",
+              "answer": "Hydration critical; bland foods during mucositis/diarrhea."
+            }
+          ]
+        },
+        {
+          "id": "ONC0010",
+          "category": "Oncology",
+          "name": "Taxanes (Paclitaxel/Docetaxel)",
+          "description": "Stabilize microtubules and halt mitosis.",
+          "duration": "Weekly or q3‑week schedules; infusion 60–180 min with premedication.",
+          "recovery": "Peripheral neuropathy and myelosuppression are dose‑limiting; monitor and adjust.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Infusion reaction protocols",
+            "Neuropathy prevention/management pathways"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Discuss weekly vs q3‑week trade‑offs",
+              "Neuropathy management",
+              "G‑CSF plan"
+            ]
+          },
+          "diagnosticTools": [
+            "CBC",
+            "Neuropathy grading",
+            "Liver function tests"
+          ],
+          "advancedTreatmentOptions": [
+            "Albumin‑bound paclitaxel",
+            "Dose‑dense schedules",
+            "Cryotherapy for neuropathy (emerging)"
+          ],
+          "advantages": [
+            "Key drugs in breast, lung, ovary, prostate",
+            "Survival benefit in many settings"
+          ],
+          "costConsiderations": "Generics available; cost from G‑CSF and toxicity management.",
+          "detailedCost": "Generics available; cost from G‑CSF and toxicity management.",
+          "faq": [
+            {
+              "question": "Will neuropathy go away?",
+              "answer": "Often improves but can persist; dose adjustments may help."
+            }
+          ]
+        },
+        {
+          "id": "ONC0011",
+          "category": "Oncology",
+          "name": "CAR‑T Cell Therapy",
+          "description": "Autologous T‑cells engineered to target tumor antigens; reinfused after lymphodepletion.",
+          "duration": "Manufacturing 2–4 weeks; single infusion; inpatient monitoring 1–2 weeks typical.",
+          "recovery": "Monitor for cytokine release syndrome and neurotoxicity; requires trained ICU team.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Certified CAR‑T center",
+            "Proven outcomes",
+            "Access to tocilizumab/steroids",
+            "Step‑down/ICU"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Center experience",
+              "Clinical‑trial access",
+              "Time‑to‑infusion logistics"
+            ]
+          },
+          "diagnosticTools": [
+            "Antigen testing (e.g., CD19)",
+            "Disease restaging",
+            "Infection workup"
+          ],
+          "advancedTreatmentOptions": [
+            "Next‑gen CAR‑T",
+            "Dual‑target constructs",
+            "Consolidation strategies (trial‑based)"
+          ],
+          "advantages": [
+            "High response in select blood cancers",
+            "Potential long‑term remissions"
+          ],
+          "costConsiderations": "In India, the approved NexCAR19 CAR‑T is reported around ₹30–40 Lakh. Consider ICU, transfusions, and caregiver time.",
+          "detailedCost": "In India, the approved NexCAR19 CAR‑T is reported around ₹30–40 Lakh. Consider ICU, transfusions, and caregiver time.",
+          "faq": [
+            {
+              "question": "Is it one‑time?",
+              "answer": "Usually yes, but retreatment varies."
+            },
+            {
+              "question": "Main risks?",
+              "answer": "CRS and neurotoxicity—centers must be experienced."
+            }
+          ]
+        },
+        {
+          "id": "ONC0012",
+          "category": "Oncology",
+          "name": "Oncolytic Viruses (e.g., T‑VEC)",
+          "description": "Modified viruses injected into tumors to trigger cancer cell death and immune activation.",
+          "duration": "Typical T‑VEC schedule: Week 0, Week 3, then every 2 weeks until response or intolerance.",
+          "recovery": "Local flu‑like symptoms; outpatient injections.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Experience administering T‑VEC",
+            "Cold‑chain, biosafety protocols",
+            "Access to immunotherapy combinations"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "Check prior case volumes",
+              "Combination‑therapy experience"
+            ]
+          },
+          "diagnosticTools": [
+            "Staging scans",
+            "Lesion mapping",
+            "Virology handling protocols"
+          ],
+          "advancedTreatmentOptions": [
+            "Combination with checkpoint inhibitors in trials"
+          ],
+          "advantages": [
+            "Can shrink injected lesions",
+            "Immune priming effect"
+          ],
+          "costConsiderations": "Drug and procedure fees; schedule is frequent early.",
+          "detailedCost": "Drug and procedure fees; schedule is frequent early.",
+          "faq": [
+            {
+              "question": "Is it systemic?",
+              "answer": "Primarily local but can induce systemic responses."
+            },
+            {
+              "question": "Isolation needed?",
+              "answer": "Follow handling precautions."
+            }
+          ]
+        },
+        {
+          "id": "ONC0013",
+          "category": "Oncology",
+          "name": "Cancer Vaccines (Prophylactic & Therapeutic)",
+          "description": "Vaccines that prevent virus‑driven cancers (HPV/HBV) or stimulate immune response against tumor antigens (e.g., sipuleucel‑T).",
+          "duration": "HPV/HBV per national schedules; sipuleucel‑T given in 3 infusions over ~1 month.",
+          "recovery": "Mostly outpatient; mild flu‑like symptoms possible.",
+          "topHospitals": [
+            "HDEL0001",
+            "HDEL0002",
+            "HDEL0003"
+          ],
+          "hospitalSelectionCriteria": "What helps to find the best hospital?",
+          "hospitalSelectionList": [
+            "Cold‑chain reliability",
+            "Counseling",
+            "For therapeutic vaccines—cell processing capabilities"
+          ],
+          "topDoctors": {
+            "title": "Top-rated oncologists worldwide",
+            "description": "How to select the best doctor?",
+            "doctors": [],
+            "selectionCriteria": [
+              "For therapeutic vaccines: check center experience",
+              "Eligibility pathways"
+            ]
+          },
+          "diagnosticTools": [
+            "HPV testing where relevant",
+            "Tumor antigen testing for therapeutic vaccines"
+          ],
+          "advancedTreatmentOptions": [
+            "Neoantigen vaccines in clinical trials"
+          ],
+          "advantages": [
+            "Prevention (HPV/HBV)",
+            "Modest survival benefit with sipuleucel‑T in mCRPC"
+          ],
+          "costConsiderations": "HPV/HBV vaccines widely available; therapeutic vaccines higher cost and limited indications.",
+          "detailedCost": "HPV/HBV vaccines widely available; therapeutic vaccines higher cost and limited indications.",
+          "faq": [
+            {
+              "question": "Do vaccines treat existing tumors?",
+              "answer": "Only therapeutic vaccines; HPV/HBV prevent infection and future cancers."
             }
           ]
         }

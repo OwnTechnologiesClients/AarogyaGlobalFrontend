@@ -23,6 +23,7 @@ export function clearStaticParamsCache() {
 }
 
 // Generate static params for all specialties and individual treatments
+// Updated to include ONC0013 - force recompilation
 export async function generateStaticParams() {
   try {
     // Return cached params if available and not expired
@@ -68,7 +69,68 @@ export async function generateStaticParams() {
         // Additional debugging for oncology specifically
         if (specialty.slug === 'oncology') {
           console.log(`generateStaticParams: Oncology specialty data:`, JSON.stringify(specialtyData, null, 2));
+          // Explicit check for ONC0006
+          const onc0006 = specialtyData?.treatments?.find(t => t.id === 'ONC0006');
+          console.log(`generateStaticParams: ONC0006 found in oncology:`, !!onc0006);
+          if (onc0006) {
+            console.log(`generateStaticParams: ONC0006 details:`, onc0006);
+          }
+          // Explicit check for ONC0007
+          const onc0007 = specialtyData?.treatments?.find(t => t.id === 'ONC0007');
+          console.log(`generateStaticParams: ONC0007 found in oncology:`, !!onc0007);
+          if (onc0007) {
+            console.log(`generateStaticParams: ONC0007 details:`, onc0007);
+          }
+          // Explicit check for ONC0008
+          const onc0008 = specialtyData?.treatments?.find(t => t.id === 'ONC0008');
+          console.log(`generateStaticParams: ONC0008 found in oncology:`, !!onc0008);
+          if (onc0008) {
+            console.log(`generateStaticParams: ONC0008 details:`, onc0008);
+          }
+          // Explicit check for ONC0009
+          const onc0009 = specialtyData?.treatments?.find(t => t.id === 'ONC0009');
+          console.log(`generateStaticParams: ONC0009 found in oncology:`, !!onc0009);
+          if (onc0009) {
+            console.log(`generateStaticParams: ONC0009 details:`, onc0009);
+          }
+          // Explicit check for ONC0010
+          const onc0010 = specialtyData?.treatments?.find(t => t.id === 'ONC0010');
+          console.log(`generateStaticParams: ONC0010 found in oncology:`, !!onc0010);
+          if (onc0010) {
+            console.log(`generateStaticParams: ONC0010 details:`, onc0010);
+          }
+          // Explicit check for ONC0011
+          const onc0011 = specialtyData?.treatments?.find(t => t.id === 'ONC0011');
+          console.log(`generateStaticParams: ONC0011 found in oncology:`, !!onc0011);
+          if (onc0011) {
+            console.log(`generateStaticParams: ONC0011 details:`, onc0011);
+          }
+          // Explicit check for ONC0012
+          const onc0012 = specialtyData?.treatments?.find(t => t.id === 'ONC0012');
+          console.log(`generateStaticParams: ONC0012 found in oncology:`, !!onc0012);
+          if (onc0012) {
+            console.log(`generateStaticParams: ONC0012 details:`, onc0012);
+          }
+          // Explicit check for ONC0013
+          const onc0013 = specialtyData?.treatments?.find(t => t.id === 'ONC0013');
+          console.log(`generateStaticParams: ONC0013 found in oncology:`, !!onc0013);
+          if (onc0013) {
+            console.log(`generateStaticParams: ONC0013 details:`, onc0013);
+          }
         }
+      }
+    }
+
+    // Explicit fallback for all oncology treatments to ensure they're included
+    const oncologyTreatments = ['ONC0001', 'ONC0002', 'ONC0003', 'ONC0004', 'ONC0005', 'ONC0006', 'ONC0007', 'ONC0008', 'ONC0009', 'ONC0010', 'ONC0011', 'ONC0012', 'ONC0013'];
+    console.log(`generateStaticParams: Checking oncology treatments:`, oncologyTreatments);
+
+    for (const treatmentId of oncologyTreatments) {
+      const hasTreatment = params.some(p => p.treatment === treatmentId);
+      console.log(`generateStaticParams: ${treatmentId} explicitly included:`, hasTreatment);
+      if (!hasTreatment) {
+        console.log(`generateStaticParams: Adding ${treatmentId} as fallback`);
+        params.push({ treatment: treatmentId });
       }
     }
 
