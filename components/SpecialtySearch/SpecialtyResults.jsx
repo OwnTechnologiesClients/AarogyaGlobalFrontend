@@ -141,9 +141,9 @@ const SpecialtyResults = ({
 
   const getGridClass = () => {
     if (activeCategory === 'Treatments') {
-      return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
+      return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6";
     }
-    return "grid grid-cols-1 lg:grid-cols-2 gap-8";
+    return "grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8";
   };
 
   return (
@@ -173,35 +173,59 @@ const SpecialtyResults = ({
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="flex justify-center items-center mt-8 space-x-2">
-                  <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Previous
-                  </button>
-
-                  {[...Array(totalPages)].map((_, index) => (
+                <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
+                  {/* Mobile: Simple Previous/Next */}
+                  <div className="flex sm:hidden items-center gap-2">
                     <button
-                      key={index + 1}
-                      onClick={() => handlePageChange(index + 1)}
-                      className={`px-4 py-2 text-sm font-medium rounded-md ${currentPage === index + 1
-                        ? 'bg-blue-600 text-white border border-blue-600'
-                        : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
-                        }`}
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {index + 1}
+                      Previous
                     </button>
-                  ))}
+                    <span className="text-sm text-gray-600">
+                      {currentPage} of {totalPages}
+                    </span>
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Next
-                  </button>
+                  {/* Desktop: Full Pagination */}
+                  <div className="hidden sm:flex items-center space-x-1">
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Previous
+                    </button>
+
+                    {[...Array(totalPages)].map((_, index) => (
+                      <button
+                        key={index + 1}
+                        onClick={() => handlePageChange(index + 1)}
+                        className={`px-3 py-2 text-sm font-medium rounded-md ${currentPage === index + 1
+                          ? 'bg-blue-600 text-white border border-blue-600'
+                          : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                          }`}
+                      >
+                        {index + 1}
+                      </button>
+                    ))}
+
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next
+                    </button>
+                  </div>
                 </div>
               )}
             </>

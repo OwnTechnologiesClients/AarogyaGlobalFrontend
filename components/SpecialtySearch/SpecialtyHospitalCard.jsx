@@ -80,10 +80,10 @@ const SpecialtyHospitalCard = ({ hospital }) => {
                 <div className="flex justify-between items-center">
                     <button
                         onClick={handleViewDetails}
-                        className="bg-[#04CE78] hover:bg-green-600 text-white flex items-center space-x-2 rounded-lg p-3 cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                        className="bg-[#04CE78] hover:bg-green-600 text-white flex items-center space-x-1 sm:space-x-2 rounded-lg px-3 py-2 sm:py-3 cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                     >
-                        <span className="font-semibold text-sm md:text-md">View Details</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <span className="font-semibold text-xs sm:text-sm md:text-md">View Details</span>
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     </button>
                     <p className="text-gray-600 text-xs md:text-sm flex items-center gap-2">
                         <Stethoscope className="w-6 h-6 text-gray-500" />

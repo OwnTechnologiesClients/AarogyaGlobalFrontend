@@ -7,6 +7,7 @@ const NavbarToFilterLayout = () => {
   return (
     <>
       <div
+        id="hero-section"
         className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[40vh] sm:min-h-[50vh] md:min-h-[65vh] lg:min-h-[80vh] xl:min-h-[90vh] 2xl:min-h-[100vh] relative transition-all duration-300 overflow-hidden"
         style={{ backgroundImage: "url(/backgroundImg.png)" }}
       >

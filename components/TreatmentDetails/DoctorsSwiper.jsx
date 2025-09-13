@@ -250,10 +250,10 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                 <div className="mt-auto pt-3">
                   <Link
                     href={`/doctorDetails/${doctor.id}`}
-                    className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1 sm:gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                   >
                     <span>View Details</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3 h-3 flex-shrink-0" />
                   </Link>
                 </div>
               </div>

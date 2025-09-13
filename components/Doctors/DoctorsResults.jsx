@@ -89,7 +89,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
           ) : (
             <>
               {/* Results Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                 {currentCards.map((doctor, index) => (
                   <DoctorCard key={`doctor-${doctor.id}-${index}`} doctor={doctor} />
                 ))}
@@ -97,51 +97,75 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="flex justify-center items-center mt-8 space-x-2">
-                  <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Previous
-                  </button>
+                <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
+                  {/* Mobile: Simple Previous/Next */}
+                  <div className="flex sm:hidden items-center gap-2">
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Previous
+                    </button>
+                    <span className="text-sm text-gray-600">
+                      {currentPage} of {totalPages}
+                    </span>
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next
+                    </button>
+                  </div>
 
-                  {[...Array(totalPages)].map((_, index) => {
-                    const pageNumber = index + 1;
-                    // Show first page, last page, current page, and pages around current
-                    if (
-                      pageNumber === 1 ||
-                      pageNumber === totalPages ||
-                      (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
-                    ) {
-                      return (
-                        <button
-                          key={pageNumber}
-                          onClick={() => handlePageChange(pageNumber)}
-                          className={`px-4 py-2 text-sm font-medium rounded-md ${currentPage === pageNumber
-                            ? 'bg-blue-600 text-white border border-blue-600'
-                            : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
-                            }`}
-                        >
-                          {pageNumber}
-                        </button>
-                      );
-                    } else if (
-                      pageNumber === currentPage - 2 ||
-                      pageNumber === currentPage + 2
-                    ) {
-                      return <span key={pageNumber} className="px-2 text-gray-500">...</span>;
-                    }
-                    return null;
-                  })}
+                  {/* Desktop: Full Pagination */}
+                  <div className="hidden sm:flex items-center space-x-1">
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Previous
+                    </button>
 
-                  <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Next
-                  </button>
+                    {[...Array(totalPages)].map((_, index) => {
+                      const pageNumber = index + 1;
+                      // Show first page, last page, current page, and pages around current
+                      if (
+                        pageNumber === 1 ||
+                        pageNumber === totalPages ||
+                        (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
+                      ) {
+                        return (
+                          <button
+                            key={pageNumber}
+                            onClick={() => handlePageChange(pageNumber)}
+                            className={`px-3 py-2 text-sm font-medium rounded-md ${currentPage === pageNumber
+                              ? 'bg-blue-600 text-white border border-blue-600'
+                              : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                              }`}
+                          >
+                            {pageNumber}
+                          </button>
+                        );
+                      } else if (
+                        pageNumber === currentPage - 2 ||
+                        pageNumber === currentPage + 2
+                      ) {
+                        return <span key={pageNumber} className="px-2 text-gray-500">...</span>;
+                      }
+                      return null;
+                    })}
+
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next
+                    </button>
+                  </div>
                 </div>
               )}
 

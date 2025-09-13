@@ -71,8 +71,8 @@ const MobileNavLinks = () => {
                     key={item.label}
                     href={item.href}
                     className={`block py-2 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${pathname === item.href || pathname === item.href.replace(/\/$/, '') || pathname === item.href + '/'
-                        ? "text-[#04CE78]"
-                        : "text-gray-600 hover:text-[#04CE78]"
+                      ? "text-[#04CE78]"
+                      : "text-gray-600 hover:text-[#04CE78]"
                       }`}
                     onClick={closeMobileMenu}
                   >
@@ -90,7 +90,13 @@ const MobileNavLinks = () => {
                 ? "text-[#04CE78]"
                 : "text-gray-900 hover:text-[#04CE78]"
                 }`}
-              onClick={closeMobileMenu}
+              onClick={() => {
+                closeMobileMenu();
+                // Scroll to top when clicking Home link to show WELCOME section
+                if (link.href === "/") {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
             >
               {link.label}
             </Link>

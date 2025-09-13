@@ -91,6 +91,12 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label}>
               <Link
                 href={link.href}
+                onClick={() => {
+                  // Scroll to top when clicking Home link to show WELCOME section
+                  if (link.href === "/") {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
                 className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 xl:py-3 2xl:px-6 2xl:py-4 2xl:text-xl transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                   }`}
               >

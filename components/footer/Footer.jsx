@@ -41,13 +41,13 @@ const Footer = () => {
       {!isHomePage && (
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="bg-[#E7C2D4] relative z-10 mb-32 rounded-2xl py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 shadow-lg text-gray-800">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 md:gap-0">
               {/* Emergency Line */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 w-full md:w-auto">
                 <div className="flex-shrink-0 bg-[#1F5FFF] w-12 h-12 rounded-full flex items-center justify-center text-white">
                   <Phone className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs md:text-sm text-[#000D44]">
                     Emergency Line
                   </p>
@@ -63,11 +63,11 @@ const Footer = () => {
               </div>
 
               {/* Support Email */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 w-full md:w-auto">
                 <div className="flex-shrink-0 bg-[#1F5FFF] w-12 h-12 rounded-full flex items-center justify-center text-white">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs md:text-sm text-[#000D44]">
                     Support Email
                   </p>
@@ -83,11 +83,11 @@ const Footer = () => {
               </div>
 
               {/* Visit Us */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 w-full md:w-auto">
                 <div className="flex-shrink-0 bg-[#1F5FFF] w-12 h-12 rounded-full flex items-center justify-center text-white">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs md:text-sm text-[#000D44]">
                     Visit Us On
                   </p>
