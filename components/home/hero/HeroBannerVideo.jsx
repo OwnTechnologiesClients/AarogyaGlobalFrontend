@@ -5,7 +5,7 @@ import React from 'react';
 
 const HeroBannerVideo = () => {
   return (
-    <div className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh] relative z-0 overflow-hidden lg:-mt-[180px] -mt-[200px]">
+    <div className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh] relative z-0 overflow-hidden lg:-mt-[180px] -mt-[230px]">
       <div className="w-full relative overflow-hidden rounded-b-2xl h-full">
         <div className="relative w-full h-full">
           <video
