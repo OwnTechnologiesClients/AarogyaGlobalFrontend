@@ -4,20 +4,20 @@ import WelcomeBanner from "../../layout/WelcomeBanner";
 
 const HeroInfo = () => {
   return (
-    <section className="w-full flex flex-col items-center justify-center text-center py-14 md:py-12 lg:py-16 xl:py-20 bg-transparent px-0 md:px-1 lg:px-2 xl:px-1 2xl:px-20">
-      <div className="2xl:pt-16">
+    <section className="w-full flex flex-col items-center justify-center text-center py-4 pb-8 md:py-8 lg:py-10 xl:py-12 bg-transparent px-0 md:px-1 lg:px-2 xl:px-1 2xl:px-20">
+      <div className="2xl:pt-8">
         <WelcomeBanner
           text={data.welcome}
           textColor="#04CE78"
           dotColor="#04CE78"
           alignment="center"
-          className="mb-4 md:mb-6 text-lg"
+          className="mb-1 md:mb-3 text-xs"
         />
       </div>
-      <h1 className="text-xl md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-extrabold text-white mb-4 md:mb-6 leading-tight">
+      <h1 className="text-base md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold text-white mb-1 md:mb-3 leading-tight">
         Discover World-Class Healthcare Abroad
       </h1>
-      <p className="text-xs md:text-sm lg:text-base 2xl:text-3xl font-normal text-white/90 lg:max-w-4xl 2xl:max-w-6xl  mx-auto leading-relaxed mt-1 md:mt-1 select-none">
+      <p className="text-xs md:text-sm lg:text-base 2xl:text-xl font-normal text-white/90 lg:max-w-3xl 2xl:max-w-4xl mx-auto leading-tight mt-0 select-none px-2">
         {data.subtitle}
       </p>
     </section>

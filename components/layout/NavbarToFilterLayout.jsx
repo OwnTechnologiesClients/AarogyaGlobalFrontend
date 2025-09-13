@@ -8,7 +8,7 @@ const NavbarToFilterLayout = () => {
     <>
       <div
         id="hero-section"
-        className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[40vh] sm:min-h-[50vh] md:min-h-[65vh] lg:min-h-[80vh] xl:min-h-[90vh] 2xl:min-h-[100vh] relative transition-all duration-300 overflow-hidden"
+        className="w-full bg-cover bg-no-repeat bg-center rounded-t-2xl min-h-[35vh] sm:min-h-[38vh] md:min-h-[50vh] lg:min-h-[60vh] xl:min-h-[70vh] 2xl:min-h-[75vh] relative transition-all duration-300 overflow-hidden"
         style={{ backgroundImage: "url(/backgroundImg.png)" }}
       >
         {/* Content */}
@@ -20,7 +20,7 @@ const NavbarToFilterLayout = () => {
         </div>
       </div>
       {/* FilterBar positioned between sections with improved spacing */}
-      <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16 xl:-mt-20 z-40 transition-all duration-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="relative -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 xl:-mt-10 z-40 transition-all duration-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <FilterBar />
       </div>
     </>
