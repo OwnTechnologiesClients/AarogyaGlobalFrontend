@@ -16,7 +16,7 @@ const WorkingProcess = () => {
   };
 
   return (
-    <section className="flex flex-col items-center px-4 md:px-8 lg:px-18 py-12 md:py-20">
+    <section id="working-process" className="flex flex-col items-center px-4 md:px-8 lg:px-18 py-12 md:py-20">
       <WelcomeBanner
         text="WORKING PROCESS"
         textColor="#04CE78"

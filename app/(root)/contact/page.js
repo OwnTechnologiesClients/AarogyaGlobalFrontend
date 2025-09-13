@@ -11,7 +11,7 @@ const Contact = () => {
     <>
 
       <PageHeader title={title} routes={routes} />
-      <ContactCard />
+      {/* <ContactCard /> */}
       <GetInTouch />
       <OnlineConsultationBanner />
     </>

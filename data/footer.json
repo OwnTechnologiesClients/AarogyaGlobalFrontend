@@ -22,41 +22,25 @@
   "quickLinks": [
     {
       "label": "Top Doctors",
-      "url": "#"
-    },
-    {
-      "label": "Latest News",
-      "url": "#"
+      "url": "/doctors"
     },
     {
       "label": "Why Choose Us",
-      "url": "#"
+      "url": "/about"
     },
     {
       "label": "Contact Detail",
-      "url": "#"
+      "url": "/contact"
     }
   ],
   "usefulLinks": [
     {
       "label": "Featured Hospitals",
-      "url": "#"
+      "url": "/hospitalSearch/"
     },
     {
       "label": "How It Works",
-      "url": "#"
-    },
-    {
-      "label": "Find A Location",
-      "url": "#"
-    },
-    {
-      "label": "Doctors Search",
-      "url": "#"
-    },
-    {
-      "label": "Telemedicine Services",
-      "url": "#"
+      "url": "/#working-process"
     }
   ],
   "contact": {

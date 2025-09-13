@@ -69,14 +69,7 @@ const Navbar = ({
         {/* Desktop Auth & CTA */}
         {!isMobileView && (
           <div className="hidden lg:flex items-center gap-6 ml-auto">
-            <Link
-              href="/login"
-              className={`flex items-center gap-2 ${textColor} hover:text-[#04CE78] font-semibold transition-colors whitespace-nowrap cursor-pointer`}
-            >
-              <UserCircle className="w-6 h-6 2xl:w-10 2xl:h-10" />
-            </Link>
-
-            <Link href="/appointment">
+            <Link href="/contact">
               <CustomButton
                 text="Make An Appointment"
                 textSize="text-sm 2xl:text-lg"
@@ -132,15 +125,7 @@ const Navbar = ({
             <div className="px-6 py-6 border-t border-gray-100 mt-auto">
               <div className="space-y-4">
                 <Link
-                  href="/login"
-                  className="flex items-center gap-3 py-3 text-[16px] font-medium text-gray-900 hover:text-[#04CE78] transition-colors cursor-pointer"
-                  onClick={closeMobileMenu}
-                >
-                  <UserCircle className="w-5 h-5" />
-                  Login/Register
-                </Link>
-                <Link
-                  href="/appointment"
+                  href="/contact"
                   className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[15px] font-semibold px-6 py-4 rounded-lg shadow-md w-full flex items-center justify-center gap-2 transition-all cursor-pointer"
                   onClick={closeMobileMenu}
                 >

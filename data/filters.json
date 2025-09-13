@@ -14,16 +14,21 @@
       "label": "Location",
       "placeholder": "Select Location",
       "options": [
-        "Delhi, India",
-        "Mumbai, India",
-        "Bangalore, India",
-        "Chennai, India",
-        "Hyderabad, India",
-        "Pune, India",
-        "Kolkata, India",
-        "Ahmedabad, India",
+        "Gurugram, Delhi NCR, Haryana",
+        "New Delhi, Delhi",
+        "Gurgaon, India",
+        "New Delhi, India",
+        "Bengaluru, India",
         "Noida, India",
-        "Gurugram, India"
+        "Jaipur, India",
+        "Chennai, Tamil Nadu, India",
+        "Mumbai, Maharashtra, India",
+        "Bengaluru, Karnataka, India",
+        "Delhi NCR, India",
+        "Vaishali, India",
+        "Saket, New Delhi",
+        "Patparganj, New Delhi",
+        "Mumbai, India"
       ]
     },
     {
@@ -42,7 +47,13 @@
       "options": [
         "Fortis Memorial Research Institute",
         "Medanta The Medicity",
-        "Max Super Speciality Hospital, Saket"
+        "Max Super Speciality Hospital, Saket",
+        "Artemis Hospital",
+        "Apollo Hospital",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Manipal Hospital",
+        "Narayana Health City",
+        "Gleneagles Global Health City"
       ]
     }
   ],

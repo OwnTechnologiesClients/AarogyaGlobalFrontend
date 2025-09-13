@@ -2,6 +2,7 @@
 
 import { PlayIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import CustomButton from "../layout/CustomButton";
@@ -37,13 +38,17 @@ const AppointmentRequest = () => {
             skilled
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
-            <CustomButton text="Make An Appointment" className="cursor-pointer text-sm md:text-base" />
-            <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline text-sm md:text-base">
-              <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
-                <PlayIcon className="fill-white w-4 h-4 md:w-5 md:h-5" />
-              </span>
-              How It Works
-            </button>
+            <Link href="/contact">
+              <CustomButton text="Make An Appointment" className="cursor-pointer text-sm md:text-base" />
+            </Link>
+            <Link href="/#working-process">
+              <button className="flex items-center gap-3 text-[#1F5FFF] font-semibold hover:underline text-sm md:text-base">
+                <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1F5FFF] text-white flex items-center justify-center">
+                  <PlayIcon className="fill-white w-4 h-4 md:w-5 md:h-5" />
+                </span>
+                How It Works
+              </button>
+            </Link>
           </div>
         </div>
       </div>

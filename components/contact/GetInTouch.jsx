@@ -1,31 +1,100 @@
 "use client";
 import React, { useState } from "react";
 import WelcomeBanner from "../layout/WelcomeBanner";
-import { Send } from "lucide-react";
-import EditText from "../layout/EditText";
-import TextArea from "../layout/TextArea";
+import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from "lucide-react";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "",
+    specialty: "",
+    hospital: "",
     message: "",
   });
-  const [agreed, setAgreed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (field, value) => {
-    setFormData((prev) => ({
+  const specialties = [
+    'Select Medical Specialty',
+    'Cardiology',
+    'Orthopaedics',
+    'Oncology',
+    'Neurology',
+    'Gynaecology',
+    'Urology',
+    'General Medicine',
+    'Other'
+  ];
+
+  const hospitals = [
+    'Select Preferred Hospital',
+    'Fortis Memorial Research Institute',
+    'Medanta The Medicity',
+    'Max Super Speciality Hospital',
+    'Artemis Hospital',
+    'Apollo Hospital',
+    'Kokilaben Dhirubhai Ambani Hospital',
+    'Manipal Hospital',
+    'Narayana Health City',
+    'Gleneagles Global Health City'
+  ];
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
       ...prev,
-      [field]: value,
+      [name]: value
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        specialty: '',
+        hospital: '',
+        message: ''
+      });
+    }, 3000);
   };
+
+  if (isSubmitted) {
+    return (
+      <section className="flex flex-col items-center md:mb-16 md:mt-16 mb-8 mt-8">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center max-w-2xl">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-[#1A0142] mb-4">
+            Thank You for Your Message!
+          </h3>
+          <p className="text-lg text-[#0B0757] mb-6">
+            We've received your inquiry and our medical team will get back to you within 24 hours.
+          </p>
+          <p className="text-sm text-gray-600">
+            Redirecting back to form...
+          </p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="flex flex-col items-center md:mb-16 md:mt-16 mb-8 mt-8">
       <WelcomeBanner
@@ -42,78 +111,141 @@ const GetInTouch = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 mt-6">
         <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
           {/* Contact Form (with shadow + white background) */}
-          <div className="w-full lg:w-1/2 bg-white rounded-xl border border-black-100 shadow-md p-6 sm:p-8 space-y-6">
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Name + Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <EditText
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange("name", e.target.value)}
-                  className="bg-[#f6f9fc]"
-                />
-                <EditText
-                  placeholder="Email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="bg-[#f6f9fc]"
-                />
+          <div className="w-full lg:w-1/2 bg-white rounded-3xl shadow-2xl p-6 md:p-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Name Field */}
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 text-sm font-semibold text-[#0B0757]">
+                    <User className="w-4 h-4" />
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                {/* Email Field */}
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 text-sm font-semibold text-[#0B0757]">
+                    <Mail className="w-4 h-4" />
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your email"
+                  />
+                </div>
               </div>
 
-              {/* Phone + Subject */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <EditText
-                  placeholder="Phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange("phone", e.target.value)}
-                  className="bg-[#f6f9fc]"
-                />
-                <EditText
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={(e) => handleInputChange("subject", e.target.value)}
-                  className="bg-[#f6f9fc]"
-                />
-              </div>
-
-              {/* Message */}
-              <TextArea
-                placeholder="Write A Message"
-                rows={8}
-                value={formData.message}
-                onChange={(e) => handleInputChange("message", e.target.value)}
-                className="bg-[#f6f9fc]"
-              />
-
-              {/* Checkbox */}
-              <div className="flex items-start gap-3 text-sm text-gray-600">
+              {/* Phone Field */}
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 text-sm font-semibold text-[#0B0757]">
+                  <Phone className="w-4 h-4" />
+                  Phone Number *
+                </label>
                 <input
-                  type="checkbox"
-                  checked={agreed}
-                  onChange={() => setAgreed(!agreed)}
-                  className="w-4 h-4 mt-1 accent-green-500"
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                  placeholder="Enter your phone number"
                 />
-                <span>
-                  I agree to the{" "}
-                  <a href="#" className="text-blue-600 underline">
-                    Privacy Policy
-                  </a>{" "}
-                  and{" "}
-                  <a href="#" className="text-blue-600 underline">
-                    Terms & Conditions
-                  </a>
-                </span>
               </div>
 
-              {/* Submit */}
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Specialty Field */}
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 text-sm font-semibold text-[#0B0757]">
+                    <Stethoscope className="w-4 h-4" />
+                    Medical Specialty
+                  </label>
+                  <select
+                    name="specialty"
+                    value={formData.specialty}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                  >
+                    {specialties.map((specialty) => (
+                      <option key={specialty} value={specialty}>
+                        {specialty}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Hospital Field */}
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 text-sm font-semibold text-[#0B0757]">
+                    <MapPin className="w-4 h-4" />
+                    Preferred Hospital
+                  </label>
+                  <select
+                    name="hospital"
+                    value={formData.hospital}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                  >
+                    {hospitals.map((hospital) => (
+                      <option key={hospital} value={hospital}>
+                        {hospital}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Message Field */}
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 text-sm font-semibold text-[#0B0757]">
+                  <MessageSquare className="w-4 h-4" />
+                  Additional Requirements
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200 resize-none"
+                  placeholder="Tell us about your medical requirements or any specific questions..."
+                />
+              </div>
+
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="flex items-center gap-2 bg-[#04CE78] hover:bg-[#03b76b] text-white text-sm font-semibold px-6 py-3 rounded-md font-poppins transition"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#04CE78] to-green-600 hover:from-green-600 hover:to-[#04CE78] text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
               >
-                Send Message <Send size={18} />
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
               </button>
+
+              <p className="text-xs text-gray-500 text-center">
+                By submitting this form, you agree to our privacy policy and terms of service.
+              </p>
             </form>
           </div>
 

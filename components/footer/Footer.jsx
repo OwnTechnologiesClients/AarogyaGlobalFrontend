@@ -226,7 +226,7 @@ const Footer = () => {
       </div>
       {/* Telegram Floating Button */}
       <Link
-        href="https://t.me/aarogyaglobal"
+        href="https://t.me/+380931281076"
         target="_blank"
         rel="noopener noreferrer"
         className={`fixed z-50 right-6 group bg-gradient-to-br from-[#0088cc] to-[#0077b3] hover:from-[#0077b3] hover:to-[#0088cc] rounded-full p-3 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1 ${isScrollToTopVisible ? 'bottom-56' : 'bottom-30'
@@ -249,7 +249,7 @@ const Footer = () => {
 
       {/* Viber Floating Button */}
       <Link
-        href="viber://chat?number=919922345678"
+        href="viber://chat?number=%2B380931281076"
         target="_blank"
         rel="noopener noreferrer"
         className={`fixed z-50 right-6 group bg-gradient-to-br from-[#7360f2] to-[#5a4fd8] hover:from-[#5a4fd8] hover:to-[#7360f2] rounded-full p-3 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1 ${isScrollToTopVisible ? 'bottom-44' : 'bottom-18'
@@ -272,7 +272,7 @@ const Footer = () => {
 
       {/* WhatsApp Floating Button */}
       <Link
-        href="https://wa.me/919922345678"
+        href="https://wa.me/380931281076"
         target="_blank"
         rel="noopener noreferrer"
         className={`fixed z-50 right-6 group bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] rounded-full p-3 shadow-2xl hover:shadow-3xl transition-all duration-500 ease-in-out transform hover:scale-110 hover:-translate-y-1 ${isScrollToTopVisible ? 'bottom-32' : 'bottom-6'

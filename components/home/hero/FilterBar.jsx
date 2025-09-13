@@ -33,8 +33,8 @@ const FilterBar = () => {
       const location = selected["Location"];
       const treatment = selected["Treatment"];
 
-      if (!location || !treatment) {
-        setValidationError("Please select both Location and Treatment");
+      if (!location && !treatment) {
+        setValidationError("Please select at least Location or Treatment");
         return;
       }
 
@@ -52,15 +52,19 @@ const FilterBar = () => {
 
       const treatmentSlug = treatmentMap[treatment];
 
-      // Navigate to specialty page
-      router.push(`/specialties/${treatmentSlug}?location=${encodeURIComponent(location)}`);
+      // Navigate to specialty page with available parameters
+      const searchParams = new URLSearchParams();
+      if (location) searchParams.append('location', location);
+      if (treatment) searchParams.append('treatment', treatment);
+
+      router.push(`/specialties/${treatmentSlug || 'cardiology'}?${searchParams.toString()}`);
 
     } else if (activeToggle === "hospitals") {
       const location = selected["Location"];
       const hospital = selected["Hospital"];
 
-      if (!location || !hospital) {
-        setValidationError("Please select both Location and Hospital");
+      if (!location && !hospital) {
+        setValidationError("Please select at least Location or Hospital");
         return;
       }
 
@@ -68,8 +72,8 @@ const FilterBar = () => {
 
       // Navigate to hospital search page with filters
       const searchParams = new URLSearchParams();
-      searchParams.append('location', location);
-      searchParams.append('hospital', hospital);
+      if (location) searchParams.append('location', location);
+      if (hospital) searchParams.append('hospital', hospital);
 
       router.push(`/hospitalSearch?${searchParams.toString()}`);
     }
