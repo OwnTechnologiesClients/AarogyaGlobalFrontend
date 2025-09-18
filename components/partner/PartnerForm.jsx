@@ -204,7 +204,7 @@ const PartnerForm = () => {
                     <h4 className="font-semibold text-gray-900">Address</h4>
                     <p className="text-gray-600">
                       Aarogya Global Headquarters<br />
-                      Mumbai, Maharashtra, India
+                      Mumbai, Maharashtra
                     </p>
                   </div>
                 </div>
