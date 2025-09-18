@@ -16,6 +16,8 @@ const HospitalOverview = ({ hospital, location }) => {
     email: '',
     message: ''
   });
+  const [honeypot, setHoneypot] = useState("");
+  const [startTime] = useState(Date.now());
 
   const hospitalStats = [
     {
@@ -79,7 +81,13 @@ const HospitalOverview = ({ hospital, location }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    const elapsedMs = Date.now() - startTime;
+    if (honeypot || elapsedMs < 1500) {
+      return;
+    }
+    if (typeof window !== 'undefined') {
+      window.location.href = '/thank-you?source=hospital-overview';
+    }
   };
 
 
@@ -175,6 +183,19 @@ const HospitalOverview = ({ hospital, location }) => {
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h4 className="font-bold text-gray-800 mb-4">Get In Touch</h4>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot field (hidden) */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <input
                 type="text"
                 name="name"

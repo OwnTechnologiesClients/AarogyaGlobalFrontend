@@ -166,12 +166,23 @@ const Footer = () => {
           <ul className="space-y-2">
             {footerData.usefulLinks.map((link, idx) => (
               <li key={idx}>
-                <Link
-                  href={link.url}
-                  className="hover:underline text-[#E6E6F0] text-sm leading-[1.5]"
-                >
-                  {link.label}
-                </Link>
+                {link.external ? (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline text-[#E6E6F0] text-sm leading-[1.5]"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.url}
+                    className="hover:underline text-[#E6E6F0] text-sm leading-[1.5]"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

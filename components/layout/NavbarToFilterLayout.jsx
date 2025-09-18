@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import HeroInfo from "@/components/home/hero/HeroInfo";
 import FilterBar from "@/components/home/hero/FilterBar";
 
 const NavbarToFilterLayout = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleMobileMenuChange = useCallback((isOpen) => {
+    setIsMobileMenuOpen(isOpen);
+  }, []);
+
   return (
     <>
       <div
@@ -13,16 +19,18 @@ const NavbarToFilterLayout = () => {
       >
         {/* Content */}
         <div className="relative z-30 py-2 md:py-4">
-          <Navbar />
+          <Navbar onMobileMenuChange={handleMobileMenuChange} />
           <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-4">
             <HeroInfo />
           </div>
         </div>
       </div>
       {/* FilterBar positioned between sections with improved spacing */}
-      <div className="relative -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 xl:-mt-10 z-40 transition-all duration-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <FilterBar />
-      </div>
+      {!isMobileMenuOpen && (
+        <div className="relative -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 xl:-mt-10 z-40 transition-all duration-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <FilterBar />
+        </div>
+      )}
     </>
   );
 };

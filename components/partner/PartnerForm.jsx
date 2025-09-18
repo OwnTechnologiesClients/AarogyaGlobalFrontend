@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Building2, User, Stethoscope, Microscope, Truck, Heart } from "lucide-react";
+import PhoneInput from "../ui/PhoneInput";
 
 const PartnerForm = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const PartnerForm = () => {
     contactPerson: "",
     email: "",
     phone: "",
+    countryCode: "+91",
     organizationType: "",
     services: [],
     location: "",
@@ -17,6 +19,8 @@ const PartnerForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [startTime] = useState(Date.now());
 
   const organizationTypes = [
     { value: "hospital", label: "Hospital", icon: <Building2 className="w-5 h-5" /> },
@@ -102,6 +106,12 @@ const PartnerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Bot checks: honeypot and minimum fill time (1.5s)
+    const elapsedMs = Date.now() - startTime;
+    if (honeypot || elapsedMs < 1500) {
+      return;
+    }
+
     if (!validateForm()) {
       return;
     }
@@ -111,17 +121,10 @@ const PartnerForm = () => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        organizationName: "",
-        contactPerson: "",
-        email: "",
-        phone: "",
-        organizationType: "",
-        services: [],
-        location: "",
-        message: ""
-      });
+      // Redirect to thank-you page for conversion tracking
+      if (typeof window !== 'undefined') {
+        window.location.href = '/thank-you?source=partner';
+      }
     }, 2000);
   };
 
@@ -213,6 +216,19 @@ const PartnerForm = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field (hidden from users) */}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    id="company"
+                    type="text"
+                    name="company"
+                    autoComplete="off"
+                    tabIndex={-1}
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -272,14 +288,9 @@ const PartnerForm = () => {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Phone Number *
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                      placeholder="Enter phone number"
+                    <PhoneInput
+                      value={{ countryCode: formData.countryCode, phone: formData.phone }}
+                      onChange={({ countryCode, phone }) => setFormData(prev => ({ ...prev, countryCode, phone }))}
                     />
                     {errors.phone && (
                       <p className="text-red-500 text-sm mt-1">{errors.phone}</p>

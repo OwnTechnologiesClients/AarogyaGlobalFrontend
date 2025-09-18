@@ -19,6 +19,7 @@ const Navbar = ({
   fontFamily = "font-poppins",
   hideLogoOnDesktop = false,
   logoSrc = "/Logo.png",
+  onMobileMenuChange = () => {},
 }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState({});
@@ -26,7 +27,7 @@ const Navbar = ({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 1168);
+      setIsMobileView(window.innerWidth < 1024);
     };
 
     // Set initial value
@@ -38,6 +39,11 @@ const Navbar = ({
     // Clean up
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Notify parent when mobile menu open state changes
+  useEffect(() => {
+    onMobileMenuChange(mobileOpen);
+  }, [mobileOpen, onMobileMenuChange]);
 
   const closeMobileMenu = () => {
     setMobileOpen(false);
@@ -68,13 +74,13 @@ const Navbar = ({
 
         {/* Desktop Auth & CTA */}
         {!isMobileView && (
-          <div className="hidden lg:flex items-center gap-6 ml-auto">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-4 2xl:gap-6 ml-auto">
             <Link href="/contact">
               <CustomButton
                 text="Make An Appointment"
-                textSize="text-sm 2xl:text-lg"
-                iconSize={28}
-                padding="px-3 py-2 2xl:px-8 2xl:py-4"
+                textSize="text-xs lg:text-sm xl:text-base 2xl:text-lg"
+                iconSize={16}
+                padding="px-2 py-1.5 lg:px-3 lg:py-2 xl:px-4 xl:py-2.5 2xl:px-6 2xl:py-3"
               />
             </Link>
           </div>

@@ -11,7 +11,7 @@ function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 1168);
+      setIsMobileView(window.innerWidth < 1024);
     };
 
     // Initial check

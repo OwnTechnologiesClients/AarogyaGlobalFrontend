@@ -56,17 +56,17 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
 
   return (
     <div style={{ display: isMobileView ? "none" : "block" }}>
-      <ul className="flex relative ml-4">
+      <ul className="flex relative ml-2 lg:ml-4">
         {navbarData.navigation.map((link) =>
           link.dropdown ? (
             <li key={link.label} className="relative group">
               <button
                 type="button"
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 xl:py-3 2xl:px-6 2xl:py-4 2xl:text-xl transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-2 py-2 lg:px-3 lg:py-2 xl:px-3 xl:py-3 2xl:px-4 2xl:py-3 2xl:text-lg transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                   }`}
               >
                 {link.label}
-                <span className="text-[#04CE78] text-[20px] leading-none ml-1">
+                <span className="text-[#04CE78] text-[16px] lg:text-[18px] 2xl:text-[20px] leading-none ml-1">
                   +
                 </span>
               </button>
@@ -89,19 +89,31 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             </li>
           ) : (
             <li key={link.label}>
-              <Link
-                href={link.href}
-                onClick={() => {
-                  // Scroll to top when clicking Home link to show WELCOME section
-                  if (link.href === "/") {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }
-                }}
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-3 py-2 xl:py-3 2xl:px-6 2xl:py-4 2xl:text-xl transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
-                  }`}
-              >
-                {link.label}
-              </Link>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`font-medium ${textColor} hover:text-[#04CE78] px-2 py-2 lg:px-3 lg:py-2 xl:px-3 xl:py-3 2xl:px-4 2xl:py-3 2xl:text-lg transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                    }`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  onClick={() => {
+                    // Scroll to top when clicking Home link to show WELCOME section
+                    if (link.href === "/") {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                  className={`font-medium ${textColor} hover:text-[#04CE78] px-2 py-2 lg:px-3 lg:py-2 xl:px-3 xl:py-3 2xl:px-4 2xl:py-3 2xl:text-lg transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                    }`}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           )
         )}

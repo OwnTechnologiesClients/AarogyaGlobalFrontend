@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import PhoneInput from "../ui/PhoneInput";
 import { useRouter } from 'next/navigation';
 
 import {
@@ -182,13 +183,8 @@ const HospitalMain = ({ hospitals }) => {
                                                         />
                                                     </div>
                                                     <div>
-                                                        <label htmlFor={`phone-${index}`} className="block text-gray-800 text-sm font-medium mb-2">Phone Number</label>
-                                                        <input
-                                                            type="text"
-                                                            id={`phone-${index}`}
-                                                            placeholder="Type A Phone Number"
-                                                            className="w-full px-3 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
-                                                        />
+                                                        <label className="block text-gray-800 text-sm font-medium mb-2">Phone Number</label>
+                                                        <PhoneInput />
                                                     </div>
                                                     <div>
                                                         <label htmlFor={`email-${index}`} className="block text-gray-700 text-sm font-medium mb-2">Email (Optional)</label>

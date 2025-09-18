@@ -41,6 +41,11 @@
     {
       "label": "How It Works",
       "url": "/#working-process"
+    },
+    {
+      "label": "Blogs",
+      "url": "https://blogs.aarogyaglobal.com",
+      "external": true
     }
   ],
   "contact": {

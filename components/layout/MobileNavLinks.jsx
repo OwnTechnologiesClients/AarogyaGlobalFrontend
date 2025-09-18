@@ -84,22 +84,37 @@ const MobileNavLinks = () => {
           </div>
         ) : (
           <div key={link.label} className="border-b border-gray-100">
-            <Link
-              href={link.href}
-              className={`block py-4 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${activeLink === link.label
-                ? "text-[#04CE78]"
-                : "text-gray-900 hover:text-[#04CE78]"
-                }`}
-              onClick={() => {
-                closeMobileMenu();
-                // Scroll to top when clicking Home link to show WELCOME section
-                if (link.href === "/") {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-              }}
-            >
-              {link.label}
-            </Link>
+            {link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block py-4 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${activeLink === link.label
+                  ? "text-[#04CE78]"
+                  : "text-gray-900 hover:text-[#04CE78]"
+                  }`}
+                onClick={closeMobileMenu}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                href={link.href}
+                className={`block py-4 font-poppins font-semibold text-[14px] leading-[20px] transition-colors capitalize ${activeLink === link.label
+                  ? "text-[#04CE78]"
+                  : "text-gray-900 hover:text-[#04CE78]"
+                  }`}
+                onClick={() => {
+                  closeMobileMenu();
+                  // Scroll to top when clicking Home link to show WELCOME section
+                  if (link.href === "/") {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
+                {link.label}
+              </Link>
+            )}
           </div>
         )
       )}

@@ -30,8 +30,8 @@
       "title": "Explore Treatment facilities",
       "description": "Discover world-class hospitals and treatment centers in India. Learn about available specialties, advanced technologies, and personalized care options.",
       "cta": {
-        "label": "Request An Appointment",
-        "href": "/contact"
+        "label": "View All Hospitals",
+        "href": "/hospitalSearch"
       },
       "backgroundColor": "bg-[#FEC091]",
       "iconColor": "#000D44"

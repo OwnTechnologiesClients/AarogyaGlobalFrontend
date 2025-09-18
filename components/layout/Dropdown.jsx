@@ -6,7 +6,9 @@ import { ChevronDown } from "lucide-react";
 
 const DropdownSelect = ({ label, options, value, onChange, placeholder }) => {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const dropdownRef = useRef(null);
+  const inputRef = useRef(null);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -33,7 +35,21 @@ const DropdownSelect = ({ label, options, value, onChange, placeholder }) => {
       }
     }
     setOpen(false);
+    setQuery("");
   };
+
+  // Focus the search input when the dropdown opens
+  useEffect(() => {
+    if (open && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [open]);
+
+  const filteredOptions = Array.isArray(options)
+    ? options.filter((opt) =>
+        String(opt).toLowerCase().includes(query.trim().toLowerCase())
+      )
+    : [];
 
   return (
     <div ref={dropdownRef} className="relative w-full">
@@ -48,18 +64,33 @@ const DropdownSelect = ({ label, options, value, onChange, placeholder }) => {
         <ChevronDown className={`h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-gray-600 transition-transform duration-200 flex-shrink-0 ml-2 ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-xl z-50 max-h-60 overflow-y-auto min-w-full">
-          {options.map((option) => (
-            <button
-              key={option}
-              type="button"
-              className={`w-full text-left px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 hover:bg-[#04CE78]/10 text-gray-700 text-sm sm:text-base lg:text-lg transition-colors duration-200 touch-manipulation first:rounded-t-lg last:rounded-b-lg cursor-pointer ${value === option ? "bg-[#04CE78]/20 font-semibold" : ""
-                }`}
-              onClick={() => handleSelect(option)}
-            >
-              {option}
-            </button>
-          ))}
+        <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-xl z-50 min-w-full">
+          <div className="p-2 border-b border-gray-200 sticky top-0 bg-white rounded-t-lg">
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={`Search ${label}...`}
+              className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div className="max-h-60 overflow-y-auto">
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  className={`w-full text-left px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 hover:bg-[#04CE78]/10 text-gray-700 text-sm sm:text-base lg:text-lg transition-colors duration-200 touch-manipulation cursor-pointer ${value === option ? "bg-[#04CE78]/20 font-semibold" : ""}`}
+                  onClick={() => handleSelect(option)}
+                >
+                  {option}
+                </button>
+              ))
+            ) : (
+              <div className="px-4 py-3 text-sm text-gray-500">No results</div>
+            )}
+          </div>
         </div>
       )}
     </div>
