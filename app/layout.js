@@ -11,6 +11,11 @@ const poppins = Poppins({
 export const metadata = {
   title: "Aarogya Global",
   description: "Aarogya Global world best health care",
+  icons: {
+    icon: "/logo2.png",
+    shortcut: "/logo2.png",
+    apple: "/logo2.png",
+  },
 };
 
 export default function RootLayout({ children }) {

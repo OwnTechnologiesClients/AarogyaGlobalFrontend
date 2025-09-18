@@ -7,6 +7,8 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
         email: '',
         message: ''
     });
+    const [honeypot, setHoneypot] = useState("");
+    const [startTime] = useState(Date.now());
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,21 +20,36 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const elapsedMs = Date.now() - startTime;
+        if (honeypot || elapsedMs < 1500) {
+            return;
+        }
         if (onSubmit) {
             onSubmit(formData);
         }
-        // Reset form
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
+        // Redirect to thank-you page
+        if (typeof window !== 'undefined') {
+            window.location.href = '/thank-you';
+        }
     };
 
     return (
         <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="font-semibold text-gray-900 mb-4">{title}</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot field (hidden) */}
+                <div className="hidden" aria-hidden="true">
+                    <label htmlFor="company">Company</label>
+                    <input
+                        id="company"
+                        type="text"
+                        name="company"
+                        autoComplete="off"
+                        tabIndex={-1}
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                </div>
                 <input
                     type="text"
                     name="name"

@@ -60,7 +60,7 @@
           "image": "/doctors/dr-rajesh-kumar.jpg",
           "rating": "4.8",
           "experience": "18+ years",
-          "location": "Gurgaon, India",
+          "location": "Gurugram, Delhi NCR",
           "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
         },
         {
@@ -80,7 +80,7 @@
           "name": "Fortis Memorial Research Institute",
           "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
           "rating": "4.5",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Cardiology & Cardiac Surgery"
           ],
@@ -97,7 +97,7 @@
           "name": "Medanta The Medicity",
           "image": "/medanta/Medanta-1.jpg",
           "rating": "4.0",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Cardiology & Cardiac Surgery"
           ],
@@ -114,7 +114,7 @@
           "name": "Max Super Speciality Hospital, Saket",
           "image": "/max/Max-1.jpg",
           "rating": "4.2",
-          "location": "New Delhi, Delhi",
+          "location": "New Delhi, India",
           "specialties": [
             "Cardiology & Cardiac Surgery"
           ],
@@ -782,7 +782,7 @@
           "name": "Fortis Memorial Research Institute",
           "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
           "rating": "4.5",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Neurology & Neuro Surgery"
           ],
@@ -799,7 +799,7 @@
           "name": "Medanta The Medicity",
           "image": "/medanta/Medanta-1.jpg",
           "rating": "4.0",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Neurology & Neuro Surgery"
           ],
@@ -816,7 +816,7 @@
           "name": "Max Super Speciality Hospital, Saket",
           "image": "/max/Max-1.jpg",
           "rating": "4.2",
-          "location": "New Delhi, Delhi",
+          "location": "New Delhi, India",
           "specialties": [
             "Neurology & Neuro Surgery"
           ],
@@ -981,7 +981,7 @@
           "name": "Fortis Memorial Research Institute",
           "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
           "rating": "4.5",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Oncology (Surgical, Medical & Radiotherapy)"
           ],
@@ -998,7 +998,7 @@
           "name": "Medanta The Medicity",
           "image": "/medanta/Medanta-1.jpg",
           "rating": "4.0",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Oncology (Surgical, Medical & Radiotherapy)"
           ],
@@ -1015,7 +1015,7 @@
           "name": "Max Super Speciality Hospital, Saket",
           "image": "/max/Max-1.jpg",
           "rating": "4.2",
-          "location": "New Delhi, Delhi",
+          "location": "New Delhi, India",
           "specialties": [
             "Oncology (Surgical, Medical & Radiotherapy)"
           ],
@@ -1860,7 +1860,7 @@
           "name": "Fortis Memorial Research Institute",
           "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
           "rating": "4.5",
-          "location": "Gurugram, Delhi NCR, Haryana",
+          "location": "Gurugram, Delhi NCR",
           "specialties": [
             "Orthopaedics"
           ],
@@ -1894,7 +1894,7 @@
           "name": "Max Super Speciality Hospital, Saket",
           "image": "/max/Max-1.jpg",
           "rating": "4.2",
-          "location": "New Delhi, Delhi",
+          "location": "New Delhi, India",
           "specialties": [
             "Orthopaedics"
           ],
@@ -1925,7 +1925,7 @@
             "Sports Injury Treatment",
             "Computer-Navigated Surgery"
           ],
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram",
           "education": "Maulana Azad Medical College, University of Delhi",
           "certifications": [
             "MRCS",
@@ -1947,7 +1947,7 @@
           "id": "DOC0002",
           "name": "Dr. Subhash Jangid",
           "specialty": "Orthopaedic Surgeon",
-          "location": "Gurgaon, India",
+          "location": "Gurugram, Delhi NCR",
           "image": "/doctors/dr-subhash-jangid.jpg",
           "experience": "25+ years",
           "rating": "4.8",
@@ -1961,7 +1961,7 @@
             "Peri-articular Trauma",
             "Sports Medicine"
           ],
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram",
           "education": "AIIMS, New Delhi",
           "certifications": [
             "MS (Orthopaedics)",
@@ -2572,7 +2572,7 @@
       "name": "Fortis Memorial Research Institute",
       "image": "/fortis-memorial/Fortis-Memorial-1.jpg",
       "rating": "4.5",
-      "location": "Gurugram, Delhi NCR, Haryana",
+      "location": "Gurugram, Delhi NCR",
       "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122003",
       "doctorsCount": 17,
       "specialties": [
@@ -2640,8 +2640,8 @@
           "image": "/doctors/dr-jayant-arora.jpg",
           "rating": "4.9",
           "experience": "24+ years",
-          "location": "Gurgaon, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "location": "Gurugram, Delhi NCR",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0002",
@@ -2650,8 +2650,8 @@
           "image": "/doctors/dr-subhash-jangid.jpg",
           "rating": "4.8",
           "experience": "25+ years",
-          "location": "Gurgaon, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "location": "Gurugram, Delhi NCR",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0003",
@@ -2660,8 +2660,8 @@
           "image": "/doctors/dr-manoj-padman.jpg",
           "rating": "4.9",
           "experience": "25+ years (including 10 years in the UK)",
-          "location": "Gurgaon, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "location": "Gurugram, Delhi NCR",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0004",
@@ -2670,8 +2670,8 @@
           "image": "/doctors/dr-kiran-harsha-melkote.jpg",
           "rating": "4.7",
           "experience": "11+ years",
-          "location": "Gurgaon, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "location": "Gurugram, Delhi NCR",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0005",
@@ -2680,8 +2680,8 @@
           "image": "/doctors/dr-sukant-vijay.jpg",
           "rating": "4.8",
           "experience": "10+ years",
-          "location": "Gurgaon, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "location": "Gurugram, Delhi NCR",
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0006",
@@ -2691,7 +2691,7 @@
           "rating": "4.9",
           "experience": "22+ years",
           "location": "New Delhi, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0007",
@@ -2701,7 +2701,7 @@
           "rating": "4.9",
           "experience": "26+ years",
           "location": "New Delhi, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0008",
@@ -2711,7 +2711,7 @@
           "rating": "4.9",
           "experience": "25+ years",
           "location": "New Delhi, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0009",
@@ -2721,7 +2721,7 @@
           "rating": "4.9",
           "experience": "30+ years",
           "location": "New Delhi, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0010",
@@ -2731,7 +2731,7 @@
           "rating": "4.9",
           "experience": "25+ years",
           "location": "New Delhi, India",
-          "hospital": "Fortis Memorial Research Institute (FMRI), Gurgaon"
+          "hospital": "Fortis Memorial Research Institute (FMRI), Gurugram"
         },
         {
           "id": "DOC0011",
@@ -2829,8 +2829,8 @@
       "name": "Medanta The Medicity",
       "image": "/medanta/Medanta-1.jpg",
       "rating": "4.0",
-      "location": "Gurugram, Delhi NCR, Haryana",
-      "address": "Medanta - The Medicity, Gurgaon 122001, India",
+      "location": "Gurugram, Delhi NCR",
+      "address": "Medanta - The Medicity, Gurugram 122001, India",
       "doctorsCount": 902,
       "specialties": [
         "Cardiology & Cardiac Surgery",
@@ -2941,7 +2941,7 @@
       "name": "Max Super Speciality Hospital, Saket",
       "image": "/max/Max-1.jpg",
       "rating": "4.2",
-      "location": "New Delhi, Delhi",
+      "location": "New Delhi, India",
       "address": "1-2, Press Enclave Road, Saket, New Delhi",
       "doctorsCount": 539,
       "specialties": [
@@ -3137,7 +3137,7 @@
       "name": "Artemis Hospital",
       "image": "/artemis/artemis-1.png",
       "rating": "4.1",
-      "location": "Gurugram, Delhi NCR, Haryana",
+      "location": "Gurugram, Delhi NCR",
       "address": "Sector 51, Gurugram, Haryana 122001",
       "doctorsCount": 301,
       "specialties": [
@@ -3246,7 +3246,7 @@
       "name": "Apollo Hospital",
       "image": "/apollo/apollo-1.png",
       "rating": "4.7",
-      "location": "Chennai, Tamil Nadu, India",
+      "location": "Chennai, Tamil Nadu",
       "address": "21, Greams Lane, Off Greams Road, Chennai – 600006, Tamil Nadu, India",
       "doctorsCount": 600,
       "specialties": [
@@ -3358,7 +3358,7 @@
       "name": "Kokilaben Dhirubhai Ambani Hospital & Medical Research Institute (KDAH)",
       "image": "/kokilaben/kokilaben-1.png",
       "rating": "4.7",
-      "location": "Mumbai, Maharashtra, India",
+      "location": "Mumbai, Maharashtra",
       "address": "Rao Saheb Achutrao Patwardhan Marg, Four Bungalows, Andheri West, Mumbai, Maharashtra – 400053, India",
       "doctorsCount": 411,
       "specialties": [
@@ -3489,7 +3489,7 @@
       "name": "Manipal Hospital",
       "image": "/manipal/manipal-1.png",
       "rating": "4.6",
-      "location": "Bengaluru, Karnataka, India",
+      "location": "Bengaluru, Karnataka",
       "address": "98, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka – 560017, India",
       "doctorsCount": 2000,
       "specialties": [
@@ -3599,7 +3599,7 @@
       "name": "Narayana Health City",
       "image": "/narayana/narayana-1.png",
       "rating": "4.7",
-      "location": "Bengaluru, Karnataka, India",
+      "location": "Bengaluru, Karnataka",
       "address": "143b, Hebbagodi, Bommasandra Industrial Area, Bengaluru, Karnataka – 560099, India",
       "doctorsCount": 1000,
       "specialties": [
@@ -3711,7 +3711,7 @@
       "name": "Gleneagles Global Health City",
       "image": "/gleneagles/gleneagles-1.png",
       "rating": "4.7",
-      "location": "Chennai, Tamil Nadu, India",
+      "location": "Chennai, Tamil Nadu",
       "address": "439, Cheran Nagar, Perumbakkam, Sholinganallur, Chennai, Tamil Nadu – 600100, India",
       "doctorsCount": 250,
       "specialties": [

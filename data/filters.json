@@ -14,21 +14,11 @@
       "label": "Location",
       "placeholder": "Select Location",
       "options": [
-        "Gurugram, Delhi NCR, Haryana",
-        "New Delhi, Delhi",
-        "Gurgaon, India",
         "New Delhi, India",
-        "Bengaluru, India",
-        "Noida, India",
-        "Jaipur, India",
-        "Chennai, Tamil Nadu, India",
-        "Mumbai, Maharashtra, India",
-        "Bengaluru, Karnataka, India",
-        "Delhi NCR, India",
-        "Vaishali, India",
-        "Saket, New Delhi",
-        "Patparganj, New Delhi",
-        "Mumbai, India"
+        "Gurugram, Delhi NCR",
+        "Mumbai, Maharashtra",
+        "Bangalore, Karnataka",
+        "Chennai, Tamil Nadu"
       ]
     },
     {

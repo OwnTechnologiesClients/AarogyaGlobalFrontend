@@ -41,10 +41,15 @@
     {
       "label": "How It Works",
       "url": "/#working-process"
+    },
+    {
+      "label": "Blogs",
+      "url": "https://blogs.aarogyaglobal.com",
+      "external": true
     }
   ],
   "contact": {
-    "location": "Innov8 Orchid Center, Gurugram, India, 122001",
+    "location": "3rd Floor, Orchid Centre, Rapid Metro Station, near IILM Institute, next to Sector 54, Sector 53, Gurugram, Haryana 122002",
     "email": "aarogyaglobalforyou@gmail.com",
     "phone": "+380 93 128 1076"
   },

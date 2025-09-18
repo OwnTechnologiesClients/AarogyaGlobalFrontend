@@ -8,21 +8,20 @@ import {
 } from 'lucide-react';
 
 const HospitalAbout = ({ hospital }) => {
-
-
-
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">About {hospital?.name || 'Our Hospital'}</h2>
-        <div className="text-gray-600 text-lg leading-relaxed space-y-6">
+        <div className="text-gray-600 text-lg leading-relaxed space-y-8">
           {hospital?.about ? (
-            hospital.about.split('\n\n\n').map((paragraph, index) => (
-              <p key={index} className="text-gray-600 text-lg leading-relaxed">
-                {paragraph.trim()}
-              </p>
-            ))
+            <div dangerouslySetInnerHTML={{
+              __html: hospital.about
+                .replace(/\n\n/g, '</p><p class="mb-6">')
+                .replace(/•/g, '<br/>•')
+                .replace(/^/, '<p class="mb-6">')
+                .replace(/$/, '</p>')
+            }} />
           ) : (
             <p className="text-gray-600 text-lg leading-relaxed">
               Our hospital is committed to providing world-class healthcare services with advanced medical technology and compassionate care.
@@ -63,7 +62,7 @@ const HospitalAbout = ({ hospital }) => {
 
 
       {/* Emergency Support & OPD Hours */}
-      <div className="bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-white mb-12">
+      {/* <div className="bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-white mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">Emergency Support</h3>
@@ -82,7 +81,7 @@ const HospitalAbout = ({ hospital }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
     </div>

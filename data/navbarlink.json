@@ -148,6 +148,23 @@
       }
     },
     {
+      "label": "Blogs",
+      "href": "https://blogs.aarogyaglobal.com",
+      "external": true,
+      "pageHeader": {
+        "title": "Blogs",
+        "routes": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Blogs"
+          }
+        ]
+      }
+    },
+    {
       "label": "Partner With Us",
       "href": "/partner/partnerWithUs",
       "pageHeader": {

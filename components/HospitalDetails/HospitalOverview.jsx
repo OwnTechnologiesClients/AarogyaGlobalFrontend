@@ -16,6 +16,8 @@ const HospitalOverview = ({ hospital, location }) => {
     email: '',
     message: ''
   });
+  const [honeypot, setHoneypot] = useState("");
+  const [startTime] = useState(Date.now());
 
   const hospitalStats = [
     {
@@ -79,7 +81,13 @@ const HospitalOverview = ({ hospital, location }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    const elapsedMs = Date.now() - startTime;
+    if (honeypot || elapsedMs < 1500) {
+      return;
+    }
+    if (typeof window !== 'undefined') {
+      window.location.href = '/thank-you';
+    }
   };
 
 
@@ -130,12 +138,14 @@ const HospitalOverview = ({ hospital, location }) => {
           <CertificateSwiper
             certificates={hospital?.accreditation?.map(acc => ({
               name: `${acc} Accreditation`,
-              logo: acc === 'JCI' ? '/CertificatesImg/img3.png' :
-                acc === 'NABH' ? '/CertificatesImg/img2.png' :
-                  acc === 'NABL' ? '/CertificatesImg/img4.png' : '/CertificatesImg/img1.png',
+              logo: acc === 'JCI' ? '/CertificatesImg/JCI.jpeg' :
+                acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
+                  acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
+                    acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
               description: acc === 'JCI' ? 'Joint Commission International' :
                 acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
-                  acc === 'NABL' ? 'National Accreditation Board for Testing' : acc
+                  acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
+                    acc === 'CAP' ? 'College of American Pathologists' : acc
             })) || []}
             variant="minimal"
             title="Certificates & Accreditations"
@@ -175,6 +185,19 @@ const HospitalOverview = ({ hospital, location }) => {
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h4 className="font-bold text-gray-800 mb-4">Get In Touch</h4>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot field (hidden) */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <input
                 type="text"
                 name="name"

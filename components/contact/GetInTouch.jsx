@@ -2,18 +2,22 @@
 import React, { useState } from "react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from "lucide-react";
+import PhoneInput from "../ui/PhoneInput";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    countryCode: "+91",
     specialty: "",
     hospital: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [startTime] = useState(Date.now());
 
   const specialties = [
     'Select Medical Specialty',
@@ -50,26 +54,19 @@ const GetInTouch = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const elapsedMs = Date.now() - startTime;
+    if (honeypot || elapsedMs < 1500) {
+      return;
+    }
     setIsSubmitting(true);
 
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        specialty: '',
-        hospital: '',
-        message: ''
-      });
-    }, 3000);
+    if (typeof window !== 'undefined') {
+      window.location.href = '/thank-you';
+    }
   };
 
   if (isSubmitted) {
@@ -95,6 +92,8 @@ const GetInTouch = () => {
     );
   }
 
+  const locationAddress = "3rd Floor, Orchid Centre, Rapid Metro Station, near IILM Institute, next to Sector 54, Sector 53, Gurugram, Haryana 122002";
+
   return (
     <section className="flex flex-col items-center md:mb-16 md:mt-16 mb-8 mt-8">
       <WelcomeBanner
@@ -113,6 +112,19 @@ const GetInTouch = () => {
           {/* Contact Form (with shadow + white background) */}
           <div className="w-full lg:w-1/2 bg-white rounded-3xl shadow-2xl p-6 md:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot field (hidden from users) */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {/* Name Field */}
                 <div className="space-y-2">
@@ -155,14 +167,9 @@ const GetInTouch = () => {
                   <Phone className="w-4 h-4" />
                   Phone Number *
                 </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your phone number"
+                <PhoneInput
+                  value={{ countryCode: formData.countryCode, phone: formData.phone }}
+                  onChange={({ countryCode, phone }) => setFormData(prev => ({ ...prev, countryCode, phone }))}
                 />
               </div>
 
@@ -254,7 +261,7 @@ const GetInTouch = () => {
             <div className="relative w-full h-[576px] rounded-[20px] overflow-hidden">
               <iframe
                 title="Location Map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=77.0266%2C28.4089%2C77.0866%2C28.4689&layer=mapnik&marker=28.4389%2C77.0566"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(locationAddress)}&output=embed`}
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"
@@ -274,15 +281,25 @@ const GetInTouch = () => {
                     />
                   </div>
                   <div className="text-xs text-gray-600 leading-snug mb-2">
-                    Innov8 Orchid Center India, 122001
+                    {locationAddress}
                     <br />
-                    <span className="text-blue-500 underline cursor-pointer">
+                    <a
+                      href={`https://www.google.com/maps/dir//${encodeURIComponent(locationAddress)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 underline cursor-pointer"
+                    >
                       Directions
-                    </span>
+                    </a>
                   </div>
-                  <span className="text-xs text-blue-500 underline cursor-pointer">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-500 underline cursor-pointer"
+                  >
                     View larger map
-                  </span>
+                  </a>
                 </div>
               </div>
             </div>
