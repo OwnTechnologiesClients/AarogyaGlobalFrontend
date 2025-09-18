@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import PageHeader from "@/components/layout/PageHeader";
@@ -32,18 +32,7 @@ const HospitalSearch = () => {
 
   const [filterHosData, setFilteredData] = useState(hospitals);
 
-  useEffect(() => {
-    setFilteredData(hospitals);
-  }, [hospitals]);
-
-  // Auto-apply filters when URL parameters exist and hospitals are loaded
-  useEffect(() => {
-    if (hospitals.length > 0 && (searchParams.get('hospital') || searchParams.get('location'))) {
-      applyFilters();
-    }
-  }, [hospitals, searchParams]);
-
-  const applyFilters = () => {
+  const applyFilters = useCallback(() => {
     let result = [...hospitals];
 
     // Apply category filter
@@ -86,7 +75,18 @@ const HospitalSearch = () => {
       );
     }
     setFilteredData(result);
-  };
+  }, [hospitals, activeCategory, searchFilters]);
+
+  useEffect(() => {
+    setFilteredData(hospitals);
+  }, [hospitals]);
+
+  // Auto-apply filters when URL parameters exist and hospitals are loaded
+  useEffect(() => {
+    if (hospitals.length > 0 && (searchParams.get('hospital') || searchParams.get('location'))) {
+      applyFilters();
+    }
+  }, [hospitals, searchParams, applyFilters]);
 
   const resetFilters = () => {
     setSearchFilters({

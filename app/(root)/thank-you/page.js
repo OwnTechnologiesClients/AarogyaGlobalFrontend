@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
   title: "Thank You | Aarogya Global",
   robots: { index: false, follow: false }
@@ -15,7 +17,7 @@ export default function ThankYouPage() {
               </svg>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Thank you!</h1>
-            <p className="mt-3 text-emerald-50 text-base sm:text-lg">We've received your submission. Our team will contact you shortly.</p>
+            <p className="mt-3 text-emerald-50 text-base sm:text-lg">We&apos;ve received your submission. Our team will contact you shortly.</p>
           </div>
 
           <div className="p-6 sm:p-10 text-center">
@@ -35,15 +37,15 @@ export default function ThankYouPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href="/" className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#04CE78] hover:bg-[#03B868] text-white font-semibold transition-colors">
+              <Link href="/" className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#04CE78] hover:bg-[#03B868] text-white font-semibold transition-colors">
                 Back to Home
-              </a>
+              </Link>
               <a href="/hospitalSearch" className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 text-gray-800 hover:bg-gray-50 font-semibold transition-colors">
                 Explore Hospitals
               </a>
             </div>
 
-            <p className="mt-6 text-xs text-gray-500">If this wasn't you, please ignore this message.</p>
+            <p className="mt-6 text-xs text-gray-500">If this wasn&apos;t you, please ignore this message.</p>
           </div>
         </div>
       </div>

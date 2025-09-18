@@ -5,20 +5,37 @@ import countryCodes from "country-codes-list";
 import { ChevronDown, Search } from "lucide-react";
 
 const buildCountries = () => {
-  const list = countryCodes.customList(
-    "countryCode",
-    "{countryNameEn}|{countryCallingCode}|{countryCode}"
-  );
-  return Object.entries(list).map(([iso, val]) => {
-    const [name, dial, code] = val.split("|");
-    return {
-      iso,
-      name,
-      dialCode: `+${dial}`,
-      code,
-      search: `${name.toLowerCase()} ${dial} ${iso.toLowerCase()}`,
-    };
-  });
+  try {
+    const list = countryCodes.customList(
+      "countryCode",
+      "{countryNameEn}|{countryCallingCode}|{countryCode}"
+    );
+    return Object.entries(list).map(([iso, val]) => {
+      const [name, dial, code] = val.split("|");
+      return {
+        iso,
+        name,
+        dialCode: `+${dial}`,
+        code,
+        search: `${name.toLowerCase()} ${dial} ${iso.toLowerCase()}`,
+      };
+    });
+  } catch (error) {
+    // Fallback to a basic list if country-codes-list fails
+    console.warn("Failed to load country codes, using fallback list:", error);
+    return [
+      { iso: "IN", name: "India", dialCode: "+91", code: "IN", search: "india 91 in" },
+      { iso: "US", name: "United States", dialCode: "+1", code: "US", search: "united states 1 us" },
+      { iso: "GB", name: "United Kingdom", dialCode: "+44", code: "GB", search: "united kingdom 44 gb" },
+      { iso: "CA", name: "Canada", dialCode: "+1", code: "CA", search: "canada 1 ca" },
+      { iso: "AU", name: "Australia", dialCode: "+61", code: "AU", search: "australia 61 au" },
+      { iso: "DE", name: "Germany", dialCode: "+49", code: "DE", search: "germany 49 de" },
+      { iso: "FR", name: "France", dialCode: "+33", code: "FR", search: "france 33 fr" },
+      { iso: "JP", name: "Japan", dialCode: "+81", code: "JP", search: "japan 81 jp" },
+      { iso: "CN", name: "China", dialCode: "+86", code: "CN", search: "china 86 cn" },
+      { iso: "BR", name: "Brazil", dialCode: "+55", code: "BR", search: "brazil 55 br" },
+    ];
+  }
 };
 
 const allCountries = buildCountries();
@@ -137,9 +154,8 @@ const PhoneInput = ({
                 <button
                   type="button"
                   onClick={() => handleCountrySelect(c.dialCode)}
-                  className={`w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-gray-50 ${
-                    c.dialCode === selected.dialCode ? "bg-green-50" : ""
-                  }`}
+                  className={`w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-gray-50 ${c.dialCode === selected.dialCode ? "bg-green-50" : ""
+                    }`}
                 >
                   <span className="text-lg">{isoToFlag(c.iso)}</span>
                   <span className="flex-1 text-sm text-gray-800">{c.name}</span>
