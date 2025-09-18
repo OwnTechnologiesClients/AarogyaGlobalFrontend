@@ -3,8 +3,7 @@ export const metadata = {
   robots: { index: false, follow: false }
 };
 
-export default function ThankYouPage({ searchParams }) {
-  const source = searchParams?.source || "";
+export default function ThankYouPage() {
   return (
     <main className="min-h-[70vh] bg-gradient-to-b from-emerald-50 to-white flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-3xl">
@@ -16,7 +15,7 @@ export default function ThankYouPage({ searchParams }) {
               </svg>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Thank you!</h1>
-            <p className="mt-3 text-emerald-50 text-base sm:text-lg">We've received your submission{source ? ` from ${source}` : ''}. Our team will contact you shortly.</p>
+            <p className="mt-3 text-emerald-50 text-base sm:text-lg">We've received your submission. Our team will contact you shortly.</p>
           </div>
 
           <div className="p-6 sm:p-10 text-center">

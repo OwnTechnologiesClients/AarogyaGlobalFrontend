@@ -65,7 +65,7 @@ const GetInTouch = () => {
 
     setIsSubmitting(false);
     if (typeof window !== 'undefined') {
-      window.location.href = '/thank-you?source=get-in-touch';
+      window.location.href = '/thank-you';
     }
   };
 

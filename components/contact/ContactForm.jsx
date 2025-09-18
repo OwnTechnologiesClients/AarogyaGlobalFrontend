@@ -27,9 +27,9 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
         if (onSubmit) {
             onSubmit(formData);
         }
-        // Redirect to thank-you page for conversion tracking
+        // Redirect to thank-you page
         if (typeof window !== 'undefined') {
-            window.location.href = '/thank-you?source=contact-form';
+            window.location.href = '/thank-you';
         }
     };
 

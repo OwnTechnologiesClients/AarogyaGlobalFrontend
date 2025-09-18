@@ -121,9 +121,9 @@ const PartnerForm = () => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      // Redirect to thank-you page for conversion tracking
+      // Redirect to thank-you page
       if (typeof window !== 'undefined') {
-        window.location.href = '/thank-you?source=partner';
+        window.location.href = '/thank-you';
       }
     }, 2000);
   };

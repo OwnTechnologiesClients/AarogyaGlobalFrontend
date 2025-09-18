@@ -86,7 +86,7 @@ const HospitalOverview = ({ hospital, location }) => {
       return;
     }
     if (typeof window !== 'undefined') {
-      window.location.href = '/thank-you?source=hospital-overview';
+      window.location.href = '/thank-you';
     }
   };
 

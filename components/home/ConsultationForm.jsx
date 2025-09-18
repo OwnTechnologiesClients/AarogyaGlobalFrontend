@@ -66,7 +66,7 @@ const ConsultationForm = () => {
 
         setIsSubmitting(false);
         if (typeof window !== 'undefined') {
-            window.location.href = '/thank-you?source=consultation';
+            window.location.href = '/thank-you';
         }
     };
 
