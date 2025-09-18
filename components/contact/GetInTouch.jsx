@@ -92,6 +92,8 @@ const GetInTouch = () => {
     );
   }
 
+  const locationAddress = "3rd Floor, Orchid Centre, Rapid Metro Station, near IILM Institute, next to Sector 54, Sector 53, Gurugram, Haryana 122002";
+
   return (
     <section className="flex flex-col items-center md:mb-16 md:mt-16 mb-8 mt-8">
       <WelcomeBanner
@@ -259,7 +261,7 @@ const GetInTouch = () => {
             <div className="relative w-full h-[576px] rounded-[20px] overflow-hidden">
               <iframe
                 title="Location Map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=77.0266%2C28.4089%2C77.0866%2C28.4689&layer=mapnik&marker=28.4389%2C77.0566"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(locationAddress)}&output=embed`}
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"
@@ -279,15 +281,25 @@ const GetInTouch = () => {
                     />
                   </div>
                   <div className="text-xs text-gray-600 leading-snug mb-2">
-                    Innov8 Orchid Center India, 122001
+                    {locationAddress}
                     <br />
-                    <span className="text-blue-500 underline cursor-pointer">
+                    <a
+                      href={`https://www.google.com/maps/dir//${encodeURIComponent(locationAddress)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 underline cursor-pointer"
+                    >
                       Directions
-                    </span>
+                    </a>
                   </div>
-                  <span className="text-xs text-blue-500 underline cursor-pointer">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-500 underline cursor-pointer"
+                  >
                     View larger map
-                  </span>
+                  </a>
                 </div>
               </div>
             </div>
