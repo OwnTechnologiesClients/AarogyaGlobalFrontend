@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from 'lucide-react';
 import PhoneInput from '../ui/PhoneInput';
+import { sendConsultationEmail } from '../../lib/emailService';
 
 const ConsultationForm = () => {
     const [formData, setFormData] = useState({
@@ -59,14 +60,30 @@ const ConsultationForm = () => {
         if (honeypot || elapsedMs < 1500) {
             return;
         }
-        setIsSubmitting(true);
-
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        setIsSubmitting(false);
-        if (typeof window !== 'undefined') {
-            window.location.href = '/thank-you';
+        try {
+            setIsSubmitting(true);
+            await sendConsultationEmail(
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    countryCode: formData.countryCode,
+                    specialty: formData.specialty,
+                    hospital: formData.hospital,
+                    message: formData.message,
+                },
+                'Consultation Form'
+            );
+            setIsSubmitting(false);
+            if (typeof window !== 'undefined') {
+                window.location.href = '/thank-you';
+            }
+        } catch (err) {
+            setIsSubmitting(false);
+            console.error('Failed to send consultation email', err);
+            if (typeof window !== 'undefined') {
+                alert('There was an issue sending your request. Please try again later.');
+            }
         }
     };
 

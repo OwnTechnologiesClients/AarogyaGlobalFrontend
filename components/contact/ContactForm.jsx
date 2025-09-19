@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { sendContactEmail } from '../../lib/emailService';
 
 const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
     const [formData, setFormData] = useState({
@@ -18,18 +19,35 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const elapsedMs = Date.now() - startTime;
         if (honeypot || elapsedMs < 1500) {
             return;
         }
-        if (onSubmit) {
-            onSubmit(formData);
-        }
-        // Redirect to thank-you page
-        if (typeof window !== 'undefined') {
-            window.location.href = '/thank-you';
+        try {
+            // Send via EmailJS
+            await sendContactEmail(
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: '',
+                    message: formData.message,
+                },
+                'Contact Form'
+            );
+            if (onSubmit) {
+                onSubmit(formData);
+            }
+            if (typeof window !== 'undefined') {
+                window.location.href = '/thank-you';
+            }
+        } catch (err) {
+            // Optionally show a toast; for now, alert
+            console.error('Failed to send contact email', err);
+            if (typeof window !== 'undefined') {
+                alert('There was an issue sending your message. Please try again later.');
+            }
         }
     };
 

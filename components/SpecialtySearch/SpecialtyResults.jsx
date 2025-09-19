@@ -4,6 +4,8 @@ import DoctorCard from './DoctorCard';
 import SpecialtyHospitalCard from './SpecialtyHospitalCard';
 import TreatmentCard from './TreatmentCard';
 import { ArrowRight } from 'lucide-react';
+import PhoneInput from '../ui/PhoneInput';
+import { sendConsultationEmail } from '../../lib/emailService';
 
 const SpecialtyResults = ({
   doctors = [],
@@ -14,6 +16,13 @@ const SpecialtyResults = ({
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [displayData, setDisplayData] = useState([]);
+  // Shared CTA state (sufficient for single active interaction)
+  const [ctaPhone, setCtaPhone] = useState("");
+  const [ctaCountry, setCtaCountry] = useState("");
+  const [ctaEmail, setCtaEmail] = useState("");
+  const [finalPhone, setFinalPhone] = useState("");
+  const [finalCountry, setFinalCountry] = useState("");
+  const [finalEmail, setFinalEmail] = useState("");
   const cardsPerPage = 12; // Show all treatments on one page to ensure proper CTA placement
 
   // Determine what data to show based on active category
@@ -69,35 +78,39 @@ const SpecialtyResults = ({
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor={`phone-${index}`} className="block text-gray-700 text-lg font-medium mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id={`phone-${index}`}
-              placeholder="Type Phone Number"
-              className="w-full px-4 py-4 border border-gray-300 rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            <label className="block text-gray-700 text-lg font-medium mb-2">Phone Number</label>
+            <PhoneInput
+              value={{ countryCode: ctaCountry, phone: ctaPhone }}
+              onChange={({ countryCode, phone }) => { setCtaCountry(countryCode); setCtaPhone(phone); }}
             />
           </div>
           <div>
-            <label htmlFor={`email-${index}`} className="block text-gray-700 text-lg font-medium mb-2">
-              Email (Optional)
-            </label>
+            <label className="block text-gray-700 text-lg font-medium mb-2">Email (Optional)</label>
             <input
               type="email"
-              id={`email-${index}`}
               placeholder="Type Email"
               className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              value={ctaEmail}
+              onChange={(e) => setCtaEmail(e.target.value)}
             />
           </div>
         </div>
-        <a
-          href="tel:+380931281076"
+        <button
+          onClick={async () => {
+            try {
+              await sendConsultationEmail({ name: '', email: ctaEmail, phone: ctaPhone, countryCode: ctaCountry, specialty: '', hospital: '', message: '' }, `${specialtyName} – Callback`);
+              if (typeof window !== 'undefined') {
+                window.location.href = '/thank-you';
+              }
+            } catch (e) {
+              alert('Failed to submit. Please try again.');
+            }
+          }}
           className="mt-4 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
         >
           <span>Request Callback</span>
           <ArrowRight className="w-5 h-5" />
-        </a>
+        </button>
       </div>
     );
   };
@@ -238,14 +251,10 @@ const SpecialtyResults = ({
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="phone" className="block text-gray-700 text-lg font-medium mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="Type Phone Number"
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                <label className="block text-gray-700 text-lg font-medium mb-2">Phone Number</label>
+                <PhoneInput
+                  value={{ countryCode: finalCountry, phone: finalPhone }}
+                  onChange={({ countryCode, phone }) => { setFinalCountry(countryCode); setFinalPhone(phone); }}
                 />
               </div>
               <div>
@@ -257,16 +266,27 @@ const SpecialtyResults = ({
                   id="email"
                   placeholder="Type Email"
                   className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  value={finalEmail}
+                  onChange={(e) => setFinalEmail(e.target.value)}
                 />
               </div>
             </div>
-            <a
-              href="tel:+380931281076"
+            <button
+              onClick={async () => {
+                try {
+                  await sendConsultationEmail({ name: '', email: finalEmail, phone: finalPhone, countryCode: finalCountry, specialty: '', hospital: '', message: '' }, `${specialtyName} – Callback`);
+                  if (typeof window !== 'undefined') {
+                    window.location.href = '/thank-you';
+                  }
+                } catch (e) {
+                  alert('Failed to submit. Please try again.');
+                }
+              }}
               className="mt-4 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
             >
               <span>Request Callback</span>
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </button>
           </div>
         </div>
       </section>

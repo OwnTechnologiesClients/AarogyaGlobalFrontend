@@ -2,9 +2,13 @@
 import React, { useState } from 'react';
 import DoctorCard from '../SpecialtySearch/DoctorCard';
 import { ArrowRight, Users, Star, MapPin } from 'lucide-react';
+import PhoneInput from '../ui/PhoneInput';
+import { sendConsultationEmail } from '../../lib/emailService';
 
 const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [callbackPhone, setCallbackPhone] = useState({ countryCode: "+91", phone: "" });
+  const [callbackEmail, setCallbackEmail] = useState("");
   const cardsPerPage = 6;
 
   const totalPages = Math.ceil(doctors.length / cardsPerPage);
@@ -192,11 +196,9 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                 <label htmlFor="phone" className="block text-gray-700 text-lg font-medium mb-2">
                   Phone Number
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="Type Phone Number"
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                <PhoneInput
+                  value={{ countryCode: callbackPhone.countryCode, phone: callbackPhone.phone }}
+                  onChange={({ countryCode, phone }) => setCallbackPhone({ countryCode: countryCode || callbackPhone.countryCode, phone })}
                 />
               </div>
               <div>
@@ -208,17 +210,28 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                   id="email"
                   placeholder="Type Email"
                   className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  value={callbackEmail}
+                  onChange={(e) => setCallbackEmail(e.target.value)}
                 />
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+380931281076"
+              <button
+                onClick={async () => {
+                  try {
+                    await sendConsultationEmail({ name: '', email: callbackEmail, phone: callbackPhone.phone, countryCode: callbackPhone.countryCode, specialty: '', hospital: '', message: '' }, 'Doctors – Callback');
+                    if (typeof window !== 'undefined') {
+                      window.location.href = '/thank-you';
+                    }
+                  } catch (e) {
+                    alert('Failed to submit. Please try again.');
+                  }
+                }}
                 className="flex-1 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
               >
                 <span>Request Callback</span>
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               <a
                 href="/appointment"
                 className="flex-1 bg-emerald-600 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors duration-200 flex items-center justify-center space-x-2"

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import PhoneInput from "../ui/PhoneInput";
+import { sendConsultationEmail } from "../../lib/emailService";
 import { useRouter } from 'next/navigation';
 
 import {
@@ -122,6 +123,10 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
 
 const HospitalMain = ({ hospitals }) => {
     const [hospitalData, setHospitalData] = useState(hospitals);
+    // Callback form state (shared for the inline CTA blocks)
+    const [callbackName, setCallbackName] = useState("");
+    const [callbackEmail, setCallbackEmail] = useState("");
+    const [callbackPhone, setCallbackPhone] = useState({ countryCode: "", phone: "" });
 
     useEffect(() => {
         setHospitalData(hospitals)
@@ -180,11 +185,16 @@ const HospitalMain = ({ hospitals }) => {
                                                             id={`name-${index}`}
                                                             placeholder="Type A Name"
                                                             className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                            value={callbackName}
+                                                            onChange={(e) => setCallbackName(e.target.value)}
                                                         />
                                                     </div>
                                                     <div>
                                                         <label className="block text-gray-800 text-sm font-medium mb-2">Phone Number</label>
-                                                        <PhoneInput />
+                                                        <PhoneInput
+                                                            value={{ countryCode: callbackPhone.countryCode, phone: callbackPhone.phone }}
+                                                            onChange={({ countryCode, phone }) => setCallbackPhone({ countryCode, phone })}
+                                                        />
                                                     </div>
                                                     <div>
                                                         <label htmlFor={`email-${index}`} className="block text-gray-700 text-sm font-medium mb-2">Email (Optional)</label>
@@ -193,15 +203,34 @@ const HospitalMain = ({ hospitals }) => {
                                                             id={`email-${index}`}
                                                             placeholder="Type Email"
                                                             className="w-full px-3 py-3 border border-gray-300 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                            value={callbackEmail}
+                                                            onChange={(e) => setCallbackEmail(e.target.value)}
                                                         />
                                                     </div>
-                                                    <a
-                                                        href="tel:+380931281076"
+                                                    <button
+                                                        onClick={async () => {
+                                                            try {
+                                                                await sendConsultationEmail({
+                                                                    name: callbackName,
+                                                                    email: callbackEmail,
+                                                                    phone: callbackPhone.phone,
+                                                                    countryCode: callbackPhone.countryCode,
+                                                                    specialty: '',
+                                                                    hospital: '',
+                                                                    message: ''
+                                                                }, 'Hospitals – Callback');
+                                                                if (typeof window !== 'undefined') {
+                                                                    window.location.href = '/thank-you';
+                                                                }
+                                                            } catch (e) {
+                                                                alert('Failed to submit. Please try again.');
+                                                            }
+                                                        }}
                                                         className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-4 font-bold text-sm rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
                                                     >
                                                         <span>Request Callback</span>
                                                         <ArrowRight className="w-4 h-4" />
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

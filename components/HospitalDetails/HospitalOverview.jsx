@@ -9,11 +9,15 @@ import {
   ArrowRight
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
+import { sendContactEmail } from '../../lib/emailService';
+import PhoneInput from '../ui/PhoneInput';
 
 const HospitalOverview = ({ hospital, location }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    countryCode: '+91',
     message: ''
   });
   const [honeypot, setHoneypot] = useState("");
@@ -79,14 +83,31 @@ const HospitalOverview = ({ hospital, location }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const elapsedMs = Date.now() - startTime;
     if (honeypot || elapsedMs < 1500) {
       return;
     }
-    if (typeof window !== 'undefined') {
-      window.location.href = '/thank-you';
+    try {
+      await sendContactEmail(
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          countryCode: formData.countryCode,
+          message: formData.message,
+        },
+        `Hospital Contact - ${hospital?.name || 'Unknown Hospital'}`
+      );
+      if (typeof window !== 'undefined') {
+        window.location.href = '/thank-you';
+      }
+    } catch (err) {
+      console.error('Failed to send hospital contact email', err);
+      if (typeof window !== 'undefined') {
+        alert('There was an issue sending your message. Please try again later.');
+      }
     }
   };
 
@@ -159,7 +180,7 @@ const HospitalOverview = ({ hospital, location }) => {
         {/* Right Column - Contact Form and Team Image */}
         <div className="lg:w-1/3">
           {/* Team Image with Contact CTA */}
-          <div className="relative rounded-2xl overflow-hidden mb-6">
+              <div className="relative rounded-2xl overflow-hidden mb-6">
             <img
               src={hospital?.image || "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"}
               alt={`${hospital?.name || "Medical"} Team`}
@@ -214,6 +235,13 @@ const HospitalOverview = ({ hospital, location }) => {
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04CE78] focus:border-transparent"
               />
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <PhoneInput
+                  value={{ countryCode: formData.countryCode, phone: formData.phone }}
+                  onChange={({ countryCode, phone }) => setFormData(prev => ({ ...prev, countryCode, phone }))}
+                />
+              </div>
               <textarea
                 name="message"
                 placeholder="Message"

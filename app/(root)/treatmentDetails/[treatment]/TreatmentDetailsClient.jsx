@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
+import { sendConsultationEmail } from '../../../../lib/emailService';
+import PhoneInput from '../../../../components/ui/PhoneInput';
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
 import DoctorsSwiper from '../../../../components/TreatmentDetails/DoctorsSwiper';
 import HospitalsSwiper from '../../../../components/TreatmentDetails/HospitalsSwiper';
@@ -11,6 +13,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     const [expandedFAQ, setExpandedFAQ] = useState({});
     const [activeTab, setActiveTab] = useState('Overview');
     const [treatmentDoctors, setTreatmentDoctors] = useState([]);
+    const [contactPhone, setContactPhone] = useState({ countryCode: '+91', phone: '' });
 
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
     const convertToRupees = (euroString) => {
@@ -421,11 +424,30 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                 Book a free consultation
                             </button>
 
-                            <form className="space-y-4">
+                            <form
+                                className="space-y-4"
+                                onSubmit={async (e) => {
+                                    e.preventDefault();
+                                    const form = e.currentTarget;
+                                    const name = form.querySelector('input[name="name"]')?.value || '';
+                                    const email = form.querySelector('input[name="email"]')?.value || '';
+                                    const phone = contactPhone.phone || '';
+                                    const message = form.querySelector('textarea[name="message"]')?.value || '';
+                                    try {
+                                        await sendConsultationEmail({ name, email, phone, countryCode: contactPhone.countryCode, specialty: '', hospital: '', message }, `Treatment Details – ${treatment.title}`);
+                                        if (typeof window !== 'undefined') {
+                                            window.location.href = '/thank-you';
+                                        }
+                                    } catch (e) {
+                                        alert('Failed to submit. Please try again.');
+                                    }
+                                }}
+                            >
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                                     <input
                                         type="text"
+                                        name="name"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                         placeholder="Your name"
                                     />
@@ -435,6 +457,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                         placeholder="your@email.com"
                                     />
@@ -442,16 +465,16 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                        placeholder="+1 234 567 8900"
+                                    <PhoneInput
+                                        value={{ countryCode: contactPhone.countryCode, phone: contactPhone.phone }}
+                                        onChange={({ countryCode, phone }) => setContactPhone({ countryCode, phone })}
                                     />
                                 </div>
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                                     <textarea
+                                        name="message"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                         rows="4"
                                         placeholder="Tell us about your condition..."
