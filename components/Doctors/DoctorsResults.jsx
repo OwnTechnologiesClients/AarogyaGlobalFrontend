@@ -232,13 +232,13 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                 <span>Request Callback</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <a
+              {/* <a
                 href="/appointment"
                 className="flex-1 bg-emerald-600 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <span>Book Consultation</span>
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
