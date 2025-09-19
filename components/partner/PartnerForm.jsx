@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Building2, User, Stethoscope, Microscope, Truck, Heart } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
-import { sendPartnerEmail } from "../../lib/emailService";
+import { sendPartnerEmail, validateFormData } from "../../lib/emailService";
 
 const PartnerForm = () => {
   const [formData, setFormData] = useState({
@@ -72,36 +72,17 @@ const PartnerForm = () => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
-
-    if (!formData.organizationName.trim()) {
-      newErrors.organizationName = "Organization name is required";
-    }
-
-    if (!formData.contactPerson.trim()) {
-      newErrors.contactPerson = "Contact person name is required";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    }
-
-    if (!formData.organizationType) {
-      newErrors.organizationType = "Please select organization type";
-    }
-
-    if (!formData.location.trim()) {
-      newErrors.location = "Location is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    const validation = validateFormData(formData, [
+      'organizationName', 
+      'contactPerson', 
+      'email', 
+      'phone', 
+      'organizationType', 
+      'location'
+    ]);
+    
+    setErrors(validation.errors);
+    return validation.isValid;
   };
 
   const handleSubmit = async (e) => {

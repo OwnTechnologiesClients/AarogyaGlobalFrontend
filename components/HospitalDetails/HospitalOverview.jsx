@@ -9,7 +9,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
-import { sendContactEmail } from '../../lib/emailService';
+import { sendContactEmail, validateFormData } from '../../lib/emailService';
 import PhoneInput from '../ui/PhoneInput';
 
 const HospitalOverview = ({ hospital, location }) => {
@@ -22,6 +22,7 @@ const HospitalOverview = ({ hospital, location }) => {
   });
   const [honeypot, setHoneypot] = useState("");
   const [startTime] = useState(Date.now());
+  const [errors, setErrors] = useState({});
 
   const hospitalStats = [
     {
@@ -89,6 +90,16 @@ const HospitalOverview = ({ hospital, location }) => {
     if (honeypot || elapsedMs < 1500) {
       return;
     }
+
+    // Validate form data
+    const validation = validateFormData(formData, ['name', 'email', 'phone']);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setErrors({});
+    
     try {
       await sendContactEmail(
         {
@@ -219,28 +230,39 @@ const HospitalOverview = ({ hospital, location }) => {
                   onChange={(e) => setHoneypot(e.target.value)}
                 />
               </div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04CE78] focus:border-transparent"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04CE78] focus:border-transparent"
-              />
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name *"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
+                    errors.name ? 'border-red-500' : 'border-gray-200'
+                  }`}
+                />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+              </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email *"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04CE78] focus:border-transparent ${
+                    errors.email ? 'border-red-500' : 'border-gray-200'
+                  }`}
+                />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
                 <PhoneInput
                   value={{ countryCode: formData.countryCode, phone: formData.phone }}
                   onChange={({ countryCode, phone }) => setFormData(prev => ({ ...prev, countryCode, phone }))}
                 />
+                {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
               </div>
               <textarea
                 name="message"

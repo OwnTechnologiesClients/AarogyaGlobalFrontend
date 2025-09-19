@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import PhoneInput from "../ui/PhoneInput";
-import { sendConsultationEmail } from "../../lib/emailService";
+import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
 import { useRouter } from 'next/navigation';
 
 import {
@@ -127,6 +127,7 @@ const HospitalMain = ({ hospitals }) => {
     const [callbackName, setCallbackName] = useState("");
     const [callbackEmail, setCallbackEmail] = useState("");
     const [callbackPhone, setCallbackPhone] = useState({ countryCode: "", phone: "" });
+    const [callbackErrors, setCallbackErrors] = useState({});
 
     useEffect(() => {
         setHospitalData(hospitals)
@@ -179,36 +180,57 @@ const HospitalMain = ({ hospitals }) => {
                                                 <h3 className="text-xl font-bold text-gray-800 mb-4">Can't find what you are looking for?</h3>
                                                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
                                                     <div>
-                                                        <label htmlFor={`name-${index}`} className="block text-gray-800 text-sm font-medium mb-2">Name</label>
+                                                        <label htmlFor={`name-${index}`} className="block text-gray-800 text-sm font-medium mb-2">Name *</label>
                                                         <input
                                                             type="text"
                                                             id={`name-${index}`}
                                                             placeholder="Type A Name"
-                                                            className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                            className={`w-full px-3 py-3 border rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-indigo-500 text-sm ${
+                                                                callbackErrors.name ? 'border-red-500' : 'border-gray-300'
+                                                            }`}
                                                             value={callbackName}
                                                             onChange={(e) => setCallbackName(e.target.value)}
                                                         />
+                                                        {callbackErrors.name && <p className="text-red-500 text-xs mt-1">{callbackErrors.name}</p>}
                                                     </div>
                                                     <div>
-                                                        <label className="block text-gray-800 text-sm font-medium mb-2">Phone Number</label>
+                                                        <label className="block text-gray-800 text-sm font-medium mb-2">Phone Number *</label>
                                                         <PhoneInput
                                                             value={{ countryCode: callbackPhone.countryCode, phone: callbackPhone.phone }}
                                                             onChange={({ countryCode, phone }) => setCallbackPhone({ countryCode, phone })}
                                                         />
+                                                        {callbackErrors.phone && <p className="text-red-500 text-xs mt-1">{callbackErrors.phone}</p>}
                                                     </div>
                                                     <div>
-                                                        <label htmlFor={`email-${index}`} className="block text-gray-700 text-sm font-medium mb-2">Email (Optional)</label>
+                                                        <label htmlFor={`email-${index}`} className="block text-gray-700 text-sm font-medium mb-2">Email *</label>
                                                         <input
                                                             type="email"
                                                             id={`email-${index}`}
                                                             placeholder="Type Email"
-                                                            className="w-full px-3 py-3 border border-gray-300 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                                                            className={`w-full px-3 py-3 border bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm ${
+                                                                callbackErrors.email ? 'border-red-500' : 'border-gray-300'
+                                                            }`}
                                                             value={callbackEmail}
                                                             onChange={(e) => setCallbackEmail(e.target.value)}
                                                         />
+                                                        {callbackErrors.email && <p className="text-red-500 text-xs mt-1">{callbackErrors.email}</p>}
                                                     </div>
                                                     <button
                                                         onClick={async () => {
+                                                            // Validate form data
+                                                            const validation = validateFormData({ 
+                                                                name: callbackName,
+                                                                phone: callbackPhone.phone, 
+                                                                email: callbackEmail 
+                                                            }, ['name', 'phone', 'email']);
+                                                            
+                                                            if (!validation.isValid) {
+                                                                setCallbackErrors(validation.errors);
+                                                                return;
+                                                            }
+
+                                                            setCallbackErrors({});
+                                                            
                                                             try {
                                                                 await sendConsultationEmail({
                                                                     name: callbackName,

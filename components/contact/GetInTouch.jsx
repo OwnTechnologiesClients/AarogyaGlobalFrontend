@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
-import { sendConsultationEmail } from "../../lib/emailService";
+import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ const GetInTouch = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [startTime] = useState(Date.now());
+  const [errors, setErrors] = useState({});
 
   const specialties = [
     'Select Medical Specialty',
@@ -59,6 +60,16 @@ const GetInTouch = () => {
     if (honeypot || elapsedMs < 1500) {
       return;
     }
+
+    // Validate form data
+    const validation = validateFormData(formData, ['name', 'email', 'phone']);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setErrors({});
+    
     try {
       setIsSubmitting(true);
       await sendConsultationEmail(
@@ -71,7 +82,7 @@ const GetInTouch = () => {
           hospital: formData.hospital,
           message: formData.message,
         },
-        "Get In Touch"
+        "Contact – Get In Touch"
       );
       setIsSubmitting(false);
       if (typeof window !== 'undefined') {
@@ -155,9 +166,12 @@ const GetInTouch = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200 ${
+                      errors.name ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your full name"
                   />
+                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </div>
 
                 {/* Email Field */}
@@ -172,9 +186,12 @@ const GetInTouch = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200 ${
+                      errors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your email"
                   />
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
               </div>
 
@@ -188,6 +205,7 @@ const GetInTouch = () => {
                   value={{ countryCode: formData.countryCode, phone: formData.phone }}
                   onChange={({ countryCode, phone }) => setFormData(prev => ({ ...prev, countryCode, phone }))}
                 />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">

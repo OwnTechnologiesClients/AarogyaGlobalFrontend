@@ -5,7 +5,7 @@ import SpecialtyHospitalCard from './SpecialtyHospitalCard';
 import TreatmentCard from './TreatmentCard';
 import { ArrowRight } from 'lucide-react';
 import PhoneInput from '../ui/PhoneInput';
-import { sendConsultationEmail } from '../../lib/emailService';
+import { sendConsultationEmail, validateFormData } from '../../lib/emailService';
 
 const SpecialtyResults = ({
   doctors = [],
@@ -23,6 +23,8 @@ const SpecialtyResults = ({
   const [finalPhone, setFinalPhone] = useState("");
   const [finalCountry, setFinalCountry] = useState("");
   const [finalEmail, setFinalEmail] = useState("");
+  const [ctaErrors, setCtaErrors] = useState({});
+  const [finalErrors, setFinalErrors] = useState({});
   const cardsPerPage = 12; // Show all treatments on one page to ensure proper CTA placement
 
   // Determine what data to show based on active category
@@ -78,25 +80,42 @@ const SpecialtyResults = ({
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-gray-700 text-lg font-medium mb-2">Phone Number</label>
+            <label className="block text-gray-700 text-lg font-medium mb-2">Phone Number *</label>
             <PhoneInput
               value={{ countryCode: ctaCountry, phone: ctaPhone }}
               onChange={({ countryCode, phone }) => { setCtaCountry(countryCode); setCtaPhone(phone); }}
             />
+            {ctaErrors.phone && <p className="text-red-500 text-sm mt-1">{ctaErrors.phone}</p>}
           </div>
           <div>
-            <label className="block text-gray-700 text-lg font-medium mb-2">Email (Optional)</label>
+            <label className="block text-gray-700 text-lg font-medium mb-2">Email *</label>
             <input
               type="email"
               placeholder="Type Email"
-              className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className={`w-full px-4 py-4 border bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                ctaErrors.email ? 'border-red-500' : 'border-gray-300'
+              }`}
               value={ctaEmail}
               onChange={(e) => setCtaEmail(e.target.value)}
             />
+            {ctaErrors.email && <p className="text-red-500 text-sm mt-1">{ctaErrors.email}</p>}
           </div>
         </div>
         <button
           onClick={async () => {
+            // Validate form data
+            const validation = validateFormData({ 
+              phone: ctaPhone, 
+              email: ctaEmail 
+            }, ['phone', 'email']);
+            
+            if (!validation.isValid) {
+              setCtaErrors(validation.errors);
+              return;
+            }
+
+            setCtaErrors({});
+            
             try {
               await sendConsultationEmail({ name: '', email: ctaEmail, phone: ctaPhone, countryCode: ctaCountry, specialty: '', hospital: '', message: '' }, `${specialtyName} – Callback`);
               if (typeof window !== 'undefined') {
@@ -251,28 +270,45 @@ const SpecialtyResults = ({
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-gray-700 text-lg font-medium mb-2">Phone Number</label>
+                <label className="block text-gray-700 text-lg font-medium mb-2">Phone Number *</label>
                 <PhoneInput
                   value={{ countryCode: finalCountry, phone: finalPhone }}
                   onChange={({ countryCode, phone }) => { setFinalCountry(countryCode); setFinalPhone(phone); }}
                 />
+                {finalErrors.phone && <p className="text-red-500 text-sm mt-1">{finalErrors.phone}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="block text-gray-700 text-lg font-medium mb-2">
-                  Email (Optional)
+                  Email *
                 </label>
                 <input
                   type="email"
                   id="email"
                   placeholder="Type Email"
-                  className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className={`w-full px-4 py-4 border bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                    finalErrors.email ? 'border-red-500' : 'border-gray-300'
+                  }`}
                   value={finalEmail}
                   onChange={(e) => setFinalEmail(e.target.value)}
                 />
+                {finalErrors.email && <p className="text-red-500 text-sm mt-1">{finalErrors.email}</p>}
               </div>
             </div>
             <button
               onClick={async () => {
+                // Validate form data
+                const validation = validateFormData({ 
+                  phone: finalPhone, 
+                  email: finalEmail 
+                }, ['phone', 'email']);
+                
+                if (!validation.isValid) {
+                  setFinalErrors(validation.errors);
+                  return;
+                }
+
+                setFinalErrors({});
+                
                 try {
                   await sendConsultationEmail({ name: '', email: finalEmail, phone: finalPhone, countryCode: finalCountry, specialty: '', hospital: '', message: '' }, `${specialtyName} – Callback`);
                   if (typeof window !== 'undefined') {

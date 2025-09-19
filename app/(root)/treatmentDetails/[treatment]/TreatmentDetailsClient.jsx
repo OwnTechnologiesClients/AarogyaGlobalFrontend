@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
-import { sendConsultationEmail } from '../../../../lib/emailService';
+import { sendConsultationEmail, validateFormData } from '../../../../lib/emailService';
 import PhoneInput from '../../../../components/ui/PhoneInput';
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
 import DoctorsSwiper from '../../../../components/TreatmentDetails/DoctorsSwiper';
@@ -14,6 +14,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     const [activeTab, setActiveTab] = useState('Overview');
     const [treatmentDoctors, setTreatmentDoctors] = useState([]);
     const [contactPhone, setContactPhone] = useState({ countryCode: '+91', phone: '' });
+    const [contactErrors, setContactErrors] = useState({});
 
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
     const convertToRupees = (euroString) => {
@@ -433,6 +434,21 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                     const email = form.querySelector('input[name="email"]')?.value || '';
                                     const phone = contactPhone.phone || '';
                                     const message = form.querySelector('textarea[name="message"]')?.value || '';
+                                    
+                                    // Validate form data
+                                    const validation = validateFormData({ 
+                                        name, 
+                                        email, 
+                                        phone 
+                                    }, ['name', 'email', 'phone']);
+                                    
+                                    if (!validation.isValid) {
+                                        setContactErrors(validation.errors);
+                                        return;
+                                    }
+
+                                    setContactErrors({});
+                                    
                                     try {
                                         await sendConsultationEmail({ name, email, phone, countryCode: contactPhone.countryCode, specialty: '', hospital: '', message }, `Treatment Details – ${treatment.title}`);
                                         if (typeof window !== 'undefined') {
@@ -444,31 +460,38 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                 }}
                             >
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
                                     <input
                                         type="text"
                                         name="name"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                                            contactErrors.name ? 'border-red-500' : 'border-gray-300'
+                                        }`}
                                         placeholder="Your name"
                                     />
+                                    {contactErrors.name && <p className="text-red-500 text-sm mt-1">{contactErrors.name}</p>}
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
                                     <input
                                         type="email"
                                         name="email"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                                            contactErrors.email ? 'border-red-500' : 'border-gray-300'
+                                        }`}
                                         placeholder="your@email.com"
                                     />
+                                    {contactErrors.email && <p className="text-red-500 text-sm mt-1">{contactErrors.email}</p>}
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
                                     <PhoneInput
                                         value={{ countryCode: contactPhone.countryCode, phone: contactPhone.phone }}
                                         onChange={({ countryCode, phone }) => setContactPhone({ countryCode, phone })}
                                     />
+                                    {contactErrors.phone && <p className="text-red-500 text-sm mt-1">{contactErrors.phone}</p>}
                                 </div>
 
                                 <div>
