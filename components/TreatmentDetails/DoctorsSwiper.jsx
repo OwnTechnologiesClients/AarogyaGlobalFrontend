@@ -65,14 +65,14 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
           <div className="flex gap-3">
             <button
               onClick={() => swiperRef.current?.swiper.slidePrev()}
-              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
               aria-label="Previous doctors"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={() => swiperRef.current?.swiper.slideNext()}
-              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
               aria-label="Next doctors"
             >
               <ChevronRight className="w-6 h-6" />
@@ -88,14 +88,14 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
           <div className="flex gap-3">
             <button
               onClick={() => swiperRef.current?.swiper.slidePrev()}
-              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
               aria-label="Previous doctors"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={() => swiperRef.current?.swiper.slideNext()}
-              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+              className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
               aria-label="Next doctors"
             >
               <ChevronRight className="w-6 h-6" />
@@ -119,14 +119,14 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
         >
           {doctors.map((doctor, index) => (
             <SwiperSlide key={doctor.id || index}>
-              <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col">
+              <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 h-full flex flex-col">
                 {/* Header with Image and Basic Info */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-sm flex items-center justify-center flex-shrink-0">
                     <img
                       src={doctor.image}
                       alt={doctor.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
@@ -250,7 +250,7 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                 <div className="mt-auto pt-3">
                   <Link
                     href={`/doctorDetails/${doctor.id}`}
-                    className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1 sm:gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1 sm:gap-2 transition-all duration-300"
                   >
                     <span>View Details</span>
                     <ExternalLink className="w-3 h-3 flex-shrink-0" />

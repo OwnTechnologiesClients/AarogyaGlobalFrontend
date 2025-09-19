@@ -21,7 +21,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             {/* Hospital Image */}
             <div className="relative h-48 overflow-hidden">
                 <img
@@ -108,7 +108,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                 <div className="flex justify-center">
                     <button
                         onClick={handleCardClick}
-                        className="w-full bg-[#04CE78] hover:bg-green-600 text-white flex items-center justify-center space-x-2 rounded-lg p-3 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg font-semibold"
+                        className="w-full bg-[#04CE78] hover:bg-green-600 text-white flex items-center justify-center space-x-2 rounded-lg p-3 transition-all duration-300 cursor-pointer font-semibold"
                     >
                         <span>View Details</span>
                         <ArrowRight className="w-4 h-4" />
@@ -248,7 +248,7 @@ const HospitalMain = ({ hospitals }) => {
                                                                 alert('Failed to submit. Please try again.');
                                                             }
                                                         }}
-                                                        className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-4 font-bold text-sm rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
+                                                        className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-4 font-bold text-sm rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
                                                     >
                                                         <span>Request Callback</span>
                                                         <ArrowRight className="w-4 h-4" />

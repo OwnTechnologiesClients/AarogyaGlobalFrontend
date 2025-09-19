@@ -79,7 +79,7 @@ const TreatmentCard = ({ treatment }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
                     <span className="bg-[#04CE78] text-white text-md font-bold px-3 py-2 rounded-md">

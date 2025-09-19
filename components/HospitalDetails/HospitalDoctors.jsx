@@ -128,7 +128,7 @@ const HospitalDoctors = ({ hospital }) => {
             {filteredDoctors.map((doctor, index) => (
               <div
                 key={createUniqueKey(doctor, index)}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg"
               >
                 {/* Doctor Image */}
                 <div className="relative h-64 rounded-t-xl overflow-hidden">

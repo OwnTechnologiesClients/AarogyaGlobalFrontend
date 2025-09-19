@@ -37,14 +37,14 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
         <div className="flex gap-3">
           <button
             onClick={() => swiperRef.current?.swiper.slidePrev()}
-            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
             aria-label="Previous hospitals"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={() => swiperRef.current?.swiper.slideNext()}
-            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
             aria-label="Next hospitals"
           >
             <ChevronRight className="w-6 h-6" />
@@ -58,14 +58,14 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
         <div className="flex gap-3">
           <button
             onClick={() => swiperRef.current?.swiper.slidePrev()}
-            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
             aria-label="Previous hospitals"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={() => swiperRef.current?.swiper.slideNext()}
-            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="w-12 h-12 rounded-full border-2 border-[#1F5FFF] hover:border-[#4B00B4] bg-white hover:bg-[#1F5FFF] flex items-center justify-center text-[#1F5FFF] hover:text-white shadow-lg hover:shadow-xl transition-all duration-200"
             aria-label="Next hospitals"
           >
             <ChevronRight className="w-6 h-6" />
@@ -85,12 +85,12 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
         >
           {hospitals.map((hospital, index) => (
             <SwiperSlide key={hospital.id || index}>
-              <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col">
+              <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl overflow-hidden border border-gray-100 h-full flex flex-col">
                 <div className="relative">
                   <img
                     src={hospital.image}
                     alt={hospital.name}
-                    className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-40 object-cover"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -196,7 +196,7 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
                   <div className="mt-auto pt-3">
                     <Link
                       href={`/hospitalDetails/${hospital.id}`}
-                      className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                      className="w-full bg-[#04CE78] hover:bg-green-600 text-white text-xs font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300"
                     >
                       <span>View Details</span>
                       <ExternalLink className="w-3 h-3" />
