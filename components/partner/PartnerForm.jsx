@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Building2, User, Stethoscope, Microscope, Truck, Heart } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
+import { sendPartnerEmail, validateFormData } from "../../lib/emailService";
 
 const PartnerForm = () => {
   const [formData, setFormData] = useState({
@@ -71,36 +72,17 @@ const PartnerForm = () => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
-
-    if (!formData.organizationName.trim()) {
-      newErrors.organizationName = "Organization name is required";
-    }
-
-    if (!formData.contactPerson.trim()) {
-      newErrors.contactPerson = "Contact person name is required";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    }
-
-    if (!formData.organizationType) {
-      newErrors.organizationType = "Please select organization type";
-    }
-
-    if (!formData.location.trim()) {
-      newErrors.location = "Location is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    const validation = validateFormData(formData, [
+      'organizationName', 
+      'contactPerson', 
+      'email', 
+      'phone', 
+      'organizationType', 
+      'location'
+    ]);
+    
+    setErrors(validation.errors);
+    return validation.isValid;
   };
 
   const handleSubmit = async (e) => {
@@ -116,16 +98,31 @@ const PartnerForm = () => {
       return;
     }
 
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      setIsSubmitting(true);
+      // Find the full label for organization type
+      const selectedOrgType = organizationTypes.find(type => type.value === formData.organizationType);
+      const orgTypeLabel = selectedOrgType ? selectedOrgType.label : formData.organizationType;
+      
+      await sendPartnerEmail({
+        organizationName: formData.organizationName,
+        contactPerson: formData.contactPerson,
+        email: formData.email,
+        phone: formData.phone,
+        countryCode: formData.countryCode,
+        organizationType: orgTypeLabel,
+        services: formData.services,
+        location: formData.location,
+        message: formData.message,
+      }, 'Partnership Inquiry');
       setIsSubmitting(false);
-      // Redirect to thank-you page
       if (typeof window !== 'undefined') {
         window.location.href = '/thank-you';
       }
-    }, 2000);
+    } catch (err) {
+      setIsSubmitting(false);
+      alert('There was an issue submitting your application. Please try again later.');
+    }
   };
 
   if (isSubmitted) {

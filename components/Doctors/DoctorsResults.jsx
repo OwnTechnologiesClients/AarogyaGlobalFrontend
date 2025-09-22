@@ -2,9 +2,14 @@
 import React, { useState } from 'react';
 import DoctorCard from '../SpecialtySearch/DoctorCard';
 import { ArrowRight, Users, Star, MapPin } from 'lucide-react';
+import PhoneInput from '../ui/PhoneInput';
+import { sendConsultationEmail, validateFormData } from '../../lib/emailService';
 
 const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [callbackPhone, setCallbackPhone] = useState({ countryCode: "+91", phone: "" });
+  const [callbackEmail, setCallbackEmail] = useState("");
+  const [callbackErrors, setCallbackErrors] = useState({});
   const cardsPerPage = 6;
 
   const totalPages = Math.ceil(doctors.length / cardsPerPage);
@@ -190,42 +195,76 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
                 <label htmlFor="phone" className="block text-gray-700 text-lg font-medium mb-2">
-                  Phone Number
+                  Phone Number *
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="Type Phone Number"
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                <PhoneInput
+                  value={{ countryCode: callbackPhone.countryCode, phone: callbackPhone.phone }}
+                  onChange={({ countryCode, phone }) => setCallbackPhone({ countryCode: countryCode || callbackPhone.countryCode, phone })}
                 />
+                {callbackErrors.phone && <p className="text-red-500 text-sm mt-1">{callbackErrors.phone}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="block text-gray-700 text-lg font-medium mb-2">
-                  Email (Optional)
+                  Email *
                 </label>
                 <input
                   type="email"
                   id="email"
                   placeholder="Type Email"
-                  className="w-full px-4 py-4 border border-gray-300 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className={`w-full px-4 py-4 border bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                    callbackErrors.email ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  value={callbackEmail}
+                  onChange={(e) => setCallbackEmail(e.target.value)}
                 />
+                {callbackErrors.email && <p className="text-red-500 text-sm mt-1">{callbackErrors.email}</p>}
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+380931281076"
+              <button
+                onClick={async () => {
+                  // Validate form data
+                  const validation = validateFormData({ 
+                    phone: callbackPhone.phone, 
+                    email: callbackEmail 
+                  }, ['phone', 'email']);
+                  
+                  if (!validation.isValid) {
+                    setCallbackErrors(validation.errors);
+                    return;
+                  }
+
+                  setCallbackErrors({});
+                  
+                  try {
+                    await sendConsultationEmail({ 
+                      name: '', 
+                      email: callbackEmail, 
+                      phone: callbackPhone.phone, 
+                      countryCode: callbackPhone.countryCode, 
+                      specialty: '', 
+                      hospital: '', 
+                      message: '' 
+                    }, 'Doctors – Callback');
+                    if (typeof window !== 'undefined') {
+                      window.location.href = '/thank-you';
+                    }
+                  } catch (e) {
+                    alert('Failed to submit. Please try again.');
+                  }
+                }}
                 className="flex-1 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
               >
                 <span>Request Callback</span>
                 <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
+              </button>
+              {/* <a
                 href="/appointment"
                 className="flex-1 bg-emerald-600 text-white py-4 px-4 font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <span>Book Consultation</span>
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

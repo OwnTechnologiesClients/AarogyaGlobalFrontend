@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
+import { sendConsultationEmail, validateFormData } from '../../../../lib/emailService';
+import PhoneInput from '../../../../components/ui/PhoneInput';
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
 import DoctorsSwiper from '../../../../components/TreatmentDetails/DoctorsSwiper';
 import HospitalsSwiper from '../../../../components/TreatmentDetails/HospitalsSwiper';
@@ -11,6 +13,8 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     const [expandedFAQ, setExpandedFAQ] = useState({});
     const [activeTab, setActiveTab] = useState('Overview');
     const [treatmentDoctors, setTreatmentDoctors] = useState([]);
+    const [contactPhone, setContactPhone] = useState({ countryCode: '+91', phone: '' });
+    const [contactErrors, setContactErrors] = useState({});
 
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
     const convertToRupees = (euroString) => {
@@ -268,7 +272,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                             <div className="space-y-3">
                                 {Array.isArray(treatment.diagnosticTools) && treatment.diagnosticTools.map((tool, index) => (
-                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4">
                                         <div className="flex items-start space-x-3">
                                             <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                                             <span className="text-gray-800 font-medium">{tool}</span>
@@ -330,7 +334,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                             <div className="space-y-3">
                                 {Array.isArray(treatment.advancedTreatments) && treatment.advancedTreatments.map((treatment, index) => (
-                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4">
                                         <div className="flex items-start space-x-3">
                                             <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-2"></div>
                                             <span className="text-gray-800 font-medium">{treatment}</span>
@@ -350,7 +354,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                             <div className="space-y-3">
                                 {Array.isArray(treatment.advantages) && treatment.advantages.map((advantage, index) => (
-                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4">
                                         <div className="flex items-start space-x-3">
                                             <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-2"></div>
                                             <span className="text-gray-800 font-medium">{advantage}</span>
@@ -421,37 +425,79 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                 Book a free consultation
                             </button>
 
-                            <form className="space-y-4">
+                            <form
+                                className="space-y-4"
+                                onSubmit={async (e) => {
+                                    e.preventDefault();
+                                    const form = e.currentTarget;
+                                    const name = form.querySelector('input[name="name"]')?.value || '';
+                                    const email = form.querySelector('input[name="email"]')?.value || '';
+                                    const phone = contactPhone.phone || '';
+                                    const message = form.querySelector('textarea[name="message"]')?.value || '';
+                                    
+                                    // Validate form data
+                                    const validation = validateFormData({ 
+                                        name, 
+                                        email, 
+                                        phone 
+                                    }, ['name', 'email', 'phone']);
+                                    
+                                    if (!validation.isValid) {
+                                        setContactErrors(validation.errors);
+                                        return;
+                                    }
+
+                                    setContactErrors({});
+                                    
+                                    try {
+                                        await sendConsultationEmail({ name, email, phone, countryCode: contactPhone.countryCode, specialty: '', hospital: '', message }, `Treatment Details – ${treatment.title}`);
+                                        if (typeof window !== 'undefined') {
+                                            window.location.href = '/thank-you';
+                                        }
+                                    } catch (e) {
+                                        alert('Failed to submit. Please try again.');
+                                    }
+                                }}
+                            >
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
                                     <input
                                         type="text"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        name="name"
+                                        className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                                            contactErrors.name ? 'border-red-500' : 'border-gray-300'
+                                        }`}
                                         placeholder="Your name"
                                     />
+                                    {contactErrors.name && <p className="text-red-500 text-sm mt-1">{contactErrors.name}</p>}
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
                                     <input
                                         type="email"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        name="email"
+                                        className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                                            contactErrors.email ? 'border-red-500' : 'border-gray-300'
+                                        }`}
                                         placeholder="your@email.com"
                                     />
+                                    {contactErrors.email && <p className="text-red-500 text-sm mt-1">{contactErrors.email}</p>}
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                        placeholder="+1 234 567 8900"
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                                    <PhoneInput
+                                        value={{ countryCode: contactPhone.countryCode, phone: contactPhone.phone }}
+                                        onChange={({ countryCode, phone }) => setContactPhone({ countryCode, phone })}
                                     />
+                                    {contactErrors.phone && <p className="text-red-500 text-sm mt-1">{contactErrors.phone}</p>}
                                 </div>
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                                     <textarea
+                                        name="message"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                         rows="4"
                                         placeholder="Tell us about your condition..."

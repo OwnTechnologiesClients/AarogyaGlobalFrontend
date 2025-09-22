@@ -18,7 +18,7 @@ const DoctorCard = ({ doctor }) => {
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg border border-gray-100 w-full">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 w-full">
             {/* Main Content */}
             <div className="flex flex-col sm:flex-row w-full">
                 {/* Left Side - Image */}
@@ -93,7 +93,7 @@ const DoctorCard = ({ doctor }) => {
                     <div className="flex justify-center sm:justify-end">
                         <button
                             onClick={handleViewDetails}
-                            className="bg-[#04CE78] hover:bg-green-600 text-white py-2 px-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-1 font-semibold text-xs sm:text-sm transform hover:scale-105 hover:shadow-lg w-full sm:w-auto"
+                            className="bg-[#04CE78] hover:bg-green-600 text-white py-2 px-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-1 font-semibold text-xs sm:text-sm w-full sm:w-auto"
                         >
                             <span>View Details</span>
                             <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />

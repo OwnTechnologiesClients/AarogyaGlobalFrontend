@@ -17,7 +17,7 @@ const SpecialtyHospitalCard = ({ hospital }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div className="md:w-1/2 relative">
                 <div className='h-full p-2 rounded-lg'>
                     <img
@@ -80,7 +80,7 @@ const SpecialtyHospitalCard = ({ hospital }) => {
                 <div className="flex justify-between items-center">
                     <button
                         onClick={handleViewDetails}
-                        className="bg-[#04CE78] hover:bg-green-600 text-white flex items-center space-x-1 sm:space-x-2 rounded-lg px-3 py-2 sm:py-3 cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                        className="bg-[#04CE78] hover:bg-green-600 text-white flex items-center space-x-1 sm:space-x-2 rounded-lg px-3 py-2 sm:py-3 transition-all duration-300 cursor-pointer"
                     >
                         <span className="font-semibold text-xs sm:text-sm md:text-md">View Details</span>
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />

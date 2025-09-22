@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import WelcomeBanner from "../layout/WelcomeBanner";
 import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
+import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ const GetInTouch = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [startTime] = useState(Date.now());
+  const [errors, setErrors] = useState({});
 
   const specialties = [
     'Select Medical Specialty',
@@ -58,14 +60,40 @@ const GetInTouch = () => {
     if (honeypot || elapsedMs < 1500) {
       return;
     }
-    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Validate form data
+    const validation = validateFormData(formData, ['name', 'email', 'phone']);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
 
-    setIsSubmitting(false);
-    if (typeof window !== 'undefined') {
-      window.location.href = '/thank-you';
+    setErrors({});
+    
+    try {
+      setIsSubmitting(true);
+      await sendConsultationEmail(
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          countryCode: formData.countryCode,
+          specialty: formData.specialty,
+          hospital: formData.hospital,
+          message: formData.message,
+        },
+        "Contact – Get In Touch"
+      );
+      setIsSubmitting(false);
+      if (typeof window !== 'undefined') {
+        window.location.href = '/thank-you';
+      }
+    } catch (err) {
+      setIsSubmitting(false);
+      console.error('Failed to send Get In Touch form', err);
+      if (typeof window !== 'undefined') {
+        alert('There was an issue sending your message. Please try again later.');
+      }
     }
   };
 
@@ -138,9 +166,12 @@ const GetInTouch = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200 ${
+                      errors.name ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your full name"
                   />
+                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </div>
 
                 {/* Email Field */}
@@ -155,9 +186,12 @@ const GetInTouch = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200"
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#04CE78] focus:border-transparent transition-all duration-200 ${
+                      errors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your email"
                   />
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
               </div>
 
@@ -171,6 +205,7 @@ const GetInTouch = () => {
                   value={{ countryCode: formData.countryCode, phone: formData.phone }}
                   onChange={({ countryCode, phone }) => setFormData(prev => ({ ...prev, countryCode, phone }))}
                 />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
