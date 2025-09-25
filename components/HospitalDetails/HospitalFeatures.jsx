@@ -212,7 +212,7 @@ const HospitalFeatures = ({ hospital }) => {
       <CertificateSwiper
         certificates={hospital?.accreditation?.map(acc => ({
           name: `${acc} Accreditation`,
-          logo: acc === 'JCI' ? '/CertificatesImg/JCI.jpeg' :
+          logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
             acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
               acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
                 acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
