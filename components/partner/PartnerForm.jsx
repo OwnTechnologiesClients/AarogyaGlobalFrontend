@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Building2, User, Stethoscope, Microscope, Truck, Heart } from "lucide-react";
+import { Mail, Phone, MapPin, Building2, User, Stethoscope, Microscope, Truck, Heart, Briefcase, Plane, Shield } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
 import { sendPartnerEmail, validateFormData } from "../../lib/emailService";
 
@@ -29,7 +29,11 @@ const PartnerForm = () => {
     { value: "diagnostic", label: "Diagnostic Center", icon: <Microscope className="w-5 h-5" /> },
     { value: "pharmacy", label: "Pharmacy", icon: <Truck className="w-5 h-5" /> },
     { value: "specialty", label: "Specialty Center", icon: <Heart className="w-5 h-5" /> },
-    { value: "individual", label: "Individual Doctor", icon: <User className="w-5 h-5" /> }
+    { value: "individual", label: "Individual Doctor", icon: <User className="w-5 h-5" /> },
+    { value: "individual_freelance", label: "Individual/Freelance", icon: <User className="w-5 h-5" /> },
+    { value: "business_owner", label: "Business Owner", icon: <Briefcase className="w-5 h-5" /> },
+    { value: "travel_agent", label: "Travel Agent", icon: <Plane className="w-5 h-5" /> },
+    { value: "insurance_agent", label: "Insurance Agent", icon: <Shield className="w-5 h-5" /> }
   ];
 
   const serviceOptions = [
