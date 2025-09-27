@@ -13,10 +13,10 @@ import {
 const HospitalLocation = ({ hospital }) => {
   const hospitalInfo = {
     name: hospital?.name || "Hospital",
-    address: hospital?.address || "Address not available",
+    address: hospital?.contact?.address || hospital?.address || "Address not available",
     phone: hospital?.contact?.phone || "Phone not available",
     email: hospital?.contact?.email || "Email not available",
-    emergency: hospital?.contact?.phone || "Emergency contact not available",
+    emergency: hospital?.contact?.emergency || hospital?.contact?.phone || "Emergency contact not available",
     coordinates: hospital?.coordinates || {
       lat: 28.4595,
       lng: 77.0266,
@@ -205,10 +205,23 @@ const HospitalLocation = ({ hospital }) => {
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
               <div>
-                <p className="font-medium text-gray-800">Accessibility</p>
-                <p className="text-gray-600 text-sm">{hospital?.accessibility || "Accessibility information not available"}</p>
+                <p className="font-medium text-gray-800">How to Reach</p>
+                <p className="text-gray-600 text-sm">{hospital?.howToReach || "Information not available"}</p>
               </div>
             </div>
+            {(hospital?.nearbyLandmarks || []).length > 0 && (
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
+                <div>
+                  <p className="font-medium text-gray-800">Nearby Landmarks</p>
+                  <div className="text-gray-600 text-sm space-y-1">
+                    {hospital.nearbyLandmarks.map((l, idx) => (
+                      <div key={idx}>{l?.type}{l?.direction ? ` – ${l.direction}` : ''}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
             {hospital?.mapLink && (
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />

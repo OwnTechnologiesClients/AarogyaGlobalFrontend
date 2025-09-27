@@ -20,8 +20,15 @@ export default function HospitalDetailsClient({ params, hospital: initialHospita
 
     useEffect(() => {
         if (!initialHospital) {
-            const foundHospital = dataService.getHospitalById(hospitalId);
-            setHospital(foundHospital);
+            (async () => {
+                try {
+                    const foundHospital = await dataService.getHospitalById(hospitalId);
+                    setHospital(foundHospital);
+                } catch (e) {
+                    console.error('Failed to fetch hospital on client', e);
+                    setHospital(null);
+                }
+            })();
         }
     }, [hospitalId, initialHospital]);
 

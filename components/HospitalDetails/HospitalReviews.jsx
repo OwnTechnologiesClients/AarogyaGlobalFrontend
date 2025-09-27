@@ -24,7 +24,11 @@ const HospitalReviews = ({ hospital }) => {
   ];
 
   // Get rating from hospital data
-  const hospitalRating = parseFloat(hospital?.rating || "4.5");
+  const hospitalRating = parseFloat(
+    typeof hospital?.rating === 'object' 
+      ? hospital.rating?.userScore || hospital.rating?.googleRating || "4.5"
+      : hospital?.rating || "4.5"
+  );
   const totalReviews = hospital?.reviews?.[0]?.comment?.match(/\d+/)?.[0] || "1000";
 
   const overallRating = {

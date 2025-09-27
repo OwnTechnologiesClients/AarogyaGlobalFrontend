@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { CheckCircle, Star, MapPin, Clock, Phone, Mail } from "lucide-react";
 import SpecialtyCard from "./SpecialtyCard";
+import apiService from '../../lib/apiService';
 
 const DoctorProfile = ({ doctor }) => {
   if (!doctor) {
@@ -284,7 +285,7 @@ const DoctorProfile = ({ doctor }) => {
         <div className="bg-white rounded-xl shadow-md overflow-hidden w-full">
           <div className="w-full h-72 relative">
             <Image
-              src={doctor.image}
+              src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
               alt={doctor.name}
               fill
               className="object-cover"

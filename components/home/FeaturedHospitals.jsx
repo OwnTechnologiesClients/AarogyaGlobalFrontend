@@ -16,70 +16,43 @@ import {
   Stethoscope,
   Heart,
 } from "lucide-react";
-import unifiedData from "@/data/unifiedData.json";
+import apiService from "@/lib/apiService";
 import WelcomeBanner from "../layout/WelcomeBanner";
 
 const FeaturedHospitals = () => {
   const swiperRef = React.useRef(null);
   const router = useRouter();
 
-  // Get top 8 hospitals from all specialties and global hospitals with detailed information
-  const getAllHospitals = () => {
-    const allHospitals = [];
-    const seenNames = new Set(); // Track hospital names to avoid duplicates
-    const specialties = ['cardiology', 'gynaecology', 'neurology', 'oncology', 'orthopaedics', 'urology'];
-
-    // First, add hospitals from specialty arrays
-    specialties.forEach(specialty => {
-      if (unifiedData.specialties[specialty] && unifiedData.specialties[specialty].hospitals) {
-        unifiedData.specialties[specialty].hospitals.forEach(hospital => {
-          // Check if hospital already exists by ID or name (avoid duplicates)
-          const existingHospitalById = allHospitals.find(h => h.id === hospital.id);
-          const hospitalNameExists = seenNames.has(hospital.name.toLowerCase());
-
-          if (!existingHospitalById && !hospitalNameExists) {
-            seenNames.add(hospital.name.toLowerCase());
-            allHospitals.push({
-              ...hospital,
-              type: 'Hospital',
-              typeColor: '#04CE78',
-              doctorCount: hospital.internationalPatients ? hospital.internationalPatients.split(' ')[0] : 'N/A',
-              hasEmergency: true, // Assume major hospitals have emergency services
-              hasParkade: true, // Assume major hospitals have parking
-            });
-          }
-        });
-      }
-    });
-
-    // Then, add hospitals from globalHospitals array
-    if (unifiedData.globalHospitals && unifiedData.globalHospitals.length > 0) {
-      unifiedData.globalHospitals.forEach(hospital => {
-        // Check if hospital already exists by ID or name (avoid duplicates)
-        const existingHospitalById = allHospitals.find(h => h.id === hospital.id);
-        const hospitalNameExists = seenNames.has(hospital.name.toLowerCase());
-
-        if (!existingHospitalById && !hospitalNameExists) {
-          seenNames.add(hospital.name.toLowerCase());
-          allHospitals.push({
-            ...hospital,
+  // Fetch top hospitals from backend
+  const [hospitals, setHospitals] = React.useState([]);
+  React.useEffect(() => {
+    let isMounted = true;
+    const fetchHospitals = async () => {
+      try {
+        const res = await apiService.getHospitals({ limit: 50 });
+        const list = Array.isArray(res?.data) ? res.data : [];
+        const sorted = list
+          .slice()
+          .sort((a, b) => {
+            const ratingA = typeof a.rating === 'object' ? (a.rating?.googleRating || a.rating?.userScore || 0) : (parseFloat(a.rating) || 0);
+            const ratingB = typeof b.rating === 'object' ? (b.rating?.googleRating || b.rating?.userScore || 0) : (parseFloat(b.rating) || 0);
+            return ratingB - ratingA;
+          })
+          .map(h => ({
+            ...h,
             type: 'Hospital',
             typeColor: '#04CE78',
-            doctorCount: hospital.doctorsCount ? hospital.doctorsCount.toString() : 'N/A',
-            hasEmergency: true, // Assume major hospitals have emergency services
-            hasParkade: true, // Assume major hospitals have parking
-          });
-        }
-      });
-    }
-
-    // Sort by rating and return top 8
-    return allHospitals
-      .sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating))
-      .slice(0, 8);
-  };
-
-  const hospitals = getAllHospitals();
+            hasEmergency: true,
+            hasParkade: true,
+          }));
+        if (isMounted) setHospitals(sorted);
+      } catch (e) {
+        if (isMounted) setHospitals([]);
+      }
+    };
+    fetchHospitals();
+    return () => { isMounted = false; };
+  }, []);
 
   const handleHospitalClick = (hospitalId) => {
     router.push(`/hospitalDetails/${hospitalId}`);
@@ -178,7 +151,7 @@ const FeaturedHospitals = () => {
                 {/* Hospital Image */}
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={hospital.image}
+                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || '/hospitaldirectory/img1.png'}
                     alt={`${hospital.name} image`}
                     fill
                     className="object-cover"
@@ -196,7 +169,12 @@ const FeaturedHospitals = () => {
                     </span>
                     <div className="flex items-center text-gray-600 text-base">
                       <Star className="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" />
-                      <span className="font-semibold">{hospital.rating}</span>
+                      <span className="font-semibold">
+                        {typeof hospital.rating === 'object' 
+                          ? hospital.rating?.googleRating || hospital.rating?.userScore || 'N/A'
+                          : hospital.rating || 'N/A'
+                        }
+                      </span>
                     </div>
                   </div>
 
@@ -232,7 +210,7 @@ const FeaturedHospitals = () => {
                                 key={index}
                                 className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
                               >
-                                {specialty}
+                                {typeof specialty === 'object' ? specialty.name : specialty}
                               </span>
                             ))}
                             {hospital.specialties.length > 3 && (

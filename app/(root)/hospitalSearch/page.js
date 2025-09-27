@@ -16,9 +16,20 @@ const HospitalSearch = () => {
 
   useEffect(() => {
     // Get all unique hospitals using the dataService method
-    const uniqueHospitals = dataService.getAllUniqueHospitals();
-    setHospitals(uniqueHospitals);
-    setLoading(false);
+    const fetchHospitals = async () => {
+      try {
+        setLoading(true);
+        const uniqueHospitals = await dataService.getAllUniqueHospitals();
+        setHospitals(uniqueHospitals);
+      } catch (error) {
+        console.error('Error fetching hospitals:', error);
+        setHospitals([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHospitals();
   }, []);
 
   const [searchFilters, setSearchFilters] = useState({
@@ -101,8 +112,9 @@ const HospitalSearch = () => {
 
   // Get filters from the first specialty (assuming they're similar across specialties)
   const getFilters = () => {
-    const firstSpecialty = Object.values(dataService.data.specialties)[0];
-    const defaultFilters = firstSpecialty?.filters || {
+    // COMMENTED OUT: Using static data as fallback since specialty data is not migrated yet
+    // const firstSpecialty = Object.values(dataService.data.specialties)[0];
+    const defaultFilters = {
       categories: ["All", "Cardiology", "Neurology", "Orthopedics", "Pediatrics"],
       facilities: ["ICU", "Emergency", "Pharmacy", "Laboratory"],
       treatments: ["General Medicine", "Surgery", "Cardiology", "Neurology"]

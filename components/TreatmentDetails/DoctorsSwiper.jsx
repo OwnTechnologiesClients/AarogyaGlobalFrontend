@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Star, MapPin, Award, Users, GraduationCap, Languages, BookOpen, Trophy, ExternalLink } from 'lucide-react';
+import apiService from '../../lib/apiService';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -124,7 +125,7 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-sm flex items-center justify-center flex-shrink-0">
                     <img
-                      src={doctor.image}
+                      src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
                       alt={doctor.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {

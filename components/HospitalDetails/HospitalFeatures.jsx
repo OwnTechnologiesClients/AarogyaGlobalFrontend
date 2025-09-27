@@ -76,12 +76,12 @@ const HospitalFeatures = ({ hospital }) => {
     return descriptionMap[facility] || "Modern medical facility for patient care";
   };
 
-  // Create facilities from hospital data
-  const facilities = hospital?.facilities?.map(facility => ({
-    icon: getFacilityIcon(facility),
-    title: facility,
-    description: getFacilityDescription(facility)
-  })) || [];
+  // Backend fields: hospitalFeatures: [{ name, description }]
+  const featuresFromBackend = (hospital?.hospitalFeatures || []).map((f) => ({
+    icon: getFacilityIcon(f?.name),
+    title: f?.name,
+    description: f?.description || getFacilityDescription(f?.name)
+  }));
 
   // Default facilities if none available
   const defaultFacilities = [
@@ -107,54 +107,21 @@ const HospitalFeatures = ({ hospital }) => {
     }
   ];
 
-  const displayFacilities = facilities.length > 0 ? facilities : defaultFacilities;
+  const displayFacilities = featuresFromBackend.length > 0 ? featuresFromBackend : defaultFacilities;
 
-  // Dynamically create medical equipment from hospital treatments
-  const getMedicalEquipment = () => {
-    if (!hospital?.treatments) return [];
-
-    const equipment = [];
-    let isInEquipmentSection = false;
-
-    for (const treatment of hospital.treatments) {
-      if (treatment === "Advanced Medical Equipment:") {
-        isInEquipmentSection = true;
-        continue;
-      }
-
-      if (isInEquipmentSection) {
-        // Map equipment names to icons and descriptions
-        let icon = <Activity className="w-8 h-8 text-blue-600" />;
-        let description = "Advanced medical equipment for patient care";
-        let availability = "Available 24/7";
-
-        if (treatment.toLowerCase().includes("ecmo")) {
-          icon = <Heart className="w-8 h-8 text-red-600" />;
-          description = "Extracorporeal Membrane Oxygenation for critical care";
-          availability = "Emergency & ICU";
-        } else if (treatment.toLowerCase().includes("mri")) {
-          icon = <Activity className="w-8 h-8 text-blue-600" />;
-          description = "3 Tesla MRI for detailed imaging";
-          availability = "Available 24/7";
-        } else if (treatment.toLowerCase().includes("cardiac") || treatment.toLowerCase().includes("cath lab")) {
-          icon = <Heart className="w-8 h-8 text-red-600" />;
-          description = "State-of-the-art cardiac catheterization laboratory";
-          availability = "Emergency & Scheduled";
-        }
-
-        equipment.push({
-          icon,
-          name: treatment,
-          description,
-          availability
-        });
-      }
-    }
-
-    return equipment;
-  };
-
-  const medicalEquipment = getMedicalEquipment();
+  // Advanced medical equipment from backend: advancedMedicalEquipment: [{ name, description }]
+  const medicalEquipment = (hospital?.advancedMedicalEquipment || []).map((e) => {
+    const lower = (e?.name || '').toLowerCase();
+    let icon = <Activity className="w-8 h-8 text-blue-600" />;
+    if (lower.includes('mri')) icon = <Activity className="w-8 h-8 text-blue-600" />;
+    if (lower.includes('ecmo') || lower.includes('cardiac') || lower.includes('cath')) icon = <Heart className="w-8 h-8 text-red-600" />;
+    return {
+      icon,
+      name: e?.name,
+      description: e?.description || "Advanced medical equipment for patient care",
+      availability: "Available 24/7"
+    };
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">

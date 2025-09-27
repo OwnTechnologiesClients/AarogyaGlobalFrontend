@@ -11,9 +11,14 @@ const SpecialtyCard = ({ doctor }) => {
         <p className="text-sm text-gray-700">
           {doctor.specialty}
         </p>
-        <p className="text-sm text-gray-700 mt-1">
-          Consults at: <span className="font-medium">{doctor.hospital}</span>
-        </p>
+        {(() => {
+          const hospitalName = doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || (typeof doctor?.hospital === 'string' ? doctor.hospital : '');
+          return hospitalName ? (
+            <p className="text-sm text-gray-700 mt-1">
+              Consultant at <span className="font-medium">{hospitalName}</span>
+            </p>
+          ) : null;
+        })()}
       </div>
 
       {/* Rating */}

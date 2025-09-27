@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
 import dataService from "@/lib/dataService";
+import apiService from "@/lib/apiService";
 
 const NeurologyPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/neurology');
@@ -23,7 +24,22 @@ const NeurologyPage = () => {
 
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [filteredHospitals, setFilteredHospitals] = useState([]);
-  const [filteredTreatments, setFilteredTreatments] = useState(data?.treatments || []);
+  const [filteredTreatments, setFilteredTreatments] = useState([]);
+
+  // Load treatments from backend by category (DB uses category)
+  useEffect(() => {
+    let isMounted = true;
+    (async () => {
+      try {
+        const res = await apiService.getTreatments({ category: "Neurology" });
+        const list = Array.isArray(res?.data) ? res.data : [];
+        if (isMounted) setFilteredTreatments(list);
+      } catch (e) {
+        if (isMounted) setFilteredTreatments([]);
+      }
+    })();
+    return () => { isMounted = false; };
+  }, []);
 
   // Handle case when data is not available
   if (!data) {
@@ -75,7 +91,7 @@ const NeurologyPage = () => {
       facility: "",
       location: "",
     });
-    setFilteredTreatments(data.treatments || []);
+    setFilteredTreatments([]);
   };
 
   return (
@@ -83,9 +99,9 @@ const NeurologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={data.filters.categories}
-        facilities={data.filters.facilities}
-        treatments={data.filters.treatments}
+        categories={data.filters?.categories || []}
+        facilities={data.filters?.facilities || []}
+        treatments={data.filters?.treatments || []}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}

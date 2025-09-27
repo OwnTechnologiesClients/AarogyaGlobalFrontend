@@ -20,10 +20,23 @@ export default function DoctorsPage() {
 
   // Get all doctors on component mount
   useEffect(() => {
-    const allDoctors = dataService.getAllUniqueDoctors();
-    setDoctors(allDoctors);
-    setFilteredDoctors(allDoctors);
-    setIsLoading(false);
+    const fetchDoctors = async () => {
+      try {
+        setIsLoading(true);
+        const allDoctors = await dataService.getAllUniqueDoctors();
+        setDoctors(allDoctors);
+        setFilteredDoctors(allDoctors);
+      } catch (error) {
+        console.error('Error fetching doctors:', error);
+        // Fallback to empty array if API fails
+        setDoctors([]);
+        setFilteredDoctors([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchDoctors();
   }, []);
 
   // Apply filters

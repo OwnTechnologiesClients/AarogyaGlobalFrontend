@@ -7,8 +7,10 @@ import {
     MapPin,
     Award,
     Users,
-    Clock
+    Clock,
+    Stethoscope
 } from 'lucide-react';
+import apiService from '../../lib/apiService';
 
 const DoctorCard = ({ doctor }) => {
     const router = useRouter();
@@ -24,7 +26,7 @@ const DoctorCard = ({ doctor }) => {
                 {/* Left Side - Image */}
                 <div className="w-full sm:w-28 md:w-32 lg:w-36 h-48 sm:h-auto bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center flex-shrink-0">
                     <img
-                        src={doctor.image}
+                        src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
                         alt={`${doctor.name} image`}
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -64,28 +66,22 @@ const DoctorCard = ({ doctor }) => {
                         <p className="text-sm text-gray-500 line-clamp-1">{doctor.location}</p>
                     </div>
 
-                    {/* Key Stats Row */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-gray-600 mb-4">
-                        {doctor.hospital && (
-                            <div className="flex items-center gap-1 min-w-0">
-                                <Award className="w-4 h-4 text-purple-600 flex-shrink-0" />
-                                <span className="truncate">{doctor.hospital}</span>
+                    {/* Hospital (robust across API shapes) */}
+                    {(() => {
+                        const hospitalName = doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || (typeof doctor?.hospital === 'string' ? doctor.hospital : '');
+                        return hospitalName ? (
+                            <div className="flex items-center gap-1 mb-3">
+                                <Stethoscope className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                                <p className="text-sm text-gray-600 line-clamp-1">{hospitalName}</p>
                             </div>
-                        )}
-                        {doctor.experience && (
-                            <div className="flex items-center gap-1">
-                                <Clock className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                <span className="truncate">{doctor.experience}</span>
-                            </div>
-                        )}
-                    </div>
+                        ) : null;
+                    })()}
 
-                    {/* Patients Treated */}
-                    {doctor.patientsTreated && (
-                        <div className="flex items-center gap-2 mb-4">
-                            <Users className="w-5 h-5 text-green-600 flex-shrink-0" />
-                            <span className="text-green-600 font-bold text-sm sm:text-base">{doctor.patientsTreated}</span>
-                            <span className="text-xs sm:text-sm text-gray-500">Patients Treated</span>
+                    {/* Experience */}
+                    {doctor.experience && (
+                        <div className="flex items-center gap-1 text-sm text-gray-600 mb-4">
+                            <Clock className="w-4 h-4 text-green-600 flex-shrink-0" />
+                            <span className="truncate">{doctor.experience}</span>
                         </div>
                     )}
 

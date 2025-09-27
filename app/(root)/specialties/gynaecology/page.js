@@ -83,9 +83,9 @@ const GynaecologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={data.filters.categories}
-        facilities={data.filters.facilities}
-        treatments={data.filters.treatments}
+        categories={data.filters?.categories || []}
+        facilities={data.filters?.facilities || []}
+        treatments={data.filters?.treatments || []}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}

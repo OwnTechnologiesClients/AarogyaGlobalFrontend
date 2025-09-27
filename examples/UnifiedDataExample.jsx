@@ -18,11 +18,12 @@ const UnifiedDataExample = () => {
   // Get data for selected specialty
   const specialtyData = dataService.getSpecialtyBySlug(selectedSpecialty);
   
-  // Search hospitals
-  const searchResults = dataService.searchHospitals({
-    specialty: searchTerm,
-    rating: '9.0'
-  });
+  // Search hospitals - COMMENTED OUT: This is now async
+  // const searchResults = dataService.searchHospitals({
+  //   specialty: searchTerm,
+  //   rating: '9.0'
+  // });
+  const searchResults = []; // Empty array for now since searchHospitals is async
 
   return (
     <div className="max-w-6xl mx-auto p-6">

@@ -1,21 +1,22 @@
 "use client";
 import React, { useState } from 'react';
 import { Star, MapPin } from 'lucide-react';
+import apiService from '../../lib/apiService';
 
 const HospitalImageGallery = ({ hospital }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   // Hospital images data - using hospital gallery images or fallback to placeholder
   const hospitalImages = hospital?.gallery && hospital.gallery.length > 0
-    ? hospital.gallery.map((url, index) => ({
+    ? hospital.gallery.map((item, index) => ({
       id: index + 1,
-      url: url,
+      url: apiService.getImageUrl(item),
       alt: `${hospital?.name || "Hospital"} Image ${index + 1}`
     }))
     : [
       {
         id: 1,
-        url: hospital?.image || "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
+        url: apiService.getImageUrl(hospital?.displayImage || hospital?.image) || "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
         alt: `${hospital?.name || "Hospital"} Main Building`
       }
     ];
@@ -35,7 +36,11 @@ const HospitalImageGallery = ({ hospital }) => {
             {/* Rating Badge */}
             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">
               <Star className="w-5 h-5 text-yellow-500 fill-current" />
-              <span className="font-bold text-gray-800">{hospital?.rating || "4.5k+ Rating"}</span>
+              <span className="font-bold text-gray-800">
+                {typeof hospital?.rating === 'object'
+                  ? (hospital?.rating?.userScore ?? hospital?.rating?.googleRating ?? 'N/A')
+                  : (hospital?.rating ?? 'N/A')}
+              </span>
             </div>
 
             {/* Location Badge */}

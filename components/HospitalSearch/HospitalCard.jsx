@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import PhoneInput from "../ui/PhoneInput";
 import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
 import { useRouter } from 'next/navigation';
+import apiService from '../../lib/apiService';
 
 import {
     Heart,
@@ -25,7 +26,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
             {/* Hospital Image */}
             <div className="relative h-48 overflow-hidden">
                 <img
-                    src={hospital.image}
+                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || '/hospitaldirectory/img1.png'}
                     alt={`${hospital.name} image`}
                     className="w-full h-full object-cover"
                 />
@@ -39,7 +40,12 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                     </span>
                     <div className="flex items-center text-gray-600 text-base">
                         <Star className="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" />
-                        <span className="font-semibold">{hospital.rating}</span>
+                        <span className="font-semibold">
+                            {typeof hospital.rating === 'object' 
+                                ? hospital.rating?.googleRating || hospital.rating?.userScore || 'N/A'
+                                : hospital.rating || 'N/A'
+                            }
+                        </span>
                     </div>
                 </div>
 
@@ -55,7 +61,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                     <div className="flex items-center text-gray-600 text-sm">
                         <Stethoscope className="w-4 h-4 mr-2 text-blue-500" />
                         <span className="font-medium mr-2">Doctors:</span>
-                        <span>{hospital.doctorsCount || 'N/A'}</span>
+                        <span>{hospital.doctorsCount || hospital.overview?.doctors || 'N/A'}</span>
                     </div>
 
                     {hospital.specialties && hospital.specialties.length > 0 && (
@@ -69,7 +75,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                                             key={index}
                                             className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
                                         >
-                                            {specialty}
+                                            {typeof specialty === 'object' ? specialty.name : specialty}
                                         </span>
                                     ))}
                                     {hospital.specialties.length > 3 && (

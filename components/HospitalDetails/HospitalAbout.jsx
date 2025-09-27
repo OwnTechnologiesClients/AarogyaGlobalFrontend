@@ -14,9 +14,9 @@ const HospitalAbout = ({ hospital }) => {
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">About {hospital?.name || 'Our Hospital'}</h2>
         <div className="text-gray-600 text-lg leading-relaxed space-y-8">
-          {hospital?.about ? (
+          {hospital?.about?.description ? (
             <div dangerouslySetInnerHTML={{
-              __html: hospital.about
+              __html: String(hospital.about.description)
                 .replace(/\n\n/g, '</p><p class="mb-6">')
                 .replace(/•/g, '<br/>•')
                 .replace(/^/, '<p class="mb-6">')
@@ -41,7 +41,7 @@ const HospitalAbout = ({ hospital }) => {
             <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
           </div>
           <p className="text-gray-600 leading-relaxed">
-            To be a globally respected healthcare organisation known for Clinical Excellence and Distinctive Patient Care.
+            {hospital?.about?.mission || 'To be a globally respected healthcare organisation known for Clinical Excellence and Distinctive Patient Care.'}
           </p>
         </div>
 
@@ -54,7 +54,7 @@ const HospitalAbout = ({ hospital }) => {
             <h3 className="text-2xl font-bold text-gray-800">Our Vision</h3>
           </div>
           <p className="text-gray-600 leading-relaxed">
-            To create a world-class integrated healthcare delivery system in India, entailing the finest medical skills combined with compassionate patient care.
+            {hospital?.about?.vision || 'To create a world-class integrated healthcare delivery system entailing the finest medical skills combined with compassionate patient care.'}
           </p>
         </div>
       </div>

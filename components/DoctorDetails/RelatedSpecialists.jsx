@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import dataService from '@/lib/dataService';
+import apiService from '@/lib/apiService';
 
 const RelatedSpecialists = ({ currentDoctorId }) => {
   const router = useRouter();
@@ -16,25 +17,32 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
   
   useEffect(() => {
     // Get current doctor and related doctors using dataService
-    const currentDoctor = dataService.getDoctorById(currentDoctorId);
-    if (currentDoctor) {
-      // Get all doctors from all specialties
-      const allDoctors = [];
-      for (const specialty of Object.values(dataService.data.specialties)) {
-        allDoctors.push(...(specialty.doctors || []));
-      }
-      allDoctors.push(...(dataService.data.globalDoctors || []));
-      
-      // Filter related doctors from the same specialty
-      const related = allDoctors
-        .filter(d => d.id !== currentDoctorId && d.specialty === currentDoctor.specialty)
-        .slice(0, 6);
+    const fetchRelatedDoctors = async () => {
+      try {
+        setLoading(true);
+        const currentDoctor = await dataService.getDoctorById(currentDoctorId);
+        if (currentDoctor) {
+          // Get all doctors from API
+          const allDoctors = await dataService.getAllUniqueDoctors();
+          
+          // Filter related doctors from the same specialty
+          const related = allDoctors
+            .filter(d => d.id !== currentDoctorId && d.specialty === currentDoctor.specialty)
+            .slice(0, 6);
 
-      // If no related doctors found, show all other doctors
-      const doctors = related.length > 0 ? related : allDoctors.filter(d => d.id !== currentDoctorId).slice(0, 6);
-      setRelatedDoctors(doctors);
-    }
-    setLoading(false);
+          // If no related doctors found, show all other doctors
+          const doctors = related.length > 0 ? related : allDoctors.filter(d => d.id !== currentDoctorId).slice(0, 6);
+          setRelatedDoctors(doctors);
+        }
+      } catch (error) {
+        console.error('Error fetching related doctors:', error);
+        setRelatedDoctors([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRelatedDoctors();
   }, [currentDoctorId]);
 
   const swiperRef = useRef(null);
@@ -118,7 +126,7 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
                   {/* Image */}
                   <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
                     <Image
-                      src={doctor.image}
+                      src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
                       alt={doctor.name}
                       width={260}
                       height={340}
