@@ -125,8 +125,8 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
                 >
                   {/* Image */}
                   <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
-                    <Image
-                      src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
+                  <Image
+                      src={apiService.getImageUrl(doctor.image) || ''}
                       alt={doctor.name}
                       width={260}
                       height={340}

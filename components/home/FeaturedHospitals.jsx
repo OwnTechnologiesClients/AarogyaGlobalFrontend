@@ -151,7 +151,7 @@ const FeaturedHospitals = () => {
                 {/* Hospital Image */}
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || '/hospitaldirectory/img1.png'}
+                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
                     alt={`${hospital.name} image`}
                     fill
                     className="object-cover"

@@ -112,22 +112,11 @@ const HospitalSearch = () => {
 
   // Get filters from the first specialty (assuming they're similar across specialties)
   const getFilters = () => {
-    // COMMENTED OUT: Using static data as fallback since specialty data is not migrated yet
-    // const firstSpecialty = Object.values(dataService.data.specialties)[0];
-    const defaultFilters = {
-      categories: ["All", "Cardiology", "Neurology", "Orthopedics", "Pediatrics"],
-      facilities: ["ICU", "Emergency", "Pharmacy", "Laboratory"],
-      treatments: ["General Medicine", "Surgery", "Cardiology", "Neurology"]
-    };
-
-    // Filter out unwanted categories
-    const filteredCategories = defaultFilters.categories.filter(cat =>
-      !["All", "Doctors", "Hospitals", "Treatments"].includes(cat)
-    );
-
+    // No hardcoded defaults; return empty filter options when not sourced from API
     return {
-      ...defaultFilters,
-      categories: filteredCategories
+      categories: [],
+      facilities: [],
+      treatments: []
     };
   };
 

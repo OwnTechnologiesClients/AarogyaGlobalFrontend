@@ -6,20 +6,14 @@ import apiService from '../../lib/apiService';
 const HospitalImageGallery = ({ hospital }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Hospital images data - using hospital gallery images or fallback to placeholder
+  // Hospital images data - using hospital gallery images only (no placeholder)
   const hospitalImages = hospital?.gallery && hospital.gallery.length > 0
     ? hospital.gallery.map((item, index) => ({
       id: index + 1,
       url: apiService.getImageUrl(item),
       alt: `${hospital?.name || "Hospital"} Image ${index + 1}`
     }))
-    : [
-      {
-        id: 1,
-        url: apiService.getImageUrl(hospital?.displayImage || hospital?.image) || "https://media.gettyimages.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio=",
-        alt: `${hospital?.name || "Hospital"} Main Building`
-      }
-    ];
+    : [];
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -28,8 +22,8 @@ const HospitalImageGallery = ({ hospital }) => {
         <div className="lg:w-2/3 relative">
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <img
-              src={hospitalImages[selectedImage]?.url || hospitalImages[0]?.url}
-              alt={hospitalImages[selectedImage]?.alt || hospitalImages[0]?.alt}
+              src={hospitalImages[selectedImage]?.url || ''}
+              alt={hospitalImages[selectedImage]?.alt || ''}
               className="w-full h-[400px] lg:h-[500px] object-cover"
             />
 

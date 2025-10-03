@@ -22,7 +22,7 @@ const SpecialtyHospitalCard = ({ hospital }) => {
             <div className="md:w-1/2 relative">
                 <div className='h-full p-2 rounded-lg'>
                     <img
-                        src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || '/hospitaldirectory/img1.png'}
+                        src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
                         alt={`${hospital.name} image`}
                         className="w-full rounded-xl object-cover md:h-full"
                     />

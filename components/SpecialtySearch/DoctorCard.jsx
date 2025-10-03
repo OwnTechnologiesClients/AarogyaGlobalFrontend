@@ -26,7 +26,7 @@ const DoctorCard = ({ doctor }) => {
                 {/* Left Side - Image */}
                 <div className="w-full sm:w-28 md:w-32 lg:w-36 h-48 sm:h-auto bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center flex-shrink-0">
                     <img
-                        src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
+                        src={apiService.getImageUrl(doctor.image) || ''}
                         alt={`${doctor.name} image`}
                         className="w-full h-full object-cover"
                         onError={(e) => {

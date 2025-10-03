@@ -16,6 +16,18 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     const [contactPhone, setContactPhone] = useState({ countryCode: '+91', phone: '' });
     const [contactErrors, setContactErrors] = useState({});
 
+    // Normalize criteria lists coming from DB (array or delimited string)
+    const toList = (value) => {
+        if (Array.isArray(value)) return value;
+        if (typeof value === 'string') {
+            return value
+                .split(/\r?\n|,|;|•|-\s+/)
+                .map(item => item.trim())
+                .filter(Boolean);
+        }
+        return [];
+    };
+
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
     const convertToRupees = (euroString) => {
         // Handle undefined or null values
@@ -235,10 +247,10 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
-                                    {treatment.bestHospitals.description}
+                                    {`What helps to find the best hospital for ${treatment.name || 'this treatment'}?`}
                                 </h3>
                                 <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                    {treatment.bestHospitals.selectionCriteria.map((criteria, index) => (
+                                    {toList(treatment.bestHospitals.selectionCriteria).map((criteria, index) => (
                                         <li key={index}>{criteria}</li>
                                     ))}
                                 </ul>
@@ -254,10 +266,10 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-3">
-                                    How to select the best doctor?
+                                    {`How to select the best doctor?`}
                                 </h3>
                                 <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                    {treatment.topDoctors && treatment.topDoctors.selectionCriteria && treatment.topDoctors.selectionCriteria.map((criteria, index) => (
+                                    {toList(treatment.topDoctors?.selectionCriteria).map((criteria, index) => (
                                         <li key={index}>{criteria}</li>
                                     ))}
                                 </ul>

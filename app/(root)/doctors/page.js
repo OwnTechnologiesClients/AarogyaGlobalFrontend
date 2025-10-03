@@ -9,7 +9,7 @@ import dataService from '@/lib/dataService';
 
 export default function DoctorsPage() {
   const [doctors, setDoctors] = useState([]);
-  const [filteredDoctors, setFilteredDoctors] = useState([]);
+  const [pagination, setPagination] = useState({ page: 1, limit: 6, total: 0, totalPages: 1 });
   const [searchFilters, setSearchFilters] = useState({
     name: '',
     specialty: '',
@@ -23,14 +23,20 @@ export default function DoctorsPage() {
     const fetchDoctors = async () => {
       try {
         setIsLoading(true);
-        const allDoctors = await dataService.getAllUniqueDoctors();
-        setDoctors(allDoctors);
-        setFilteredDoctors(allDoctors);
+        const res = await dataService.getDoctorsPaginated({ 
+          page: 1, 
+          limit: 6,
+          search: searchFilters.name || undefined,
+          specialty: searchFilters.specialty || undefined,
+          location: searchFilters.location || undefined
+        });
+        setDoctors(res.data);
+        setPagination(res.pagination);
       } catch (error) {
         console.error('Error fetching doctors:', error);
         // Fallback to empty array if API fails
         setDoctors([]);
-        setFilteredDoctors([]);
+        setPagination({ page: 1, limit: 6, total: 0, totalPages: 1 });
       } finally {
         setIsLoading(false);
       }
@@ -39,46 +45,43 @@ export default function DoctorsPage() {
     fetchDoctors();
   }, []);
 
-  // Apply filters
-  const applyFilters = () => {
-    let filtered = [...doctors];
-
-    if (searchFilters.name) {
-      filtered = filtered.filter(doctor =>
-        doctor.name.toLowerCase().includes(searchFilters.name.toLowerCase())
-      );
+  // Apply filters (server-side)
+  const applyFilters = async () => {
+    setIsLoading(true);
+    try {
+      const res = await dataService.getDoctorsPaginated({ 
+        page: 1, 
+        limit: 6,
+        search: searchFilters.name || undefined,
+        specialty: searchFilters.specialty || undefined,
+        location: searchFilters.location || undefined
+      });
+      setDoctors(res.data);
+      setPagination(res.pagination);
+    } catch (e) {
+      setDoctors([]);
+      setPagination({ page: 1, limit: 6, total: 0, totalPages: 1 });
+    } finally {
+      setIsLoading(false);
     }
-
-    if (searchFilters.specialty) {
-      filtered = filtered.filter(doctor =>
-        doctor.specialty.toLowerCase().includes(searchFilters.specialty.toLowerCase())
-      );
-    }
-
-    if (searchFilters.location) {
-      filtered = filtered.filter(doctor =>
-        doctor.location.toLowerCase().includes(searchFilters.location.toLowerCase())
-      );
-    }
-
-    if (searchFilters.hospital) {
-      filtered = filtered.filter(doctor =>
-        doctor.hospital.toLowerCase().includes(searchFilters.hospital.toLowerCase())
-      );
-    }
-
-    setFilteredDoctors(filtered);
   };
 
   // Reset filters
-  const resetFilters = () => {
+  const resetFilters = async () => {
     setSearchFilters({
       name: '',
       specialty: '',
       location: '',
       hospital: ''
     });
-    setFilteredDoctors(doctors);
+    setIsLoading(true);
+    try {
+      const res = await dataService.getDoctorsPaginated({ page: 1, limit: 6 });
+      setDoctors(res.data);
+      setPagination(res.pagination);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Get unique values for filter options
@@ -120,9 +123,28 @@ export default function DoctorsPage() {
         />
         
         <DoctorsResults
-          doctors={filteredDoctors}
-          totalDoctors={doctors.length}
+          doctors={doctors}
+          totalDoctors={pagination.total}
           isLoading={isLoading}
+          currentPage={pagination.page}
+          totalPages={pagination.totalPages}
+          onPageChange={async (nextPage) => {
+            if (nextPage < 1 || nextPage > pagination.totalPages) return;
+            setIsLoading(true);
+            try {
+              const res = await dataService.getDoctorsPaginated({ 
+                page: nextPage, 
+                limit: pagination.limit,
+                search: searchFilters.name || undefined,
+                specialty: searchFilters.specialty || undefined,
+                location: searchFilters.location || undefined
+              });
+              setDoctors(res.data);
+              setPagination(res.pagination);
+            } finally {
+              setIsLoading(false);
+            }
+          }}
         />
       </div>
     </Wrapper>

@@ -11,14 +11,8 @@ export async function generateStaticParams() {
     const doctors = await dataService.getAllUniqueDoctors();
     
     if (!doctors || doctors.length === 0) {
-      console.warn('No doctors found from API, using fallback IDs');
-      // Fallback to some common doctor IDs if API fails
-      const fallbackDoctors = [
-    'DOC0001', 'DOC0002', 'DOC0003', 'DOC0004', 'DOC0005', 'DOC0006', 'DOC0007', 'DOC0008', 'DOC0009', 'DOC0010',
-    'DOC0011', 'DOC0012', 'DOC0013', 'DOC0014', 'DOC0015', 'DOC0016', 'DOC0017', 'DOC0018', 'DOC0019', 'DOC0020',
-    'DOC0021', 'DOC0022', 'DOC0023', 'DOC0024', 'DOC0025', 'DOC0026', 'DOC0027', 'DOC0028', 'DOC0029', 'DOC0030'
-  ];
-      return fallbackDoctors.map(doctorId => ({ doctorId }));
+      console.warn('No doctors found from API');
+      return [];
     }
 
     // Extract doctor IDs from the API response
@@ -30,16 +24,7 @@ export async function generateStaticParams() {
     return doctorIds.map(doctorId => ({ doctorId }));
   } catch (error) {
     console.error('Error fetching doctors for static params:', error);
-    
-    // Fallback to some common doctor IDs if API fails
-    const fallbackDoctors = [
-      'DOC0001', 'DOC0002', 'DOC0003', 'DOC0004', 'DOC0005', 'DOC0006', 'DOC0007', 'DOC0008', 'DOC0009', 'DOC0010',
-      'DOC0011', 'DOC0012', 'DOC0013', 'DOC0014', 'DOC0015', 'DOC0016', 'DOC0017', 'DOC0018', 'DOC0019', 'DOC0020',
-      'DOC0021', 'DOC0022', 'DOC0023', 'DOC0024', 'DOC0025', 'DOC0026', 'DOC0027', 'DOC0028', 'DOC0029', 'DOC0030'
-    ];
-    
-    console.log('Using fallback doctor IDs:', fallbackDoctors);
-    return fallbackDoctors.map(doctorId => ({ doctorId }));
+    return [];
   }
 }
 

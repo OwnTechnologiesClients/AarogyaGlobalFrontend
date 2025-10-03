@@ -8,20 +8,8 @@ export async function generateStaticParams() {
     const hospitals = await dataService.getAllUniqueHospitals();
     
     if (!hospitals || hospitals.length === 0) {
-      console.warn('No hospitals found from API, using fallback IDs');
-      // Fallback to some common hospital IDs if API fails
-      const fallbackHospitals = [
-        "HDEL0001",
-        "HDEL0002", 
-        "HDEL0003",
-        "HDEL0004",
-        "HCHE001",
-        "HMUM001",
-        "HBEN001",
-        "HBEN002",
-        "HCHE002"
-      ];
-      return fallbackHospitals.map(hospitalId => ({ hospitalId }));
+      console.warn('No hospitals found from API');
+      return [];
     }
 
     // Extract hospital IDs from the API response
@@ -33,22 +21,7 @@ export async function generateStaticParams() {
     return hospitalIds.map(hospitalId => ({ hospitalId }));
   } catch (error) {
     console.error('Error fetching hospitals for static params:', error);
-    
-    // Fallback to some common hospital IDs if API fails
-    const fallbackHospitals = [
-      "HDEL0001",
-      "HDEL0002",
-      "HDEL0003", 
-      "HDEL0004",
-      "HCHE001",
-      "HMUM001",
-      "HBEN001",
-      "HBEN002",
-      "HCHE002"
-    ];
-    
-    console.log('Using fallback hospital IDs:', fallbackHospitals);
-    return fallbackHospitals.map(hospitalId => ({ hospitalId }));
+    return [];
   }
 }
 

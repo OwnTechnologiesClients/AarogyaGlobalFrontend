@@ -125,7 +125,7 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-sm flex items-center justify-center flex-shrink-0">
                     <img
-                      src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
+                      src={apiService.getImageUrl(doctor.image) || ''}
                       alt={doctor.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {

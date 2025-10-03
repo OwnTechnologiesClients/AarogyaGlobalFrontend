@@ -47,7 +47,19 @@ const TreatmentCard = ({ treatment }) => {
     const getSimplifiedCost = (costString) => {
         if (!costString) return 'Contact for pricing';
 
-        // Extract just the main cost range from the long text
+        // First, try to extract dollar range (e.g., $1,800–$4,800 or $1,800-$4,800)
+        const dollarMatch = costString.match(/\$[\d,]+\s*[–-]\s*\$[\d,]+/);
+        if (dollarMatch) {
+            return dollarMatch[0].replace(/,/g, ','); // Keep as is
+        }
+
+        // Try to extract a single dollar range with tilde (e.g., ~$1,800–$4,800)
+        const tildeMatch = costString.match(/~?\$[\d,]+\s*[–-]\s*\$[\d,]+/);
+        if (tildeMatch) {
+            return tildeMatch[0].replace('~', ''); // Remove tilde
+        }
+
+        // Extract just the main cost range from the long text (rupee format)
         const costMatch = costString.match(/₹(\d+\.?\d*)\s*–\s*(\d+\.?\d*)\s*lakh/);
         if (costMatch) {
             const min = costMatch[1];

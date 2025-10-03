@@ -36,7 +36,7 @@ const HospitalCarousel = ({ hospitals }) => {
                     >
                         <div className="relative">
                             <img
-                                src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || '/hospitaldirectory/img1.png'}
+                                src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
                                 alt={hospital.name}
                                 className="w-full h-48 object-cover"
                             />
