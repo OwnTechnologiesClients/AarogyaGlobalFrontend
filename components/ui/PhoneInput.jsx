@@ -71,9 +71,9 @@ const PhoneInput = ({
   const containerRef = useRef(null);
 
   const filtered = useMemo(() => {
-    if (!query) return allCountries.slice(0, 200);
+    if (!query) return allCountries.slice(0, 200); // Show limited list initially
     const q = query.toLowerCase();
-    return allCountries.filter((c) => c.search.includes(q)).slice(0, 200);
+    return allCountries.filter((c) => c.search.includes(q)); // Search across ALL countries
   }, [query]);
 
   useEffect(() => {
