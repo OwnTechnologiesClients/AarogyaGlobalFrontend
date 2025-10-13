@@ -31,7 +31,9 @@ const FeaturedHospitals = () => {
       try {
         const res = await apiService.getHospitals({ limit: 50 });
         const list = Array.isArray(res?.data) ? res.data : [];
-        const sorted = list
+        // Filter to only show active hospitals
+        const activeList = list.filter(h => h.isActive !== false);
+        const sorted = activeList
           .slice()
           .sort((a, b) => {
             const ratingA = typeof a.rating === 'object' ? (a.rating?.googleRating || a.rating?.userScore || 0) : (parseFloat(a.rating) || 0);

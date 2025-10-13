@@ -15,8 +15,18 @@ export async function generateStaticParams() {
       return [];
     }
 
-    // Extract doctor IDs from the API response
-    const doctorIds = doctors.map(doctor => doctor.id).filter(Boolean);
+    // Extract doctor IDs from the API response and sanitize them
+    const doctorIds = doctors
+      .map(doctor => doctor.id)
+      .filter(Boolean)
+      .map(id => {
+        // Convert to URL-safe format: uppercase, replace spaces with underscores, remove special chars
+        return id
+          .toString()
+          .toUpperCase()
+          .replace(/\s+/g, '_')
+          .replace(/[^A-Z0-9_-]/g, '');
+      });
     
     console.log('Generating static params for doctors from API:', doctorIds);
     console.log('Total doctors from API:', doctorIds.length);
@@ -29,29 +39,38 @@ export async function generateStaticParams() {
 }
 
 export default async function DoctorDetailsPage({ params }) {
-  const { doctorId } = await params;
-  console.log('DoctorDetailsPage: Received doctorId:', doctorId);
-
   try {
-    const doctor = await dataService.getDoctorById(doctorId);
-  console.log('DoctorDetailsPage: Found doctor:', doctor ? doctor.name : 'Not found');
+    const resolvedParams = await params;
+    const doctorId = decodeURIComponent(resolvedParams.doctorId);
+    console.log('DoctorDetailsPage: Received doctorId:', doctorId);
 
-  const { title, routes } = getPageHeaderData('/doctorDetails');
+    let doctor = null;
+    try {
+      // Try with decoded ID first
+      doctor = await dataService.getDoctorById(doctorId);
+    } catch (e) {
+      // Fallback: try with original (potentially URL-encoded) ID
+      doctor = await dataService.getDoctorById(resolvedParams.doctorId);
+    }
+    
+    console.log('DoctorDetailsPage: Found doctor:', doctor ? doctor.name : 'Not found');
 
-  if (!doctor) {
+    const { title, routes } = getPageHeaderData('/doctorDetails');
+
+    if (!doctor) {
+      return (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-xl">Doctor not found</div>
+        </div>
+      );
+    }
+
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Doctor not found</div>
-      </div>
+      <>
+        <PageHeader title={`${doctor.name} - ${doctor.specialty}`} routes={routes} />
+        <DoctorProfile doctor={doctor} />
+      </>
     );
-  }
-
-  return (
-    <>
-      <PageHeader title={`${doctor.name} - ${doctor.specialty}`} routes={routes} />
-      <DoctorProfile doctor={doctor} />
-    </>
-  );
   } catch (error) {
     console.error('Error fetching doctor details:', error);
     return (

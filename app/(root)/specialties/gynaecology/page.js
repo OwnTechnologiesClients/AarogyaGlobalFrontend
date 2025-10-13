@@ -23,7 +23,8 @@ const GynaecologyPage = () => {
 
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [filteredHospitals, setFilteredHospitals] = useState([]);
-  const [filteredTreatments, setFilteredTreatments] = useState(data?.treatments || []);
+  // Filter to only show active treatments
+  const [filteredTreatments, setFilteredTreatments] = useState((data?.treatments || []).filter(t => t.isActive !== false));
 
   // Handle case when data is not available
   if (!data) {

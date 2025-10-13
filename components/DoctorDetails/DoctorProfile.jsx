@@ -63,27 +63,27 @@ const DoctorProfile = ({ doctor }) => {
     return [];
   };
 
-  // Helper function to handle work experience data (can be array or undefined)
-  const getWorkExperienceData = (workExperience) => {
-    if (!workExperience) {
+  // Helper function to handle professional experience data
+  const getProfessionalExperienceData = (professionalExperience) => {
+    if (!professionalExperience) {
       return [];
     }
 
     // If it's already an array, validate each item has required properties
-    if (Array.isArray(workExperience)) {
-      return workExperience.map(exp => {
-        // Ensure each work experience item has the required properties
+    if (Array.isArray(professionalExperience)) {
+      return professionalExperience.map(exp => {
+        // Ensure each professional experience item has the required properties
         if (typeof exp === 'object' && exp !== null) {
           return {
             position: exp.position || "Medical Position",
-            hospital: exp.hospital || "Medical Institution",
+            institution: exp.institution || "Medical Institution",
             duration: exp.duration || "Experience"
           };
         }
         // If it's not an object, convert to proper format
         return {
           position: "Medical Position",
-          hospital: String(exp) || "Medical Institution",
+          institution: String(exp) || "Medical Institution",
           duration: "Experience"
         };
       });
@@ -92,42 +92,6 @@ const DoctorProfile = ({ doctor }) => {
     return [];
   };
 
-  // Helper function to generate treatments
-  const getTreatments = (doctor) => {
-    if (doctor.treatments && doctor.treatments.length > 0) {
-      // If treatments are treatment IDs (like "ORT0001"), convert them to readable names
-      const treatmentNames = {
-        // Orthopaedics treatments
-        "ORT0001": "Total Knee Replacement (TKR)",
-        "ORT0002": "Total Hip Replacement (THR)",
-        "ORT0003": "ACL/MCL Ligament Reconstruction",
-        "ORT0004": "Shoulder Replacement (Anatomic/Reverse)",
-        // Cardiology treatments
-        "CARD0001": "Coronary Artery Bypass Graft (CABG)",
-        "CAR0002": "Angioplasty & Stenting (PCI)",
-        "CAR0003": "Valve Repair & Replacement (SAVR/TAVR)",
-        "CAR0004": "Pacemaker & ICD Implantation",
-        "CAR0005": "Catheter Ablation (for Arrhythmias)",
-        // Neurology treatments
-        "NEUR0001": "IV Thrombolysis/Mechanical Thrombectomy for Acute Ischemic Stroke",
-        // Oncology treatments
-        "ONC0001": "Immune Checkpoint Inhibitors (PD-1/PD-L1, CTLA-4)",
-        "ONC0002": "Mastectomy",
-        "ONC0003": "Radical Prostatectomy",
-        "ONC0004": "Colectomy",
-        "ONC0005": "Debulking Surgery"
-      };
-
-      return doctor.treatments.map(treatment => {
-        if (typeof treatment === 'string' && treatmentNames[treatment]) {
-          return treatmentNames[treatment];
-        }
-        return typeof treatment === 'string' ? treatment : String(treatment);
-      });
-    }
-
-    return [];
-  };
 
   // Helper function to generate awards
   const getAwards = (doctor) => {
@@ -250,7 +214,7 @@ const DoctorProfile = ({ doctor }) => {
           </div>
         </section>
 
-        {/* Experience */}
+        {/* Professional Experience */}
         <section>
           <h3 className="text-3xl font-bold text-[#000D44] mb-4">
             Professional Experience
@@ -259,35 +223,18 @@ const DoctorProfile = ({ doctor }) => {
             Dr. {doctor.name.split(' ').pop()} has extensive experience in various healthcare institutions:
           </p>
           <div className="flex flex-col gap-3 text-[#000D44]">
-            {getWorkExperienceData(doctor.workExperience).map((exp, index) => (
+            {getProfessionalExperienceData(doctor.professionalExperience).map((exp, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
                 <p>
                   <span className="font-semibold">{exp.position}</span>{" "}
-                  <span className="text-sm">at {exp.hospital} ({exp.duration})</span>
+                  <span className="text-sm">at {exp.institution} ({exp.duration})</span>
                 </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Treatments */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Treatments & Procedures
-          </h3>
-          <p className="text-gray-700 mb-4">
-            Dr. {doctor.name.split(' ').pop()} offers the following treatments and procedures:
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#000D44]">
-            {getTreatments(doctor).map((treatment, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p className="font-semibold">{typeof treatment === 'string' ? treatment : String(treatment)}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* Awards */}
         <section>

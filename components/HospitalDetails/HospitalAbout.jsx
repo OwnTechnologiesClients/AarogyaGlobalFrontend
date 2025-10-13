@@ -69,7 +69,7 @@ const HospitalAbout = ({ hospital }) => {
             <p className="text-red-100 mb-4">{hospital?.emergencySupport || "24/7 Emergency Support Available"}</p>
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5" />
-              <span>{hospital?.contact?.phone || "Emergency Contact"}</span>
+                <span>Contact Information</span>
             </div>
           </div>
           <div>

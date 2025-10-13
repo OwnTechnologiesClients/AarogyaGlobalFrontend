@@ -220,9 +220,6 @@ const HospitalSpecialities = ({ hospital }) => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">{specialty.name}</h3>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                    <span>{specialty.rating ?? 'N/A'}</span>
-                    <span>•</span>
                     <Users className="w-4 h-4" />
                     <span>{specialty.doctors ?? 'N/A'} Doctors</span>
                   </div>

@@ -33,7 +33,9 @@ const OncologyPage = () => {
       try {
         const res = await apiService.getTreatments({ category: "Oncology" });
         const list = Array.isArray(res?.data) ? res.data : [];
-        if (isMounted) setFilteredTreatments(list);
+        // Filter to only show active treatments
+        const activeList = list.filter(treatment => treatment.isActive !== false);
+        if (isMounted) setFilteredTreatments(activeList);
       } catch (e) {
         if (isMounted) setFilteredTreatments([]);
       }
