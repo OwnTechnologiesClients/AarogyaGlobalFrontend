@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import PhoneInput from "../ui/PhoneInput";
 import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
+import { submitEnquiryWithBoth, validateEnquiryData } from "../../lib/enquiryService";
 import { useRouter } from 'next/navigation';
 import apiService from '../../lib/apiService';
 
@@ -148,7 +149,8 @@ const HospitalMain = ({ hospitals }) => {
     };
 
     const handleShare = (hospitalName) => {
-        alert(`Sharing ${hospitalName}!`);
+        // Share functionality can be implemented here
+        console.log(`Sharing ${hospitalName}!`);
     };
 
     // Helper function to create unique keys
@@ -224,7 +226,7 @@ const HospitalMain = ({ hospitals }) => {
                                                     <button
                                                         onClick={async () => {
                                                             // Validate form data
-                                                            const validation = validateFormData({ 
+                                                            const validation = validateEnquiryData({ 
                                                                 name: callbackName,
                                                                 phone: callbackPhone.phone, 
                                                                 email: callbackEmail 
@@ -238,20 +240,35 @@ const HospitalMain = ({ hospitals }) => {
                                                             setCallbackErrors({});
                                                             
                                                             try {
-                                                                await sendConsultationEmail({
-                                                                    name: callbackName,
-                                                                    email: callbackEmail,
-                                                                    phone: callbackPhone.phone,
-                                                                    countryCode: callbackPhone.countryCode,
-                                                                    specialty: '',
-                                                                    hospital: '',
-                                                                    message: ''
-                                                                }, 'Hospitals – Callback');
-                                                                if (typeof window !== 'undefined') {
+                                                                // Use hybrid approach: send email via EmailJS AND save to backend
+                                                                const result = await submitEnquiryWithBoth(
+                                                                    sendConsultationEmail,
+                                                                    {
+                                                                        name: callbackName,
+                                                                        email: callbackEmail,
+                                                                        phone: callbackPhone.phone,
+                                                                        countryCode: callbackPhone.countryCode,
+                                                                        specialty: '',
+                                                                        hospital: '',
+                                                                        message: ''
+                                                                    },
+                                                                    {
+                                                                        name: callbackName,
+                                                                        email: callbackEmail,
+                                                                        phone: callbackPhone.phone,
+                                                                        countryCode: callbackPhone.countryCode,
+                                                                        subject: 'Hospital Search Callback Request'
+                                                                    },
+                                                                    'Hospitals – Callback',
+                                                                    'Hospital Search'
+                                                                );
+
+                                                                // Redirect on success
+                                                                if (result.success) {
                                                                     window.location.href = '/thank-you';
                                                                 }
                                                             } catch (e) {
-                                                                alert('Failed to submit. Please try again.');
+                                                                console.error('Failed to submit hospital contact form', e);
                                                             }
                                                         }}
                                                         className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-4 font-bold text-sm rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"

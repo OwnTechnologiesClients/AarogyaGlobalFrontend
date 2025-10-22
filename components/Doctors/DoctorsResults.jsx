@@ -4,6 +4,7 @@ import DoctorCard from '../SpecialtySearch/DoctorCard';
 import { ArrowRight, Users, Star, MapPin } from 'lucide-react';
 import PhoneInput from '../ui/PhoneInput';
 import { sendConsultationEmail, validateFormData } from '../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
 
 const DoctorsResults = ({ doctors = [], totalDoctors, isLoading, currentPage = 1, totalPages = 1, onPageChange }) => {
   const [callbackPhone, setCallbackPhone] = useState({ countryCode: "+91", phone: "" });
@@ -213,7 +214,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading, currentPage = 1
               <button
                 onClick={async () => {
                   // Validate form data
-                  const validation = validateFormData({ 
+                  const validation = validateEnquiryData({ 
                     phone: callbackPhone.phone, 
                     email: callbackEmail 
                   }, ['phone', 'email']);
@@ -226,20 +227,35 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading, currentPage = 1
                   setCallbackErrors({});
                   
                   try {
-                    await sendConsultationEmail({ 
-                      name: '', 
-                      email: callbackEmail, 
-                      phone: callbackPhone.phone, 
-                      countryCode: callbackPhone.countryCode, 
-                      specialty: '', 
-                      hospital: '', 
-                      message: '' 
-                    }, 'Doctors – Callback');
-                    if (typeof window !== 'undefined') {
+                    // Use hybrid approach: send email via EmailJS AND save to backend
+                    const result = await submitEnquiryWithBoth(
+                      sendConsultationEmail,
+                      { 
+                        name: '', 
+                        email: callbackEmail, 
+                        phone: callbackPhone.phone, 
+                        countryCode: callbackPhone.countryCode, 
+                        specialty: '', 
+                        hospital: '', 
+                        message: '' 
+                      },
+                      {
+                        name: '',
+                        email: callbackEmail,
+                        phone: callbackPhone.phone,
+                        countryCode: callbackPhone.countryCode,
+                        subject: 'Doctor Callback Request'
+                      },
+                      'Doctors – Callback',
+                      'Doctors Page'
+                    );
+
+                    // Redirect on success
+                    if (result.success) {
                       window.location.href = '/thank-you';
                     }
                   } catch (e) {
-                    alert('Failed to submit. Please try again.');
+                    console.error('Failed to submit doctor callback form', e);
                   }
                 }}
                 className="flex-1 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"

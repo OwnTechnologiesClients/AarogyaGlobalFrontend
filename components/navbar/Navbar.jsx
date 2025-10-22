@@ -66,7 +66,7 @@ const Navbar = ({
               alt="Logo"
               width={120}
               height={70}
-              className="h-11 2xl:h-16 w-auto object-contain"
+              className="h-8 lg:h-9 xl:h-10 2xl:h-12 w-auto object-contain"
               priority
             />
           </Link>
@@ -79,15 +79,15 @@ const Navbar = ({
 
         {/* Desktop Auth & CTA */}
         {!isMobileView && (
-          <div className="hidden lg:flex items-center gap-2 xl:gap-4 2xl:gap-6 ml-auto">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-4 ml-auto">
             {isAuthenticated ? (
               <>
                 <Link href="/contact">
                   <CustomButton
                     text="Make An Appointment"
-                    textSize="text-xs lg:text-sm xl:text-base 2xl:text-lg"
-                    iconSize={16}
-                    padding="px-2 py-1.5 lg:px-3 lg:py-2 xl:px-4 xl:py-2.5 2xl:px-6 2xl:py-3"
+                    textSize="text-xs lg:text-xs xl:text-sm 2xl:text-sm"
+                    iconSize={14}
+                    padding="px-2 py-1.5 lg:px-2 lg:py-1.5 xl:px-3 xl:py-2 2xl:px-4 2xl:py-2.5"
                   />
                 </Link>
                 
@@ -106,7 +106,7 @@ const Navbar = ({
                     ) : (
                       <UserCircle className="w-10 h-10" />
                     )}
-                    <span className="font-medium text-sm xl:text-base hidden xl:block">
+                    <span className="font-medium text-xs xl:text-sm hidden lg:block">
                       {user?.displayName}
                     </span>
                   </button>
@@ -154,14 +154,14 @@ const Navbar = ({
                 <Link href="/contact">
                   <CustomButton
                     text="Make An Appointment"
-                    textSize="text-xs lg:text-sm xl:text-base 2xl:text-lg"
-                    iconSize={16}
-                    padding="px-2 py-1.5 lg:px-3 lg:py-2 xl:px-4 xl:py-2.5 2xl:px-6 2xl:py-3"
+                    textSize="text-xs lg:text-xs xl:text-sm 2xl:text-sm"
+                    iconSize={14}
+                    padding="px-2 py-1.5 lg:px-2 lg:py-1.5 xl:px-3 xl:py-2 2xl:px-4 2xl:py-2.5"
                   />
                 </Link>
                 <Link
                   href="/login"
-                  className={`flex items-center gap-2 ${textColor} hover:opacity-80 transition-opacity font-medium text-sm xl:text-base`}
+                  className={`flex items-center gap-1 ${textColor} hover:opacity-80 transition-opacity font-medium text-xs xl:text-sm`}
                 >
                   <UserCircle className="w-6 h-6" />
                   <span>Login</span>

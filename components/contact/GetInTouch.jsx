@@ -4,6 +4,7 @@ import WelcomeBanner from "../layout/WelcomeBanner";
 import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
 import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
+import { submitEnquiryWithBoth, validateEnquiryData } from "../../lib/enquiryService";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
@@ -62,7 +63,7 @@ const GetInTouch = () => {
     }
 
     // Validate form data
-    const validation = validateFormData(formData, ['name', 'email', 'phone']);
+    const validation = validateEnquiryData(formData, ['name', 'email', 'phone']);
     if (!validation.isValid) {
       setErrors(validation.errors);
       return;
@@ -72,7 +73,10 @@ const GetInTouch = () => {
     
     try {
       setIsSubmitting(true);
-      await sendConsultationEmail(
+      
+      // Use hybrid approach: send email via EmailJS AND save to backend
+      const result = await submitEnquiryWithBoth(
+        sendConsultationEmail,
         {
           name: formData.name,
           email: formData.email,
@@ -82,18 +86,20 @@ const GetInTouch = () => {
           hospital: formData.hospital,
           message: formData.message,
         },
-        "Contact – Get In Touch"
+        formData,
+        "Contact – Get In Touch",
+        "Contact Us"
       );
+
       setIsSubmitting(false);
-      if (typeof window !== 'undefined') {
+      
+      // Redirect on success
+      if (result.success) {
         window.location.href = '/thank-you';
       }
     } catch (err) {
       setIsSubmitting(false);
-      console.error('Failed to send Get In Touch form', err);
-      if (typeof window !== 'undefined') {
-        alert('There was an issue sending your message. Please try again later.');
-      }
+      console.error('Failed to submit Get In Touch form', err);
     }
   };
 

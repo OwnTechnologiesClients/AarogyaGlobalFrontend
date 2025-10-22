@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Mail, Phone, MapPin, Building2, User, Stethoscope, Microscope, Truck, Heart, Briefcase, Plane, Shield } from "lucide-react";
 import PhoneInput from "../ui/PhoneInput";
 import { sendPartnerEmail, validateFormData } from "../../lib/emailService";
+import { submitEnquiryWithBoth, validateEnquiryData } from "../../lib/enquiryService";
 
 const PartnerForm = () => {
   const [formData, setFormData] = useState({
@@ -108,24 +109,38 @@ const PartnerForm = () => {
       const selectedOrgType = organizationTypes.find(type => type.value === formData.organizationType);
       const orgTypeLabel = selectedOrgType ? selectedOrgType.label : formData.organizationType;
       
-      await sendPartnerEmail({
-        organizationName: formData.organizationName,
-        contactPerson: formData.contactPerson,
-        email: formData.email,
-        phone: formData.phone,
-        countryCode: formData.countryCode,
-        organizationType: orgTypeLabel,
-        services: formData.services,
-        location: formData.location,
-        message: formData.message,
-      }, 'Partnership Inquiry');
+      // Use hybrid approach: send email via EmailJS AND save to backend
+      const result = await submitEnquiryWithBoth(
+        sendPartnerEmail,
+        {
+          organizationName: formData.organizationName,
+          contactPerson: formData.contactPerson,
+          email: formData.email,
+          phone: formData.phone,
+          countryCode: formData.countryCode,
+          organizationType: orgTypeLabel,
+          services: formData.services,
+          location: formData.location,
+          message: formData.message,
+        },
+        {
+          ...formData,
+          organizationType: orgTypeLabel,
+          subject: 'Partnership Inquiry'
+        },
+        'Partnership Inquiry',
+        'Partnership'
+      );
+
       setIsSubmitting(false);
-      if (typeof window !== 'undefined') {
+      
+      // Redirect on success
+      if (result.success) {
         window.location.href = '/thank-you';
       }
     } catch (err) {
       setIsSubmitting(false);
-      alert('There was an issue submitting your application. Please try again later.');
+      console.error('Failed to submit partner form', err);
     }
   };
 

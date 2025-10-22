@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
 import { sendContactEmail, validateFormData } from '../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
 import PhoneInput from '../ui/PhoneInput';
 import apiService from '../../lib/apiService';
 
@@ -117,7 +118,7 @@ const HospitalOverview = ({ hospital, location }) => {
     }
 
     // Validate form data
-    const validation = validateFormData(formData, ['name', 'email', 'phone']);
+    const validation = validateEnquiryData(formData, ['name', 'email', 'phone']);
     if (!validation.isValid) {
       setErrors(validation.errors);
       return;
@@ -126,7 +127,9 @@ const HospitalOverview = ({ hospital, location }) => {
     setErrors({});
     
     try {
-      await sendContactEmail(
+      // Use hybrid approach: send email via EmailJS AND save to backend
+      const result = await submitEnquiryWithBoth(
+        sendContactEmail,
         {
           name: formData.name,
           email: formData.email,
@@ -134,16 +137,17 @@ const HospitalOverview = ({ hospital, location }) => {
           countryCode: formData.countryCode,
           message: formData.message,
         },
-        `Hospital Contact - ${hospital?.name || 'Unknown Hospital'}`
+        formData,
+        `Hospital Contact - ${hospital?.name || 'Unknown Hospital'}`,
+        `Hospital - ${hospital?.name || 'Unknown'}`
       );
-      if (typeof window !== 'undefined') {
+
+      // Redirect on success
+      if (result.success) {
         window.location.href = '/thank-you';
       }
     } catch (err) {
-      console.error('Failed to send hospital contact email', err);
-      if (typeof window !== 'undefined') {
-        alert('There was an issue sending your message. Please try again later.');
-      }
+      console.error('Failed to submit hospital contact form', err);
     }
   };
 

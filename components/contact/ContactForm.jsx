@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { sendContactEmail, validateFormData } from '../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
 
 const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
     const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
     const [honeypot, setHoneypot] = useState("");
     const [startTime] = useState(Date.now());
     const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,37 +30,42 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
         }
 
         // Validate form data
-        const validation = validateFormData(formData, ['name', 'email', 'message']);
+        const validation = validateEnquiryData(formData, ['name', 'email', 'message']);
         if (!validation.isValid) {
             setErrors(validation.errors);
             return;
         }
 
         setErrors({});
+        setIsSubmitting(true);
         
         try {
-            // Send via EmailJS
-            await sendContactEmail(
+            // Use hybrid approach: send email via EmailJS AND save to backend
+            const result = await submitEnquiryWithBoth(
+                sendContactEmail,
                 {
                     name: formData.name,
                     email: formData.email,
                     phone: '',
                     message: formData.message,
                 },
-                'Contact Form'
+                formData,
+                'Contact Form',
+                'Contact Us'
             );
+
             if (onSubmit) {
                 onSubmit(formData);
             }
-            if (typeof window !== 'undefined') {
+
+            // Redirect on success
+            if (result.success) {
                 window.location.href = '/thank-you';
             }
         } catch (err) {
-            // Optionally show a toast; for now, alert
-            console.error('Failed to send contact email', err);
-            if (typeof window !== 'undefined') {
-                alert('There was an issue sending your message. Please try again later.');
-            }
+            console.error('Failed to submit contact form', err);
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -123,10 +130,15 @@ const ContactForm = ({ title = "Get In Touch", onSubmit }) => {
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-green-500 text-white py-3 px-4 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className={`w-full py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 ${
+                        isSubmitting 
+                            ? 'bg-gray-400 cursor-not-allowed' 
+                            : 'bg-green-500 hover:bg-green-600'
+                    } text-white`}
                 >
-                    Send Message
-                    <ChevronRight className="w-4 h-4" />
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {!isSubmitting && <ChevronRight className="w-4 h-4" />}
                 </button>
             </form>
         </div>

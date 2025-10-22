@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
 import { sendConsultationEmail, validateFormData } from '../../../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../../../lib/enquiryService';
 import PhoneInput from '../../../../components/ui/PhoneInput';
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
 import DoctorsSwiper from '../../../../components/TreatmentDetails/DoctorsSwiper';
@@ -448,7 +449,7 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                     const message = form.querySelector('textarea[name="message"]')?.value || '';
                                     
                                     // Validate form data
-                                    const validation = validateFormData({ 
+                                    const validation = validateEnquiryData({ 
                                         name, 
                                         email, 
                                         phone 
@@ -462,12 +463,36 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
                                     setContactErrors({});
                                     
                                     try {
-                                        await sendConsultationEmail({ name, email, phone, countryCode: contactPhone.countryCode, specialty: '', hospital: '', message }, `Treatment Details – ${treatment.title}`);
-                                        if (typeof window !== 'undefined') {
+                                        // Use hybrid approach: send email via EmailJS AND save to backend
+                                        const result = await submitEnquiryWithBoth(
+                                            sendConsultationEmail,
+                                            { 
+                                                name, 
+                                                email, 
+                                                phone, 
+                                                countryCode: contactPhone.countryCode, 
+                                                specialty: '', 
+                                                hospital: '', 
+                                                message 
+                                            },
+                                            {
+                                                name,
+                                                email,
+                                                phone,
+                                                countryCode: contactPhone.countryCode,
+                                                subject: `Treatment Inquiry - ${treatment.title}`,
+                                                message
+                                            },
+                                            `Treatment Details – ${treatment.title}`,
+                                            `Treatment - ${treatment.title}`
+                                        );
+
+                                        // Redirect on success
+                                        if (result.success) {
                                             window.location.href = '/thank-you';
                                         }
                                     } catch (e) {
-                                        alert('Failed to submit. Please try again.');
+                                        console.error('Failed to submit treatment contact form', e);
                                     }
                                 }}
                             >

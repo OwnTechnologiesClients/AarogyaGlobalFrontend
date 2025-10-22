@@ -148,6 +148,22 @@
       }
     },
     {
+      "label": "Support",
+      "href": "/support",
+      "pageHeader": {
+        "title": "Support",
+        "routes": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Support"
+          }
+        ]
+      }
+    },
+    {
       "label": "Blogs",
       "href": "https://blogs.aarogyaglobal.com",
       "external": true,
