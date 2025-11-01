@@ -1,10 +1,14 @@
 "use client";
-import React from "react";
-import { FaClock, FaCheckCircle, FaExclamationCircle, FaPaperclip, FaUser, FaReply, FaTimes, FaDownload } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaClock, FaCheckCircle, FaExclamationCircle, FaPaperclip, FaUser, FaReply, FaTimes, FaDownload, FaPlus } from "react-icons/fa";
 import NoDataPlaceholder from "./NoDataPlaceholder";
 import Swal from 'sweetalert2';
+import supportApi from "@/lib/supportApi";
+import UserReplyModal from "./UserReplyModal";
 
-const SupportReplies = ({ tickets, activeTicket, onTicketSelect }) => {
+const SupportReplies = ({ tickets, activeTicket, onTicketSelect, user, onTicketUpdate }) => {
+  const [isReplyModalOpen, setIsReplyModalOpen] = useState(false);
+  const [selectedTicketForReply, setSelectedTicketForReply] = useState(null);
   const getStatusIcon = (status) => {
     switch (status) {
       case 'resolved':
@@ -100,6 +104,59 @@ const SupportReplies = ({ tickets, activeTicket, onTicketSelect }) => {
 
   const selectedTicket = tickets.find(ticket => ticket.id === activeTicket);
 
+  const handleOpenReplyModal = (ticket) => {
+    if (!user?.id) {
+      Swal.fire({
+        title: 'Login Required',
+        text: 'Please log in to send a message.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+    setSelectedTicketForReply(ticket);
+    setIsReplyModalOpen(true);
+  };
+
+  const handleCloseReplyModal = () => {
+    setIsReplyModalOpen(false);
+    setSelectedTicketForReply(null);
+  };
+
+  const handleSubmitReply = async (formData) => {
+    if (!selectedTicketForReply || !user?.id) return;
+
+    try {
+      const response = await supportApi.sendMessage({
+        ticketId: selectedTicketForReply.id,
+        message: formData.message,
+        userId: user.id,
+        attachment: formData.attachment
+      });
+
+      if (response.success) {
+        if (onTicketUpdate) {
+          await onTicketUpdate();
+        }
+        setIsReplyModalOpen(false);
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your message has been sent successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Failed to send message. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
+  };
+
   return (
     <div className="flex flex-col h-full">
       {/* Ticket List */}
@@ -139,9 +196,9 @@ const SupportReplies = ({ tickets, activeTicket, onTicketSelect }) => {
                         <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}`}>
                           {ticket.status}
                         </span>
-                      {ticket.reply && (
+                      {ticket.messages && ticket.messages.length > 0 && (
                         <span className="text-xs text-blue-600">
-                          Replied
+                          {ticket.messages.length} Message{ticket.messages.length > 1 ? 's' : ''}
                         </span>
                       )}
                       </div>
@@ -213,37 +270,39 @@ const SupportReplies = ({ tickets, activeTicket, onTicketSelect }) => {
                         </div>
                       </div>
 
-                      {/* Admin Reply */}
-                      {ticket.reply ? (
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaUser className="text-white text-sm" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="text-sm font-medium text-gray-900">{ticket.reply.adminName || 'Support Team'}</span>
-                              <span className="text-xs text-gray-500">{formatDate(ticket.reply.createdAt)}</span>
+                      {/* All Messages */}
+                      {ticket.messages && ticket.messages.length > 0 ? (
+                        ticket.messages.map((msg, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.senderType === 'admin' ? 'bg-blue-500' : 'bg-green-500'}`}>
+                              <FaUser className="text-white text-sm" />
                             </div>
-                            <div className="bg-blue-50 rounded-lg p-3">
-                              <div className="text-sm text-gray-700 whitespace-pre-wrap break-words">
-                                {ticket.reply.message}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-sm font-medium text-gray-900">{msg.senderName || (msg.senderType === 'admin' ? 'Support Team' : 'You')}</span>
+                                <span className="text-xs text-gray-500">{formatDate(msg.createdAt)}</span>
                               </div>
-                              {ticket.reply.attachment && (
-                                <div className="mt-2 flex items-center gap-2 text-sm text-blue-600">
-                                  <FaPaperclip className="w-3 h-3" />
-                                  <span className="break-all">{ticket.reply.attachment.name || 'Attachment'}</span>
-                                  <button 
-                                    onClick={() => handleDownloadAttachment(ticket.reply.attachment)}
-                                    className="text-blue-600 hover:text-blue-800"
-                                    title="Download attachment"
-                                  >
-                                    <FaDownload className="w-3 h-3" />
-                                  </button>
+                              <div className={`rounded-lg p-3 ${msg.senderType === 'admin' ? 'bg-blue-50' : 'bg-green-50'}`}>
+                                <div className="text-sm text-gray-700 whitespace-pre-wrap break-words">
+                                  {msg.message}
                                 </div>
-                              )}
+                                {msg.attachment && (
+                                  <div className="mt-2 flex items-center gap-2 text-sm text-blue-600">
+                                    <FaPaperclip className="w-3 h-3" />
+                                    <span className="break-all">{msg.attachment.name || 'Attachment'}</span>
+                                    <button 
+                                      onClick={() => handleDownloadAttachment(msg.attachment)}
+                                      className="text-blue-600 hover:text-blue-800"
+                                      title="Download attachment"
+                                    >
+                                      <FaDownload className="w-3 h-3" />
+                                    </button>
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))
                       ) : (
                         <div className="flex items-center justify-center py-6">
                           <div className="text-center text-gray-500">
@@ -251,6 +310,22 @@ const SupportReplies = ({ tickets, activeTicket, onTicketSelect }) => {
                             <p className="text-sm font-medium">Waiting for response</p>
                             <p className="text-xs">Our support team will respond within 24 hours</p>
                           </div>
+                        </div>
+                      )}
+
+                      {/* Reply Button */}
+                      {selectedTicket && (
+                        <div className="mt-4 pt-4 border-t border-gray-200 flex justify-end">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenReplyModal(selectedTicket);
+                            }}
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
+                          >
+                            <FaPlus className="w-3 h-3" />
+                            Send Message
+                          </button>
                         </div>
                       )}
                     </div>
@@ -263,6 +338,14 @@ const SupportReplies = ({ tickets, activeTicket, onTicketSelect }) => {
         )}
       </div>
 
+      {/* Reply Modal */}
+      {isReplyModalOpen && selectedTicketForReply && (
+        <UserReplyModal
+          ticket={selectedTicketForReply}
+          onSubmit={handleSubmitReply}
+          onClose={handleCloseReplyModal}
+        />
+      )}
     </div>
   );
 };

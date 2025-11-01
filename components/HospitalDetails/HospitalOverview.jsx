@@ -55,7 +55,7 @@ const HospitalOverview = ({ hospital, location }) => {
       label: (doctorsCount !== undefined && doctorsCount !== null && doctorsCount !== '') ? doctorsCount : 'N/A',
       sublabel: "Doctors"
     }
-  ];
+  ].filter(stat => stat.label !== 'N/A'); // Filter out stats with no data
 
   // Build display strings from DB schema
   const sizeCapacity = hospital?.overview?.sizeAndCapacity;
@@ -99,7 +99,7 @@ const HospitalOverview = ({ hospital, location }) => {
       label: "Google Rating",
       value: (googleRating !== undefined && googleRating !== null && googleRating !== '') ? `${googleRating}` : 'N/A'
     }
-  ];
+  ].filter(detail => detail.value !== 'N/A'); // Filter out details with no data
 
 
 
@@ -162,30 +162,34 @@ const HospitalOverview = ({ hospital, location }) => {
           <h2 className="text-3xl font-bold text-gray-800 mb-8">Overview</h2>
 
           {/* Hospital Statistics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {hospitalStats.map((stat, index) => (
-              <div key={index} className="flex items-center gap-3 border border-gray-200 rounded-lg p-4">
-                {stat.icon}
-                <div>
-                  <div className="font-bold text-gray-800">{stat.label}</div>
-                  <div className="text-sm text-gray-600">{stat.sublabel}</div>
+          {hospitalStats.length > 0 && (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {hospitalStats.map((stat, index) => (
+                <div key={index} className="flex items-center gap-3 border border-gray-200 rounded-lg p-4">
+                  {stat.icon}
+                  <div>
+                    <div className="font-bold text-gray-800">{stat.label}</div>
+                    <div className="text-sm text-gray-600">{stat.sublabel}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Hospital Details */}
-          <div className="space-y-4 mb-8">
-            {hospitalDetails.map((detail, index) => (
-              <div key={index} className="flex items-start gap-3">
-                {detail.icon}
-                <div className="flex-1">
-                  <div className="font-medium text-gray-800">{detail.label}</div>
-                  <div className="text-sm text-gray-600">{detail.value}</div>
+          {hospitalDetails.length > 0 && (
+            <div className="space-y-4 mb-8">
+              {hospitalDetails.map((detail, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  {detail.icon}
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-800">{detail.label}</div>
+                    <div className="text-sm text-gray-600">{detail.value}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Location Information */}
           {location && (
@@ -196,23 +200,25 @@ const HospitalOverview = ({ hospital, location }) => {
           )}
 
           {/* Certificates Section */}
-          <CertificateSwiper
-            certificates={hospital?.accreditation?.map(acc => ({
-              name: `${acc} Accreditation`,
-              logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
-                acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
-                  acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
-                    acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
-              description: acc === 'JCI' ? 'Joint Commission International' :
-                acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
-                  acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
-                    acc === 'CAP' ? 'College of American Pathologists' : acc
-            })) || []}
-            variant="minimal"
-            title="Certificates & Accreditations"
-            showNavigation={true}
-            className="mb-8"
-          />
+          {hospital?.accreditation && hospital.accreditation.length > 0 && (
+            <CertificateSwiper
+              certificates={hospital.accreditation.map(acc => ({
+                name: `${acc} Accreditation`,
+                logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
+                  acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
+                    acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
+                      acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
+                description: acc === 'JCI' ? 'Joint Commission International' :
+                  acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
+                    acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
+                      acc === 'CAP' ? 'College of American Pathologists' : acc
+              }))}
+              variant="minimal"
+              title="Certificates & Accreditations"
+              showNavigation={true}
+              className="mb-8"
+            />
+          )}
 
 
         </div>

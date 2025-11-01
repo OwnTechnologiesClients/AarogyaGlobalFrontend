@@ -163,96 +163,104 @@ const DoctorProfile = ({ doctor }) => {
       {/* Right Section */}
       <div className="lg:w-2/3 w-full flex flex-col gap-10">
         {/* Introduction */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Introduction
-          </h3>
-          <p className="text-gray-700 leading-relaxed">
-            {getIntroduction(doctor)}
-          </p>
-        </section>
+        {getIntroduction(doctor) && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Introduction
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              {getIntroduction(doctor)}
+            </p>
+          </section>
+        )}
 
         {/* Specialization */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Specializations
-          </h3>
-          {getSpecializations(doctor).length > 0 && (
+        {getSpecializations(doctor).length > 0 && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Specializations
+            </h3>
             <p className="text-gray-700 mb-4">
               Dr. {doctor.name.split(' ').pop()} specializes in the following areas:
             </p>
-          )}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#000D44]">
-            {getSpecializations(doctor).map((specialization, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p className="font-semibold">{typeof specialization === 'string' ? specialization : String(specialization)}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#000D44]">
+              {getSpecializations(doctor).map((specialization, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
+                  <p className="font-semibold">{typeof specialization === 'string' ? specialization : String(specialization)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Educational Info */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Educational Background
-          </h3>
-          <p className="text-gray-700 mb-4">
-            Dr. {doctor.name.split(' ').pop()} has received comprehensive medical education and training:
-          </p>
-          <div className="flex flex-col gap-3 text-[#000D44]">
-            {getEducationData(doctor.education).map((edu, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p>
-                  <span className="font-semibold">{edu.institution}</span>{" "}
-                  <span className="font-semibold">{edu.degree}</span>{" "}
-                  <span className="text-sm">({edu.year})</span>
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+        {getEducationData(doctor.education).length > 0 && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Educational Background
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Dr. {doctor.name.split(' ').pop()} has received comprehensive medical education and training:
+            </p>
+            <div className="flex flex-col gap-3 text-[#000D44]">
+              {getEducationData(doctor.education).map((edu, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
+                  <p>
+                    <span className="font-semibold">{edu.institution}</span>{" "}
+                    <span className="font-semibold">{edu.degree}</span>{" "}
+                    <span className="text-sm">({edu.year})</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Professional Experience */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Professional Experience
-          </h3>
-          <p className="text-gray-700 mb-4">
-            Dr. {doctor.name.split(' ').pop()} has extensive experience in various healthcare institutions:
-          </p>
-          <div className="flex flex-col gap-3 text-[#000D44]">
-            {getProfessionalExperienceData(doctor.professionalExperience).map((exp, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p>
-                  <span className="font-semibold">{exp.position}</span>{" "}
-                  <span className="text-sm">at {exp.institution} ({exp.duration})</span>
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+        {getProfessionalExperienceData(doctor.professionalExperience).length > 0 && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Professional Experience
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Dr. {doctor.name.split(' ').pop()} has extensive experience in various healthcare institutions:
+            </p>
+            <div className="flex flex-col gap-3 text-[#000D44]">
+              {getProfessionalExperienceData(doctor.professionalExperience).map((exp, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
+                  <p>
+                    <span className="font-semibold">{exp.position}</span>{" "}
+                    <span className="text-sm">at {exp.institution} ({exp.duration})</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
 
         {/* Awards */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Awards & Recognition
-          </h3>
-          <p className="text-gray-700 mb-4">
-            Dr. {doctor.name.split(' ').pop()} has been recognized for excellence in medical practice:
-          </p>
-          <div className="flex flex-col gap-3 text-gray-800">
-            {getAwards(doctor).map((award, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
-                <p>{typeof award === 'string' ? award : String(award)}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        {getAwards(doctor).length > 0 && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Awards & Recognition
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Dr. {doctor.name.split(' ').pop()} has been recognized for excellence in medical practice:
+            </p>
+            <div className="flex flex-col gap-3 text-gray-800">
+              {getAwards(doctor).map((award, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
+                  <p>{typeof award === 'string' ? award : String(award)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Research Work */}
         {doctor.researchWork && (
@@ -270,7 +278,7 @@ const DoctorProfile = ({ doctor }) => {
         {doctor.publications && doctor.publications.length > 0 && (
           <section>
             <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-              Publications & Research
+              Publications
             </h3>
             <p className="text-gray-700 mb-4">
               Dr. {doctor.name.split(' ').pop()} has contributed to medical literature through:
@@ -287,18 +295,20 @@ const DoctorProfile = ({ doctor }) => {
         )}
 
         {/* Languages */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#000D44] mb-4">
-            Languages Spoken
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {getLanguages(doctor).length > 0 && getLanguages(doctor).map((language, index) => (
-              <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                {typeof language === 'string' ? language : String(language)}
-              </span>
-            ))}
-          </div>
-        </section>
+        {getLanguages(doctor).length > 0 && (
+          <section>
+            <h3 className="text-3xl font-bold text-[#000D44] mb-4">
+              Languages Spoken
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {getLanguages(doctor).map((language, index) => (
+                <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                  {typeof language === 'string' ? language : String(language)}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

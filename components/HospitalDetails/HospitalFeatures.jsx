@@ -107,7 +107,7 @@ const HospitalFeatures = ({ hospital }) => {
     }
   ];
 
-  const displayFacilities = featuresFromBackend.length > 0 ? featuresFromBackend : defaultFacilities;
+  const displayFacilities = featuresFromBackend.length > 0 ? featuresFromBackend : [];
 
   // Advanced medical equipment from backend: advancedMedicalEquipment: [{ name, description }]
   const medicalEquipment = (hospital?.advancedMedicalEquipment || []).map((e) => {
@@ -134,65 +134,71 @@ const HospitalFeatures = ({ hospital }) => {
       </div>
 
       {/* General Facilities */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Available Facilities</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayFacilities.map((facility, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                {facility.icon}
-                <h4 className="font-semibold text-gray-800">{facility.title}</h4>
+      {displayFacilities.length > 0 && (
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Available Facilities</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {displayFacilities.map((facility, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  {facility.icon}
+                  <h4 className="font-semibold text-gray-800">{facility.title}</h4>
+                </div>
+                <p className="text-gray-600 text-sm">{facility.description}</p>
               </div>
-              <p className="text-gray-600 text-sm">{facility.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Medical Equipment */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Advanced Medical Equipment</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {medicalEquipment.map((equipment, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  {equipment.icon}
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-bold text-gray-800 mb-2">{equipment.name}</h4>
-                  <p className="text-gray-600 mb-3">{equipment.description}</p>
-                  <div className="inline-flex items-center px-3 py-1 bg-[#04CE78] bg-opacity-10 text-[#04CE78] rounded-full text-sm font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    {equipment.availability}
+      {medicalEquipment.length > 0 && (
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Advanced Medical Equipment</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {medicalEquipment.map((equipment, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-gray-50 rounded-xl">
+                    {equipment.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">{equipment.name}</h4>
+                    <p className="text-gray-600 mb-3">{equipment.description}</p>
+                    <div className="inline-flex items-center px-3 py-1 bg-[#04CE78] bg-opacity-10 text-[#04CE78] rounded-full text-sm font-medium">
+                      <CheckCircle className="w-4 h-4 mr-2" />
+                      {equipment.availability}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
 
 
       {/* Certifications & Accreditations */}
-      <CertificateSwiper
-        certificates={hospital?.accreditation?.map(acc => ({
-          name: `${acc} Accreditation`,
-          logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
-            acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
-              acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
-                acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
-          description: acc === 'JCI' ? 'Joint Commission International' :
-            acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
-              acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
-                acc === 'CAP' ? 'College of American Pathologists' : acc
-        })) || []}
-        variant="default"
-        title="Certifications & Accreditations"
-        showNavigation={true}
-        className="mb-12"
-      />
+      {hospital?.accreditation && hospital.accreditation.length > 0 && (
+        <CertificateSwiper
+          certificates={hospital.accreditation.map(acc => ({
+            name: `${acc} Accreditation`,
+            logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
+              acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
+                acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
+                  acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
+            description: acc === 'JCI' ? 'Joint Commission International' :
+              acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
+                acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
+                  acc === 'CAP' ? 'College of American Pathologists' : acc
+          }))}
+          variant="default"
+          title="Certifications & Accreditations"
+          showNavigation={true}
+          className="mb-12"
+        />
+      )}
 
       {/* Special Features */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">

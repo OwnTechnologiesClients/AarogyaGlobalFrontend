@@ -14,31 +14,32 @@ const SupportChat = () => {
   const { user } = useAuth();
 
 
+  // Function to fetch tickets
+  const fetchTickets = async () => {
+    if (!user?.id) {
+      setLoading(false);
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const response = await supportApi.getUserTickets(user.id);
+      if (response.success) {
+        setTickets(response.data || []);
+      } else {
+        setError('Failed to load support tickets');
+      }
+    } catch (err) {
+      console.error('Error fetching support tickets:', err);
+      setError('Failed to load support tickets');
+      setTickets([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Fetch user's support tickets on component mount
   useEffect(() => {
-    const fetchTickets = async () => {
-      if (!user?.id) {
-        setLoading(false);
-        return;
-      }
-
-      try {
-        setLoading(true);
-        const response = await supportApi.getUserTickets(user.id);
-        if (response.success) {
-          setTickets(response.data || []);
-        } else {
-          setError('Failed to load support tickets');
-        }
-      } catch (err) {
-        console.error('Error fetching support tickets:', err);
-        setError('Failed to load support tickets');
-        setTickets([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchTickets();
   }, [user?.id]);
 
@@ -199,6 +200,8 @@ const SupportChat = () => {
                 tickets={tickets}
                 activeTicket={activeTicket}
                 onTicketSelect={setActiveTicket}
+                user={user}
+                onTicketUpdate={fetchTickets}
               />
             )}
           </div>
