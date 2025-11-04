@@ -25,16 +25,18 @@ const DoctorCard = ({ doctor }) => {
             <div className="flex flex-col sm:flex-row w-full">
                 {/* Left Side - Image */}
                 <div className="w-full sm:w-28 md:w-32 lg:w-36 h-48 sm:h-auto bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center flex-shrink-0">
-                    <img
-                        src={apiService.getImageUrl(doctor.image) || ''}
-                        alt={`${doctor.name} image`}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'flex';
-                        }}
-                    />
-                    <div className="hidden w-full h-full bg-gradient-to-br from-blue-500 to-blue-600 items-center justify-center text-white">
+                    {apiService.getImageUrl(doctor.image) ? (
+                        <img
+                            src={apiService.getImageUrl(doctor.image)}
+                            alt={`${doctor.name} image`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'flex';
+                            }}
+                        />
+                    ) : null}
+                    <div className={`w-full h-full bg-gradient-to-br from-blue-500 to-blue-600 items-center justify-center text-white ${apiService.getImageUrl(doctor.image) ? 'hidden' : 'flex'}`}>
                         <Award className="w-8 h-8" />
                     </div>
                 </div>
@@ -68,7 +70,7 @@ const DoctorCard = ({ doctor }) => {
 
                     {/* Hospital (robust across API shapes) */}
                     {(() => {
-                        const hospitalName = doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || (typeof doctor?.hospital === 'string' ? doctor.hospital : '');
+                        const hospitalName = doctor?.customHospitalName || doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || (typeof doctor?.hospital === 'string' ? doctor.hospital : '');
                         return hospitalName ? (
                             <div className="flex items-center gap-1 mb-3">
                                 <Stethoscope className="w-4 h-4 text-purple-500 flex-shrink-0" />

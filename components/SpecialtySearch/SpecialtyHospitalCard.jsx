@@ -21,11 +21,17 @@ const SpecialtyHospitalCard = ({ hospital }) => {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div className="md:w-1/2 relative">
                 <div className='h-full p-2 rounded-lg'>
-                    <img
-                        src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
-                        alt={`${hospital.name} image`}
-                        className="w-full rounded-xl object-cover md:h-full"
-                    />
+                    {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                        <img
+                            src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                            alt={`${hospital.name} image`}
+                            className="w-full rounded-xl object-cover md:h-full"
+                        />
+                    ) : (
+                        <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-xl">
+                            <span className="text-gray-400 text-sm">No image</span>
+                        </div>
+                    )}
                 </div>
             </div>
             <div className="p-6 flex flex-col justify-between md:w-1/2">

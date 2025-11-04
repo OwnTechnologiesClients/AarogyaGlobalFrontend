@@ -163,10 +163,15 @@ const HospitalDoctors = ({ hospital }) => {
                       <MapPin className="w-4 h-4 mr-2" />
                       <span className="text-sm">{doctor.location}</span>
                     </div>
-                    <div className="flex items-center text-gray-600">
-                      <Stethoscope className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{doctor.hospital}</span>
-                    </div>
+                    {(() => {
+                      const hospitalName = doctor?.customHospitalName || doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || doctor?.hospital || '';
+                      return hospitalName ? (
+                        <div className="flex items-center text-gray-600">
+                          <Stethoscope className="w-4 h-4 mr-2" />
+                          <span className="text-sm">{hospitalName}</span>
+                        </div>
+                      ) : null;
+                    })()}
                   </div>
 
                   {/* CTA */}

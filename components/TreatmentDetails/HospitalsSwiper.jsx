@@ -108,11 +108,17 @@ const HospitalsSwiper = ({ hospitals = [], title = "Best cardiology hospitals wo
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col">
                 {/* Hospital Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
-                    alt={`${hospital.name} image`}
-                    className="w-full h-full object-cover"
-                  />
+                  {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                    <img
+                      src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                      alt={`${hospital.name} image`}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <span className="text-gray-400 text-sm">No image</span>
+                    </div>
+                  )}
                   {/* Rating Overlay */}
                   {hospital.rating && (
                     <div className="absolute top-3 right-3 bg-white rounded-full px-2 py-1 flex items-center gap-1 shadow-sm">

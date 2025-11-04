@@ -21,11 +21,17 @@ const HospitalImageGallery = ({ hospital }) => {
         {/* Main Image */}
         <div className="lg:w-2/3 relative">
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src={hospitalImages[selectedImage]?.url || ''}
-              alt={hospitalImages[selectedImage]?.alt || ''}
-              className="w-full h-[400px] lg:h-[500px] object-cover"
-            />
+            {hospitalImages[selectedImage]?.url ? (
+              <img
+                src={hospitalImages[selectedImage].url}
+                alt={hospitalImages[selectedImage].alt || 'Hospital image'}
+                className="w-full h-[400px] lg:h-[500px] object-cover"
+              />
+            ) : (
+              <div className="w-full h-[400px] lg:h-[500px] bg-gray-200 flex items-center justify-center">
+                <span className="text-gray-400">No image available</span>
+              </div>
+            )}
 
             {/* Rating Badge */}
             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">

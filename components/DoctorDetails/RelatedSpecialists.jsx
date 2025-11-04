@@ -125,13 +125,19 @@ const RelatedSpecialists = ({ currentDoctorId }) => {
                 >
                   {/* Image */}
                   <div className="w-full h-[180px] md:h-[220px] rounded-2xl overflow-hidden mb-4 md:mb-6">
-                  <Image
-                      src={apiService.getImageUrl(doctor.image) || ''}
-                      alt={doctor.name}
-                      width={260}
-                      height={340}
-                      className="object-cover w-full h-full"
-                    />
+                    {apiService.getImageUrl(doctor.image) ? (
+                      <Image
+                        src={apiService.getImageUrl(doctor.image)}
+                        alt={doctor.name}
+                        width={260}
+                        height={340}
+                        className="object-cover w-full h-full"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-2xl">
+                        <span className="text-gray-400 text-sm">No image</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Name & Role */}

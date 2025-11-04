@@ -152,12 +152,18 @@ const FeaturedHospitals = () => {
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-blue-200 mx-2 my-4">
                 {/* Hospital Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
-                    alt={`${hospital.name} image`}
-                    fill
-                    className="object-cover"
-                  />
+                  {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                    <Image
+                      src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                      alt={`${hospital.name} image`}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <span className="text-gray-400 text-sm">No image</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Hospital Content */}

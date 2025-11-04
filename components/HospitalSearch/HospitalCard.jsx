@@ -26,11 +26,17 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             {/* Hospital Image */}
             <div className="relative h-48 overflow-hidden">
-                <img
-                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) || ''}
-                    alt={`${hospital.name} image`}
-                    className="w-full h-full object-cover"
-                />
+                {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                    <img
+                        src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                        alt={`${hospital.name} image`}
+                        className="w-full h-full object-cover"
+                    />
+                ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <span className="text-gray-400 text-sm">No image</span>
+                    </div>
+                )}
             </div>
 
             {/* Hospital Content */}
