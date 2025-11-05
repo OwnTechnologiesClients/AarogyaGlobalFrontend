@@ -2,8 +2,6 @@
 import React from "react";
 import {
   MapPin,
-  Phone,
-  Mail,
   Clock,
   Navigation,
   Copy,
@@ -13,10 +11,7 @@ import {
 const HospitalLocation = ({ hospital }) => {
   const hospitalInfo = {
     name: hospital?.name || "Hospital",
-    address: hospital?.address || "Address not available",
-    phone: hospital?.contact?.phone || "Phone not available",
-    email: hospital?.contact?.email || "Email not available",
-    emergency: hospital?.contact?.phone || "Emergency contact not available",
+    address: hospital?.contact?.address || hospital?.address || "Address not available",
     coordinates: hospital?.coordinates || {
       lat: 28.4595,
       lng: 77.0266,
@@ -134,41 +129,8 @@ const HospitalLocation = ({ hospital }) => {
           </div>
         </div>
 
-        {/* Contact Information */}
+        {/* Operating Hours */}
         <div className="space-y-6">
-          {/* Contact Details */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">
-              Contact Information
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#04CE78]" />
-                <div>
-                  <p className="font-medium text-gray-800">General Inquiries</p>
-                  <p className="text-gray-600">{hospitalInfo.phone}</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-red-500" />
-                <div>
-                  <p className="font-medium text-gray-800">Emergency</p>
-                  <p className="text-gray-600">{hospitalInfo.emergency}</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#04CE78]" />
-                <div>
-                  <p className="font-medium text-gray-800">Email</p>
-                  <p className="text-gray-600">{hospitalInfo.email}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Operating Hours */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h3 className="text-xl font-bold text-gray-800 mb-4">
               Operating Hours
@@ -205,10 +167,23 @@ const HospitalLocation = ({ hospital }) => {
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
               <div>
-                <p className="font-medium text-gray-800">Accessibility</p>
-                <p className="text-gray-600 text-sm">{hospital?.accessibility || "Accessibility information not available"}</p>
+                <p className="font-medium text-gray-800">How to Reach</p>
+                <p className="text-gray-600 text-sm">{hospital?.howToReach || "Information not available"}</p>
               </div>
             </div>
+            {(hospital?.nearbyLandmarks || []).length > 0 && (
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
+                <div>
+                  <p className="font-medium text-gray-800">Nearby Landmarks</p>
+                  <div className="text-gray-600 text-sm space-y-1">
+                    {hospital.nearbyLandmarks.map((l, idx) => (
+                      <div key={idx}>{l?.type}{l?.direction ? ` – ${l.direction}` : ''}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
             {hospital?.mapLink && (
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#04CE78] mt-0.5" />
@@ -236,13 +211,7 @@ const HospitalLocation = ({ hospital }) => {
             Our emergency department is open 24/7 for urgent medical care
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <Phone className="w-8 h-8 mx-auto mb-2" />
-              <p className="font-bold text-lg">{hospitalInfo.emergency}</p>
-              <p className="text-red-100 text-sm">Emergency Hotline</p>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
               <Clock className="w-8 h-8 mx-auto mb-2" />
               <p className="font-bold text-lg">24/7</p>

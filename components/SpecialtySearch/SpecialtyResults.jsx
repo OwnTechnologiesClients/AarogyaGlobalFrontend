@@ -6,6 +6,7 @@ import TreatmentCard from './TreatmentCard';
 import { ArrowRight } from 'lucide-react';
 import PhoneInput from '../ui/PhoneInput';
 import { sendConsultationEmail, validateFormData } from '../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
 
 const SpecialtyResults = ({
   doctors = [],
@@ -117,12 +118,35 @@ const SpecialtyResults = ({
             setCtaErrors({});
             
             try {
-              await sendConsultationEmail({ name: '', email: ctaEmail, phone: ctaPhone, countryCode: ctaCountry, specialty: '', hospital: '', message: '' }, `${specialtyName} – Callback`);
-              if (typeof window !== 'undefined') {
+              // Use hybrid approach: send email via EmailJS AND save to backend
+              const result = await submitEnquiryWithBoth(
+                sendConsultationEmail,
+                { 
+                  name: '', 
+                  email: ctaEmail, 
+                  phone: ctaPhone, 
+                  countryCode: ctaCountry, 
+                  specialty: '', 
+                  hospital: '', 
+                  message: '' 
+                },
+                {
+                  name: '',
+                  email: ctaEmail,
+                  phone: ctaPhone,
+                  countryCode: ctaCountry,
+                  subject: `${specialtyName} Callback Request`
+                },
+                `${specialtyName} – Callback`,
+                `Specialty - ${specialtyName}`
+              );
+
+              // Redirect on success
+              if (result.success) {
                 window.location.href = '/thank-you';
               }
             } catch (e) {
-              alert('Failed to submit. Please try again.');
+              console.error('Failed to submit specialty callback form', e);
             }
           }}
           className="mt-4 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"
@@ -310,12 +334,35 @@ const SpecialtyResults = ({
                 setFinalErrors({});
                 
                 try {
-                  await sendConsultationEmail({ name: '', email: finalEmail, phone: finalPhone, countryCode: finalCountry, specialty: '', hospital: '', message: '' }, `${specialtyName} – Callback`);
-                  if (typeof window !== 'undefined') {
+                  // Use hybrid approach: send email via EmailJS AND save to backend
+                  const result = await submitEnquiryWithBoth(
+                    sendConsultationEmail,
+                    { 
+                      name: '', 
+                      email: finalEmail, 
+                      phone: finalPhone, 
+                      countryCode: finalCountry, 
+                      specialty: '', 
+                      hospital: '', 
+                      message: '' 
+                    },
+                    {
+                      name: '',
+                      email: finalEmail,
+                      phone: finalPhone,
+                      countryCode: finalCountry,
+                      subject: `${specialtyName} Callback Request`
+                    },
+                    `${specialtyName} – Callback`,
+                    `Specialty - ${specialtyName}`
+                  );
+
+                  // Redirect on success
+                  if (result.success) {
                     window.location.href = '/thank-you';
                   }
                 } catch (e) {
-                  alert('Failed to submit. Please try again.');
+                  console.error('Failed to submit specialty callback form', e);
                 }
               }}
               className="mt-4 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"

@@ -10,7 +10,9 @@ import {
 } from 'lucide-react';
 import CertificateSwiper from '../common/CertificateSwiper';
 import { sendContactEmail, validateFormData } from '../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
 import PhoneInput from '../ui/PhoneInput';
+import apiService from '../../lib/apiService';
 
 const HospitalOverview = ({ hospital, location }) => {
   const [formData, setFormData] = useState({
@@ -24,56 +26,80 @@ const HospitalOverview = ({ hospital, location }) => {
   const [startTime] = useState(Date.now());
   const [errors, setErrors] = useState({});
 
+  // Map DB schema to overview stats
+  const userScore = typeof hospital?.rating === 'object'
+    ? (hospital?.rating?.userScore ?? hospital?.rating?.googleRating)
+    : hospital?.rating;
+  const founded = hospital?.overview?.founded;
+  const patients = hospital?.overview?.patients;
+  const doctorsCount = hospital?.overview?.doctors ?? hospital?.doctorsCount;
+
   const hospitalStats = [
     {
       icon: <Star className="w-6 h-6 text-[#04CE78]" />,
-      label: hospital?.hospitalStats?.userScore || "9.5",
+      label: (userScore !== undefined && userScore !== null && userScore !== '') ? userScore : 'N/A',
       sublabel: "UserScore"
     },
     {
       icon: <Calendar className="w-6 h-6 text-[#04CE78]" />,
-      label: hospital?.hospitalStats?.founded || "2013",
+      label: founded || 'N/A',
       sublabel: "Founded"
     },
     {
       icon: <Heart className="w-6 h-6 text-[#04CE78]" />,
-      label: hospital?.hospitalStats?.patients || "2 Mn +",
+      label: patients || 'N/A',
       sublabel: "Patients"
     },
     {
       icon: <Users className="w-6 h-6 text-[#04CE78]" />,
-      label: hospital?.hospitalStats?.doctors || "200+",
+      label: (doctorsCount !== undefined && doctorsCount !== null && doctorsCount !== '') ? doctorsCount : 'N/A',
       sublabel: "Doctors"
     }
-  ];
+  ].filter(stat => stat.label !== 'N/A'); // Filter out stats with no data
+
+  // Build display strings from DB schema
+  const sizeCapacity = hospital?.overview?.sizeAndCapacity;
+  const sizeCapacityText = sizeCapacity
+    ? `OT: ${sizeCapacity?.ot ?? 'N/A'}, ICU: ${sizeCapacity?.icu ?? 'N/A'}, Patient Beds: ${sizeCapacity?.patientBeds ?? 'N/A'}`
+    : 'N/A';
+  const clinicTypeText = Array.isArray(hospital?.overview?.clinicType) && hospital.overview.clinicType.length > 0
+    ? hospital.overview.clinicType.join(', ')
+    : (typeof hospital?.overview?.clinicType === 'string' ? hospital.overview.clinicType : 'N/A');
+  const typeOfCareText = Array.isArray(hospital?.overview?.typeOfCare) && hospital.overview.typeOfCare.length > 0
+    ? hospital.overview.typeOfCare.join(', ')
+    : (typeof hospital?.overview?.typeOfCare === 'string' ? hospital.overview.typeOfCare : 'N/A');
+  const ageGroupText = Array.isArray(hospital?.overview?.ageGroup) && hospital.overview.ageGroup.length > 0
+    ? hospital.overview.ageGroup.join(', ')
+    : (typeof hospital?.overview?.ageGroup === 'string' ? hospital.overview.ageGroup : 'N/A');
+  const googleRating = typeof hospital?.rating === 'object' ? hospital?.rating?.googleRating : undefined;
 
   const hospitalDetails = [
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Size & Capacity",
-      value: hospital?.hospitalStats?.sizeCapacity || "OT: 15, ICU: 105, Patient Bed: 330+"
+      value: sizeCapacityText
     },
     {
       icon: <Building2 className="w-5 h-5 text-gray-500" />,
       label: "Clinic Type",
-      value: hospital?.hospitalStats?.clinicType || "Quaternary Care Multi-Specialty"
+      value: clinicTypeText
     },
     {
       icon: <Heart className="w-5 h-5 text-gray-500" />,
       label: "Type of Care",
-      value: hospital?.hospitalStats?.typeOfCare || "Inpatient, Outpatient, Emergency, Daycare"
+      value: typeOfCareText
     },
     {
       icon: <Users className="w-5 h-5 text-gray-500" />,
       label: "Age Group",
-      value: hospital?.hospitalStats?.ageGroup || "Kids, Adults, Geriatric"
+      value: ageGroupText
     },
     {
       icon: <Star className="w-5 h-5 text-gray-500" />,
       label: "Google Rating",
-      value: hospital?.hospitalStats?.googleRating || "4.5 (based on patient reviews)"
+      value: (googleRating !== undefined && googleRating !== null && googleRating !== '') ? `${googleRating}` : 'N/A'
     }
-  ];
+  ].filter(detail => detail.value !== 'N/A'); // Filter out details with no data
 
 
 
@@ -92,7 +118,7 @@ const HospitalOverview = ({ hospital, location }) => {
     }
 
     // Validate form data
-    const validation = validateFormData(formData, ['name', 'email', 'phone']);
+    const validation = validateEnquiryData(formData, ['name', 'email', 'phone']);
     if (!validation.isValid) {
       setErrors(validation.errors);
       return;
@@ -101,7 +127,9 @@ const HospitalOverview = ({ hospital, location }) => {
     setErrors({});
     
     try {
-      await sendContactEmail(
+      // Use hybrid approach: send email via EmailJS AND save to backend
+      const result = await submitEnquiryWithBoth(
+        sendContactEmail,
         {
           name: formData.name,
           email: formData.email,
@@ -109,16 +137,17 @@ const HospitalOverview = ({ hospital, location }) => {
           countryCode: formData.countryCode,
           message: formData.message,
         },
-        `Hospital Contact - ${hospital?.name || 'Unknown Hospital'}`
+        formData,
+        `Hospital Contact - ${hospital?.name || 'Unknown Hospital'}`,
+        `Hospital - ${hospital?.name || 'Unknown'}`
       );
-      if (typeof window !== 'undefined') {
+
+      // Redirect on success
+      if (result.success) {
         window.location.href = '/thank-you';
       }
     } catch (err) {
-      console.error('Failed to send hospital contact email', err);
-      if (typeof window !== 'undefined') {
-        alert('There was an issue sending your message. Please try again later.');
-      }
+      console.error('Failed to submit hospital contact form', err);
     }
   };
 
@@ -133,30 +162,34 @@ const HospitalOverview = ({ hospital, location }) => {
           <h2 className="text-3xl font-bold text-gray-800 mb-8">Overview</h2>
 
           {/* Hospital Statistics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {hospitalStats.map((stat, index) => (
-              <div key={index} className="flex items-center gap-3 border border-gray-200 rounded-lg p-4">
-                {stat.icon}
-                <div>
-                  <div className="font-bold text-gray-800">{stat.label}</div>
-                  <div className="text-sm text-gray-600">{stat.sublabel}</div>
+          {hospitalStats.length > 0 && (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {hospitalStats.map((stat, index) => (
+                <div key={index} className="flex items-center gap-3 border border-gray-200 rounded-lg p-4">
+                  {stat.icon}
+                  <div>
+                    <div className="font-bold text-gray-800">{stat.label}</div>
+                    <div className="text-sm text-gray-600">{stat.sublabel}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Hospital Details */}
-          <div className="space-y-4 mb-8">
-            {hospitalDetails.map((detail, index) => (
-              <div key={index} className="flex items-start gap-3">
-                {detail.icon}
-                <div className="flex-1">
-                  <div className="font-medium text-gray-800">{detail.label}</div>
-                  <div className="text-sm text-gray-600">{detail.value}</div>
+          {hospitalDetails.length > 0 && (
+            <div className="space-y-4 mb-8">
+              {hospitalDetails.map((detail, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  {detail.icon}
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-800">{detail.label}</div>
+                    <div className="text-sm text-gray-600">{detail.value}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Location Information */}
           {location && (
@@ -167,23 +200,25 @@ const HospitalOverview = ({ hospital, location }) => {
           )}
 
           {/* Certificates Section */}
-          <CertificateSwiper
-            certificates={hospital?.accreditation?.map(acc => ({
-              name: `${acc} Accreditation`,
-              logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
-                acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
-                  acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
-                    acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
-              description: acc === 'JCI' ? 'Joint Commission International' :
-                acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
-                  acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
-                    acc === 'CAP' ? 'College of American Pathologists' : acc
-            })) || []}
-            variant="minimal"
-            title="Certificates & Accreditations"
-            showNavigation={true}
-            className="mb-8"
-          />
+          {hospital?.accreditation && hospital.accreditation.length > 0 && (
+            <CertificateSwiper
+              certificates={hospital.accreditation.map(acc => ({
+                name: `${acc} Accreditation`,
+                logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
+                  acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
+                    acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
+                      acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
+                description: acc === 'JCI' ? 'Joint Commission International' :
+                  acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
+                    acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
+                      acc === 'CAP' ? 'College of American Pathologists' : acc
+              }))}
+              variant="minimal"
+              title="Certificates & Accreditations"
+              showNavigation={true}
+              className="mb-8"
+            />
+          )}
 
 
         </div>
@@ -193,7 +228,7 @@ const HospitalOverview = ({ hospital, location }) => {
           {/* Team Image with Contact CTA */}
               <div className="relative rounded-2xl overflow-hidden mb-6">
             <img
-              src={hospital?.image || "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"}
+              src={apiService.getImageUrl(hospital?.displayImage || hospital?.gallery?.[0]) || "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"}
               alt={`${hospital?.name || "Medical"} Team`}
               className="w-full h-[300px] object-cover"
             />

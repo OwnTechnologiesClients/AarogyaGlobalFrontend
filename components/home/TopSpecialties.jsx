@@ -59,7 +59,7 @@ const TopSpecialties = () => {
                 height: 120,
               }}
             >
-              {spec.icon.startsWith("/") ? (
+              {spec.icon && spec.icon.startsWith("/") ? (
                 <img
                   src={spec.icon}
                   alt={spec.label}

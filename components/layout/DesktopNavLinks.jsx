@@ -62,11 +62,11 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
             <li key={link.label} className="relative group">
               <button
                 type="button"
-                className={`font-medium ${textColor} hover:text-[#04CE78] px-2 py-2 lg:px-3 lg:py-2 xl:px-3 xl:py-3 2xl:px-4 2xl:py-3 2xl:text-lg transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                className={`font-medium ${textColor} hover:text-[#04CE78] px-1 py-2 lg:px-1.5 lg:py-2 xl:px-2 xl:py-2.5 2xl:px-3 2xl:py-3 text-xs lg:text-sm xl:text-sm 2xl:text-base transition-colors flex items-center ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                   }`}
               >
                 {link.label}
-                <span className="text-[#04CE78] text-[16px] lg:text-[18px] 2xl:text-[20px] leading-none ml-1">
+                <span className="text-[#04CE78] text-xs lg:text-sm xl:text-sm 2xl:text-base leading-none ml-1">
                   +
                 </span>
               </button>
@@ -94,7 +94,7 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`font-medium ${textColor} hover:text-[#04CE78] px-2 py-2 lg:px-3 lg:py-2 xl:px-3 xl:py-3 2xl:px-4 2xl:py-3 2xl:text-lg transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                  className={`font-medium ${textColor} hover:text-[#04CE78] px-1 py-2 lg:px-1.5 lg:py-2 xl:px-2 xl:py-2.5 2xl:px-3 2xl:py-3 text-xs lg:text-sm xl:text-sm 2xl:text-base transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                     }`}
                 >
                   {link.label}
@@ -108,7 +108,7 @@ const DesktopNavLinks = ({ textColor = "text-white" }) => {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
-                  className={`font-medium ${textColor} hover:text-[#04CE78] px-2 py-2 lg:px-3 lg:py-2 xl:px-3 xl:py-3 2xl:px-4 2xl:py-3 2xl:text-lg transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
+                  className={`font-medium ${textColor} hover:text-[#04CE78] px-1 py-2 lg:px-1.5 lg:py-2 xl:px-2 xl:py-2.5 2xl:px-3 2xl:py-3 text-xs lg:text-sm xl:text-sm 2xl:text-base transition-colors flex items-center gap-1 ${isLinkActive(link.label) ? "text-[#04CE78]" : ""
                     }`}
                 >
                   {link.label}

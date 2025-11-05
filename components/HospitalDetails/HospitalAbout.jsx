@@ -14,9 +14,9 @@ const HospitalAbout = ({ hospital }) => {
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">About {hospital?.name || 'Our Hospital'}</h2>
         <div className="text-gray-600 text-lg leading-relaxed space-y-8">
-          {hospital?.about ? (
+          {hospital?.about?.description ? (
             <div dangerouslySetInnerHTML={{
-              __html: hospital.about
+              __html: String(hospital.about.description)
                 .replace(/\n\n/g, '</p><p class="mb-6">')
                 .replace(/•/g, '<br/>•')
                 .replace(/^/, '<p class="mb-6">')
@@ -31,33 +31,39 @@ const HospitalAbout = ({ hospital }) => {
       </div>
 
       {/* Mission, Vision */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        {/* Mission */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-[#04CE78] bg-opacity-10 rounded-xl">
-              <Heart className="w-8 h-8 text-[#04CE78]" />
+      {(hospital?.about?.mission || hospital?.about?.vision) && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Mission */}
+          {hospital?.about?.mission && (
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-[#04CE78] bg-opacity-10 rounded-xl">
+                  <Heart className="w-8 h-8 text-[#04CE78]" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                {hospital.about.mission}
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
-          </div>
-          <p className="text-gray-600 leading-relaxed">
-            To be a globally respected healthcare organisation known for Clinical Excellence and Distinctive Patient Care.
-          </p>
-        </div>
+          )}
 
-        {/* Vision */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-blue-500 bg-opacity-10 rounded-xl">
-              <Eye className="w-8 h-8 text-blue-500" />
+          {/* Vision */}
+          {hospital?.about?.vision && (
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-blue-500 bg-opacity-10 rounded-xl">
+                  <Eye className="w-8 h-8 text-blue-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Our Vision</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                {hospital.about.vision}
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-gray-800">Our Vision</h3>
-          </div>
-          <p className="text-gray-600 leading-relaxed">
-            To create a world-class integrated healthcare delivery system in India, entailing the finest medical skills combined with compassionate patient care.
-          </p>
+          )}
         </div>
-      </div>
+      )}
 
 
 
@@ -69,7 +75,7 @@ const HospitalAbout = ({ hospital }) => {
             <p className="text-red-100 mb-4">{hospital?.emergencySupport || "24/7 Emergency Support Available"}</p>
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5" />
-              <span>{hospital?.contact?.phone || "Emergency Contact"}</span>
+                <span>Contact Information</span>
             </div>
           </div>
           <div>

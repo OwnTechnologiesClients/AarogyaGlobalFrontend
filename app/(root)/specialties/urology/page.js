@@ -23,7 +23,8 @@ const UrologyPage = () => {
 
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [filteredHospitals, setFilteredHospitals] = useState([]);
-  const [filteredTreatments, setFilteredTreatments] = useState(data?.treatments || []);
+  // Filter to only show active treatments
+  const [filteredTreatments, setFilteredTreatments] = useState((data?.treatments || []).filter(t => t.isActive !== false));
 
   // Handle case when data is not available
   if (!data) {
@@ -83,9 +84,9 @@ const UrologyPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={data.filters.categories}
-        facilities={data.filters.facilities}
-        treatments={data.filters.treatments}
+        categories={data.filters?.categories || []}
+        facilities={data.filters?.facilities || []}
+        treatments={data.filters?.treatments || []}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}

@@ -10,6 +10,7 @@ import {
   Users,
   Star
 } from 'lucide-react';
+import apiService from '../../lib/apiService';
 
 const HospitalSpecialities = ({ hospital }) => {
   // Map specialties to icons
@@ -181,15 +182,22 @@ const HospitalSpecialities = ({ hospital }) => {
     return descriptionMap[specialty] || "Specialized medical care and treatment services";
   };
 
-  // Create specialties from hospital specialties
-  const specialities = hospital?.specialties?.map(specialty => ({
-    icon: getSpecialtyIcon(specialty),
-    name: specialty,
-    description: getSpecialtyDescription(specialty),
-    doctors: Math.floor(Math.random() * 15) + 5, // Random number for demo
-    rating: (4.5 + Math.random() * 0.5).toFixed(1), // Random rating between 4.5-5.0
-    services: [specialty, "Consultation", "Treatment", "Follow-up"]
-  })) || [];
+  // Create specialties from backend schema: Array<{ name, rating, doctorsCount, description, keyServices }>
+  const specialities = (hospital?.specialties || []).map((spec) => {
+    const name = typeof spec === 'string' ? spec : spec?.name;
+    const rating = typeof spec === 'object' ? spec?.rating : undefined;
+    const doctorsCount = typeof spec === 'object' ? spec?.doctorsCount : undefined;
+    const description = typeof spec === 'object' ? (spec?.description || getSpecialtyDescription(name)) : getSpecialtyDescription(name);
+    const keyServices = typeof spec === 'object' ? (spec?.keyServices || []) : [];
+    return {
+      icon: getSpecialtyIcon(name),
+      name: name,
+      description,
+      doctors: doctorsCount,
+      rating: rating,
+      services: keyServices
+    };
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -212,11 +220,8 @@ const HospitalSpecialities = ({ hospital }) => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">{specialty.name}</h3>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                    <span>{specialty.rating}</span>
-                    <span>•</span>
                     <Users className="w-4 h-4" />
-                    <span>{specialty.doctors} Doctors</span>
+                    <span>{specialty.doctors ?? 'N/A'} Doctors</span>
                   </div>
                 </div>
               </div>
@@ -230,12 +235,12 @@ const HospitalSpecialities = ({ hospital }) => {
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-800 mb-2">Key Services:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {specialty.services.map((service, serviceIndex) => (
+                  {(specialty.services || []).map((service, serviceIndex) => (
                     <span
                       key={serviceIndex}
                       className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
                     >
-                      {service}
+                      {typeof service === 'object' ? service.name || service : service}
                     </span>
                   ))}
                 </div>
@@ -260,7 +265,7 @@ const HospitalSpecialities = ({ hospital }) => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-3xl font-bold mb-1">{hospital?.doctorsCount || "45"}</div>
+            <div className="text-3xl font-bold mb-1">{hospital?.doctorsCount || hospital?.overview?.doctors || "45"}</div>
             <div className="text-green-100 text-sm">Specialist Doctors</div>
           </div>
           <div className="text-center">

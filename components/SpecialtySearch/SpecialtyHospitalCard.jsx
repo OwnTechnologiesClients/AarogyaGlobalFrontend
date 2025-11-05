@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import apiService from '../../lib/apiService';
 import {
     Star,
     ArrowRight,
@@ -20,11 +21,17 @@ const SpecialtyHospitalCard = ({ hospital }) => {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div className="md:w-1/2 relative">
                 <div className='h-full p-2 rounded-lg'>
-                    <img
-                        src={hospital.image}
-                        alt={`${hospital.name} image`}
-                        className="w-full rounded-xl object-cover md:h-full"
-                    />
+                    {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                        <img
+                            src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                            alt={`${hospital.name} image`}
+                            className="w-full rounded-xl object-cover md:h-full"
+                        />
+                    ) : (
+                        <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-xl">
+                            <span className="text-gray-400 text-sm">No image</span>
+                        </div>
+                    )}
                 </div>
             </div>
             <div className="p-6 flex flex-col justify-between md:w-1/2">
@@ -34,7 +41,12 @@ const SpecialtyHospitalCard = ({ hospital }) => {
                     </span>
                     <div className="flex items-center text-gray-600 text-base">
                         <Star className="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" />
-                        <span>{hospital.rating}</span>
+                        <span>
+                          {typeof hospital.rating === 'object' 
+                            ? hospital.rating?.userScore || hospital.rating?.googleRating || 'N/A'
+                            : hospital.rating || 'N/A'
+                          }
+                        </span>
                     </div>
                 </div>
 
@@ -53,7 +65,7 @@ const SpecialtyHospitalCard = ({ hospital }) => {
                                 key={index}
                                 className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
                             >
-                                {specialty}
+                                {typeof specialty === 'object' ? specialty.name : specialty}
                             </span>
                         ))}
                     </div>
@@ -87,7 +99,7 @@ const SpecialtyHospitalCard = ({ hospital }) => {
                     </button>
                     <p className="text-gray-600 text-xs md:text-sm flex items-center gap-2">
                         <Stethoscope className="w-6 h-6 text-gray-500" />
-                        <span>{hospital.doctorsCount} Doctors</span>
+                        <span>{hospital.doctorsCount || hospital.overview?.doctors || 'N/A'} Doctors</span>
                     </p>
                 </div>
             </div>

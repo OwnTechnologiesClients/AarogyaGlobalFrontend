@@ -13,6 +13,7 @@ import {
   Filter,
   Search
 } from 'lucide-react';
+import apiService from '../../lib/apiService';
 import dataService from '@/lib/dataService';
 
 const HospitalDoctors = ({ hospital }) => {
@@ -133,7 +134,7 @@ const HospitalDoctors = ({ hospital }) => {
                 {/* Doctor Image */}
                 <div className="relative h-64 rounded-t-xl overflow-hidden">
                   <img
-                    src={doctor.image}
+                    src={apiService.getImageUrl(doctor.image) || '/doctor.jpg'}
                     alt={doctor.name}
                     className="w-full h-full object-cover"
                   />
@@ -162,10 +163,15 @@ const HospitalDoctors = ({ hospital }) => {
                       <MapPin className="w-4 h-4 mr-2" />
                       <span className="text-sm">{doctor.location}</span>
                     </div>
-                    <div className="flex items-center text-gray-600">
-                      <Stethoscope className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{doctor.hospital}</span>
-                    </div>
+                    {(() => {
+                      const hospitalName = doctor?.customHospitalName || doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || doctor?.hospital || '';
+                      return hospitalName ? (
+                        <div className="flex items-center text-gray-600">
+                          <Stethoscope className="w-4 h-4 mr-2" />
+                          <span className="text-sm">{hospitalName}</span>
+                        </div>
+                      ) : null;
+                    })()}
                   </div>
 
                   {/* CTA */}

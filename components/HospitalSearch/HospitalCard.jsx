@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import PhoneInput from "../ui/PhoneInput";
 import { sendConsultationEmail, validateFormData } from "../../lib/emailService";
+import { submitEnquiryWithBoth, validateEnquiryData } from "../../lib/enquiryService";
 import { useRouter } from 'next/navigation';
+import apiService from '../../lib/apiService';
 
 import {
     Heart,
@@ -24,11 +26,17 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             {/* Hospital Image */}
             <div className="relative h-48 overflow-hidden">
-                <img
-                    src={hospital.image}
-                    alt={`${hospital.name} image`}
-                    className="w-full h-full object-cover"
-                />
+                {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                    <img
+                        src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                        alt={`${hospital.name} image`}
+                        className="w-full h-full object-cover"
+                    />
+                ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <span className="text-gray-400 text-sm">No image</span>
+                    </div>
+                )}
             </div>
 
             {/* Hospital Content */}
@@ -39,7 +47,12 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                     </span>
                     <div className="flex items-center text-gray-600 text-base">
                         <Star className="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" />
-                        <span className="font-semibold">{hospital.rating}</span>
+                        <span className="font-semibold">
+                            {typeof hospital.rating === 'object' 
+                                ? hospital.rating?.googleRating || hospital.rating?.userScore || 'N/A'
+                                : hospital.rating || 'N/A'
+                            }
+                        </span>
                     </div>
                 </div>
 
@@ -55,7 +68,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                     <div className="flex items-center text-gray-600 text-sm">
                         <Stethoscope className="w-4 h-4 mr-2 text-blue-500" />
                         <span className="font-medium mr-2">Doctors:</span>
-                        <span>{hospital.doctorsCount || 'N/A'}</span>
+                        <span>{hospital.doctorsCount || hospital.overview?.doctors || 'N/A'}</span>
                     </div>
 
                     {hospital.specialties && hospital.specialties.length > 0 && (
@@ -69,7 +82,7 @@ const HospitalCard = ({ hospital, onLike, onShare }) => {
                                             key={index}
                                             className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
                                         >
-                                            {specialty}
+                                            {typeof specialty === 'object' ? specialty.name : specialty}
                                         </span>
                                     ))}
                                     {hospital.specialties.length > 3 && (
@@ -142,7 +155,8 @@ const HospitalMain = ({ hospitals }) => {
     };
 
     const handleShare = (hospitalName) => {
-        alert(`Sharing ${hospitalName}!`);
+        // Share functionality can be implemented here
+        console.log(`Sharing ${hospitalName}!`);
     };
 
     // Helper function to create unique keys
@@ -218,7 +232,7 @@ const HospitalMain = ({ hospitals }) => {
                                                     <button
                                                         onClick={async () => {
                                                             // Validate form data
-                                                            const validation = validateFormData({ 
+                                                            const validation = validateEnquiryData({ 
                                                                 name: callbackName,
                                                                 phone: callbackPhone.phone, 
                                                                 email: callbackEmail 
@@ -232,20 +246,35 @@ const HospitalMain = ({ hospitals }) => {
                                                             setCallbackErrors({});
                                                             
                                                             try {
-                                                                await sendConsultationEmail({
-                                                                    name: callbackName,
-                                                                    email: callbackEmail,
-                                                                    phone: callbackPhone.phone,
-                                                                    countryCode: callbackPhone.countryCode,
-                                                                    specialty: '',
-                                                                    hospital: '',
-                                                                    message: ''
-                                                                }, 'Hospitals – Callback');
-                                                                if (typeof window !== 'undefined') {
+                                                                // Use hybrid approach: send email via EmailJS AND save to backend
+                                                                const result = await submitEnquiryWithBoth(
+                                                                    sendConsultationEmail,
+                                                                    {
+                                                                        name: callbackName,
+                                                                        email: callbackEmail,
+                                                                        phone: callbackPhone.phone,
+                                                                        countryCode: callbackPhone.countryCode,
+                                                                        specialty: '',
+                                                                        hospital: '',
+                                                                        message: ''
+                                                                    },
+                                                                    {
+                                                                        name: callbackName,
+                                                                        email: callbackEmail,
+                                                                        phone: callbackPhone.phone,
+                                                                        countryCode: callbackPhone.countryCode,
+                                                                        subject: 'Hospital Search Callback Request'
+                                                                    },
+                                                                    'Hospitals – Callback',
+                                                                    'Hospital Search'
+                                                                );
+
+                                                                // Redirect on success
+                                                                if (result.success) {
                                                                     window.location.href = '/thank-you';
                                                                 }
                                                             } catch (e) {
-                                                                alert('Failed to submit. Please try again.');
+                                                                console.error('Failed to submit hospital contact form', e);
                                                             }
                                                         }}
                                                         className="bg-[#04CE78] hover:bg-green-600 text-white py-3 px-4 font-bold text-sm rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"

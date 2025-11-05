@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import TreatmentDetailsClient from './TreatmentDetailsClient';
 
 // Import all treatment data
-import dataService from '@/lib/dataService';
+import apiService from '@/lib/apiService';
 
 // Cache for static params to prevent hydration mismatches
 let cachedParams = null;
@@ -37,101 +37,18 @@ export async function generateStaticParams() {
 
     console.log('generateStaticParams: Cache expired or missing, regenerating params');
 
-    // Get all specialties
-    const specialties = dataService.getAllSpecialties();
-    console.log('generateStaticParams: All specialties:', specialties.map(s => ({ slug: s.slug, name: s.name })));
     const params = [];
 
-    // Add specialty slugs first
-    for (const specialty of specialties) {
-      if (specialty && specialty.slug) {
-        params.push({ treatment: specialty.slug });
+    // Pull all treatment IDs from backend and include them
+    try {
+      const res = await apiService.getTreatments({ page: 1, limit: 1000 });
+      const all = Array.isArray(res?.data) ? res.data : [];
+      const ids = all.map(t => t?.id).filter(Boolean);
+      for (const id of ids) {
+        params.push({ treatment: id });
       }
-    }
-
-    // Add individual treatment IDs
-    for (const specialty of specialties) {
-      if (specialty && specialty.slug) {
-        const specialtyData = dataService.getSpecialtyBySlug(specialty.slug);
-        console.log(`generateStaticParams: Processing specialty ${specialty.slug}, found ${specialtyData?.treatments?.length || 0} treatments`);
-        if (specialtyData && specialtyData.treatments && Array.isArray(specialtyData.treatments)) {
-          console.log(`generateStaticParams: Treatments for ${specialty.slug}:`, specialtyData.treatments.map(t => t.id));
-          for (const treatment of specialtyData.treatments) {
-            if (treatment && treatment.id) {
-              console.log(`generateStaticParams: Adding treatment ID: ${treatment.id}`);
-              params.push({ treatment: treatment.id });
-            }
-          }
-        } else {
-          console.log(`generateStaticParams: No treatments found for ${specialty.slug}`);
-        }
-
-        // Additional debugging for oncology specifically
-        if (specialty.slug === 'oncology') {
-          console.log(`generateStaticParams: Oncology specialty data:`, JSON.stringify(specialtyData, null, 2));
-          // Explicit check for ONC0006
-          const onc0006 = specialtyData?.treatments?.find(t => t.id === 'ONC0006');
-          console.log(`generateStaticParams: ONC0006 found in oncology:`, !!onc0006);
-          if (onc0006) {
-            console.log(`generateStaticParams: ONC0006 details:`, onc0006);
-          }
-          // Explicit check for ONC0007
-          const onc0007 = specialtyData?.treatments?.find(t => t.id === 'ONC0007');
-          console.log(`generateStaticParams: ONC0007 found in oncology:`, !!onc0007);
-          if (onc0007) {
-            console.log(`generateStaticParams: ONC0007 details:`, onc0007);
-          }
-          // Explicit check for ONC0008
-          const onc0008 = specialtyData?.treatments?.find(t => t.id === 'ONC0008');
-          console.log(`generateStaticParams: ONC0008 found in oncology:`, !!onc0008);
-          if (onc0008) {
-            console.log(`generateStaticParams: ONC0008 details:`, onc0008);
-          }
-          // Explicit check for ONC0009
-          const onc0009 = specialtyData?.treatments?.find(t => t.id === 'ONC0009');
-          console.log(`generateStaticParams: ONC0009 found in oncology:`, !!onc0009);
-          if (onc0009) {
-            console.log(`generateStaticParams: ONC0009 details:`, onc0009);
-          }
-          // Explicit check for ONC0010
-          const onc0010 = specialtyData?.treatments?.find(t => t.id === 'ONC0010');
-          console.log(`generateStaticParams: ONC0010 found in oncology:`, !!onc0010);
-          if (onc0010) {
-            console.log(`generateStaticParams: ONC0010 details:`, onc0010);
-          }
-          // Explicit check for ONC0011
-          const onc0011 = specialtyData?.treatments?.find(t => t.id === 'ONC0011');
-          console.log(`generateStaticParams: ONC0011 found in oncology:`, !!onc0011);
-          if (onc0011) {
-            console.log(`generateStaticParams: ONC0011 details:`, onc0011);
-          }
-          // Explicit check for ONC0012
-          const onc0012 = specialtyData?.treatments?.find(t => t.id === 'ONC0012');
-          console.log(`generateStaticParams: ONC0012 found in oncology:`, !!onc0012);
-          if (onc0012) {
-            console.log(`generateStaticParams: ONC0012 details:`, onc0012);
-          }
-          // Explicit check for ONC0013
-          const onc0013 = specialtyData?.treatments?.find(t => t.id === 'ONC0013');
-          console.log(`generateStaticParams: ONC0013 found in oncology:`, !!onc0013);
-          if (onc0013) {
-            console.log(`generateStaticParams: ONC0013 details:`, onc0013);
-          }
-        }
-      }
-    }
-
-    // Explicit fallback for all oncology treatments to ensure they're included
-    const oncologyTreatments = ['ONC0001', 'ONC0002', 'ONC0003', 'ONC0004', 'ONC0005', 'ONC0006', 'ONC0007', 'ONC0008', 'ONC0009', 'ONC0010', 'ONC0011', 'ONC0012', 'ONC0013'];
-    console.log(`generateStaticParams: Checking oncology treatments:`, oncologyTreatments);
-
-    for (const treatmentId of oncologyTreatments) {
-      const hasTreatment = params.some(p => p.treatment === treatmentId);
-      console.log(`generateStaticParams: ${treatmentId} explicitly included:`, hasTreatment);
-      if (!hasTreatment) {
-        console.log(`generateStaticParams: Adding ${treatmentId} as fallback`);
-        params.push({ treatment: treatmentId });
-      }
+    } catch (e) {
+      console.warn('generateStaticParams: Failed to load treatments from API');
     }
 
     // Sort params to ensure consistent ordering
@@ -145,6 +62,7 @@ export async function generateStaticParams() {
     return params;
   } catch (error) {
     console.error('generateStaticParams: Error generating params:', error);
+    // Return empty array when generation fails; no static fallbacks
     return [];
   }
 }
@@ -165,15 +83,90 @@ const TreatmentDetailsPage = async ({ params }) => {
 
     let treatmentData = null;
 
-    // Check if it's a treatment ID (starts with specialty prefix) or specialty slug
+    // Support only concrete treatment IDs sourced from the backend to avoid static defaults
     if (decodedTreatmentParam.match(/^[A-Z]{3,4}\d+$/)) {
-      // It's a treatment ID (e.g., ORT0001, CARD0001, etc.) - get individual treatment data
-      console.log(`TreatmentDetailsPage: Getting individual treatment data for ID: ${decodedTreatmentParam}`);
-      treatmentData = dataService.getIndividualTreatmentData(decodedTreatmentParam);
+      console.log(`TreatmentDetailsPage: Fetching treatment from API for ID: ${decodedTreatmentParam}`);
+      const res = await apiService.getTreatmentById(decodedTreatmentParam);
+      // Support both { success, data } and direct object responses
+      const t = (res && res.data) ? res.data : res;
+      if (t && (t.id || t.name)) {
+        // Map backend payload to UI structure expected by the client component
+        treatmentData = {
+          treatment: {
+            name: t.name,
+            title: `${t.name} - ${t.category} Treatment`,
+            slug: t.id,
+            description: t.description || `Comprehensive ${t.name} treatment in ${t.category}`,
+            image: apiService.getImageUrl(t.image) || null,
+            duration: t.duration || 'Varies',
+            recovery: t.recovery || 'Varies',
+            overview: {
+              description: t.description || `Comprehensive ${t.name} treatment in ${t.category}`,
+              cta: {
+                bookConsultation: 'Book a free consultation',
+                secondOpinion: 'Get a second opinion',
+                callBack: 'Request a call back'
+              }
+            },
+            bestHospitals: {
+              title: `Best hospitals for ${t.name}`,
+              description: t.hospitalSelectionHelp || t.hospitalSelectionCriteria || `What helps to find the best hospital for ${t.name}?`,
+              hospitals: Array.isArray(t.topHospitals) ? t.topHospitals : [],
+              selectionCriteria: Array.isArray(t.hospitalSelectionList) ? t.hospitalSelectionList : (t.hospitalSelectionHelp || t.hospitalSelectionCriteria || '')
+            },
+            topDoctors: {
+              title: `Top doctors for ${t.name}`,
+              description: t.doctorSelectionHelp || t.doctorSelectionCriteria || `How to select the best doctor for ${t.name}?`,
+              doctors: Array.isArray(t.topDoctors) ? t.topDoctors : [],
+              selectionCriteria: Array.isArray(t.doctorSelectionList) ? t.doctorSelectionList : (t.doctorSelectionHelp || t.doctorSelectionCriteria || '')
+            },
+            diagnosticTools: Array.isArray(t.diagnosticTools) ? t.diagnosticTools : [],
+            advancedTreatments: Array.isArray(t.advancedTreatmentOptions) ? t.advancedTreatmentOptions : [],
+            advantages: Array.isArray(t.advantages) ? t.advantages : [],
+            howWeHelp: {
+              title: 'How We Help You',
+              services: [
+                { icon: 'phone', title: '24/7 Support', description: 'Round-the-clock assistance' },
+                { icon: 'user-check', title: 'Expert Consultation', description: 'Specialist doctor consultation' },
+                { icon: 'stethoscope', title: 'Treatment Planning', description: 'Personalized care plans' },
+                { icon: 'plane', title: 'Travel Arrangements', description: 'International patient support' }
+              ]
+            },
+            treatmentPackages: {
+              title: `${t.name} Treatment Packages`,
+              packages: [
+                {
+                  id: 1,
+                  name: t.name,
+                  price: t.detailedCost || t.costConsiderations || 'Contact for pricing',
+                  description: t.description,
+                  duration: t.duration,
+                  recovery: t.recovery,
+                  image: apiService.getImageUrl(t.image) || null
+                }
+              ]
+            },
+            faq: Array.isArray(t.faq) ? t.faq : []
+          },
+          specialty: {
+            name: t.category || 'Medical Treatment',
+            slug: t.category?.toLowerCase().replace(/\s+/g, '-') || 'treatment',
+            description: t.description || '',
+            icon: 'lucide/Stethoscope',
+            color: '#A3DAC2'
+          }
+        };
+      }
     } else {
-      // It's a specialty slug - get specialty treatment data
-      console.log(`TreatmentDetailsPage: Getting specialty treatment data for slug: ${decodedTreatmentParam}`);
-      treatmentData = dataService.getTreatmentData(decodedTreatmentParam);
+      // Disable static specialty fallback to prevent default hardcoded content
+      console.warn('TreatmentDetailsPage: Non-ID slug provided; redirecting to notFound to avoid static defaults');
+      notFound();
+    }
+
+    // Hard guard: if API mapping failed, do not render with undefined data
+    if (!treatmentData || !treatmentData.treatment || !treatmentData.treatment.title) {
+      console.warn('TreatmentDetailsPage: Missing mapped treatment data; invoking notFound');
+      notFound();
     }
 
     if (!treatmentData) {

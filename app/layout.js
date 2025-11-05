@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import LayoutContent from "@/components/layout/LayoutContent";
+import { AuthProvider } from "@/context/AuthContext";
 import Script from "next/script";
 
 const poppins = Poppins({
@@ -48,7 +49,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WFPVQDD2');`}
         </Script>
-        <LayoutContent>{children}</LayoutContent>
+        <AuthProvider>
+          <LayoutContent>{children}</LayoutContent>
+        </AuthProvider>
       </body>
     </html>
   );

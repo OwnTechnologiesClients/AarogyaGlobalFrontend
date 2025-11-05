@@ -11,30 +11,39 @@ const SpecialtyCard = ({ doctor }) => {
         <p className="text-sm text-gray-700">
           {doctor.specialty}
         </p>
-        <p className="text-sm text-gray-700 mt-1">
-          Consults at: <span className="font-medium">{doctor.hospital}</span>
-        </p>
+        {(() => {
+          const hospitalName = doctor?.customHospitalName || doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || (typeof doctor?.hospital === 'string' ? doctor.hospital : '');
+          return hospitalName ? (
+            <p className="text-sm text-gray-700 mt-1">
+              Consultant at <span className="font-medium">{hospitalName}</span>
+            </p>
+          ) : null;
+        })()}
       </div>
 
       {/* Rating */}
-      <div className="flex justify-center items-center gap-1">
-        {[...Array(Math.floor(parseFloat(doctor.rating)))].map((_, i) => (
-          <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-        ))}
-        <span className="text-gray-600 text-sm font-medium ml-1">{doctor.rating}</span>
-      </div>
+      {doctor.rating && parseFloat(doctor.rating) > 0 && (
+        <div className="flex justify-center items-center gap-1">
+          {[...Array(Math.floor(parseFloat(doctor.rating)))].map((_, i) => (
+            <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+          ))}
+          <span className="text-gray-600 text-sm font-medium ml-1">{doctor.rating}</span>
+        </div>
+      )}
 
 
 
 
       {/* Experience */}
-      <div className="bg-gray-50 rounded-md px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Clock3 className="w-5 h-5 text-teal-600" />
-          <span className="text-sm text-gray-700 font-medium">Experience</span>
+      {doctor.experience && (
+        <div className="bg-gray-50 rounded-md px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Clock3 className="w-5 h-5 text-teal-600" />
+            <span className="text-sm text-gray-700 font-medium">Experience</span>
+          </div>
+          <span className="text-lg font-semibold text-gray-900">{doctor.experience}</span>
         </div>
-        <span className="text-lg font-semibold text-gray-900">{doctor.experience}</span>
-      </div>
+      )}
     </div>
   );
 };

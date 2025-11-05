@@ -76,12 +76,12 @@ const HospitalFeatures = ({ hospital }) => {
     return descriptionMap[facility] || "Modern medical facility for patient care";
   };
 
-  // Create facilities from hospital data
-  const facilities = hospital?.facilities?.map(facility => ({
-    icon: getFacilityIcon(facility),
-    title: facility,
-    description: getFacilityDescription(facility)
-  })) || [];
+  // Backend fields: hospitalFeatures: [{ name, description }]
+  const featuresFromBackend = (hospital?.hospitalFeatures || []).map((f) => ({
+    icon: getFacilityIcon(f?.name),
+    title: f?.name,
+    description: f?.description || getFacilityDescription(f?.name)
+  }));
 
   // Default facilities if none available
   const defaultFacilities = [
@@ -107,54 +107,21 @@ const HospitalFeatures = ({ hospital }) => {
     }
   ];
 
-  const displayFacilities = facilities.length > 0 ? facilities : defaultFacilities;
+  const displayFacilities = featuresFromBackend.length > 0 ? featuresFromBackend : [];
 
-  // Dynamically create medical equipment from hospital treatments
-  const getMedicalEquipment = () => {
-    if (!hospital?.treatments) return [];
-
-    const equipment = [];
-    let isInEquipmentSection = false;
-
-    for (const treatment of hospital.treatments) {
-      if (treatment === "Advanced Medical Equipment:") {
-        isInEquipmentSection = true;
-        continue;
-      }
-
-      if (isInEquipmentSection) {
-        // Map equipment names to icons and descriptions
-        let icon = <Activity className="w-8 h-8 text-blue-600" />;
-        let description = "Advanced medical equipment for patient care";
-        let availability = "Available 24/7";
-
-        if (treatment.toLowerCase().includes("ecmo")) {
-          icon = <Heart className="w-8 h-8 text-red-600" />;
-          description = "Extracorporeal Membrane Oxygenation for critical care";
-          availability = "Emergency & ICU";
-        } else if (treatment.toLowerCase().includes("mri")) {
-          icon = <Activity className="w-8 h-8 text-blue-600" />;
-          description = "3 Tesla MRI for detailed imaging";
-          availability = "Available 24/7";
-        } else if (treatment.toLowerCase().includes("cardiac") || treatment.toLowerCase().includes("cath lab")) {
-          icon = <Heart className="w-8 h-8 text-red-600" />;
-          description = "State-of-the-art cardiac catheterization laboratory";
-          availability = "Emergency & Scheduled";
-        }
-
-        equipment.push({
-          icon,
-          name: treatment,
-          description,
-          availability
-        });
-      }
-    }
-
-    return equipment;
-  };
-
-  const medicalEquipment = getMedicalEquipment();
+  // Advanced medical equipment from backend: advancedMedicalEquipment: [{ name, description }]
+  const medicalEquipment = (hospital?.advancedMedicalEquipment || []).map((e) => {
+    const lower = (e?.name || '').toLowerCase();
+    let icon = <Activity className="w-8 h-8 text-blue-600" />;
+    if (lower.includes('mri')) icon = <Activity className="w-8 h-8 text-blue-600" />;
+    if (lower.includes('ecmo') || lower.includes('cardiac') || lower.includes('cath')) icon = <Heart className="w-8 h-8 text-red-600" />;
+    return {
+      icon,
+      name: e?.name,
+      description: e?.description || "Advanced medical equipment for patient care",
+      availability: "Available 24/7"
+    };
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -167,65 +134,71 @@ const HospitalFeatures = ({ hospital }) => {
       </div>
 
       {/* General Facilities */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Available Facilities</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayFacilities.map((facility, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                {facility.icon}
-                <h4 className="font-semibold text-gray-800">{facility.title}</h4>
+      {displayFacilities.length > 0 && (
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Available Facilities</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {displayFacilities.map((facility, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  {facility.icon}
+                  <h4 className="font-semibold text-gray-800">{facility.title}</h4>
+                </div>
+                <p className="text-gray-600 text-sm">{facility.description}</p>
               </div>
-              <p className="text-gray-600 text-sm">{facility.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Medical Equipment */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Advanced Medical Equipment</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {medicalEquipment.map((equipment, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  {equipment.icon}
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-bold text-gray-800 mb-2">{equipment.name}</h4>
-                  <p className="text-gray-600 mb-3">{equipment.description}</p>
-                  <div className="inline-flex items-center px-3 py-1 bg-[#04CE78] bg-opacity-10 text-[#04CE78] rounded-full text-sm font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    {equipment.availability}
+      {medicalEquipment.length > 0 && (
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Advanced Medical Equipment</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {medicalEquipment.map((equipment, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-gray-50 rounded-xl">
+                    {equipment.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">{equipment.name}</h4>
+                    <p className="text-gray-600 mb-3">{equipment.description}</p>
+                    <div className="inline-flex items-center px-3 py-1 bg-[#04CE78] bg-opacity-10 text-[#04CE78] rounded-full text-sm font-medium">
+                      <CheckCircle className="w-4 h-4 mr-2" />
+                      {equipment.availability}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
 
 
       {/* Certifications & Accreditations */}
-      <CertificateSwiper
-        certificates={hospital?.accreditation?.map(acc => ({
-          name: `${acc} Accreditation`,
-          logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
-            acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
-              acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
-                acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
-          description: acc === 'JCI' ? 'Joint Commission International' :
-            acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
-              acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
-                acc === 'CAP' ? 'College of American Pathologists' : acc
-        })) || []}
-        variant="default"
-        title="Certifications & Accreditations"
-        showNavigation={true}
-        className="mb-12"
-      />
+      {hospital?.accreditation && hospital.accreditation.length > 0 && (
+        <CertificateSwiper
+          certificates={hospital.accreditation.map(acc => ({
+            name: `${acc} Accreditation`,
+            logo: acc === 'JCI' ? '/CertificatesImg/bbb.png' :
+              acc === 'NABH' ? '/CertificatesImg/NABH.jpeg' :
+                acc === 'NABL' ? '/CertificatesImg/NABL.jpeg' :
+                  acc === 'CAP' ? '/CertificatesImg/CAP.jpeg' : '/CertificatesImg/NABH.jpeg',
+            description: acc === 'JCI' ? 'Joint Commission International' :
+              acc === 'NABH' ? 'National Accreditation Board for Hospitals' :
+                acc === 'NABL' ? 'National Accreditation Board for Testing and Calibration Laboratories' :
+                  acc === 'CAP' ? 'College of American Pathologists' : acc
+          }))}
+          variant="default"
+          title="Certifications & Accreditations"
+          showNavigation={true}
+          className="mb-12"
+        />
+      )}
 
       {/* Special Features */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">

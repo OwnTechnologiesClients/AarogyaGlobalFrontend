@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getPageHeaderData } from "@/utils/navigationUtils";
 import PageHeader from "@/components/layout/PageHeader";
 import SpecialtySearchForm from "@/components/SpecialtySearch/SpecialtySearchForm";
 import SpecialtyResults from "@/components/SpecialtySearch/SpecialtyResults";
 import TrustedBy from "@/components/home/TrustedBy";
 import dataService from "@/lib/dataService";
+import apiService from "@/lib/apiService";
 
 const OrthopaedicsPage = () => {
   const { title, routes } = getPageHeaderData('/specialties/orthopaedics');
@@ -23,7 +24,24 @@ const OrthopaedicsPage = () => {
 
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [filteredHospitals, setFilteredHospitals] = useState([]);
-  const [filteredTreatments, setFilteredTreatments] = useState(data?.treatments || []);
+  const [filteredTreatments, setFilteredTreatments] = useState([]);
+
+  // Load treatments from backend by category (DB uses category)
+  useEffect(() => {
+    let isMounted = true;
+    (async () => {
+      try {
+        const res = await apiService.getTreatments({ category: "Orthopaedics" });
+        const list = Array.isArray(res?.data) ? res.data : [];
+        // Filter to only show active treatments
+        const activeList = list.filter(treatment => treatment.isActive !== false);
+        if (isMounted) setFilteredTreatments(activeList);
+      } catch (e) {
+        if (isMounted) setFilteredTreatments([]);
+      }
+    })();
+    return () => { isMounted = false; };
+  }, []);
 
   // Handle case when data is not available
   if (!data) {
@@ -75,7 +93,7 @@ const OrthopaedicsPage = () => {
       facility: "",
       location: "",
     });
-    setFilteredTreatments(data.treatments || []);
+    setFilteredTreatments([]);
   };
 
   return (
@@ -83,9 +101,9 @@ const OrthopaedicsPage = () => {
       <PageHeader title={title} routes={routes} />
 
       <SpecialtySearchForm
-        categories={data.filters.categories}
-        facilities={data.filters.facilities}
-        treatments={data.filters.treatments}
+        categories={data.filters?.categories || []}
+        facilities={data.filters?.facilities || []}
+        treatments={data.filters?.treatments || []}
         searchFilters={searchFilters}
         setSearchFilters={setSearchFilters}
         activeCategory={activeCategory}

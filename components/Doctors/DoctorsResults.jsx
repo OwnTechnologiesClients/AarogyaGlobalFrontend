@@ -4,45 +4,35 @@ import DoctorCard from '../SpecialtySearch/DoctorCard';
 import { ArrowRight, Users, Star, MapPin } from 'lucide-react';
 import PhoneInput from '../ui/PhoneInput';
 import { sendConsultationEmail, validateFormData } from '../../lib/emailService';
+import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
 
-const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+const DoctorsResults = ({ doctors = [], totalDoctors, isLoading, currentPage = 1, totalPages = 1, onPageChange }) => {
   const [callbackPhone, setCallbackPhone] = useState({ countryCode: "+91", phone: "" });
   const [callbackEmail, setCallbackEmail] = useState("");
   const [callbackErrors, setCallbackErrors] = useState({});
   const cardsPerPage = 6;
 
-  const totalPages = Math.ceil(doctors.length / cardsPerPage);
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = doctors.slice(indexOfFirstCard, indexOfLastCard);
-
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof onPageChange === 'function') {
+      onPageChange(pageNumber);
+    }
   };
 
-  // Reset to first page when doctors change
-  React.useEffect(() => {
-    setCurrentPage(1);
-  }, [doctors]);
+  // No local pagination state; server controls page via props
 
-  if (isLoading) {
-    return (
-      <div className="mt-8">
-        <div className="gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 bg-white rounded-lg border border-black-100 shadow-md mx-2 sm:mx-4 md:mx-8 lg:mx-10 my-3 sm:my-4 md:my-5">
-          <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="text-gray-500 text-lg mt-4">Loading doctors...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // Keep existing content mounted and show an overlay spinner instead of replacing content
 
   return (
     <div className="mt-8">
-      <section className="gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 bg-white rounded-lg border border-black-100 shadow-md mx-2 sm:mx-4 md:mx-8 lg:mx-10 my-3 sm:my-4 md:my-5">
+      <section className="relative gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 bg-white rounded-lg border border-black-100 shadow-md mx-2 sm:mx-4 md:mx-8 lg:mx-10 my-3 sm:my-4 md:my-5">
+        {isLoading && (
+          <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] flex items-center justify-center rounded-lg z-10">
+            <div className="flex flex-col items-center py-8">
+              <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600"></div>
+              <p className="text-gray-500 text-sm mt-3">Loading...</p>
+            </div>
+          </div>
+        )}
         <div className="max-w-7xl mx-auto">
 
           {/* Results Header */}
@@ -53,7 +43,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                   Doctor Search Results
                 </h2>
                 <p className="text-gray-600">
-                  Found {doctors.length} doctors out of {totalDoctors} total doctors
+                  Showing {doctors.length} of {totalDoctors} doctors
                 </p>
               </div>
 
@@ -95,7 +85,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
             <>
               {/* Results Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                {currentCards.map((doctor, index) => (
+                {doctors.map((doctor, index) => (
                   <DoctorCard key={`doctor-${doctor.id}-${index}`} doctor={doctor} />
                 ))}
               </div>
@@ -177,7 +167,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
               {/* Page Info */}
               {totalPages > 1 && (
                 <div className="text-center mt-4 text-sm text-gray-500">
-                  Page {currentPage} of {totalPages} • Showing {indexOfFirstCard + 1}-{Math.min(indexOfLastCard, doctors.length)} of {doctors.length} doctors
+                  Page {currentPage} of {totalPages}
                 </div>
               )}
             </>
@@ -224,7 +214,7 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
               <button
                 onClick={async () => {
                   // Validate form data
-                  const validation = validateFormData({ 
+                  const validation = validateEnquiryData({ 
                     phone: callbackPhone.phone, 
                     email: callbackEmail 
                   }, ['phone', 'email']);
@@ -237,20 +227,35 @@ const DoctorsResults = ({ doctors = [], totalDoctors, isLoading }) => {
                   setCallbackErrors({});
                   
                   try {
-                    await sendConsultationEmail({ 
-                      name: '', 
-                      email: callbackEmail, 
-                      phone: callbackPhone.phone, 
-                      countryCode: callbackPhone.countryCode, 
-                      specialty: '', 
-                      hospital: '', 
-                      message: '' 
-                    }, 'Doctors – Callback');
-                    if (typeof window !== 'undefined') {
+                    // Use hybrid approach: send email via EmailJS AND save to backend
+                    const result = await submitEnquiryWithBoth(
+                      sendConsultationEmail,
+                      { 
+                        name: '', 
+                        email: callbackEmail, 
+                        phone: callbackPhone.phone, 
+                        countryCode: callbackPhone.countryCode, 
+                        specialty: '', 
+                        hospital: '', 
+                        message: '' 
+                      },
+                      {
+                        name: '',
+                        email: callbackEmail,
+                        phone: callbackPhone.phone,
+                        countryCode: callbackPhone.countryCode,
+                        subject: 'Doctor Callback Request'
+                      },
+                      'Doctors – Callback',
+                      'Doctors Page'
+                    );
+
+                    // Redirect on success
+                    if (result.success) {
                       window.location.href = '/thank-you';
                     }
                   } catch (e) {
-                    alert('Failed to submit. Please try again.');
+                    console.error('Failed to submit doctor callback form', e);
                   }
                 }}
                 className="flex-1 bg-[#04CE78] hover:bg-green-600 text-white py-4 px-4 font-bold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 hover:shadow-lg"

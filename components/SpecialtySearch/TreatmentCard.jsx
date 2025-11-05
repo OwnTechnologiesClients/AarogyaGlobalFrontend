@@ -47,7 +47,19 @@ const TreatmentCard = ({ treatment }) => {
     const getSimplifiedCost = (costString) => {
         if (!costString) return 'Contact for pricing';
 
-        // Extract just the main cost range from the long text
+        // First, try to extract dollar range (e.g., $1,800–$4,800 or $1,800-$4,800)
+        const dollarMatch = costString.match(/\$[\d,]+\s*[–-]\s*\$[\d,]+/);
+        if (dollarMatch) {
+            return dollarMatch[0].replace(/,/g, ','); // Keep as is
+        }
+
+        // Try to extract a single dollar range with tilde (e.g., ~$1,800–$4,800)
+        const tildeMatch = costString.match(/~?\$[\d,]+\s*[–-]\s*\$[\d,]+/);
+        if (tildeMatch) {
+            return tildeMatch[0].replace('~', ''); // Remove tilde
+        }
+
+        // Extract just the main cost range from the long text (rupee format)
         const costMatch = costString.match(/₹(\d+\.?\d*)\s*–\s*(\d+\.?\d*)\s*lakh/);
         if (costMatch) {
             const min = costMatch[1];
@@ -95,30 +107,36 @@ const TreatmentCard = ({ treatment }) => {
 
                 {/* Treatment Details */}
                 <div className="space-y-3 mb-6">
-                    <div className="flex items-center text-gray-600 text-sm">
-                        <Clock className="w-4 h-4 mr-2 text-blue-500" />
-                        <span className="font-medium mr-2">Duration:</span>
-                        <span className="truncate max-w-[200px]" title={treatment.duration}>
-                            {treatment.duration.length > 50 ? `${treatment.duration.substring(0, 50)}...` : treatment.duration}
-                        </span>
-                    </div>
+                    {treatment.duration && (
+                        <div className="flex items-center text-gray-600 text-sm">
+                            <Clock className="w-4 h-4 mr-2 text-blue-500" />
+                            <span className="font-medium mr-2">Duration:</span>
+                            <span className="truncate max-w-[200px]" title={treatment.duration}>
+                                {treatment.duration.length > 50 ? `${treatment.duration.substring(0, 50)}...` : treatment.duration}
+                            </span>
+                        </div>
+                    )}
 
-                    <div className="flex items-center text-gray-600 text-sm">
-                        <Calendar className="w-4 h-4 mr-2 text-green-500" />
-                        <span className="font-medium mr-2">Recovery:</span>
-                        <span className="truncate max-w-[200px]" title={treatment.recovery}>
-                            {treatment.recovery.length > 50 ? `${treatment.recovery.substring(0, 50)}...` : treatment.recovery}
-                        </span>
-                    </div>
+                    {treatment.recovery && (
+                        <div className="flex items-center text-gray-600 text-sm">
+                            <Calendar className="w-4 h-4 mr-2 text-green-500" />
+                            <span className="font-medium mr-2">Recovery:</span>
+                            <span className="truncate max-w-[200px]" title={treatment.recovery}>
+                                {treatment.recovery.length > 50 ? `${treatment.recovery.substring(0, 50)}...` : treatment.recovery}
+                            </span>
+                        </div>
+                    )}
 
-                    <div className="flex items-center text-gray-600 text-sm">
-                        <DollarSign className="w-4 h-4 mr-2 text-red-500" />
-                        <span className="font-medium mr-2">Cost Range:</span>
-                        <span className="text-green-600 font-semibold text-sm">
-                            {treatment.costConsiderations ? getSimplifiedCost(treatment.costConsiderations) :
-                                treatment.price ? getSimplifiedCost(treatment.price) : 'Contact for pricing'}
-                        </span>
-                    </div>
+                    {(treatment.costConsiderations || treatment.price) && (
+                        <div className="flex items-center text-gray-600 text-sm">
+                            <DollarSign className="w-4 h-4 mr-2 text-red-500" />
+                            <span className="font-medium mr-2">Cost Range:</span>
+                            <span className="text-green-600 font-semibold text-sm">
+                                {treatment.costConsiderations ? getSimplifiedCost(treatment.costConsiderations) :
+                                    treatment.price ? getSimplifiedCost(treatment.price) : 'Contact for pricing'}
+                            </span>
+                        </div>
+                    )}
                 </div>
 
                 <div className="flex justify-center">

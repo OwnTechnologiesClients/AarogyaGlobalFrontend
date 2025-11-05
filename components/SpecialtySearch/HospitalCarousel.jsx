@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, MapPin, Star } from 'lucide-react';
+import apiService from '../../lib/apiService';
 
 const HospitalCarousel = ({ hospitals }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,14 +35,23 @@ const HospitalCarousel = ({ hospitals }) => {
                         }}
                     >
                         <div className="relative">
-                            <img
-                                src={hospital.image}
-                                alt={hospital.name}
-                                className="w-full h-48 object-cover"
-                            />
+                            {apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0]) ? (
+                                <img
+                                    src={apiService.getImageUrl(hospital.displayImage || hospital.gallery?.[0])}
+                                    alt={hospital.name}
+                                    className="w-full h-48 object-cover"
+                                />
+                            ) : (
+                                <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                                    <span className="text-gray-400 text-sm">No image</span>
+                                </div>
+                            )}
                             <div className="absolute top-2 left-2 bg-white px-2 py-1 rounded text-sm font-semibold text-green-600 flex items-center gap-1">
                                 <Star className="w-3 h-3 fill-current" />
-                                {hospital.rating}
+                                {typeof hospital.rating === 'object' 
+                                  ? hospital.rating?.userScore || hospital.rating?.googleRating || 'N/A'
+                                  : hospital.rating || 'N/A'
+                                }
                             </div>
                         </div>
                         <div className="p-4">
@@ -53,7 +63,7 @@ const HospitalCarousel = ({ hospitals }) => {
                                 <span className="truncate">{hospital.location}</span>
                             </div>
                             <div className="mt-2 text-xs text-gray-500">
-                                {hospital.doctorsCount} doctors • {hospital.specialties.slice(0, 2).join(', ')}
+                                {hospital.doctorsCount || hospital.overview?.doctors || 'N/A'} doctors • {hospital.specialties?.slice(0, 2).map(s => typeof s === 'object' ? s.name : s).join(', ') || 'N/A'}
                             </div>
                         </div>
                     </div>

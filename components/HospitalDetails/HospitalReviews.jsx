@@ -24,8 +24,12 @@ const HospitalReviews = ({ hospital }) => {
   ];
 
   // Get rating from hospital data
-  const hospitalRating = parseFloat(hospital?.rating || "4.5");
-  const totalReviews = hospital?.reviews?.[0]?.comment?.match(/\d+/)?.[0] || "1000";
+  const hospitalRating = parseFloat(
+    typeof hospital?.rating === 'object' 
+      ? (hospital.rating?.userScore || hospital.rating?.googleRating || '0')
+      : (hospital?.rating || '0')
+  );
+  const totalReviews = hospital?.reviews?.[0]?.comment?.match(/\d+/)?.[0] || '0';
 
   const overallRating = {
     average: hospitalRating,
@@ -39,78 +43,8 @@ const HospitalReviews = ({ hospital }) => {
     }
   };
 
-  const reviews = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face",
-      rating: 5,
-      date: "2024-01-15",
-      verified: true,
-      department: "Cardiology",
-      doctor: "Dr. Michael Chen",
-      title: "Excellent cardiac care",
-      review: "I had a heart procedure done here and the care was exceptional. Dr. Chen and his team were professional, caring, and explained everything clearly. The facilities are modern and clean. Highly recommend!",
-      helpful: 24,
-      images: ["https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=200&h=150&fit=crop"]
-    },
-    {
-      id: 2,
-      name: "Michael Rodriguez",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 4,
-      date: "2024-01-10",
-      verified: true,
-      department: "Emergency",
-      doctor: "Dr. Emily Thompson",
-      title: "Quick emergency service",
-      review: "Visited the emergency room with severe pain. The staff was quick to respond and the treatment was effective. Wait time was reasonable considering it was a busy night. Good experience overall.",
-      helpful: 18,
-      images: []
-    },
-    {
-      id: 3,
-      name: "Lisa Chen",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5,
-      date: "2024-01-08",
-      verified: true,
-      department: "Pediatrics",
-      doctor: "Dr. Sarah Wilson",
-      title: "Great with children",
-      review: "Brought my 5-year-old for a check-up. Dr. Wilson was amazing with kids and made the experience comfortable. The pediatric ward is colorful and child-friendly. Staff was very patient and kind.",
-      helpful: 31,
-      images: []
-    },
-    {
-      id: 4,
-      name: "Robert Kim",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 3,
-      date: "2024-01-05",
-      verified: false,
-      department: "Orthopedics",
-      doctor: "Dr. James Wilson",
-      title: "Average experience",
-      review: "Had knee surgery here. The surgery went well but the post-operative care could have been better. Nurses were sometimes hard to reach and communication could improve. Facilities are good though.",
-      helpful: 12,
-      images: []
-    },
-    {
-      id: 5,
-      name: "Amanda Davis",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
-      rating: 5,
-      date: "2024-01-03",
-      verified: true,
-      department: "Maternity",
-      doctor: "Dr. Lisa Rodriguez",
-      title: "Beautiful birth experience",
-      review: "Gave birth to my daughter here and it was wonderful. The maternity ward is excellent, staff was supportive throughout labor, and the rooms are comfortable. Dr. Rodriguez was fantastic!",
-      helpful: 45,
-      images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=150&fit=crop"]
-    }
-  ];
+  // No hardcoded reviews; rely on hospital.reviews if present
+  const reviews = Array.isArray(hospital?.reviews) ? hospital.reviews : [];
 
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (

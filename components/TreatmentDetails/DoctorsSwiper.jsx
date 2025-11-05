@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Star, MapPin, Award, Users, GraduationCap, Languages, BookOpen, Trophy, ExternalLink } from 'lucide-react';
+import apiService from '../../lib/apiService';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -123,16 +124,18 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                 {/* Header with Image and Basic Info */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-sm flex items-center justify-center flex-shrink-0">
-                    <img
-                      src={doctor.image}
-                      alt={doctor.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    <div className="hidden w-full h-full bg-gradient-to-br from-blue-500 to-blue-600 items-center justify-center text-white">
+                    {apiService.getImageUrl(doctor.image) ? (
+                      <img
+                        src={apiService.getImageUrl(doctor.image)}
+                        alt={doctor.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div className={`w-full h-full bg-gradient-to-br from-blue-500 to-blue-600 items-center justify-center text-white ${apiService.getImageUrl(doctor.image) ? 'hidden' : 'flex'}`}>
                       <Award className="w-6 h-6" />
                     </div>
                   </div>
@@ -174,12 +177,15 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                         <span className="text-gray-700">{doctor.successRate}</span>
                       </div>
                     )}
-                    {doctor.hospital && (
-                      <div className="flex items-center gap-2 text-xs">
-                        <MapPin className="w-3 h-3 text-purple-600" />
-                        <span className="text-gray-700 line-clamp-1">{doctor.hospital}</span>
-                      </div>
-                    )}
+                    {(() => {
+                      const hospitalName = doctor?.customHospitalName || doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || doctor?.hospital || '';
+                      return hospitalName ? (
+                        <div className="flex items-center gap-2 text-xs">
+                          <MapPin className="w-3 h-3 text-purple-600" />
+                          <span className="text-gray-700 line-clamp-1">{hospitalName}</span>
+                        </div>
+                      ) : null;
+                    })()}
                   </div>
 
                   {/* Education and Certifications */}
