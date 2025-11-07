@@ -62,7 +62,8 @@ const SupportReplies = ({ tickets, activeTicket, onTicketSelect, user, onTicketU
       const filename = attachment.path.split('/').pop();
       
       // Construct the download URL using the dedicated download endpoint
-      const downloadUrl = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/support/download/${filename}`;
+      const apiBase = process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_API_URL?.replace(/\/api$/, '') || 'https://backend.aarogyaglobal.com';
+      const downloadUrl = `${apiBase}/api/support/download/${filename}`;
       
       // Fetch the file
       const response = await fetch(downloadUrl, {
