@@ -5,67 +5,8 @@ import TreatmentDetailsClient from './TreatmentDetailsClient';
 // Import all treatment data
 import apiService from '@/lib/apiService';
 
-// Cache for static params to prevent hydration mismatches
-let cachedParams = null;
-let cacheTimestamp = 0;
-
-// Force cache refresh for development
-if (process.env.NODE_ENV === 'development') {
-  cachedParams = null;
-  cacheTimestamp = 0;
-}
-
-// Function to manually clear cache if needed
-export function clearStaticParamsCache() {
-  cachedParams = null;
-  cacheTimestamp = 0;
-  console.log('generateStaticParams: Cache manually cleared');
-}
-
-// Generate static params for all specialties and individual treatments
-// Updated to include ONC0013 - force recompilation
-export async function generateStaticParams() {
-  try {
-    // Return cached params if available and not expired
-    const now = Date.now();
-    const cacheExpiry = 5 * 60 * 1000; // 5 minutes cache expiry
-
-    if (cachedParams && (now - cacheTimestamp) < cacheExpiry) {
-      console.log('generateStaticParams: Using cached params');
-      return cachedParams;
-    }
-
-    console.log('generateStaticParams: Cache expired or missing, regenerating params');
-
-    const params = [];
-
-    // Pull all treatment IDs from backend and include them
-    try {
-      const res = await apiService.getTreatments({ page: 1, limit: 1000 });
-      const all = Array.isArray(res?.data) ? res.data : [];
-      const ids = all.map(t => t?.id).filter(Boolean);
-      for (const id of ids) {
-        params.push({ treatment: id });
-      }
-    } catch (e) {
-      console.warn('generateStaticParams: Failed to load treatments from API');
-    }
-
-    // Sort params to ensure consistent ordering
-    params.sort((a, b) => a.treatment.localeCompare(b.treatment));
-
-    // Cache the params with timestamp
-    cachedParams = params;
-    cacheTimestamp = Date.now();
-
-    console.log('generateStaticParams: Generated and cached params:', params);
-    return params;
-  } catch (error) {
-    console.error('generateStaticParams: Error generating params:', error);
-    // Return empty array when generation fails; no static fallbacks
-    return [];
-  }
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const TreatmentDetailsPage = async ({ params }) => {
   try {
