@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Phone, UserCheck, Stethoscope, Plane } from 'lucide-react';
-import { sendConsultationEmail, validateFormData } from '../../../../lib/emailService';
+import { sendConsultationEmail } from '../../../../lib/emailService';
 import { submitEnquiryWithBoth, validateEnquiryData } from '../../../../lib/enquiryService';
 import PhoneInput from '../../../../components/ui/PhoneInput';
 import TreatmentNavigation from '../../../../components/TreatmentDetails/TreatmentNavigation';
@@ -17,16 +17,122 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     const [contactPhone, setContactPhone] = useState({ countryCode: '+91', phone: '' });
     const [contactErrors, setContactErrors] = useState({});
 
-    // Normalize criteria lists coming from DB (array or delimited string)
     const toList = (value) => {
-        if (Array.isArray(value)) return value;
+        if (Array.isArray(value)) {
+            return value.filter(Boolean).map(item => (typeof item === 'string' ? item.trim() : item));
+        }
+
         if (typeof value === 'string') {
-            return value
+            const trimmed = value.trim();
+            if (!trimmed) return [];
+
+            if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
+                try {
+                    const parsed = JSON.parse(trimmed);
+                    if (Array.isArray(parsed)) {
+                        return parsed
+                            .filter(Boolean)
+                            .map(item => (typeof item === 'string' ? item.trim().replace(/^"+|"+$/g, '') : item));
+                    }
+                } catch {
+                    // Fall back to delimiter parsing
+                }
+            }
+
+            return trimmed
                 .split(/\r?\n|,|;|•|-\s+/)
-                .map(item => item.trim())
+                .map(item => item.replace(/^\[?"+|"+\]?$/g, '').trim())
                 .filter(Boolean);
         }
+
         return [];
+    };
+
+    const mergeUnique = (primary = [], secondary = []) => {
+        const combined = [...primary, ...secondary];
+        const seen = new Set();
+        return combined.filter(item => {
+            if (!item) return false;
+            const key = typeof item === 'string' ? item : JSON.stringify(item);
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    };
+
+    const hydrateDoctor = async (entry) => {
+        if (!entry) return null;
+
+        const base = typeof entry === 'string'
+            ? { id: entry }
+            : entry.doctor
+                ? { ...entry.doctor, ...entry }
+                : entry;
+
+        const doctorId = base?.id || (typeof base === 'string' ? base : null);
+        if (!doctorId) return null;
+
+        const needsFullRecord =
+            typeof entry === 'string' ||
+            !base.name ||
+            !base.languages ||
+            !base.degrees ||
+            !base.education ||
+            !base.professionalExperience ||
+            !base.awards ||
+            !base.publications;
+
+        let fullRecord = base;
+        if (needsFullRecord) {
+            const fetched = await dataService.getDoctorById(doctorId);
+            if (!fetched) return null;
+            fullRecord = fetched;
+        }
+
+        const normalized = typeof dataService.normalizeDoctor === 'function'
+            ? dataService.normalizeDoctor(fullRecord)
+            : fullRecord;
+
+        const experienceCandidate =
+            entry?.experience ||
+            entry?.yearsOfExperience ||
+            entry?.clinicalExperience ||
+            normalized.experience ||
+            normalized.totalExperience ||
+            normalized.yearsOfExperience ||
+            normalized.experienceYears ||
+            null;
+
+        const languages = mergeUnique(
+            Array.isArray(normalized.languages) ? normalized.languages : toList(normalized.languages),
+            toList(entry?.languages)
+        );
+
+        const publications = mergeUnique(
+            Array.isArray(normalized.publications) ? normalized.publications : toList(normalized.publications),
+            toList(entry?.publications || entry?.researchPapers)
+        );
+
+        const awards = mergeUnique(
+            Array.isArray(normalized.awards) ? normalized.awards : toList(normalized.awards),
+            toList(entry?.awards)
+        );
+
+        const researchSummary =
+            entry?.researchSummary ||
+            entry?.researchPapers ||
+            normalized.researchHighlights ||
+            normalized.researchWork ||
+            (publications.length ? `${publications.length}+ publications` : null);
+
+        return {
+            ...normalized,
+            experienceRaw: experienceCandidate,
+            languages,
+            publications,
+            awards,
+            researchPapers: researchSummary,
+        };
     };
 
     // Helper function to convert euros to rupees (approximate rate: 1 EUR = 90 INR)
@@ -104,7 +210,6 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
     }
 
     const { treatment } = treatmentData;
-    console.log('TreatmentDetailsClient: treatment object:', JSON.stringify(treatment, null, 2));
 
     // Handle case when treatment object is missing required properties
     if (!treatment) {
@@ -202,9 +307,36 @@ const TreatmentDetailsClient = ({ treatmentData }) => {
 
     // Fetch doctors for this treatment
     useEffect(() => {
-        if (treatment && treatment.topDoctors && treatment.topDoctors.doctors) {
-            setTreatmentDoctors(treatment.topDoctors.doctors);
+        if (!treatment) {
+            setTreatmentDoctors([]);
+            return;
         }
+
+        let isSubscribed = true;
+
+        const resolveDoctors = async () => {
+            const rawDoctors = Array.isArray(treatment.topDoctors?.doctors)
+                ? treatment.topDoctors.doctors
+                : Array.isArray(treatment.topDoctors)
+                    ? treatment.topDoctors
+                    : [];
+
+            if (!rawDoctors.length) {
+                if (isSubscribed) setTreatmentDoctors([]);
+                return;
+            }
+
+            const hydrated = await Promise.all(rawDoctors.map(entry => hydrateDoctor(entry)));
+            if (isSubscribed) {
+                setTreatmentDoctors(hydrated.filter(Boolean));
+            }
+        };
+
+        resolveDoctors();
+
+        return () => {
+            isSubscribed = false;
+        };
     }, [treatment]);
 
     return (

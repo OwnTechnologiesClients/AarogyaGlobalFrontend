@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Star, MapPin, Award, Users, GraduationCap, Languages, BookOpen, Trophy, ExternalLink } from 'lucide-react';
 import apiService from '../../lib/apiService';
@@ -8,9 +8,161 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+const toList = (value) => {
+  if (Array.isArray(value)) {
+    return value.filter(Boolean).map((item) => (typeof item === 'string' ? item.trim() : item));
+  }
+
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    if (!trimmed) return [];
+
+    if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
+      try {
+        const parsed = JSON.parse(trimmed);
+        if (Array.isArray(parsed)) {
+          return parsed
+            .filter(Boolean)
+            .map((item) => (typeof item === 'string' ? item.trim().replace(/^"+|"+$/g, '') : item));
+        }
+      } catch {
+        /* fall through to delimiter parsing */
+      }
+    }
+
+    return trimmed
+      .split(/\r?\n|,|;|•|-\s+/)
+      .map((item) => item.replace(/^\[?"+|"+\]?$/g, '').trim())
+      .filter(Boolean);
+  }
+
+  return [];
+};
+
+const resolveExperience = (doctor) => {
+  const value =
+    doctor.experience ||
+    doctor.totalExperience ||
+    doctor.yearsOfExperience ||
+    doctor.experienceYears ||
+    doctor.experienceRange ||
+    doctor?.experience?.value ||
+    doctor?.experience?.label ||
+    null;
+
+  if (!value) return null;
+
+  if (typeof value === 'number') {
+    return `${value}+ years`;
+  }
+
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  if (typeof value === 'object') {
+    return value.label || value.value || null;
+  }
+
+  return null;
+};
+
+const resolveHospitalName = (doctor) =>
+  doctor.customHospitalName ||
+  doctor.hospitalName ||
+  doctor.hospital ||
+  doctor?.hospitalId?.name ||
+  doctor?.hospitalDetails?.name ||
+  doctor?.hospital?.name ||
+  (typeof doctor.hospital === 'string' ? doctor.hospital : null) ||
+  null;
+
+const resolveEducation = (doctor) => {
+  const education = doctor.education || doctor.qualifications || doctor.educationDetails;
+
+  if (!education) return [];
+
+  if (Array.isArray(education)) {
+    return education
+      .map((item) => {
+        if (!item) return null;
+        if (typeof item === 'string') return item.trim();
+        if (typeof item === 'object') {
+          const institution = item.institution || item.college || item.university || item.name;
+          const degree = item.degree || item.qualification || item.title;
+          const year = item.year || item.passingYear || null;
+          return [institution, degree, year].filter(Boolean).join(', ');
+        }
+        return null;
+      })
+      .filter(Boolean);
+  }
+
+  return toList(education);
+};
+
+const resolveLanguages = (doctor) => toList(doctor.languages || doctor.language || doctor.languagesSpoken);
+
+const resolvePublications = (doctor) => {
+  const list = toList(
+    doctor.publications ||
+      doctor.publicationsList ||
+      doctor.researchPapers ||
+      doctor.researchHighlights ||
+      doctor.research
+  );
+  if (list.length) return list;
+  if (typeof doctor.researchPapers === 'string') return [doctor.researchPapers];
+  return [];
+};
+
+const resolveAwards = (doctor) =>
+  toList(doctor.awards || doctor.awardsAndHonors || doctor.achievements || doctor.recognition);
+
+const buildResearchSummary = (doctor, publications) => {
+  if (doctor.researchSummary) return doctor.researchSummary;
+  if (doctor.researchHighlights && typeof doctor.researchHighlights === 'string') return doctor.researchHighlights;
+  if (doctor.researchPapers && typeof doctor.researchPapers === 'string') return doctor.researchPapers;
+  if (publications.length) return `${Math.max(publications.length, doctor.publicationsCount || 0)}+ publications`;
+  if (doctor.publicationsCount) return `${doctor.publicationsCount}+ publications`;
+  if (doctor.researchCount) return `${doctor.researchCount}+ research papers`;
+  return null;
+};
+
+const normalizeDoctorForDisplay = (doctor) => {
+  if (!doctor || typeof doctor !== 'object') {
+    return null;
+  }
+
+  const experience = resolveExperience(doctor) || doctor.experienceRaw || null;
+  const hospitalName = resolveHospitalName(doctor);
+  const education = resolveEducation(doctor);
+  const languages = resolveLanguages(doctor);
+  const publications = resolvePublications(doctor);
+  const awards = resolveAwards(doctor);
+  const researchSummary =
+    doctor.researchPapers && typeof doctor.researchPapers === 'string'
+      ? doctor.researchPapers
+      : buildResearchSummary(doctor, publications);
+
+  return {
+    ...doctor,
+    experience,
+    hospitalName,
+    education,
+    languages,
+    publications,
+    awards,
+    researchSummary,
+  };
+};
+
 const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwide" }) => {
   const swiperRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const displayDoctors = doctors
+    .map((doctor) => normalizeDoctorForDisplay(doctor))
+    .filter(Boolean);
 
   const breakpoints = {
     320: {
@@ -31,15 +183,10 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
     },
   };
 
-  const handleSlideChange = (swiper) => {
-    setCurrentSlide(swiper.realIndex);
-  };
-
-  const totalSlides = Math.ceil(doctors.length / 2);
-  const showNavigation = doctors.length > 2;
+  const showNavigation = displayDoctors.length > 2;
 
   // If no doctors are available, show a message instead of the swiper
-  if (!doctors || doctors.length === 0) {
+  if (!displayDoctors || displayDoctors.length === 0) {
     return (
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
@@ -113,12 +260,11 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
           spaceBetween={24}
           loop={true}
           navigation={false}
-          onSlideChange={handleSlideChange}
           allowTouchMove={true}
           breakpoints={breakpoints}
           className="doctors-swiper"
         >
-          {doctors.map((doctor, index) => (
+          {displayDoctors.map((doctor, index) => (
             <SwiperSlide key={doctor.id || index}>
               <div className="group bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 h-full flex flex-col">
                 {/* Header with Image and Basic Info */}
@@ -177,38 +323,28 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
                         <span className="text-gray-700">{doctor.successRate}</span>
                       </div>
                     )}
-                    {(() => {
-                      const hospitalName = doctor?.customHospitalName || doctor?.hospitalId?.name || doctor?.hospital?.name || doctor?.hospitalName || doctor?.hospital || '';
-                      return hospitalName ? (
-                        <div className="flex items-center gap-2 text-xs">
-                          <MapPin className="w-3 h-3 text-purple-600" />
-                          <span className="text-gray-700 line-clamp-1">{hospitalName}</span>
-                        </div>
-                      ) : null;
-                    })()}
+                    {doctor.hospitalName && (
+                      <div className="flex items-center gap-2 text-xs">
+                        <MapPin className="w-3 h-3 text-purple-600" />
+                        <span className="text-gray-700 line-clamp-1">{doctor.hospitalName}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Education and Certifications */}
-                  {doctor.education && (
+                  {doctor.education && doctor.education.length > 0 && (
                     <div className="mb-3">
                       <div className="flex items-center gap-2 text-xs mb-1">
                         <GraduationCap className="w-3 h-3 text-indigo-600" />
                         <span className="font-medium text-gray-700">Education</span>
                       </div>
                       <div className="text-xs text-gray-600">
-                        {Array.isArray(doctor.education) ? (
-                          doctor.education.slice(0, 2).map((edu, idx) => (
-                            <div key={idx} className="line-clamp-1">
-                              {typeof edu === 'object' && edu.institution ?
-                                `${edu.institution} - ${edu.degree}` :
-                                String(edu)
-                              }
-                            </div>
-                          ))
-                        ) : (
-                          <div className="line-clamp-1">{String(doctor.education)}</div>
-                        )}
-                        {Array.isArray(doctor.education) && doctor.education.length > 2 && (
+                        {doctor.education.slice(0, 2).map((edu, idx) => (
+                          <div key={idx} className="line-clamp-1">
+                            {edu}
+                          </div>
+                        ))}
+                        {doctor.education.length > 2 && (
                           <div className="text-gray-500 text-xs">+{doctor.education.length - 2} more</div>
                         )}
                       </div>
@@ -237,10 +373,10 @@ const DoctorsSwiper = ({ doctors = [], title = "Top-rated cardiologists worldwid
 
                   {/* Research and Awards */}
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    {doctor.researchPapers && (
+                  {doctor.researchSummary && (
                       <div className="flex items-center gap-2 text-xs">
                         <BookOpen className="w-3 h-3 text-green-600" />
-                        <span className="text-gray-700 line-clamp-1">{doctor.researchPapers}</span>
+                      <span className="text-gray-700 line-clamp-1">{doctor.researchSummary}</span>
                       </div>
                     )}
                     {doctor.awards && doctor.awards.length > 0 && (
