@@ -2,38 +2,8 @@ import React from 'react';
 import dataService from '@/lib/dataService';
 import HospitalDetailsClient from './HospitalDetailsClient';
 
-export async function generateStaticParams() {
-  try {
-    // Fetch hospital IDs from the backend API
-    const hospitals = await dataService.getAllUniqueHospitals();
-    
-    if (!hospitals || hospitals.length === 0) {
-      console.warn('No hospitals found from API');
-      return [];
-    }
-
-    // Extract hospital IDs from the API response and sanitize them
-    const hospitalIds = hospitals
-      .map(hospital => hospital.id)
-      .filter(Boolean)
-      .map(id => {
-        // Convert to URL-safe format: uppercase, replace spaces with underscores, remove special chars
-        return id
-          .toString()
-          .toUpperCase()
-          .replace(/\s+/g, '_')
-          .replace(/[^A-Z0-9_-]/g, '');
-      });
-    
-    console.log('Generating static params for hospitals from API:', hospitalIds);
-    console.log('Total hospitals from API:', hospitalIds.length);
-
-    return hospitalIds.map(hospitalId => ({ hospitalId }));
-  } catch (error) {
-    console.error('Error fetching hospitals for static params:', error);
-    return [];
-  }
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function HospitalDetailsPage({ params }) {
   try {
