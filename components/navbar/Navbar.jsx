@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Calculator,
   ArrowRightIcon,
   UserCircle,
   Menu as MenuIcon,
@@ -130,6 +131,18 @@ const Navbar = ({
             {/* Mobile Auth & CTA */}
             <div className="px-6 py-6 border-t border-gray-100 mt-auto">
               <div className="space-y-4">
+                 {/* Treatment Cost Calculator Button */}
+                <a
+                  href="https://chatgpt.com/g/g-EURipaiWa-aarogya-global-treatment-cost-calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white text-[15px] font-semibold px-6 py-4 rounded-lg shadow-md w-full flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  onClick={closeMobileMenu}
+                >
+                  <Calculator className="w-5 h-5" />
+                  Treatment Cost Calculator
+                </a>
+
                 <Link
                   href="/contact"
                   className="bg-[#04CE78] hover:bg-[#03b86a] text-white text-[15px] font-semibold px-6 py-4 rounded-lg shadow-md w-full flex items-center justify-center gap-2 transition-all cursor-pointer"

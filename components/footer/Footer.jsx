@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Calculator } from "lucide-react";
 import { FaWhatsapp, FaTelegram, FaViber } from "react-icons/fa";
 import Link from "next/link";
 import footerData from "../../data/footer.json";
@@ -235,6 +235,20 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Treatment Cost Calculator Button */}
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="https://chatgpt.com/g/g-EURipaiWa-aarogya-global-treatment-cost-calculator"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#04CE78] to-green-600 hover:from-green-600 hover:to-[#04CE78] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        >
+          <Calculator className="w-5 h-5" />
+          Treatment Cost Calculator
+        </Link>
+      </div>
+
       {/* Telegram Floating Button */}
       <Link
         href="https://t.me/+380931281076"
