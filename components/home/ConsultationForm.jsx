@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare } from 'lucide-react';
+import { Send, User, Mail, Phone, Stethoscope, MapPin, MessageSquare, Calculator } from 'lucide-react';
+import Link from 'next/link';
 import PhoneInput from '../ui/PhoneInput';
 import { sendConsultationEmail, validateFormData } from '../../lib/emailService';
 import { submitEnquiryWithBoth, validateEnquiryData } from '../../lib/enquiryService';
@@ -127,9 +128,9 @@ const ConsultationForm = () => {
     return (
         <section className="w-full py-16 px-4 md:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
             <div className="max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                     {/* Left Side - Content */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 flex flex-col">
                         <div className="space-y-4">
                             <div className="inline-flex items-center gap-2 bg-[#04CE78] text-white px-4 py-2 rounded-full text-sm font-semibold">
                                 <Stethoscope className="w-4 h-4" />
@@ -170,6 +171,23 @@ const ConsultationForm = () => {
                                 </div>
                                 <span className="text-[#0B0757] font-medium">24/7 support throughout your journey</span>
                             </div>
+                        </div>
+
+                        {/* Treatment Cost Calculator Button - Desktop: left side, inline with form end */}
+                        <div className="mb-4 mt-8">
+                        <p className='text-center text-md text-black-500 font-medium'>Click the button below to get a free treatment cost calculator.</p>
+                        </div>
+                        
+                        <div className="hidden lg:block mt-auto">
+                            <Link
+                                href="https://chatgpt.com/g/g-EURipaiWa-aarogya-global-treatment-cost-calculator"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                            >
+                                <Calculator className="w-5 h-5" />
+                                Treatment Cost Calculator
+                            </Link>
                         </div>
                     </div>
 
@@ -327,6 +345,22 @@ const ConsultationForm = () => {
                             </p>
                         </form>
                     </div>
+                </div>
+
+                {/* Treatment Cost Calculator Button - Mobile only, centered below form */}
+                <div className="mt-16 lg:hidden">
+                        <p className='text-center text-md text-black-500 font-medium'>Click the button below to get a free treatment cost calculator.</p>
+                </div>
+                <div className="flex justify-center mt-4 lg:hidden">
+                    <Link
+                        href="https://chatgpt.com/g/g-EURipaiWa-aarogya-global-treatment-cost-calculator"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    >
+                        <Calculator className="w-5 h-5" />
+                        Treatment Cost Calculator
+                    </Link>
                 </div>
             </div>
         </section>
