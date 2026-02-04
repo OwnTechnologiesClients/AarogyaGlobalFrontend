@@ -28,38 +28,47 @@ const DoctorProfile = ({ doctor }) => {
     return [];
   };
 
-  // Helper function to handle education data (can be string or array)
-  const getEducationData = (education) => {
-    if (!education) {
-      return [];
+  // Helper function to handle education data
+  // Prefer backend `degrees` (name, institution, year); fall back to legacy `education` if present
+  const getEducationData = (doctor) => {
+    // New structure from admin panel: doctor.degrees = [{ name, institution?, year? }, ...]
+    if (Array.isArray(doctor.degrees) && doctor.degrees.length > 0) {
+      return doctor.degrees.map(degree => ({
+        degree: degree?.name || "",
+        institution: degree?.institution || "",
+        year: degree?.year || ""
+      })).filter(d => d.degree); // keep only entries that at least have a degree name
     }
 
-    // If it's already an array, validate each item has required properties
+    const education = doctor.education;
+    if (!education) return [];
+
+    // Legacy formats (kept for backward compatibility)
     if (Array.isArray(education)) {
       return education.map(edu => {
-        // Ensure each education item has the required properties
         if (typeof edu === 'object' && edu !== null) {
           return {
-            degree: edu.degree || "Medical Degree",
-            institution: edu.institution || "Medical Institution",
-            year: edu.year || "Graduate"
+            degree: edu.degree || "",
+            institution: edu.institution || "",
+            year: edu.year || ""
           };
         }
-        // If it's not an object, convert to proper format
         return {
-          degree: "Medical Degree",
-          institution: String(edu) || "Medical Institution",
-          year: "Graduate"
+          degree: "",
+          institution: String(edu) || "",
+          year: ""
         };
-      });
+      }).filter(d => d.degree || d.institution || d.year);
     }
 
-    // If it's a string, convert to array format
     if (typeof education === 'string') {
-      return [{ degree: "Medical Degree", institution: education, year: "Graduate" }];
+      return [{
+        degree: "",
+        institution: education,
+        year: ""
+      }];
     }
 
-    // Fallback for any other type
     return [];
   };
 
@@ -195,7 +204,7 @@ const DoctorProfile = ({ doctor }) => {
         )}
 
         {/* Educational Info */}
-        {getEducationData(doctor.education).length > 0 && (
+        {getEducationData(doctor).length > 0 && (
           <section>
             <h3 className="text-3xl font-bold text-[#000D44] mb-4">
               Educational Background
@@ -204,13 +213,26 @@ const DoctorProfile = ({ doctor }) => {
               Dr. {doctor.name.split(' ').pop()} has received comprehensive medical education and training:
             </p>
             <div className="flex flex-col gap-3 text-[#000D44]">
-              {getEducationData(doctor.education).map((edu, index) => (
+              {getEducationData(doctor).map((edu, index) => (
                 <div key={index} className="flex items-start gap-2">
                   <CheckCircle className="text-blue-600 w-5 h-5 mt-1" />
                   <p>
-                    <span className="font-semibold">{edu.institution}</span>{" "}
-                    <span className="font-semibold">{edu.degree}</span>{" "}
-                    <span className="text-sm">({edu.year})</span>
+                    {/* Degree name (always first) */}
+                    {edu.degree && (
+                      <span className="font-semibold">{edu.degree}</span>
+                    )}
+                    {/* Institution (optional) */}
+                    {edu.institution && (
+                      <span className="ml-1">
+                        from {edu.institution}
+                      </span>
+                    )}
+                    {/* Year (optional) */}
+                    {edu.year && (
+                      <span className="ml-1 text-sm text-gray-600">
+                        ({edu.year})
+                      </span>
+                    )}
                   </p>
                 </div>
               ))}

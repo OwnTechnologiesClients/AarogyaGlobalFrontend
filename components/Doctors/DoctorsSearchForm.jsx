@@ -7,6 +7,7 @@ export default function DoctorsSearchForm({
   setSearchFilters,
   applyFilters,
   resetFilters,
+  categories = [],
   specialties,
   locations,
   hospitals,
@@ -69,7 +70,7 @@ export default function DoctorsSearchForm({
 
         {/* Search Fields - Conditionally visible on mobile, always visible on desktop */}
         <div className={`${isFilterExpanded ? 'block' : 'hidden'} md:block`}>
-          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 p-2">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 p-2">
             <div className="col-span-1">
               <label className="block text-blue-950 font-medium text-xs xs:text-sm sm:text-base mb-1">
                 Doctor Name
@@ -83,6 +84,31 @@ export default function DoctorsSearchForm({
                   value={searchFilters?.name}
                   onChange={handleOnChange}
                   className="w-full pl-10 p-2 sm:p-2.5 md:p-3 bg-gray-50 border border-gray-200 rounded-md text-gray-600 placeholder-gray-400 text-xs xs:text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div className="col-span-1">
+              <label className="block text-blue-950 font-medium text-xs xs:text-sm sm:text-base mb-1">
+                Category
+              </label>
+              <div className="relative">
+                <select
+                  name="category"
+                  className="w-full p-2 sm:p-2.5 md:p-3 bg-gray-50 border border-gray-200 rounded-md text-gray-600 text-xs xs:text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none"
+                  value={searchFilters?.category ?? ''}
+                  onChange={handleOnChange}
+                >
+                  <option value="">All Categories</option>
+                  {categories?.map((cat, index) => (
+                    <option value={cat} key={index}>
+                      {cat}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown
+                  className="absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
+                  size={16}
                 />
               </div>
             </div>

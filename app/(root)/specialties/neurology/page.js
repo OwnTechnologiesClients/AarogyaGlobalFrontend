@@ -26,6 +26,22 @@ const NeurologyPage = () => {
   const [filteredHospitals, setFilteredHospitals] = useState([]);
   const [filteredTreatments, setFilteredTreatments] = useState([]);
 
+  // Load doctors from backend by category
+  useEffect(() => {
+    let isMounted = true;
+    (async () => {
+      try {
+        const res = await apiService.getDoctors({ category: "Neurology", limit: 100 });
+        const list = Array.isArray(res?.data) ? res.data : [];
+        const activeList = list.filter(doctor => doctor.isActive !== false);
+        if (isMounted) setFilteredDoctors(activeList);
+      } catch (e) {
+        if (isMounted) setFilteredDoctors([]);
+      }
+    })();
+    return () => { isMounted = false; };
+  }, []);
+
   // Load treatments from backend by category (DB uses category)
   useEffect(() => {
     let isMounted = true;

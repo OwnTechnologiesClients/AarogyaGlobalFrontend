@@ -12,6 +12,7 @@ export default function DoctorsPage() {
   const [pagination, setPagination] = useState({ page: 1, limit: 6, total: 0, totalPages: 1 });
   const [searchFilters, setSearchFilters] = useState({
     name: '',
+    category: '',
     specialty: '',
     location: '',
     hospital: ''
@@ -27,6 +28,7 @@ export default function DoctorsPage() {
           page: 1, 
           limit: 6,
           search: searchFilters.name || undefined,
+          category: searchFilters.category || undefined,
           specialty: searchFilters.specialty || undefined,
           location: searchFilters.location || undefined
         });
@@ -53,6 +55,7 @@ export default function DoctorsPage() {
         page: 1, 
         limit: 6,
         search: searchFilters.name || undefined,
+        category: searchFilters.category || undefined,
         specialty: searchFilters.specialty || undefined,
         location: searchFilters.location || undefined
       });
@@ -70,6 +73,7 @@ export default function DoctorsPage() {
   const resetFilters = async () => {
     setSearchFilters({
       name: '',
+      category: '',
       specialty: '',
       location: '',
       hospital: ''
@@ -116,6 +120,7 @@ export default function DoctorsPage() {
           setSearchFilters={setSearchFilters}
           applyFilters={applyFilters}
           resetFilters={resetFilters}
+          categories={['Cardiology', 'Orthopaedics', 'Neurology', 'Oncology']}
           specialties={getUniqueSpecialties()}
           locations={getUniqueLocations()}
           hospitals={getUniqueHospitals()}
@@ -136,6 +141,7 @@ export default function DoctorsPage() {
                 page: nextPage, 
                 limit: pagination.limit,
                 search: searchFilters.name || undefined,
+                category: searchFilters.category || undefined,
                 specialty: searchFilters.specialty || undefined,
                 location: searchFilters.location || undefined
               });
