@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import countryCodes from "country-codes-list";
+import { customList } from "country-codes-list";
 import { ChevronDown, Search } from "lucide-react";
 
 const buildCountries = () => {
   try {
-    const list = countryCodes.customList(
+    const list = customList(
       "countryCode",
       "{countryNameEn}|{countryCallingCode}|{countryCode}"
     );
